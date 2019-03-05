@@ -4,9 +4,20 @@
 #define	XC_HEADER_TEMPLATE_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+
+/// some value define
 #define TRUE 1
 #define FALSE 0
 #define RECV_BUF_MAX 20
+#define TIMER_0_START (217 + 12)
+
+// use port define
+#define CME_DATA_PORT TRISCbits.TRISC5
+#define CME_DATA_IOC IOCCPbits.IOCCP5
+#define CME_DATA_WPU WPUCbits.WPUC5
+#define CME_DATA_IOC_INT IOCCFbits.IOCCF5
+#define SWITCH_PORT TRISCbits.TRISC7
+#define SWITCH_WPU WPUCbits.WPUC7
 
 /**
  * public data here
