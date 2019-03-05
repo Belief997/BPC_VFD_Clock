@@ -12,12 +12,19 @@
 #define TIMER_0_START (217 + 12)
 
 // use port define
-#define CME_DATA_PORT TRISCbits.TRISC5
-#define CME_DATA_IOC IOCCPbits.IOCCP5
-#define CME_DATA_WPU WPUCbits.WPUC5
-#define CME_DATA_IOC_INT IOCCFbits.IOCCF5
+#define CME_DATA_PORT TRISCbits.TRISC2
+#define CME_DATA_IOC IOCCPbits.IOCCP2
+#define CME_DATA_WPU WPUCbits.WPUC2
+#define CME_DATA_IOC_INT IOCCFbits.IOCCF2
 #define SWITCH_PORT TRISCbits.TRISC7
 #define SWITCH_WPU WPUCbits.WPUC7
+
+// output display
+#define PIC_DATA_OUTPUT_PORT TRISBbits.TRISB3 
+#define OE TRISCbits.TRISC6
+#define SHCP TRISCbits.TRISC4
+#define STCP TRISCbits.TRISC5
+
 
 /**
  * public data here
@@ -59,6 +66,12 @@ void receive_decode(void);
  * @func:update time 
  */
 void update_time(void);
+
+/**
+ * @func:Digital tube decoding
+ */
+void write_char(unsigned char dat)
+
 
 /**
  * @func:update dispaly and call by update_time
