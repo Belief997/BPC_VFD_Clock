@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=PIC_DA Pin=P2-2
+Removed Pin From Net: NetName=PIC_CLK Pin=P2-3
+Removed Pin From Net: NetName=GND Pin=P2-4
+Change Component Footprint: Designator=P2 Old Footprint=HDR1X4 New Footprint=HDR1X5
+Change Component Comment : Designator=P2 Old Comment=Debug New Comment=Header 5
+Change Component Designator: OldDesignator=R1 NewDesignator=R2
+Change Component Designator: OldDesignator=R2 NewDesignator=R3
+Change Component Designator: OldDesignator=R3 NewDesignator=R4
+Change Component Designator: OldDesignator=R4 NewDesignator=R5
+Change Component Designator: OldDesignator=R5 NewDesignator=R6
+Change Component Designator: OldDesignator=R6 NewDesignator=R7
+Change Component Designator: OldDesignator=R7 NewDesignator=R8
+Change Component Designator: OldDesignator=R8 NewDesignator=R9
+Added Component: Designator=R1(RES 0805N (2012))
+Added Pin To Net: NetName=PIC_DA Pin=P2-3
+Added Pin To Net: NetName=PIC_CLK Pin=P2-4
+Added Pin To Net: NetName=GND Pin=P2-5
+Added Pin To Net: NetName=VCC Pin=R1-2
+Change Net Name : Old Net Name=NetR1_2 New Net Name=NetR2_2
+Change Net Name : Old Net Name=NetR6_1 New Net Name=NetR7_1
+Added Pin To Net: NetName=NetP2_1 Pin=P2-1
+Added Pin To Net: NetName=NetP2_1 Pin=R1-1
+Added Net: Name=NetP2_1
+Added Pin To Net: NetName=PIC_VPP Pin=P2-2
+Added Pin To Net: NetName=PIC_VPP Pin=U3-1
+Added Net: Name=PIC_VPP
+Added Member To Class: ClassName=BPC_Clock Member=Component R9 1k

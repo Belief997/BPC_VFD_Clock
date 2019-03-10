@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=NetL2_1 Pin=L2-1
+Removed Pin From Net: NetName=LIGHT_ON Pin=U3-15
+Removed Pin From Net: NetName=NetL2_1 Pin=U12-7
+Removed Pin From Net: NetName=VCC Pin=U12-12
+Added Component: Designator=C17(CAPC2012N)
+Added Pin To Net: NetName=NetL2_2 Pin=C17-2
+Added Pin To Net: NetName=LIGHT_ON Pin=U3-10
+Added Pin To Net: NetName=NetL2_1 Pin=U3-15
+Added Pin To Net: NetName=NetL2_1 Pin=U12-12
+Change Net Name : Old Net Name=NetL2_1 New Net Name=BPC_ON
+Change Net Name : Old Net Name=NetL2_2 New Net Name=NetC17_2
+Added Pin To Net: NetName=NetC17_1 Pin=C17-1
+Added Pin To Net: NetName=NetC17_1 Pin=L2-1
+Added Pin To Net: NetName=NetC17_1 Pin=U12-7
+Added Net: Name=NetC17_1
+Added Member To Class: ClassName=BPC_Clock Member=Component C17 Cap

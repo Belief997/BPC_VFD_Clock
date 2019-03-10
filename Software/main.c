@@ -154,18 +154,23 @@ void init_env(){
     // PORT-A
     TRISA = 0;
     LATA = 0;
+
     WPUA = 0;
     IOCAP = 0;
     IOCAN = 0;
     // PORT-B
+
     TRISB = 0;
     LATB = 0;
+
     WPUB = 0;
     IOCBP = 0;
     IOCBN = 0;
     // PORT-C
+
     TRISC = 0;
     LATC = 0;
+
     WPUC = 0;
     IOCCP = 0;
     IOCCN = 0;
@@ -177,6 +182,7 @@ void init_env(){
     SWITCH_WPU = 1;
     
     CME_DATA_TRI = 1; // use port5 to detact ioc
+
     CME_DATA_WPU = 1;
     CME_DATA_IOC = 1; //detect when ioc up
     
