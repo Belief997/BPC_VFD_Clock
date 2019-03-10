@@ -4,9 +4,38 @@
 #define	XC_HEADER_TEMPLATE_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+
+/// some value define
 #define TRUE 1
 #define FALSE 0
 #define RECV_BUF_MAX 20
+// calculate + bias
+#define TIMER_0_START (217 + 13)
+
+// cme6005 data port define
+#define CME_DATA_PORT PORTCbits.RC2
+#define CME_DATA_TRI TRISCbits.TRISC2
+#define CME_DATA_IOC IOCCPbits.IOCCP2
+#define CME_DATA_WPU WPUCbits.WPUC2
+#define CME_DATA_IOC_INT IOCCFbits.IOCCF2
+// switch port define
+#define SWITCH_PORT PORTCbits.RC7
+#define SWITCH_TRI TRISCbits.TRISC7
+#define SWITCH_WPU WPUCbits.WPUC7
+// test output port define
+#define SECOND_DISPLAY LATAbits.LATA0
+#define CME_DATA_SIGNAL LATAbits.LATA1
+#define OUTPUT_DECODE_1 LATAbits.LATA2
+#define OUTPUT_DECODE_2 LATAbits.LATA3
+#define OUTPUT_DECODE_3 LATAbits.LATA4
+#define OUTPUT_DECODE_4 LATAbits.LATA5
+// output display port define
+#define PIC_DATA_OUTPUT_PORT TRISBbits.TRISB3 
+#define SHCP TRISCbits.TRISC4
+#define STCP TRISCbits.TRISC5
+#define OE TRISCbits.TRISC6
+
+
 
 /**
  * public data here
@@ -48,6 +77,7 @@ void receive_decode(void);
  * @func:update time 
  */
 void update_time(void);
+
 
 /**
  * @func:update dispaly and call by update_time

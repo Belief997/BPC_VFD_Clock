@@ -41,15 +41,15 @@ void init_env();
 void test_decode(){
     // set LATAbits.LATA2 to high or low per 0.01s
     if(test_buf_index > 10){
-        LATAbits.LATA1 = 0;
+        CME_DATA_SIGNAL = 0;
         return;
     }
     g_all_time_count++;
     if(test_buf[test_buf_index] > 0){
         test_buf[test_buf_index]--;
-        LATAbits.LATA1 = 1;
+        CME_DATA_SIGNAL = 1;
     }else{
-        LATAbits.LATA1 = 0;
+        CME_DATA_SIGNAL = 0;
     }
     if(g_all_time_count < 100){
         return;
@@ -64,23 +64,26 @@ void test_decode(){
  */
 void interrupt ISR(void){
     // start receive flag set
-    if(INTCONbits.IOCIF && g_start_read_data == FALSE && g_start_read_switch == TRUE){
+    if(CME_DATA_IOC_INT == TRUE && g_start_read_data == FALSE && g_start_read_switch == TRUE){
         g_start_read_data = TRUE;
         g_start_read_switch = FALSE;
-        INTCONbits.IOCIF = 0;
+        INTCONbits.IOCIF = FALSE;
+        CME_DATA_IOC_INT == FALSE;
         return;
-    }else if(INTCONbits.IOCIF){
-        INTCONbits.IOCIF = 0;
+    }else if(INTCONbits.IOCIF || CME_DATA_IOC_INT){
+        INTCONbits.IOCIF = FALSE;
+        CME_DATA_IOC_INT == FALSE;
     }
     
     // update received code
     if(g_start_read_data == TRUE && INTCONbits.TMR0IF){
+        receive_decode();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = TIMER_0_START;
+        
 #ifdef TEST
         test_decode();
 #endif
-        receive_decode();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = 217;
         return;
     }
     
@@ -88,10 +91,10 @@ void interrupt ISR(void){
     if(INTCONbits.TMR0IF){
         update_time();
         INTCONbits.TMR0IF = 0;
-        TMR0 = 217;
+        TMR0 = TIMER_0_START;
         // find port high level?
         // read portc7 switch, set g_start_read_switch 
-        if(PORTCbits.RC7 == 1){
+        if(SWITCH_PORT == 1){
             g_start_read_switch = TRUE;
         }
         return;
@@ -139,7 +142,7 @@ void init_env(){
     OPTION_REGbits.PSA = 0; 
     OPTION_REGbits.TMR0CS = 0; // Focs / 4
     OPTION_REGbits.PS = 4;     // divide <2:0> :32:0b100 = 4
-    TMR0 = 217;
+    TMR0 = TIMER_0_START;
     
     /**
      *  port use
@@ -149,26 +152,33 @@ void init_env(){
      */ 
     OPTION_REGbits.nWPUEN = 0; // enable wpu
     // PORT-A
-    TRISA = 0b00000000;
-    PORTA = 0;
+    TRISA = 0;
+    LATA = 0;
+    WPUA = 0;
     IOCAP = 0;
     IOCAN = 0;
     // PORT-B
+    TRISB = 0;
+    LATB = 0;
+    WPUB = 0;
     IOCBP = 0;
     IOCBN = 0;
-    
-    
     // PORT-C
     TRISC = 0;
+    LATC = 0;
     WPUC = 0;
-    TRISCbits.TRISC7 = 1; //use port7 for switch
-    WPUCbits.WPUC7 = 1;
-    
-    TRISCbits.TRISC5 = 1; // use port5 to detact ioc
-    WPUCbits.WPUC5 = 1;
     IOCCP = 0;
     IOCCN = 0;
-    IOCCPbits.IOCCP5 = 1; //detect when ioc up
+    
+    /**
+     * init all port use
+     */
+    SWITCH_TRI = 1; //use port7 for switch
+    SWITCH_WPU = 1;
+    
+    CME_DATA_TRI = 1; // use port5 to detact ioc
+    CME_DATA_WPU = 1;
+    CME_DATA_IOC = 1; //detect when ioc up
     
     /**
      * init globe value
@@ -190,6 +200,11 @@ void init_env(){
     for(int i = 0;i < RECV_BUF_MAX; i++){
         g_recv_buf[i] = 5;
     }
+    
+    /**
+     * init trans value
+     */
+    OE =  1;
 #ifdef TEST
     // init for test decode
     g_all_time_count = 0;
