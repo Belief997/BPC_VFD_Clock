@@ -9,7 +9,6 @@
 #define TRUE 1
 #define FALSE 0
 #define RECV_BUF_MAX 20
-
 // calculate + bias
 #define TIMER_0_START (217 + 13)
 
@@ -78,12 +77,6 @@ void receive_decode(void);
  * @func:update time 
  */
 void update_time(void);
-
-
-/**
- * @func:Digital tube decoding
- */
-void write_char(unsigned char dat)
 
 
 /**
