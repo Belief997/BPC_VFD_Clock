@@ -27,31 +27,31 @@ int times2number(int high_level_times){
 #ifdef TEST
 void test_value(int value){
     if(value == 0){
-        LATAbits.LATA2 = 1;
-        LATAbits.LATA3 = 0;
-        LATAbits.LATA4 = 0;
-        LATAbits.LATA5 = 0;
+        OUTPUT_DECODE_1 = 1;
+        OUTPUT_DECODE_2 = 0;
+        OUTPUT_DECODE_3 = 0;
+        OUTPUT_DECODE_4 = 0;
     }else if(value == 1){
-        LATAbits.LATA2 = 0;
-        LATAbits.LATA3 = 1;
-        LATAbits.LATA4 = 0;
-        LATAbits.LATA5 = 0;
+        OUTPUT_DECODE_1 = 0;
+        OUTPUT_DECODE_2 = 1;
+        OUTPUT_DECODE_3 = 0;
+        OUTPUT_DECODE_4 = 0;
     }else if(value == 2){
-        LATAbits.LATA2 = 0;
-        LATAbits.LATA3 = 0;
-        LATAbits.LATA4 = 1;
-        LATAbits.LATA5 = 0;
+        OUTPUT_DECODE_1 = 0;
+        OUTPUT_DECODE_2 = 0;
+        OUTPUT_DECODE_3 = 1;
+        OUTPUT_DECODE_4 = 0;
     }else if(value == 3){
-        LATAbits.LATA2 = 0;
-        LATAbits.LATA3 = 0;
-        LATAbits.LATA4 = 0;
-        LATAbits.LATA5 = 1;
+        OUTPUT_DECODE_1 = 0;
+        OUTPUT_DECODE_2 = 0;
+        OUTPUT_DECODE_3 = 0;
+        OUTPUT_DECODE_4 = 1;
     }
 }
 #endif
 void receive_decode(void) {
     // read port get high level times
-    if(PORTCbits.RC5 == 1){
+    if(CME_DATA_PORT == 1){
         g_high_level_times++;
     }
     // get times of read
@@ -70,7 +70,7 @@ void receive_decode(void) {
         // start to read data flag
         g_find_recv_start = TRUE;
 #ifdef TEST
-        LATAbits.LATA0 = !LATAbits.LATA0;
+        SECOND_DISPLAY = !SECOND_DISPLAY;
 #endif
         g_recv_count = 0;
         return;

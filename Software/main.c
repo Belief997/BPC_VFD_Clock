@@ -41,15 +41,15 @@ void init_env();
 void test_decode(){
     // set LATAbits.LATA2 to high or low per 0.01s
     if(test_buf_index > 10){
-        LATAbits.LATA1 = 0;
+        CME_DATA_SIGNAL = 0;
         return;
     }
     g_all_time_count++;
     if(test_buf[test_buf_index] > 0){
         test_buf[test_buf_index]--;
-        LATAbits.LATA1 = 1;
+        CME_DATA_SIGNAL = 1;
     }else{
-        LATAbits.LATA1 = 0;
+        CME_DATA_SIGNAL = 0;
     }
     if(g_all_time_count < 100){
         return;
@@ -94,7 +94,7 @@ void interrupt ISR(void){
         TMR0 = TIMER_0_START;
         // find port high level?
         // read portc7 switch, set g_start_read_switch 
-        if(PORTCbits.RC7 == 1){
+        if(SWITCH_PORT == 1){
             g_start_read_switch = TRUE;
         }
         return;
@@ -152,17 +152,25 @@ void init_env(){
      */ 
     OPTION_REGbits.nWPUEN = 0; // enable wpu
     // PORT-A
-    TRISA = 0b00000000;
+    TRISA = 0;
+    LATA = 0;
+
     WPUA = 0;
     IOCAP = 0;
     IOCAN = 0;
     // PORT-B
-    TRISB = 0b00000000;
+
+    TRISB = 0;
+    LATB = 0;
+
     WPUB = 0;
     IOCBP = 0;
     IOCBN = 0;
     // PORT-C
-    TRISC = 0b00000000;
+
+    TRISC = 0;
+    LATC = 0;
+
     WPUC = 0;
     IOCCP = 0;
     IOCCN = 0;
@@ -170,10 +178,11 @@ void init_env(){
     /**
      * init all port use
      */
-    SWITCH_PORT = 1; //use port7 for switch
+    SWITCH_TRI = 1; //use port7 for switch
     SWITCH_WPU = 1;
     
-    CME_DATA_PORT = 1; // use port5 to detact ioc
+    CME_DATA_TRI = 1; // use port5 to detact ioc
+
     CME_DATA_WPU = 1;
     CME_DATA_IOC = 1; //detect when ioc up
     
@@ -197,6 +206,11 @@ void init_env(){
     for(int i = 0;i < RECV_BUF_MAX; i++){
         g_recv_buf[i] = 5;
     }
+    
+    /**
+     * init trans value
+     */
+    OE =  1;
 #ifdef TEST
     // init for test decode
     g_all_time_count = 0;

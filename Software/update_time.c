@@ -14,7 +14,7 @@ void update_time(void) {
     int old_time_h = g_time_h;
     g_time_u++;
     if(g_time_u % 50 == 0){
-        LATAbits.LATA0 = !LATAbits.LATA0;
+        SECOND_DISPLAY = !SECOND_DISPLAY;
     }
     if(g_time_u == 100){
         g_time_u = 0;
