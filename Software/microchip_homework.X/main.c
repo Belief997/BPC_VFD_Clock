@@ -32,60 +32,6 @@
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 /**
- * init environment
- */
-void init_env();
-
-/**
- * interrupt
- */
-void interrupt ISR(void){
-    // start receive flag set
-    if(CME_DATA_IOC_INT == TRUE && g_start_read_data == FALSE && g_start_read_switch == TRUE){
-        g_start_read_data = TRUE;
-        g_start_read_switch = FALSE;
-        BPC_ON = TRUE;
-        INTCONbits.IOCIF = FALSE;
-        CME_DATA_IOC_INT == FALSE;
-        return;
-    }else if(INTCONbits.IOCIF || CME_DATA_IOC_INT){
-        INTCONbits.IOCIF = FALSE;
-        CME_DATA_IOC_INT == FALSE;
-    }
-    
-    // update received code 
-    if(g_start_read_data == TRUE && INTCONbits.TMR0IF){
-        update_time();
-        receive_decode();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;
-        return;
-    }
-    
-    // update time every time unit:0.01
-    if(INTCONbits.TMR0IF){
-        update_time();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;
-        // read portc7 switch, set g_start_read_switch 
-        if(SWITCH_PORT == 1){
-            g_start_read_switch = TRUE;
-        }
-        return;
-    }
-    return;
-}
-
-void main(void) {
-    // init environment
-    init_env();
-    
-    // in while
-    while(1);
-    
-    return;
-}
-/**
  * init interrupt ...
  */
 void init_env(){
@@ -206,4 +152,54 @@ void init_env(){
 #endif
 }
     
+/**
+ * interrupt
+ */
+void __interrupt () ISR(void){
+    // start receive flag set
+    if(CME_DATA_IOC_INT == TRUE && g_start_read_data == FALSE && g_start_read_switch == TRUE){
+        g_start_read_data = TRUE;
+        g_start_read_switch = FALSE;
+        BPC_ON = TRUE;
+        INTCONbits.IOCIF = FALSE;
+        CME_DATA_IOC_INT = FALSE;
+        return;
+    }else if(INTCONbits.IOCIF || CME_DATA_IOC_INT){
+        INTCONbits.IOCIF = FALSE;
+        CME_DATA_IOC_INT = FALSE;
+    }
+    
+    // update received code 
+    if(g_start_read_data == TRUE && INTCONbits.TMR0IF){
+        update_time();
+        receive_decode();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = TIMER_0_START;
+        return;
+    }
+    
+    // update time every time unit:0.01
+    if(INTCONbits.TMR0IF){
+        update_time();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = TIMER_0_START;
+        // read portc7 switch, set g_start_read_switch 
+        if(SWITCH_PORT == 1){
+            g_start_read_switch = TRUE;
+        }
+        return;
+    }
+    return;
+}
+
+void main(void) {
+    // init environment
+    init_env();
+    
+    // in while
+    while(1);
+    
+    return;
+}
+
     
