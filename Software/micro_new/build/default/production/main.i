@@ -8988,31 +8988,47 @@ char *tempnam(const char *, const char *);
 # 10 "main.c" 2
 
 # 1 "./function.h" 1
-# 54 "./function.h"
+# 41 "./function.h"
 typedef unsigned int u8;
+typedef int s8;
 typedef unsigned short u4;
+typedef short s4;
+
+typedef enum{
+    FALSE = 0,
+    TRUE = 1,
+}BOOL;
+
+enum{
+    BPC_PWR_ON = 0,
+    BPC_PWR_OFF = 1,
+
+
+}ENUM;
+# 73 "./function.h"
+typedef struct{
+
+    BOOL g_start_read_switch;
+    BOOL g_start_read_data;
+    BOOL g_find_recv_start;
 
 
 
 
 
-
-int g_time_h;
-int g_time_m;
-int g_time_s;
-int g_time_u;
-
-
-int g_start_read_switch;
-int g_start_read_data;
-int g_find_recv_start;
+    int g_time_h;
+    int g_time_m;
+    int g_time_s;
+    int g_time_10ms;
 
 
-int g_high_level_times;
-int g_all_level_times;
-int g_recv_count;
+    int g_high_level_times;
+    int g_all_level_times;
+    int g_recv_count;
 
-int g_recv_buf[20];
+    int g_recv_buf[20];
+
+}G_DATA;
 
 
 
@@ -9054,8 +9070,7 @@ void update_display(void);
 #pragma config LPBOR = OFF
 #pragma config LVP = ON
 
-
-
+G_DATA g_data;
 
 void init_env(){
 
@@ -9069,6 +9084,7 @@ void init_env(){
 
 
     INTCONbits.TMR0IE = 0b1;
+
 
 
 
@@ -9126,22 +9142,22 @@ void init_env(){
 
 
 
-    g_time_h = 0;
-    g_time_m = 0;
-    g_time_s = 0;
-    g_time_u = 0;
+    g_data.g_time_h = 0;
+    g_data.g_time_m = 0;
+    g_data.g_time_s = 0;
+    g_data.g_time_10ms = 0;
 
 
-    g_start_read_switch = 0;
-    g_start_read_data = 0;
-    g_find_recv_start = 0;
+    g_data.g_start_read_switch = FALSE;
+    g_data.g_start_read_data = FALSE;
+    g_data.g_find_recv_start = FALSE;
 
 
-    g_high_level_times = 0;
-    g_all_level_times = 0;
-    g_recv_count = 0;
+    g_data.g_high_level_times = 0;
+    g_data.g_all_level_times = 0;
+    g_data.g_recv_count = 0;
     for(int i = 0;i < 20; i++){
-        g_recv_buf[i] = 5;
+        g_data.g_recv_buf[i] = 5;
     }
 
 
@@ -9150,7 +9166,7 @@ void init_env(){
     PORTBbits.RB3 = 1;
 
 
-    PORTCbits.RC2 = 0;
+    PORTCbits.RC2 = BPC_PWR_ON;
 
 
     TRISCbits.TRISC0 = 1;
@@ -9163,20 +9179,23 @@ void init_env(){
 
 void __attribute__((picinterrupt(""))) ISR(void){
 
-    if(IOCCFbits.IOCCF1 == 1 && g_start_read_data == 0 && g_start_read_switch == 1){
-        g_start_read_data = 1;
-        g_start_read_switch = 0;
-        PORTCbits.RC2 = 1;
-        INTCONbits.IOCIF = 0;
-        IOCCFbits.IOCCF1 = 0;
+    if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && g_data.g_start_read_switch == TRUE){
+
+
+
+        g_data.g_start_read_data = TRUE;
+        g_data.g_start_read_switch = FALSE;
+        PORTCbits.RC2 = BPC_PWR_ON;
+        INTCONbits.IOCIF = FALSE;
+        IOCCFbits.IOCCF1 = FALSE;
         return;
     }else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1){
-        INTCONbits.IOCIF = 0;
-        IOCCFbits.IOCCF1 = 0;
+        INTCONbits.IOCIF = FALSE;
+        IOCCFbits.IOCCF1 = FALSE;
     }
 
 
-    if(g_start_read_data == 1 && INTCONbits.TMR0IF){
+    if(g_data.g_start_read_data == TRUE && INTCONbits.TMR0IF){
         update_time();
         receive_decode();
         INTCONbits.TMR0IF = 0;
@@ -9191,7 +9210,7 @@ void __attribute__((picinterrupt(""))) ISR(void){
         TMR0 = (217 + 14);
 
         if(PORTCbits.RC5 == 1){
-            g_start_read_switch = 1;
+            g_data.g_start_read_switch = TRUE;
         }
         return;
     }

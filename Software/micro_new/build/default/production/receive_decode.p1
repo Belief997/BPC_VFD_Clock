@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"56 ./function.h
+[; ;./function.h: 56: }ENUM;
+[c E4884 0 1 .. ]
+[n E4884 . BPC_PWR_ON BPC_PWR_OFF  ]
 "575 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 575:     struct {
 [s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -14,8 +18,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "589
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 589: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS39 ~T0 @X0 0 e@14 ]
-"91 ./function.h
-[; ;./function.h: 91: void update_display(void);
+"32 receive_decode.c
+[; ;receive_decode.c: 32:         g_data.g_high_level_times++;
+[c E4880 0 1 .. ]
+[n E4880 . FALSE TRUE  ]
+"73 ./function.h
+[; ;./function.h: 73: typedef struct{
+[s S623 `E4880 1 `E4880 1 `E4880 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i -> 20 `i ]
+[n S623 . g_start_read_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
+"12 receive_decode.c
+[; ;receive_decode.c: 12: extern G_DATA g_data;
+[v _g_data `S623 ~T0 @X0 0 e ]
+"112 ./function.h
+[; ;./function.h: 112: void update_display(void);
 [v _update_display `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
@@ -854,297 +869,267 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"59 ./function.h
-[; ;./function.h: 59: int g_time_h;
-[v _g_time_h `i ~T0 @X0 1 e ]
-"60
-[; ;./function.h: 60: int g_time_m;
-[v _g_time_m `i ~T0 @X0 1 e ]
-"61
-[; ;./function.h: 61: int g_time_s;
-[v _g_time_s `i ~T0 @X0 1 e ]
-"62
-[; ;./function.h: 62: int g_time_u;
-[v _g_time_u `i ~T0 @X0 1 e ]
-"65
-[; ;./function.h: 65: int g_start_read_switch;
-[v _g_start_read_switch `i ~T0 @X0 1 e ]
-"66
-[; ;./function.h: 66: int g_start_read_data;
-[v _g_start_read_data `i ~T0 @X0 1 e ]
-"67
-[; ;./function.h: 67: int g_find_recv_start;
-[v _g_find_recv_start `i ~T0 @X0 1 e ]
-"70
-[; ;./function.h: 70: int g_high_level_times;
-[v _g_high_level_times `i ~T0 @X0 1 e ]
-"71
-[; ;./function.h: 71: int g_all_level_times;
-[v _g_all_level_times `i ~T0 @X0 1 e ]
-"72
-[; ;./function.h: 72: int g_recv_count;
-[v _g_recv_count `i ~T0 @X0 1 e ]
-"74
-[; ;./function.h: 74: int g_recv_buf[20];
-[v _g_recv_buf `i ~T0 @X0 -> 20 `i e ]
-"12 receive_decode.c
-[; ;receive_decode.c: 12: int times2number(int high_level_times){
+"56 ./function.h
+[; ;./function.h: 56: }ENUM;
+[v _ENUM `E4884 ~T0 @X0 1 e ]
+"14 receive_decode.c
+[; ;receive_decode.c: 14: int times2number(int high_level_times){
 [v _times2number `(i ~T0 @X0 1 ef1`i ]
 {
 [e :U _times2number ]
 [v _high_level_times `i ~T0 @X0 1 r1 ]
 [f ]
-"13
-[; ;receive_decode.c: 13:     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
-[e $ ! && >= _high_level_times - -> 10 `i -> 5 `i < _high_level_times + -> 10 `i -> 5 `i 624  ]
-{
-"14
-[; ;receive_decode.c: 14:         return 0;
-[e ) -> 0 `i ]
-[e $UE 623  ]
 "15
-[; ;receive_decode.c: 15:     }else if(high_level_times >= 20 - 5 && high_level_times < 20 + 5){
-}
-[e $U 625  ]
-[e :U 624 ]
-[e $ ! && >= _high_level_times - -> 20 `i -> 5 `i < _high_level_times + -> 20 `i -> 5 `i 626  ]
+[; ;receive_decode.c: 15:     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
+[e $ ! && >= _high_level_times - -> 10 `i -> 5 `i < _high_level_times + -> 10 `i -> 5 `i 625  ]
 {
 "16
-[; ;receive_decode.c: 16:         return 1;
-[e ) -> 1 `i ]
-[e $UE 623  ]
+[; ;receive_decode.c: 16:         return 0;
+[e ) -> 0 `i ]
+[e $UE 624  ]
 "17
-[; ;receive_decode.c: 17:     }else if(high_level_times >= 30 - 5 && high_level_times < 30 + 5){
+[; ;receive_decode.c: 17:     }else if(high_level_times >= 20 - 5 && high_level_times < 20 + 5){
 }
-[e $U 627  ]
-[e :U 626 ]
-[e $ ! && >= _high_level_times - -> 30 `i -> 5 `i < _high_level_times + -> 30 `i -> 5 `i 628  ]
+[e $U 626  ]
+[e :U 625 ]
+[e $ ! && >= _high_level_times - -> 20 `i -> 5 `i < _high_level_times + -> 20 `i -> 5 `i 627  ]
 {
 "18
-[; ;receive_decode.c: 18:         return 2;
-[e ) -> 2 `i ]
-[e $UE 623  ]
+[; ;receive_decode.c: 18:         return 1;
+[e ) -> 1 `i ]
+[e $UE 624  ]
 "19
-[; ;receive_decode.c: 19:     }else if(high_level_times >= 40 - 5 && high_level_times < 40 + 5){
+[; ;receive_decode.c: 19:     }else if(high_level_times >= 30 - 5 && high_level_times < 30 + 5){
 }
-[e $U 629  ]
-[e :U 628 ]
-[e $ ! && >= _high_level_times - -> 40 `i -> 5 `i < _high_level_times + -> 40 `i -> 5 `i 630  ]
+[e $U 628  ]
+[e :U 627 ]
+[e $ ! && >= _high_level_times - -> 30 `i -> 5 `i < _high_level_times + -> 30 `i -> 5 `i 629  ]
 {
 "20
-[; ;receive_decode.c: 20:         return 3;
-[e ) -> 3 `i ]
-[e $UE 623  ]
+[; ;receive_decode.c: 20:         return 2;
+[e ) -> 2 `i ]
+[e $UE 624  ]
 "21
-[; ;receive_decode.c: 21:     }else if(high_level_times >= 40 + 5){
+[; ;receive_decode.c: 21:     }else if(high_level_times >= 40 - 5 && high_level_times < 40 + 5){
 }
-[e $U 631  ]
-[e :U 630 ]
-[e $ ! >= _high_level_times + -> 40 `i -> 5 `i 632  ]
+[e $U 630  ]
+[e :U 629 ]
+[e $ ! && >= _high_level_times - -> 40 `i -> 5 `i < _high_level_times + -> 40 `i -> 5 `i 631  ]
 {
 "22
-[; ;receive_decode.c: 22:         return 4;
-[e ) -> 4 `i ]
-[e $UE 623  ]
+[; ;receive_decode.c: 22:         return 3;
+[e ) -> 3 `i ]
+[e $UE 624  ]
 "23
-[; ;receive_decode.c: 23:     }else{
+[; ;receive_decode.c: 23:     }else if(high_level_times >= 40 + 5){
 }
-[e $U 633  ]
-[e :U 632 ]
+[e $U 632  ]
+[e :U 631 ]
+[e $ ! >= _high_level_times + -> 40 `i -> 5 `i 633  ]
 {
 "24
-[; ;receive_decode.c: 24:         return 5;
-[e ) -> 5 `i ]
-[e $UE 623  ]
+[; ;receive_decode.c: 24:         return 4;
+[e ) -> 4 `i ]
+[e $UE 624  ]
 "25
-[; ;receive_decode.c: 25:     }
+[; ;receive_decode.c: 25:     }else{
 }
+[e $U 634  ]
 [e :U 633 ]
-[e :U 631 ]
-[e :U 629 ]
-[e :U 627 ]
-[e :U 625 ]
+{
 "26
-[; ;receive_decode.c: 26: }
-[e :UE 623 ]
-}
+[; ;receive_decode.c: 26:         return 5;
+[e ) -> 5 `i ]
+[e $UE 624  ]
 "27
-[; ;receive_decode.c: 27: void receive_decode(void) {
+[; ;receive_decode.c: 27:     }
+}
+[e :U 634 ]
+[e :U 632 ]
+[e :U 630 ]
+[e :U 628 ]
+[e :U 626 ]
+"28
+[; ;receive_decode.c: 28: }
+[e :UE 624 ]
+}
+"29
+[; ;receive_decode.c: 29: void receive_decode(void) {
 [v _receive_decode `(v ~T0 @X0 1 ef ]
 {
 [e :U _receive_decode ]
 [f ]
-"29
-[; ;receive_decode.c: 29:     if(PORTCbits.RC1 == 1){
-[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 635  ]
-{
-"30
-[; ;receive_decode.c: 30:         g_high_level_times++;
-[e ++ _g_high_level_times -> 1 `i ]
 "31
-[; ;receive_decode.c: 31:     }
-}
-[e :U 635 ]
-"33
-[; ;receive_decode.c: 33:     g_all_level_times++;
-[e ++ _g_all_level_times -> 1 `i ]
-"36
-[; ;receive_decode.c: 36:     if(g_all_level_times < 100){
-[e $ ! < _g_all_level_times -> 100 `i 636  ]
+[; ;receive_decode.c: 31:     if(PORTCbits.RC1 == 1){
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 636  ]
 {
-"37
-[; ;receive_decode.c: 37:         return;
-[e $UE 634  ]
-"38
-[; ;receive_decode.c: 38:     }
+"32
+[; ;receive_decode.c: 32:         g_data.g_high_level_times++;
+[e ++ . _g_data 7 -> 1 `i ]
+"33
+[; ;receive_decode.c: 33:     }
 }
 [e :U 636 ]
+"35
+[; ;receive_decode.c: 35:     g_data.g_all_level_times++;
+[e ++ . _g_data 8 -> 1 `i ]
+"38
+[; ;receive_decode.c: 38:     if(g_data.g_all_level_times < 100){
+[e $ ! < . _g_data 8 -> 100 `i 637  ]
+{
+"39
+[; ;receive_decode.c: 39:         return;
+[e $UE 635  ]
 "40
-[; ;receive_decode.c: 40:     int read_value = times2number(g_high_level_times);
-[v _read_value `i ~T0 @X0 1 a ]
-[e = _read_value ( _times2number (1 _g_high_level_times ]
-"41
-[; ;receive_decode.c: 41:     g_all_level_times = 0;
-[e = _g_all_level_times -> 0 `i ]
-"42
-[; ;receive_decode.c: 42:     g_high_level_times = 0;
-[e = _g_high_level_times -> 0 `i ]
-"44
-[; ;receive_decode.c: 44:     if(read_value == 5){
-[e $ ! == _read_value -> 5 `i 637  ]
-{
-"46
-[; ;receive_decode.c: 46:         g_find_recv_start = 1;
-[e = _g_find_recv_start -> 1 `i ]
-"47
-[; ;receive_decode.c: 47:         g_recv_count = 0;
-[e = _g_recv_count -> 0 `i ]
-"48
-[; ;receive_decode.c: 48:         return;
-[e $UE 634  ]
-"49
-[; ;receive_decode.c: 49:     }else if(read_value == 4){
+[; ;receive_decode.c: 40:     }
 }
-[e $U 638  ]
 [e :U 637 ]
-[e $ ! == _read_value -> 4 `i 639  ]
+"42
+[; ;receive_decode.c: 42:     int read_value = times2number(g_data.g_high_level_times);
+[v _read_value `i ~T0 @X0 1 a ]
+[e = _read_value ( _times2number (1 . _g_data 7 ]
+"43
+[; ;receive_decode.c: 43:     g_data.g_all_level_times = 0;
+[e = . _g_data 8 -> 0 `i ]
+"44
+[; ;receive_decode.c: 44:     g_data.g_high_level_times = 0;
+[e = . _g_data 7 -> 0 `i ]
+"46
+[; ;receive_decode.c: 46:     if(read_value == 5){
+[e $ ! == _read_value -> 5 `i 638  ]
 {
+"48
+[; ;receive_decode.c: 48:         g_data.g_find_recv_start = TRUE;
+[e = . _g_data 2 . `E4880 1 ]
+"49
+[; ;receive_decode.c: 49:         g_data.g_recv_count = 0;
+[e = . _g_data 9 -> 0 `i ]
 "50
 [; ;receive_decode.c: 50:         return;
-[e $UE 634  ]
+[e $UE 635  ]
 "51
-[; ;receive_decode.c: 51:     }
+[; ;receive_decode.c: 51:     }else if(read_value == 4){
 }
-[e :U 639 ]
+[e $U 639  ]
 [e :U 638 ]
-"53
-[; ;receive_decode.c: 53:     if(g_find_recv_start == 0 || read_value == 5){
-[e $ ! || == _g_find_recv_start -> 0 `i == _read_value -> 5 `i 640  ]
+[e $ ! == _read_value -> 4 `i 640  ]
 {
-"54
-[; ;receive_decode.c: 54:         return;
-[e $UE 634  ]
-"55
-[; ;receive_decode.c: 55:     }
+"52
+[; ;receive_decode.c: 52:         return;
+[e $UE 635  ]
+"53
+[; ;receive_decode.c: 53:     }
 }
 [e :U 640 ]
-"57
-[; ;receive_decode.c: 57:     g_recv_buf[g_recv_count] = read_value;
-[e = *U + &U _g_recv_buf * -> -> _g_recv_count `ui `ux -> -> # *U &U _g_recv_buf `ui `ux _read_value ]
-"58
-[; ;receive_decode.c: 58:     g_recv_count++;
-[e ++ _g_recv_count -> 1 `i ]
-"59
-[; ;receive_decode.c: 59:     if(g_recv_count < 6){
-[e $ ! < _g_recv_count -> 6 `i 641  ]
+[e :U 639 ]
+"55
+[; ;receive_decode.c: 55:     if(g_data.g_find_recv_start == FALSE || read_value == 5){
+[e $ ! || == -> . _g_data 2 `ui -> . `E4880 0 `ui == _read_value -> 5 `i 641  ]
 {
-"60
-[; ;receive_decode.c: 60:         return;
-[e $UE 634  ]
-"61
-[; ;receive_decode.c: 61:     }
+"56
+[; ;receive_decode.c: 56:         return;
+[e $UE 635  ]
+"57
+[; ;receive_decode.c: 57:     }
 }
 [e :U 641 ]
-"63
-[; ;receive_decode.c: 63:     if(g_recv_buf[0] != 0 && g_recv_buf[1] != 0){
-[e $ ! && != *U + &U _g_recv_buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux -> 0 `i != *U + &U _g_recv_buf * -> -> -> 1 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux -> 0 `i 642  ]
+"59
+[; ;receive_decode.c: 59:     g_data.g_recv_buf[g_data.g_recv_count] = read_value;
+[e = *U + &U . _g_data 10 * -> -> . _g_data 9 `ui `ux -> -> # *U &U . _g_data 10 `ui `ux _read_value ]
+"60
+[; ;receive_decode.c: 60:     g_data.g_recv_count++;
+[e ++ . _g_data 9 -> 1 `i ]
+"61
+[; ;receive_decode.c: 61:     if(g_data.g_recv_count < 6){
+[e $ ! < . _g_data 9 -> 6 `i 642  ]
 {
-"64
-[; ;receive_decode.c: 64:         g_find_recv_start == 0;
-[e == _g_find_recv_start -> 0 `i ]
-"65
-[; ;receive_decode.c: 65:         g_start_read_data = 0;
-[e = _g_start_read_data -> 0 `i ]
-"66
-[; ;receive_decode.c: 66:         g_recv_count = 0;
-[e = _g_recv_count -> 0 `i ]
-"67
-[; ;receive_decode.c: 67:         return;
-[e $UE 634  ]
-"68
-[; ;receive_decode.c: 68:     }
+"62
+[; ;receive_decode.c: 62:         return;
+[e $UE 635  ]
+"63
+[; ;receive_decode.c: 63:     }
 }
 [e :U 642 ]
-"70
-[; ;receive_decode.c: 70:     int old_time_h = g_time_h;
-[v _old_time_h `i ~T0 @X0 1 a ]
-[e = _old_time_h _g_time_h ]
-"71
-[; ;receive_decode.c: 71:     int old_time_m = g_time_m;
-[v _old_time_m `i ~T0 @X0 1 a ]
-[e = _old_time_m _g_time_m ]
-"72
-[; ;receive_decode.c: 72:     g_time_h = g_recv_buf[2] * 4 + g_recv_buf[3];
-[e = _g_time_h + * *U + &U _g_recv_buf * -> -> -> 2 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux -> 4 `i *U + &U _g_recv_buf * -> -> -> 3 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux ]
-"73
-[; ;receive_decode.c: 73:     g_time_m = g_recv_buf[4] * 16 + g_recv_buf[5] * 4 + g_recv_buf[6];
-[e = _g_time_m + + * *U + &U _g_recv_buf * -> -> -> 4 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux -> 16 `i * *U + &U _g_recv_buf * -> -> -> 5 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux -> 4 `i *U + &U _g_recv_buf * -> -> -> 6 `i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux ]
-"75
-[; ;receive_decode.c: 75:     if(old_time_h != g_time_h || old_time_m != g_time_m){
-[e $ ! || != _old_time_h _g_time_h != _old_time_m _g_time_m 643  ]
+"65
+[; ;receive_decode.c: 65:     if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
+[e $ ! && != *U + &U . _g_data 10 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 0 `i != *U + &U . _g_data 10 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 0 `i 643  ]
 {
-"76
-[; ;receive_decode.c: 76:         update_display();
-[e ( _update_display ..  ]
-"77
-[; ;receive_decode.c: 77:     }
+"66
+[; ;receive_decode.c: 66:         g_data.g_find_recv_start = FALSE;
+[e = . _g_data 2 . `E4880 0 ]
+"67
+[; ;receive_decode.c: 67:         g_data.g_start_read_data = 0;
+[e = . _g_data 1 -> -> 0 `i `E4880 ]
+"68
+[; ;receive_decode.c: 68:         g_data.g_recv_count = 0;
+[e = . _g_data 9 -> 0 `i ]
+"69
+[; ;receive_decode.c: 69:         return;
+[e $UE 635  ]
+"70
+[; ;receive_decode.c: 70:     }
 }
 [e :U 643 ]
-"80
-[; ;receive_decode.c: 80:     g_find_recv_start == 0;
-[e == _g_find_recv_start -> 0 `i ]
-"81
-[; ;receive_decode.c: 81:     PORTCbits.RC2 = 0;
-[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"72
+[; ;receive_decode.c: 72:     int old_time_h = g_data.g_time_h;
+[v _old_time_h `i ~T0 @X0 1 a ]
+[e = _old_time_h . _g_data 3 ]
+"73
+[; ;receive_decode.c: 73:     int old_time_m = g_data.g_time_m;
+[v _old_time_m `i ~T0 @X0 1 a ]
+[e = _old_time_m . _g_data 4 ]
+"74
+[; ;receive_decode.c: 74:     g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_buf[3];
+[e = . _g_data 3 + * *U + &U . _g_data 10 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 4 `i *U + &U . _g_data 10 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux ]
+"75
+[; ;receive_decode.c: 75:     g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_buf[5] * 4 + g_data.g_recv_buf[6];
+[e = . _g_data 4 + + * *U + &U . _g_data 10 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 16 `i * *U + &U . _g_data 10 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 4 `i *U + &U . _g_data 10 * -> -> -> 6 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux ]
+"77
+[; ;receive_decode.c: 77:     if(old_time_h != g_data.g_time_h || old_time_m != g_data.g_time_m){
+[e $ ! || != _old_time_h . _g_data 3 != _old_time_m . _g_data 4 644  ]
+{
+"78
+[; ;receive_decode.c: 78:         update_display();
+[e ( _update_display ..  ]
+"79
+[; ;receive_decode.c: 79:     }
+}
+[e :U 644 ]
 "82
-[; ;receive_decode.c: 82:     g_start_read_data = 0;
-[e = _g_start_read_data -> 0 `i ]
+[; ;receive_decode.c: 82:     g_data.g_find_recv_start = FALSE;
+[e = . _g_data 2 . `E4880 0 ]
 "83
-[; ;receive_decode.c: 83:     g_recv_count = 0;
-[e = _g_recv_count -> 0 `i ]
+[; ;receive_decode.c: 83:     PORTCbits.RC2 = BPC_PWR_OFF;
+[e = . . _PORTCbits 0 2 -> . `E4884 1 `uc ]
 "84
-[; ;receive_decode.c: 84:     for(int i = 0;i < 20; i++){
+[; ;receive_decode.c: 84:     g_data.g_start_read_data = 0;
+[e = . _g_data 1 -> -> 0 `i `E4880 ]
+"85
+[; ;receive_decode.c: 85:     g_data.g_recv_count = 0;
+[e = . _g_data 9 -> 0 `i ]
+"86
+[; ;receive_decode.c: 86:     for(int i = 0;i < 20; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 644  ]
-[e $U 645  ]
-[e :U 644 ]
+[e $ < _i -> 20 `i 645  ]
+[e $U 646  ]
+[e :U 645 ]
 {
-"85
-[; ;receive_decode.c: 85:         g_recv_buf[i] = 5;
-[e = *U + &U _g_recv_buf * -> -> _i `ui `ux -> -> # *U &U _g_recv_buf `ui `ux -> 5 `i ]
-"86
-[; ;receive_decode.c: 86:     }
+"87
+[; ;receive_decode.c: 87:         g_data.g_recv_buf[i] = 5;
+[e = *U + &U . _g_data 10 * -> -> _i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 5 `i ]
+"88
+[; ;receive_decode.c: 88:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 644  ]
-[e :U 645 ]
+[e $ < _i -> 20 `i 645  ]
+[e :U 646 ]
 }
-"87
-[; ;receive_decode.c: 87:     return;
-[e $UE 634  ]
-"88
-[; ;receive_decode.c: 88: }
-[e :UE 634 ]
+"89
+[; ;receive_decode.c: 89:     return;
+[e $UE 635  ]
+"90
+[; ;receive_decode.c: 90: }
+[e :UE 635 ]
 }

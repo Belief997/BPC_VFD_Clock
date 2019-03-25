@@ -3,6 +3,36 @@
 [d edition pro ]
 [d chip 16F1786 ]
 [d frameptr 6 ]
+"56 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
+[e E5202 . `uc
+BPC_PWR_ON 0
+BPC_PWR_OFF 1
+]
+"34 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+[e E5198 . `uc
+FALSE 0
+TRUE 1
+]
+"56 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
+[e E4884 . `uc
+BPC_PWR_ON 0
+BPC_PWR_OFF 1
+]
+"32 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+[e E4880 . `uc
+FALSE 0
+TRUE 1
+]
+"56 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
+[e E4884 . `uc
+BPC_PWR_ON 0
+BPC_PWR_OFF 1
+]
+"15 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+[e E4880 . `uc
+FALSE 0
+TRUE 1
+]
 "10 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\Umul8_16.c
@@ -11,15 +41,15 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"37 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+"36 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
 "158
 [v _ISR ISR `II(v  1 e 1 0 ]
-"195
+"198
 [v _main main `(v  1 e 1 0 ]
-"12 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+"14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _times2number times2number `(i  1 e 2 0 ]
-"27
+"29
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
 "15 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
 [v _control595_delay control595_delay `(v  1 s 1 control595_delay ]
@@ -27,31 +57,9 @@
 [v _write_char write_char `(v  1 e 1 0 ]
 "36
 [v _update_display update_display `(v  1 e 1 0 ]
-"12 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+"14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
 [v _update_time update_time `(v  1 e 1 0 ]
-"59 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
-[v _g_time_h g_time_h `i  1 e 2 0 ]
-"60
-[v _g_time_m g_time_m `i  1 e 2 0 ]
-"61
-[v _g_time_s g_time_s `i  1 e 2 0 ]
-"62
-[v _g_time_u g_time_u `i  1 e 2 0 ]
-"65
-[v _g_start_read_switch g_start_read_switch `i  1 e 2 0 ]
-"66
-[v _g_start_read_data g_start_read_data `i  1 e 2 0 ]
-"67
-[v _g_find_recv_start g_find_recv_start `i  1 e 2 0 ]
-"70
-[v _g_high_level_times g_high_level_times `i  1 e 2 0 ]
-"71
-[v _g_all_level_times g_all_level_times `i  1 e 2 0 ]
-"72
-[v _g_recv_count g_recv_count `i  1 e 2 0 ]
-"74
-[v _g_recv_buf g_recv_buf `[20]i  1 e 40 0 ]
-[s S22 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S40 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -61,14 +69,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
-[s S31 . 1 `uc 1 . 1 0 :2:0 
+[s S49 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S210 . 1 `uc 1 RB0 1 0 :1:0 
+[u S54 . 1 `S40 1 . 1 0 `S49 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES54  1 e 1 @11 ]
+[s S228 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -78,11 +86,11 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "519
-[s S219 . 1 `uc 1 PORTB 1 0 :8:0 
+[s S237 . 1 `uc 1 PORTB 1 0 :8:0 
 ]
-[u S221 . 1 `S210 1 . 1 0 `S219 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES221  1 e 1 @13 ]
-[s S236 . 1 `uc 1 RC0 1 0 :1:0 
+[u S239 . 1 `S228 1 . 1 0 `S237 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES239  1 e 1 @13 ]
+[s S254 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -92,10 +100,10 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "589
-[s S245 . 1 `uc 1 PORTC 1 0 :8:0 
+[s S263 . 1 `uc 1 PORTC 1 0 :8:0 
 ]
-[u S247 . 1 `S236 1 . 1 0 `S245 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES247  1 e 1 @14 ]
+[u S265 . 1 `S254 1 . 1 0 `S263 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES265  1 e 1 @14 ]
 "856
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "1176
@@ -104,7 +112,7 @@
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1316
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
-[s S132 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S150 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -114,11 +122,11 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1336
-[s S141 . 1 `uc 1 TRISC 1 0 :8:0 
+[s S159 . 1 `uc 1 TRISC 1 0 :8:0 
 ]
-[u S143 . 1 `S132 1 . 1 0 `S141 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES143  1 e 1 @142 ]
-[s S84 . 1 `uc 1 PS0 1 0 :1:0 
+[u S161 . 1 `S150 1 . 1 0 `S159 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES161  1 e 1 @142 ]
+[s S102 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -128,14 +136,14 @@
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1635
-[s S93 . 1 `uc 1 PS 1 0 :3:0 
+[s S111 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S98 . 1 `S84 1 . 1 0 `S93 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES98  1 e 1 @149 ]
-[s S54 . 1 `uc 1 SCS0 1 0 :1:0 
+[u S116 . 1 `S102 1 . 1 0 `S111 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES116  1 e 1 @149 ]
+[s S72 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF0 1 0 :1:3 
@@ -145,12 +153,12 @@
 `uc 1 SPLLEN 1 0 :1:7 
 ]
 "1891
-[s S63 . 1 `uc 1 SCS 1 0 :2:0 
+[s S81 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF 1 0 :4:3 
 ]
-[u S67 . 1 `S54 1 . 1 0 `S63 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES67  1 e 1 @153 ]
+[u S85 . 1 `S72 1 . 1 0 `S81 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES85  1 e 1 @153 ]
 "2293
 [v _LATA LATA `VEuc  1 e 1 @268 ]
 "2363
@@ -163,7 +171,7 @@
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
 "4862
 [v _WPUC WPUC `VEuc  1 e 1 @526 ]
-[s S158 . 1 `uc 1 WPUC0 1 0 :1:0 
+[s S176 . 1 `uc 1 WPUC0 1 0 :1:0 
 `uc 1 WPUC1 1 0 :1:1 
 `uc 1 WPUC2 1 0 :1:2 
 `uc 1 WPUC3 1 0 :1:3 
@@ -173,10 +181,10 @@
 `uc 1 WPUC7 1 0 :1:7 
 ]
 "4882
-[s S167 . 1 `uc 1 WPUC 1 0 :8:0 
+[s S185 . 1 `uc 1 WPUC 1 0 :8:0 
 ]
-[u S169 . 1 `S158 1 . 1 0 `S167 1 . 1 0 ]
-[v _WPUCbits WPUCbits `VES169  1 e 1 @526 ]
+[u S187 . 1 `S176 1 . 1 0 `S185 1 . 1 0 ]
+[v _WPUCbits WPUCbits `VES187  1 e 1 @526 ]
 "7335
 [v _IOCAP IOCAP `VEuc  1 e 1 @913 ]
 "7405
@@ -187,7 +195,7 @@
 [v _IOCBN IOCBN `VEuc  1 e 1 @917 ]
 "7755
 [v _IOCCP IOCCP `VEuc  1 e 1 @919 ]
-[s S184 . 1 `uc 1 IOCCP0 1 0 :1:0 
+[s S202 . 1 `uc 1 IOCCP0 1 0 :1:0 
 `uc 1 IOCCP1 1 0 :1:1 
 `uc 1 IOCCP2 1 0 :1:2 
 `uc 1 IOCCP3 1 0 :1:3 
@@ -197,13 +205,13 @@
 `uc 1 IOCCP7 1 0 :1:7 
 ]
 "7775
-[s S193 . 1 `uc 1 IOCCP 1 0 :8:0 
+[s S211 . 1 `uc 1 IOCCP 1 0 :8:0 
 ]
-[u S195 . 1 `S184 1 . 1 0 `S193 1 . 1 0 ]
-[v _IOCCPbits IOCCPbits `VES195  1 e 1 @919 ]
+[u S213 . 1 `S202 1 . 1 0 `S211 1 . 1 0 ]
+[v _IOCCPbits IOCCPbits `VES213  1 e 1 @919 ]
 "7825
 [v _IOCCN IOCCN `VEuc  1 e 1 @920 ]
-[s S262 . 1 `uc 1 IOCCF0 1 0 :1:0 
+[s S280 . 1 `uc 1 IOCCF0 1 0 :1:0 
 `uc 1 IOCCF1 1 0 :1:1 
 `uc 1 IOCCF2 1 0 :1:2 
 `uc 1 IOCCF3 1 0 :1:3 
@@ -213,16 +221,19 @@
 `uc 1 IOCCF7 1 0 :1:7 
 ]
 "7915
-[s S271 . 1 `uc 1 IOCCF 1 0 :8:0 
+[s S289 . 1 `uc 1 IOCCF 1 0 :8:0 
 ]
-[u S273 . 1 `S262 1 . 1 0 `S271 1 . 1 0 ]
-[v _IOCCFbits IOCCFbits `VES273  1 e 1 @921 ]
-"195 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+[u S291 . 1 `S280 1 . 1 0 `S289 1 . 1 0 ]
+[v _IOCCFbits IOCCFbits `VES291  1 e 1 @921 ]
+[s S28 . 57 `E5198 1 g_start_read_switch 1 0 `E5198 1 g_start_read_data 1 1 `E5198 1 g_find_recv_start 1 2 `i 1 g_time_h 2 3 `i 1 g_time_m 2 5 `i 1 g_time_s 2 7 `i 1 g_time_10ms 2 9 `i 1 g_high_level_times 2 11 `i 1 g_all_level_times 2 13 `i 1 g_recv_count 2 15 `[20]i 1 g_recv_buf 40 17 ]
+"34 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+[v _g_data g_data `S28  1 e 57 0 ]
+"198
 [v _main main `(v  1 e 1 0 ]
 {
-"203
+"206
 } 0
-"37
+"36
 [v _init_env init_env `(v  1 e 1 0 ]
 {
 "120
@@ -232,25 +243,25 @@
 "158
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"193
+"196
 } 0
-"12 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+"14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
 [v _update_time update_time `(v  1 e 1 0 ]
 {
-"31
+"33
 } 0
-"27 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+"29 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
 {
-"84
+"86
 [v receive_decode@i i `i  1 a 2 4 ]
-"40
+"42
 [v receive_decode@read_value read_value `i  1 a 2 6 ]
-"71
+"73
 [v receive_decode@old_time_m old_time_m `i  1 a 2 2 ]
-"70
+"72
 [v receive_decode@old_time_h old_time_h `i  1 a 2 0 ]
-"88
+"90
 } 0
 "36 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
 [v _update_display update_display `(v  1 e 1 0 ]
@@ -276,9 +287,9 @@
 [v control595_delay@times times `i  1 a 2 1 ]
 "21
 } 0
-"12 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+"14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _times2number times2number `(i  1 e 2 0 ]
 {
 [v times2number@high_level_times high_level_times `i  1 p 2 0 ]
-"26
+"28
 } 0

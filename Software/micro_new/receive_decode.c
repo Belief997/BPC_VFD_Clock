@@ -9,6 +9,8 @@
 #include <xc.h>
 #include "function.h"
 
+extern G_DATA g_data;
+
 int times2number(int high_level_times){
     if(high_level_times >=  TIME_0_1 - BIAS  && high_level_times < TIME_0_1 + BIAS){          //0.1s
         return 0;
@@ -27,62 +29,62 @@ int times2number(int high_level_times){
 void receive_decode(void) {
     // read port get high level times
     if(CME_DATA_PORT == 1){
-        g_high_level_times++;
+        g_data.g_high_level_times++;
     }
     // get times of read
-    g_all_level_times++;
+    g_data.g_all_level_times++;
     
     // find time start
-    if(g_all_level_times < MAX_HIGH_LEVEL_TIMES){
+    if(g_data.g_all_level_times < MAX_HIGH_LEVEL_TIMES){
         return;
     }
     // init for read another high level
-    int read_value = times2number(g_high_level_times);
-    g_all_level_times = 0;
-    g_high_level_times = 0;
+    int read_value = times2number(g_data.g_high_level_times);
+    g_data.g_all_level_times = 0;
+    g_data.g_high_level_times = 0;
     
     if(read_value == 5){
         // start to read data flag
-        g_find_recv_start = TRUE;
-        g_recv_count = 0;
+        g_data.g_find_recv_start = TRUE;
+        g_data.g_recv_count = 0;
         return;
     }else if(read_value == 4){
         return;
     }
     
-    if(g_find_recv_start == FALSE || read_value == 5){
+    if(g_data.g_find_recv_start == FALSE || read_value == 5){
         return;
     }
     
-    g_recv_buf[g_recv_count] = read_value;
-    g_recv_count++;
-    if(g_recv_count < 6){
+    g_data.g_recv_buf[g_data.g_recv_count] = read_value;
+    g_data.g_recv_count++;
+    if(g_data.g_recv_count < 6){
         return;
     }
 
-    if(g_recv_buf[0] != 0 && g_recv_buf[1] != 0){
-        g_find_recv_start == FALSE;
-        g_start_read_data = 0;
-        g_recv_count = 0;
+    if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
+        g_data.g_find_recv_start = FALSE;
+        g_data.g_start_read_data = 0;
+        g_data.g_recv_count = 0;
         return;
     }
     
-    int old_time_h = g_time_h;
-    int old_time_m = g_time_m;
-    g_time_h = g_recv_buf[2] * 4 + g_recv_buf[3];
-    g_time_m = g_recv_buf[4] * 16 + g_recv_buf[5] * 4 + g_recv_buf[6];
+    int old_time_h = g_data.g_time_h;
+    int old_time_m = g_data.g_time_m;
+    g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_buf[3];
+    g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_buf[5] * 4 + g_data.g_recv_buf[6];
     
-    if(old_time_h != g_time_h || old_time_m != g_time_m){
+    if(old_time_h != g_data.g_time_h || old_time_m != g_data.g_time_m){
         update_display();
     }
     
     // recv over then set flag to false
-    g_find_recv_start == FALSE;
-    BPC_ON = FALSE;
-    g_start_read_data = 0;
-    g_recv_count = 0;
+    g_data.g_find_recv_start = FALSE;
+    BPC_ON = BPC_PWR_OFF;
+    g_data.g_start_read_data = 0;
+    g_data.g_recv_count = 0;
     for(int i = 0;i < RECV_BUF_MAX; i++){
-        g_recv_buf[i] = 5;
+        g_data.g_recv_buf[i] = 5;
     }
     return;
 }

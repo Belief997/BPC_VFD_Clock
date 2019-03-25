@@ -8850,23 +8850,47 @@ extern __bank0 __bit __timeout;
 # 9 "receive_decode.c" 2
 
 # 1 "./function.h" 1
-# 59 "./function.h"
-int g_time_h;
-int g_time_m;
-int g_time_s;
-int g_time_u;
+# 41 "./function.h"
+typedef unsigned int u8;
+typedef int s8;
+typedef unsigned short u4;
+typedef short s4;
+
+typedef enum{
+    FALSE = 0,
+    TRUE = 1,
+}BOOL;
+
+enum{
+    BPC_PWR_ON = 0,
+    BPC_PWR_OFF = 1,
 
 
-int g_start_read_switch;
-int g_start_read_data;
-int g_find_recv_start;
+}ENUM;
+# 73 "./function.h"
+typedef struct{
+
+    BOOL g_start_read_switch;
+    BOOL g_start_read_data;
+    BOOL g_find_recv_start;
 
 
-int g_high_level_times;
-int g_all_level_times;
-int g_recv_count;
 
-int g_recv_buf[20];
+
+
+    int g_time_h;
+    int g_time_m;
+    int g_time_s;
+    int g_time_10ms;
+
+
+    int g_high_level_times;
+    int g_all_level_times;
+    int g_recv_count;
+
+    int g_recv_buf[20];
+
+}G_DATA;
 
 
 
@@ -8887,6 +8911,8 @@ void update_display(void);
 # 10 "receive_decode.c" 2
 
 
+extern G_DATA g_data;
+
 int times2number(int high_level_times){
     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
         return 0;
@@ -8905,62 +8931,62 @@ int times2number(int high_level_times){
 void receive_decode(void) {
 
     if(PORTCbits.RC1 == 1){
-        g_high_level_times++;
+        g_data.g_high_level_times++;
     }
 
-    g_all_level_times++;
+    g_data.g_all_level_times++;
 
 
-    if(g_all_level_times < 100){
+    if(g_data.g_all_level_times < 100){
         return;
     }
 
-    int read_value = times2number(g_high_level_times);
-    g_all_level_times = 0;
-    g_high_level_times = 0;
+    int read_value = times2number(g_data.g_high_level_times);
+    g_data.g_all_level_times = 0;
+    g_data.g_high_level_times = 0;
 
     if(read_value == 5){
 
-        g_find_recv_start = 1;
-        g_recv_count = 0;
+        g_data.g_find_recv_start = TRUE;
+        g_data.g_recv_count = 0;
         return;
     }else if(read_value == 4){
         return;
     }
 
-    if(g_find_recv_start == 0 || read_value == 5){
+    if(g_data.g_find_recv_start == FALSE || read_value == 5){
         return;
     }
 
-    g_recv_buf[g_recv_count] = read_value;
-    g_recv_count++;
-    if(g_recv_count < 6){
+    g_data.g_recv_buf[g_data.g_recv_count] = read_value;
+    g_data.g_recv_count++;
+    if(g_data.g_recv_count < 6){
         return;
     }
 
-    if(g_recv_buf[0] != 0 && g_recv_buf[1] != 0){
-        g_find_recv_start == 0;
-        g_start_read_data = 0;
-        g_recv_count = 0;
+    if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
+        g_data.g_find_recv_start = FALSE;
+        g_data.g_start_read_data = 0;
+        g_data.g_recv_count = 0;
         return;
     }
 
-    int old_time_h = g_time_h;
-    int old_time_m = g_time_m;
-    g_time_h = g_recv_buf[2] * 4 + g_recv_buf[3];
-    g_time_m = g_recv_buf[4] * 16 + g_recv_buf[5] * 4 + g_recv_buf[6];
+    int old_time_h = g_data.g_time_h;
+    int old_time_m = g_data.g_time_m;
+    g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_buf[3];
+    g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_buf[5] * 4 + g_data.g_recv_buf[6];
 
-    if(old_time_h != g_time_h || old_time_m != g_time_m){
+    if(old_time_h != g_data.g_time_h || old_time_m != g_data.g_time_m){
         update_display();
     }
 
 
-    g_find_recv_start == 0;
-    PORTCbits.RC2 = 0;
-    g_start_read_data = 0;
-    g_recv_count = 0;
+    g_data.g_find_recv_start = FALSE;
+    PORTCbits.RC2 = BPC_PWR_OFF;
+    g_data.g_start_read_data = 0;
+    g_data.g_recv_count = 0;
     for(int i = 0;i < 20; i++){
-        g_recv_buf[i] = 5;
+        g_data.g_recv_buf[i] = 5;
     }
     return;
 }

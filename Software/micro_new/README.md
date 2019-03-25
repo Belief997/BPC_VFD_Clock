@@ -15,3 +15,5 @@
     - 3: 0.4s 35-45 times
 - read port every 0.01s ?
 - use timer every 0.01s read port
+
+

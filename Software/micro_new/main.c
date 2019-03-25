@@ -31,6 +31,8 @@
 #pragma config LPBOR = OFF      // Low Power Brown-Out Reset Enable Bit (Low power brown-out is disabled)
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
+G_DATA g_data;
+
 void init_env(){
     /**
      * interuption cfg
@@ -47,6 +49,7 @@ void init_env(){
     /**
      * choose clk inside
      */
+// TODO: adjust clk config here
     OSCCONbits.SCS = 0b10;      // set to use inside clock
     OSCCONbits.IRCF = 0b1010;   // set freq for inside clock : 500kHz
     
@@ -100,22 +103,22 @@ void init_env(){
     /**
      * init globe value
      */
-    g_time_h = 0;
-    g_time_m = 0;
-    g_time_s = 0;
-    g_time_u = 0;
+    g_data.g_time_h = 0;
+    g_data.g_time_m = 0;
+    g_data.g_time_s = 0;
+    g_data.g_time_10ms = 0;
 
     // bool value used in receive_decode
-    g_start_read_switch = FALSE;
-    g_start_read_data = FALSE;
-    g_find_recv_start = FALSE;
+    g_data.g_start_read_switch = FALSE;
+    g_data.g_start_read_data = FALSE;
+    g_data.g_find_recv_start = FALSE;
 
     // times value in receive_decode
-    g_high_level_times = 0;
-    g_all_level_times = 0;
-    g_recv_count = 0;
+    g_data.g_high_level_times = 0;
+    g_data.g_all_level_times = 0;
+    g_data.g_recv_count = 0;
     for(int i = 0;i < RECV_BUF_MAX; i++){
-        g_recv_buf[i] = 5;
+        g_data.g_recv_buf[i] = 5;
     }
     
     /**
@@ -124,7 +127,7 @@ void init_env(){
     PIC_OE =  1;
     
     // set BPC
-    BPC_ON = FALSE;
+    BPC_ON = BPC_PWR_ON;
     
     // time chip set
     PIC_INT_TRI = 1;
@@ -154,10 +157,13 @@ void init_env(){
  */
 void __interrupt () ISR(void){
     // start receive flag set
-    if(CME_DATA_IOC_INT == TRUE && g_start_read_data == FALSE && g_start_read_switch == TRUE){
-        g_start_read_data = TRUE;
-        g_start_read_switch = FALSE;
-        BPC_ON = TRUE;
+    if(CME_DATA_IOC_INT == TRUE && \
+       g_data.g_start_read_data == FALSE && \
+       g_data.g_start_read_switch == TRUE){
+        
+        g_data.g_start_read_data = TRUE;
+        g_data.g_start_read_switch = FALSE;
+        BPC_ON = BPC_PWR_ON;
         INTCONbits.IOCIF = FALSE;
         CME_DATA_IOC_INT = FALSE;
         return;
@@ -167,22 +173,22 @@ void __interrupt () ISR(void){
     }
     
     // update received code 
-    if(g_start_read_data == TRUE && INTCONbits.TMR0IF){
+    if(g_data.g_start_read_data == TRUE && INTCONbits.TMR0IF){
         update_time();
         receive_decode();
         INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;
+        TMR0 = TIMER_0_START;  // reset timer_0
         return;
     }
     
-    // update time every time unit:0.01
+    // update time every time unit: 0.01s
     if(INTCONbits.TMR0IF){
         update_time();
         INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;
+        TMR0 = TIMER_0_START;  // reset timer_0
         // read portc7 switch, set g_start_read_switch 
         if(SWITCH_PORT == 1){
-            g_start_read_switch = TRUE;
+            g_data.g_start_read_switch = TRUE;
         }
         return;
     }

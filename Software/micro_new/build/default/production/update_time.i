@@ -8850,23 +8850,47 @@ extern __bank0 __bit __timeout;
 # 9 "update_time.c" 2
 
 # 1 "./function.h" 1
-# 59 "./function.h"
-int g_time_h;
-int g_time_m;
-int g_time_s;
-int g_time_u;
+# 41 "./function.h"
+typedef unsigned int u8;
+typedef int s8;
+typedef unsigned short u4;
+typedef short s4;
+
+typedef enum{
+    FALSE = 0,
+    TRUE = 1,
+}BOOL;
+
+enum{
+    BPC_PWR_ON = 0,
+    BPC_PWR_OFF = 1,
 
 
-int g_start_read_switch;
-int g_start_read_data;
-int g_find_recv_start;
+}ENUM;
+# 73 "./function.h"
+typedef struct{
+
+    BOOL g_start_read_switch;
+    BOOL g_start_read_data;
+    BOOL g_find_recv_start;
 
 
-int g_high_level_times;
-int g_all_level_times;
-int g_recv_count;
 
-int g_recv_buf[20];
+
+
+    int g_time_h;
+    int g_time_m;
+    int g_time_s;
+    int g_time_10ms;
+
+
+    int g_high_level_times;
+    int g_all_level_times;
+    int g_recv_count;
+
+    int g_recv_buf[20];
+
+}G_DATA;
 
 
 
@@ -8887,19 +8911,21 @@ void update_display(void);
 # 10 "update_time.c" 2
 
 
+extern G_DATA g_data;
+
 void update_time(void) {
-    g_time_u++;
-    if(g_time_u == 100){
-        g_time_u = 0;
-        g_time_s++;
-        if(g_time_s == 60){
-            g_time_m++;
-            g_time_s = 0;
-            if(g_time_m == 60){
-                g_time_h++;
-                g_time_m = 0;
-                if(g_time_h == 24){
-                    g_time_h = 0;
+    g_data.g_time_10ms++;
+    if(g_data.g_time_10ms == 100){
+        g_data.g_time_10ms = 0;
+        g_data.g_time_s++;
+        if(g_data.g_time_s == 60){
+            g_data.g_time_m++;
+            g_data.g_time_s = 0;
+            if(g_data.g_time_m == 60){
+                g_data.g_time_h++;
+                g_data.g_time_m = 0;
+                if(g_data.g_time_h == 24){
+                    g_data.g_time_h = 0;
                 }
             }
             update_display();
