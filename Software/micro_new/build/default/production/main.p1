@@ -1373,16 +1373,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "197
 [; ;main.c: 197:     init_env();
 [e ( _init_env ..  ]
-"200
-[; ;main.c: 200:     while(1);
+"201
+[; ;main.c: 201:     while(1);
 [e :U 638 ]
 [e :U 637 ]
 [e $U 638  ]
 [e :U 639 ]
-"202
-[; ;main.c: 202:     return;
-[e $UE 636  ]
 "203
-[; ;main.c: 203: }
+[; ;main.c: 203:     return;
+[e $UE 636  ]
+"204
+[; ;main.c: 204: }
 [e :UE 636 ]
 }

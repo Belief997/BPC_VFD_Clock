@@ -1,8 +1,8 @@
 /*
  * File:   main.c
- * Author: GeniusRabbit
+ * Author: GeniusRabbit , Belief
  *
- * Created on 2019?2?27?, ??5:26
+ * Created on 2019/2/27, 5:26
  */
 
 
@@ -195,7 +195,7 @@ void __interrupt () ISR(void){
 void main(void) {
     // init environment
     init_env();
-    
+
     // in while
     while(1);
     
