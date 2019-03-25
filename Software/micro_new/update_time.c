@@ -1,8 +1,8 @@
 /*
  * File:   update_time.c
- * Author: GeniusRabbit
+ * Author: GeniusRabbit, Belief
  *
- * Created on 2019?2?27?, ??5:28
+ * Created on 2019/2/27, 5:26
  */
 
 
@@ -16,6 +16,7 @@ void update_time(void) {
     if(g_data.g_time_10ms == 100){
         g_data.g_time_10ms = 0;
         g_data.g_time_s++;
+        
         if(g_data.g_time_s == 60){
             g_data.g_time_m++;
             g_data.g_time_s = 0;
@@ -26,8 +27,10 @@ void update_time(void) {
                     g_data.g_time_h = 0;
                 }
             }
+            /* update once display every minute */
             update_display();
         }
+        
     }
     return;
 }

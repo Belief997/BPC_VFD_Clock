@@ -8850,23 +8850,127 @@ extern __bank0 __bit __timeout;
 # 9 "update_display.c" 2
 
 # 1 "./function.h" 1
-# 59 "./function.h"
-int g_time_h;
-int g_time_m;
-int g_time_s;
-int g_time_u;
 
 
-int g_start_read_switch;
-int g_start_read_data;
-int g_find_recv_start;
 
 
-int g_high_level_times;
-int g_all_level_times;
-int g_recv_count;
 
-int g_recv_buf[20];
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef long int32_t;
+# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int32_t intmax_t;
+
+
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef unsigned long uint32_t;
+# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef uint32_t uintmax_t;
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+typedef int32_t int_least32_t;
+
+
+
+
+typedef uint8_t uint_fast8_t;
+
+
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+typedef uint32_t uint_least32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+# 7 "./function.h" 2
+# 44 "./function.h"
+typedef uint8_t u8;
+typedef int8_t s8;
+typedef uint16_t u16;
+typedef int16_t s16;
+
+typedef enum{
+    FALSE = 0,
+    TRUE = 1,
+}BOOL;
+
+enum{
+    BPC_PWR_ON = 0,
+    BPC_PWR_OFF = 1,
+
+    PIN_LOW = 0,
+    PIN_HIGH = 1,
+
+}ENUM;
+# 78 "./function.h"
+typedef struct{
+
+    volatile BOOL g_start_read_switch;
+    volatile BOOL g_start_read_data;
+    volatile BOOL g_find_recv_start;
+
+
+
+
+
+    u8 g_time_h;
+    u8 g_time_m;
+    u8 g_time_s;
+    u8 g_time_10ms;
+
+
+    u16 g_high_level_times;
+    u16 g_all_level_times;
+    u16 g_recv_count;
+
+    int g_recv_buf[20];
+
+}G_DATA;
 
 
 
@@ -8887,38 +8991,48 @@ void update_display(void);
 # 10 "update_display.c" 2
 
 
-unsigned char segmcode[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f, 0x77,0x7C,0x39,0x5E,0x79,0x71};
+
+const u8 segmcode[]={
+    0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f, 0x77,0x7C,0x39,0x5E,0x79,0x71
+
+};
 
 
 static void control595_delay(void){
-   int times = 10;
+   u8 times = 10;
    while(times > 0){
     __nop();
        times--;
    }
 }
-
-void write_char(unsigned char dat){
-    unsigned char i;
+# 37 "update_display.c"
+static void write_byte(u8 data){
+    u8 i;
     for(i = 0; i < 8; i++){
-  PORTBbits.RB5 = (dat & 0x80) >> 7;
-        PORTBbits.RB0 = 0;
+  PORTBbits.RB5 = (data & 0x80) >> 7;
+        PORTBbits.RB0 = PIN_LOW;
   control595_delay();
-        PORTBbits.RB0 = 1;
+        PORTBbits.RB0 = PIN_HIGH;
   control595_delay();
 
-        dat <<= 1;
+        data <<= 1;
     }
 }
 
-void update_display(void) {
-    write_char(0xff);
-    write_char(0x00);
-    write_char(0xf0);
-    write_char(0x0f);
-# 51 "update_display.c"
- PORTBbits.RB1 = 1;
+static void write_once(){
+
+    write_byte(0xff);
+    write_byte(0x00);
+    write_byte(0xf0);
+    write_byte(0x0f);
+
+    PORTBbits.RB1 = PIN_HIGH;
  control595_delay();
-    PORTBbits.RB1 = 0;
+    PORTBbits.RB1 = PIN_LOW;
+}
+
+void update_display(void) {
+# 74 "update_display.c"
+    write_once();
     return;
 }

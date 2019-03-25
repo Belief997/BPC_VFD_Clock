@@ -1,8 +1,8 @@
 /*
  * File:   receive_decode.c
- * Author: GeniusRabbit
+ * Author: GeniusRabbit, Belief
  *
- * Created on 2019?2?27?, ??5:28
+ * Created on 2019/2/27, 5:26
  */
 
 

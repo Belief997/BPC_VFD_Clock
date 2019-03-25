@@ -8,30 +8,37 @@
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 ]
-"34 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+"35 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
 [e E5198 . `uc
 FALSE 0
 TRUE 1
 ]
-"56 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
-[e E4884 . `uc
+"59 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
+[e E4905 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 ]
 "32 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-[e E4880 . `uc
+[e E4901 . `uc
 FALSE 0
 TRUE 1
 ]
-"56 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
-[e E4884 . `uc
+"59 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
+[e E4905 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 ]
 "15 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-[e E4880 . `uc
+[e E4901 . `uc
 FALSE 0
 TRUE 1
+]
+"61 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X/function.h
+[e E4906 . `uc
+BPC_PWR_ON 0
+BPC_PWR_OFF 1
+PIN_LOW 0
+PIN_HIGH 1
 ]
 "10 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -41,21 +48,23 @@ TRUE 1
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"36 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+"37 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
-"158
+"159
 [v _ISR ISR `II(v  1 e 1 0 ]
-"198
+"199
 [v _main main `(v  1 e 1 0 ]
 "14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _times2number times2number `(i  1 e 2 0 ]
 "29
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
-"15 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+"19 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
 [v _control595_delay control595_delay `(v  1 s 1 control595_delay ]
-"23
-[v _write_char write_char `(v  1 e 1 0 ]
-"36
+"37
+[v _write_byte write_byte `(v  1 s 1 write_byte ]
+"50
+[v _write_once write_once `(v  1 s 1 write_once ]
+"62
 [v _update_display update_display `(v  1 e 1 0 ]
 "14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
 [v _update_time update_time `(v  1 e 1 0 ]
@@ -226,29 +235,32 @@ TRUE 1
 [u S291 . 1 `S280 1 . 1 0 `S289 1 . 1 0 ]
 [v _IOCCFbits IOCCFbits `VES291  1 e 1 @921 ]
 [s S28 . 57 `E5198 1 g_start_read_switch 1 0 `E5198 1 g_start_read_data 1 1 `E5198 1 g_find_recv_start 1 2 `i 1 g_time_h 2 3 `i 1 g_time_m 2 5 `i 1 g_time_s 2 7 `i 1 g_time_10ms 2 9 `i 1 g_high_level_times 2 11 `i 1 g_all_level_times 2 13 `i 1 g_recv_count 2 15 `[20]i 1 g_recv_buf 40 17 ]
-"34 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+"35 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+[v _g_data g_data `S28  1 s 57 g_data ]
+[s S28 . 57 `E5198 1 g_start_read_switch 1 0 `E5198 1 g_start_read_data 1 1 `E5198 1 g_find_recv_start 1 2 `i 1 g_time_h 2 3 `i 1 g_time_m 2 5 `i 1 g_time_s 2 7 `i 1 g_time_10ms 2 9 `i 1 g_high_level_times 2 11 `i 1 g_all_level_times 2 13 `i 1 g_recv_count 2 15 `[20]i 1 g_recv_buf 40 17 ]
+"12 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _g_data g_data `S28  1 e 57 0 ]
-"198
+"199 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"206
+"207
 } 0
-"36
+"37
 [v _init_env init_env `(v  1 e 1 0 ]
 {
-"120
+"121
 [v init_env@i i `i  1 a 2 9 ]
-"153
+"154
 } 0
-"158
+"159
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"196
+"197
 } 0
 "14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
 [v _update_time update_time `(v  1 e 1 0 ]
 {
-"33
+"36
 } 0
 "29 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
@@ -263,29 +275,34 @@ TRUE 1
 [v receive_decode@old_time_h old_time_h `i  1 a 2 0 ]
 "90
 } 0
-"36 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+"62 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
 [v _update_display update_display `(v  1 e 1 0 ]
 {
-"55
+"76
 } 0
-"23
-[v _write_char write_char `(v  1 e 1 0 ]
+"50
+[v _write_once write_once `(v  1 s 1 write_once ]
 {
-[v write_char@dat dat `uc  1 a 1 wreg ]
-"24
-[v write_char@i i `uc  1 a 1 6 ]
-"23
-[v write_char@dat dat `uc  1 a 1 wreg ]
-"25
-[v write_char@dat dat `uc  1 a 1 5 ]
-"34
+"60
 } 0
-"15
+"37
+[v _write_byte write_byte `(v  1 s 1 write_byte ]
+{
+[v write_byte@data data `uc  1 a 1 wreg ]
+"38
+[v write_byte@i i `uc  1 a 1 5 ]
+"37
+[v write_byte@data data `uc  1 a 1 wreg ]
+"39
+[v write_byte@data data `uc  1 a 1 4 ]
+"48
+} 0
+"19
 [v _control595_delay control595_delay `(v  1 s 1 control595_delay ]
 {
-"16
-[v control595_delay@times times `i  1 a 2 1 ]
-"21
+"20
+[v control595_delay@times times `uc  1 a 1 1 ]
+"25
 } 0
 "14 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _times2number times2number `(i  1 e 2 0 ]

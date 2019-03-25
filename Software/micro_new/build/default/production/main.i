@@ -9070,7 +9070,8 @@ void update_display(void);
 #pragma config LPBOR = OFF
 #pragma config LVP = ON
 
-G_DATA g_data;
+
+static G_DATA g_data;
 
 void init_env(){
 
@@ -9171,7 +9172,7 @@ void init_env(){
 
     TRISCbits.TRISC0 = 1;
     WPUCbits.WPUC0 = 1;
-# 153 "main.c"
+# 154 "main.c"
 }
 
 

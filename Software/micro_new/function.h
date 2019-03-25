@@ -4,6 +4,9 @@
 #define	XC_HEADER_TEMPLATE_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include "stdint.h"
+
+//#define TEST
 
 /***************  define pin table from here  ******************/
 // cme6005 data port define  BPC_DATA
@@ -38,10 +41,10 @@
 
 /***************  define pin table  end  ******************/
 
-typedef unsigned int u8;
-typedef int s8;
-typedef unsigned short u4;
-typedef short s4;
+typedef uint8_t u8;
+typedef int8_t s8;
+typedef uint16_t u16;
+typedef int16_t s16;
 
 typedef enum{
     FALSE = 0,
@@ -52,6 +55,8 @@ enum{
     BPC_PWR_ON = 0,
     BPC_PWR_OFF = 1,
     
+    PIN_LOW = 0,
+    PIN_HIGH = 1,
     
 }ENUM;
 
@@ -72,23 +77,23 @@ enum{
 
 typedef struct{
    // bool value used in receive_decode
-    BOOL g_start_read_switch; // switch
-    BOOL g_start_read_data;   // start read data
-    BOOL g_find_recv_start; 
+    volatile BOOL g_start_read_switch; // switch
+    volatile BOOL g_start_read_data;   // start read data
+    volatile BOOL g_find_recv_start; 
     
     /**
     * public data here
     */
     // time data
-    int g_time_h;
-    int g_time_m;
-    int g_time_s;
-    int g_time_10ms;
+    u8 g_time_h;
+    u8 g_time_m;
+    u8 g_time_s;
+    u8 g_time_10ms;
 
     // times value in receive_decode
-    int g_high_level_times;
-    int g_all_level_times;
-    int g_recv_count;
+    u16 g_high_level_times;
+    u16 g_all_level_times;
+    u16 g_recv_count;
     // read time buf in receive_code
     int g_recv_buf[RECV_BUF_MAX];
     

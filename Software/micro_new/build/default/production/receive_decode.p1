@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"56 ./function.h
-[; ;./function.h: 56: }ENUM;
-[c E4884 0 1 .. ]
-[n E4884 . BPC_PWR_ON BPC_PWR_OFF  ]
+"59 ./function.h
+[; ;./function.h: 59: }ENUM;
+[c E4905 0 1 .. ]
+[n E4905 . BPC_PWR_ON BPC_PWR_OFF  ]
 "575 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 575:     struct {
 [s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -20,17 +20,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PORTCbits `VS39 ~T0 @X0 0 e@14 ]
 "32 receive_decode.c
 [; ;receive_decode.c: 32:         g_data.g_high_level_times++;
-[c E4880 0 1 .. ]
-[n E4880 . FALSE TRUE  ]
-"73 ./function.h
-[; ;./function.h: 73: typedef struct{
-[s S623 `E4880 1 `E4880 1 `E4880 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i -> 20 `i ]
+[c E4901 0 1 .. ]
+[n E4901 . FALSE TRUE  ]
+"76 ./function.h
+[; ;./function.h: 76: typedef struct{
+[s S623 `E4901 1 `E4901 1 `E4901 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i -> 20 `i ]
 [n S623 . g_start_read_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
 "12 receive_decode.c
 [; ;receive_decode.c: 12: extern G_DATA g_data;
 [v _g_data `S623 ~T0 @X0 0 e ]
-"112 ./function.h
-[; ;./function.h: 112: void update_display(void);
+"115 ./function.h
+[; ;./function.h: 115: void update_display(void);
 [v _update_display `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
@@ -869,9 +869,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"56 ./function.h
-[; ;./function.h: 56: }ENUM;
-[v _ENUM `E4884 ~T0 @X0 1 e ]
+"59 ./function.h
+[; ;./function.h: 59: }ENUM;
+[v _ENUM `E4905 ~T0 @X0 1 e ]
 "14 receive_decode.c
 [; ;receive_decode.c: 14: int times2number(int high_level_times){
 [v _times2number `(i ~T0 @X0 1 ef1`i ]
@@ -1000,7 +1000,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "48
 [; ;receive_decode.c: 48:         g_data.g_find_recv_start = TRUE;
-[e = . _g_data 2 . `E4880 1 ]
+[e = . _g_data 2 . `E4901 1 ]
 "49
 [; ;receive_decode.c: 49:         g_data.g_recv_count = 0;
 [e = . _g_data 9 -> 0 `i ]
@@ -1024,7 +1024,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 639 ]
 "55
 [; ;receive_decode.c: 55:     if(g_data.g_find_recv_start == FALSE || read_value == 5){
-[e $ ! || == -> . _g_data 2 `ui -> . `E4880 0 `ui == _read_value -> 5 `i 641  ]
+[e $ ! || == -> . _g_data 2 `ui -> . `E4901 0 `ui == _read_value -> 5 `i 641  ]
 {
 "56
 [; ;receive_decode.c: 56:         return;
@@ -1056,10 +1056,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "66
 [; ;receive_decode.c: 66:         g_data.g_find_recv_start = FALSE;
-[e = . _g_data 2 . `E4880 0 ]
+[e = . _g_data 2 . `E4901 0 ]
 "67
 [; ;receive_decode.c: 67:         g_data.g_start_read_data = 0;
-[e = . _g_data 1 -> -> 0 `i `E4880 ]
+[e = . _g_data 1 -> -> 0 `i `E4901 ]
 "68
 [; ;receive_decode.c: 68:         g_data.g_recv_count = 0;
 [e = . _g_data 9 -> 0 `i ]
@@ -1097,13 +1097,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 644 ]
 "82
 [; ;receive_decode.c: 82:     g_data.g_find_recv_start = FALSE;
-[e = . _g_data 2 . `E4880 0 ]
+[e = . _g_data 2 . `E4901 0 ]
 "83
 [; ;receive_decode.c: 83:     PORTCbits.RC2 = BPC_PWR_OFF;
-[e = . . _PORTCbits 0 2 -> . `E4884 1 `uc ]
+[e = . . _PORTCbits 0 2 -> . `E4905 1 `uc ]
 "84
 [; ;receive_decode.c: 84:     g_data.g_start_read_data = 0;
-[e = . _g_data 1 -> -> 0 `i `E4880 ]
+[e = . _g_data 1 -> -> 0 `i `E4901 ]
 "85
 [; ;receive_decode.c: 85:     g_data.g_recv_count = 0;
 [e = . _g_data 9 -> 0 `i ]

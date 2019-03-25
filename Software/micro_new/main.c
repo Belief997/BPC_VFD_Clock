@@ -31,7 +31,8 @@
 #pragma config LPBOR = OFF      // Low Power Brown-Out Reset Enable Bit (Low power brown-out is disabled)
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
-G_DATA g_data;
+// global data struct
+static G_DATA g_data;
 
 void init_env(){
     /**
