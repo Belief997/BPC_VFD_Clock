@@ -6,6 +6,8 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 /// some value define
+#define TRUE 1
+#define FALSE 0
 #define RECV_BUF_MAX 20
 
 // calculate + bias
@@ -49,16 +51,6 @@
 #define TIME_0_4 40
 #define BIAS 5
 
-typedef unsigned int u8;
-typedef int s8;
-typedef unsigned short u4;
-typedef short s4;
-
-typedef enum{
-    FALSE = 0,
-    TRUE = 1,
-}BOOL;
-
 
 /**
  * public data here
@@ -70,9 +62,9 @@ int g_time_s;
 int g_time_u;
 
 // bool value used in receive_decode
-BOOL g_start_read_switch; // switch
-BOOL g_start_read_data;   // start read data
-BOOL g_find_recv_start;
+int g_start_read_switch; // switch
+int g_start_read_data;   // start read data
+int g_find_recv_start;
 
 // times value in receive_decode
 int g_high_level_times;

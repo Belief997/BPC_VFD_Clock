@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\dat\en_msgs.txt -cs \
   -h+dist/default/production\microchip_homework.X.production.sym \
   --cmf=dist/default/production\microchip_homework.X.production.cmf -z \
-  -Q16F1786 -oC:\Users\29446\AppData\Local\Temp\soi0.2 \
+  -Q16F1786 -oC:\Users\29446\AppData\Local\Temp\sdb8.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/microchip_homework.X.production.map -E1 \
   -ver=XC8 --acfsm=1493 -ASTACK=02060h-023efh -pstack=STACK \
@@ -33,7 +33,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\29446\AppData\Local\Temp\soi0.o \
+  C:\Users\29446\AppData\Local\Temp\sdb8.o \
   dist/default/production\microchip_homework.X.production.o 
 
 Object code version is 3.11
@@ -43,7 +43,7 @@ Machine type is 16F1786
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\29446\AppData\Local\Temp\soi0.o
+C:\Users\29446\AppData\Local\Temp\sdb8.o
                 end_init                             47       47        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0

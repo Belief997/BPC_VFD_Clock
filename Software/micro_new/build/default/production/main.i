@@ -8988,7 +8988,15 @@ char *tempnam(const char *, const char *);
 # 10 "main.c" 2
 
 # 1 "./function.h" 1
-# 59 "./function.h"
+# 54 "./function.h"
+typedef unsigned int u8;
+typedef unsigned short u4;
+
+
+
+
+
+
 int g_time_h;
 int g_time_m;
 int g_time_s;
@@ -9193,7 +9201,6 @@ void __attribute__((picinterrupt(""))) ISR(void){
 void main(void) {
 
     init_env();
-
 
 
     while(1);

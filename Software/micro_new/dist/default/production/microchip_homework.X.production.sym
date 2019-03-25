@@ -325,7 +325,7 @@ bssBANK0 20 66 BANK0 20 1
 dataBANK1 A0 AF BANK1 A0 1
 %locals
 dist/default/production\microchip_homework.X.production.o
-C:\Users\29446\AppData\Local\Temp\soi0.
+C:\Users\29446\AppData\Local\Temp\sdb8.
 3020 49 0 CODE 0
 3023 49 0 CODE 0
 3083 49 0 CODE 0
@@ -367,7 +367,7 @@ C:\Users\29446\AppData\Local\Temp\soi0.
 main.c
 195 2E0 0 CODE 0
 197 2E0 0 CODE 0
-201 2E3 0 CODE 0
+200 2E3 0 CODE 0
 37 1C4 0 CODE 0
 42 1C4 0 CODE 0
 44 1C5 0 CODE 0

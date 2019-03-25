@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Mon Mar 25 21:11:05 2019
+                                                                                               Mon Mar 25 22:20:55 2019
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1                           	processor	16F1786
@@ -1744,11 +1744,11 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1725                           ; Regs used in _main: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
   1726  02E0  3181  21C4  3182   	fcall	_init_env
   1727  02E3                     l99:	
-  1728                           ;main.c: 201:     while(1);
+  1728                           ;main.c: 200:     while(1);
   1729                           
   1730  02E3  2AE3               	goto	l99
   1731  02E4                     __end_of_main:	
-  1732                           ;main.c: 203:     return;
+  1732                           ;main.c: 202:     return;
   1733                           
   1734                           
   1735                           	psect	text1
@@ -3440,7 +3440,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Mon Mar 25 21:11:05 2019
+Symbol Table                                                                                   Mon Mar 25 22:20:55 2019
 
              ?_receive_decode 0070                   _update_time 0241             _g_find_recv_start 004E  
                  __CFG_CP$OFF 0000                            l80 0239                            l99 02E3  

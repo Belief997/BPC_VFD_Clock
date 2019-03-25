@@ -1,8 +1,8 @@
 /*
  * File:   main.c
- * Author: GeniusRabbit , Belief
+ * Author: GeniusRabbit
  *
- * Created on 2019/2/27, 5:26
+ * Created on 2019?2?27?, ??5:26
  */
 
 
@@ -31,6 +31,9 @@
 #pragma config LPBOR = OFF      // Low Power Brown-Out Reset Enable Bit (Low power brown-out is disabled)
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
+/**
+ * init interrupt ...
+ */
 void init_env(){
     /**
      * interuption cfg
@@ -150,7 +153,7 @@ void init_env(){
 }
     
 /**
- * interrupt ISR
+ * interrupt
  */
 void __interrupt () ISR(void){
     // start receive flag set
@@ -192,7 +195,7 @@ void __interrupt () ISR(void){
 void main(void) {
     // init environment
     init_env();
-
+    
     // in while
     while(1);
     
