@@ -15,7 +15,7 @@ const u8 segmcode[]={
     0x77,0x7C,0x39,0x5E,0x79,0x71
 };//0-f
 
-// TODO: redefine time here 
+// TODO: redefine times here 
 static void control595_delay(void){
    u8 times = 10;  // [1: 0.2346us]
    while(times > 0){
@@ -29,7 +29,6 @@ static void control595_delay(void){
  SERIAL: 
  SHCP:
  STCP:
- 
  
  
  */
@@ -47,12 +46,12 @@ static void write_byte(u8 data){
     }
 }
 
-static void write_once(){
+static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
     
-    write_byte(0xff); //4
-    write_byte(0x00); //3
-    write_byte(0xf0); //2
-    write_byte(0x0f); //1
+    write_byte(HL); //4
+    write_byte(HR); //3
+    write_byte(ML); //2
+    write_byte(MR); //1
     
     PIC_STCP = PIN_HIGH; // RCLK
 	control595_delay();
@@ -63,14 +62,13 @@ void update_display(void) {
     
     /**
      * 4----3----2----1----<<<input signal
-     */
-    //write_char(segmcode[g_time_s % 10]);
-	//write_char(segmcode[g_time_s / 10]);
-	//write_char(segmcode[g_time_m % 10]);
-	//write_char(segmcode[g_time_m / 10]);
-	//write_char(segmcode[g_time_h % 10]);
-	//write_char(segmcode[g_time_h / 10]);
-	
-    write_once();
+    */
+   
+//    write_once(segmcode[g_data.g_time_h / 10], \
+//               segmcode[g_data.g_time_h % 10], \
+//               segmcode[g_data.g_time_m / 10], \
+//               segmcode[g_data.g_time_m % 10]); 
+    
+    write_once(0xff, 0x00, 0xf0, 0x0f); // 4 3 2 1
     return;
 }
