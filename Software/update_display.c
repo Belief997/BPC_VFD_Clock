@@ -23,28 +23,33 @@ static void control595_delay(void){
 void write_char(unsigned char dat){
     unsigned char i;
     for(i = 0; i < 8; i++){
-		PIC_DATA_OUTPUT_PORT = dat & 0x80;
-		SHCP = 1; 
+		PIC_DATA = (dat & 0x80) >> 7;
+        PIC_SHCP = 0; // SRCLK
 		control595_delay();
-		SHCP = 0;
+        PIC_SHCP = 1; // SRCLK
 		control595_delay();
 		
-        dat << 1;    
+        dat <<= 1;    
     }
 }
 
 void update_display(void) {
-	write_char(segmcode[g_time_m % 10]);
-	write_char(segmcode[g_time_m / 10]);
-	write_char(segmcode[g_time_h % 10]);
-	write_char(segmcode[g_time_h / 10]);
+    write_char(0xff); //4
+    write_char(0x00); //3
+    write_char(0xf0); //2
+    write_char(0x0f); //1
+    /**
+     * 4----3----2----1----<<<input signal
+     */
+    //write_char(segmcode[g_time_s % 10]);
+	//write_char(segmcode[g_time_s / 10]);
+	//write_char(segmcode[g_time_m % 10]);
+	//write_char(segmcode[g_time_m / 10]);
+	//write_char(segmcode[g_time_h % 10]);
+	//write_char(segmcode[g_time_h / 10]);
 	
-	STCP = 0;
+	PIC_STCP = 1; // RCLK
 	control595_delay();
-    STCP = 1;
-	control595_delay();
-    OE  = 0;
-    control595_delay();
-    OE = 1;
+    PIC_STCP = 0; // RCLK
     return;
 }

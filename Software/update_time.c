@@ -10,12 +10,7 @@
 #include "function.h"
 
 void update_time(void) {
-    int old_time_m = g_time_m;
-    int old_time_h = g_time_h;
     g_time_u++;
-    if(g_time_u % 50 == 0){
-        SECOND_DISPLAY = !SECOND_DISPLAY;
-    }
     if(g_time_u == 100){
         g_time_u = 0;
         g_time_s++;
@@ -29,10 +24,8 @@ void update_time(void) {
                     g_time_h = 0;
                 }
             }
+            update_display();
         }
-    }
-    if(old_time_m != g_time_m || old_time_h != g_time_h){
-        update_display();
     }
     return;
 }

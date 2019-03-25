@@ -32,86 +32,6 @@
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 /**
- * init environment
- */
-void init_env();
-
-// test
-#ifdef TEST
-void test_decode(){
-    // set LATAbits.LATA2 to high or low per 0.01s
-    if(test_buf_index > 10){
-        CME_DATA_SIGNAL = 0;
-        return;
-    }
-    g_all_time_count++;
-    if(test_buf[test_buf_index] > 0){
-        test_buf[test_buf_index]--;
-        CME_DATA_SIGNAL = 1;
-    }else{
-        CME_DATA_SIGNAL = 0;
-    }
-    if(g_all_time_count < 100){
-        return;
-    }
-    test_buf_index++;
-    g_all_time_count = 0;
-    return;
-}
-#endif
-/**
- * interrupt
- */
-void interrupt ISR(void){
-    // start receive flag set
-    if(CME_DATA_IOC_INT == TRUE && g_start_read_data == FALSE && g_start_read_switch == TRUE){
-        g_start_read_data = TRUE;
-        g_start_read_switch = FALSE;
-        INTCONbits.IOCIF = FALSE;
-        CME_DATA_IOC_INT == FALSE;
-        return;
-    }else if(INTCONbits.IOCIF || CME_DATA_IOC_INT){
-        INTCONbits.IOCIF = FALSE;
-        CME_DATA_IOC_INT == FALSE;
-    }
-    
-    // update received code
-    if(g_start_read_data == TRUE && INTCONbits.TMR0IF){
-        receive_decode();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;
-        
-#ifdef TEST
-        test_decode();
-#endif
-        return;
-    }
-    
-    // update time every time unit:0.01
-    if(INTCONbits.TMR0IF){
-        update_time();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;
-        // find port high level?
-        // read portc7 switch, set g_start_read_switch 
-        if(SWITCH_PORT == 1){
-            g_start_read_switch = TRUE;
-        }
-        return;
-    }
-    return;
-}
-
-void main(void) {
-    // init environment
-    init_env();
-    
-    // in while
-    while(1);
-    
-    return;
-}
-/**
  * init interrupt ...
  */
 void init_env(){
@@ -202,9 +122,18 @@ void init_env(){
     }
     
     /**
-     * init trans value
+     * set trans to display
      */
-    OE =  1;
+    PIC_OE =  1;
+    
+    // set BPC
+    BPC_ON = FALSE;
+    
+    // time chip set
+    PIC_INT_TRI = 1;
+    PIC_INT_WPU = 1;
+    
+    
 #ifdef TEST
     // init for test decode
     g_all_time_count = 0;
@@ -223,4 +152,54 @@ void init_env(){
 #endif
 }
     
+/**
+ * interrupt
+ */
+void __interrupt () ISR(void){
+    // start receive flag set
+    if(CME_DATA_IOC_INT == TRUE && g_start_read_data == FALSE && g_start_read_switch == TRUE){
+        g_start_read_data = TRUE;
+        g_start_read_switch = FALSE;
+        BPC_ON = TRUE;
+        INTCONbits.IOCIF = FALSE;
+        CME_DATA_IOC_INT = FALSE;
+        return;
+    }else if(INTCONbits.IOCIF || CME_DATA_IOC_INT){
+        INTCONbits.IOCIF = FALSE;
+        CME_DATA_IOC_INT = FALSE;
+    }
+    
+    // update received code 
+    if(g_start_read_data == TRUE && INTCONbits.TMR0IF){
+        update_time();
+        receive_decode();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = TIMER_0_START;
+        return;
+    }
+    
+    // update time every time unit:0.01
+    if(INTCONbits.TMR0IF){
+        update_time();
+        INTCONbits.TMR0IF = 0;
+        TMR0 = TIMER_0_START;
+        // read portc7 switch, set g_start_read_switch 
+        if(SWITCH_PORT == 1){
+            g_start_read_switch = TRUE;
+        }
+        return;
+    }
+    return;
+}
+
+void main(void) {
+    // init environment
+    init_env();
+    
+    // in while
+    while(1);
+    
+    return;
+}
+
     
