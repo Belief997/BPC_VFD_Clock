@@ -297,7 +297,7 @@ PIN_HIGH 1
 [v _init_env init_env `(v  1 e 1 0 ]
 {
 "121
-[v init_env@i i `i  1 a 2 14 ]
+[v init_env@i i `i  1 a 2 21 ]
 "154
 } 0
 "156
@@ -317,15 +317,19 @@ PIN_HIGH 1
 "36 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
 {
-"93
-[v receive_decode@i i `i  1 a 2 8 ]
+"112
+[v receive_decode@i_518 i `i  1 a 2 13 ]
+"85
+[v receive_decode@i i `uc  1 a 1 16 ]
+"81
+[v receive_decode@last_time_m last_time_m `us  1 a 2 7 ]
 "80
-[v receive_decode@last_time_m last_time_m `us  1 a 2 6 ]
-"79
-[v receive_decode@last_time_h last_time_h `us  1 a 2 4 ]
+[v receive_decode@last_time_h last_time_h `us  1 a 2 5 ]
+"84
+[v receive_decode@check check `uc  1 a 1 17 ]
 "50
-[v receive_decode@read_value read_value `uc  1 a 1 10 ]
-"97
+[v receive_decode@read_value read_value `uc  1 a 1 15 ]
+"116
 } 0
 "63 E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
 [v _update_display update_display `(v  1 e 1 0 ]

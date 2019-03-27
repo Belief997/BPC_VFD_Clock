@@ -54,7 +54,8 @@ void receive_decode(void) {
     if(read_value == 5){
         // start to read data flag
         g_data.g_find_recv_start = TRUE;
-        g_data.g_recv_count = 0;
+        g_data.g_recv_buf[CODE_P0] = 0;
+        g_data.g_recv_count = CODE_P1;  
         return;
     }
     
@@ -65,11 +66,11 @@ void receive_decode(void) {
     }
     
     g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
-    if(g_data.g_recv_count < 9){
+    if(g_data.g_recv_count <= CODE_P3){
         return;
     }
 
-    if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
+    if(g_data.g_recv_buf[CODE_P1] != 0 && g_data.g_recv_buf[CODE_P2] != 0){
         g_data.g_find_recv_start = FALSE;
         g_data.g_start_read_data = 0;
         g_data.g_recv_count = 0;
@@ -78,8 +79,26 @@ void receive_decode(void) {
     
     u16 last_time_h = g_data.g_time_h;
     u16 last_time_m = g_data.g_time_m;
-    g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_buf[3];
-    g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_buf[5] * 4 + g_data.g_recv_buf[6];
+    g_data.g_time_h = g_data.g_recv_buf[CODE_H_1] * 4 + g_data.g_recv_buf[CODE_H_2];
+    g_data.g_time_m = g_data.g_recv_buf[CODE_M_1] * 16 + g_data.g_recv_buf[CODE_M_2] * 4 + g_data.g_recv_buf[CODE_M_3];
+    u8 check = 0;
+    for(u8 i = CODE_P1; i < CODE_P3; i++)
+    {
+        check ^= g_data.g_recv_buf[i];
+    }
+    if( (((0 == check) || (3 == check))) && (g_data.g_recv_buf[CODE_P3] % 2 == 0) )
+    {
+        g_data.g_time_h += (2 ==g_data.g_recv_buf[CODE_P3])? 12 : 0; 
+    }else if( (((1 == check) || (2 == check))) && \
+            ((g_data.g_recv_buf[CODE_P3]  == 1) || (g_data.g_recv_buf[CODE_P3]  == 3)) )
+    {
+        g_data.g_time_h += (3 ==g_data.g_recv_buf[CODE_P3])? 12 : 0;   
+    }else{
+        g_data.g_find_recv_start = FALSE;
+        g_data.g_start_read_data = 0;
+        g_data.g_recv_count = 0;
+        return;
+    }
     
     if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_time_m){
         update_display();
