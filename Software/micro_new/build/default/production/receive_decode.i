@@ -8928,10 +8928,11 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
 # 7 "./function.h" 2
-# 45 "./function.h"
-typedef int s8;
-typedef unsigned short u4;
-typedef short s4;
+# 44 "./function.h"
+typedef uint8_t u8;
+typedef int8_t s8;
+typedef uint16_t u16;
+typedef int16_t s16;
 
 typedef enum{
     FALSE = 0,
@@ -8942,30 +8943,32 @@ enum{
     BPC_PWR_ON = 0,
     BPC_PWR_OFF = 1,
 
+    PIN_LOW = 0,
+    PIN_HIGH = 1,
 
 }ENUM;
-# 76 "./function.h"
+# 81 "./function.h"
 typedef struct{
 
-    BOOL g_start_read_switch;
-    BOOL g_start_read_data;
-    BOOL g_find_recv_start;
+    volatile BOOL g_flg_switch;
+    volatile BOOL g_start_read_data;
+    volatile BOOL g_find_recv_start;
 
 
 
 
 
-    int g_time_h;
-    int g_time_m;
-    int g_time_s;
-    int g_time_10ms;
+    u8 g_time_h;
+    u8 g_time_m;
+    u8 g_time_s;
+    u8 g_time_10ms;
 
 
-    int g_high_level_times;
-    int g_all_level_times;
-    int g_recv_count;
+    u16 g_high_level_times;
+    u16 g_all_level_times;
+    u16 g_recv_count;
 
-    int g_recv_buf[20];
+    u8 g_recv_buf[20];
 
 }G_DATA;
 
@@ -8990,24 +8993,31 @@ void update_display(void);
 
 extern G_DATA g_data;
 
-int times2number(int high_level_times){
+static u8 times2number(u16 high_level_times){
     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
+
         return 0;
     }else if(high_level_times >= 20 - 5 && high_level_times < 20 + 5){
+
         return 1;
     }else if(high_level_times >= 30 - 5 && high_level_times < 30 + 5){
+
         return 2;
     }else if(high_level_times >= 40 - 5 && high_level_times < 40 + 5){
+
         return 3;
     }else if(high_level_times >= 40 + 5){
+
         return 4;
     }else{
+
         return 5;
     }
 }
+
 void receive_decode(void) {
 
-    if(PORTCbits.RC1 == 1){
+    if(PORTCbits.RC1 == PIN_HIGH){
         g_data.g_high_level_times++;
     }
 
@@ -9018,7 +9028,7 @@ void receive_decode(void) {
         return;
     }
 
-    int read_value = times2number(g_data.g_high_level_times);
+    u8 read_value = times2number(g_data.g_high_level_times);
     g_data.g_all_level_times = 0;
     g_data.g_high_level_times = 0;
 
@@ -9048,18 +9058,18 @@ void receive_decode(void) {
         return;
     }
 
-    int old_time_h = g_data.g_time_h;
-    int old_time_m = g_data.g_time_m;
+    u16 last_time_h = g_data.g_time_h;
+    u16 last_time_m = g_data.g_time_m;
     g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_buf[3];
     g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_buf[5] * 4 + g_data.g_recv_buf[6];
 
-    if(old_time_h != g_data.g_time_h || old_time_m != g_data.g_time_m){
+    if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_time_m){
         update_display();
     }
 
 
     g_data.g_find_recv_start = FALSE;
-    PORTCbits.RC2 = BPC_PWR_OFF;
+    PORTCbits.RC2 = BPC_PWR_ON;
     g_data.g_start_read_data = 0;
     g_data.g_recv_count = 0;
     for(int i = 0;i < 20; i++){

@@ -8988,11 +8988,89 @@ char *tempnam(const char *, const char *);
 # 10 "main.c" 2
 
 # 1 "./function.h" 1
-# 41 "./function.h"
-typedef unsigned int u8;
-typedef int s8;
-typedef unsigned short u4;
-typedef short s4;
+
+
+
+
+
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef long int32_t;
+# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int32_t intmax_t;
+
+
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef unsigned long uint32_t;
+# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef uint32_t uintmax_t;
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+typedef int32_t int_least32_t;
+
+
+
+
+typedef uint8_t uint_fast8_t;
+
+
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+typedef uint32_t uint_least32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+# 7 "./function.h" 2
+# 44 "./function.h"
+typedef uint8_t u8;
+typedef int8_t s8;
+typedef uint16_t u16;
+typedef int16_t s16;
 
 typedef enum{
     FALSE = 0,
@@ -9003,30 +9081,32 @@ enum{
     BPC_PWR_ON = 0,
     BPC_PWR_OFF = 1,
 
+    PIN_LOW = 0,
+    PIN_HIGH = 1,
 
 }ENUM;
-# 73 "./function.h"
+# 81 "./function.h"
 typedef struct{
 
-    BOOL g_start_read_switch;
-    BOOL g_start_read_data;
-    BOOL g_find_recv_start;
+    volatile BOOL g_flg_switch;
+    volatile BOOL g_start_read_data;
+    volatile BOOL g_find_recv_start;
 
 
 
 
 
-    int g_time_h;
-    int g_time_m;
-    int g_time_s;
-    int g_time_10ms;
+    u8 g_time_h;
+    u8 g_time_m;
+    u8 g_time_s;
+    u8 g_time_10ms;
 
 
-    int g_high_level_times;
-    int g_all_level_times;
-    int g_recv_count;
+    u16 g_high_level_times;
+    u16 g_all_level_times;
+    u16 g_recv_count;
 
-    int g_recv_buf[20];
+    u8 g_recv_buf[20];
 
 }G_DATA;
 
@@ -9149,7 +9229,7 @@ void init_env(){
     g_data.g_time_10ms = 0;
 
 
-    g_data.g_start_read_switch = FALSE;
+    g_data.g_flg_switch = FALSE;
     g_data.g_start_read_data = FALSE;
     g_data.g_find_recv_start = FALSE;
 
@@ -9164,7 +9244,7 @@ void init_env(){
 
 
 
-    PORTBbits.RB3 = 1;
+    PORTBbits.RB3 = PIN_HIGH;
 
 
     PORTCbits.RC2 = BPC_PWR_ON;
@@ -9175,18 +9255,21 @@ void init_env(){
 # 154 "main.c"
 }
 
-
-
-
 void __attribute__((picinterrupt(""))) ISR(void){
+    static u8 history_key = 0;
+    static u16 key_time_cnt = 0;
 
-    if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && g_data.g_start_read_switch == TRUE){
+
+
+    if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && g_data.g_flg_switch == TRUE){
+
 
 
 
         g_data.g_start_read_data = TRUE;
-        g_data.g_start_read_switch = FALSE;
+        g_data.g_flg_switch = FALSE;
         PORTCbits.RC2 = BPC_PWR_ON;
+
         INTCONbits.IOCIF = FALSE;
         IOCCFbits.IOCCF1 = FALSE;
         return;
@@ -9196,23 +9279,26 @@ void __attribute__((picinterrupt(""))) ISR(void){
     }
 
 
-    if(g_data.g_start_read_data == TRUE && INTCONbits.TMR0IF){
-        update_time();
-        receive_decode();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = (217 + 14);
-        return;
-    }
-
-
     if(INTCONbits.TMR0IF){
         update_time();
+
+        if(g_data.g_start_read_data == TRUE ){
+            receive_decode();
+        }
+
+
+        if(key_time_cnt++ % 10 == 0)
+        {
+            history_key <<= 1;
+            history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+            if((0x03) == (history_key & (0x0f)) )
+            {
+                g_data.g_flg_switch = TRUE;
+            }
+        }
+
         INTCONbits.TMR0IF = 0;
         TMR0 = (217 + 14);
-
-        if(PORTCbits.RC5 == 1){
-            g_data.g_start_read_switch = TRUE;
-        }
         return;
     }
     return;
@@ -9222,8 +9308,6 @@ void main(void) {
 
     init_env();
 
-
     while(1);
-
     return;
 }

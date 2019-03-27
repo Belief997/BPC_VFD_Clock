@@ -8947,10 +8947,10 @@ enum{
     PIN_HIGH = 1,
 
 }ENUM;
-# 78 "./function.h"
+# 81 "./function.h"
 typedef struct{
 
-    volatile BOOL g_start_read_switch;
+    volatile BOOL g_flg_switch;
     volatile BOOL g_start_read_data;
     volatile BOOL g_find_recv_start;
 
@@ -8968,7 +8968,7 @@ typedef struct{
     u16 g_all_level_times;
     u16 g_recv_count;
 
-    int g_recv_buf[20];
+    u8 g_recv_buf[20];
 
 }G_DATA;
 
@@ -8991,6 +8991,8 @@ void update_display(void);
 # 10 "update_display.c" 2
 
 
+extern G_DATA g_data;
+
 
 const u8 segmcode[]={
     0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f, 0x77,0x7C,0x39,0x5E,0x79,0x71
@@ -9005,7 +9007,7 @@ static void control595_delay(void){
        times--;
    }
 }
-# 37 "update_display.c"
+# 38 "update_display.c"
 static void write_byte(u8 data){
     u8 i;
     for(i = 0; i < 8; i++){
@@ -9019,12 +9021,12 @@ static void write_byte(u8 data){
     }
 }
 
-static void write_once(){
+static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
 
-    write_byte(0xff);
-    write_byte(0x00);
-    write_byte(0xf0);
-    write_byte(0x0f);
+    write_byte(HL);
+    write_byte(HR);
+    write_byte(ML);
+    write_byte(MR);
 
     PORTBbits.RB1 = PIN_HIGH;
  control595_delay();
@@ -9033,6 +9035,6 @@ static void write_once(){
 
 void update_display(void) {
 # 74 "update_display.c"
-    write_once();
+    write_once(0xff, 0x00, 0xf0, 0x0f);
     return;
 }

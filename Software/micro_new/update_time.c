@@ -12,7 +12,6 @@
 extern G_DATA g_data;
 
 void update_time(void) {
-    
     g_data.g_time_10ms++;
     if(g_data.g_time_10ms == 100){ // 1s
         

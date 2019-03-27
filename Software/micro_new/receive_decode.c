@@ -87,7 +87,7 @@ void receive_decode(void) {
     
     // recv over then set flag to false
     g_data.g_find_recv_start = FALSE;
-    BPC_ON = BPC_PWR_OFF;
+    BPC_ON = BPC_PWR_ON;
     g_data.g_start_read_data = 0;
     g_data.g_recv_count = 0;
     for(int i = 0;i < RECV_BUF_MAX; i++){

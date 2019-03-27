@@ -31,13 +31,13 @@
 // define light controll
 #define Light_on PORTAbits.RA0
 
-// define time chip
+// define RTC chip port
 #define PIC_INT PORTCbits.RC0
 #define PIC_INT_TRI TRISCbits.TRISC0
 #define PIC_INT_WPU WPUCbits.WPUC0
 #define PIC_SCL PORTCbits.RC3
 #define PIC_SDA PORTCbits.RC4
-#define CLKOUT PORTAbits.RA7
+#define CLKOUT PORTAbits.RA7        // EXTERN CLK IN
 
 /***************  define pin table  end  ******************/
 
@@ -60,24 +60,27 @@ enum{
     
 }ENUM;
 
+/* KEY HANDLE */
+#define KEY_CHECK_BITS (0x0f) 
+#define KEY_PRESS      (0x03)
 
 
 /// some value define
 #define RECV_BUF_MAX 20
 
 // calculate + bias
-#define TIMER_0_START (217 + 14)
-// decode time 
-#define MAX_HIGH_LEVEL_TIMES 100
-#define TIME_0_1 10
-#define TIME_0_2 20
-#define TIME_0_3 30
-#define TIME_0_4 40
-#define BIAS 5
+#define TIMER_0_RST (217 + 14)
+// decode time : code pulse time
+#define MAX_HIGH_LEVEL_TIMES 100  // 1s
+#define TIME_0_1 10    // 100ms
+#define TIME_0_2 20    // 200ms
+#define TIME_0_3 30    // 300ms
+#define TIME_0_4 40    // 400ms
+#define BIAS 5         // 50ms
 
 typedef struct{
    // bool value used in receive_decode
-    volatile BOOL g_start_read_switch; // switch
+    volatile BOOL g_flg_switch;        // switch
     volatile BOOL g_start_read_data;   // start read data
     volatile BOOL g_find_recv_start; 
     
@@ -95,7 +98,7 @@ typedef struct{
     u16 g_all_level_times;
     u16 g_recv_count;
     // read time buf in receive_code
-    int g_recv_buf[RECV_BUF_MAX];
+    u8 g_recv_buf[RECV_BUF_MAX];
     
 }G_DATA;
 

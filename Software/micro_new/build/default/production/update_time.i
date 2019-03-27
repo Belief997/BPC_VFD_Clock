@@ -8928,10 +8928,11 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
 # 7 "./function.h" 2
-# 45 "./function.h"
-typedef int s8;
-typedef unsigned short u4;
-typedef short s4;
+# 44 "./function.h"
+typedef uint8_t u8;
+typedef int8_t s8;
+typedef uint16_t u16;
+typedef int16_t s16;
 
 typedef enum{
     FALSE = 0,
@@ -8942,30 +8943,32 @@ enum{
     BPC_PWR_ON = 0,
     BPC_PWR_OFF = 1,
 
+    PIN_LOW = 0,
+    PIN_HIGH = 1,
 
 }ENUM;
-# 76 "./function.h"
+# 81 "./function.h"
 typedef struct{
 
-    BOOL g_start_read_switch;
-    BOOL g_start_read_data;
-    BOOL g_find_recv_start;
+    volatile BOOL g_flg_switch;
+    volatile BOOL g_start_read_data;
+    volatile BOOL g_find_recv_start;
 
 
 
 
 
-    int g_time_h;
-    int g_time_m;
-    int g_time_s;
-    int g_time_10ms;
+    u8 g_time_h;
+    u8 g_time_m;
+    u8 g_time_s;
+    u8 g_time_10ms;
 
 
-    int g_high_level_times;
-    int g_all_level_times;
-    int g_recv_count;
+    u16 g_high_level_times;
+    u16 g_all_level_times;
+    u16 g_recv_count;
 
-    int g_recv_buf[20];
+    u8 g_recv_buf[20];
 
 }G_DATA;
 
@@ -8993,15 +8996,18 @@ extern G_DATA g_data;
 void update_time(void) {
     g_data.g_time_10ms++;
     if(g_data.g_time_10ms == 100){
+
         g_data.g_time_10ms = 0;
         g_data.g_time_s++;
 
         if(g_data.g_time_s == 60){
             g_data.g_time_m++;
             g_data.g_time_s = 0;
+
             if(g_data.g_time_m == 60){
                 g_data.g_time_h++;
                 g_data.g_time_m = 0;
+
                 if(g_data.g_time_h == 24){
                     g_data.g_time_h = 0;
                 }

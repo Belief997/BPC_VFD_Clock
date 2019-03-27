@@ -1,16 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"56 ./function.h
-[; ;./function.h: 56: }ENUM;
-[c E5202 0 1 .. ]
-[n E5202 . BPC_PWR_ON BPC_PWR_OFF  ]
+"61 ./function.h
+[; ;./function.h: 61: }ENUM;
+[c E5224 0 1 0 1 .. ]
+[n E5224 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH  ]
 "35 main.c
 [; ;main.c: 35: 
-[c E5198 0 1 .. ]
-[n E5198 . FALSE TRUE  ]
-"73 ./function.h
-[; ;./function.h: 73: typedef struct{
-[s S625 `E5198 1 `E5198 1 `E5198 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i -> 20 `i ]
-[n S625 . g_start_read_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
+[c E5220 0 1 .. ]
+[n E5220 . FALSE TRUE  ]
+"81 ./function.h
+[; ;./function.h: 81: typedef struct{
+[s S625 `VE5220 1 `VE5220 1 `VE5220 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i ]
+[n S625 . g_flg_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
 "357 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 357:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -196,11 +196,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7915
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 7915: extern volatile IOCCFbits_t IOCCFbits __attribute__((address(0x399)));
 [v _IOCCFbits `VS381 ~T0 @X0 0 e@921 ]
-"106 ./function.h
-[; ;./function.h: 106: void update_time(void);
+"114 ./function.h
+[; ;./function.h: 114: void update_time(void);
 [v _update_time `(v ~T0 @X0 0 ef ]
-"101
-[; ;./function.h: 101: void receive_decode(void);
+"109
+[; ;./function.h: 109: void receive_decode(void);
 [v _receive_decode `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
@@ -1040,9 +1040,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"56 ./function.h
-[; ;./function.h: 56: }ENUM;
-[v _ENUM `E5202 ~T0 @X0 1 e ]
+"61 ./function.h
+[; ;./function.h: 61: }ENUM;
+[v _ENUM `E5224 ~T0 @X0 1 e ]
 "14 main.c
 [; ;main.c: 14:     INTCONbits.TMR0IE = 0b1;
 [p x FOSC = HS ]
@@ -1143,7 +1143,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 78: 
 [e = _WPUA -> -> 0 `i `uc ]
 "79
-[; ;main.c: 79:     g_data.g_start_read_switch = FALSE;
+[; ;main.c: 79:     g_data.g_flg_switch = FALSE;
 [e = _IOCAP -> -> 0 `i `uc ]
 "80
 [; ;main.c: 80:     g_data.g_start_read_data = FALSE;
@@ -1193,25 +1193,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "102
 [e = . . _IOCCPbits 0 1 -> -> 1 `i `uc ]
 "107
-[e = . _g_data 3 -> 0 `i ]
+[e = . _g_data 3 -> -> 0 `i `uc ]
 "108
-[e = . _g_data 4 -> 0 `i ]
+[e = . _g_data 4 -> -> 0 `i `uc ]
 "109
-[e = . _g_data 5 -> 0 `i ]
+[e = . _g_data 5 -> -> 0 `i `uc ]
 "110
-[e = . _g_data 6 -> 0 `i ]
+[e = . _g_data 6 -> -> 0 `i `uc ]
 "113
-[e = . _g_data 0 . `E5198 0 ]
+[e = . _g_data 0 . `E5220 0 ]
 "114
-[e = . _g_data 1 . `E5198 0 ]
+[e = . _g_data 1 . `E5220 0 ]
 "115
-[e = . _g_data 2 . `E5198 0 ]
+[e = . _g_data 2 . `E5220 0 ]
 "118
-[e = . _g_data 7 -> 0 `i ]
+[e = . _g_data 7 -> -> 0 `i `us ]
 "119
-[e = . _g_data 8 -> 0 `i ]
+[e = . _g_data 8 -> -> 0 `i `us ]
 "120
-[e = . _g_data 9 -> 0 `i ]
+[e = . _g_data 9 -> -> 0 `i `us ]
 "121
 {
 [v _i `i ~T0 @X0 1 a ]
@@ -1221,7 +1221,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 627 ]
 {
 "122
-[e = *U + &U . _g_data 10 * -> -> _i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> 5 `i ]
+[e = *U + &U . _g_data 10 * -> -> _i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> -> 5 `i `uc ]
 "123
 }
 [e ++ _i -> 1 `i ]
@@ -1229,9 +1229,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 628 ]
 }
 "128
-[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 3 -> . `E5224 3 `uc ]
 "131
-[e = . . _PORTCbits 0 2 -> . `E5202 0 `uc ]
+[e = . . _PORTCbits 0 2 -> . `E5224 0 `uc ]
 "134
 [e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
 "135
@@ -1241,135 +1241,153 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 626 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"159
-[; ;main.c: 159: void __attribute__((picinterrupt(""))) ISR(void){
+"156
+[; ;main.c: 156: void __attribute__((picinterrupt(""))) ISR(void){
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"161
-[; ;main.c: 161:     if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && g_data.g_start_read_switch == TRUE){
-[e $ ! && && == -> . . _IOCCFbits 0 1 `i -> . `E5198 1 `i == -> . _g_data 1 `ui -> . `E5198 0 `ui == -> . _g_data 0 `ui -> . `E5198 1 `ui 631  ]
-"163
-[; ;main.c: 163: 
+"157
+[; ;main.c: 157:     static u8 history_key = 0;
+[v F5250 `uc ~T0 @X0 1 s history_key ]
+[i F5250
+-> -> 0 `i `uc
+]
+"158
+[; ;main.c: 158:     static u16 key_time_cnt = 0;
+[v F5251 `us ~T0 @X0 1 s key_time_cnt ]
+[i F5251
+-> -> 0 `i `us
+]
+"162
+[; ;main.c: 162:     if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && g_data.g_flg_switch == TRUE){
+[e $ ! && && == -> . . _IOCCFbits 0 1 `i -> . `E5220 1 `i == -> . _g_data 1 `ui -> . `E5220 0 `ui == -> . _g_data 0 `ui -> . `E5220 1 `ui 631  ]
+"164
+[; ;main.c: 164: 
 {
-"165
-[; ;main.c: 165:         g_data.g_start_read_data = TRUE;
-[e = . _g_data 1 . `E5198 1 ]
-"166
-[; ;main.c: 166:         g_data.g_start_read_switch = FALSE;
-[e = . _g_data 0 . `E5198 0 ]
 "167
-[; ;main.c: 167:         PORTCbits.RC2 = BPC_PWR_ON;
-[e = . . _PORTCbits 0 2 -> . `E5202 0 `uc ]
+[; ;main.c: 167:         g_data.g_start_read_data = TRUE;
+[e = . _g_data 1 . `E5220 1 ]
 "168
-[; ;main.c: 168:         INTCONbits.IOCIF = FALSE;
-[e = . . _INTCONbits 0 0 -> . `E5198 0 `uc ]
+[; ;main.c: 168:         g_data.g_flg_switch = FALSE;
+[e = . _g_data 0 . `E5220 0 ]
 "169
-[; ;main.c: 169:         IOCCFbits.IOCCF1 = FALSE;
-[e = . . _IOCCFbits 0 1 -> . `E5198 0 `uc ]
-"170
-[; ;main.c: 170:         return;
-[e $UE 630  ]
+[; ;main.c: 169:         PORTCbits.RC2 = BPC_PWR_ON;
+[e = . . _PORTCbits 0 2 -> . `E5224 0 `uc ]
 "171
-[; ;main.c: 171:     }else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1){
+[; ;main.c: 171:         INTCONbits.IOCIF = FALSE;
+[e = . . _INTCONbits 0 0 -> . `E5220 0 `uc ]
+"172
+[; ;main.c: 172:         IOCCFbits.IOCCF1 = FALSE;
+[e = . . _IOCCFbits 0 1 -> . `E5220 0 `uc ]
+"173
+[; ;main.c: 173:         return;
+[e $UE 630  ]
+"174
+[; ;main.c: 174:     }else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1){
 }
 [e $U 632  ]
 [e :U 631 ]
 [e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 633  ]
 {
-"172
-[; ;main.c: 172:         INTCONbits.IOCIF = FALSE;
-[e = . . _INTCONbits 0 0 -> . `E5198 0 `uc ]
-"173
-[; ;main.c: 173:         IOCCFbits.IOCCF1 = FALSE;
-[e = . . _IOCCFbits 0 1 -> . `E5198 0 `uc ]
-"174
-[; ;main.c: 174:     }
+"175
+[; ;main.c: 175:         INTCONbits.IOCIF = FALSE;
+[e = . . _INTCONbits 0 0 -> . `E5220 0 `uc ]
+"176
+[; ;main.c: 176:         IOCCFbits.IOCCF1 = FALSE;
+[e = . . _IOCCFbits 0 1 -> . `E5220 0 `uc ]
+"177
+[; ;main.c: 177:     }
 }
 [e :U 633 ]
 [e :U 632 ]
-"177
-[; ;main.c: 177:     if(g_data.g_start_read_data == TRUE && INTCONbits.TMR0IF){
-[e $ ! && == -> . _g_data 1 `ui -> . `E5198 1 `ui != -> . . _INTCONbits 0 2 `i -> 0 `i 634  ]
-{
-"178
-[; ;main.c: 178:         update_time();
-[e ( _update_time ..  ]
-"179
-[; ;main.c: 179:         receive_decode();
-[e ( _receive_decode ..  ]
 "180
-[; ;main.c: 180:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 180:     if(INTCONbits.TMR0IF){
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 634  ]
+{
 "181
-[; ;main.c: 181:         TMR0 = (217 + 14);
-[e = _TMR0 -> + -> 217 `i -> 14 `i `uc ]
-"182
-[; ;main.c: 182:         return;
-[e $UE 630  ]
-"183
-[; ;main.c: 183:     }
-}
-[e :U 634 ]
-"186
-[; ;main.c: 186:     if(INTCONbits.TMR0IF){
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 635  ]
-{
-"187
-[; ;main.c: 187:         update_time();
+[; ;main.c: 181:         update_time();
 [e ( _update_time ..  ]
-"188
-[; ;main.c: 188:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"189
-[; ;main.c: 189:         TMR0 = (217 + 14);
-[e = _TMR0 -> + -> 217 `i -> 14 `i `uc ]
-"191
-[; ;main.c: 191:         if(PORTCbits.RC5 == 1){
-[e $ ! == -> . . _PORTCbits 0 5 `i -> 1 `i 636  ]
+"183
+[; ;main.c: 183:         if(g_data.g_start_read_data == TRUE ){
+[e $ ! == -> . _g_data 1 `ui -> . `E5220 1 `ui 635  ]
 {
-"192
-[; ;main.c: 192:             g_data.g_start_read_switch = TRUE;
-[e = . _g_data 0 . `E5198 1 ]
-"193
-[; ;main.c: 193:         }
-}
-[e :U 636 ]
-"194
-[; ;main.c: 194:         return;
-[e $UE 630  ]
-"195
-[; ;main.c: 195:     }
+"184
+[; ;main.c: 184:             receive_decode();
+[e ( _receive_decode ..  ]
+"185
+[; ;main.c: 185:         }
 }
 [e :U 635 ]
+"188
+[; ;main.c: 188:         if(key_time_cnt++ % 10 == 0)
+[e $ ! == % -> ++ F5251 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 636  ]
+"189
+[; ;main.c: 189:         {
+{
+"190
+[; ;main.c: 190:             history_key <<= 1;
+[e =<< F5250 -> -> 1 `i `uc ]
+"191
+[; ;main.c: 191:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+[e =| F5250 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5224 3 `i : -> 1 `i -> 0 `i `uc ]
+"192
+[; ;main.c: 192:             if((0x03) == (history_key & (0x0f)) )
+[e $ ! == -> 3 `i & -> F5250 `i -> 15 `i 637  ]
+"193
+[; ;main.c: 193:             {
+{
+"194
+[; ;main.c: 194:                 g_data.g_flg_switch = TRUE;
+[e = . _g_data 0 . `E5220 1 ]
+"195
+[; ;main.c: 195:             }
+}
+[e :U 637 ]
 "196
-[; ;main.c: 196:     return;
+[; ;main.c: 196:         }
+}
+[e :U 636 ]
+"198
+[; ;main.c: 198:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"199
+[; ;main.c: 199:         TMR0 = (217 + 14);
+[e = _TMR0 -> + -> 217 `i -> 14 `i `uc ]
+"200
+[; ;main.c: 200:         return;
 [e $UE 630  ]
-"197
-[; ;main.c: 197: }
+"201
+[; ;main.c: 201:     }
+}
+[e :U 634 ]
+"202
+[; ;main.c: 202:     return;
+[e $UE 630  ]
+"203
+[; ;main.c: 203: }
 [e :UE 630 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"199
-[; ;main.c: 199: void main(void) {
+"205
+[; ;main.c: 205: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"201
-[; ;main.c: 201:     init_env();
-[e ( _init_env ..  ]
-"204
-[; ;main.c: 204:     while(1);
-[e :U 639 ]
-[e :U 638 ]
-[e $U 639  ]
-[e :U 640 ]
-"206
-[; ;main.c: 206:     return;
-[e $UE 637  ]
 "207
-[; ;main.c: 207: }
-[e :UE 637 ]
+[; ;main.c: 207:     init_env();
+[e ( _init_env ..  ]
+"209
+[; ;main.c: 209:     while(1);
+[e :U 640 ]
+[e :U 639 ]
+[e $U 640  ]
+[e :U 641 ]
+"210
+[; ;main.c: 210:     return;
+[e $UE 638  ]
+"211
+[; ;main.c: 211: }
+[e :UE 638 ]
 }

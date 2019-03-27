@@ -63,7 +63,7 @@ void init_env(){
     OPTION_REGbits.PSA = 0; 
     OPTION_REGbits.TMR0CS = 0; // Focs / 4
     OPTION_REGbits.PS = 4;     // divide <2:0> :32:0b100 = 4
-    TMR0 = TIMER_0_START;
+    TMR0 = TIMER_0_RST;
     
     /**
      *  port use
@@ -109,12 +109,12 @@ void init_env(){
     g_data.g_time_s = 0;
     g_data.g_time_10ms = 0;
 
-    // bool value used in receive_decode
-    g_data.g_start_read_switch = FALSE;
+    // bool value FLAG used in receive_decode
+    g_data.g_flg_switch = FALSE;
     g_data.g_start_read_data = FALSE;
     g_data.g_find_recv_start = FALSE;
 
-    // times value in receive_decode
+    // times cnt in receive_decode
     g_data.g_high_level_times = 0;
     g_data.g_all_level_times = 0;
     g_data.g_recv_count = 0;
@@ -125,12 +125,12 @@ void init_env(){
     /**
      * set trans to display
      */
-    PIC_OE =  1;
+    PIC_OE =  PIN_HIGH;
     
-    // set BPC
+    // lunch BPC reciever
     BPC_ON = BPC_PWR_ON;
     
-    // time chip set
+    // RTC chip set
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
     
@@ -153,18 +153,21 @@ void init_env(){
 #endif
 }
     
-/**
- * interrupt ISR
- */
 void __interrupt () ISR(void){
+    static u8 history_key = 0;
+    static u16 key_time_cnt = 0;
+    
+    /* when we recive a long low level voltage, we get P0 */
     // start receive flag set
     if(CME_DATA_IOC_INT == TRUE && \
        g_data.g_start_read_data == FALSE && \
-       g_data.g_start_read_switch == TRUE){
+       g_data.g_flg_switch == TRUE){
         
+        // accept key press & set time check flg
         g_data.g_start_read_data = TRUE;
-        g_data.g_start_read_switch = FALSE;
+        g_data.g_flg_switch = FALSE;    
         BPC_ON = BPC_PWR_ON;
+        
         INTCONbits.IOCIF = FALSE;
         CME_DATA_IOC_INT = FALSE;
         return;
@@ -173,36 +176,37 @@ void __interrupt () ISR(void){
         CME_DATA_IOC_INT = FALSE;
     }
     
-    // update received code 
-    if(g_data.g_start_read_data == TRUE && INTCONbits.TMR0IF){
-        update_time();
-        receive_decode();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;  // reset timer_0
-        return;
-    }
-    
-    // update time every time unit: 0.01s
+    // update time every time unit: 10 MS
     if(INTCONbits.TMR0IF){
         update_time();
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_START;  // reset timer_0
-        // read portc7 switch, set g_start_read_switch 
-        if(SWITCH_PORT == 1){
-            g_data.g_start_read_switch = TRUE;
+        // start receive & decode
+        if(g_data.g_start_read_data == TRUE ){
+            receive_decode();
         }
+
+        /* handle key event here */
+        if(key_time_cnt++ % 10 == 0) // look up key every 100ms
+        {
+            history_key <<= 1;
+            history_key |= (SWITCH_PORT == PIN_HIGH)? 0x01 : 0x00;
+            if(KEY_PRESS == (history_key & KEY_CHECK_BITS) )
+            {
+                g_data.g_flg_switch = TRUE;  // SET KEY PRESS FLG
+            }
+        }
+        /* reset timer_0 */
+        INTCONbits.TMR0IF = 0;
+        TMR0 = TIMER_0_RST;  
         return;
     }
     return;
 }
 
 void main(void) {
-    // init environment
+    // init config
     init_env();
 
-    // in while
-    while(1);
-    
+    while(1);    
     return;
 }
 

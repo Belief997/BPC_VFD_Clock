@@ -1,21 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"59 ./function.h
-[; ;./function.h: 59: }ENUM;
-[c E4905 0 1 .. ]
-[n E4905 . BPC_PWR_ON BPC_PWR_OFF  ]
+"61 ./function.h
+[; ;./function.h: 61: }ENUM;
+[c E4906 0 1 0 1 .. ]
+[n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH  ]
 "15 update_time.c
 [; ;update_time.c: 15:     g_data.g_time_10ms++;
-[c E4901 0 1 .. ]
-[n E4901 . FALSE TRUE  ]
-"76 ./function.h
-[; ;./function.h: 76: typedef struct{
-[s S623 `E4901 1 `E4901 1 `E4901 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i 1 `i -> 20 `i ]
-[n S623 . g_start_read_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
+[c E4902 0 1 .. ]
+[n E4902 . FALSE TRUE  ]
+"81 ./function.h
+[; ;./function.h: 81: typedef struct{
+[s S623 `VE4902 1 `VE4902 1 `VE4902 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i ]
+[n S623 . g_flg_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
 "12 update_time.c
 [; ;update_time.c: 12: extern G_DATA g_data;
 [v _g_data `S623 ~T0 @X0 0 e ]
-"115 ./function.h
-[; ;./function.h: 115: void update_display(void);
+"120 ./function.h
+[; ;./function.h: 120: void update_display(void);
 [v _update_display `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
@@ -854,9 +854,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"59 ./function.h
-[; ;./function.h: 59: }ENUM;
-[v _ENUM `E4905 ~T0 @X0 1 e ]
+"61 ./function.h
+[; ;./function.h: 61: }ENUM;
+[v _ENUM `E4906 ~T0 @X0 1 e ]
 "14 update_time.c
 [; ;update_time.c: 14: void update_time(void) {
 [v _update_time `(v ~T0 @X0 1 ef ]
@@ -865,67 +865,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "15
 [; ;update_time.c: 15:     g_data.g_time_10ms++;
-[e ++ . _g_data 6 -> 1 `i ]
+[e ++ . _g_data 6 -> -> 1 `i `uc ]
 "16
 [; ;update_time.c: 16:     if(g_data.g_time_10ms == 100){
-[e $ ! == . _g_data 6 -> 100 `i 625  ]
+[e $ ! == -> . _g_data 6 `i -> 100 `i 625  ]
 {
-"17
-[; ;update_time.c: 17:         g_data.g_time_10ms = 0;
-[e = . _g_data 6 -> 0 `i ]
 "18
-[; ;update_time.c: 18:         g_data.g_time_s++;
-[e ++ . _g_data 5 -> 1 `i ]
-"20
-[; ;update_time.c: 20:         if(g_data.g_time_s == 60){
-[e $ ! == . _g_data 5 -> 60 `i 626  ]
-{
+[; ;update_time.c: 18:         g_data.g_time_10ms = 0;
+[e = . _g_data 6 -> -> 0 `i `uc ]
+"19
+[; ;update_time.c: 19:         g_data.g_time_s++;
+[e ++ . _g_data 5 -> -> 1 `i `uc ]
 "21
-[; ;update_time.c: 21:             g_data.g_time_m++;
-[e ++ . _g_data 4 -> 1 `i ]
+[; ;update_time.c: 21:         if(g_data.g_time_s == 60){
+[e $ ! == -> . _g_data 5 `i -> 60 `i 626  ]
+{
 "22
-[; ;update_time.c: 22:             g_data.g_time_s = 0;
-[e = . _g_data 5 -> 0 `i ]
+[; ;update_time.c: 22:             g_data.g_time_m++;
+[e ++ . _g_data 4 -> -> 1 `i `uc ]
 "23
-[; ;update_time.c: 23:             if(g_data.g_time_m == 60){
-[e $ ! == . _g_data 4 -> 60 `i 627  ]
-{
-"24
-[; ;update_time.c: 24:                 g_data.g_time_h++;
-[e ++ . _g_data 3 -> 1 `i ]
+[; ;update_time.c: 23:             g_data.g_time_s = 0;
+[e = . _g_data 5 -> -> 0 `i `uc ]
 "25
-[; ;update_time.c: 25:                 g_data.g_time_m = 0;
-[e = . _g_data 4 -> 0 `i ]
-"26
-[; ;update_time.c: 26:                 if(g_data.g_time_h == 24){
-[e $ ! == . _g_data 3 -> 24 `i 628  ]
+[; ;update_time.c: 25:             if(g_data.g_time_m == 60){
+[e $ ! == -> . _g_data 4 `i -> 60 `i 627  ]
 {
+"26
+[; ;update_time.c: 26:                 g_data.g_time_h++;
+[e ++ . _g_data 3 -> -> 1 `i `uc ]
 "27
-[; ;update_time.c: 27:                     g_data.g_time_h = 0;
-[e = . _g_data 3 -> 0 `i ]
-"28
-[; ;update_time.c: 28:                 }
+[; ;update_time.c: 27:                 g_data.g_time_m = 0;
+[e = . _g_data 4 -> -> 0 `i `uc ]
+"29
+[; ;update_time.c: 29:                 if(g_data.g_time_h == 24){
+[e $ ! == -> . _g_data 3 `i -> 24 `i 628  ]
+{
+"30
+[; ;update_time.c: 30:                     g_data.g_time_h = 0;
+[e = . _g_data 3 -> -> 0 `i `uc ]
+"31
+[; ;update_time.c: 31:                 }
 }
 [e :U 628 ]
-"29
-[; ;update_time.c: 29:             }
+"32
+[; ;update_time.c: 32:             }
 }
 [e :U 627 ]
-"31
-[; ;update_time.c: 31:             update_display();
+"34
+[; ;update_time.c: 34:             update_display();
 [e ( _update_display ..  ]
-"32
-[; ;update_time.c: 32:         }
+"35
+[; ;update_time.c: 35:         }
 }
 [e :U 626 ]
-"34
-[; ;update_time.c: 34:     }
+"37
+[; ;update_time.c: 37:     }
 }
 [e :U 625 ]
-"35
-[; ;update_time.c: 35:     return;
+"38
+[; ;update_time.c: 38:     return;
 [e $UE 624  ]
-"36
-[; ;update_time.c: 36: }
+"39
+[; ;update_time.c: 39: }
 [e :UE 624 ]
 }
