@@ -13,24 +13,24 @@
 %PSECTS
 $dist/default/production\microchip_homework.X.production.o
 cinit CODE 0 61 61 C 2
-text1 CODE 0 15F 15F 76 2
-text3 CODE 0 220 220 2F 2
-text4 CODE 0 6D 6D F2 2
-text5 CODE 0 2CA 2CA D 2
-text6 CODE 0 2A2 2A2 18 2
-text7 CODE 0 27B 27B 27 2
-text8 CODE 0 2D7 2D7 B 2
-text9 CODE 0 1D5 1D5 4B 2
-text10 CODE 0 24F 24F 2C 2
-maintext CODE 0 2E8 2E8 4 2
+text1 CODE 0 15A 15A 76 2
+text3 CODE 0 21B 21B 2F 2
+text4 CODE 0 6D 6D ED 2
+text5 CODE 0 2C5 2C5 D 2
+text6 CODE 0 29D 29D 18 2
+text7 CODE 0 276 276 27 2
+text8 CODE 0 2D2 2D2 B 2
+text9 CODE 0 1D0 1D0 4B 2
+text10 CODE 0 24A 24A 2C 2
+maintext CODE 0 2E3 2E3 4 2
 cstackCOMMON COMMON 1 70 70 D 1
 cstackBANK0 BANK0 1 44 44 10 1
-stringtext1 STRCODE 0 2BA 2BA 10 2
+stringtext1 STRCODE 0 2B5 2B5 10 2
 intentry CODE 0 4 4 5B 2
 bssBANK0 BANK0 1 20 20 24 1
-clrtext CODE 0 2E2 2E2 6 2
+clrtext CODE 0 2DD 2DD 6 2
 bssCOMMON COMMON 1 7D 7D 1 1
-$C:\Users\29446\AppData\Local\Temp\shs8.o
+$C:\Users\29446\AppData\Local\Temp\s53k.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 5F 5F 2 2
 config CONFIG 0 8007 8007 2 2
@@ -64,9 +64,9 @@ BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
 CONST 2-3 2
-CONST 2EC-1FFF 2
+CONST 2E7-1FFF 2
 ENTRY 2-3 2
-ENTRY 2EC-1FFF 2
+ENTRY 2E7-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -92,7 +92,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2034-23EF 1
 CODE 2-3 2
-CODE 2EC-1FFF 2
+CODE 2E7-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -109,9 +109,9 @@ BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 EEDATA F000-F0FF 2
 STRCODE 2-3 2
-STRCODE 2EC-1FFF 2
+STRCODE 2E7-1FFF 2
 STRING 2-3 2
-STRING 2EC-1FFF 2
+STRING 2E7-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -126,207 +126,205 @@ STRING 2EC-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\microchip_homework.X.production.o
-61 cinit CODE >3016:C:\Users\29446\AppData\Local\Temp\shs8.
-61 cinit CODE >3019:C:\Users\29446\AppData\Local\Temp\shs8.
-61 cinit CODE >3055:C:\Users\29446\AppData\Local\Temp\shs8.
-62 cinit CODE >3059:C:\Users\29446\AppData\Local\Temp\shs8.
-63 cinit CODE >3060:C:\Users\29446\AppData\Local\Temp\shs8.
-64 cinit CODE >3061:C:\Users\29446\AppData\Local\Temp\shs8.
-65 cinit CODE >3062:C:\Users\29446\AppData\Local\Temp\shs8.
-66 cinit CODE >3063:C:\Users\29446\AppData\Local\Temp\shs8.
-67 cinit CODE >3064:C:\Users\29446\AppData\Local\Temp\shs8.
-69 cinit CODE >3070:C:\Users\29446\AppData\Local\Temp\shs8.
-69 cinit CODE >3072:C:\Users\29446\AppData\Local\Temp\shs8.
-6A cinit CODE >3073:C:\Users\29446\AppData\Local\Temp\shs8.
-6B cinit CODE >3074:C:\Users\29446\AppData\Local\Temp\shs8.
+61 cinit CODE >3016:C:\Users\29446\AppData\Local\Temp\s53k.
+61 cinit CODE >3019:C:\Users\29446\AppData\Local\Temp\s53k.
+61 cinit CODE >3055:C:\Users\29446\AppData\Local\Temp\s53k.
+62 cinit CODE >3059:C:\Users\29446\AppData\Local\Temp\s53k.
+63 cinit CODE >3060:C:\Users\29446\AppData\Local\Temp\s53k.
+64 cinit CODE >3061:C:\Users\29446\AppData\Local\Temp\s53k.
+65 cinit CODE >3062:C:\Users\29446\AppData\Local\Temp\s53k.
+66 cinit CODE >3063:C:\Users\29446\AppData\Local\Temp\s53k.
+67 cinit CODE >3064:C:\Users\29446\AppData\Local\Temp\s53k.
+69 cinit CODE >3070:C:\Users\29446\AppData\Local\Temp\s53k.
+69 cinit CODE >3072:C:\Users\29446\AppData\Local\Temp\s53k.
+6A cinit CODE >3073:C:\Users\29446\AppData\Local\Temp\s53k.
+6B cinit CODE >3074:C:\Users\29446\AppData\Local\Temp\s53k.
 4 intentry CODE >156:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-6 intentry CODE >162:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-10 intentry CODE >167:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-14 intentry CODE >168:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-15 intentry CODE >169:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-16 intentry CODE >171:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-17 intentry CODE >172:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-19 intentry CODE >173:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A intentry CODE >174:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1F intentry CODE >175:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-20 intentry CODE >176:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-22 intentry CODE >177:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-22 intentry CODE >180:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-24 intentry CODE >181:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-27 intentry CODE >183:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-2B intentry CODE >184:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-2E intentry CODE >188:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-45 intentry CODE >190:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-48 intentry CODE >191:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-4E intentry CODE >192:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-55 intentry CODE >194:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-59 intentry CODE >198:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-5A intentry CODE >199:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-5D intentry CODE >203:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-24F text10 CODE >5:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-24F text10 CODE >12:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-253 text10 CODE >13:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-255 text10 CODE >14:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-257 text10 CODE >15:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-25C text10 CODE >16:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-260 text10 CODE >14:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-261 text10 CODE >19:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-269 text10 CODE >20:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-26D text10 CODE >21:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-272 text10 CODE >22:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-276 text10 CODE >24:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-1D5 text9 CODE >14:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-1D5 text9 CODE >15:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-1E3 text9 CODE >17:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-1E4 text9 CODE >18:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-1F3 text9 CODE >20:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-1F4 text9 CODE >21:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-203 text9 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-204 text9 CODE >24:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-213 text9 CODE >26:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-214 text9 CODE >27:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-21C text9 CODE >29:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-21D text9 CODE >30:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-21E text9 CODE >32:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-21F text9 CODE >33:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-2D7 text8 CODE >21:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2D7 text8 CODE >22:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2DB text8 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2DB text8 CODE >26:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2DE text8 CODE >24:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2DF text8 CODE >25:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2E1 text8 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-27B text7 CODE >38:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-27C text7 CODE >40:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-281 text7 CODE >41:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-292 text7 CODE >42:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-293 text7 CODE >43:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-296 text7 CODE >44:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-298 text7 CODE >45:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-29B text7 CODE >47:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-29D text7 CODE >48:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2A2 text6 CODE >51:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2A3 text6 CODE >53:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2A7 text6 CODE >54:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2AB text6 CODE >55:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2AF text6 CODE >56:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2B3 text6 CODE >58:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2B5 text6 CODE >59:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2B7 text6 CODE >60:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2B9 text6 CODE >61:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2CA text5 CODE >63:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
-2CA text5 CODE >74:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+6 intentry CODE >161:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+10 intentry CODE >166:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+14 intentry CODE >167:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+15 intentry CODE >168:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+16 intentry CODE >170:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+17 intentry CODE >171:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+19 intentry CODE >172:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1A intentry CODE >173:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1F intentry CODE >174:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+20 intentry CODE >175:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+22 intentry CODE >176:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+22 intentry CODE >179:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+24 intentry CODE >180:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+27 intentry CODE >182:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+2B intentry CODE >183:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+2E intentry CODE >187:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+45 intentry CODE >189:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+48 intentry CODE >190:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+4E intentry CODE >191:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+55 intentry CODE >193:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+59 intentry CODE >197:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+5A intentry CODE >198:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+5D intentry CODE >202:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+24A text10 CODE >5:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+24A text10 CODE >12:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+24E text10 CODE >13:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+250 text10 CODE >14:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+252 text10 CODE >15:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+257 text10 CODE >16:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+25B text10 CODE >14:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+25C text10 CODE >19:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+264 text10 CODE >20:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+268 text10 CODE >21:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+26D text10 CODE >22:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+271 text10 CODE >24:F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+1D0 text9 CODE >14:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1D0 text9 CODE >15:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1DE text9 CODE >17:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1DF text9 CODE >18:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1EE text9 CODE >20:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1EF text9 CODE >21:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1FE text9 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+1FF text9 CODE >24:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+20E text9 CODE >26:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+20F text9 CODE >27:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+217 text9 CODE >29:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+218 text9 CODE >30:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+219 text9 CODE >32:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+21A text9 CODE >33:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+2D2 text8 CODE >21:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2D2 text8 CODE >22:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2D6 text8 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2D6 text8 CODE >26:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2D9 text8 CODE >24:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2DA text8 CODE >25:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2DC text8 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+276 text7 CODE >38:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+277 text7 CODE >40:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+27C text7 CODE >41:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+28D text7 CODE >42:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+28E text7 CODE >43:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+291 text7 CODE >44:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+293 text7 CODE >45:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+296 text7 CODE >47:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+298 text7 CODE >48:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+29D text6 CODE >51:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+29E text6 CODE >53:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2A2 text6 CODE >54:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2A6 text6 CODE >55:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2AA text6 CODE >56:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2AE text6 CODE >58:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2B0 text6 CODE >59:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2B2 text6 CODE >60:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2B4 text6 CODE >61:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2C5 text5 CODE >63:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
+2C5 text5 CODE >74:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_display.c
 6D text4 CODE >36:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 6D text4 CODE >38:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 70 text4 CODE >39:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 75 text4 CODE >40:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
 75 text4 CODE >42:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-7A text4 CODE >45:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-81 text4 CODE >49:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-8D text4 CODE >50:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-90 text4 CODE >51:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-92 text4 CODE >53:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-97 text4 CODE >55:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-9A text4 CODE >56:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-9C text4 CODE >57:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-9D text4 CODE >58:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-A2 text4 CODE >62:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-AB text4 CODE >66:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-C0 text4 CODE >67:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-C5 text4 CODE >68:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-CC text4 CODE >72:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-D2 text4 CODE >73:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-D4 text4 CODE >74:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-D6 text4 CODE >75:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-D8 text4 CODE >76:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-D9 text4 CODE >79:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-E1 text4 CODE >80:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-EA text4 CODE >81:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-FA text4 CODE >82:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-115 text4 CODE >84:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-12E text4 CODE >85:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-131 text4 CODE >89:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-134 text4 CODE >90:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-136 text4 CODE >91:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-139 text4 CODE >92:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-13B text4 CODE >93:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-149 text4 CODE >94:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-15A text4 CODE >95:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
-220 text3 CODE >14:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-220 text3 CODE >15:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-225 text3 CODE >16:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-229 text3 CODE >18:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-22B text3 CODE >19:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-230 text3 CODE >21:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-234 text3 CODE >22:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-239 text3 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-23B text3 CODE >25:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-23F text3 CODE >26:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-244 text3 CODE >27:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-246 text3 CODE >29:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-24A text3 CODE >30:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-24C text3 CODE >34:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-24E text3 CODE >37:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
-15F text1 CODE >37:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-15F text1 CODE >42:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-160 text1 CODE >44:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-161 text1 CODE >48:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-162 text1 CODE >54:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-167 text1 CODE >55:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-16B text1 CODE >63:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-16C text1 CODE >64:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-16D text1 CODE >65:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-171 text1 CODE >66:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-174 text1 CODE >74:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-176 text1 CODE >76:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-177 text1 CODE >77:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-179 text1 CODE >78:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-17B text1 CODE >79:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-17D text1 CODE >80:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-17E text1 CODE >82:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-180 text1 CODE >83:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-182 text1 CODE >84:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-184 text1 CODE >85:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-186 text1 CODE >86:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-187 text1 CODE >88:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-189 text1 CODE >89:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-18B text1 CODE >90:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-18D text1 CODE >91:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-18F text1 CODE >92:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-190 text1 CODE >97:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-192 text1 CODE >98:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-194 text1 CODE >100:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-196 text1 CODE >101:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-198 text1 CODE >102:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-19A text1 CODE >107:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-19C text1 CODE >108:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-19D text1 CODE >109:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-19E text1 CODE >110:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-19F text1 CODE >113:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A0 text1 CODE >114:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A1 text1 CODE >115:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A2 text1 CODE >118:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A4 text1 CODE >119:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A6 text1 CODE >120:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1A8 text1 CODE >121:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1B5 text1 CODE >122:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1BE text1 CODE >123:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1CD text1 CODE >128:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1CF text1 CODE >131:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1D0 text1 CODE >134:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1D2 text1 CODE >135:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-1D4 text1 CODE >154:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-2E8 maintext CODE >205:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-2E8 maintext CODE >207:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-2EB maintext CODE >209:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
-2E2 clrtext CODE >3044:C:\Users\29446\AppData\Local\Temp\shs8.
-2E2 clrtext CODE >3045:C:\Users\29446\AppData\Local\Temp\shs8.
-2E3 clrtext CODE >3046:C:\Users\29446\AppData\Local\Temp\shs8.
-2E3 clrtext CODE >3047:C:\Users\29446\AppData\Local\Temp\shs8.
-2E4 clrtext CODE >3048:C:\Users\29446\AppData\Local\Temp\shs8.
-2E5 clrtext CODE >3049:C:\Users\29446\AppData\Local\Temp\shs8.
-2E6 clrtext CODE >3050:C:\Users\29446\AppData\Local\Temp\shs8.
-2E7 clrtext CODE >3051:C:\Users\29446\AppData\Local\Temp\shs8.
+7A text4 CODE >46:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+81 text4 CODE >50:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+8D text4 CODE >51:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+90 text4 CODE >52:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+92 text4 CODE >54:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+97 text4 CODE >56:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+9A text4 CODE >57:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+9C text4 CODE >58:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+9D text4 CODE >61:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+A6 text4 CODE >67:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+C0 text4 CODE >68:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+C7 text4 CODE >72:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+CD text4 CODE >73:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+CF text4 CODE >74:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+D1 text4 CODE >75:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+D3 text4 CODE >76:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+D4 text4 CODE >79:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+DC text4 CODE >80:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+E5 text4 CODE >81:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+F5 text4 CODE >82:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+110 text4 CODE >84:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+129 text4 CODE >85:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+12C text4 CODE >89:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+12F text4 CODE >90:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+131 text4 CODE >91:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+134 text4 CODE >92:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+136 text4 CODE >93:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+144 text4 CODE >94:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+155 text4 CODE >95:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\receive_decode.c
+21B text3 CODE >14:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+21B text3 CODE >15:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+220 text3 CODE >16:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+224 text3 CODE >18:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+226 text3 CODE >19:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+22B text3 CODE >21:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+22F text3 CODE >22:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+234 text3 CODE >23:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+236 text3 CODE >25:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+23A text3 CODE >26:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+23F text3 CODE >27:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+241 text3 CODE >29:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+245 text3 CODE >30:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+247 text3 CODE >34:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+249 text3 CODE >37:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\update_time.c
+15A text1 CODE >37:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+15A text1 CODE >42:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+15B text1 CODE >44:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+15C text1 CODE >48:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+15D text1 CODE >54:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+162 text1 CODE >55:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+166 text1 CODE >63:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+167 text1 CODE >64:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+168 text1 CODE >65:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+16C text1 CODE >66:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+16F text1 CODE >74:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+171 text1 CODE >76:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+172 text1 CODE >77:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+174 text1 CODE >78:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+176 text1 CODE >79:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+178 text1 CODE >80:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+179 text1 CODE >82:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+17B text1 CODE >83:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+17D text1 CODE >84:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+17F text1 CODE >85:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+181 text1 CODE >86:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+182 text1 CODE >88:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+184 text1 CODE >89:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+186 text1 CODE >90:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+188 text1 CODE >91:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+18A text1 CODE >92:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+18B text1 CODE >97:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+18D text1 CODE >98:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+18F text1 CODE >100:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+191 text1 CODE >101:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+193 text1 CODE >102:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+195 text1 CODE >107:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+197 text1 CODE >108:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+198 text1 CODE >109:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+199 text1 CODE >110:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+19A text1 CODE >113:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+19B text1 CODE >114:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+19C text1 CODE >115:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+19D text1 CODE >118:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+19F text1 CODE >119:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1A1 text1 CODE >120:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1A3 text1 CODE >121:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1B0 text1 CODE >122:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1B9 text1 CODE >123:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1C8 text1 CODE >128:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1CA text1 CODE >131:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1CB text1 CODE >134:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1CD text1 CODE >135:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+1CF text1 CODE >154:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+2E3 maintext CODE >204:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+2E3 maintext CODE >206:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+2E6 maintext CODE >208:E:\Dian\Class\Project\MPLAB_X_IDE\microchip_homework.X\main.c
+2DD clrtext CODE >3044:C:\Users\29446\AppData\Local\Temp\s53k.
+2DD clrtext CODE >3045:C:\Users\29446\AppData\Local\Temp\s53k.
+2DE clrtext CODE >3046:C:\Users\29446\AppData\Local\Temp\s53k.
+2DE clrtext CODE >3047:C:\Users\29446\AppData\Local\Temp\s53k.
+2DF clrtext CODE >3048:C:\Users\29446\AppData\Local\Temp\s53k.
+2E0 clrtext CODE >3049:C:\Users\29446\AppData\Local\Temp\s53k.
+2E1 clrtext CODE >3050:C:\Users\29446\AppData\Local\Temp\s53k.
+2E2 clrtext CODE >3051:C:\Users\29446\AppData\Local\Temp\s53k.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -346,8 +344,8 @@ __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __size_of_init_env 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-__end_of_write_byte 544 0 CODE 0 text7 dist/default/production\microchip_homework.X.production.o
-__end_of_write_once 574 0 CODE 0 text6 dist/default/production\microchip_homework.X.production.o
+__end_of_write_byte 53A 0 CODE 0 text7 dist/default/production\microchip_homework.X.production.o
+__end_of_write_once 56A 0 CODE 0 text6 dist/default/production\microchip_homework.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __Hstrings 0 0 ABS 0 strings -
@@ -359,44 +357,44 @@ _TMR0 15 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\29446\AppData\Local\Temp\shs8.o
-_main 5D0 0 CODE 0 maintext dist/default/production\microchip_homework.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\29446\AppData\Local\Temp\s53k.o
+_main 5C6 0 CODE 0 maintext dist/default/production\microchip_homework.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-start BE 0 CODE 0 init C:\Users\29446\AppData\Local\Temp\shs8.o
+start BE 0 CODE 0 init C:\Users\29446\AppData\Local\Temp\s53k.o
 __size_of_main 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __size_of___lwmod 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-_update_time 440 0 CODE 0 text3 dist/default/production\microchip_homework.X.production.o
+_update_time 436 0 CODE 0 text3 dist/default/production\microchip_homework.X.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 receive_decode@read_value 4E 0 BANK0 1 cstackBANK0 dist/default/production\microchip_homework.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\shs8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\shs8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\shs8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\shs8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\shs8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\shs8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\s53k.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\s53k.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\s53k.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\s53k.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\s53k.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\29446\AppData\Local\Temp\s53k.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-_init_env 2BE 0 CODE 0 text1 dist/default/production\microchip_homework.X.production.o
+_init_env 2B4 0 CODE 0 text1 dist/default/production\microchip_homework.X.production.o
 _OSCCONbits 99 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_update_display 594 0 CODE 0 text5 dist/default/production\microchip_homework.X.production.o
+_update_display 58A 0 CODE 0 text5 dist/default/production\microchip_homework.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_init_env 3AA 0 CODE 0 text1 dist/default/production\microchip_homework.X.production.o
+__end_of_init_env 3A0 0 CODE 0 text1 dist/default/production\microchip_homework.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ___lwmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
-__end_of___lwmod 4F6 0 CODE 0 text10 dist/default/production\microchip_homework.X.production.o
-__end_of_update_display 5AE 0 CODE 0 text5 dist/default/production\microchip_homework.X.production.o
+__end_of___lwmod 4EC 0 CODE 0 text10 dist/default/production\microchip_homework.X.production.o
+__end_of_update_display 5A4 0 CODE 0 text5 dist/default/production\microchip_homework.X.production.o
 ___lwmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
 _WPUCbits 20E 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 start_initialization C2 0 CODE 0 cinit dist/default/production\microchip_homework.X.production.o
 _TRISCbits 8E 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __size_of_write_byte 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __size_of_write_once 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-clear_ram0 5C4 0 CODE 0 clrtext dist/default/production\microchip_homework.X.production.o
+clear_ram0 5BA 0 CODE 0 clrtext dist/default/production\microchip_homework.X.production.o
 __pcstackBANK0 44 0 BANK0 1 cstackBANK0 dist/default/production\microchip_homework.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\29446\AppData\Local\Temp\shs8.o
+___int_sp 0 0 STACK 2 stack C:\Users\29446\AppData\Local\Temp\s53k.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -525,10 +523,10 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 574 0 STRCODE 0 stringtext1 dist/default/production\microchip_homework.X.production.o
+__pstringtext1 56A 0 STRCODE 0 stringtext1 dist/default/production\microchip_homework.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-__end_of_update_time 49E 0 CODE 0 text3 dist/default/production\microchip_homework.X.production.o
+__end_of_update_time 494 0 CODE 0 text3 dist/default/production\microchip_homework.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _ISR 8 0 CODE 0 intentry dist/default/production\microchip_homework.X.production.o
 __S0 8009 0 ABS 0 - -
@@ -541,15 +539,15 @@ __end_of_ISR BE 0 CODE 0 intentry dist/default/production\microchip_homework.X.p
 _g_data 20 0 BANK0 1 bssBANK0 dist/default/production\microchip_homework.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\29446\AppData\Local\Temp\shs8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\29446\AppData\Local\Temp\s53k.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
 init_env@i 52 0 BANK0 1 cstackBANK0 dist/default/production\microchip_homework.X.production.o
-__ptext10 49E 0 CODE 0 text10 dist/default/production\microchip_homework.X.production.o
+__ptext10 494 0 CODE 0 text10 dist/default/production\microchip_homework.X.production.o
 _IOCCFbits 399 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 _IOCCPbits 397 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-___lwmod 49E 0 CODE 0 text10 dist/default/production\microchip_homework.X.production.o
+___lwmod 494 0 CODE 0 text10 dist/default/production\microchip_homework.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -572,8 +570,8 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__end_of_receive_decode 2BE 0 CODE 0 text4 dist/default/production\microchip_homework.X.production.o
-__pmaintext 5D0 0 CODE 0 maintext dist/default/production\microchip_homework.X.production.o
+__end_of_receive_decode 2B4 0 CODE 0 text4 dist/default/production\microchip_homework.X.production.o
+__pmaintext 5C6 0 CODE 0 maintext dist/default/production\microchip_homework.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 write_byte@i 75 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
@@ -582,11 +580,11 @@ __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-_times2number 3AA 0 CODE 0 text9 dist/default/production\microchip_homework.X.production.o
-__end_of_segmcode 594 0 STRCODE 0 stringtext1 dist/default/production\microchip_homework.X.production.o
+_times2number 3A0 0 CODE 0 text9 dist/default/production\microchip_homework.X.production.o
+__end_of_segmcode 58A 0 STRCODE 0 stringtext1 dist/default/production\microchip_homework.X.production.o
 __CFG_VCAPEN$OFF 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-stackhi 23EF 0 ABS 0 - C:\Users\29446\AppData\Local\Temp\shs8.o
-stacklo 2034 0 ABS 0 - C:\Users\29446\AppData\Local\Temp\shs8.o
+stackhi 23EF 0 ABS 0 - C:\Users\29446\AppData\Local\Temp\s53k.o
+stacklo 2034 0 ABS 0 - C:\Users\29446\AppData\Local\Temp\s53k.o
 write_once@HL 79 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
 write_once@HR 76 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
 write_once@ML 77 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
@@ -614,18 +612,18 @@ __Hreset_vec 4 0 CODE 0 reset_vec -
 receive_decode@last_time_h 48 0 BANK0 1 cstackBANK0 dist/default/production\microchip_homework.X.production.o
 receive_decode@last_time_m 4A 0 BANK0 1 cstackBANK0 dist/default/production\microchip_homework.X.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 2BE 0 CODE 0 text1 dist/default/production\microchip_homework.X.production.o
-__ptext3 440 0 CODE 0 text3 dist/default/production\microchip_homework.X.production.o
+__ptext1 2B4 0 CODE 0 text1 dist/default/production\microchip_homework.X.production.o
+__ptext3 436 0 CODE 0 text3 dist/default/production\microchip_homework.X.production.o
 __ptext4 DA 0 CODE 0 text4 dist/default/production\microchip_homework.X.production.o
-__ptext5 594 0 CODE 0 text5 dist/default/production\microchip_homework.X.production.o
-__ptext6 544 0 CODE 0 text6 dist/default/production\microchip_homework.X.production.o
-__ptext7 4F6 0 CODE 0 text7 dist/default/production\microchip_homework.X.production.o
-__ptext8 5AE 0 CODE 0 text8 dist/default/production\microchip_homework.X.production.o
-__ptext9 3AA 0 CODE 0 text9 dist/default/production\microchip_homework.X.production.o
-_control595_delay 5AE 0 CODE 0 text8 dist/default/production\microchip_homework.X.production.o
+__ptext5 58A 0 CODE 0 text5 dist/default/production\microchip_homework.X.production.o
+__ptext6 53A 0 CODE 0 text6 dist/default/production\microchip_homework.X.production.o
+__ptext7 4EC 0 CODE 0 text7 dist/default/production\microchip_homework.X.production.o
+__ptext8 5A4 0 CODE 0 text8 dist/default/production\microchip_homework.X.production.o
+__ptext9 3A0 0 CODE 0 text9 dist/default/production\microchip_homework.X.production.o
+_control595_delay 5A4 0 CODE 0 text8 dist/default/production\microchip_homework.X.production.o
 receive_decode@i 4C 0 BANK0 1 cstackBANK0 dist/default/production\microchip_homework.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
-__end_of_times2number 440 0 CODE 0 text9 dist/default/production\microchip_homework.X.production.o
+__end_of_times2number 436 0 CODE 0 text9 dist/default/production\microchip_homework.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 write_byte@data 74 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -638,10 +636,10 @@ __Lfunctab 0 0 ENTRY 0 functab -
 ISR@key_time_cnt 41 0 BANK0 1 bssBANK0 dist/default/production\microchip_homework.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\microchip_homework.X.production.o
-_write_byte 4F6 0 CODE 0 text7 dist/default/production\microchip_homework.X.production.o
-_write_once 544 0 CODE 0 text6 dist/default/production\microchip_homework.X.production.o
+_write_byte 4EC 0 CODE 0 text7 dist/default/production\microchip_homework.X.production.o
+_write_once 53A 0 CODE 0 text6 dist/default/production\microchip_homework.X.production.o
 __Hend_init C2 0 CODE 0 end_init -
-__end_of_main 5D8 0 CODE 0 maintext dist/default/production\microchip_homework.X.production.o
+__end_of_main 5CE 0 CODE 0 maintext dist/default/production\microchip_homework.X.production.o
 _IOCAN 392 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 _IOCAP 391 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 _IOCBN 395 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
@@ -658,7 +656,7 @@ __pintentry 8 0 CODE 0 intentry dist/default/production\microchip_homework.X.pro
 __size_of_ISR 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __initialization C2 0 CODE 0 cinit dist/default/production\microchip_homework.X.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
-__end_of_control595_delay 5C4 0 CODE 0 text8 dist/default/production\microchip_homework.X.production.o
+__end_of_control595_delay 5BA 0 CODE 0 text8 dist/default/production\microchip_homework.X.production.o
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\microchip_homework.X.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
 __size_of_control595_delay 0 0 ABS 0 - dist/default/production\microchip_homework.X.production.o
@@ -687,10 +685,10 @@ __size_of_control595_delay 0 0 ABS 0 - dist/default/production\microchip_homewor
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text5 0 2CA 594 22 2
+text5 0 2C5 58A 22 2
 cstackCOMMON 1 70 70 E 1
-stringtext1 0 2BA 574 10 2
-intentry 0 4 8 2B6 2
+stringtext1 0 2B5 56A 10 2
+intentry 0 4 8 2B1 2
 reset_vec 0 0 0 2 2
 bssBANK0 1 20 20 34 1
 config 0 8007 1000E 2 2

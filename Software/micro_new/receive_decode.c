@@ -42,6 +42,7 @@ void receive_decode(void) {
     g_data.g_all_level_times++;
     
     // find time start
+    /* when we recive a long low level voltage, we get P0 */
     if(g_data.g_all_level_times < MAX_HIGH_LEVEL_TIMES){
         return;
     }
@@ -55,17 +56,16 @@ void receive_decode(void) {
         g_data.g_find_recv_start = TRUE;
         g_data.g_recv_count = 0;
         return;
-    }else if(read_value == 4){
+    }
+    
+    if(g_data.g_find_recv_start == FALSE || (read_value == 4)){
+        // FALSE: NOT get P0 yet
+        // 4: long high level -> err
         return;
     }
     
-    if(g_data.g_find_recv_start == FALSE || read_value == 5){
-        return;
-    }
-    
-    g_data.g_recv_buf[g_data.g_recv_count] = read_value;
-    g_data.g_recv_count++;
-    if(g_data.g_recv_count < 6){
+    g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
+    if(g_data.g_recv_count < 9){
         return;
     }
 
@@ -85,9 +85,9 @@ void receive_decode(void) {
         update_display();
     }
     
-    // recv over then set flag to false
+    // recv over ,then set flag to false
     g_data.g_find_recv_start = FALSE;
-    BPC_ON = BPC_PWR_ON;
+    BPC_ON = BPC_PWR_OFF;
     g_data.g_start_read_data = 0;
     g_data.g_recv_count = 0;
     for(int i = 0;i < RECV_BUF_MAX; i++){

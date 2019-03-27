@@ -157,7 +157,6 @@ void __interrupt () ISR(void){
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
     
-    /* when we recive a long low level voltage, we get P0 */
     // start receive flag set
     if(CME_DATA_IOC_INT == TRUE && \
        g_data.g_start_read_data == FALSE && \

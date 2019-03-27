@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\dat\en_msgs.txt -cs \
   -h+dist/default/production\microchip_homework.X.production.sym \
   --cmf=dist/default/production\microchip_homework.X.production.cmf -z \
-  -Q16F1786 -oC:\Users\29446\AppData\Local\Temp\shs8.2 \
+  -Q16F1786 -oC:\Users\29446\AppData\Local\Temp\s53k.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/microchip_homework.X.production.map -E1 \
   -ver=XC8 --acfsm=1493 -ASTACK=02034h-023efh -pstack=STACK \
@@ -33,7 +33,7 @@ Linker command line:
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\29446\AppData\Local\Temp\shs8.o \
+  C:\Users\29446\AppData\Local\Temp\s53k.o \
   dist/default/production\microchip_homework.X.production.o 
 
 Object code version is 3.11
@@ -43,29 +43,29 @@ Machine type is 16F1786
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\29446\AppData\Local\Temp\shs8.o
+C:\Users\29446\AppData\Local\Temp\s53k.o
                 end_init                             5F       5F        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0
 dist/default/production\microchip_homework.X.production.o
                 cinit                                61       61        C        8       0
                 intentry                              4        4       5B        8       0
-                text10                              24F      24F       2C        8       0
-                text9                               1D5      1D5       4B        8       0
-                text8                               2D7      2D7        B      594       0
-                text7                               27B      27B       27        8       0
-                text6                               2A2      2A2       18        8       0
-                text5                               2CA      2CA        D      594       0
-                text4                                6D       6D       F2        8       0
-                text3                               220      220       2F        8       0
-                text1                               15F      15F       76        8       0
-                maintext                            2E8      2E8        4      594       0
+                text10                              24A      24A       2C        8       0
+                text9                               1D0      1D0       4B        8       0
+                text8                               2D2      2D2        B      58A       0
+                text7                               276      276       27        8       0
+                text6                               29D      29D       18        8       0
+                text5                               2C5      2C5        D      58A       0
+                text4                                6D       6D       ED        8       0
+                text3                               21B      21B       2F        8       0
+                text1                               15A      15A       76        8       0
+                maintext                            2E3      2E3        4      58A       0
                 cstackBANK0                          44       44       10       20       1
                 cstackCOMMON                         70       70        D       70       1
-                clrtext                             2E2      2E2        6      594       0
+                clrtext                             2DD      2DD        6      58A       0
                 bssBANK0                             20       20       24       20       1
                 bssCOMMON                            7D       7D        1       70       1
-                stringtext1                         2BA      2BA       10      574       0
+                stringtext1                         2B5      2B5       10      56A       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -75,20 +75,20 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                61       61        C         0
                 intentry                              4        4       5B         0
                 reset_vec                             0        0        2         0
-                text10                              24F      24F       2C         0
-                text9                               1D5      1D5       4B         0
-                text8                               2D7      2D7        B         0
-                text7                               27B      27B       27         0
-                text6                               2A2      2A2       18         0
-                text5                               2CA      2CA        D         0
-                text4                                6D       6D       F2         0
-                text3                               220      220       2F         0
-                text1                               15F      15F       76         0
-                maintext                            2E8      2E8        4         0
-                clrtext                             2E2      2E2        6         0
+                text10                              24A      24A       2C         0
+                text9                               1D0      1D0       4B         0
+                text8                               2D2      2D2        B         0
+                text7                               276      276       27         0
+                text6                               29D      29D       18         0
+                text5                               2C5      2C5        D         0
+                text4                                6D       6D       ED         0
+                text3                               21B      21B       2F         0
+                text1                               15A      15A       76         0
+                maintext                            2E3      2E3        4         0
+                clrtext                             2DD      2DD        6         0
 
         CLASS   STRCODE        
-                stringtext1                         2BA      2BA       10         0
+                stringtext1                         2B5      2B5       10         0
 
         CLASS   STRING         
 
@@ -249,11 +249,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
-                intentry                       000004  0002B6  0002BA         8       0  CODE        2
+                intentry                       000004  0002B1  0002B5         8       0  CODE        2
                 bssBANK0                       000020  000034  000054        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
-                stringtext1                    0002BA  000010  0002CA       574       0  STRCODE     2
-                text5                          0002CA  000022  0002EC       594       0  CODE        2
+                stringtext1                    0002B5  000010  0002C5       56A       0  STRCODE     2
+                text5                          0002C5  000022  0002E7       58A       0  CODE        2
                 config                         008007  000002  008009     1000E       0  CONFIG      2
 
 
@@ -275,12 +275,12 @@ UNUSED ADDRESS RANGES
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-023EF             3F0           1
         CODE             00002-00003               2           2
-                         002EC-01FFF             800
+                         002E7-01FFF             800
         CONST            00002-00003               2           2
-                         002EC-01FFF             100
+                         002E7-01FFF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00002-00003               2           2
-                         002EC-01FFF             100
+                         002E7-01FFF             100
         IDLOC            08000-08003               4           2
         RAM              00054-0006F              1C           1
                          000A0-000EF              50
@@ -329,9 +329,9 @@ UNUSED ADDRESS RANGES
         SFR9             00480-0049F              20           1
         STACK            02034-023EF             3BC           1
         STRCODE          00002-00003               2           2
-                         002EC-01FFF            1D14
+                         002E7-01FFF            1D19
         STRING           00002-00003               2           2
-                         002EC-01FFF             100
+                         002E7-01FFF             100
 
                                   Symbol Table
 
@@ -573,41 +573,41 @@ __S2                          (abs)        00000
 __S3                          (abs)        00000
 ___int_sp                     stack        00000
 ___latbits                    (abs)        00002
-___lwmod                      text10       0024F
+___lwmod                      text10       0024A
 ___lwmod@counter              cstackCOMMON 00075
 ___lwmod@dividend             cstackCOMMON 00072
 ___lwmod@divisor              cstackCOMMON 00070
 ___sp                         stack        00000
 __end_of_ISR                  intentry     0005F
-__end_of___lwmod              text10       0027B
+__end_of___lwmod              text10       00276
 __end_of__initialization      cinit        00069
-__end_of_control595_delay     text8        002E2
-__end_of_init_env             text1        001D5
-__end_of_main                 maintext     002EC
-__end_of_receive_decode       text4        0015F
-__end_of_segmcode             stringtext1  002CA
-__end_of_times2number         text9        00220
-__end_of_update_display       text5        002D7
-__end_of_update_time          text3        0024F
-__end_of_write_byte           text7        002A2
-__end_of_write_once           text6        002BA
+__end_of_control595_delay     text8        002DD
+__end_of_init_env             text1        001D0
+__end_of_main                 maintext     002E7
+__end_of_receive_decode       text4        0015A
+__end_of_segmcode             stringtext1  002C5
+__end_of_times2number         text9        0021B
+__end_of_update_display       text5        002D2
+__end_of_update_time          text3        0024A
+__end_of_write_byte           text7        0029D
+__end_of_write_once           text6        002B5
 __initialization              cinit        00061
 __pbssBANK0                   bssBANK0     00020
 __pbssCOMMON                  bssCOMMON    0007D
 __pcstackBANK0                cstackBANK0  00044
 __pcstackCOMMON               cstackCOMMON 00070
 __pintentry                   intentry     00004
-__pmaintext                   maintext     002E8
-__pstringtext1                stringtext1  002BA
-__ptext1                      text1        0015F
-__ptext10                     text10       0024F
-__ptext3                      text3        00220
+__pmaintext                   maintext     002E3
+__pstringtext1                stringtext1  002B5
+__ptext1                      text1        0015A
+__ptext10                     text10       0024A
+__ptext3                      text3        0021B
 __ptext4                      text4        0006D
-__ptext5                      text5        002CA
-__ptext6                      text6        002A2
-__ptext7                      text7        0027B
-__ptext8                      text8        002D7
-__ptext9                      text9        001D5
+__ptext5                      text5        002C5
+__ptext6                      text6        0029D
+__ptext7                      text7        00276
+__ptext8                      text8        002D2
+__ptext9                      text9        001D0
 __size_of_ISR                 (abs)        00000
 __size_of___lwmod             (abs)        00000
 __size_of_control595_delay    (abs)        00000
@@ -619,18 +619,18 @@ __size_of_update_display      (abs)        00000
 __size_of_update_time         (abs)        00000
 __size_of_write_byte          (abs)        00000
 __size_of_write_once          (abs)        00000
-_control595_delay             text8        002D7
+_control595_delay             text8        002D2
 _g_data                       bssBANK0     00020
-_init_env                     text1        0015F
-_main                         maintext     002E8
+_init_env                     text1        0015A
+_main                         maintext     002E3
 _receive_decode               text4        0006D
-_times2number                 text9        001D5
-_update_display               text5        002CA
-_update_time                  text3        00220
-_write_byte                   text7        0027B
-_write_once                   text6        002A2
+_times2number                 text9        001D0
+_update_display               text5        002C5
+_update_time                  text3        0021B
+_write_byte                   text7        00276
+_write_once                   text6        0029D
 btemp                         (abs)        0007E
-clear_ram0                    clrtext      002E2
+clear_ram0                    clrtext      002DD
 control595_delay@times        cstackCOMMON 00071
 end_of_initialization         cinit        00069
 init_env@i                    cstackBANK0  00052
@@ -664,7 +664,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 205 in file "main.c"
+		line 204 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1007,26 +1007,26 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
-		___lwmod       		CODE           	024F	0000	45
+		___lwmod       		CODE           	024A	0000	45
 
 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c estimated size: 45
 
 update_display.c
-		_control595_delay		CODE           	02D7	0000	12
-		_write_once    		CODE           	02A2	0000	25
-		_update_display		CODE           	02CA	0000	14
-		_write_byte    		CODE           	027B	0000	40
+		_control595_delay		CODE           	02D2	0000	12
+		_write_once    		CODE           	029D	0000	25
+		_update_display		CODE           	02C5	0000	14
+		_write_byte    		CODE           	0276	0000	40
 
 update_display.c estimated size: 91
 
 receive_decode.c
-		_times2number  		CODE           	01D5	0000	76
-		_receive_decode		CODE           	006D	0000	243
+		_times2number  		CODE           	01D0	0000	76
+		_receive_decode		CODE           	006D	0000	238
 
-receive_decode.c estimated size: 319
+receive_decode.c estimated size: 314
 
 update_time.c
-		_update_time   		CODE           	0220	0000	48
+		_update_time   		CODE           	021B	0000	48
 
 update_time.c estimated size: 48
 
@@ -1038,8 +1038,8 @@ shared estimated size: 9
 
 main.c
 		_ISR           		CODE           	0004	0000	92
-		_main          		CODE           	02E8	0000	5
-		_init_env      		CODE           	015F	0000	119
+		_main          		CODE           	02E3	0000	5
+		_init_env      		CODE           	015A	0000	119
 
 main.c estimated size: 216
 

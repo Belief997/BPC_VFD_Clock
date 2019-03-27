@@ -8946,16 +8946,35 @@ enum{
     PIN_LOW = 0,
     PIN_HIGH = 1,
 
+
+    CODE_P0 = 0,
+    CODE_P1,
+    CODE_P2,
+    CODE_H_1,
+    CODE_H_2,
+    CODE_M_1,
+    CODE_M_2,
+    CODE_M_3,
+    CODE_W_1,
+    CODE_W_2,
+    CODE_P3,
+    CODE_D_1,
+    CODE_D_2,
+    CODE_D_3,
+    CODE_MN_1,
+    CODE_MN_2,
+    CODE_Y_1,
+    CODE_Y_2,
+    CODE_Y_3,
+    CODE_P4,
+
 }ENUM;
-# 81 "./function.h"
+# 103 "./function.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
     volatile BOOL g_start_read_data;
     volatile BOOL g_find_recv_start;
-
-
-
 
 
     u8 g_time_h;
@@ -9024,6 +9043,7 @@ void receive_decode(void) {
     g_data.g_all_level_times++;
 
 
+
     if(g_data.g_all_level_times < 100){
         return;
     }
@@ -9037,17 +9057,16 @@ void receive_decode(void) {
         g_data.g_find_recv_start = TRUE;
         g_data.g_recv_count = 0;
         return;
-    }else if(read_value == 4){
+    }
+
+    if(g_data.g_find_recv_start == FALSE || (read_value == 4)){
+
+
         return;
     }
 
-    if(g_data.g_find_recv_start == FALSE || read_value == 5){
-        return;
-    }
-
-    g_data.g_recv_buf[g_data.g_recv_count] = read_value;
-    g_data.g_recv_count++;
-    if(g_data.g_recv_count < 6){
+    g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
+    if(g_data.g_recv_count < 9){
         return;
     }
 
@@ -9069,7 +9088,7 @@ void receive_decode(void) {
 
 
     g_data.g_find_recv_start = FALSE;
-    PORTCbits.RC2 = BPC_PWR_ON;
+    PORTCbits.RC2 = BPC_PWR_OFF;
     g_data.g_start_read_data = 0;
     g_data.g_recv_count = 0;
     for(int i = 0;i < 20; i++){

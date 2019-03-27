@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"61 ./function.h
-[; ;./function.h: 61: }ENUM;
-[c E4906 0 1 0 1 .. ]
-[n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH  ]
+"83 ./function.h
+[; ;./function.h: 83: }ENUM;
+[c E4906 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
+[n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
 "575 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 575:     struct {
 [s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -22,15 +22,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;receive_decode.c: 39:         g_data.g_high_level_times++;
 [c E4902 0 1 .. ]
 [n E4902 . FALSE TRUE  ]
-"81 ./function.h
-[; ;./function.h: 81: typedef struct{
+"103 ./function.h
+[; ;./function.h: 103: typedef struct{
 [s S623 `VE4902 1 `VE4902 1 `VE4902 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i ]
 [n S623 . g_flg_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
 "12 receive_decode.c
 [; ;receive_decode.c: 12: extern G_DATA g_data;
 [v _g_data `S623 ~T0 @X0 0 e ]
-"120 ./function.h
-[; ;./function.h: 120: void update_display(void);
+"139 ./function.h
+[; ;./function.h: 139: void update_display(void);
 [v _update_display `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
@@ -869,8 +869,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"61 ./function.h
-[; ;./function.h: 61: }ENUM;
+"83 ./function.h
+[; ;./function.h: 83: }ENUM;
 [v _ENUM `E4906 ~T0 @X0 1 e ]
 "14 receive_decode.c
 [; ;receive_decode.c: 14: static u8 times2number(u16 high_level_times){
@@ -973,75 +973,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42
 [; ;receive_decode.c: 42:     g_data.g_all_level_times++;
 [e ++ . _g_data 8 -> -> 1 `i `us ]
-"45
-[; ;receive_decode.c: 45:     if(g_data.g_all_level_times < 100){
+"46
+[; ;receive_decode.c: 46:     if(g_data.g_all_level_times < 100){
 [e $ ! < -> . _g_data 8 `ui -> -> 100 `i `ui 637  ]
 {
-"46
-[; ;receive_decode.c: 46:         return;
-[e $UE 635  ]
 "47
-[; ;receive_decode.c: 47:     }
+[; ;receive_decode.c: 47:         return;
+[e $UE 635  ]
+"48
+[; ;receive_decode.c: 48:     }
 }
 [e :U 637 ]
-"49
-[; ;receive_decode.c: 49:     u8 read_value = times2number(g_data.g_high_level_times);
+"50
+[; ;receive_decode.c: 50:     u8 read_value = times2number(g_data.g_high_level_times);
 [v _read_value `uc ~T0 @X0 1 a ]
 [e = _read_value ( _times2number (1 . _g_data 7 ]
-"50
-[; ;receive_decode.c: 50:     g_data.g_all_level_times = 0;
-[e = . _g_data 8 -> -> 0 `i `us ]
 "51
-[; ;receive_decode.c: 51:     g_data.g_high_level_times = 0;
+[; ;receive_decode.c: 51:     g_data.g_all_level_times = 0;
+[e = . _g_data 8 -> -> 0 `i `us ]
+"52
+[; ;receive_decode.c: 52:     g_data.g_high_level_times = 0;
 [e = . _g_data 7 -> -> 0 `i `us ]
-"53
-[; ;receive_decode.c: 53:     if(read_value == 5){
+"54
+[; ;receive_decode.c: 54:     if(read_value == 5){
 [e $ ! == -> _read_value `i -> 5 `i 638  ]
 {
-"55
-[; ;receive_decode.c: 55:         g_data.g_find_recv_start = TRUE;
-[e = . _g_data 2 . `E4902 1 ]
 "56
-[; ;receive_decode.c: 56:         g_data.g_recv_count = 0;
-[e = . _g_data 9 -> -> 0 `i `us ]
+[; ;receive_decode.c: 56:         g_data.g_find_recv_start = TRUE;
+[e = . _g_data 2 . `E4902 1 ]
 "57
-[; ;receive_decode.c: 57:         return;
-[e $UE 635  ]
+[; ;receive_decode.c: 57:         g_data.g_recv_count = 0;
+[e = . _g_data 9 -> -> 0 `i `us ]
 "58
-[; ;receive_decode.c: 58:     }else if(read_value == 4){
-}
-[e $U 639  ]
-[e :U 638 ]
-[e $ ! == -> _read_value `i -> 4 `i 640  ]
-{
+[; ;receive_decode.c: 58:         return;
+[e $UE 635  ]
 "59
-[; ;receive_decode.c: 59:         return;
-[e $UE 635  ]
-"60
-[; ;receive_decode.c: 60:     }
+[; ;receive_decode.c: 59:     }
 }
-[e :U 640 ]
-[e :U 639 ]
-"62
-[; ;receive_decode.c: 62:     if(g_data.g_find_recv_start == FALSE || read_value == 5){
-[e $ ! || == -> . _g_data 2 `ui -> . `E4902 0 `ui == -> _read_value `i -> 5 `i 641  ]
+[e :U 638 ]
+"61
+[; ;receive_decode.c: 61:     if(g_data.g_find_recv_start == FALSE || (read_value == 4)){
+[e $ ! || == -> . _g_data 2 `ui -> . `E4902 0 `ui == -> _read_value `i -> 4 `i 639  ]
 {
-"63
-[; ;receive_decode.c: 63:         return;
-[e $UE 635  ]
 "64
-[; ;receive_decode.c: 64:     }
+[; ;receive_decode.c: 64:         return;
+[e $UE 635  ]
+"65
+[; ;receive_decode.c: 65:     }
 }
-[e :U 641 ]
-"66
-[; ;receive_decode.c: 66:     g_data.g_recv_buf[g_data.g_recv_count] = read_value;
-[e = *U + &U . _g_data 10 * -> . _g_data 9 `ux -> -> # *U &U . _g_data 10 `ui `ux _read_value ]
+[e :U 639 ]
 "67
-[; ;receive_decode.c: 67:     g_data.g_recv_count++;
-[e ++ . _g_data 9 -> -> 1 `i `us ]
+[; ;receive_decode.c: 67:     g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
+[e = *U + &U . _g_data 10 * -> ++ . _g_data 9 -> -> 1 `i `us `ux -> -> # *U &U . _g_data 10 `ui `ux _read_value ]
 "68
-[; ;receive_decode.c: 68:     if(g_data.g_recv_count < 6){
-[e $ ! < -> . _g_data 9 `ui -> -> 6 `i `ui 642  ]
+[; ;receive_decode.c: 68:     if(g_data.g_recv_count < 9){
+[e $ ! < -> . _g_data 9 `ui -> -> 9 `i `ui 640  ]
 {
 "69
 [; ;receive_decode.c: 69:         return;
@@ -1049,10 +1035,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70
 [; ;receive_decode.c: 70:     }
 }
-[e :U 642 ]
+[e :U 640 ]
 "72
 [; ;receive_decode.c: 72:     if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
-[e $ ! && != -> *U + &U . _g_data 10 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i != -> *U + &U . _g_data 10 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i 643  ]
+[e $ ! && != -> *U + &U . _g_data 10 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i != -> *U + &U . _g_data 10 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i 641  ]
 {
 "73
 [; ;receive_decode.c: 73:         g_data.g_find_recv_start = FALSE;
@@ -1069,7 +1055,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;receive_decode.c: 77:     }
 }
-[e :U 643 ]
+[e :U 641 ]
 "79
 [; ;receive_decode.c: 79:     u16 last_time_h = g_data.g_time_h;
 [v _last_time_h `us ~T0 @X0 1 a ]
@@ -1086,7 +1072,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . _g_data 4 -> + + * -> *U + &U . _g_data 10 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 16 `i * -> *U + &U . _g_data 10 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 4 `i -> *U + &U . _g_data 10 * -> -> -> 6 `i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux `i `uc ]
 "84
 [; ;receive_decode.c: 84:     if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_time_m){
-[e $ ! || != -> _last_time_h `ui -> . _g_data 3 `ui != -> _last_time_m `ui -> . _g_data 4 `ui 644  ]
+[e $ ! || != -> _last_time_h `ui -> . _g_data 3 `ui != -> _last_time_m `ui -> . _g_data 4 `ui 642  ]
 {
 "85
 [; ;receive_decode.c: 85:         update_display();
@@ -1094,13 +1080,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86
 [; ;receive_decode.c: 86:     }
 }
-[e :U 644 ]
+[e :U 642 ]
 "89
 [; ;receive_decode.c: 89:     g_data.g_find_recv_start = FALSE;
 [e = . _g_data 2 . `E4902 0 ]
 "90
-[; ;receive_decode.c: 90:     PORTCbits.RC2 = BPC_PWR_ON;
-[e = . . _PORTCbits 0 2 -> . `E4906 0 `uc ]
+[; ;receive_decode.c: 90:     PORTCbits.RC2 = BPC_PWR_OFF;
+[e = . . _PORTCbits 0 2 -> . `E4906 1 `uc ]
 "91
 [; ;receive_decode.c: 91:     g_data.g_start_read_data = 0;
 [e = . _g_data 1 -> -> 0 `i `E4902 ]
@@ -1112,9 +1098,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 645  ]
-[e $U 646  ]
-[e :U 645 ]
+[e $ < _i -> 20 `i 643  ]
+[e $U 644  ]
+[e :U 643 ]
 {
 "94
 [; ;receive_decode.c: 94:         g_data.g_recv_buf[i] = 5;
@@ -1123,8 +1109,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;receive_decode.c: 95:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 645  ]
-[e :U 646 ]
+[e $ < _i -> 20 `i 643  ]
+[e :U 644 ]
 }
 "96
 [; ;receive_decode.c: 96:     return;

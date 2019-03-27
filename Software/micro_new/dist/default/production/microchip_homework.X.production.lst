@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Wed Mar 27 23:13:22 2019
+                                                                                               Wed Mar 27 23:41:42 2019
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1                           	processor	16F1786
@@ -1466,25 +1466,25 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1452  0FEF                     	;# 
   1453                           
   1454                           	psect	stringtext1
-  1455  02BA                     __pstringtext1:	
-  1456  02BA                     _segmcode:	
-  1457  02BA  343F               	retlw	63
-  1458  02BB  3406               	retlw	6
-  1459  02BC  345B               	retlw	91
-  1460  02BD  344F               	retlw	79
-  1461  02BE  3466               	retlw	102
-  1462  02BF  346D               	retlw	109
-  1463  02C0  347D               	retlw	125
-  1464  02C1  3407               	retlw	7
-  1465  02C2  347F               	retlw	127
-  1466  02C3  346F               	retlw	111
-  1467  02C4  3477               	retlw	119
-  1468  02C5  347C               	retlw	124
-  1469  02C6  3439               	retlw	57
-  1470  02C7  345E               	retlw	94
-  1471  02C8  3479               	retlw	121
-  1472  02C9  3471               	retlw	113
-  1473  02CA                     __end_of_segmcode:	
+  1455  02B5                     __pstringtext1:	
+  1456  02B5                     _segmcode:	
+  1457  02B5  343F               	retlw	63
+  1458  02B6  3406               	retlw	6
+  1459  02B7  345B               	retlw	91
+  1460  02B8  344F               	retlw	79
+  1461  02B9  3466               	retlw	102
+  1462  02BA  346D               	retlw	109
+  1463  02BB  347D               	retlw	125
+  1464  02BC  3407               	retlw	7
+  1465  02BD  347F               	retlw	127
+  1466  02BE  346F               	retlw	111
+  1467  02BF  3477               	retlw	119
+  1468  02C0  347C               	retlw	124
+  1469  02C1  3439               	retlw	57
+  1470  02C2  345E               	retlw	94
+  1471  02C3  3479               	retlw	121
+  1472  02C4  3471               	retlw	113
+  1473  02C5                     __end_of_segmcode:	
   1474  000E                     _PORTCbits	set	14
   1475  000D                     _PORTBbits	set	13
   1476  0015                     _TMR0	set	21
@@ -1526,14 +1526,14 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1512  0064  3000               	movlw	high __pbssBANK0
   1513  0065  0085               	movwf	5
   1514  0066  3024               	movlw	36
-  1515  0067  3182  22E2         	fcall	clear_ram0
+  1515  0067  3182  22DD         	fcall	clear_ram0
   1516  0069                     end_of_initialization:	
   1517                           ;End of C runtime variable initialization code
   1518                           
   1519  0069                     __end_of__initialization:	
   1520  0069  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
   1521  006A  0020               	movlb	0
-  1522  006B  3182  2AE8         	ljmp	_main	;jump to C main() function
+  1522  006B  3182  2AE3         	ljmp	_main	;jump to C main() function
   1523                           
   1524                           	psect	bssCOMMON
   1525  007D                     __pbssCOMMON:	
@@ -1550,17 +1550,17 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1536  0043                     	ds	1
   1537                           
   1538                           	psect	clrtext
-  1539  02E2                     clear_ram0:	
+  1539  02DD                     clear_ram0:	
   1540                           ;	Called with FSR0 containing the base address, and
   1541                           ;	WREG with the size to clear
   1542                           
-  1543  02E2  0064               	clrwdt	;clear the watchdog before getting into this loop
-  1544  02E3                     clrloop0:	
-  1545  02E3  0180               	clrf	0	;clear RAM location pointed to by FSR
-  1546  02E4  3101               	addfsr 0,1
-  1547  02E5  0B89               	decfsz	9,f	;Have we reached the end of clearing yet?
-  1548  02E6  2AE3               	goto	clrloop0	;have we reached the end yet?
-  1549  02E7  3400               	retlw	0	;all done for this memory range, return
+  1543  02DD  0064               	clrwdt	;clear the watchdog before getting into this loop
+  1544  02DE                     clrloop0:	
+  1545  02DE  0180               	clrf	0	;clear RAM location pointed to by FSR
+  1546  02DF  3101               	addfsr 0,1
+  1547  02E0  0B89               	decfsz	9,f	;Have we reached the end of clearing yet?
+  1548  02E1  2ADE               	goto	clrloop0	;have we reached the end yet?
+  1549  02E2  3400               	retlw	0	;all done for this memory range, return
   1550                           
   1551                           	psect	cstackCOMMON
   1552  0070                     __pcstackCOMMON:	
@@ -1700,14 +1700,14 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1686  0054                     ??_main:	
   1687                           
   1688                           	psect	maintext
-  1689  02E8                     __pmaintext:	
+  1689  02E3                     __pmaintext:	
   1690                           ; 1 bytes @ 0x10
   1691 ;;
   1692 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
   1693 ;;
   1694 ;; *************** function _main *****************
   1695 ;; Defined at:
-  1696 ;;		line 205 in file "main.c"
+  1696 ;;		line 204 in file "main.c"
   1697 ;; Parameters:    Size  Location     Type
   1698 ;;		None
   1699 ;; Auto vars:     Size  Location     Type
@@ -1741,23 +1741,23 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1722                           
   1723                           
   1724                           ;psect for function _main
-  1725  02E8                     _main:	
+  1725  02E3                     _main:	
   1726                           
-  1727                           ;main.c: 207:     init_env();
+  1727                           ;main.c: 206:     init_env();
   1728                           
   1729                           ;incstack = 0
   1730                           ; Regs used in _main: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
-  1731  02E8  3181  215F  3182   	fcall	_init_env
-  1732  02EB                     l86:	
-  1733                           ;main.c: 209:     while(1);
+  1731  02E3  3181  215A  3182   	fcall	_init_env
+  1732  02E6                     l86:	
+  1733                           ;main.c: 208:     while(1);
   1734                           
-  1735  02EB  2AEB               	goto	l86
-  1736  02EC                     __end_of_main:	
-  1737                           ;main.c: 210:     return;
+  1735  02E6  2AE6               	goto	l86
+  1736  02E7                     __end_of_main:	
+  1737                           ;main.c: 209:     return;
   1738                           
   1739                           
   1740                           	psect	text1
-  1741  015F                     __ptext1:	
+  1741  015A                     __ptext1:	
   1742 ;; *************** function _init_env *****************
   1743 ;; Defined at:
   1744 ;;		line 37 in file "main.c"
@@ -1795,191 +1795,191 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1771                           
   1772                           
   1773                           ;psect for function _init_env
-  1774  015F                     _init_env:	
+  1774  015A                     _init_env:	
   1775                           
   1776                           ;main.c: 42:     TRISA = 0;
   1777                           
   1778                           ;incstack = 0
   1779                           ; Regs used in _init_env: [wreg+fsr1l+fsr1h+status,2+status,0]
-  1780  015F  178B               	bsf	11,7	;volatile
+  1780  015A  178B               	bsf	11,7	;volatile
   1781                           
   1782                           ;main.c: 44:     WPUA = 0;
-  1783  0160  158B               	bsf	11,3	;volatile
+  1783  015B  158B               	bsf	11,3	;volatile
   1784                           
   1785                           ;main.c: 48:     TRISB = 0;
-  1786  0161  168B               	bsf	11,5	;volatile
+  1786  015C  168B               	bsf	11,5	;volatile
   1787                           
   1788                           ;main.c: 54:     TRISC = 0;
-  1789  0162  0021               	movlb	1	; select bank1
-  1790  0163  0819               	movf	25,w	;volatile
-  1791  0164  39FC               	andlw	-4
-  1792  0165  3802               	iorlw	2
-  1793  0166  0099               	movwf	25	;volatile
+  1789  015D  0021               	movlb	1	; select bank1
+  1790  015E  0819               	movf	25,w	;volatile
+  1791  015F  39FC               	andlw	-4
+  1792  0160  3802               	iorlw	2
+  1793  0161  0099               	movwf	25	;volatile
   1794                           
   1795                           ;main.c: 55:     LATC = 0;
-  1796  0167  0819               	movf	25,w	;volatile
-  1797  0168  3987               	andlw	-121
-  1798  0169  3850               	iorlw	80
-  1799  016A  0099               	movwf	25	;volatile
+  1796  0162  0819               	movf	25,w	;volatile
+  1797  0163  3987               	andlw	-121
+  1798  0164  3850               	iorlw	80
+  1799  0165  0099               	movwf	25	;volatile
   1800                           
   1801                           ;main.c: 63:     TRISCbits.TRISC5 = 1;
-  1802  016B  1195               	bcf	21,3	;volatile
+  1802  0166  1195               	bcf	21,3	;volatile
   1803                           
   1804                           ;main.c: 64:     WPUCbits.WPUC5 = 1;
-  1805  016C  1295               	bcf	21,5	;volatile
+  1805  0167  1295               	bcf	21,5	;volatile
   1806                           
   1807                           ;main.c: 65: 
-  1808  016D  0815               	movf	21,w	;volatile
-  1809  016E  39F8               	andlw	-8
-  1810  016F  3804               	iorlw	4
-  1811  0170  0095               	movwf	21	;volatile
+  1808  0168  0815               	movf	21,w	;volatile
+  1809  0169  39F8               	andlw	-8
+  1810  016A  3804               	iorlw	4
+  1811  016B  0095               	movwf	21	;volatile
   1812                           
   1813                           ;main.c: 66:     TRISCbits.TRISC1 = 1;
-  1814  0171  30E7               	movlw	231
-  1815  0172  0020               	movlb	0	; select bank0
-  1816  0173  0095               	movwf	21	;volatile
+  1814  016C  30E7               	movlw	231
+  1815  016D  0020               	movlb	0	; select bank0
+  1816  016E  0095               	movwf	21	;volatile
   1817                           
   1818                           ;main.c: 74:     g_data.g_time_m = 0;
-  1819  0174  0021               	movlb	1	; select bank1
-  1820  0175  1395               	bcf	21,7	;volatile
+  1819  016F  0021               	movlb	1	; select bank1
+  1820  0170  1395               	bcf	21,7	;volatile
   1821                           
   1822                           ;main.c: 76:     g_data.g_time_10ms = 0;
-  1823  0176  018C               	clrf	12	;volatile
+  1823  0171  018C               	clrf	12	;volatile
   1824                           
   1825                           ;main.c: 77: 
-  1826  0177  0022               	movlb	2	; select bank2
-  1827  0178  018C               	clrf	12	;volatile
+  1826  0172  0022               	movlb	2	; select bank2
+  1827  0173  018C               	clrf	12	;volatile
   1828                           
   1829                           ;main.c: 78: 
-  1830  0179  0024               	movlb	4	; select bank4
-  1831  017A  018C               	clrf	12	;volatile
+  1830  0174  0024               	movlb	4	; select bank4
+  1831  0175  018C               	clrf	12	;volatile
   1832                           
   1833                           ;main.c: 79:     g_data.g_flg_switch = FALSE;
-  1834  017B  0027               	movlb	7	; select bank7
-  1835  017C  0191               	clrf	17	;volatile
+  1834  0176  0027               	movlb	7	; select bank7
+  1835  0177  0191               	clrf	17	;volatile
   1836                           
   1837                           ;main.c: 80:     g_data.g_start_read_data = FALSE;
-  1838  017D  0192               	clrf	18	;volatile
+  1838  0178  0192               	clrf	18	;volatile
   1839                           
   1840                           ;main.c: 82: 
-  1841  017E  0021               	movlb	1	; select bank1
-  1842  017F  018D               	clrf	13	;volatile
+  1841  0179  0021               	movlb	1	; select bank1
+  1842  017A  018D               	clrf	13	;volatile
   1843                           
   1844                           ;main.c: 83: 
-  1845  0180  0022               	movlb	2	; select bank2
-  1846  0181  018D               	clrf	13	;volatile
+  1845  017B  0022               	movlb	2	; select bank2
+  1846  017C  018D               	clrf	13	;volatile
   1847                           
   1848                           ;main.c: 84:     g_data.g_high_level_times = 0;
-  1849  0182  0024               	movlb	4	; select bank4
-  1850  0183  018D               	clrf	13	;volatile
+  1849  017D  0024               	movlb	4	; select bank4
+  1850  017E  018D               	clrf	13	;volatile
   1851                           
   1852                           ;main.c: 85:     g_data.g_all_level_times = 0;
-  1853  0184  0027               	movlb	7	; select bank7
-  1854  0185  0194               	clrf	20	;volatile
+  1853  017F  0027               	movlb	7	; select bank7
+  1854  0180  0194               	clrf	20	;volatile
   1855                           
   1856                           ;main.c: 86:     g_data.g_recv_count = 0;
-  1857  0186  0195               	clrf	21	;volatile
+  1857  0181  0195               	clrf	21	;volatile
   1858                           
   1859                           ;main.c: 88:         g_data.g_recv_buf[i] = 5;
-  1860  0187  0021               	movlb	1	; select bank1
-  1861  0188  018E               	clrf	14	;volatile
+  1860  0182  0021               	movlb	1	; select bank1
+  1861  0183  018E               	clrf	14	;volatile
   1862                           
   1863                           ;main.c: 89:     }
-  1864  0189  0022               	movlb	2	; select bank2
-  1865  018A  018E               	clrf	14	;volatile
+  1864  0184  0022               	movlb	2	; select bank2
+  1865  0185  018E               	clrf	14	;volatile
   1866                           
   1867                           ;main.c: 90: 
-  1868  018B  0024               	movlb	4	; select bank4
-  1869  018C  018E               	clrf	14	;volatile
+  1868  0186  0024               	movlb	4	; select bank4
+  1869  0187  018E               	clrf	14	;volatile
   1870                           
   1871                           ;main.c: 91: 
-  1872  018D  0027               	movlb	7	; select bank7
-  1873  018E  0197               	clrf	23	;volatile
+  1872  0188  0027               	movlb	7	; select bank7
+  1873  0189  0197               	clrf	23	;volatile
   1874                           
   1875                           ;main.c: 92: 
-  1876  018F  0198               	clrf	24	;volatile
+  1876  018A  0198               	clrf	24	;volatile
   1877                           
   1878                           ;main.c: 97:     PORTCbits.RC2 = BPC_PWR_ON;
-  1879  0190  0021               	movlb	1	; select bank1
-  1880  0191  168E               	bsf	14,5	;volatile
+  1879  018B  0021               	movlb	1	; select bank1
+  1880  018C  168E               	bsf	14,5	;volatile
   1881                           
   1882                           ;main.c: 98: 
-  1883  0192  0024               	movlb	4	; select bank4
-  1884  0193  168E               	bsf	14,5	;volatile
+  1883  018D  0024               	movlb	4	; select bank4
+  1884  018E  168E               	bsf	14,5	;volatile
   1885                           
   1886                           ;main.c: 100:     TRISCbits.TRISC0 = 1;
-  1887  0194  0021               	movlb	1	; select bank1
-  1888  0195  148E               	bsf	14,1	;volatile
+  1887  018F  0021               	movlb	1	; select bank1
+  1888  0190  148E               	bsf	14,1	;volatile
   1889                           
   1890                           ;main.c: 101:     WPUCbits.WPUC0 = 1;
-  1891  0196  0024               	movlb	4	; select bank4
-  1892  0197  148E               	bsf	14,1	;volatile
-  1893  0198  0027               	movlb	7	; select bank7
-  1894  0199  1497               	bsf	23,1	;volatile
-  1895  019A  0020               	movlb	0	; select bank0
-  1896  019B  01A3               	clrf	_g_data+3	;volatile
-  1897  019C  01A4               	clrf	_g_data+4	;volatile
-  1898  019D  01A5               	clrf	_g_data+5	;volatile
-  1899  019E  01A6               	clrf	_g_data+6	;volatile
-  1900  019F  01A0               	clrf	_g_data	;volatile
-  1901  01A0  01A1               	clrf	_g_data+1	;volatile
-  1902  01A1  01A2               	clrf	_g_data+2	;volatile
-  1903  01A2  01A7               	clrf	_g_data+7	;volatile
-  1904  01A3  01A8               	clrf	_g_data+8	;volatile
-  1905  01A4  01A9               	clrf	_g_data+9	;volatile
-  1906  01A5  01AA               	clrf	_g_data+10	;volatile
-  1907  01A6  01AB               	clrf	_g_data+11	;volatile
-  1908  01A7  01AC               	clrf	_g_data+12	;volatile
-  1909  01A8  01D2               	clrf	init_env@i
-  1910  01A9  01D3               	clrf	init_env@i+1
-  1911  01AA  0853               	movf	init_env@i+1,w
-  1912  01AB  3A80               	xorlw	128
-  1913  01AC  00D1               	movwf	??_init_env
-  1914  01AD  3080               	movlw	128
-  1915  01AE  0251               	subwf	??_init_env,w
-  1916  01AF  1D03               	skipz
-  1917  01B0  29B3               	goto	u645
-  1918  01B1  3014               	movlw	20
-  1919  01B2  0252               	subwf	init_env@i,w
-  1920  01B3                     u645:	
-  1921  01B3  1803               	btfsc	3,0
-  1922  01B4  29CD               	goto	l62
-  1923  01B5                     l1189:	
-  1924  01B5  3005               	movlw	5
-  1925  01B6  0020               	movlb	0	; select bank0
-  1926  01B7  00D1               	movwf	??_init_env
-  1927  01B8  0852               	movf	init_env@i,w
-  1928  01B9  3E2D               	addlw	(low ((_g_data| 0+13)))& (0+255)
-  1929  01BA  0086               	movwf	6
-  1930  01BB  0187               	clrf	7
-  1931  01BC  0851               	movf	??_init_env,w
-  1932  01BD  0081               	movwf	1
-  1933  01BE  3001               	movlw	1
-  1934  01BF  07D2               	addwf	init_env@i,f
-  1935  01C0  3000               	movlw	0
-  1936  01C1  3DD3               	addwfc	init_env@i+1,f
-  1937  01C2  0853               	movf	init_env@i+1,w
-  1938  01C3  3A80               	xorlw	128
-  1939  01C4  00D1               	movwf	??_init_env
-  1940  01C5  3080               	movlw	128
-  1941  01C6  0251               	subwf	??_init_env,w
-  1942  01C7  1D03               	skipz
-  1943  01C8  29CB               	goto	u655
-  1944  01C9  3014               	movlw	20
-  1945  01CA  0252               	subwf	init_env@i,w
-  1946  01CB                     u655:	
-  1947  01CB  1C03               	skipc
-  1948  01CC  29B5               	goto	l1189
-  1949  01CD                     l62:	
-  1950  01CD  0020               	movlb	0	; select bank0
-  1951  01CE  158D               	bsf	13,3	;volatile
-  1952  01CF  110E               	bcf	14,2	;volatile
-  1953  01D0  0021               	movlb	1	; select bank1
-  1954  01D1  140E               	bsf	14,0	;volatile
-  1955  01D2  0024               	movlb	4	; select bank4
-  1956  01D3  140E               	bsf	14,0	;volatile
-  1957  01D4  0008               	return
-  1958  01D5                     __end_of_init_env:	
+  1891  0191  0024               	movlb	4	; select bank4
+  1892  0192  148E               	bsf	14,1	;volatile
+  1893  0193  0027               	movlb	7	; select bank7
+  1894  0194  1497               	bsf	23,1	;volatile
+  1895  0195  0020               	movlb	0	; select bank0
+  1896  0196  01A3               	clrf	_g_data+3	;volatile
+  1897  0197  01A4               	clrf	_g_data+4	;volatile
+  1898  0198  01A5               	clrf	_g_data+5	;volatile
+  1899  0199  01A6               	clrf	_g_data+6	;volatile
+  1900  019A  01A0               	clrf	_g_data	;volatile
+  1901  019B  01A1               	clrf	_g_data+1	;volatile
+  1902  019C  01A2               	clrf	_g_data+2	;volatile
+  1903  019D  01A7               	clrf	_g_data+7	;volatile
+  1904  019E  01A8               	clrf	_g_data+8	;volatile
+  1905  019F  01A9               	clrf	_g_data+9	;volatile
+  1906  01A0  01AA               	clrf	_g_data+10	;volatile
+  1907  01A1  01AB               	clrf	_g_data+11	;volatile
+  1908  01A2  01AC               	clrf	_g_data+12	;volatile
+  1909  01A3  01D2               	clrf	init_env@i
+  1910  01A4  01D3               	clrf	init_env@i+1
+  1911  01A5  0853               	movf	init_env@i+1,w
+  1912  01A6  3A80               	xorlw	128
+  1913  01A7  00D1               	movwf	??_init_env
+  1914  01A8  3080               	movlw	128
+  1915  01A9  0251               	subwf	??_init_env,w
+  1916  01AA  1D03               	skipz
+  1917  01AB  29AE               	goto	u635
+  1918  01AC  3014               	movlw	20
+  1919  01AD  0252               	subwf	init_env@i,w
+  1920  01AE                     u635:	
+  1921  01AE  1803               	btfsc	3,0
+  1922  01AF  29C8               	goto	l62
+  1923  01B0                     l1181:	
+  1924  01B0  3005               	movlw	5
+  1925  01B1  0020               	movlb	0	; select bank0
+  1926  01B2  00D1               	movwf	??_init_env
+  1927  01B3  0852               	movf	init_env@i,w
+  1928  01B4  3E2D               	addlw	(low ((_g_data| 0+13)))& (0+255)
+  1929  01B5  0086               	movwf	6
+  1930  01B6  0187               	clrf	7
+  1931  01B7  0851               	movf	??_init_env,w
+  1932  01B8  0081               	movwf	1
+  1933  01B9  3001               	movlw	1
+  1934  01BA  07D2               	addwf	init_env@i,f
+  1935  01BB  3000               	movlw	0
+  1936  01BC  3DD3               	addwfc	init_env@i+1,f
+  1937  01BD  0853               	movf	init_env@i+1,w
+  1938  01BE  3A80               	xorlw	128
+  1939  01BF  00D1               	movwf	??_init_env
+  1940  01C0  3080               	movlw	128
+  1941  01C1  0251               	subwf	??_init_env,w
+  1942  01C2  1D03               	skipz
+  1943  01C3  29C6               	goto	u645
+  1944  01C4  3014               	movlw	20
+  1945  01C5  0252               	subwf	init_env@i,w
+  1946  01C6                     u645:	
+  1947  01C6  1C03               	skipc
+  1948  01C7  29B0               	goto	l1181
+  1949  01C8                     l62:	
+  1950  01C8  0020               	movlb	0	; select bank0
+  1951  01C9  158D               	bsf	13,3	;volatile
+  1952  01CA  110E               	bcf	14,2	;volatile
+  1953  01CB  0021               	movlb	1	; select bank1
+  1954  01CC  140E               	bsf	14,0	;volatile
+  1955  01CD  0024               	movlb	4	; select bank4
+  1956  01CE  140E               	bsf	14,0	;volatile
+  1957  01CF  0008               	return
+  1958  01D0                     __end_of_init_env:	
   1959                           
   1960                           	psect	intentry
   1961  0004                     __pintentry:	
@@ -2029,7 +2029,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2000  0005  3180               	pagesel	$
   2001                           
   2002                           ;main.c: 157:     static u8 history_key = 0;;main.c: 158:     static u16 key_time_cnt = 
-      +                          0;;main.c: 162:     if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && 
+      +                          0;;main.c: 161:     if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && 
       +                          g_data.g_flg_switch == TRUE){
   2003  0006  0027               	movlb	7	; select bank7
   2004  0007  1C99               	btfss	25,1	;volatile
@@ -2042,29 +2042,29 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2011  000E  1D03               	btfss	3,2
   2012  000F  281A               	goto	i1l72
   2013                           
-  2014                           ;main.c: 164: ;main.c: 167:         g_data.g_start_read_data = TRUE;
+  2014                           ;main.c: 163: ;main.c: 166:         g_data.g_start_read_data = TRUE;
   2015  0010  3001               	movlw	1
   2016  0011  00CF               	movwf	??_ISR
   2017  0012  084F               	movf	??_ISR,w
   2018  0013  00A1               	movwf	_g_data+1	;volatile
   2019                           
-  2020                           ;main.c: 168:         g_data.g_flg_switch = FALSE;
+  2020                           ;main.c: 167:         g_data.g_flg_switch = FALSE;
   2021  0014  01A0               	clrf	_g_data	;volatile
   2022                           
-  2023                           ;main.c: 169:         PORTCbits.RC2 = BPC_PWR_ON;
+  2023                           ;main.c: 168:         PORTCbits.RC2 = BPC_PWR_ON;
   2024  0015  110E               	bcf	14,2	;volatile
   2025                           
-  2026                           ;main.c: 171:         INTCONbits.IOCIF = FALSE;
+  2026                           ;main.c: 170:         INTCONbits.IOCIF = FALSE;
   2027  0016  100B               	bcf	11,0	;volatile
   2028                           
-  2029                           ;main.c: 172:         IOCCFbits.IOCCF1 = FALSE;
+  2029                           ;main.c: 171:         IOCCFbits.IOCCF1 = FALSE;
   2030  0017  0027               	movlb	7	; select bank7
   2031  0018  1099               	bcf	25,1	;volatile
   2032                           
-  2033                           ;main.c: 173:         return;
+  2033                           ;main.c: 172:         return;
   2034  0019  285D               	goto	i1l73
   2035  001A                     i1l72:	
-  2036                           ;main.c: 174:     }else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1){
+  2036                           ;main.c: 173:     }else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1){
   2037                           
   2038  001A  180B               	btfsc	11,0	;volatile
   2039  001B  281F               	goto	i1l77
@@ -2073,36 +2073,36 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2042  001E  2822               	goto	i1l74
   2043  001F                     i1l77:	
   2044                           
-  2045                           ;main.c: 175:         INTCONbits.IOCIF = FALSE;
+  2045                           ;main.c: 174:         INTCONbits.IOCIF = FALSE;
   2046  001F  100B               	bcf	11,0	;volatile
   2047                           
-  2048                           ;main.c: 176:         IOCCFbits.IOCCF1 = FALSE;
+  2048                           ;main.c: 175:         IOCCFbits.IOCCF1 = FALSE;
   2049  0020  0027               	movlb	7	; select bank7
   2050  0021  1099               	bcf	25,1	;volatile
   2051  0022                     i1l74:	
-  2052                           ;main.c: 177:     }
+  2052                           ;main.c: 176:     }
   2053                           
   2054                           
-  2055                           ;main.c: 180:     if(INTCONbits.TMR0IF){
+  2055                           ;main.c: 179:     if(INTCONbits.TMR0IF){
   2056  0022  1D0B               	btfss	11,2	;volatile
   2057  0023  285D               	goto	i1l73
   2058                           
-  2059                           ;main.c: 181:         update_time();
-  2060  0024  3182  2220  3180   	fcall	_update_time
+  2059                           ;main.c: 180:         update_time();
+  2060  0024  3182  221B  3180   	fcall	_update_time
   2061                           
-  2062                           ;main.c: 183:         if(g_data.g_start_read_data == TRUE ){
+  2062                           ;main.c: 182:         if(g_data.g_start_read_data == TRUE ){
   2063  0027  0020               	movlb	0	; select bank0
   2064  0028  0321               	decf	_g_data+1,w	;volatile
   2065  0029  1D03               	btfss	3,2
-  2066  002A  282E               	goto	i1l1343
+  2066  002A  282E               	goto	i1l1329
   2067                           
-  2068                           ;main.c: 184:             receive_decode();
+  2068                           ;main.c: 183:             receive_decode();
   2069  002B  3180  206D  3180   	fcall	_receive_decode
-  2070  002E                     i1l1343:	
-  2071                           ;main.c: 185:         }
+  2070  002E                     i1l1329:	
+  2071                           ;main.c: 184:         }
   2072                           
   2073                           
-  2074                           ;main.c: 188:         if(key_time_cnt++ % 10 == 0)
+  2074                           ;main.c: 187:         if(key_time_cnt++ % 10 == 0)
   2075  002E  300A               	movlw	10
   2076  002F  00F0               	movwf	___lwmod@divisor
   2077  0030  3000               	movlw	0
@@ -2119,18 +2119,18 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2088  003B  00F2               	movwf	___lwmod@dividend
   2089  003C  0850               	movf	??_ISR+1,w
   2090  003D  00F3               	movwf	___lwmod@dividend+1
-  2091  003E  3182  224F  3180   	fcall	___lwmod
+  2091  003E  3182  224A  3180   	fcall	___lwmod
   2092  0041  0870               	movf	?___lwmod,w
   2093  0042  0471               	iorwf	?___lwmod+1,w
   2094  0043  1D03               	btfss	3,2
-  2095  0044  2859               	goto	i1l1353
+  2095  0044  2859               	goto	i1l1339
   2096                           
-  2097                           ;main.c: 189:         {;main.c: 190:             history_key <<= 1;
+  2097                           ;main.c: 188:         {;main.c: 189:             history_key <<= 1;
   2098  0045  1003               	clrc
   2099  0046  0020               	movlb	0	; select bank0
   2100  0047  0DC3               	rlf	ISR@history_key,f
   2101                           
-  2102                           ;main.c: 191:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+  2102                           ;main.c: 190:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
   2103  0048  0E0E               	swapf	14,w	;volatile
   2104  0049  0C89               	rrf	9,f
   2105  004A  3901               	andlw	1
@@ -2138,46 +2138,46 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2107  004C  084F               	movf	??_ISR,w
   2108  004D  04C3               	iorwf	ISR@history_key,f
   2109                           
-  2110                           ;main.c: 192:             if((0x03) == (history_key & (0x0f)) )
+  2110                           ;main.c: 191:             if((0x03) == (history_key & (0x0f)) )
   2111  004E  300F               	movlw	15
   2112  004F  0543               	andwf	ISR@history_key,w
   2113  0050  00CF               	movwf	??_ISR
   2114  0051  3003               	movlw	3
   2115  0052  064F               	xorwf	??_ISR,w
   2116  0053  1D03               	btfss	3,2
-  2117  0054  2859               	goto	i1l1353
+  2117  0054  2859               	goto	i1l1339
   2118                           
-  2119                           ;main.c: 193:             {;main.c: 194:                 g_data.g_flg_switch = TRUE;
+  2119                           ;main.c: 192:             {;main.c: 193:                 g_data.g_flg_switch = TRUE;
   2120  0055  3001               	movlw	1
   2121  0056  00CF               	movwf	??_ISR
   2122  0057  084F               	movf	??_ISR,w
   2123  0058  00A0               	movwf	_g_data	;volatile
-  2124  0059                     i1l1353:	
-  2125                           ;main.c: 196:         }
+  2124  0059                     i1l1339:	
+  2125                           ;main.c: 195:         }
   2126                           
-  2127                           ;main.c: 195:             }
+  2127                           ;main.c: 194:             }
   2128                           
   2129                           
-  2130                           ;main.c: 198:         INTCONbits.TMR0IF = 0;
+  2130                           ;main.c: 197:         INTCONbits.TMR0IF = 0;
   2131  0059  110B               	bcf	11,2	;volatile
   2132                           
-  2133                           ;main.c: 199:         TMR0 = (217 + 14);
+  2133                           ;main.c: 198:         TMR0 = (217 + 14);
   2134  005A  30E7               	movlw	231
   2135  005B  0020               	movlb	0	; select bank0
   2136  005C  0095               	movwf	21	;volatile
   2137  005D                     i1l73:	
-  2138                           ;main.c: 202:     return;
+  2138                           ;main.c: 201:     return;
   2139                           
-  2140                           ;main.c: 201:     }
+  2140                           ;main.c: 200:     }
   2141                           
-  2142                           ;main.c: 200:         return;
+  2142                           ;main.c: 199:         return;
   2143                           
   2144  005D  107E               	bcf	126,0	;clear compiler interrupt flag (level 1)
   2145  005E  0009               	retfie
   2146  005F                     __end_of_ISR:	
   2147                           
   2148                           	psect	text3
-  2149  0220                     __ptext3:	
+  2149  021B                     __ptext3:	
   2150 ;; *************** function _update_time *****************
   2151 ;; Defined at:
   2152 ;;		line 14 in file "update_time.c"
@@ -2215,92 +2215,92 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2179                           
   2180                           
   2181                           ;psect for function _update_time
-  2182  0220                     _update_time:	
+  2182  021B                     _update_time:	
   2183                           
   2184                           ;update_time.c: 15:     g_data.g_time_10ms++;
   2185                           
   2186                           ;incstack = 0
   2187                           ; Regs used in _update_time: [wreg+status,2+status,0+pclath+cstack]
-  2188  0220  3001               	movlw	1
-  2189  0221  00FC               	movwf	??_update_time
-  2190  0222  087C               	movf	??_update_time,w
-  2191  0223  0020               	banksel	_g_data
-  2192  0224  07A6               	addwf	(_g_data& (0+127)+6),f	;volatile
+  2188  021B  3001               	movlw	1
+  2189  021C  00FC               	movwf	??_update_time
+  2190  021D  087C               	movf	??_update_time,w
+  2191  021E  0020               	banksel	_g_data
+  2192  021F  07A6               	addwf	(_g_data& (0+127)+6),f	;volatile
   2193                           
   2194                           ;update_time.c: 16:     if(g_data.g_time_10ms == 100){
-  2195  0225  3064               	movlw	100
-  2196  0226  0626               	xorwf	(_g_data& (0+127)+6),w	;volatile
-  2197  0227  1D03               	btfss	3,2
-  2198  0228  0008               	return
+  2195  0220  3064               	movlw	100
+  2196  0221  0626               	xorwf	(_g_data& (0+127)+6),w	;volatile
+  2197  0222  1D03               	btfss	3,2
+  2198  0223  0008               	return
   2199                           
   2200                           ;update_time.c: 18:         g_data.g_time_10ms = 0;
-  2201  0229  3000               	movlw	0
-  2202  022A  00A6               	movwf	(_g_data& (0+127)+6)	;volatile
+  2201  0224  3000               	movlw	0
+  2202  0225  00A6               	movwf	(_g_data& (0+127)+6)	;volatile
   2203                           
   2204                           ;update_time.c: 19:         g_data.g_time_s++;
-  2205  022B  3001               	movlw	1
-  2206  022C  00FC               	movwf	??_update_time
-  2207  022D  087C               	movf	??_update_time,w
-  2208  022E  0020               	banksel	_g_data
-  2209  022F  07A5               	addwf	(_g_data& (0+127)+5),f	;volatile
+  2205  0226  3001               	movlw	1
+  2206  0227  00FC               	movwf	??_update_time
+  2207  0228  087C               	movf	??_update_time,w
+  2208  0229  0020               	banksel	_g_data
+  2209  022A  07A5               	addwf	(_g_data& (0+127)+5),f	;volatile
   2210                           
   2211                           ;update_time.c: 21:         if(g_data.g_time_s == 60){
-  2212  0230  303C               	movlw	60
-  2213  0231  0625               	xorwf	(_g_data& (0+127)+5),w	;volatile
-  2214  0232  1D03               	btfss	3,2
-  2215  0233  0008               	return
+  2212  022B  303C               	movlw	60
+  2213  022C  0625               	xorwf	(_g_data& (0+127)+5),w	;volatile
+  2214  022D  1D03               	btfss	3,2
+  2215  022E  0008               	return
   2216                           
   2217                           ;update_time.c: 22:             g_data.g_time_m++;
-  2218  0234  3001               	movlw	1
-  2219  0235  00FC               	movwf	??_update_time
-  2220  0236  087C               	movf	??_update_time,w
-  2221  0237  0020               	banksel	_g_data
-  2222  0238  07A4               	addwf	(_g_data& (0+127)+4),f	;volatile
+  2218  022F  3001               	movlw	1
+  2219  0230  00FC               	movwf	??_update_time
+  2220  0231  087C               	movf	??_update_time,w
+  2221  0232  0020               	banksel	_g_data
+  2222  0233  07A4               	addwf	(_g_data& (0+127)+4),f	;volatile
   2223                           
   2224                           ;update_time.c: 23:             g_data.g_time_s = 0;
-  2225  0239  3000               	movlw	0
-  2226  023A  00A5               	movwf	(_g_data& (0+127)+5)	;volatile
+  2225  0234  3000               	movlw	0
+  2226  0235  00A5               	movwf	(_g_data& (0+127)+5)	;volatile
   2227                           
   2228                           ;update_time.c: 25:             if(g_data.g_time_m == 60){
-  2229  023B  303C               	movlw	60
-  2230  023C  0624               	xorwf	(_g_data& (0+127)+4),w	;volatile
-  2231  023D  1D03               	btfss	3,2
-  2232  023E  2A4C               	goto	i1l1211
+  2229  0236  303C               	movlw	60
+  2230  0237  0624               	xorwf	(_g_data& (0+127)+4),w	;volatile
+  2231  0238  1D03               	btfss	3,2
+  2232  0239  2A47               	goto	i1l1203
   2233                           
   2234                           ;update_time.c: 26:                 g_data.g_time_h++;
-  2235  023F  3001               	movlw	1
-  2236  0240  00FC               	movwf	??_update_time
-  2237  0241  087C               	movf	??_update_time,w
-  2238  0242  0020               	banksel	_g_data
-  2239  0243  07A3               	addwf	(_g_data& (0+127)+3),f	;volatile
+  2235  023A  3001               	movlw	1
+  2236  023B  00FC               	movwf	??_update_time
+  2237  023C  087C               	movf	??_update_time,w
+  2238  023D  0020               	banksel	_g_data
+  2239  023E  07A3               	addwf	(_g_data& (0+127)+3),f	;volatile
   2240                           
   2241                           ;update_time.c: 27:                 g_data.g_time_m = 0;
-  2242  0244  3000               	movlw	0
-  2243  0245  00A4               	movwf	(_g_data& (0+127)+4)	;volatile
+  2242  023F  3000               	movlw	0
+  2243  0240  00A4               	movwf	(_g_data& (0+127)+4)	;volatile
   2244                           
   2245                           ;update_time.c: 29:                 if(g_data.g_time_h == 24){
-  2246  0246  3018               	movlw	24
-  2247  0247  0623               	xorwf	(_g_data& (0+127)+3),w	;volatile
-  2248  0248  1D03               	btfss	3,2
-  2249  0249  2A4C               	goto	i1l1211
+  2246  0241  3018               	movlw	24
+  2247  0242  0623               	xorwf	(_g_data& (0+127)+3),w	;volatile
+  2248  0243  1D03               	btfss	3,2
+  2249  0244  2A47               	goto	i1l1203
   2250                           
   2251                           ;update_time.c: 30:                     g_data.g_time_h = 0;
-  2252  024A  3000               	movlw	0
-  2253  024B  00A3               	movwf	(_g_data& (0+127)+3)	;volatile
-  2254  024C                     i1l1211:	
+  2252  0245  3000               	movlw	0
+  2253  0246  00A3               	movwf	(_g_data& (0+127)+3)	;volatile
+  2254  0247                     i1l1203:	
   2255                           ;update_time.c: 32:             }
   2256                           
   2257                           ;update_time.c: 31:                 }
   2258                           
   2259                           
   2260                           ;update_time.c: 34:             update_display();
-  2261  024C  3182  22CA         	fcall	_update_display
+  2261  0247  3182  22C5         	fcall	_update_display
   2262                           
   2263                           ;update_time.c: 37:     }
   2264                           
   2265                           ;update_time.c: 35:         }
-  2266  024E  0008               	return
-  2267  024F                     __end_of_update_time:	
+  2266  0249  0008               	return
+  2267  024A                     __end_of_update_time:	
   2268                           ;update_time.c: 38:     return;
   2269                           
   2270                           
@@ -2374,7 +2374,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2333  0078  3000               	movlw	0
   2334  0079  3DAA               	addwfc	((_g_data+1)& (0+127)+9),f	;volatile
   2335                           
-  2336                           ;receive_decode.c: 45:     if(g_data.g_all_level_times < 100){
+  2336                           ;receive_decode.c: 46:     if(g_data.g_all_level_times < 100){
   2337  007A  3000               	movlw	0
   2338  007B  022A               	subwf	((_g_data+1)& (0+127)+9),w	;volatile
   2339  007C  3064               	movlw	100
@@ -2383,882 +2383,871 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2342  007F  1C03               	btfss	3,0
   2343  0080  0008               	return
   2344                           
-  2345                           ;receive_decode.c: 49:     u8 read_value = times2number(g_data.g_high_level_times);
+  2345                           ;receive_decode.c: 50:     u8 read_value = times2number(g_data.g_high_level_times);
   2346                           
-  2347                           ;receive_decode.c: 47:     }
+  2347                           ;receive_decode.c: 48:     }
   2348                           
-  2349                           ;receive_decode.c: 46:         return;
+  2349                           ;receive_decode.c: 47:         return;
   2350  0081  0828               	movf	((_g_data+1)& (0+127)+7),w	;volatile
   2351  0082  00F1               	movwf	times2number@high_level_times+1
   2352  0083  0020               	banksel	_g_data
   2353  0084  0827               	movf	(_g_data& (0+127)+7),w	;volatile
   2354  0085  00F0               	movwf	times2number@high_level_times
-  2355  0086  3181  21D5  3180   	fcall	_times2number
+  2355  0086  3181  21D0  3180   	fcall	_times2number
   2356  0089  0020               	movlb	0	; select bank0
   2357  008A  00C4               	movwf	??_receive_decode
   2358  008B  0844               	movf	??_receive_decode,w
   2359  008C  00CE               	movwf	receive_decode@read_value
   2360                           
-  2361                           ;receive_decode.c: 50:     g_data.g_all_level_times = 0;
+  2361                           ;receive_decode.c: 51:     g_data.g_all_level_times = 0;
   2362  008D  0020               	banksel	_g_data
   2363  008E  01A9               	clrf	(_g_data& (0+127)+9)	;volatile
   2364  008F  01AA               	clrf	((_g_data+1)& (0+127)+9)	;volatile
   2365                           
-  2366                           ;receive_decode.c: 51:     g_data.g_high_level_times = 0;
+  2366                           ;receive_decode.c: 52:     g_data.g_high_level_times = 0;
   2367  0090  01A7               	clrf	(_g_data& (0+127)+7)	;volatile
   2368  0091  01A8               	clrf	((_g_data+1)& (0+127)+7)	;volatile
   2369                           
-  2370                           ;receive_decode.c: 53:     if(read_value == 5){
+  2370                           ;receive_decode.c: 54:     if(read_value == 5){
   2371  0092  3005               	movlw	5
   2372  0093  0020               	movlb	0	; select bank0
   2373  0094  064E               	xorwf	receive_decode@read_value,w
   2374  0095  1D03               	btfss	3,2
-  2375  0096  289D               	goto	i1l1237
+  2375  0096  289D               	goto	i1l1227
   2376                           
-  2377                           ;receive_decode.c: 55:         g_data.g_find_recv_start = TRUE;
+  2377                           ;receive_decode.c: 56:         g_data.g_find_recv_start = TRUE;
   2378  0097  3001               	movlw	1
   2379  0098  0020               	banksel	_g_data
   2380  0099  00A2               	movwf	(_g_data& (0+127)+2)	;volatile
   2381                           
-  2382                           ;receive_decode.c: 56:         g_data.g_recv_count = 0;
+  2382                           ;receive_decode.c: 57:         g_data.g_recv_count = 0;
   2383  009A  01AB               	clrf	(_g_data& (0+127)+11)	;volatile
   2384  009B  01AC               	clrf	((_g_data+1)& (0+127)+11)	;volatile
   2385                           
-  2386                           ;receive_decode.c: 57:         return;
+  2386                           ;receive_decode.c: 58:         return;
   2387  009C  0008               	return
-  2388  009D                     i1l1237:	
-  2389                           ;receive_decode.c: 58:     }else if(read_value == 4){
+  2388  009D                     i1l1227:	
+  2389                           ;receive_decode.c: 59:     }
   2390                           
-  2391  009D  3004               	movlw	4
-  2392  009E  0020               	movlb	0	; select bank0
-  2393  009F  064E               	xorwf	receive_decode@read_value,w
-  2394  00A0  1903               	btfsc	3,2
-  2395  00A1  0008               	return
-  2396                           
-  2397                           ;receive_decode.c: 62:     if(g_data.g_find_recv_start == FALSE || read_value == 5){
-  2398                           
-  2399                           ;receive_decode.c: 60:     }
-  2400                           
-  2401                           ;receive_decode.c: 59:         return;
-  2402  00A2  0020               	banksel	_g_data
-  2403  00A3  0822               	movf	(_g_data& (0+127)+2),w	;volatile
-  2404  00A4  1903               	btfsc	3,2
-  2405  00A5  0008               	return
-  2406  00A6  3005               	movlw	5
-  2407  00A7  0020               	movlb	0	; select bank0
-  2408  00A8  064E               	xorwf	receive_decode@read_value,w
-  2409  00A9  1903               	btfsc	3,2
-  2410  00AA  0008               	return
-  2411                           
-  2412                           ;receive_decode.c: 66:     g_data.g_recv_buf[g_data.g_recv_count] = read_value;
-  2413                           
-  2414                           ;receive_decode.c: 64:     }
-  2415                           
-  2416                           ;receive_decode.c: 63:         return;
-  2417  00AB  3020               	movlw	low _g_data
-  2418  00AC  0086               	movwf	6
-  2419  00AD  3000               	movlw	high _g_data
-  2420  00AE  0087               	movwf	7
-  2421  00AF  314B               	addfsr 1,11
-  2422  00B0  302D               	movlw	low (_g_data+13)
-  2423  00B1  00C4               	movwf	??_receive_decode
-  2424  00B2  3000               	movlw	high (_g_data+13)
-  2425  00B3  00C5               	movwf	??_receive_decode+1
-  2426  00B4  3F40               	moviw [0]fsr1
-  2427  00B5  0744               	addwf	??_receive_decode,w
-  2428  00B6  00C6               	movwf	??_receive_decode+2
-  2429  00B7  3F41               	moviw [1]fsr1
-  2430  00B8  3D45               	addwfc	??_receive_decode+1,w
-  2431  00B9  00C7               	movwf	??_receive_decode+3
-  2432  00BA  0846               	movf	??_receive_decode+2,w
-  2433  00BB  0086               	movwf	6
-  2434  00BC  0847               	movf	??_receive_decode+3,w
-  2435  00BD  0087               	movwf	7
-  2436  00BE  084E               	movf	receive_decode@read_value,w
-  2437  00BF  0081               	movwf	1
-  2438                           
-  2439                           ;receive_decode.c: 67:     g_data.g_recv_count++;
-  2440  00C0  3001               	movlw	1
-  2441  00C1  0020               	banksel	_g_data
-  2442  00C2  07AB               	addwf	(_g_data& (0+127)+11),f	;volatile
-  2443  00C3  3000               	movlw	0
-  2444  00C4  3DAC               	addwfc	((_g_data+1)& (0+127)+11),f	;volatile
+  2391                           
+  2392                           ;receive_decode.c: 61:     if(g_data.g_find_recv_start == FALSE || (read_value == 4)){
+  2393  009D  0020               	banksel	_g_data
+  2394  009E  0822               	movf	(_g_data& (0+127)+2),w	;volatile
+  2395  009F  1903               	btfsc	3,2
+  2396  00A0  0008               	return
+  2397  00A1  3004               	movlw	4
+  2398  00A2  0020               	movlb	0	; select bank0
+  2399  00A3  064E               	xorwf	receive_decode@read_value,w
+  2400  00A4  1903               	btfsc	3,2
+  2401  00A5  0008               	return
+  2402                           
+  2403                           ;receive_decode.c: 67:     g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
+  2404                           
+  2405                           ;receive_decode.c: 65:     }
+  2406                           
+  2407                           ;receive_decode.c: 64:         return;
+  2408  00A6  3020               	movlw	low _g_data
+  2409  00A7  0086               	movwf	6
+  2410  00A8  3000               	movlw	high _g_data
+  2411  00A9  0087               	movwf	7
+  2412  00AA  314B               	addfsr 1,11
+  2413  00AB  302D               	movlw	low (_g_data+13)
+  2414  00AC  00C4               	movwf	??_receive_decode
+  2415  00AD  3000               	movlw	high (_g_data+13)
+  2416  00AE  00C5               	movwf	??_receive_decode+1
+  2417  00AF  3F40               	moviw [0]fsr1
+  2418  00B0  0744               	addwf	??_receive_decode,w
+  2419  00B1  00C6               	movwf	??_receive_decode+2
+  2420  00B2  3F41               	moviw [1]fsr1
+  2421  00B3  3D45               	addwfc	??_receive_decode+1,w
+  2422  00B4  00C7               	movwf	??_receive_decode+3
+  2423  00B5  0846               	movf	??_receive_decode+2,w
+  2424  00B6  0086               	movwf	6
+  2425  00B7  0847               	movf	??_receive_decode+3,w
+  2426  00B8  0087               	movwf	7
+  2427  00B9  084E               	movf	receive_decode@read_value,w
+  2428  00BA  0081               	movwf	1
+  2429  00BB  3001               	movlw	1
+  2430  00BC  0020               	banksel	_g_data
+  2431  00BD  07AB               	addwf	(_g_data& (0+127)+11),f	;volatile
+  2432  00BE  3000               	movlw	0
+  2433  00BF  3DAC               	addwfc	((_g_data+1)& (0+127)+11),f	;volatile
+  2434                           
+  2435                           ;receive_decode.c: 68:     if(g_data.g_recv_count < 9){
+  2436  00C0  3000               	movlw	0
+  2437  00C1  022C               	subwf	((_g_data+1)& (0+127)+11),w	;volatile
+  2438  00C2  3009               	movlw	9
+  2439  00C3  1903               	skipnz
+  2440  00C4  022B               	subwf	(_g_data& (0+127)+11),w	;volatile
+  2441  00C5  1C03               	btfss	3,0
+  2442  00C6  0008               	return
+  2443                           
+  2444                           ;receive_decode.c: 72:     if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
   2445                           
-  2446                           ;receive_decode.c: 68:     if(g_data.g_recv_count < 6){
-  2447  00C5  3000               	movlw	0
-  2448  00C6  022C               	subwf	((_g_data+1)& (0+127)+11),w	;volatile
-  2449  00C7  3006               	movlw	6
-  2450  00C8  1903               	skipnz
-  2451  00C9  022B               	subwf	(_g_data& (0+127)+11),w	;volatile
-  2452  00CA  1C03               	btfss	3,0
-  2453  00CB  0008               	return
-  2454                           
-  2455                           ;receive_decode.c: 72:     if(g_data.g_recv_buf[0] != 0 && g_data.g_recv_buf[1] != 0){
-  2456                           
-  2457                           ;receive_decode.c: 70:     }
-  2458                           
-  2459                           ;receive_decode.c: 69:         return;
-  2460  00CC  082D               	movf	(_g_data& (0+127)+13),w	;volatile
-  2461  00CD  1903               	btfsc	3,2
-  2462  00CE  28D9               	goto	i1l1263
-  2463  00CF  082E               	movf	(_g_data& (0+127)+14),w	;volatile
-  2464  00D0  1903               	btfsc	3,2
-  2465  00D1  28D9               	goto	i1l1263
-  2466                           
-  2467                           ;receive_decode.c: 73:         g_data.g_find_recv_start = FALSE;
-  2468  00D2  3000               	movlw	0
-  2469  00D3  00A2               	movwf	(_g_data& (0+127)+2)	;volatile
-  2470                           
-  2471                           ;receive_decode.c: 74:         g_data.g_start_read_data = 0;
-  2472  00D4  3000               	movlw	0
-  2473  00D5  00A1               	movwf	(_g_data& (0+127)+1)	;volatile
-  2474                           
-  2475                           ;receive_decode.c: 75:         g_data.g_recv_count = 0;
-  2476  00D6  01AB               	clrf	(_g_data& (0+127)+11)	;volatile
-  2477  00D7  01AC               	clrf	((_g_data+1)& (0+127)+11)	;volatile
-  2478                           
-  2479                           ;receive_decode.c: 76:         return;
-  2480  00D8  0008               	return
-  2481  00D9                     i1l1263:	
-  2482                           ;receive_decode.c: 77:     }
+  2446                           ;receive_decode.c: 70:     }
+  2447                           
+  2448                           ;receive_decode.c: 69:         return;
+  2449  00C7  082D               	movf	(_g_data& (0+127)+13),w	;volatile
+  2450  00C8  1903               	btfsc	3,2
+  2451  00C9  28D4               	goto	i1l1249
+  2452  00CA  082E               	movf	(_g_data& (0+127)+14),w	;volatile
+  2453  00CB  1903               	btfsc	3,2
+  2454  00CC  28D4               	goto	i1l1249
+  2455                           
+  2456                           ;receive_decode.c: 73:         g_data.g_find_recv_start = FALSE;
+  2457  00CD  3000               	movlw	0
+  2458  00CE  00A2               	movwf	(_g_data& (0+127)+2)	;volatile
+  2459                           
+  2460                           ;receive_decode.c: 74:         g_data.g_start_read_data = 0;
+  2461  00CF  3000               	movlw	0
+  2462  00D0  00A1               	movwf	(_g_data& (0+127)+1)	;volatile
+  2463                           
+  2464                           ;receive_decode.c: 75:         g_data.g_recv_count = 0;
+  2465  00D1  01AB               	clrf	(_g_data& (0+127)+11)	;volatile
+  2466  00D2  01AC               	clrf	((_g_data+1)& (0+127)+11)	;volatile
+  2467                           
+  2468                           ;receive_decode.c: 76:         return;
+  2469  00D3  0008               	return
+  2470  00D4                     i1l1249:	
+  2471                           ;receive_decode.c: 77:     }
+  2472                           
+  2473                           
+  2474                           ;receive_decode.c: 79:     u16 last_time_h = g_data.g_time_h;
+  2475  00D4  0823               	movf	(_g_data& (0+127)+3),w	;volatile
+  2476  00D5  0020               	movlb	0	; select bank0
+  2477  00D6  00C4               	movwf	??_receive_decode
+  2478  00D7  01C5               	clrf	??_receive_decode+1
+  2479  00D8  0844               	movf	??_receive_decode,w
+  2480  00D9  00C8               	movwf	receive_decode@last_time_h
+  2481  00DA  0845               	movf	??_receive_decode+1,w
+  2482  00DB  00C9               	movwf	receive_decode@last_time_h+1
   2483                           
-  2484                           
-  2485                           ;receive_decode.c: 79:     u16 last_time_h = g_data.g_time_h;
-  2486  00D9  0823               	movf	(_g_data& (0+127)+3),w	;volatile
-  2487  00DA  0020               	movlb	0	; select bank0
-  2488  00DB  00C4               	movwf	??_receive_decode
-  2489  00DC  01C5               	clrf	??_receive_decode+1
-  2490  00DD  0844               	movf	??_receive_decode,w
-  2491  00DE  00C8               	movwf	receive_decode@last_time_h
-  2492  00DF  0845               	movf	??_receive_decode+1,w
-  2493  00E0  00C9               	movwf	receive_decode@last_time_h+1
+  2484                           ;receive_decode.c: 80:     u16 last_time_m = g_data.g_time_m;
+  2485  00DC  0020               	banksel	_g_data
+  2486  00DD  0824               	movf	(_g_data& (0+127)+4),w	;volatile
+  2487  00DE  0020               	movlb	0	; select bank0
+  2488  00DF  00C4               	movwf	??_receive_decode
+  2489  00E0  01C5               	clrf	??_receive_decode+1
+  2490  00E1  0844               	movf	??_receive_decode,w
+  2491  00E2  00CA               	movwf	receive_decode@last_time_m
+  2492  00E3  0845               	movf	??_receive_decode+1,w
+  2493  00E4  00CB               	movwf	receive_decode@last_time_m+1
   2494                           
-  2495                           ;receive_decode.c: 80:     u16 last_time_m = g_data.g_time_m;
-  2496  00E1  0020               	banksel	_g_data
-  2497  00E2  0824               	movf	(_g_data& (0+127)+4),w	;volatile
-  2498  00E3  0020               	movlb	0	; select bank0
-  2499  00E4  00C4               	movwf	??_receive_decode
-  2500  00E5  01C5               	clrf	??_receive_decode+1
-  2501  00E6  0844               	movf	??_receive_decode,w
-  2502  00E7  00CA               	movwf	receive_decode@last_time_m
-  2503  00E8  0845               	movf	??_receive_decode+1,w
-  2504  00E9  00CB               	movwf	receive_decode@last_time_m+1
-  2505                           
-  2506                           ;receive_decode.c: 81:     g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_bu
+  2495                           ;receive_decode.c: 81:     g_data.g_time_h = g_data.g_recv_buf[2] * 4 + g_data.g_recv_bu
       +                          f[3];
-  2507  00EA  0020               	banksel	_g_data
-  2508  00EB  082F               	movf	(_g_data& (0+127)+15),w	;volatile
-  2509  00EC  0020               	movlb	0	; select bank0
-  2510  00ED  00C4               	movwf	??_receive_decode
-  2511  00EE  3002               	movlw	2
-  2512  00EF                     u79_25:	
-  2513  00EF  35C4               	lslf	??_receive_decode,f
-  2514  00F0  0B89               	decfsz	9,f
-  2515  00F1  28EF               	goto	u79_25
-  2516  00F2  0020               	banksel	_g_data
-  2517  00F3  0830               	movf	(_g_data& (0+127)+16),w	;volatile
-  2518  00F4  0020               	movlb	0	; select bank0
-  2519  00F5  0744               	addwf	??_receive_decode,w
-  2520  00F6  00C5               	movwf	??_receive_decode+1
-  2521  00F7  0845               	movf	??_receive_decode+1,w
-  2522  00F8  0020               	banksel	_g_data
-  2523  00F9  00A3               	movwf	(_g_data& (0+127)+3)	;volatile
-  2524                           
-  2525                           ;receive_decode.c: 82:     g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_b
+  2496  00E5  0020               	banksel	_g_data
+  2497  00E6  082F               	movf	(_g_data& (0+127)+15),w	;volatile
+  2498  00E7  0020               	movlb	0	; select bank0
+  2499  00E8  00C4               	movwf	??_receive_decode
+  2500  00E9  3002               	movlw	2
+  2501  00EA                     u77_25:	
+  2502  00EA  35C4               	lslf	??_receive_decode,f
+  2503  00EB  0B89               	decfsz	9,f
+  2504  00EC  28EA               	goto	u77_25
+  2505  00ED  0020               	banksel	_g_data
+  2506  00EE  0830               	movf	(_g_data& (0+127)+16),w	;volatile
+  2507  00EF  0020               	movlb	0	; select bank0
+  2508  00F0  0744               	addwf	??_receive_decode,w
+  2509  00F1  00C5               	movwf	??_receive_decode+1
+  2510  00F2  0845               	movf	??_receive_decode+1,w
+  2511  00F3  0020               	banksel	_g_data
+  2512  00F4  00A3               	movwf	(_g_data& (0+127)+3)	;volatile
+  2513                           
+  2514                           ;receive_decode.c: 82:     g_data.g_time_m = g_data.g_recv_buf[4] * 16 + g_data.g_recv_b
       +                          uf[5] * 4 + g_data.g_recv_buf[6];
-  2526  00FA  0831               	movf	(_g_data& (0+127)+17),w	;volatile
-  2527  00FB  0020               	movlb	0	; select bank0
-  2528  00FC  00C4               	movwf	??_receive_decode
-  2529  00FD  3004               	movlw	4
-  2530  00FE                     u80_25:	
-  2531  00FE  35C4               	lslf	??_receive_decode,f
-  2532  00FF  0B89               	decfsz	9,f
-  2533  0100  28FE               	goto	u80_25
-  2534  0101  0020               	banksel	_g_data
-  2535  0102  0832               	movf	(_g_data& (0+127)+18),w	;volatile
-  2536  0103  0020               	movlb	0	; select bank0
-  2537  0104  00C5               	movwf	??_receive_decode+1
-  2538  0105  3001               	movlw	1
-  2539  0106                     u81_25:	
-  2540  0106  35C5               	lslf	??_receive_decode+1,f
-  2541  0107  3EFF               	addlw	-1
-  2542  0108  1D03               	skipz
-  2543  0109  2906               	goto	u81_25
-  2544  010A  3545               	lslf	??_receive_decode+1,w
-  2545  010B  0744               	addwf	??_receive_decode,w
-  2546  010C  00C6               	movwf	??_receive_decode+2
-  2547  010D  0020               	banksel	_g_data
-  2548  010E  0833               	movf	(_g_data& (0+127)+19),w	;volatile
-  2549  010F  0020               	movlb	0	; select bank0
-  2550  0110  0746               	addwf	??_receive_decode+2,w
-  2551  0111  00C7               	movwf	??_receive_decode+3
-  2552  0112  0847               	movf	??_receive_decode+3,w
-  2553  0113  0020               	banksel	_g_data
-  2554  0114  00A4               	movwf	(_g_data& (0+127)+4)	;volatile
-  2555                           
-  2556                           ;receive_decode.c: 84:     if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_
+  2515  00F5  0831               	movf	(_g_data& (0+127)+17),w	;volatile
+  2516  00F6  0020               	movlb	0	; select bank0
+  2517  00F7  00C4               	movwf	??_receive_decode
+  2518  00F8  3004               	movlw	4
+  2519  00F9                     u78_25:	
+  2520  00F9  35C4               	lslf	??_receive_decode,f
+  2521  00FA  0B89               	decfsz	9,f
+  2522  00FB  28F9               	goto	u78_25
+  2523  00FC  0020               	banksel	_g_data
+  2524  00FD  0832               	movf	(_g_data& (0+127)+18),w	;volatile
+  2525  00FE  0020               	movlb	0	; select bank0
+  2526  00FF  00C5               	movwf	??_receive_decode+1
+  2527  0100  3001               	movlw	1
+  2528  0101                     u79_25:	
+  2529  0101  35C5               	lslf	??_receive_decode+1,f
+  2530  0102  3EFF               	addlw	-1
+  2531  0103  1D03               	skipz
+  2532  0104  2901               	goto	u79_25
+  2533  0105  3545               	lslf	??_receive_decode+1,w
+  2534  0106  0744               	addwf	??_receive_decode,w
+  2535  0107  00C6               	movwf	??_receive_decode+2
+  2536  0108  0020               	banksel	_g_data
+  2537  0109  0833               	movf	(_g_data& (0+127)+19),w	;volatile
+  2538  010A  0020               	movlb	0	; select bank0
+  2539  010B  0746               	addwf	??_receive_decode+2,w
+  2540  010C  00C7               	movwf	??_receive_decode+3
+  2541  010D  0847               	movf	??_receive_decode+3,w
+  2542  010E  0020               	banksel	_g_data
+  2543  010F  00A4               	movwf	(_g_data& (0+127)+4)	;volatile
+  2544                           
+  2545                           ;receive_decode.c: 84:     if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_
       +                          time_m){
-  2557  0115  0823               	movf	(_g_data& (0+127)+3),w	;volatile
-  2558  0116  0020               	movlb	0	; select bank0
-  2559  0117  00C4               	movwf	??_receive_decode
-  2560  0118  01C5               	clrf	??_receive_decode+1
-  2561  0119  0849               	movf	receive_decode@last_time_h+1,w
-  2562  011A  0645               	xorwf	??_receive_decode+1,w
-  2563  011B  1D03               	skipz
-  2564  011C  291F               	goto	u82_25
-  2565  011D  0848               	movf	receive_decode@last_time_h,w
-  2566  011E  0644               	xorwf	??_receive_decode,w
-  2567  011F                     u82_25:	
-  2568  011F  1D03               	skipz
-  2569  0120  292E               	goto	i1l1271
-  2570  0121  0020               	banksel	_g_data
-  2571  0122  0824               	movf	(_g_data& (0+127)+4),w	;volatile
-  2572  0123  0020               	movlb	0	; select bank0
-  2573  0124  00C4               	movwf	??_receive_decode
-  2574  0125  01C5               	clrf	??_receive_decode+1
-  2575  0126  084B               	movf	receive_decode@last_time_m+1,w
-  2576  0127  0645               	xorwf	??_receive_decode+1,w
-  2577  0128  1D03               	skipz
-  2578  0129  292C               	goto	u83_25
-  2579  012A  084A               	movf	receive_decode@last_time_m,w
-  2580  012B  0644               	xorwf	??_receive_decode,w
-  2581  012C                     u83_25:	
-  2582  012C  1903               	skipnz
-  2583  012D  2931               	goto	i1l1273
-  2584  012E                     i1l1271:	
+  2546  0110  0823               	movf	(_g_data& (0+127)+3),w	;volatile
+  2547  0111  0020               	movlb	0	; select bank0
+  2548  0112  00C4               	movwf	??_receive_decode
+  2549  0113  01C5               	clrf	??_receive_decode+1
+  2550  0114  0849               	movf	receive_decode@last_time_h+1,w
+  2551  0115  0645               	xorwf	??_receive_decode+1,w
+  2552  0116  1D03               	skipz
+  2553  0117  291A               	goto	u80_25
+  2554  0118  0848               	movf	receive_decode@last_time_h,w
+  2555  0119  0644               	xorwf	??_receive_decode,w
+  2556  011A                     u80_25:	
+  2557  011A  1D03               	skipz
+  2558  011B  2929               	goto	i1l1257
+  2559  011C  0020               	banksel	_g_data
+  2560  011D  0824               	movf	(_g_data& (0+127)+4),w	;volatile
+  2561  011E  0020               	movlb	0	; select bank0
+  2562  011F  00C4               	movwf	??_receive_decode
+  2563  0120  01C5               	clrf	??_receive_decode+1
+  2564  0121  084B               	movf	receive_decode@last_time_m+1,w
+  2565  0122  0645               	xorwf	??_receive_decode+1,w
+  2566  0123  1D03               	skipz
+  2567  0124  2927               	goto	u81_25
+  2568  0125  084A               	movf	receive_decode@last_time_m,w
+  2569  0126  0644               	xorwf	??_receive_decode,w
+  2570  0127                     u81_25:	
+  2571  0127  1903               	skipnz
+  2572  0128  292C               	goto	i1l1259
+  2573  0129                     i1l1257:	
+  2574                           
+  2575                           ;receive_decode.c: 85:         update_display();
+  2576  0129  3182  22C5  3180   	fcall	_update_display
+  2577  012C                     i1l1259:	
+  2578                           ;receive_decode.c: 86:     }
+  2579                           
+  2580                           
+  2581                           ;receive_decode.c: 89:     g_data.g_find_recv_start = FALSE;
+  2582  012C  3000               	movlw	0
+  2583  012D  0020               	banksel	_g_data
+  2584  012E  00A2               	movwf	(_g_data& (0+127)+2)	;volatile
   2585                           
-  2586                           ;receive_decode.c: 85:         update_display();
-  2587  012E  3182  22CA  3180   	fcall	_update_display
-  2588  0131                     i1l1273:	
-  2589                           ;receive_decode.c: 86:     }
-  2590                           
-  2591                           
-  2592                           ;receive_decode.c: 89:     g_data.g_find_recv_start = FALSE;
-  2593  0131  3000               	movlw	0
-  2594  0132  0020               	banksel	_g_data
-  2595  0133  00A2               	movwf	(_g_data& (0+127)+2)	;volatile
-  2596                           
-  2597                           ;receive_decode.c: 90:     PORTCbits.RC2 = BPC_PWR_ON;
-  2598  0134  0020               	movlb	0	; select bank0
-  2599  0135  110E               	bcf	14,2	;volatile
-  2600                           
-  2601                           ;receive_decode.c: 91:     g_data.g_start_read_data = 0;
-  2602  0136  3000               	movlw	0
-  2603  0137  0020               	banksel	_g_data
-  2604  0138  00A1               	movwf	(_g_data& (0+127)+1)	;volatile
-  2605                           
-  2606                           ;receive_decode.c: 92:     g_data.g_recv_count = 0;
-  2607  0139  01AB               	clrf	(_g_data& (0+127)+11)	;volatile
-  2608  013A  01AC               	clrf	((_g_data+1)& (0+127)+11)	;volatile
-  2609                           
-  2610                           ;receive_decode.c: 93:     for(int i = 0;i < 20; i++){
-  2611  013B  0020               	movlb	0	; select bank0
-  2612  013C  01CC               	clrf	receive_decode@i
-  2613  013D  01CD               	clrf	receive_decode@i+1
-  2614  013E                     L1:	
-  2615  013E  084D               	movf	receive_decode@i+1,w
-  2616  013F  3A80               	xorlw	128
-  2617  0140  00C4               	movwf	??_receive_decode
-  2618  0141  3080               	movlw	128
-  2619  0142  0244               	subwf	??_receive_decode,w
-  2620  0143  1D03               	skipz
-  2621  0144  2947               	goto	u84_25
-  2622  0145  3014               	movlw	20
-  2623  0146  024C               	subwf	receive_decode@i,w
-  2624  0147                     u84_25:	
-  2625  0147  1803               	btfsc	3,0
-  2626  0148  0008               	return
-  2627                           
-  2628                           ;receive_decode.c: 94:         g_data.g_recv_buf[i] = 5;
-  2629  0149  302D               	movlw	low (_g_data+13)
-  2630  014A  0020               	movlb	0	; select bank0
-  2631  014B  00C4               	movwf	??_receive_decode
-  2632  014C  3000               	movlw	high (_g_data+13)
-  2633  014D  00C5               	movwf	??_receive_decode+1
-  2634  014E  084C               	movf	receive_decode@i,w
-  2635  014F  0744               	addwf	??_receive_decode,w
-  2636  0150  00C6               	movwf	??_receive_decode+2
-  2637  0151  084D               	movf	receive_decode@i+1,w
-  2638  0152  3D45               	addwfc	??_receive_decode+1,w
-  2639  0153  00C7               	movwf	??_receive_decode+3
-  2640  0154  0846               	movf	??_receive_decode+2,w
-  2641  0155  0086               	movwf	6
-  2642  0156  0847               	movf	??_receive_decode+3,w
-  2643  0157  0087               	movwf	7
-  2644  0158  3005               	movlw	5
-  2645  0159  0081               	movwf	1
-  2646                           
-  2647                           ;receive_decode.c: 95:     }
-  2648  015A  3001               	movlw	1
-  2649  015B  07CC               	addwf	receive_decode@i,f
-  2650  015C  3000               	movlw	0
-  2651  015D  3DCD               	addwfc	receive_decode@i+1,f
-  2652  015E  293E               	goto	L1
-  2653  015F                     __end_of_receive_decode:	
-  2654                           ;receive_decode.c: 96:     return;
-  2655                           
-  2656                           
-  2657                           	psect	text5
-  2658  02CA                     __ptext5:	
-  2659 ;; *************** function _update_display *****************
-  2660 ;; Defined at:
-  2661 ;;		line 63 in file "update_display.c"
-  2662 ;; Parameters:    Size  Location     Type
-  2663 ;;		None
-  2664 ;; Auto vars:     Size  Location     Type
-  2665 ;;		None
-  2666 ;; Return value:  Size  Location     Type
-  2667 ;;                  1    wreg      void 
-  2668 ;; Registers used:
-  2669 ;;		wreg, status,2, status,0, pclath, cstack
-  2670 ;; Tracked objects:
-  2671 ;;		On entry : 0/0
-  2672 ;;		On exit  : 0/0
-  2673 ;;		Unchanged: 0/0
-  2674 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  2586                           ;receive_decode.c: 90:     PORTCbits.RC2 = BPC_PWR_OFF;
+  2587  012F  0020               	movlb	0	; select bank0
+  2588  0130  150E               	bsf	14,2	;volatile
+  2589                           
+  2590                           ;receive_decode.c: 91:     g_data.g_start_read_data = 0;
+  2591  0131  3000               	movlw	0
+  2592  0132  0020               	banksel	_g_data
+  2593  0133  00A1               	movwf	(_g_data& (0+127)+1)	;volatile
+  2594                           
+  2595                           ;receive_decode.c: 92:     g_data.g_recv_count = 0;
+  2596  0134  01AB               	clrf	(_g_data& (0+127)+11)	;volatile
+  2597  0135  01AC               	clrf	((_g_data+1)& (0+127)+11)	;volatile
+  2598                           
+  2599                           ;receive_decode.c: 93:     for(int i = 0;i < 20; i++){
+  2600  0136  0020               	movlb	0	; select bank0
+  2601  0137  01CC               	clrf	receive_decode@i
+  2602  0138  01CD               	clrf	receive_decode@i+1
+  2603  0139                     L1:	
+  2604  0139  084D               	movf	receive_decode@i+1,w
+  2605  013A  3A80               	xorlw	128
+  2606  013B  00C4               	movwf	??_receive_decode
+  2607  013C  3080               	movlw	128
+  2608  013D  0244               	subwf	??_receive_decode,w
+  2609  013E  1D03               	skipz
+  2610  013F  2942               	goto	u82_25
+  2611  0140  3014               	movlw	20
+  2612  0141  024C               	subwf	receive_decode@i,w
+  2613  0142                     u82_25:	
+  2614  0142  1803               	btfsc	3,0
+  2615  0143  0008               	return
+  2616                           
+  2617                           ;receive_decode.c: 94:         g_data.g_recv_buf[i] = 5;
+  2618  0144  302D               	movlw	low (_g_data+13)
+  2619  0145  0020               	movlb	0	; select bank0
+  2620  0146  00C4               	movwf	??_receive_decode
+  2621  0147  3000               	movlw	high (_g_data+13)
+  2622  0148  00C5               	movwf	??_receive_decode+1
+  2623  0149  084C               	movf	receive_decode@i,w
+  2624  014A  0744               	addwf	??_receive_decode,w
+  2625  014B  00C6               	movwf	??_receive_decode+2
+  2626  014C  084D               	movf	receive_decode@i+1,w
+  2627  014D  3D45               	addwfc	??_receive_decode+1,w
+  2628  014E  00C7               	movwf	??_receive_decode+3
+  2629  014F  0846               	movf	??_receive_decode+2,w
+  2630  0150  0086               	movwf	6
+  2631  0151  0847               	movf	??_receive_decode+3,w
+  2632  0152  0087               	movwf	7
+  2633  0153  3005               	movlw	5
+  2634  0154  0081               	movwf	1
+  2635                           
+  2636                           ;receive_decode.c: 95:     }
+  2637  0155  3001               	movlw	1
+  2638  0156  07CC               	addwf	receive_decode@i,f
+  2639  0157  3000               	movlw	0
+  2640  0158  3DCD               	addwfc	receive_decode@i+1,f
+  2641  0159  2939               	goto	L1
+  2642  015A                     __end_of_receive_decode:	
+  2643                           ;receive_decode.c: 96:     return;
+  2644                           
+  2645                           
+  2646                           	psect	text5
+  2647  02C5                     __ptext5:	
+  2648 ;; *************** function _update_display *****************
+  2649 ;; Defined at:
+  2650 ;;		line 63 in file "update_display.c"
+  2651 ;; Parameters:    Size  Location     Type
+  2652 ;;		None
+  2653 ;; Auto vars:     Size  Location     Type
+  2654 ;;		None
+  2655 ;; Return value:  Size  Location     Type
+  2656 ;;                  1    wreg      void 
+  2657 ;; Registers used:
+  2658 ;;		wreg, status,2, status,0, pclath, cstack
+  2659 ;; Tracked objects:
+  2660 ;;		On entry : 0/0
+  2661 ;;		On exit  : 0/0
+  2662 ;;		Unchanged: 0/0
+  2663 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  2675 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  2664 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2676 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  2665 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2677 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+  2666 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2678 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  2667 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2679 ;;Total ram usage:        2 bytes
-  2680 ;; Hardware stack levels used:    1
-  2681 ;; Hardware stack levels required when called:    3
-  2682 ;; This function calls:
-  2683 ;;		_write_once
-  2684 ;; This function is called by:
-  2685 ;;		_receive_decode
-  2686 ;;		_update_time
-  2687 ;; This function uses a non-reentrant model
-  2688 ;;
-  2689                           
-  2690                           
-  2691                           ;psect for function _update_display
-  2692  02CA                     _update_display:	
-  2693                           
-  2694                           ;update_display.c: 74:     write_once(0xff, 0x00, 0xf0, 0x0f);
-  2695                           
-  2696                           ;incstack = 0
-  2697                           ; Regs used in _update_display: [wreg+status,2+status,0+pclath+cstack]
-  2698  02CA  01F6               	clrf	write_once@HR
-  2699  02CB  30F0               	movlw	240
-  2700  02CC  00FA               	movwf	??_update_display
-  2701  02CD  087A               	movf	??_update_display,w
-  2702  02CE  00F7               	movwf	write_once@ML
-  2703  02CF  300F               	movlw	15
-  2704  02D0  00FB               	movwf	??_update_display+1
-  2705  02D1  087B               	movf	??_update_display+1,w
-  2706  02D2  00F8               	movwf	write_once@MR
-  2707  02D3  30FF               	movlw	255
-  2708  02D4  3182  22A2         	fcall	_write_once
-  2709  02D6  0008               	return
-  2710  02D7                     __end_of_update_display:	
-  2711                           ;update_display.c: 75:     return;
-  2712                           
-  2713                           
-  2714                           	psect	text6
-  2715  02A2                     __ptext6:	
-  2716 ;; *************** function _write_once *****************
-  2717 ;; Defined at:
-  2718 ;;		line 51 in file "update_display.c"
-  2719 ;; Parameters:    Size  Location     Type
-  2720 ;;  HL              1    wreg     unsigned char 
-  2721 ;;  HR              1    6[COMMON] unsigned char 
-  2722 ;;  ML              1    7[COMMON] unsigned char 
-  2723 ;;  MR              1    8[COMMON] unsigned char 
-  2724 ;; Auto vars:     Size  Location     Type
-  2725 ;;  HL              1    9[COMMON] unsigned char 
-  2726 ;; Return value:  Size  Location     Type
-  2727 ;;                  1    wreg      void 
-  2728 ;; Registers used:
-  2729 ;;		wreg, status,2, status,0, pclath, cstack
-  2730 ;; Tracked objects:
-  2731 ;;		On entry : 0/0
-  2732 ;;		On exit  : 0/0
-  2733 ;;		Unchanged: 0/0
-  2734 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  2668 ;;Total ram usage:        2 bytes
+  2669 ;; Hardware stack levels used:    1
+  2670 ;; Hardware stack levels required when called:    3
+  2671 ;; This function calls:
+  2672 ;;		_write_once
+  2673 ;; This function is called by:
+  2674 ;;		_receive_decode
+  2675 ;;		_update_time
+  2676 ;; This function uses a non-reentrant model
+  2677 ;;
+  2678                           
+  2679                           
+  2680                           ;psect for function _update_display
+  2681  02C5                     _update_display:	
+  2682                           
+  2683                           ;update_display.c: 74:     write_once(0xff, 0x00, 0xf0, 0x0f);
+  2684                           
+  2685                           ;incstack = 0
+  2686                           ; Regs used in _update_display: [wreg+status,2+status,0+pclath+cstack]
+  2687  02C5  01F6               	clrf	write_once@HR
+  2688  02C6  30F0               	movlw	240
+  2689  02C7  00FA               	movwf	??_update_display
+  2690  02C8  087A               	movf	??_update_display,w
+  2691  02C9  00F7               	movwf	write_once@ML
+  2692  02CA  300F               	movlw	15
+  2693  02CB  00FB               	movwf	??_update_display+1
+  2694  02CC  087B               	movf	??_update_display+1,w
+  2695  02CD  00F8               	movwf	write_once@MR
+  2696  02CE  30FF               	movlw	255
+  2697  02CF  3182  229D         	fcall	_write_once
+  2698  02D1  0008               	return
+  2699  02D2                     __end_of_update_display:	
+  2700                           ;update_display.c: 75:     return;
+  2701                           
+  2702                           
+  2703                           	psect	text6
+  2704  029D                     __ptext6:	
+  2705 ;; *************** function _write_once *****************
+  2706 ;; Defined at:
+  2707 ;;		line 51 in file "update_display.c"
+  2708 ;; Parameters:    Size  Location     Type
+  2709 ;;  HL              1    wreg     unsigned char 
+  2710 ;;  HR              1    6[COMMON] unsigned char 
+  2711 ;;  ML              1    7[COMMON] unsigned char 
+  2712 ;;  MR              1    8[COMMON] unsigned char 
+  2713 ;; Auto vars:     Size  Location     Type
+  2714 ;;  HL              1    9[COMMON] unsigned char 
+  2715 ;; Return value:  Size  Location     Type
+  2716 ;;                  1    wreg      void 
+  2717 ;; Registers used:
+  2718 ;;		wreg, status,2, status,0, pclath, cstack
+  2719 ;; Tracked objects:
+  2720 ;;		On entry : 0/0
+  2721 ;;		On exit  : 0/0
+  2722 ;;		Unchanged: 0/0
+  2723 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  2735 ;;      Params:         3       0       0       0       0       0       0       0       0       0       0       0       
+  2724 ;;      Params:         3       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2736 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+  2725 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2737 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  2726 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2738 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+  2727 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2739 ;;Total ram usage:        4 bytes
-  2740 ;; Hardware stack levels used:    1
-  2741 ;; Hardware stack levels required when called:    2
-  2742 ;; This function calls:
-  2743 ;;		_control595_delay
-  2744 ;;		_write_byte
-  2745 ;; This function is called by:
-  2746 ;;		_update_display
-  2747 ;; This function uses a non-reentrant model
-  2748 ;;
-  2749                           
-  2750                           
-  2751                           ;psect for function _write_once
-  2752  02A2                     _write_once:	
-  2753                           
-  2754                           ;incstack = 0
-  2755                           ; Regs used in _write_once: [wreg+status,2+status,0+pclath+cstack]
-  2756                           ;write_once@HL stored from wreg
-  2757  02A2  00F9               	movwf	write_once@HL
-  2758                           
-  2759                           ;update_display.c: 53:     write_byte(HL);
-  2760  02A3  0879               	movf	write_once@HL,w
-  2761  02A4  3182  227B  3182   	fcall	_write_byte
-  2762                           
-  2763                           ;update_display.c: 54:     write_byte(HR);
-  2764  02A7  0876               	movf	write_once@HR,w
-  2765  02A8  3182  227B  3182   	fcall	_write_byte
-  2766                           
-  2767                           ;update_display.c: 55:     write_byte(ML);
-  2768  02AB  0877               	movf	write_once@ML,w
-  2769  02AC  3182  227B  3182   	fcall	_write_byte
+  2728 ;;Total ram usage:        4 bytes
+  2729 ;; Hardware stack levels used:    1
+  2730 ;; Hardware stack levels required when called:    2
+  2731 ;; This function calls:
+  2732 ;;		_control595_delay
+  2733 ;;		_write_byte
+  2734 ;; This function is called by:
+  2735 ;;		_update_display
+  2736 ;; This function uses a non-reentrant model
+  2737 ;;
+  2738                           
+  2739                           
+  2740                           ;psect for function _write_once
+  2741  029D                     _write_once:	
+  2742                           
+  2743                           ;incstack = 0
+  2744                           ; Regs used in _write_once: [wreg+status,2+status,0+pclath+cstack]
+  2745                           ;write_once@HL stored from wreg
+  2746  029D  00F9               	movwf	write_once@HL
+  2747                           
+  2748                           ;update_display.c: 53:     write_byte(HL);
+  2749  029E  0879               	movf	write_once@HL,w
+  2750  029F  3182  2276  3182   	fcall	_write_byte
+  2751                           
+  2752                           ;update_display.c: 54:     write_byte(HR);
+  2753  02A2  0876               	movf	write_once@HR,w
+  2754  02A3  3182  2276  3182   	fcall	_write_byte
+  2755                           
+  2756                           ;update_display.c: 55:     write_byte(ML);
+  2757  02A6  0877               	movf	write_once@ML,w
+  2758  02A7  3182  2276  3182   	fcall	_write_byte
+  2759                           
+  2760                           ;update_display.c: 56:     write_byte(MR);
+  2761  02AA  0878               	movf	write_once@MR,w
+  2762  02AB  3182  2276  3182   	fcall	_write_byte
+  2763                           
+  2764                           ;update_display.c: 58:     PORTBbits.RB1 = PIN_HIGH;
+  2765  02AE  0020               	movlb	0	; select bank0
+  2766  02AF  148D               	bsf	13,1	;volatile
+  2767                           
+  2768                           ;update_display.c: 59:  control595_delay();
+  2769  02B0  3182  22D2         	fcall	_control595_delay
   2770                           
-  2771                           ;update_display.c: 56:     write_byte(MR);
-  2772  02AF  0878               	movf	write_once@MR,w
-  2773  02B0  3182  227B  3182   	fcall	_write_byte
-  2774                           
-  2775                           ;update_display.c: 58:     PORTBbits.RB1 = PIN_HIGH;
-  2776  02B3  0020               	movlb	0	; select bank0
-  2777  02B4  148D               	bsf	13,1	;volatile
-  2778                           
-  2779                           ;update_display.c: 59:  control595_delay();
-  2780  02B5  3182  22D7         	fcall	_control595_delay
-  2781                           
-  2782                           ;update_display.c: 60:     PORTBbits.RB1 = PIN_LOW;
-  2783  02B7  0020               	movlb	0	; select bank0
-  2784  02B8  108D               	bcf	13,1	;volatile
-  2785  02B9  0008               	return
-  2786  02BA                     __end_of_write_once:	
-  2787                           
-  2788                           	psect	text7
-  2789  027B                     __ptext7:	
-  2790 ;; *************** function _write_byte *****************
-  2791 ;; Defined at:
-  2792 ;;		line 38 in file "update_display.c"
-  2793 ;; Parameters:    Size  Location     Type
-  2794 ;;  data            1    wreg     unsigned char 
-  2795 ;; Auto vars:     Size  Location     Type
-  2796 ;;  data            1    4[COMMON] unsigned char 
-  2797 ;;  i               1    5[COMMON] unsigned char 
-  2798 ;; Return value:  Size  Location     Type
-  2799 ;;                  1    wreg      void 
-  2800 ;; Registers used:
-  2801 ;;		wreg, status,2, status,0, pclath, cstack
-  2802 ;; Tracked objects:
-  2803 ;;		On entry : 0/0
-  2804 ;;		On exit  : 0/0
-  2805 ;;		Unchanged: 0/0
-  2806 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  2771                           ;update_display.c: 60:     PORTBbits.RB1 = PIN_LOW;
+  2772  02B2  0020               	movlb	0	; select bank0
+  2773  02B3  108D               	bcf	13,1	;volatile
+  2774  02B4  0008               	return
+  2775  02B5                     __end_of_write_once:	
+  2776                           
+  2777                           	psect	text7
+  2778  0276                     __ptext7:	
+  2779 ;; *************** function _write_byte *****************
+  2780 ;; Defined at:
+  2781 ;;		line 38 in file "update_display.c"
+  2782 ;; Parameters:    Size  Location     Type
+  2783 ;;  data            1    wreg     unsigned char 
+  2784 ;; Auto vars:     Size  Location     Type
+  2785 ;;  data            1    4[COMMON] unsigned char 
+  2786 ;;  i               1    5[COMMON] unsigned char 
+  2787 ;; Return value:  Size  Location     Type
+  2788 ;;                  1    wreg      void 
+  2789 ;; Registers used:
+  2790 ;;		wreg, status,2, status,0, pclath, cstack
+  2791 ;; Tracked objects:
+  2792 ;;		On entry : 0/0
+  2793 ;;		On exit  : 0/0
+  2794 ;;		Unchanged: 0/0
+  2795 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  2807 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  2796 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2808 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  2797 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2809 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+  2798 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2810 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+  2799 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2811 ;;Total ram usage:        4 bytes
-  2812 ;; Hardware stack levels used:    1
-  2813 ;; Hardware stack levels required when called:    1
-  2814 ;; This function calls:
-  2815 ;;		_control595_delay
-  2816 ;; This function is called by:
-  2817 ;;		_write_once
-  2818 ;; This function uses a non-reentrant model
-  2819 ;;
-  2820                           
-  2821                           
-  2822                           ;psect for function _write_byte
-  2823  027B                     _write_byte:	
-  2824                           
-  2825                           ;incstack = 0
-  2826                           ; Regs used in _write_byte: [wreg+status,2+status,0+pclath+cstack]
-  2827                           ;write_byte@data stored from wreg
-  2828  027B  00F4               	movwf	write_byte@data
-  2829                           
-  2830                           ;update_display.c: 39:     u8 i;;update_display.c: 40:     for(i = 0; i < 8; i++){
-  2831  027C  01F5               	clrf	write_byte@i
-  2832  027D                     L2:	
-  2833  027D  3008               	movlw	8
-  2834  027E  0275               	subwf	write_byte@i,w
-  2835  027F  1803               	btfsc	3,0
-  2836  0280  0008               	return
-  2837                           
-  2838                           ;update_display.c: 41:   PORTBbits.RB5 = (data & 0x80) >> 7;
-  2839  0281  0874               	movf	write_byte@data,w
-  2840  0282  00F2               	movwf	??_write_byte
-  2841  0283  3007               	movlw	7
-  2842  0284                     u53_25:	
-  2843  0284  36F2               	lsrf	??_write_byte,f
-  2844  0285  0B89               	decfsz	9,f
-  2845  0286  2A84               	goto	u53_25
-  2846  0287  0872               	movf	??_write_byte,w
-  2847  0288  3901               	andlw	1
-  2848  0289  00F3               	movwf	??_write_byte+1
-  2849  028A  0EF3               	swapf	??_write_byte+1,f
-  2850  028B  0DF3               	rlf	??_write_byte+1,f
-  2851  028C  0020               	movlb	0	; select bank0
-  2852  028D  080D               	movf	13,w	;volatile
-  2853  028E  0673               	xorwf	??_write_byte+1,w
-  2854  028F  39DF               	andlw	-33
-  2855  0290  0673               	xorwf	??_write_byte+1,w
-  2856  0291  008D               	movwf	13	;volatile
-  2857                           
-  2858                           ;update_display.c: 42:         PORTBbits.RB0 = PIN_LOW;
-  2859  0292  100D               	bcf	13,0	;volatile
-  2860                           
-  2861                           ;update_display.c: 43:   control595_delay();
-  2862  0293  3182  22D7  3182   	fcall	_control595_delay
+  2800 ;;Total ram usage:        4 bytes
+  2801 ;; Hardware stack levels used:    1
+  2802 ;; Hardware stack levels required when called:    1
+  2803 ;; This function calls:
+  2804 ;;		_control595_delay
+  2805 ;; This function is called by:
+  2806 ;;		_write_once
+  2807 ;; This function uses a non-reentrant model
+  2808 ;;
+  2809                           
+  2810                           
+  2811                           ;psect for function _write_byte
+  2812  0276                     _write_byte:	
+  2813                           
+  2814                           ;incstack = 0
+  2815                           ; Regs used in _write_byte: [wreg+status,2+status,0+pclath+cstack]
+  2816                           ;write_byte@data stored from wreg
+  2817  0276  00F4               	movwf	write_byte@data
+  2818                           
+  2819                           ;update_display.c: 39:     u8 i;;update_display.c: 40:     for(i = 0; i < 8; i++){
+  2820  0277  01F5               	clrf	write_byte@i
+  2821  0278                     L2:	
+  2822  0278  3008               	movlw	8
+  2823  0279  0275               	subwf	write_byte@i,w
+  2824  027A  1803               	btfsc	3,0
+  2825  027B  0008               	return
+  2826                           
+  2827                           ;update_display.c: 41:   PORTBbits.RB5 = (data & 0x80) >> 7;
+  2828  027C  0874               	movf	write_byte@data,w
+  2829  027D  00F2               	movwf	??_write_byte
+  2830  027E  3007               	movlw	7
+  2831  027F                     u52_25:	
+  2832  027F  36F2               	lsrf	??_write_byte,f
+  2833  0280  0B89               	decfsz	9,f
+  2834  0281  2A7F               	goto	u52_25
+  2835  0282  0872               	movf	??_write_byte,w
+  2836  0283  3901               	andlw	1
+  2837  0284  00F3               	movwf	??_write_byte+1
+  2838  0285  0EF3               	swapf	??_write_byte+1,f
+  2839  0286  0DF3               	rlf	??_write_byte+1,f
+  2840  0287  0020               	movlb	0	; select bank0
+  2841  0288  080D               	movf	13,w	;volatile
+  2842  0289  0673               	xorwf	??_write_byte+1,w
+  2843  028A  39DF               	andlw	-33
+  2844  028B  0673               	xorwf	??_write_byte+1,w
+  2845  028C  008D               	movwf	13	;volatile
+  2846                           
+  2847                           ;update_display.c: 42:         PORTBbits.RB0 = PIN_LOW;
+  2848  028D  100D               	bcf	13,0	;volatile
+  2849                           
+  2850                           ;update_display.c: 43:   control595_delay();
+  2851  028E  3182  22D2  3182   	fcall	_control595_delay
+  2852                           
+  2853                           ;update_display.c: 44:         PORTBbits.RB0 = PIN_HIGH;
+  2854  0291  0020               	movlb	0	; select bank0
+  2855  0292  140D               	bsf	13,0	;volatile
+  2856                           
+  2857                           ;update_display.c: 45:   control595_delay();
+  2858  0293  3182  22D2  3182   	fcall	_control595_delay
+  2859                           
+  2860                           ;update_display.c: 47:         data <<= 1;
+  2861  0296  1003               	clrc
+  2862  0297  0DF4               	rlf	write_byte@data,f
   2863                           
-  2864                           ;update_display.c: 44:         PORTBbits.RB0 = PIN_HIGH;
-  2865  0296  0020               	movlb	0	; select bank0
-  2866  0297  140D               	bsf	13,0	;volatile
-  2867                           
-  2868                           ;update_display.c: 45:   control595_delay();
-  2869  0298  3182  22D7  3182   	fcall	_control595_delay
-  2870                           
-  2871                           ;update_display.c: 47:         data <<= 1;
-  2872  029B  1003               	clrc
-  2873  029C  0DF4               	rlf	write_byte@data,f
-  2874                           
-  2875                           ;update_display.c: 48:     }
-  2876  029D  3001               	movlw	1
-  2877  029E  00F2               	movwf	??_write_byte
-  2878  029F  0872               	movf	??_write_byte,w
-  2879  02A0  07F5               	addwf	write_byte@i,f
-  2880  02A1  2A7D               	goto	L2
-  2881  02A2                     __end_of_write_byte:	
-  2882                           
-  2883                           	psect	text8
-  2884  02D7                     __ptext8:	
-  2885 ;; *************** function _control595_delay *****************
-  2886 ;; Defined at:
-  2887 ;;		line 21 in file "update_display.c"
-  2888 ;; Parameters:    Size  Location     Type
-  2889 ;;		None
-  2890 ;; Auto vars:     Size  Location     Type
-  2891 ;;  times           1    1[COMMON] unsigned char 
-  2892 ;; Return value:  Size  Location     Type
-  2893 ;;                  1    wreg      void 
-  2894 ;; Registers used:
-  2895 ;;		wreg, status,2, status,0
-  2896 ;; Tracked objects:
-  2897 ;;		On entry : 0/0
-  2898 ;;		On exit  : 0/0
-  2899 ;;		Unchanged: 0/0
-  2900 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  2864                           ;update_display.c: 48:     }
+  2865  0298  3001               	movlw	1
+  2866  0299  00F2               	movwf	??_write_byte
+  2867  029A  0872               	movf	??_write_byte,w
+  2868  029B  07F5               	addwf	write_byte@i,f
+  2869  029C  2A78               	goto	L2
+  2870  029D                     __end_of_write_byte:	
+  2871                           
+  2872                           	psect	text8
+  2873  02D2                     __ptext8:	
+  2874 ;; *************** function _control595_delay *****************
+  2875 ;; Defined at:
+  2876 ;;		line 21 in file "update_display.c"
+  2877 ;; Parameters:    Size  Location     Type
+  2878 ;;		None
+  2879 ;; Auto vars:     Size  Location     Type
+  2880 ;;  times           1    1[COMMON] unsigned char 
+  2881 ;; Return value:  Size  Location     Type
+  2882 ;;                  1    wreg      void 
+  2883 ;; Registers used:
+  2884 ;;		wreg, status,2, status,0
+  2885 ;; Tracked objects:
+  2886 ;;		On entry : 0/0
+  2887 ;;		On exit  : 0/0
+  2888 ;;		Unchanged: 0/0
+  2889 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  2901 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  2890 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2902 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+  2891 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2903 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+  2892 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2904 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  2893 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2905 ;;Total ram usage:        2 bytes
-  2906 ;; Hardware stack levels used:    1
-  2907 ;; This function calls:
-  2908 ;;		Nothing
-  2909 ;; This function is called by:
-  2910 ;;		_write_byte
-  2911 ;;		_write_once
-  2912 ;; This function uses a non-reentrant model
-  2913 ;;
-  2914                           
-  2915                           
-  2916                           ;psect for function _control595_delay
-  2917  02D7                     _control595_delay:	
+  2894 ;;Total ram usage:        2 bytes
+  2895 ;; Hardware stack levels used:    1
+  2896 ;; This function calls:
+  2897 ;;		Nothing
+  2898 ;; This function is called by:
+  2899 ;;		_write_byte
+  2900 ;;		_write_once
+  2901 ;; This function uses a non-reentrant model
+  2902 ;;
+  2903                           
+  2904                           
+  2905                           ;psect for function _control595_delay
+  2906  02D2                     _control595_delay:	
+  2907                           
+  2908                           ;update_display.c: 22:    u8 times = 10;
+  2909                           
+  2910                           ;incstack = 0
+  2911                           ; Regs used in _control595_delay: [wreg+status,2+status,0]
+  2912  02D2  300A               	movlw	10
+  2913  02D3  00F0               	movwf	??_control595_delay
+  2914  02D4  0870               	movf	??_control595_delay,w
+  2915  02D5  00F1               	movwf	control595_delay@times
+  2916  02D6                     i1l150:	
+  2917                           ;update_display.c: 26:    }
   2918                           
-  2919                           ;update_display.c: 22:    u8 times = 10;
+  2919                           ;update_display.c: 23:    while(times > 0){
   2920                           
-  2921                           ;incstack = 0
-  2922                           ; Regs used in _control595_delay: [wreg+status,2+status,0]
-  2923  02D7  300A               	movlw	10
-  2924  02D8  00F0               	movwf	??_control595_delay
-  2925  02D9  0870               	movf	??_control595_delay,w
-  2926  02DA  00F1               	movwf	control595_delay@times
-  2927  02DB                     i1l152:	
-  2928                           ;update_display.c: 26:    }
+  2921                           
+  2922                           ;update_display.c: 23:    while(times > 0){
+  2923  02D6  0871               	movf	control595_delay@times,w
+  2924  02D7  1903               	btfsc	3,2
+  2925  02D8  0008               	return
+  2926                           
+  2927                           ;update_display.c: 24:     __nop();
+  2928  02D9  0000               	nop
   2929                           
-  2930                           ;update_display.c: 23:    while(times > 0){
-  2931                           
-  2932                           
-  2933                           ;update_display.c: 23:    while(times > 0){
-  2934  02DB  0871               	movf	control595_delay@times,w
-  2935  02DC  1903               	btfsc	3,2
-  2936  02DD  0008               	return
-  2937                           
-  2938                           ;update_display.c: 24:     __nop();
-  2939  02DE  0000               	nop
-  2940                           
-  2941                           ;update_display.c: 25:        times--;
-  2942  02DF  3001               	movlw	1
-  2943  02E0  02F1               	subwf	control595_delay@times,f
-  2944  02E1  2ADB               	goto	i1l152
-  2945  02E2                     __end_of_control595_delay:	
-  2946                           
-  2947                           	psect	text9
-  2948  01D5                     __ptext9:	
-  2949 ;; *************** function _times2number *****************
-  2950 ;; Defined at:
-  2951 ;;		line 14 in file "receive_decode.c"
-  2952 ;; Parameters:    Size  Location     Type
-  2953 ;;  high_level_t    2    0[COMMON] unsigned short 
-  2954 ;; Auto vars:     Size  Location     Type
-  2955 ;;		None
-  2956 ;; Return value:  Size  Location     Type
-  2957 ;;                  1    wreg      unsigned char 
-  2958 ;; Registers used:
-  2959 ;;		wreg
-  2960 ;; Tracked objects:
-  2961 ;;		On entry : 0/0
-  2962 ;;		On exit  : 0/0
-  2963 ;;		Unchanged: 0/0
-  2964 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  2930                           ;update_display.c: 25:        times--;
+  2931  02DA  3001               	movlw	1
+  2932  02DB  02F1               	subwf	control595_delay@times,f
+  2933  02DC  2AD6               	goto	i1l150
+  2934  02DD                     __end_of_control595_delay:	
+  2935                           
+  2936                           	psect	text9
+  2937  01D0                     __ptext9:	
+  2938 ;; *************** function _times2number *****************
+  2939 ;; Defined at:
+  2940 ;;		line 14 in file "receive_decode.c"
+  2941 ;; Parameters:    Size  Location     Type
+  2942 ;;  high_level_t    2    0[COMMON] unsigned short 
+  2943 ;; Auto vars:     Size  Location     Type
+  2944 ;;		None
+  2945 ;; Return value:  Size  Location     Type
+  2946 ;;                  1    wreg      unsigned char 
+  2947 ;; Registers used:
+  2948 ;;		wreg
+  2949 ;; Tracked objects:
+  2950 ;;		On entry : 0/0
+  2951 ;;		On exit  : 0/0
+  2952 ;;		Unchanged: 0/0
+  2953 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  2965 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+  2954 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2966 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  2955 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2967 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  2956 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2968 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  2957 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  2969 ;;Total ram usage:        2 bytes
-  2970 ;; Hardware stack levels used:    1
-  2971 ;; This function calls:
-  2972 ;;		Nothing
-  2973 ;; This function is called by:
-  2974 ;;		_receive_decode
-  2975 ;; This function uses a non-reentrant model
-  2976 ;;
-  2977                           
-  2978                           
-  2979                           ;psect for function _times2number
-  2980  01D5                     _times2number:	
-  2981                           
-  2982                           ;receive_decode.c: 15:     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
-  2983                           
-  2984                           ;incstack = 0
-  2985                           ; Regs used in _times2number: [wreg]
-  2986  01D5  3000               	movlw	0
-  2987  01D6  0271               	subwf	times2number@high_level_times+1,w
-  2988  01D7  3005               	movlw	5
-  2989  01D8  1903               	skipnz
-  2990  01D9  0270               	subwf	times2number@high_level_times,w
-  2991  01DA  1C03               	skipc
-  2992  01DB  29E5               	goto	i1l1065
-  2993  01DC  3000               	movlw	0
-  2994  01DD  0271               	subwf	times2number@high_level_times+1,w
-  2995  01DE  300F               	movlw	15
-  2996  01DF  1903               	skipnz
-  2997  01E0  0270               	subwf	times2number@high_level_times,w
-  2998  01E1  1803               	skipnc
-  2999  01E2  29E5               	goto	i1l1065
-  3000                           
-  3001                           ;receive_decode.c: 17:         return 0;
-  3002  01E3  3000               	movlw	0
-  3003                           
-  3004                           ;receive_decode.c: 18:     }else if(high_level_times >= 20 - 5 && high_level_times < 20 
+  2958 ;;Total ram usage:        2 bytes
+  2959 ;; Hardware stack levels used:    1
+  2960 ;; This function calls:
+  2961 ;;		Nothing
+  2962 ;; This function is called by:
+  2963 ;;		_receive_decode
+  2964 ;; This function uses a non-reentrant model
+  2965 ;;
+  2966                           
+  2967                           
+  2968                           ;psect for function _times2number
+  2969  01D0                     _times2number:	
+  2970                           
+  2971                           ;receive_decode.c: 15:     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
+  2972                           
+  2973                           ;incstack = 0
+  2974                           ; Regs used in _times2number: [wreg]
+  2975  01D0  3000               	movlw	0
+  2976  01D1  0271               	subwf	times2number@high_level_times+1,w
+  2977  01D2  3005               	movlw	5
+  2978  01D3  1903               	skipnz
+  2979  01D4  0270               	subwf	times2number@high_level_times,w
+  2980  01D5  1C03               	skipc
+  2981  01D6  29E0               	goto	i1l1057
+  2982  01D7  3000               	movlw	0
+  2983  01D8  0271               	subwf	times2number@high_level_times+1,w
+  2984  01D9  300F               	movlw	15
+  2985  01DA  1903               	skipnz
+  2986  01DB  0270               	subwf	times2number@high_level_times,w
+  2987  01DC  1803               	skipnc
+  2988  01DD  29E0               	goto	i1l1057
+  2989                           
+  2990                           ;receive_decode.c: 17:         return 0;
+  2991  01DE  3000               	movlw	0
+  2992                           
+  2993                           ;receive_decode.c: 18:     }else if(high_level_times >= 20 - 5 && high_level_times < 20 
       +                          + 5){
-  3005  01E4  0008               	return
-  3006  01E5                     i1l1065:	
-  3007  01E5  3000               	movlw	0
-  3008  01E6  0271               	subwf	times2number@high_level_times+1,w
-  3009  01E7  300F               	movlw	15
-  3010  01E8  1903               	skipnz
-  3011  01E9  0270               	subwf	times2number@high_level_times,w
-  3012  01EA  1C03               	skipc
-  3013  01EB  29F5               	goto	i1l1075
-  3014  01EC  3000               	movlw	0
-  3015  01ED  0271               	subwf	times2number@high_level_times+1,w
-  3016  01EE  3019               	movlw	25
-  3017  01EF  1903               	skipnz
-  3018  01F0  0270               	subwf	times2number@high_level_times,w
-  3019  01F1  1803               	skipnc
-  3020  01F2  29F5               	goto	i1l1075
-  3021                           
-  3022                           ;receive_decode.c: 20:         return 1;
-  3023  01F3  3001               	movlw	1
-  3024                           
-  3025                           ;receive_decode.c: 21:     }else if(high_level_times >= 30 - 5 && high_level_times < 30 
+  2994  01DF  0008               	return
+  2995  01E0                     i1l1057:	
+  2996  01E0  3000               	movlw	0
+  2997  01E1  0271               	subwf	times2number@high_level_times+1,w
+  2998  01E2  300F               	movlw	15
+  2999  01E3  1903               	skipnz
+  3000  01E4  0270               	subwf	times2number@high_level_times,w
+  3001  01E5  1C03               	skipc
+  3002  01E6  29F0               	goto	i1l1067
+  3003  01E7  3000               	movlw	0
+  3004  01E8  0271               	subwf	times2number@high_level_times+1,w
+  3005  01E9  3019               	movlw	25
+  3006  01EA  1903               	skipnz
+  3007  01EB  0270               	subwf	times2number@high_level_times,w
+  3008  01EC  1803               	skipnc
+  3009  01ED  29F0               	goto	i1l1067
+  3010                           
+  3011                           ;receive_decode.c: 20:         return 1;
+  3012  01EE  3001               	movlw	1
+  3013                           
+  3014                           ;receive_decode.c: 21:     }else if(high_level_times >= 30 - 5 && high_level_times < 30 
       +                          + 5){
-  3026  01F4  0008               	return
-  3027  01F5                     i1l1075:	
-  3028  01F5  3000               	movlw	0
-  3029  01F6  0271               	subwf	times2number@high_level_times+1,w
-  3030  01F7  3019               	movlw	25
-  3031  01F8  1903               	skipnz
-  3032  01F9  0270               	subwf	times2number@high_level_times,w
-  3033  01FA  1C03               	skipc
-  3034  01FB  2A05               	goto	i1l1085
-  3035  01FC  3000               	movlw	0
-  3036  01FD  0271               	subwf	times2number@high_level_times+1,w
-  3037  01FE  3023               	movlw	35
-  3038  01FF  1903               	skipnz
-  3039  0200  0270               	subwf	times2number@high_level_times,w
-  3040  0201  1803               	skipnc
-  3041  0202  2A05               	goto	i1l1085
-  3042                           
-  3043                           ;receive_decode.c: 23:         return 2;
-  3044  0203  3002               	movlw	2
-  3045                           
-  3046                           ;receive_decode.c: 24:     }else if(high_level_times >= 40 - 5 && high_level_times < 40 
+  3015  01EF  0008               	return
+  3016  01F0                     i1l1067:	
+  3017  01F0  3000               	movlw	0
+  3018  01F1  0271               	subwf	times2number@high_level_times+1,w
+  3019  01F2  3019               	movlw	25
+  3020  01F3  1903               	skipnz
+  3021  01F4  0270               	subwf	times2number@high_level_times,w
+  3022  01F5  1C03               	skipc
+  3023  01F6  2A00               	goto	i1l1077
+  3024  01F7  3000               	movlw	0
+  3025  01F8  0271               	subwf	times2number@high_level_times+1,w
+  3026  01F9  3023               	movlw	35
+  3027  01FA  1903               	skipnz
+  3028  01FB  0270               	subwf	times2number@high_level_times,w
+  3029  01FC  1803               	skipnc
+  3030  01FD  2A00               	goto	i1l1077
+  3031                           
+  3032                           ;receive_decode.c: 23:         return 2;
+  3033  01FE  3002               	movlw	2
+  3034                           
+  3035                           ;receive_decode.c: 24:     }else if(high_level_times >= 40 - 5 && high_level_times < 40 
       +                          + 5){
-  3047  0204  0008               	return
-  3048  0205                     i1l1085:	
-  3049  0205  3000               	movlw	0
-  3050  0206  0271               	subwf	times2number@high_level_times+1,w
-  3051  0207  3023               	movlw	35
-  3052  0208  1903               	skipnz
-  3053  0209  0270               	subwf	times2number@high_level_times,w
-  3054  020A  1C03               	skipc
-  3055  020B  2A15               	goto	i1l1095
-  3056  020C  3000               	movlw	0
-  3057  020D  0271               	subwf	times2number@high_level_times+1,w
-  3058  020E  302D               	movlw	45
-  3059  020F  1903               	skipnz
-  3060  0210  0270               	subwf	times2number@high_level_times,w
-  3061  0211  1803               	skipnc
-  3062  0212  2A15               	goto	i1l1095
-  3063                           
-  3064                           ;receive_decode.c: 26:         return 3;
-  3065  0213  3003               	movlw	3
+  3036  01FF  0008               	return
+  3037  0200                     i1l1077:	
+  3038  0200  3000               	movlw	0
+  3039  0201  0271               	subwf	times2number@high_level_times+1,w
+  3040  0202  3023               	movlw	35
+  3041  0203  1903               	skipnz
+  3042  0204  0270               	subwf	times2number@high_level_times,w
+  3043  0205  1C03               	skipc
+  3044  0206  2A10               	goto	i1l1087
+  3045  0207  3000               	movlw	0
+  3046  0208  0271               	subwf	times2number@high_level_times+1,w
+  3047  0209  302D               	movlw	45
+  3048  020A  1903               	skipnz
+  3049  020B  0270               	subwf	times2number@high_level_times,w
+  3050  020C  1803               	skipnc
+  3051  020D  2A10               	goto	i1l1087
+  3052                           
+  3053                           ;receive_decode.c: 26:         return 3;
+  3054  020E  3003               	movlw	3
+  3055                           
+  3056                           ;receive_decode.c: 27:     }else if(high_level_times >= 40 + 5){
+  3057  020F  0008               	return
+  3058  0210                     i1l1087:	
+  3059  0210  3000               	movlw	0
+  3060  0211  0271               	subwf	times2number@high_level_times+1,w
+  3061  0212  302D               	movlw	45
+  3062  0213  1903               	skipnz
+  3063  0214  0270               	subwf	times2number@high_level_times,w
+  3064  0215  1C03               	skipc
+  3065  0216  2A19               	goto	i1l1095
   3066                           
-  3067                           ;receive_decode.c: 27:     }else if(high_level_times >= 40 + 5){
-  3068  0214  0008               	return
-  3069  0215                     i1l1095:	
-  3070  0215  3000               	movlw	0
-  3071  0216  0271               	subwf	times2number@high_level_times+1,w
-  3072  0217  302D               	movlw	45
-  3073  0218  1903               	skipnz
-  3074  0219  0270               	subwf	times2number@high_level_times,w
-  3075  021A  1C03               	skipc
-  3076  021B  2A1E               	goto	i1l1103
-  3077                           
-  3078                           ;receive_decode.c: 29:         return 4;
-  3079  021C  3004               	movlw	4
+  3067                           ;receive_decode.c: 29:         return 4;
+  3068  0217  3004               	movlw	4
+  3069                           
+  3070                           ;receive_decode.c: 30:     }else{
+  3071  0218  0008               	return
+  3072  0219                     i1l1095:	
+  3073                           
+  3074                           ;receive_decode.c: 32:         return 5;
+  3075  0219  3005               	movlw	5
+  3076                           
+  3077                           ;receive_decode.c: 33:     }
+  3078  021A  0008               	return
+  3079  021B                     __end_of_times2number:	
   3080                           
-  3081                           ;receive_decode.c: 30:     }else{
-  3082  021D  0008               	return
-  3083  021E                     i1l1103:	
-  3084                           
-  3085                           ;receive_decode.c: 32:         return 5;
-  3086  021E  3005               	movlw	5
-  3087                           
-  3088                           ;receive_decode.c: 33:     }
-  3089  021F  0008               	return
-  3090  0220                     __end_of_times2number:	
-  3091                           
-  3092                           	psect	text10
-  3093  024F                     __ptext10:	
-  3094 ;; *************** function ___lwmod *****************
-  3095 ;; Defined at:
-  3096 ;;		line 5 in file "F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c"
-  3097 ;; Parameters:    Size  Location     Type
-  3098 ;;  divisor         2    0[COMMON] unsigned int 
-  3099 ;;  dividend        2    2[COMMON] unsigned int 
-  3100 ;; Auto vars:     Size  Location     Type
-  3101 ;;  counter         1    5[COMMON] unsigned char 
-  3102 ;; Return value:  Size  Location     Type
-  3103 ;;                  2    0[COMMON] unsigned int 
-  3104 ;; Registers used:
-  3105 ;;		wreg, status,2, status,0
-  3106 ;; Tracked objects:
-  3107 ;;		On entry : 0/0
-  3108 ;;		On exit  : 0/0
-  3109 ;;		Unchanged: 0/0
-  3110 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  3081                           	psect	text10
+  3082  024A                     __ptext10:	
+  3083 ;; *************** function ___lwmod *****************
+  3084 ;; Defined at:
+  3085 ;;		line 5 in file "F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c"
+  3086 ;; Parameters:    Size  Location     Type
+  3087 ;;  divisor         2    0[COMMON] unsigned int 
+  3088 ;;  dividend        2    2[COMMON] unsigned int 
+  3089 ;; Auto vars:     Size  Location     Type
+  3090 ;;  counter         1    5[COMMON] unsigned char 
+  3091 ;; Return value:  Size  Location     Type
+  3092 ;;                  2    0[COMMON] unsigned int 
+  3093 ;; Registers used:
+  3094 ;;		wreg, status,2, status,0
+  3095 ;; Tracked objects:
+  3096 ;;		On entry : 0/0
+  3097 ;;		On exit  : 0/0
+  3098 ;;		Unchanged: 0/0
+  3099 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  3111 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
+  3100 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  3112 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+  3101 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  3113 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+  3102 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  3114 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+  3103 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  3115 ;;Total ram usage:        6 bytes
-  3116 ;; Hardware stack levels used:    1
-  3117 ;; This function calls:
-  3118 ;;		Nothing
-  3119 ;; This function is called by:
-  3120 ;;		_ISR
-  3121 ;; This function uses a non-reentrant model
-  3122 ;;
-  3123                           
-  3124                           
-  3125                           ;psect for function ___lwmod
-  3126  024F                     ___lwmod:	
-  3127                           
-  3128                           ;incstack = 0
-  3129                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
-  3130  024F  0870               	movf	___lwmod@divisor,w
-  3131  0250  0471               	iorwf	___lwmod@divisor+1,w
-  3132  0251  1903               	btfsc	3,2
-  3133  0252  2A76               	goto	i1l1311
-  3134  0253  01F5               	clrf	___lwmod@counter
-  3135  0254  0AF5               	incf	___lwmod@counter,f
-  3136  0255                     i1l1301:	
-  3137  0255  1BF1               	btfsc	___lwmod@divisor+1,7
-  3138  0256  2A61               	goto	i1l1303
-  3139  0257  3001               	movlw	1
-  3140  0258                     u87_25:	
-  3141  0258  35F0               	lslf	___lwmod@divisor,f
-  3142  0259  0DF1               	rlf	___lwmod@divisor+1,f
-  3143  025A  0B89               	decfsz	9,f
-  3144  025B  2A58               	goto	u87_25
-  3145  025C  3001               	movlw	1
-  3146  025D  00F4               	movwf	??___lwmod
-  3147  025E  0874               	movf	??___lwmod,w
-  3148  025F  07F5               	addwf	___lwmod@counter,f
-  3149  0260  2A55               	goto	i1l1301
-  3150  0261                     i1l1303:	
-  3151  0261  0871               	movf	___lwmod@divisor+1,w
-  3152  0262  0273               	subwf	___lwmod@dividend+1,w
-  3153  0263  1D03               	skipz
-  3154  0264  2A67               	goto	u89_25
-  3155  0265  0870               	movf	___lwmod@divisor,w
-  3156  0266  0272               	subwf	___lwmod@dividend,w
-  3157  0267                     u89_25:	
-  3158  0267  1C03               	skipc
-  3159  0268  2A6D               	goto	i1l1307
-  3160  0269  0870               	movf	___lwmod@divisor,w
-  3161  026A  02F2               	subwf	___lwmod@dividend,f
-  3162  026B  0871               	movf	___lwmod@divisor+1,w
-  3163  026C  3BF3               	subwfb	___lwmod@dividend+1,f
-  3164  026D                     i1l1307:	
-  3165  026D  3001               	movlw	1
-  3166  026E                     u90_25:	
-  3167  026E  36F1               	lsrf	___lwmod@divisor+1,f
-  3168  026F  0CF0               	rrf	___lwmod@divisor,f
-  3169  0270  0B89               	decfsz	9,f
-  3170  0271  2A6E               	goto	u90_25
-  3171  0272  3001               	movlw	1
-  3172  0273  02F5               	subwf	___lwmod@counter,f
-  3173  0274  1D03               	btfss	3,2
-  3174  0275  2A61               	goto	i1l1303
-  3175  0276                     i1l1311:	
-  3176  0276  0873               	movf	___lwmod@dividend+1,w
-  3177  0277  00F1               	movwf	?___lwmod+1
-  3178  0278  0872               	movf	___lwmod@dividend,w
-  3179  0279  00F0               	movwf	?___lwmod
-  3180  027A  0008               	return
-  3181  027B                     __end_of___lwmod:	
-  3182  007E                     btemp	set	126	;btemp
-  3183  007E                     int$flags	set	126
-  3184  007E                     wtemp0	set	126
+  3104 ;;Total ram usage:        6 bytes
+  3105 ;; Hardware stack levels used:    1
+  3106 ;; This function calls:
+  3107 ;;		Nothing
+  3108 ;; This function is called by:
+  3109 ;;		_ISR
+  3110 ;; This function uses a non-reentrant model
+  3111 ;;
+  3112                           
+  3113                           
+  3114                           ;psect for function ___lwmod
+  3115  024A                     ___lwmod:	
+  3116                           
+  3117                           ;incstack = 0
+  3118                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
+  3119  024A  0870               	movf	___lwmod@divisor,w
+  3120  024B  0471               	iorwf	___lwmod@divisor+1,w
+  3121  024C  1903               	btfsc	3,2
+  3122  024D  2A71               	goto	i1l1297
+  3123  024E  01F5               	clrf	___lwmod@counter
+  3124  024F  0AF5               	incf	___lwmod@counter,f
+  3125  0250                     i1l1287:	
+  3126  0250  1BF1               	btfsc	___lwmod@divisor+1,7
+  3127  0251  2A5C               	goto	i1l1289
+  3128  0252  3001               	movlw	1
+  3129  0253                     u85_25:	
+  3130  0253  35F0               	lslf	___lwmod@divisor,f
+  3131  0254  0DF1               	rlf	___lwmod@divisor+1,f
+  3132  0255  0B89               	decfsz	9,f
+  3133  0256  2A53               	goto	u85_25
+  3134  0257  3001               	movlw	1
+  3135  0258  00F4               	movwf	??___lwmod
+  3136  0259  0874               	movf	??___lwmod,w
+  3137  025A  07F5               	addwf	___lwmod@counter,f
+  3138  025B  2A50               	goto	i1l1287
+  3139  025C                     i1l1289:	
+  3140  025C  0871               	movf	___lwmod@divisor+1,w
+  3141  025D  0273               	subwf	___lwmod@dividend+1,w
+  3142  025E  1D03               	skipz
+  3143  025F  2A62               	goto	u87_25
+  3144  0260  0870               	movf	___lwmod@divisor,w
+  3145  0261  0272               	subwf	___lwmod@dividend,w
+  3146  0262                     u87_25:	
+  3147  0262  1C03               	skipc
+  3148  0263  2A68               	goto	i1l1293
+  3149  0264  0870               	movf	___lwmod@divisor,w
+  3150  0265  02F2               	subwf	___lwmod@dividend,f
+  3151  0266  0871               	movf	___lwmod@divisor+1,w
+  3152  0267  3BF3               	subwfb	___lwmod@dividend+1,f
+  3153  0268                     i1l1293:	
+  3154  0268  3001               	movlw	1
+  3155  0269                     u88_25:	
+  3156  0269  36F1               	lsrf	___lwmod@divisor+1,f
+  3157  026A  0CF0               	rrf	___lwmod@divisor,f
+  3158  026B  0B89               	decfsz	9,f
+  3159  026C  2A69               	goto	u88_25
+  3160  026D  3001               	movlw	1
+  3161  026E  02F5               	subwf	___lwmod@counter,f
+  3162  026F  1D03               	btfss	3,2
+  3163  0270  2A5C               	goto	i1l1289
+  3164  0271                     i1l1297:	
+  3165  0271  0873               	movf	___lwmod@dividend+1,w
+  3166  0272  00F1               	movwf	?___lwmod+1
+  3167  0273  0872               	movf	___lwmod@dividend,w
+  3168  0274  00F0               	movwf	?___lwmod
+  3169  0275  0008               	return
+  3170  0276                     __end_of___lwmod:	
+  3171  007E                     btemp	set	126	;btemp
+  3172  007E                     int$flags	set	126
+  3173  007E                     wtemp0	set	126
 
 
 Data Sizes:
@@ -3422,7 +3411,7 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (2) _ISR                                                  2     2      0    1654
+ (2) _ISR                                                  2     2      0    1632
                                              11 BANK0      2     2      0
                             ___lwmod
                      _receive_decode
@@ -3432,7 +3421,7 @@ Call Graph Tables:
                                              12 COMMON     1     1      0
                      _update_display
  ---------------------------------------------------------------------------------
- (3) _receive_decode                                      11    11      0     910
+ (3) _receive_decode                                      11    11      0     888
                                               0 BANK0     11    11      0
                        _times2number
                      _update_display
@@ -3587,69 +3576,69 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Wed Mar 27 23:13:22 2019
+Symbol Table                                                                                   Wed Mar 27 23:41:42 2019
 
-             ?_receive_decode 0070                   _update_time 0220                   __CFG_CP$OFF 0000  
-                          l62 01CD                            l86 02EB                _update_display 02CA  
+             ?_receive_decode 0070                   _update_time 021B                   __CFG_CP$OFF 0000  
+                          l62 01C8                            l86 02E6                _update_display 02C5  
                  __CFG_LVP$ON 0000             ?_control595_delay 0070                  __CFG_CPD$OFF 0000  
-                         _ISR 0004                           u645 01B3                           u655 01CB  
+                         _ISR 0004                           u635 01AE                           u645 01C6  
                 __CFG_BORV$LO 0000            ??_control595_delay 0070                           wreg 0009  
                 __CFG_IESO$ON 0000                  __CFG_FOSC$HS 0000                          ?_ISR 0070  
-                        l1189 01B5                          _LATA 010C                          _LATB 010D  
+                        l1181 01B0                          _LATA 010C                          _LATB 010D  
                         _LATC 010E                          _ENUM 007D                          i1l72 001A  
                         i1l73 005D                          i1l74 0022                          i1l77 001F  
                         _TMR0 0015                          _WPUA 020C                          _WPUB 020D  
                         _WPUC 020E                  __CFG_WRT$OFF 0000                 __CFG_FCMEN$ON 0000  
-                        _main 02E8                          fsr0h 0005                          fsr1h 0007  
+                        _main 02E3                          fsr0h 0005                          fsr1h 0007  
                         indf0 0000                          fsr0l 0004                          indf1 0001  
                         fsr1l 0006                          btemp 007E                 __CFG_BOREN$ON 0000  
                         start 005F                 __CFG_MCLRE$ON 0000                         ??_ISR 004F  
-      __end_of_update_display 02D7                 __CFG_PLLEN$ON 0000                         ?_main 0070  
+      __end_of_update_display 02D2                 __CFG_PLLEN$ON 0000                         ?_main 0070  
                __CFG_WDTE$OFF 0000                         _IOCAN 0392                         _IOCAP 0391  
                        _IOCBN 0395                         _IOCBP 0394                         _IOCCN 0398  
-                       _IOCCP 0397                         i1l113 0075                         i1l152 02DB  
-             __end_of___lwmod 027B                         u53_25 0284                         u80_25 00FE  
-                       _TRISA 008C                         _TRISB 008D                         u81_25 0106  
-                       _TRISC 008E                         u90_25 026E                         u82_25 011F  
-                       u83_25 012C                         u84_25 0147                         u87_25 0258  
-                       u79_25 00EF                         u89_25 0267                write_byte@data 0074  
+                       _IOCCP 0397                         i1l113 0075                         i1l150 02D6  
+             __end_of___lwmod 0276                         u52_25 027F                         u80_25 011A  
+                       _TRISA 008C                         _TRISB 008D                         u81_25 0127  
+                       _TRISC 008E                         u82_25 0142                         u85_25 0253  
+                       u77_25 00EA                         u78_25 00F9                         u87_25 0262  
+                       u79_25 0101                         u88_25 0269                write_byte@data 0074  
                        status 0003                         wtemp0 007E               __initialization 0061  
-                __end_of_main 02EC               ?_update_display 0070                __CFG_LPBOR$OFF 0000  
-                      ??_main 0054                        i1l1103 021E                        i1l1211 024C  
-                      i1l1301 0255                        i1l1303 0261                        i1l1311 0276  
-                      i1l1065 01E5                        i1l1307 026D                        i1l1075 01F5  
-                      i1l1085 0205                        i1l1237 009D                        i1l1095 0215  
-                      i1l1271 012E                        i1l1263 00D9                        i1l1343 002E  
-                      i1l1273 0131                        i1l1353 0059                __CFG_PWRTE$OFF 0000  
+                __end_of_main 02E7               ?_update_display 0070                __CFG_LPBOR$OFF 0000  
+                      ??_main 0054                        i1l1203 0247                        i1l1057 01E0  
+                      i1l1067 01F0                        i1l1227 009D                        i1l1077 0200  
+                      i1l1095 0219                        i1l1087 0210                        i1l1257 0129  
+                      i1l1249 00D4                        i1l1329 002E                        i1l1259 012C  
+                      i1l1339 0059                        i1l1293 0268                        i1l1287 0250  
+                      i1l1289 025C                        i1l1297 0271                __CFG_PWRTE$OFF 0000  
                       _g_data 0020                __CFG_STVREN$ON 0000                     ??___lwmod 0074  
-            __end_of_init_env 01D5              __end_of_segmcode 02CA  times2number@high_level_times 0070  
+            __end_of_init_env 01D0              __end_of_segmcode 02C5  times2number@high_level_times 0070  
      __end_of__initialization 0069              ??_receive_decode 0044                __pcstackCOMMON 0070  
                 ?_update_time 0070         control595_delay@times 0071                _OPTION_REGbits 0095  
                   __pbssBANK0 0020     __size_of_control595_delay 000B               __CFG_VCAPEN$OFF 0000  
-                  __pmaintext 02E8                    __pintentry 0004                ISR@history_key 0043  
-                   ?_init_env 0070              ??_update_display 007A                       ___lwmod 024F  
-                     __ptext1 015F                       __ptext3 0220                       __ptext4 006D  
-                     __ptext5 02CA                       __ptext6 02A2                       __ptext7 027B  
-                     __ptext8 02D7                       __ptext9 01D5                  __size_of_ISR 005B  
+                  __pmaintext 02E3                    __pintentry 0004                ISR@history_key 0043  
+                   ?_init_env 0070              ??_update_display 007A                       ___lwmod 024A  
+                     __ptext1 015A                       __ptext3 021B                       __ptext4 006D  
+                     __ptext5 02C5                       __ptext6 029D                       __ptext7 0276  
+                     __ptext8 02D2                       __ptext9 01D0                  __size_of_ISR 005B  
                ?_times2number 0070                     _IOCCFbits 0399                     _IOCCPbits 0397  
-                     clrloop0 02E3          end_of_initialization 0069                    ??_init_env 0051  
+                     clrloop0 02DE          end_of_initialization 0069                    ??_init_env 0051  
         __size_of_update_time 002F                     _PORTBbits 000D                     _PORTCbits 000E  
-              ??_times2number 0072                     _TRISCbits 008E              _control595_delay 02D7  
+              ??_times2number 0072                     _TRISCbits 008E              _control595_delay 02D2  
                 write_once@HL 0079                  write_once@HR 0076                  write_once@ML 0077  
-                write_once@MR 0078                    _write_byte 027B                    _write_once 02A2  
+                write_once@MR 0078                    _write_byte 0276                    _write_once 029D  
     receive_decode@read_value 004E           start_initialization 0061                   __end_of_ISR 005F  
              receive_decode@i 004C                   __pbssCOMMON 007D                     ___latbits 0002  
                __pcstackBANK0 0044             __size_of_init_env 0076     receive_decode@last_time_h 0048  
-   receive_decode@last_time_m 004A          __end_of_times2number 0220                      ?___lwmod 0070  
-     __size_of_receive_decode 00F2                   ?_write_byte 0070                   ?_write_once 0076  
-             ISR@key_time_cnt 0041                     clear_ram0 02E2      __end_of_control595_delay 02E2  
+   receive_decode@last_time_m 004A          __end_of_times2number 021B                      ?___lwmod 0070  
+     __size_of_receive_decode 00ED                   ?_write_byte 0070                   ?_write_once 0076  
+             ISR@key_time_cnt 0041                     clear_ram0 02DD      __end_of_control595_delay 02DD  
                     _WPUCbits 020E                   write_byte@i 0075           __size_of_write_byte 0027  
          __size_of_write_once 0018                 ??_update_time 007C                     init_env@i 0052  
-            __size_of___lwmod 002C       __size_of_update_display 000D                      __ptext10 024F  
-       __size_of_times2number 004B                      _init_env 015F                 __size_of_main 0004  
-                    _segmcode 02BA                      int$flags 007E                _receive_decode 006D  
-         __end_of_update_time 024F                    _INTCONbits 000B                  _times2number 01D5  
+            __size_of___lwmod 002C       __size_of_update_display 000D                      __ptext10 024A  
+       __size_of_times2number 004B                      _init_env 015A                 __size_of_main 0004  
+                    _segmcode 02B5                      int$flags 007E                _receive_decode 006D  
+         __end_of_update_time 024A                    _INTCONbits 000B                  _times2number 01D0  
                     intlevel1 0000              ___lwmod@dividend 0072             __CFG_CLKOUTEN$OFF 0000  
-                  _OSCCONbits 0099        __end_of_receive_decode 015F                  ??_write_byte 0072  
-                ??_write_once 0079                 __pstringtext1 02BA               ___lwmod@divisor 0070  
-             ___lwmod@counter 0075            __end_of_write_byte 02A2            __end_of_write_once 02BA  
+                  _OSCCONbits 0099        __end_of_receive_decode 015A                  ??_write_byte 0072  
+                ??_write_once 0079                 __pstringtext1 02B5               ___lwmod@divisor 0070  
+             ___lwmod@counter 0075            __end_of_write_byte 029D            __end_of_write_once 02B5  
