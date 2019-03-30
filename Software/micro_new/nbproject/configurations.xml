@@ -9,6 +9,10 @@
       <itemPath>receive_decode.c</itemPath>
       <itemPath>update_time.c</itemPath>
       <itemPath>update_display.c</itemPath>
+      <itemPath>../AD/AD_temp.X/delay.c</itemPath>
+      <itemPath>../AD/AD_temp.X/delay.h</itemPath>
+      <itemPath>../AD/AD_temp.X/myiic.c</itemPath>
+      <itemPath>../AD/AD_temp.X/myiic.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>
@@ -17,6 +21,9 @@
     </logicalFolder>
     <itemPath>README.md</itemPath>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>../AD/AD_temp.X</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

@@ -1,26 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"83 ./function.h
-[; ;./function.h: 83: }ENUM;
-[c E4906 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
-[n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
 "31 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"505 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 505:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"515
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 515:     struct {
-[s S38 :8 `uc 1 ]
-[n S38 . PORTB ]
-"504
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 504: typedef union {
-[u S36 `S37 1 `S38 1 ]
-[n S36 . . . ]
-"519
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 519: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
-[v _PORTBbits `VS36 ~T0 @X0 0 e@13 ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -858,160 +839,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"83 ./function.h
-[; ;./function.h: 83: }ENUM;
-[v _ENUM `E4906 ~T0 @X0 1 e ]
-"15 update_display.c
-[; ;update_display.c: 15: const u8 segmcode[]={
-[v _segmcode `Cuc ~T0 @X0 -> 16 `i e ]
-[i _segmcode
-:U ..
--> -> 63 `i `uc
--> -> 6 `i `uc
--> -> 91 `i `uc
--> -> 79 `i `uc
--> -> 102 `i `uc
--> -> 109 `i `uc
--> -> 125 `i `uc
--> -> 7 `i `uc
--> -> 127 `i `uc
--> -> 111 `i `uc
--> -> 119 `i `uc
--> -> 124 `i `uc
--> -> 57 `i `uc
--> -> 94 `i `uc
--> -> 121 `i `uc
--> -> 113 `i `uc
-..
-]
-"21
-[; ;update_display.c: 21: static void control595_delay(void){
-[v _control595_delay `(v ~T0 @X0 1 sf ]
+"3 ../AD/AD_temp.X/delay.c
+[; ;../AD/AD_temp.X/delay.c: 3: void delay_2us(void)
+[v _delay_2us `(v ~T0 @X0 1 ef ]
+"4
+[; ;../AD/AD_temp.X/delay.c: 4: {
 {
-[e :U _control595_delay ]
+[e :U _delay_2us ]
 [f ]
-"22
-[; ;update_display.c: 22:    u8 times = 10;
-[v _times `uc ~T0 @X0 1 a ]
-[e = _times -> -> 10 `i `uc ]
-"23
-[; ;update_display.c: 23:    while(times > 0){
-[e $U 625  ]
-[e :U 626 ]
-{
-"24
-[; ;update_display.c: 24:     __nop();
+"5
+[; ;../AD/AD_temp.X/delay.c: 5:     __nop();
 [e ( ___nop ..  ]
-"25
-[; ;update_display.c: 25:        times--;
-[e -- _times -> -> 1 `i `uc ]
-"26
-[; ;update_display.c: 26:    }
+"6
+[; ;../AD/AD_temp.X/delay.c: 6:     __nop();
+[e ( ___nop ..  ]
+"7
+[; ;../AD/AD_temp.X/delay.c: 7: }
+[e :UE 623 ]
 }
-[e :U 625 ]
-"23
-[; ;update_display.c: 23:    while(times > 0){
-[e $ > -> _times `i -> 0 `i 626  ]
-[e :U 627 ]
-"27
-[; ;update_display.c: 27: }
+"9
+[; ;../AD/AD_temp.X/delay.c: 9: void delay_3us(void)
+[v _delay_3us `(v ~T0 @X0 1 ef ]
+"10
+[; ;../AD/AD_temp.X/delay.c: 10: {
+{
+[e :U _delay_3us ]
+[f ]
+"11
+[; ;../AD/AD_temp.X/delay.c: 11:     __nop();
+[e ( ___nop ..  ]
+"12
+[; ;../AD/AD_temp.X/delay.c: 12:     __nop();
+[e ( ___nop ..  ]
+"13
+[; ;../AD/AD_temp.X/delay.c: 13:     __nop();
+[e ( ___nop ..  ]
+"14
+[; ;../AD/AD_temp.X/delay.c: 14: }
 [e :UE 624 ]
 }
-"38
-[; ;update_display.c: 38: static void write_byte(u8 data){
-[v _write_byte `(v ~T0 @X0 1 sf1`uc ]
+"16
+[; ;../AD/AD_temp.X/delay.c: 16: void delay_10us(void)
+[v _delay_10us `(v ~T0 @X0 1 ef ]
+"17
+[; ;../AD/AD_temp.X/delay.c: 17: {
 {
-[e :U _write_byte ]
-[v _data `uc ~T0 @X0 1 r1 ]
+[e :U _delay_10us ]
 [f ]
-"39
-[; ;update_display.c: 39:     u8 i;
-[v _i `uc ~T0 @X0 1 a ]
-"40
-[; ;update_display.c: 40:     for(i = 0; i < 8; i++){
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 629  ]
-[e $U 630  ]
-[e :U 629 ]
-{
-"41
-[; ;update_display.c: 41:   PORTBbits.RB5 = (data & 0x80) >> 7;
-[e = . . _PORTBbits 0 5 -> >> & -> _data `i -> 128 `i -> 7 `i `uc ]
-"42
-[; ;update_display.c: 42:         PORTBbits.RB0 = PIN_LOW;
-[e = . . _PORTBbits 0 0 -> . `E4906 2 `uc ]
-"43
-[; ;update_display.c: 43:   control595_delay();
-[e ( _control595_delay ..  ]
-"44
-[; ;update_display.c: 44:         PORTBbits.RB0 = PIN_HIGH;
-[e = . . _PORTBbits 0 0 -> . `E4906 3 `uc ]
-"45
-[; ;update_display.c: 45:   control595_delay();
-[e ( _control595_delay ..  ]
-"47
-[; ;update_display.c: 47:         data <<= 1;
-[e =<< _data -> -> 1 `i `uc ]
-"48
-[; ;update_display.c: 48:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 629  ]
-[e :U 630 ]
-}
-"49
-[; ;update_display.c: 49: }
-[e :UE 628 ]
-}
-"51
-[; ;update_display.c: 51: static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
-[v _write_once `(v ~T0 @X0 1 sf4`uc`uc`uc`uc ]
-{
-[e :U _write_once ]
-[v _HL `uc ~T0 @X0 1 r1 ]
-[v _HR `uc ~T0 @X0 1 r2 ]
-[v _ML `uc ~T0 @X0 1 r3 ]
-[v _MR `uc ~T0 @X0 1 r4 ]
-[f ]
-"53
-[; ;update_display.c: 53:     write_byte(HL);
-[e ( _write_byte (1 _HL ]
-"54
-[; ;update_display.c: 54:     write_byte(HR);
-[e ( _write_byte (1 _HR ]
-"55
-[; ;update_display.c: 55:     write_byte(ML);
-[e ( _write_byte (1 _ML ]
-"56
-[; ;update_display.c: 56:     write_byte(MR);
-[e ( _write_byte (1 _MR ]
-"58
-[; ;update_display.c: 58:     PORTBbits.RB1 = PIN_HIGH;
-[e = . . _PORTBbits 0 1 -> . `E4906 3 `uc ]
-"59
-[; ;update_display.c: 59:  control595_delay();
-[e ( _control595_delay ..  ]
-"60
-[; ;update_display.c: 60:     PORTBbits.RB1 = PIN_LOW;
-[e = . . _PORTBbits 0 1 -> . `E4906 2 `uc ]
-"61
-[; ;update_display.c: 61: }
-[e :UE 632 ]
-}
-"63
-[; ;update_display.c: 63: void update_display(void) {
-[v _update_display `(v ~T0 @X0 1 ef ]
-{
-[e :U _update_display ]
-[f ]
-"74
-[; ;update_display.c: 74:     write_once(0xff, 0x00, 0xf0, 0x0f);
-[e ( _write_once (4 , , , -> -> 255 `i `uc -> -> 0 `i `uc -> -> 240 `i `uc -> -> 15 `i `uc ]
-"75
-[; ;update_display.c: 75:     return;
-[e $UE 633  ]
-"76
-[; ;update_display.c: 76: }
-[e :UE 633 ]
+"18
+[; ;../AD/AD_temp.X/delay.c: 18:     __nop();
+[e ( ___nop ..  ]
+"19
+[; ;../AD/AD_temp.X/delay.c: 19:     __nop();
+[e ( ___nop ..  ]
+"20
+[; ;../AD/AD_temp.X/delay.c: 20:     __nop();
+[e ( ___nop ..  ]
+"21
+[; ;../AD/AD_temp.X/delay.c: 21:     __nop();
+[e ( ___nop ..  ]
+"22
+[; ;../AD/AD_temp.X/delay.c: 22:     __nop();
+[e ( ___nop ..  ]
+"23
+[; ;../AD/AD_temp.X/delay.c: 23:     __nop();
+[e ( ___nop ..  ]
+"24
+[; ;../AD/AD_temp.X/delay.c: 24:     __nop();
+[e ( ___nop ..  ]
+"25
+[; ;../AD/AD_temp.X/delay.c: 25:     __nop();
+[e ( ___nop ..  ]
+"26
+[; ;../AD/AD_temp.X/delay.c: 26:     __nop();
+[e ( ___nop ..  ]
+"27
+[; ;../AD/AD_temp.X/delay.c: 27:     __nop();
+[e ( ___nop ..  ]
+"28
+[; ;../AD/AD_temp.X/delay.c: 28: }
+[e :UE 625 ]
 }

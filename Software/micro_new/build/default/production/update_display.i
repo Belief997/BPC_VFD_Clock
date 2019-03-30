@@ -8946,16 +8946,35 @@ enum{
     PIN_LOW = 0,
     PIN_HIGH = 1,
 
+
+    CODE_P0 = 0,
+    CODE_P1,
+    CODE_P2,
+    CODE_H_1,
+    CODE_H_2,
+    CODE_M_1,
+    CODE_M_2,
+    CODE_M_3,
+    CODE_W_1,
+    CODE_W_2,
+    CODE_P3,
+    CODE_D_1,
+    CODE_D_2,
+    CODE_D_3,
+    CODE_MN_1,
+    CODE_MN_2,
+    CODE_Y_1,
+    CODE_Y_2,
+    CODE_Y_3,
+    CODE_P4,
+
 }ENUM;
-# 81 "./function.h"
+# 103 "./function.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
     volatile BOOL g_start_read_data;
     volatile BOOL g_find_recv_start;
-
-
-
 
 
     u8 g_time_h;

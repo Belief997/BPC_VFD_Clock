@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c receive_decode.c update_time.c update_display.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c receive_decode.c update_time.c update_display.c ../AD/AD_temp.X/delay.c ../AD/AD_temp.X/myiic.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/receive_decode.p1 ${OBJECTDIR}/update_time.p1 ${OBJECTDIR}/update_display.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/receive_decode.p1.d ${OBJECTDIR}/update_time.p1.d ${OBJECTDIR}/update_display.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/receive_decode.p1 ${OBJECTDIR}/update_time.p1 ${OBJECTDIR}/update_display.p1 ${OBJECTDIR}/_ext/1979679395/delay.p1 ${OBJECTDIR}/_ext/1979679395/myiic.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/receive_decode.p1.d ${OBJECTDIR}/update_time.p1.d ${OBJECTDIR}/update_display.p1.d ${OBJECTDIR}/_ext/1979679395/delay.p1.d ${OBJECTDIR}/_ext/1979679395/myiic.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/receive_decode.p1 ${OBJECTDIR}/update_time.p1 ${OBJECTDIR}/update_display.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/receive_decode.p1 ${OBJECTDIR}/update_time.p1 ${OBJECTDIR}/update_display.p1 ${OBJECTDIR}/_ext/1979679395/delay.p1 ${OBJECTDIR}/_ext/1979679395/myiic.p1
 
 # Source Files
-SOURCEFILES=main.c receive_decode.c update_time.c update_display.c
+SOURCEFILES=main.c receive_decode.c update_time.c update_display.c ../AD/AD_temp.X/delay.c ../AD/AD_temp.X/myiic.c
 
 
 CFLAGS=
@@ -121,6 +121,20 @@ ${OBJECTDIR}/update_display.p1: update_display.c  nbproject/Makefile-${CND_CONF}
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/update_display.p1 update_display.c 
 	@${FIXDEPS} ${OBJECTDIR}/update_display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/1979679395/delay.p1: ../AD/AD_temp.X/delay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1979679395" 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/delay.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/delay.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1979679395/delay.p1 ../AD/AD_temp.X/delay.c 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1979679395/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1979679395/myiic.p1: ../AD/AD_temp.X/myiic.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1979679395" 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/myiic.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/myiic.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1979679395/myiic.p1 ../AD/AD_temp.X/myiic.c 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1979679395/myiic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -149,6 +163,20 @@ ${OBJECTDIR}/update_display.p1: update_display.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/update_display.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/update_display.p1 update_display.c 
 	@${FIXDEPS} ${OBJECTDIR}/update_display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1979679395/delay.p1: ../AD/AD_temp.X/delay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1979679395" 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/delay.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/delay.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1979679395/delay.p1 ../AD/AD_temp.X/delay.c 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1979679395/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1979679395/myiic.p1: ../AD/AD_temp.X/myiic.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1979679395" 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/myiic.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1979679395/myiic.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1979679395/myiic.p1 ../AD/AD_temp.X/myiic.c 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1979679395/myiic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

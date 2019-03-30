@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "../AD/AD_temp.X/delay.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
+# 1 "../AD/AD_temp.X/delay.c" 2
+# 1 "../AD/AD_temp.X/delay.h" 1
+# 10 "../AD/AD_temp.X/delay.h"
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8847,511 +8841,42 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 10 "../AD/AD_temp.X/delay.h" 2
 
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
 
 
 
 
-typedef void * __isoc_va_list[1];
-# 145 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 244 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 397 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
 
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 10 "main.c" 2
-
-# 1 "./function.h" 1
-
-
-
-
-
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef long int32_t;
-# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int32_t intmax_t;
-
-
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef unsigned long uint32_t;
-# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef uint32_t uintmax_t;
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-typedef int32_t int_least32_t;
-
-
-
-
-typedef uint8_t uint_fast8_t;
-
-
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-typedef uint32_t uint_least32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 7 "./function.h" 2
-# 44 "./function.h"
-typedef uint8_t u8;
-typedef int8_t s8;
-typedef uint16_t u16;
-typedef int16_t s16;
-
-typedef enum{
-    FALSE = 0,
-    TRUE = 1,
-}BOOL;
-
-enum{
-    BPC_PWR_ON = 0,
-    BPC_PWR_OFF = 1,
-
-    PIN_LOW = 0,
-    PIN_HIGH = 1,
-
-
-    CODE_P0 = 0,
-    CODE_P1,
-    CODE_P2,
-    CODE_H_1,
-    CODE_H_2,
-    CODE_M_1,
-    CODE_M_2,
-    CODE_M_3,
-    CODE_W_1,
-    CODE_W_2,
-    CODE_P3,
-    CODE_D_1,
-    CODE_D_2,
-    CODE_D_3,
-    CODE_MN_1,
-    CODE_MN_2,
-    CODE_Y_1,
-    CODE_Y_2,
-    CODE_Y_3,
-    CODE_P4,
-
-}ENUM;
-# 103 "./function.h"
-typedef struct{
-
-    volatile BOOL g_flg_switch;
-    volatile BOOL g_start_read_data;
-    volatile BOOL g_find_recv_start;
-
-
-    u8 g_time_h;
-    u8 g_time_m;
-    u8 g_time_s;
-    u8 g_time_10ms;
-
-
-    u16 g_high_level_times;
-    u16 g_all_level_times;
-    u16 g_recv_count;
-
-    u8 g_recv_buf[20];
-
-}G_DATA;
-
-
-
-
-
-void receive_decode(void);
-
-
-
-
-void update_time(void);
-
-
-
-
-
-void update_display(void);
-# 11 "main.c" 2
-
-# 1 "./myiic.h" 1
-
-
-
-# 1 "./delay.h" 1
-# 16 "./delay.h"
 void delay_2us(void);
 void delay_3us(void);
 void delay_10us(void);
-# 4 "./myiic.h" 2
-# 18 "./myiic.h"
-void IIC_Init(void);
-void IIC_Start(void);
-void IIC_Stop(void);
-void IIC_Send_Byte(unsigned char txd);
-unsigned char IIC_Read_Byte(unsigned char ack);
-unsigned char IIC_Wait_Ack(void);
-void IIC_Ack(void);
-void IIC_NAck(void);
-unsigned char RD_temp(void);
-void IIC_temp(void);
-# 12 "main.c" 2
+# 1 "../AD/AD_temp.X/delay.c" 2
 
 
-
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config CLKOUTEN = OFF
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-
-
-#pragma config WRT = OFF
-#pragma config VCAPEN = OFF
-#pragma config PLLEN = ON
-#pragma config STVREN = ON
-#pragma config BORV = LO
-#pragma config LPBOR = OFF
-#pragma config LVP = ON
-
-
-static G_DATA g_data;
-
-void init_env(){
-
-
-
-
-    INTCONbits.GIE = 0b1;
-
-    INTCONbits.IOCIE = 0b1;
-
-
-
-    INTCONbits.TMR0IE = 0b1;
-
-
-
-
-
-    OSCCONbits.SCS = 0b10;
-    OSCCONbits.IRCF = 0b1010;
-
-
-
-
-
-
-
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.TMR0CS = 0;
-    OPTION_REGbits.PS = 4;
-    TMR0 = (217 + 14);
-
-
-
-
-
-
-
-    OPTION_REGbits.nWPUEN = 0;
-
-    TRISA = 0;
-    LATA = 0;
-    WPUA = 0;
-    IOCAP = 0;
-    IOCAN = 0;
-
-    TRISB = 0;
-    LATB = 0;
-    WPUB = 0;
-    IOCBP = 0;
-    IOCBN = 0;
-
-    TRISC = 0;
-    LATC = 0;
-    WPUC = 1;
-    IOCCP = 0;
-    IOCCN = 0;
-
-
-
-
-    TRISCbits.TRISC5 = 1;
-    WPUCbits.WPUC5 = 1;
-
-    TRISCbits.TRISC1 = 1;
-    WPUCbits.WPUC1 = 1;
-    IOCCPbits.IOCCP1 = 1;
-
-
-
-
-    g_data.g_time_h = 0;
-    g_data.g_time_m = 0;
-    g_data.g_time_s = 0;
-    g_data.g_time_10ms = 0;
-
-
-    g_data.g_flg_switch = FALSE;
-    g_data.g_start_read_data = FALSE;
-    g_data.g_find_recv_start = FALSE;
-
-
-    g_data.g_high_level_times = 0;
-    g_data.g_all_level_times = 0;
-    g_data.g_recv_count = 0;
-    for(int i = 0;i < 20; i++){
-        g_data.g_recv_buf[i] = 5;
-    }
-
-
-
-
-    PORTBbits.RB3 = PIN_HIGH;
-
-
-    PORTCbits.RC2 = BPC_PWR_ON;
-
-
-    TRISCbits.TRISC0 = 1;
-    WPUCbits.WPUC0 = 1;
-
-
-    IIC_Init();
-# 157 "main.c"
+void delay_2us(void)
+{
+    __nop();
+    __nop();
 }
 
-void __attribute__((picinterrupt(""))) ISR(void){
-    static u8 history_key = 0;
-    static u16 key_time_cnt = 0;
-
-
-    if(IOCCFbits.IOCCF1 == TRUE && g_data.g_start_read_data == FALSE && g_data.g_flg_switch == TRUE){
-
-
-
-
-        g_data.g_start_read_data = TRUE;
-        g_data.g_flg_switch = FALSE;
-        PORTCbits.RC2 = BPC_PWR_ON;
-
-        INTCONbits.IOCIF = FALSE;
-        IOCCFbits.IOCCF1 = FALSE;
-        return;
-    }else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1){
-        INTCONbits.IOCIF = FALSE;
-        IOCCFbits.IOCCF1 = FALSE;
-    }
-
-
-    if(INTCONbits.TMR0IF){
-        update_time();
-
-        if(g_data.g_start_read_data == TRUE ){
-            receive_decode();
-        }
-
-
-        if(key_time_cnt++ % 10 == 0)
-        {
-            history_key <<= 1;
-            history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
-            if((0x03) == (history_key & (0x0f)) )
-            {
-                g_data.g_flg_switch = TRUE;
-            }
-        }
-
-        INTCONbits.TMR0IF = 0;
-        TMR0 = (217 + 14);
-        return;
-    }
-    return;
+void delay_3us(void)
+{
+    __nop();
+    __nop();
+    __nop();
 }
 
-void main(void) {
-
-    init_env();
-
-    while(1);
-    return;
+void delay_10us(void)
+{
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
+    __nop();
 }

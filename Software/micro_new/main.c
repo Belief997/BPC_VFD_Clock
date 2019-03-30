@@ -9,6 +9,7 @@
 #include <xc.h>
 #include <stdio.h>
 #include "function.h"
+#include "myiic.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
@@ -87,7 +88,7 @@ void init_env(){
     // PORT-C
     TRISC = 0;
     LATC = 0;
-    WPUC = 0;
+    WPUC = 1;
     IOCCP = 0;
     IOCCN = 0;
     
@@ -134,6 +135,8 @@ void init_env(){
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
     
+    /* init iic */
+    IIC_Init();
     
 #ifdef TEST
     // init for test decode
