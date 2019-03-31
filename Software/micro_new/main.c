@@ -126,7 +126,7 @@ void init_env(){
     /**
      * set trans to display
      */
-    PIC_OE =  PIN_HIGH;
+    PIC_OE =  PIN_LOW;
     
     // lunch BPC reciever
     BPC_ON = BPC_PWR_ON;
@@ -138,22 +138,8 @@ void init_env(){
     /* init iic */
     IIC_Init();
     
-#ifdef TEST
-    // init for test decode
-    g_all_time_count = 0;
-    test_buf_index =0;
-    test_buf[0] = 20;
-    test_buf[1] = 30;
-    test_buf[2] = 0;
-    test_buf[3] = 10;
-    test_buf[4] = 10;
-    test_buf[5] = 20;
-    test_buf[6] = 30;
-    test_buf[7] = 40;
-    test_buf[8] = 10;
-    test_buf[9] = 30;
-    test_buf[10] = 30;
-#endif
+    // light on when have power
+    Light_on = 1;
 }
     
 void __interrupt () ISR(void){

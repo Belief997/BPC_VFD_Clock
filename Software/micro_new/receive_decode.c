@@ -33,6 +33,41 @@ static u8 times2number(u16 high_level_times){
     }
 }
 
+#ifdef TEST
+void test_get_number(u8 get_num){
+    if(get_num == 0){
+        GET_NUMBER_0 = 1;
+        GET_NUMBER_1 = 0;
+        GET_NUMBER_2 = 0;
+        GET_NUMBER_3 = 0;
+    }else if(get_num == 1){
+        GET_NUMBER_0 = 0;
+        GET_NUMBER_1 = 1;
+        GET_NUMBER_2 = 0;
+        GET_NUMBER_3 = 0;
+    }else if(get_num == 2){
+        GET_NUMBER_0 = 0;
+        GET_NUMBER_1 = 0;
+        GET_NUMBER_2 = 1;
+        GET_NUMBER_3 = 0;
+    }else if(get_num == 3){
+        GET_NUMBER_0 = 0;
+        GET_NUMBER_1 = 0;
+        GET_NUMBER_2 = 0;
+        GET_NUMBER_3 = 1;
+    }else if(get_num == 4){
+        GET_NUMBER_0 = 1;
+        GET_NUMBER_1 = 1;
+        GET_NUMBER_2 = 1;
+        GET_NUMBER_3 = 1;
+    }else if(get_num == 5){
+        GET_NUMBER_0 = 0;
+        GET_NUMBER_1 = 0;
+        GET_NUMBER_2 = 0;
+        GET_NUMBER_3 = 0;
+    }
+}
+#endif
 void receive_decode(void) {
     // read port get high level times
     if(CME_DATA_PORT == PIN_HIGH){
@@ -48,6 +83,9 @@ void receive_decode(void) {
     }
     // init for read another high level
     u8 read_value = times2number(g_data.g_high_level_times);
+#ifdef TEST
+    test_get_number(read_value);
+#endif
     g_data.g_all_level_times = 0;
     g_data.g_high_level_times = 0;
     

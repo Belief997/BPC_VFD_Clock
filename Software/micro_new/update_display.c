@@ -43,7 +43,6 @@ static void write_byte(u8 data){
 		control595_delay();
         PIC_SHCP = PIN_HIGH; // SRCLK
 		control595_delay();
-		
         data <<= 1;    
     }
 }
@@ -71,6 +70,6 @@ void update_display(void) {
 //               segmcode[g_data.g_time_m / 10], \
 //               segmcode[g_data.g_time_m % 10]); 
     
-    write_once(0xff, 0x00, 0xf0, 0x0f); // 4 3 2 1
+    write_once(0xa5, 0x5a, 0xa5, 0x5a); // 4 3 2 1
     return;
 }

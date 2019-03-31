@@ -23,10 +23,10 @@
 #define BPC_ON PORTCbits.RC2          // PON : LOW active
 
 // output display port define
-#define PIC_DATA PORTBbits.RB5
-#define PIC_SHCP PORTBbits.RB0
-#define PIC_STCP PORTBbits.RB1
-#define PIC_OE PORTBbits.RB3
+#define PIC_DATA LATBbits.LATB5
+#define PIC_SHCP LATBbits.LATB0
+#define PIC_STCP LATBbits.LATB1
+#define PIC_OE LATBbits.LATB2
 
 // define light controll
 #define Light_on PORTAbits.RA0
@@ -38,6 +38,19 @@
 #define PIC_SCL PORTCbits.RC3
 #define PIC_SDA PORTCbits.RC4
 #define CLKOUT PORTAbits.RA7        // EXTERN CLK IN
+
+#define TEST
+#ifdef TEST
+// defune test port
+#define SECOND_LIGHT LATBbits.LATB3
+
+// get number (times to number test)
+#define GET_NUMBER_0 LATAbits.LATA2
+#define GET_NUMBER_1 LATAbits.LATA3
+#define GET_NUMBER_2 LATAbits.LATA4
+#define GET_NUMBER_3 LATAbits.LATA5
+#endif
+
 
 /***************  define pin table  end  ******************/
 
