@@ -1,2 +1,2 @@
 dist/default/production\__eeprom.p1: \
-  E:\Program\ Files\ (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
+  F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c

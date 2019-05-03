@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -87,7 +87,7 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=16F1786
 # ------------------------------------------------------------------------------------
@@ -98,7 +98,6 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/receive_decode.p1: receive_decode.c  nbproject/Makefile-${CND_CONF}.mk
@@ -106,7 +105,6 @@ ${OBJECTDIR}/receive_decode.p1: receive_decode.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/receive_decode.p1.d 
 	@${RM} ${OBJECTDIR}/receive_decode.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/receive_decode.p1 receive_decode.c 
-	@-${MV} ${OBJECTDIR}/receive_decode.d ${OBJECTDIR}/receive_decode.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/receive_decode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/update_time.p1: update_time.c  nbproject/Makefile-${CND_CONF}.mk
@@ -114,7 +112,6 @@ ${OBJECTDIR}/update_time.p1: update_time.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/update_time.p1.d 
 	@${RM} ${OBJECTDIR}/update_time.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/update_time.p1 update_time.c 
-	@-${MV} ${OBJECTDIR}/update_time.d ${OBJECTDIR}/update_time.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/update_time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/update_display.p1: update_display.c  nbproject/Makefile-${CND_CONF}.mk
@@ -122,7 +119,6 @@ ${OBJECTDIR}/update_display.p1: update_display.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/update_display.p1.d 
 	@${RM} ${OBJECTDIR}/update_display.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/update_display.p1 update_display.c 
-	@-${MV} ${OBJECTDIR}/update_display.d ${OBJECTDIR}/update_display.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/update_display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
@@ -130,7 +126,6 @@ ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/delay.p1.d 
 	@${RM} ${OBJECTDIR}/delay.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/delay.p1 delay.c 
-	@-${MV} ${OBJECTDIR}/delay.d ${OBJECTDIR}/delay.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
@@ -138,7 +133,6 @@ ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/myiic.p1.d 
 	@${RM} ${OBJECTDIR}/myiic.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/myiic.p1 myiic.c 
-	@-${MV} ${OBJECTDIR}/myiic.d ${OBJECTDIR}/myiic.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/myiic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
@@ -147,7 +141,6 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/receive_decode.p1: receive_decode.c  nbproject/Makefile-${CND_CONF}.mk
@@ -155,7 +148,6 @@ ${OBJECTDIR}/receive_decode.p1: receive_decode.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/receive_decode.p1.d 
 	@${RM} ${OBJECTDIR}/receive_decode.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/receive_decode.p1 receive_decode.c 
-	@-${MV} ${OBJECTDIR}/receive_decode.d ${OBJECTDIR}/receive_decode.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/receive_decode.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/update_time.p1: update_time.c  nbproject/Makefile-${CND_CONF}.mk
@@ -163,7 +155,6 @@ ${OBJECTDIR}/update_time.p1: update_time.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/update_time.p1.d 
 	@${RM} ${OBJECTDIR}/update_time.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/update_time.p1 update_time.c 
-	@-${MV} ${OBJECTDIR}/update_time.d ${OBJECTDIR}/update_time.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/update_time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/update_display.p1: update_display.c  nbproject/Makefile-${CND_CONF}.mk
@@ -171,7 +162,6 @@ ${OBJECTDIR}/update_display.p1: update_display.c  nbproject/Makefile-${CND_CONF}
 	@${RM} ${OBJECTDIR}/update_display.p1.d 
 	@${RM} ${OBJECTDIR}/update_display.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/update_display.p1 update_display.c 
-	@-${MV} ${OBJECTDIR}/update_display.d ${OBJECTDIR}/update_display.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/update_display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
@@ -179,7 +169,6 @@ ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/delay.p1.d 
 	@${RM} ${OBJECTDIR}/delay.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/delay.p1 delay.c 
-	@-${MV} ${OBJECTDIR}/delay.d ${OBJECTDIR}/delay.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
@@ -187,7 +176,6 @@ ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/myiic.p1.d 
 	@${RM} ${OBJECTDIR}/myiic.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/myiic.p1 myiic.c 
-	@-${MV} ${OBJECTDIR}/myiic.d ${OBJECTDIR}/myiic.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/myiic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
@@ -207,15 +195,15 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -std=c99 -gdwarf-3 -mstack=compiled:auto:auto        $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
-	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.hex 
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.map  -D__DEBUG=1  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -std=c99 -gdwarf-3 -mstack=compiled:auto:auto        $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.hex 
 	
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/microchip_homework.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -o dist/${CND_CONF}/${IMAGE_TYPE}/micro_new.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	
 endif
 

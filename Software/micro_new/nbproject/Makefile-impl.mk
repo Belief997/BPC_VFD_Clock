@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=microchip_homework.X
+PROJECTNAME=micro_new
 
 # Active Configuration
 DEFAULTCONF=default

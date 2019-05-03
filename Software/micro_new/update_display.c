@@ -49,9 +49,9 @@ static void write_byte(u8 data){
 
 static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
     
-    write_byte(HL); //4
+    write_byte(HL); //4  Hr_Left
     write_byte(HR); //3
-    write_byte(ML); //2
+    write_byte(ML); //2  Min_Left
     write_byte(MR); //1
     
     PIC_STCP = PIN_HIGH; // RCLK

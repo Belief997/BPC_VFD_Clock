@@ -6,7 +6,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "stdint.h"
 
-//#define TEST
+
 
 /***************  define pin table from here  ******************/
 // cme6005 data port define  BPC_DATA
@@ -41,7 +41,7 @@
 
 #define TEST
 #ifdef TEST
-// defune test port
+// define test port
 #define SECOND_LIGHT LATBbits.LATB3
 
 // get number (times to number test)
@@ -116,7 +116,7 @@ enum{
 typedef struct{
    // bool value used in receive_decode
     volatile BOOL g_flg_switch;        // switch
-    volatile BOOL g_start_read_data;   // start read data
+    volatile BOOL g_isDecoding;   // start read data
     volatile BOOL g_find_recv_start; 
 
     // time data
