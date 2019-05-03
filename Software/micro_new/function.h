@@ -131,7 +131,7 @@ typedef struct{
     u16 g_recv_count;
     // read time buf in receive_code
     u8 g_recv_buf[RECV_BUF_MAX];
-    
+    u16 cnt_update;
 }G_DATA;
 
 /******  all functions  ********/

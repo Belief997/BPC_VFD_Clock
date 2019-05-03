@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "timer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
+# 1 "timer.c" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8847,7 +8839,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
+# 1 "timer.c" 2
 
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
@@ -8985,7 +8977,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 10 "main.c" 2
+# 2 "timer.c" 2
 
 # 1 "./function.h" 1
 
@@ -9145,211 +9137,42 @@ void update_time(void);
 
 
 void update_display(void);
-# 11 "main.c" 2
-
-# 1 "./myiic.h" 1
+# 3 "timer.c" 2
 
 
 
-# 1 "./delay.h" 1
-# 16 "./delay.h"
-void delay_2us(void);
-void delay_3us(void);
-void delay_10us(void);
-# 4 "./myiic.h" 2
-# 18 "./myiic.h"
-void IIC_Init(void);
-void IIC_Start(void);
-void IIC_Stop(void);
-void IIC_Send_Byte(unsigned char txd);
-unsigned char IIC_Read_Byte(unsigned char ack);
-unsigned char IIC_Wait_Ack(void);
-void IIC_Ack(void);
-void IIC_NAck(void);
-unsigned char RD_temp(void);
-void IIC_temp(void);
-# 12 "main.c" 2
-
-# 1 "./timer.h" 1
-# 13 "./timer.h"
-void timer_init(void);
-void timer_reset(void);
-void timer_start(void);
-void timer_stop(void);
-BOOL timer_isrunning(void);
-# 13 "main.c" 2
-
-
-
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config CLKOUTEN = OFF
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-
-
-#pragma config WRT = OFF
-#pragma config VCAPEN = OFF
-#pragma config PLLEN = ON
-#pragma config STVREN = ON
-#pragma config BORV = LO
-#pragma config LPBOR = OFF
-#pragma config LVP = ON
-
-
-static G_DATA g_data;
-
-void init_env(){
-
-
-
+void timer_init(void)
+{
 
     INTCONbits.GIE = 0b1;
 
-    INTCONbits.IOCIE = 0b1;
+
+    INTCONbits.TMR0IE = 0b0;
 
 
 
 
-
-    OSCCONbits.SCS = 0b10;
-    OSCCONbits.IRCF = 0b1010;
-
-    timer_init();
-
-
-
-
-
-
-
-    OPTION_REGbits.nWPUEN = 0;
-
-    TRISA = 0;
-    LATA = 0;
-    WPUA = 0;
-    IOCAP = 0;
-    IOCAN = 0;
-
-    TRISB = 0;
-    LATB = 0;
-    WPUB = 0;
-    IOCBP = 0;
-    IOCBN = 0;
-
-    TRISC = 0;
-    LATC = 0;
-    WPUC = 1;
-    IOCCP = 0;
-    IOCCN = 0;
-
-
-
-
-    TRISCbits.TRISC5 = 1;
-    WPUCbits.WPUC5 = 1;
-
-    TRISCbits.TRISC1 = 1;
-    WPUCbits.WPUC1 = 1;
-    IOCCPbits.IOCCP1 = 1;
-
-
-    for(int i = 0;i < 20; i++){
-        g_data.g_recv_buf[i] = 5;
-    }
-
-
-
-
-    LATBbits.LATB2 = PIN_LOW;
-
-
-    PORTCbits.RC2 = BPC_PWR_ON;
-
-
-    TRISCbits.TRISC0 = 1;
-    WPUCbits.WPUC0 = 1;
-
-
-    IIC_Init();
-
-
-    PORTAbits.RA0 = 1;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.TMR0CS = 0;
+    OPTION_REGbits.PS = 4;
+    TMR0 = (217 + 14);
 }
-
-void __attribute__((picinterrupt(""))) ISR(void)
+void timer_reset(void)
 {
-    static u8 history_key = 0;
-    static u16 key_time_cnt = 0;
-
-
-
-    if( g_data.g_isDecoding == FALSE && ((g_data.g_flg_switch == TRUE)||(g_data.cnt_update >= 30)) )
-
-    {
-
-        g_data.g_find_recv_start = FALSE;
-        g_data.g_isDecoding = TRUE;
-        g_data.g_flg_switch = FALSE;
-        g_data.cnt_update = 0;
-        g_data.g_recv_count = CODE_P0;
-        PORTCbits.RC2 = BPC_PWR_ON;
-
-        INTCONbits.IOCIF = FALSE;
-        IOCCFbits.IOCCF1 = FALSE;
-        return;
-    }
-    else if(g_data.g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == g_data.g_find_recv_start)
-    {
-        g_data.g_recv_count = CODE_P1;
-        timer_start();
-    }
-    else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1)
-    {
-        INTCONbits.IOCIF = FALSE;
-        IOCCFbits.IOCCF1 = FALSE;
-    }
-
-
-    if(INTCONbits.TMR0IF)
-    {
-
-        if(g_data.g_isDecoding == TRUE && ( g_data.g_find_recv_start == FALSE|| g_data.g_recv_count >= CODE_P1 ) )
-
-        {
-            receive_decode();
-        }
-
-        update_time();
-
-        if(key_time_cnt++ % 10 == 0)
-        {
-            history_key <<= 1;
-            history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
-
-            if(((0x03) == (history_key & (0x0f))) && (FALSE == g_data.g_flg_switch))
-            {
-                g_data.g_flg_switch = TRUE;
-            }
-        }
-
-        timer_reset();
-        return;
-    }
-    return;
+    INTCONbits.TMR0IF = 0;
+    TMR0 = (217 + 14);
 }
-
-void main(void)
+void timer_start(void)
 {
-
-    init_env();
-    timer_start();
-
-    while(1);
-    return;
+    timer_reset();
+    INTCONbits.TMR0IE = 0b0;
+}
+void timer_stop(void)
+{
+    INTCONbits.TMR0IE = 0b0;
+    timer_reset();
+}
+BOOL timer_isrunning(void)
+{
+    return (BOOL)(INTCONbits.TMR0IE == 0b1);
 }

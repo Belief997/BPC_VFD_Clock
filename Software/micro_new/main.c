@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include "function.h"
 #include "myiic.h"
+#include "timer.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
@@ -44,27 +45,14 @@ void init_env(){
     // ioc interrupt when read data from CME6005
     INTCONbits.IOCIE = 0b1;
     
-    // timer interrupt for read port every 0.01s
-    // timer interrupt for update now time
-    INTCONbits.TMR0IE = 0b1;
-    
     /**
      * choose clk inside
      */
 // TODO: adjust clk config here
     OSCCONbits.SCS = 0b10;      // set to use inside clock
     OSCCONbits.IRCF = 0b1010;   // set freq for inside clock : 500kHz
-    
-    /**
-     * timer0 init
-     */
-    // use divide freq, set to 100Hz
-    // 100Hz * (256 - start_value) * divider = Focs / 4
-    // Focs = 500kHz; divider = 32; len = 39.0625 start = 217
-    OPTION_REGbits.PSA = 0; 
-    OPTION_REGbits.TMR0CS = 0; // Focs / 4
-    OPTION_REGbits.PS = 4;     // divide <2:0> :32:0b100 = 4
-    TMR0 = TIMER_0_RST;
+       
+    timer_init();
     
     /**
      *  port use
@@ -132,18 +120,26 @@ void __interrupt () ISR(void)
     static u16 key_time_cnt = 0;
     
     /* start decode flag set */
-    if(CME_DATA_IOC_INT == TRUE && \
-       g_data.g_isDecoding == FALSE && \
-       g_data.g_flg_switch == TRUE)
+    // updata by key or 30 min
+    if( g_data.g_isDecoding == FALSE && \
+       ((g_data.g_flg_switch == TRUE)||(g_data.cnt_update >= 30)) )
     {
         // accept key press & set time check flg
+        g_data.g_find_recv_start = FALSE;
         g_data.g_isDecoding = TRUE;
         g_data.g_flg_switch = FALSE;    
+        g_data.cnt_update = 0;
+        g_data.g_recv_count = CODE_P0;
         BPC_ON = BPC_PWR_ON;
         
         INTCONbits.IOCIF = FALSE;
         CME_DATA_IOC_INT = FALSE;
         return;
+    }
+    else if(g_data.g_isDecoding == TRUE && CME_DATA_IOC_INT == TRUE && TRUE == g_data.g_find_recv_start)
+    {
+        g_data.g_recv_count = CODE_P1;
+        timer_start();
     }
     else if(INTCONbits.IOCIF || CME_DATA_IOC_INT)
     {
@@ -154,13 +150,14 @@ void __interrupt () ISR(void)
     /* update time cnt(display)&detect key press, time unit: 10 MS */
     if(INTCONbits.TMR0IF)
     {
-        update_time();
         // start receive & decode, decoding
-        if(g_data.g_isDecoding == TRUE )
+        if(g_data.g_isDecoding == TRUE && \
+           ( g_data.g_find_recv_start == FALSE||  g_data.g_recv_count >=  CODE_P1  ) )
         {
             receive_decode();
         }
-
+        
+        update_time();
         /* handle key event here */
         if(key_time_cnt++ % 10 == 0) // look up key every 100ms
         {
@@ -173,8 +170,7 @@ void __interrupt () ISR(void)
             }
         }
         /* reset timer_0 */
-        INTCONbits.TMR0IF = 0;
-        TMR0 = TIMER_0_RST;  
+        timer_reset();
         return;
     }
     return;
@@ -184,7 +180,8 @@ void main(void)
 {
     // init config
     init_env();
-
+    timer_start();
+    
     while(1);    
     return;
 }

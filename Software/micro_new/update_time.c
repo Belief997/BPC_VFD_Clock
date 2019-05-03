@@ -29,7 +29,7 @@ void update_time(void) {
         { // 1min
             g_data.g_time_m++;
             g_data.g_time_s = 0;
-           
+            g_data.cnt_update++;
             if(g_data.g_time_m == 60)
             { // 1hr
                 g_data.g_time_h++;

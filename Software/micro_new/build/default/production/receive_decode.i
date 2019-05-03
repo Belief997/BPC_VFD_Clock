@@ -8988,7 +8988,7 @@ typedef struct{
     u16 g_recv_count;
 
     u8 g_recv_buf[20];
-
+    u16 cnt_update;
 }G_DATA;
 
 
@@ -9008,6 +9008,15 @@ void update_time(void);
 
 void update_display(void);
 # 10 "receive_decode.c" 2
+
+# 1 "./timer.h" 1
+# 13 "./timer.h"
+void timer_init(void);
+void timer_reset(void);
+void timer_start(void);
+void timer_stop(void);
+BOOL timer_isrunning(void);
+# 11 "receive_decode.c" 2
 
 
 extern G_DATA g_data;
@@ -9098,6 +9107,12 @@ static int check_err(void)
 }
 
 void receive_decode(void) {
+    if(g_data.g_find_recv_start == FALSE && PORTCbits.RC1 == PIN_HIGH)
+    {
+        g_data.g_all_level_times = 0;
+        return;
+    }
+
 
     if(PORTCbits.RC1 == PIN_HIGH)
     {
@@ -9120,14 +9135,25 @@ void receive_decode(void) {
     g_data.g_all_level_times = 0;
     g_data.g_high_level_times = 0;
 
-    if(read_value == 5)
+    if(FALSE == g_data.g_find_recv_start)
     {
 
-        g_data.g_find_recv_start = TRUE;
-        g_data.g_recv_buf[CODE_P0] = 0;
-        g_data.g_recv_count = CODE_P1;
-        return;
+        if(read_value == 5)
+        {
+
+            g_data.g_find_recv_start = TRUE;
+            g_data.g_recv_buf[CODE_P0] = 0;
+
+
+            return;
+        }
+        else
+        {
+
+            return;
+        }
     }
+
 
     if(g_data.g_find_recv_start == FALSE || (read_value == 4))
     {
@@ -9173,8 +9199,8 @@ void receive_decode(void) {
 
     g_data.g_find_recv_start = FALSE;
 
-    g_data.g_isDecoding = 0;
-    g_data.g_recv_count = 0;
+    g_data.g_isDecoding = FALSE;
+    g_data.g_recv_count = CODE_P0;
     for(int i = 0;i < 20; i++)
     {
         g_data.g_recv_buf[i] = 5;

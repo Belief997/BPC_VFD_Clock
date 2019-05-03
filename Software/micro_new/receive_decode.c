@@ -8,6 +8,7 @@
 
 #include <xc.h>
 #include "function.h"
+#include "timer.h"
 
 extern G_DATA g_data;
 
@@ -97,6 +98,12 @@ static int check_err(void)
 }
 
 void receive_decode(void) {
+    if(g_data.g_find_recv_start == FALSE && CME_DATA_PORT == PIN_HIGH)
+    {
+        g_data.g_all_level_times = 0;
+        return;
+    }
+    
     // read port get high level times
     if(CME_DATA_PORT == PIN_HIGH)
     {
@@ -106,7 +113,7 @@ void receive_decode(void) {
     g_data.g_all_level_times++;
     
     // find time start
-    /* when we recive a long low level voltage, we get P0 */
+    
     if(g_data.g_all_level_times < MAX_HIGH_LEVEL_TIMES)
     {
         return;
@@ -119,14 +126,25 @@ void receive_decode(void) {
     g_data.g_all_level_times = 0;
     g_data.g_high_level_times = 0;
     
-    if(read_value == 5)
+    if(FALSE == g_data.g_find_recv_start)
     {
-        // start to read data flag
-        g_data.g_find_recv_start = TRUE;
-        g_data.g_recv_buf[CODE_P0] = 0;
-        g_data.g_recv_count = CODE_P1;  
-        return;
+        /* when we recive a long low level voltage, we get P0 */
+        if(read_value == 5)
+        {
+            // start to read data to buff
+            g_data.g_find_recv_start = TRUE;
+            g_data.g_recv_buf[CODE_P0] = 0;
+//            g_data.g_recv_count = CODE_P0;  
+//            timer_stop();
+            return;
+        } 
+        else
+        {
+            // wait P0
+            return;
+        }
     }
+
     
     if(g_data.g_find_recv_start == FALSE || (read_value == 4))
     {
@@ -172,8 +190,8 @@ void receive_decode(void) {
     // recv over ,then set flag to false
     g_data.g_find_recv_start = FALSE;
 //    BPC_ON = BPC_PWR_OFF;
-    g_data.g_isDecoding = 0;
-    g_data.g_recv_count = 0;
+    g_data.g_isDecoding = FALSE;
+    g_data.g_recv_count = CODE_P0;
     for(int i = 0;i < RECV_BUF_MAX; i++)
     {
         g_data.g_recv_buf[i] = 5;

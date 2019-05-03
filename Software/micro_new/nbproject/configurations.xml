@@ -3,6 +3,9 @@
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
       <itemPath>function.h</itemPath>
+      <itemPath>delay.h</itemPath>
+      <itemPath>myiic.h</itemPath>
+      <itemPath>timer.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
       <itemPath>main.c</itemPath>
@@ -10,9 +13,8 @@
       <itemPath>update_time.c</itemPath>
       <itemPath>update_display.c</itemPath>
       <itemPath>delay.c</itemPath>
-      <itemPath>delay.h</itemPath>
       <itemPath>myiic.c</itemPath>
-      <itemPath>myiic.h</itemPath>
+      <itemPath>timer.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>

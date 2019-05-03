@@ -9,8 +9,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E4902 . FALSE TRUE  ]
 "116 ./function.h
 [; ;./function.h: 116: typedef struct{
-[s S623 `VE4902 1 `VE4902 1 `VE4902 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i ]
-[n S623 . g_flg_switch g_start_read_data g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf ]
+[s S623 `VE4902 1 `VE4902 1 `VE4902 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i `us 1 ]
+[n S623 . g_flg_switch g_isDecoding g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf cnt_update ]
 "12 update_time.c
 [; ;update_time.c: 12: extern G_DATA g_data;
 [v _g_data `S623 ~T0 @X0 0 e ]
@@ -927,6 +927,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31
 [; ;update_time.c: 31:             g_data.g_time_s = 0;
 [e = . _g_data 5 -> -> 0 `i `uc ]
+"32
+[; ;update_time.c: 32:             g_data.cnt_update++;
+[e ++ . _g_data 11 -> -> 1 `i `us ]
 "33
 [; ;update_time.c: 33:             if(g_data.g_time_m == 60)
 [e $ ! == -> . _g_data 4 `i -> 60 `i 630  ]

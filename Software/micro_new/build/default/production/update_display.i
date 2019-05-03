@@ -8973,7 +8973,7 @@ enum{
 typedef struct{
 
     volatile BOOL g_flg_switch;
-    volatile BOOL g_start_read_data;
+    volatile BOOL g_isDecoding;
     volatile BOOL g_find_recv_start;
 
 
@@ -8988,7 +8988,7 @@ typedef struct{
     u16 g_recv_count;
 
     u8 g_recv_buf[20];
-
+    u16 cnt_update;
 }G_DATA;
 
 
