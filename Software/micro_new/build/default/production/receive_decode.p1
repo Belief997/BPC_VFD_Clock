@@ -1201,239 +1201,282 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _receive_decode ]
 [f ]
-"101
-[; ;receive_decode.c: 101:     if(g_data.g_find_recv_start == FALSE && PORTCbits.RC1 == PIN_HIGH)
-[e $ ! && == -> . _g_data 2 `ui -> . `E4902 0 `ui == -> . . _PORTCbits 0 1 `i -> . `E4906 3 `i 656  ]
 "102
-[; ;receive_decode.c: 102:     {
-{
-"103
-[; ;receive_decode.c: 103:         g_data.g_all_level_times = 0;
-[e = . _g_data 8 -> -> 0 `i `us ]
-"104
-[; ;receive_decode.c: 104:         return;
-[e $UE 655  ]
+[; ;receive_decode.c: 102:     static u8 cnt_low = 0;
+[v F4963 `uc ~T0 @X0 1 s cnt_low ]
+[i F4963
+-> -> 0 `i `uc
+]
 "105
-[; ;receive_decode.c: 105:     }
+[; ;receive_decode.c: 105:     if(g_data.g_find_recv_start == FALSE && PORTCbits.RC1 == PIN_HIGH)
+[e $ ! && == -> . _g_data 2 `ui -> . `E4902 0 `ui == -> . . _PORTCbits 0 1 `i -> . `E4906 3 `i 656  ]
+"106
+[; ;receive_decode.c: 106:     {
+{
+"107
+[; ;receive_decode.c: 107:         g_data.g_high_level_times = 0;
+[e = . _g_data 7 -> -> 0 `i `us ]
+"108
+[; ;receive_decode.c: 108:         g_data.g_all_level_times = 0;
+[e = . _g_data 8 -> -> 0 `i `us ]
+"109
+[; ;receive_decode.c: 109:         return;
+[e $UE 655  ]
+"110
+[; ;receive_decode.c: 110:     }
 }
 [e :U 656 ]
-"108
-[; ;receive_decode.c: 108:     if(PORTCbits.RC1 == PIN_HIGH)
+"114
+[; ;receive_decode.c: 114:     if(PORTCbits.RC1 == PIN_HIGH)
 [e $ ! == -> . . _PORTCbits 0 1 `i -> . `E4906 3 `i 657  ]
-"109
-[; ;receive_decode.c: 109:     {
+"115
+[; ;receive_decode.c: 115:     {
 {
-"110
-[; ;receive_decode.c: 110:         g_data.g_high_level_times++;
+"116
+[; ;receive_decode.c: 116:         g_data.g_high_level_times++;
 [e ++ . _g_data 7 -> -> 1 `i `us ]
-"111
-[; ;receive_decode.c: 111:     }
-}
-[e :U 657 ]
-"113
-[; ;receive_decode.c: 113:     g_data.g_all_level_times++;
-[e ++ . _g_data 8 -> -> 1 `i `us ]
-"117
-[; ;receive_decode.c: 117:     if(g_data.g_all_level_times < 100)
-[e $ ! < -> . _g_data 8 `ui -> -> 100 `i `ui 658  ]
 "118
-[; ;receive_decode.c: 118:     {
-{
+[; ;receive_decode.c: 118:         cnt_low = 0;
+[e = F4963 -> -> 0 `i `uc ]
 "119
-[; ;receive_decode.c: 119:         return;
-[e $UE 655  ]
+[; ;receive_decode.c: 119:     }
+}
+[e $U 658  ]
 "120
-[; ;receive_decode.c: 120:     }
+[; ;receive_decode.c: 120:     else
+[e :U 657 ]
+"121
+[; ;receive_decode.c: 121:     {
+{
+"122
+[; ;receive_decode.c: 122:         cnt_low++;
+[e ++ F4963 -> -> 1 `i `uc ]
+"123
+[; ;receive_decode.c: 123:     }
 }
 [e :U 658 ]
-"122
-[; ;receive_decode.c: 122:     u8 read_value = times2number(g_data.g_high_level_times);
-[v _read_value `uc ~T0 @X0 1 a ]
-[e = _read_value ( _times2number (1 . _g_data 7 ]
-"124
-[; ;receive_decode.c: 124:     test_get_number(read_value);
-[e ( _test_get_number (1 _read_value ]
-"126
-[; ;receive_decode.c: 126:     g_data.g_all_level_times = 0;
-[e = . _g_data 8 -> -> 0 `i `us ]
-"127
-[; ;receive_decode.c: 127:     g_data.g_high_level_times = 0;
-[e = . _g_data 7 -> -> 0 `i `us ]
+"125
+[; ;receive_decode.c: 125:     g_data.g_all_level_times++;
+[e ++ . _g_data 8 -> -> 1 `i `us ]
 "129
-[; ;receive_decode.c: 129:     if(FALSE == g_data.g_find_recv_start)
-[e $ ! == -> . `E4902 0 `ui -> . _g_data 2 `ui 659  ]
+[; ;receive_decode.c: 129:     if((g_data.g_all_level_times < 100) && (FALSE == g_data.g_find_recv_start))
+[e $ ! && < -> . _g_data 8 `ui -> -> 100 `i `ui == -> . `E4902 0 `ui -> . _g_data 2 `ui 659  ]
 "130
 [; ;receive_decode.c: 130:     {
 {
+"131
+[; ;receive_decode.c: 131:         return;
+[e $UE 655  ]
 "132
-[; ;receive_decode.c: 132:         if(read_value == 5)
-[e $ ! == -> _read_value `i -> 5 `i 660  ]
+[; ;receive_decode.c: 132:     }
+}
+[e $U 660  ]
 "133
-[; ;receive_decode.c: 133:         {
+[; ;receive_decode.c: 133:     else if( (cnt_low < 5) && (TRUE == g_data.g_find_recv_start) )
+[e :U 659 ]
+[e $ ! && < -> F4963 `i -> 5 `i == -> . `E4902 1 `ui -> . _g_data 2 `ui 661  ]
+"134
+[; ;receive_decode.c: 134:     {
 {
 "135
-[; ;receive_decode.c: 135:             g_data.g_find_recv_start = TRUE;
-[e = . _g_data 2 . `E4902 1 ]
+[; ;receive_decode.c: 135:         return ;
+[e $UE 655  ]
 "136
-[; ;receive_decode.c: 136:             g_data.g_recv_buf[CODE_P0] = 0;
-[e = *U + &U . _g_data 10 * -> . `E4906 4 `ux -> -> # *U &U . _g_data 10 `ui `ux -> -> 0 `i `uc ]
-"139
-[; ;receive_decode.c: 139:             return;
-[e $UE 655  ]
-"140
-[; ;receive_decode.c: 140:         }
-}
-[e $U 661  ]
-"141
-[; ;receive_decode.c: 141:         else
-[e :U 660 ]
-"142
-[; ;receive_decode.c: 142:         {
-{
-"144
-[; ;receive_decode.c: 144:             return;
-[e $UE 655  ]
-"145
-[; ;receive_decode.c: 145:         }
+[; ;receive_decode.c: 136:     }
 }
 [e :U 661 ]
+[e :U 660 ]
+"138
+[; ;receive_decode.c: 138:     u8 read_value = times2number(g_data.g_high_level_times);
+[v _read_value `uc ~T0 @X0 1 a ]
+[e = _read_value ( _times2number (1 . _g_data 7 ]
+"140
+[; ;receive_decode.c: 140:     test_get_number(read_value);
+[e ( _test_get_number (1 _read_value ]
+"142
+[; ;receive_decode.c: 142:     cnt_low = 0;
+[e = F4963 -> -> 0 `i `uc ]
+"143
+[; ;receive_decode.c: 143:     g_data.g_all_level_times = 0;
+[e = . _g_data 8 -> -> 0 `i `us ]
+"144
+[; ;receive_decode.c: 144:     g_data.g_high_level_times = 0;
+[e = . _g_data 7 -> -> 0 `i `us ]
 "146
-[; ;receive_decode.c: 146:     }
-}
-[e :U 659 ]
+[; ;receive_decode.c: 146:     if(FALSE == g_data.g_find_recv_start)
+[e $ ! == -> . `E4902 0 `ui -> . _g_data 2 `ui 662  ]
+"147
+[; ;receive_decode.c: 147:     {
+{
 "149
-[; ;receive_decode.c: 149:     if(g_data.g_find_recv_start == FALSE || (read_value == 4))
-[e $ ! || == -> . _g_data 2 `ui -> . `E4902 0 `ui == -> _read_value `i -> 4 `i 662  ]
+[; ;receive_decode.c: 149:         if(read_value == 5)
+[e $ ! == -> _read_value `i -> 5 `i 663  ]
 "150
-[; ;receive_decode.c: 150:     {
+[; ;receive_decode.c: 150:         {
 {
+"152
+[; ;receive_decode.c: 152:             g_data.g_find_recv_start = TRUE;
+[e = . _g_data 2 . `E4902 1 ]
 "153
-[; ;receive_decode.c: 153:         return;
-[e $UE 655  ]
-"154
-[; ;receive_decode.c: 154:     }
-}
-[e :U 662 ]
+[; ;receive_decode.c: 153:             g_data.g_recv_buf[CODE_P0] = 0;
+[e = *U + &U . _g_data 10 * -> . `E4906 4 `ux -> -> # *U &U . _g_data 10 `ui `ux -> -> 0 `i `uc ]
 "156
-[; ;receive_decode.c: 156:     g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
-[e = *U + &U . _g_data 10 * -> ++ . _g_data 9 -> -> 1 `i `us `ux -> -> # *U &U . _g_data 10 `ui `ux _read_value ]
+[; ;receive_decode.c: 156:             return;
+[e $UE 655  ]
 "157
-[; ;receive_decode.c: 157:     if(g_data.g_recv_count <= CODE_P3)
-[e $ ! <= -> . _g_data 9 `ui -> . `E4906 14 `ui 663  ]
-"158
-[; ;receive_decode.c: 158:     {
-{
-"159
-[; ;receive_decode.c: 159:         return;
-[e $UE 655  ]
-"160
-[; ;receive_decode.c: 160:     }
+[; ;receive_decode.c: 157:         }
 }
+[e $U 664  ]
+"158
+[; ;receive_decode.c: 158:         else
 [e :U 663 ]
-"162
-[; ;receive_decode.c: 162:     if(g_data.g_recv_buf[CODE_P1] != 0 && g_data.g_recv_buf[CODE_P2] != 0)
-[e $ ! && != -> *U + &U . _g_data 10 * -> . `E4906 5 `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i != -> *U + &U . _g_data 10 * -> . `E4906 6 `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i 664  ]
-"163
-[; ;receive_decode.c: 163:     {
+"159
+[; ;receive_decode.c: 159:         {
 {
-"164
-[; ;receive_decode.c: 164:         g_data.g_find_recv_start = FALSE;
-[e = . _g_data 2 . `E4902 0 ]
-"165
-[; ;receive_decode.c: 165:         g_data.g_isDecoding = 0;
-[e = . _g_data 1 -> -> 0 `i `E4902 ]
-"166
-[; ;receive_decode.c: 166:         g_data.g_recv_count = 0;
-[e = . _g_data 9 -> -> 0 `i `us ]
-"167
-[; ;receive_decode.c: 167:         return;
+"161
+[; ;receive_decode.c: 161:             return;
 [e $UE 655  ]
-"168
-[; ;receive_decode.c: 168:     }
+"162
+[; ;receive_decode.c: 162:         }
 }
 [e :U 664 ]
+"163
+[; ;receive_decode.c: 163:     }
+}
+[e :U 662 ]
+"166
+[; ;receive_decode.c: 166:     if(g_data.g_find_recv_start == FALSE || (read_value == 4))
+[e $ ! || == -> . _g_data 2 `ui -> . `E4902 0 `ui == -> _read_value `i -> 4 `i 665  ]
+"167
+[; ;receive_decode.c: 167:     {
+{
 "170
-[; ;receive_decode.c: 170:     u16 last_time_h = g_data.g_time_h;
-[v _last_time_h `us ~T0 @X0 1 a ]
-[e = _last_time_h -> . _g_data 3 `us ]
+[; ;receive_decode.c: 170:         return;
+[e $UE 655  ]
 "171
-[; ;receive_decode.c: 171:     u16 last_time_m = g_data.g_time_m;
-[v _last_time_m `us ~T0 @X0 1 a ]
-[e = _last_time_m -> . _g_data 4 `us ]
+[; ;receive_decode.c: 171:     }
+}
+[e :U 665 ]
 "173
-[; ;receive_decode.c: 173:     do{
-[e :U 667 ]
-{
+[; ;receive_decode.c: 173:     g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
+[e = *U + &U . _g_data 10 * -> ++ . _g_data 9 -> -> 1 `i `us `ux -> -> # *U &U . _g_data 10 `ui `ux _read_value ]
 "174
-[; ;receive_decode.c: 174:         if(check_err())
-[e $ ! != ( _check_err ..  -> 0 `i 668  ]
+[; ;receive_decode.c: 174:     if(g_data.g_recv_count <= CODE_P3)
+[e $ ! <= -> . _g_data 9 `ui -> . `E4906 14 `ui 666  ]
 "175
-[; ;receive_decode.c: 175:         {
+[; ;receive_decode.c: 175:     {
 {
+"176
+[; ;receive_decode.c: 176:         return;
+[e $UE 655  ]
 "177
-[; ;receive_decode.c: 177:             g_data.g_time_h = last_time_h;
-[e = . _g_data 3 -> _last_time_h `uc ]
-"178
-[; ;receive_decode.c: 178:             g_data.g_time_m = last_time_m;
-[e = . _g_data 4 -> _last_time_m `uc ]
-"179
-[; ;receive_decode.c: 179:             break;
-[e $U 666  ]
-"180
-[; ;receive_decode.c: 180:         }
-}
-[e :U 668 ]
-"183
-[; ;receive_decode.c: 183:         if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_time_m)
-[e $ ! || != -> _last_time_h `ui -> . _g_data 3 `ui != -> _last_time_m `ui -> . _g_data 4 `ui 669  ]
-"184
-[; ;receive_decode.c: 184:         {
-{
-"185
-[; ;receive_decode.c: 185:             update_display();
-[e ( _update_display ..  ]
-"186
-[; ;receive_decode.c: 186:         }
-}
-[e :U 669 ]
-"187
-[; ;receive_decode.c: 187:     }while(0);
+[; ;receive_decode.c: 177:     }
 }
 [e :U 666 ]
-"191
-[; ;receive_decode.c: 191:     g_data.g_find_recv_start = FALSE;
+"179
+[; ;receive_decode.c: 179:     if(g_data.g_recv_buf[CODE_P1] != 0 && g_data.g_recv_buf[CODE_P2] != 0)
+[e $ ! && != -> *U + &U . _g_data 10 * -> . `E4906 5 `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i != -> *U + &U . _g_data 10 * -> . `E4906 6 `ux -> -> # *U &U . _g_data 10 `ui `ux `i -> 0 `i 667  ]
+"180
+[; ;receive_decode.c: 180:     {
+{
+"181
+[; ;receive_decode.c: 181:         g_data.g_find_recv_start = FALSE;
 [e = . _g_data 2 . `E4902 0 ]
-"193
-[; ;receive_decode.c: 193:     g_data.g_isDecoding = FALSE;
-[e = . _g_data 1 . `E4902 0 ]
+"182
+[; ;receive_decode.c: 182:         g_data.g_isDecoding = 0;
+[e = . _g_data 1 -> -> 0 `i `E4902 ]
+"183
+[; ;receive_decode.c: 183:         g_data.g_recv_count = 0;
+[e = . _g_data 9 -> -> 0 `i `us ]
+"184
+[; ;receive_decode.c: 184:         return;
+[e $UE 655  ]
+"185
+[; ;receive_decode.c: 185:     }
+}
+[e :U 667 ]
+"187
+[; ;receive_decode.c: 187:     u16 last_time_h = g_data.g_time_h;
+[v _last_time_h `us ~T0 @X0 1 a ]
+[e = _last_time_h -> . _g_data 3 `us ]
+"188
+[; ;receive_decode.c: 188:     u16 last_time_m = g_data.g_time_m;
+[v _last_time_m `us ~T0 @X0 1 a ]
+[e = _last_time_m -> . _g_data 4 `us ]
+"190
+[; ;receive_decode.c: 190:     do{
+[e :U 670 ]
+{
+"191
+[; ;receive_decode.c: 191:         if(check_err())
+[e $ ! != ( _check_err ..  -> 0 `i 671  ]
+"192
+[; ;receive_decode.c: 192:         {
+{
 "194
-[; ;receive_decode.c: 194:     g_data.g_recv_count = CODE_P0;
-[e = . _g_data 9 -> . `E4906 4 `us ]
+[; ;receive_decode.c: 194:             g_data.g_time_h = last_time_h;
+[e = . _g_data 3 -> _last_time_h `uc ]
 "195
-[; ;receive_decode.c: 195:     for(int i = 0;i < 20; i++)
+[; ;receive_decode.c: 195:             g_data.g_time_m = last_time_m;
+[e = . _g_data 4 -> _last_time_m `uc ]
+"196
+[; ;receive_decode.c: 196:             break;
+[e $U 669  ]
+"197
+[; ;receive_decode.c: 197:         }
+}
+[e :U 671 ]
+"200
+[; ;receive_decode.c: 200:         if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_time_m)
+[e $ ! || != -> _last_time_h `ui -> . _g_data 3 `ui != -> _last_time_m `ui -> . _g_data 4 `ui 672  ]
+"201
+[; ;receive_decode.c: 201:         {
+{
+"202
+[; ;receive_decode.c: 202:             update_display();
+[e ( _update_display ..  ]
+"203
+[; ;receive_decode.c: 203:         }
+}
+[e :U 672 ]
+"204
+[; ;receive_decode.c: 204:     }while(0);
+}
+[e :U 669 ]
+"208
+[; ;receive_decode.c: 208:     g_data.g_find_recv_start = FALSE;
+[e = . _g_data 2 . `E4902 0 ]
+"210
+[; ;receive_decode.c: 210:     g_data.g_isDecoding = FALSE;
+[e = . _g_data 1 . `E4902 0 ]
+"211
+[; ;receive_decode.c: 211:     g_data.g_recv_count = CODE_P0;
+[e = . _g_data 9 -> . `E4906 4 `us ]
+"212
+[; ;receive_decode.c: 212:     for(int i = 0;i < 20; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 670  ]
-[e $U 671  ]
-[e :U 670 ]
-"196
-[; ;receive_decode.c: 196:     {
+[e $ < _i -> 20 `i 673  ]
+[e $U 674  ]
+[e :U 673 ]
+"213
+[; ;receive_decode.c: 213:     {
 {
-"197
-[; ;receive_decode.c: 197:         g_data.g_recv_buf[i] = 5;
+"214
+[; ;receive_decode.c: 214:         g_data.g_recv_buf[i] = 5;
 [e = *U + &U . _g_data 10 * -> -> _i `ui `ux -> -> # *U &U . _g_data 10 `ui `ux -> -> 5 `i `uc ]
-"198
-[; ;receive_decode.c: 198:     }
+"215
+[; ;receive_decode.c: 215:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 670  ]
-[e :U 671 ]
+[e $ < _i -> 20 `i 673  ]
+[e :U 674 ]
 }
-"199
-[; ;receive_decode.c: 199:     return;
+"216
+[; ;receive_decode.c: 216:     return;
 [e $UE 655  ]
-"200
-[; ;receive_decode.c: 200: }
+"217
+[; ;receive_decode.c: 217: }
 [e :UE 655 ]
 }

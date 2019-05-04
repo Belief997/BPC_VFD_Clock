@@ -138,7 +138,10 @@ void __interrupt () ISR(void)
     }
     else if(g_data.g_isDecoding == TRUE && CME_DATA_IOC_INT == TRUE && TRUE == g_data.g_find_recv_start)
     {
-        g_data.g_recv_count = CODE_P1;
+        if(g_data.g_recv_count == CODE_P0)
+        {
+            g_data.g_recv_count = CODE_P1;
+        }
         timer_start();
     }
     else if(INTCONbits.IOCIF || CME_DATA_IOC_INT)

@@ -9107,31 +9107,48 @@ static int check_err(void)
 }
 
 void receive_decode(void) {
+
+    static u8 cnt_low = 0;
+
+
     if(g_data.g_find_recv_start == FALSE && PORTCbits.RC1 == PIN_HIGH)
     {
+        g_data.g_high_level_times = 0;
         g_data.g_all_level_times = 0;
         return;
     }
 
 
+
     if(PORTCbits.RC1 == PIN_HIGH)
     {
         g_data.g_high_level_times++;
+
+        cnt_low = 0;
+    }
+    else
+    {
+        cnt_low++;
     }
 
     g_data.g_all_level_times++;
 
 
 
-    if(g_data.g_all_level_times < 100)
+    if((g_data.g_all_level_times < 100) && (FALSE == g_data.g_find_recv_start))
     {
         return;
+    }
+    else if( (cnt_low < 5) && (TRUE == g_data.g_find_recv_start) )
+    {
+        return ;
     }
 
     u8 read_value = times2number(g_data.g_high_level_times);
 
     test_get_number(read_value);
 
+    cnt_low = 0;
     g_data.g_all_level_times = 0;
     g_data.g_high_level_times = 0;
 

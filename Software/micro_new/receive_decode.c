@@ -98,31 +98,48 @@ static int check_err(void)
 }
 
 void receive_decode(void) {
+    // To advoid low level shake during high level time, and judge puls end
+    static u8 cnt_low = 0;
+    
+    // haven't find start P0, do not cnt 
     if(g_data.g_find_recv_start == FALSE && CME_DATA_PORT == PIN_HIGH)
     {
+        g_data.g_high_level_times = 0;
         g_data.g_all_level_times = 0;
         return;
     }
     
-    // read port get high level times
+    
+    // read port get high level times, high puls count
     if(CME_DATA_PORT == PIN_HIGH)
     {
         g_data.g_high_level_times++;
+//        g_data.g_high_level_times += cnt_low;
+        cnt_low = 0;
+    }
+    else
+    {
+        cnt_low++;
     }
     // get times of read
     g_data.g_all_level_times++;
     
     // find time start
     
-    if(g_data.g_all_level_times < MAX_HIGH_LEVEL_TIMES)
+    if((g_data.g_all_level_times < MAX_HIGH_LEVEL_TIMES) && (FALSE == g_data.g_find_recv_start))
     {
         return;
+    }
+    else if( (cnt_low < 5) && (TRUE == g_data.g_find_recv_start) )
+    {
+        return ;
     }
     // init for read another high level
     u8 read_value = times2number(g_data.g_high_level_times);
 #ifdef TEST
     test_get_number(read_value);
 #endif
+    cnt_low = 0;
     g_data.g_all_level_times = 0;
     g_data.g_high_level_times = 0;
     

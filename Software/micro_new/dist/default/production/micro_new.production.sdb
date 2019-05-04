@@ -173,7 +173,7 @@ TRUE 1
 [v _init_env init_env `(v  1 e 1 0 ]
 "117
 [v _ISR ISR `II(v  1 e 1 0 ]
-"179
+"182
 [v _main main `(v  1 e 1 0 ]
 "8 F:\Github\BPC_VFD_Clock\Software\micro_new\myiic.c
 [v _IIC_Init IIC_Init `(v  1 e 1 0 ]
@@ -445,10 +445,10 @@ TRUE 1
 [s S50 . 35 `VEE5220 1 g_flg_switch 1 0 `VEE5220 1 g_isDecoding 1 1 `VEE5220 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_10ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 ]
 "13 F:\Github\BPC_VFD_Clock\Software\micro_new\receive_decode.c
 [v _g_data g_data `VES50  1 e 35 0 ]
-"179 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
+"182 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"187
+"190
 } 0
 "27 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
 [v _timer_start timer_start `(v  1 e 1 0 ]
@@ -484,7 +484,7 @@ TRUE 1
 [v ISR@history_key history_key `uc  1 s 1 history_key ]
 "120
 [v ISR@key_time_cnt key_time_cnt `us  1 s 2 key_time_cnt ]
-"177
+"180
 } 0
 "27 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
 [v i1_timer_start timer_start `(v  1 e 1 0 ]
@@ -504,15 +504,17 @@ TRUE 1
 "100 F:\Github\BPC_VFD_Clock\Software\micro_new\receive_decode.c
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
 {
-"195
+"212
 [v receive_decode@i i `i  1 a 2 8 ]
-"171
+"188
 [v receive_decode@last_time_m last_time_m `us  1 a 2 6 ]
-"170
+"187
 [v receive_decode@last_time_h last_time_h `us  1 a 2 4 ]
-"122
+"138
 [v receive_decode@read_value read_value `uc  1 a 1 10 ]
-"200
+"102
+[v receive_decode@cnt_low cnt_low `uc  1 s 1 cnt_low ]
+"217
 } 0
 "62 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
 [v _update_display update_display `(v  1 e 1 0 ]
