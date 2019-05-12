@@ -14,3 +14,15 @@ Software/micro_new/dist/default/production/microchip_homework.X.production.mum
 Software/micro_new/dist/default/production/microchip_homework.X.production.map
 Software/micro_new/dist/default/production/microchip_homework.X.production.lst
 *.hex
+*.p1
+*.i
+Software/micro_new/build/default/production/receive_decode.i
+Software/micro_new/build/default/production/receive_decode.p1
+*.o
+Software/micro_new/dist/default/production/micro_new.production.o
+Software/micro_new/dist/default/production/micro_new.production.sym
+Software/micro_new/dist/default/production/micro_new.production.sdb
+Software/micro_new/dist/default/production/micro_new.production.rlf
+Software/micro_new/dist/default/production/micro_new.production.mum
+Software/micro_new/dist/default/production/micro_new.production.map
+Software/micro_new/dist/default/production/micro_new.production.lst

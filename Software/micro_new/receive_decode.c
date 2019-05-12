@@ -74,6 +74,7 @@ static int check_err(void)
 {
     g_data.g_time_h = g_data.g_recv_buf[CODE_H_1] * 4 + g_data.g_recv_buf[CODE_H_2];
     g_data.g_time_m = g_data.g_recv_buf[CODE_M_1] * 16 + g_data.g_recv_buf[CODE_M_2] * 4 + g_data.g_recv_buf[CODE_M_3];
+    g_data.g_time_s = 10 + g_data.g_recv_buf[CODE_P1] * 20;
     u8 check = 0;
     for(u8 i = CODE_P1; i < CODE_P3; i++)
     {
@@ -170,13 +171,15 @@ void receive_decode(void) {
         return;
     }
     
+    /* Recive P3 and before */
     g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
     if(g_data.g_recv_count <= CODE_P3)
     {
         return;
     }
 
-    if(g_data.g_recv_buf[CODE_P1] != 0 && g_data.g_recv_buf[CODE_P2] != 0)
+    // check P1, P1: 0->1, 1->21, 2->41
+    if(g_data.g_recv_buf[CODE_P1] > 2)
     {
         g_data.g_find_recv_start = FALSE;
         g_data.g_isDecoding = 0;
@@ -186,6 +189,7 @@ void receive_decode(void) {
     
     u16 last_time_h = g_data.g_time_h;
     u16 last_time_m = g_data.g_time_m;
+    u16 last_time_s = g_data.g_time_s;
     
     do{
         if(check_err())
@@ -193,6 +197,7 @@ void receive_decode(void) {
             // wrong data recived
             g_data.g_time_h = last_time_h;
             g_data.g_time_m = last_time_m;
+            g_data.g_time_s = last_time_s;
             break;
         }
 
