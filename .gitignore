@@ -1,0 +1,16 @@
+
+*.i
+*.i
+Software/micro_new/build/default/debug/myiic.i
+Software/micro_new/dist/default/production/microchip_homework.X.production.sym
+Software/micro_new/dist/default/production/microchip_homework.X.production.sdb
+Software/micro_new/nbproject/Makefile-genesis.properties
+Software/micro_new/nbproject/private/private.xml
+Software/micro_new/dist/default/production/microchip_homework.X.production.sym
+Software/micro_new/dist/default/production/microchip_homework.X.production.sdb
+Software/micro_new/dist/default/production/microchip_homework.X.production.rlf
+*.o
+Software/micro_new/dist/default/production/microchip_homework.X.production.mum
+Software/micro_new/dist/default/production/microchip_homework.X.production.map
+Software/micro_new/dist/default/production/microchip_homework.X.production.lst
+*.hex

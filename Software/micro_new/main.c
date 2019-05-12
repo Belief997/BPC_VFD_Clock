@@ -87,7 +87,7 @@ void init_env(){
     SWITCH_WPU = 1;
     
     CME_DATA_TRI = 1; // use port5 to detact ioc
-    CME_DATA_WPU = 1;
+    CME_DATA_WPU = 0;
     CME_DATA_IOC = 1; //detect when ioc up
     
     // times cnt in receive_decode

@@ -1201,7 +1201,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
 "90
 [; ;main.c: 90:     {
-[e = . . _WPUCbits 0 1 -> -> 1 `i `uc ]
+[e = . . _WPUCbits 0 1 -> -> 0 `i `uc ]
 "91
 [; ;main.c: 91: 
 [e = . . _IOCCPbits 0 1 -> -> 1 `i `uc ]

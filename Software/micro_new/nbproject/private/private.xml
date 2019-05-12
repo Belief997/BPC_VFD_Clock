@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/update_display.c</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/function.h</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/update_time.c</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/myiic.h</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/receive_decode.c</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/delay.c</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/main.c</file>
-            <file>file:/E:/Users/GeniusRabbit/MPLABXProjects/microchip_homework.X/myiic.c</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/update_time.c</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/timer.h</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/update_display.c</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/timer.c</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/receive_decode.c</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/function.h</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/main.c</file>
         </group>
     </open-files>
 </project-private>

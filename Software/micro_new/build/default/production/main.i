@@ -9255,7 +9255,7 @@ void init_env(){
     WPUCbits.WPUC5 = 1;
 
     TRISCbits.TRISC1 = 1;
-    WPUCbits.WPUC1 = 1;
+    WPUCbits.WPUC1 = 0;
     IOCCPbits.IOCCP1 = 1;
 
 
