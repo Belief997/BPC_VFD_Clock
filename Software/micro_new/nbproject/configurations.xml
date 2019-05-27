@@ -9,6 +9,7 @@
       <itemPath>data.h</itemPath>
       <itemPath>debug.h</itemPath>
       <itemPath>hardware.h</itemPath>
+      <itemPath>uart.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
       <itemPath>main.c</itemPath>
@@ -20,6 +21,7 @@
       <itemPath>timer.c</itemPath>
       <itemPath>debug.c</itemPath>
       <itemPath>data.c</itemPath>
+      <itemPath>uart.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>
