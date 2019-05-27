@@ -36,10 +36,11 @@
 #pragma config LPBOR = OFF      // Low Power Brown-Out Reset Enable Bit (Low power brown-out is disabled)
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
-// global data struct
-static G_DATA g_data;
+
 
 void init_env(){
+    G_DATA *pdata = data_getdata();
+    
     /**
      * interuption cfg
      */
@@ -95,7 +96,7 @@ void init_env(){
     
     // times cnt in receive_decode
     for(int i = 0;i < RECV_BUF_MAX; i++){
-        g_data.g_recv_buf[i] = 5;
+        pdata->g_recv_buf[i] = 5;
     }
     
     /**
@@ -121,29 +122,31 @@ void __interrupt () ISR(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
+    G_DATA *pdata = data_getdata();
+    
     
     /* start decode flag set */
     // updata by key or 30 min
-    if( g_data.g_isDecoding == FALSE && \
-       ((g_data.g_flg_switch == TRUE)||(g_data.cnt_update >= 30)) )
+    if( pdata->g_isDecoding == FALSE && \
+       ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
     {
         // accept key press & set time check flg
-        g_data.g_find_recv_start = FALSE;
-        g_data.g_isDecoding = TRUE;
-        g_data.g_flg_switch = FALSE;    
-        g_data.cnt_update = 0;
-        g_data.g_recv_count = CODE_P0;
+        pdata->g_find_recv_start = FALSE;
+        pdata->g_isDecoding = TRUE;
+        pdata->g_flg_switch = FALSE;    
+        pdata->cnt_update = 0;
+        pdata->g_recv_count = CODE_P0;
         BPC_ON = BPC_PWR_ON;
         
         INTCONbits.IOCIF = FALSE;
         CME_DATA_IOC_INT = FALSE;
         return;
     }
-    else if(g_data.g_isDecoding == TRUE && CME_DATA_IOC_INT == TRUE && TRUE == g_data.g_find_recv_start)
+    else if(pdata->g_isDecoding == TRUE && CME_DATA_IOC_INT == TRUE && TRUE == pdata->g_find_recv_start)
     {
-        if(g_data.g_recv_count == CODE_P0)
+        if(pdata->g_recv_count == CODE_P0)
         {
-            g_data.g_recv_count = CODE_P1;
+            pdata->g_recv_count = CODE_P1;
         }
         timer_start();
     }
@@ -157,8 +160,8 @@ void __interrupt () ISR(void)
     if(INTCONbits.TMR0IF)
     {
         // start receive & decode, decoding
-        if(g_data.g_isDecoding == TRUE && \
-           ( g_data.g_find_recv_start == FALSE||  g_data.g_recv_count >=  CODE_P1  ) )
+        if(pdata->g_isDecoding == TRUE && \
+           ( pdata->g_find_recv_start == FALSE||  pdata->g_recv_count >=  CODE_P1  ) )
         {
             receive_decode();
         }
@@ -170,9 +173,9 @@ void __interrupt () ISR(void)
             history_key <<= 1;
             history_key |= (SWITCH_PORT == PIN_HIGH)? 0x01 : 0x00;
             /* judge press by 4 states , press has been consumed */
-            if((KEY_PRESS == (history_key & KEY_CHECK_BITS)) && (FALSE == g_data.g_flg_switch))
+            if((KEY_PRESS == (history_key & KEY_CHECK_BITS)) && (FALSE == pdata->g_flg_switch))
             {
-                g_data.g_flg_switch = TRUE;  // SET KEY PRESS FLG
+                pdata->g_flg_switch = TRUE;  // SET KEY PRESS FLG
             }
         }
         /* reset timer_0 */

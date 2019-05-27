@@ -84,5 +84,6 @@ typedef struct{
     u16 cnt_update;
 }G_DATA;
 
+G_DATA* data_getdata(void);
 
 #endif

@@ -6,7 +6,7 @@
 
 //#include "led.h"
 #include "data.h"
-
+#if 0
 #define MAX_CMD_LENGTH (16)
 #define MAX_CMD_NUMBER  (32)
 
@@ -89,3 +89,5 @@ int debug_proc(const unsigned char* cmdString, unsigned short length)
     LOG_INFO("CMD not processed");
     return -1;
 }
+
+#endif

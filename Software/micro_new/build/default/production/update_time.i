@@ -8927,7 +8927,13 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
 # 8 "./function.h" 2
-# 57 "./function.h"
+# 1 "./data.h" 1
+
+
+
+
+
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
@@ -8968,7 +8974,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 116 "./function.h"
+# 66 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -8990,6 +8996,9 @@ typedef struct{
     u16 cnt_update;
 }G_DATA;
 
+G_DATA* data_getdata(void);
+# 9 "./function.h" 2
+
 
 
 
@@ -9008,35 +9017,35 @@ void update_time(void);
 void update_display(void);
 # 11 "update_time.c" 2
 
-extern G_DATA g_data;
 
 void update_time(void) {
-    g_data.g_time_10ms++;
+    G_DATA *pdata = data_getdata();
+    pdata->g_time_10ms++;
 
-    if( 50 == g_data.g_time_10ms ){
-        LATBbits.LATB3 = 1;
-    }else if( 100 == g_data.g_time_10ms ){
-        LATBbits.LATB3 = 0;
-    }
 
-    if(g_data.g_time_10ms == 100)
+
+
+
+
+
+    if(pdata->g_time_10ms == 100)
     {
-        g_data.g_time_10ms = 0;
-        g_data.g_time_s++;
+        pdata->g_time_10ms = 0;
+        pdata->g_time_s++;
 
-        if(g_data.g_time_s == 60)
+        if(pdata->g_time_s == 60)
         {
-            g_data.g_time_m++;
-            g_data.g_time_s = 0;
-            g_data.cnt_update++;
-            if(g_data.g_time_m == 60)
+            pdata->g_time_m++;
+            pdata->g_time_s = 0;
+            pdata->cnt_update++;
+            if(pdata->g_time_m == 60)
             {
-                g_data.g_time_h++;
-                g_data.g_time_m = 0;
+                pdata->g_time_h++;
+                pdata->g_time_m = 0;
 
-                if(g_data.g_time_h == 24)
+                if(pdata->g_time_h == 24)
                 {
-                    g_data.g_time_h = 0;
+                    pdata->g_time_h = 0;
                 }
             }
 

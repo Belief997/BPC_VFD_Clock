@@ -9132,6 +9132,8 @@ typedef struct{
     u8 g_recv_buf[20];
     u16 cnt_update;
 }G_DATA;
+
+G_DATA* data_getdata(void);
 # 9 "./function.h" 2
 
 
@@ -9214,9 +9216,10 @@ int debug_proc(const unsigned char* cmdString, unsigned short length);
 #pragma config LVP = ON
 
 
-static G_DATA g_data;
 
 void init_env(){
+    G_DATA *pdata = data_getdata();
+
 
 
 
@@ -9272,7 +9275,7 @@ void init_env(){
 
 
     for(int i = 0;i < 20; i++){
-        g_data.g_recv_buf[i] = 5;
+        pdata->g_recv_buf[i] = 5;
     }
 
 
@@ -9298,29 +9301,31 @@ void __attribute__((picinterrupt(""))) ISR(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
+    G_DATA *pdata = data_getdata();
 
 
 
-    if( g_data.g_isDecoding == FALSE && ((g_data.g_flg_switch == TRUE)||(g_data.cnt_update >= 30)) )
+
+    if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
 
     {
 
-        g_data.g_find_recv_start = FALSE;
-        g_data.g_isDecoding = TRUE;
-        g_data.g_flg_switch = FALSE;
-        g_data.cnt_update = 0;
-        g_data.g_recv_count = CODE_P0;
+        pdata->g_find_recv_start = FALSE;
+        pdata->g_isDecoding = TRUE;
+        pdata->g_flg_switch = FALSE;
+        pdata->cnt_update = 0;
+        pdata->g_recv_count = CODE_P0;
         PORTCbits.RC2 = BPC_PWR_ON;
 
         INTCONbits.IOCIF = FALSE;
         IOCCFbits.IOCCF1 = FALSE;
         return;
     }
-    else if(g_data.g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == g_data.g_find_recv_start)
+    else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
     {
-        if(g_data.g_recv_count == CODE_P0)
+        if(pdata->g_recv_count == CODE_P0)
         {
-            g_data.g_recv_count = CODE_P1;
+            pdata->g_recv_count = CODE_P1;
         }
         timer_start();
     }
@@ -9334,7 +9339,7 @@ void __attribute__((picinterrupt(""))) ISR(void)
     if(INTCONbits.TMR0IF)
     {
 
-        if(g_data.g_isDecoding == TRUE && ( g_data.g_find_recv_start == FALSE|| g_data.g_recv_count >= CODE_P1 ) )
+        if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
 
         {
             receive_decode();
@@ -9347,9 +9352,9 @@ void __attribute__((picinterrupt(""))) ISR(void)
             history_key <<= 1;
             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
 
-            if(((0x03) == (history_key & (0x0f))) && (FALSE == g_data.g_flg_switch))
+            if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
             {
-                g_data.g_flg_switch = TRUE;
+                pdata->g_flg_switch = TRUE;
             }
         }
 

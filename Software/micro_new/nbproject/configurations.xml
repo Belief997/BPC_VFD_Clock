@@ -19,6 +19,7 @@
       <itemPath>myiic.c</itemPath>
       <itemPath>timer.c</itemPath>
       <itemPath>debug.c</itemPath>
+      <itemPath>data.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>

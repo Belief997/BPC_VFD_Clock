@@ -9056,7 +9056,13 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
 # 8 "./function.h" 2
-# 57 "./function.h"
+# 1 "./data.h" 1
+
+
+
+
+
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
@@ -9097,7 +9103,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 116 "./function.h"
+# 66 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9118,6 +9124,9 @@ typedef struct{
     u8 g_recv_buf[20];
     u16 cnt_update;
 }G_DATA;
+
+G_DATA* data_getdata(void);
+# 9 "./function.h" 2
 
 
 

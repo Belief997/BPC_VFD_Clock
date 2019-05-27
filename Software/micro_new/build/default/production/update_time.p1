@@ -1,36 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"96 ./function.h
-[; ;./function.h: 96: }ENUM;
+"46 ./data.h
+[; ;./data.h: 46: }ENUM;
 [c E4906 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
 [n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
-"15 update_time.c
-[; ;update_time.c: 15:     g_data.g_time_10ms++;
+"14 update_time.c
+[; ;update_time.c: 14:     G_DATA *pdata = data_getdata();
 [c E4902 0 1 .. ]
 [n E4902 . FALSE TRUE  ]
-"116 ./function.h
-[; ;./function.h: 116: typedef struct{
+"66 ./data.h
+[; ;./data.h: 66: typedef struct{
 [s S623 `VE4902 1 `VE4902 1 `VE4902 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i `us 1 ]
 [n S623 . g_flg_switch g_isDecoding g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf cnt_update ]
-"12 update_time.c
-[; ;update_time.c: 12: extern G_DATA g_data;
-[v _g_data `S623 ~T0 @X0 0 e ]
-"2369 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 2369:     struct {
-[s S126 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S126 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"2379
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 2379:     struct {
-[s S127 :8 `uc 1 ]
-[n S127 . LATB ]
-"2368
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 2368: typedef union {
-[u S125 `S126 1 `S127 1 ]
-[n S125 . . . ]
-"2383
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 2383: extern volatile LATBbits_t LATBbits __attribute__((address(0x10D)));
-[v _LATBbits `VS125 ~T0 @X0 0 e@269 ]
-"152 ./function.h
-[; ;./function.h: 152: void update_display(void);
+"87
+[; ;./data.h: 87: G_DATA* data_getdata(void);
+[v _data_getdata `(*S623 ~T0 @X0 0 ef ]
+"25 ./function.h
+[; ;./function.h: 25: void update_display(void);
 [v _update_display `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
@@ -869,107 +854,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"96 ./function.h
-[; ;./function.h: 96: }ENUM;
+"46 ./data.h
+[; ;./data.h: 46: }ENUM;
 [v _ENUM `E4906 ~T0 @X0 1 e ]
-"14 update_time.c
-[; ;update_time.c: 14: void update_time(void) {
+"13 update_time.c
+[; ;update_time.c: 13: void update_time(void) {
 [v _update_time `(v ~T0 @X0 1 ef ]
 {
 [e :U _update_time ]
 [f ]
+"14
+[; ;update_time.c: 14:     G_DATA *pdata = data_getdata();
+[v _pdata `*S623 ~T0 @X0 1 a ]
+[e = _pdata ( _data_getdata ..  ]
 "15
-[; ;update_time.c: 15:     g_data.g_time_10ms++;
-[e ++ . _g_data 6 -> -> 1 `i `uc ]
-"17
-[; ;update_time.c: 17:     if( 50 == g_data.g_time_10ms ){
-[e $ ! == -> 50 `i -> . _g_data 6 `i 625  ]
-{
-"18
-[; ;update_time.c: 18:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"19
-[; ;update_time.c: 19:     }else if( 100 == g_data.g_time_10ms ){
-}
-[e $U 626  ]
-[e :U 625 ]
-[e $ ! == -> 100 `i -> . _g_data 6 `i 627  ]
-{
-"20
-[; ;update_time.c: 20:         LATBbits.LATB3 = 0;
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"21
-[; ;update_time.c: 21:     }
-}
-[e :U 627 ]
-[e :U 626 ]
+[; ;update_time.c: 15:     pdata->g_time_10ms++;
+[e ++ . *U _pdata 6 -> -> 1 `i `uc ]
 "23
-[; ;update_time.c: 23:     if(g_data.g_time_10ms == 100)
-[e $ ! == -> . _g_data 6 `i -> 100 `i 628  ]
+[; ;update_time.c: 23:     if(pdata->g_time_10ms == 100)
+[e $ ! == -> . *U _pdata 6 `i -> 100 `i 625  ]
 "24
 [; ;update_time.c: 24:     {
 {
 "25
-[; ;update_time.c: 25:         g_data.g_time_10ms = 0;
-[e = . _g_data 6 -> -> 0 `i `uc ]
+[; ;update_time.c: 25:         pdata->g_time_10ms = 0;
+[e = . *U _pdata 6 -> -> 0 `i `uc ]
 "26
-[; ;update_time.c: 26:         g_data.g_time_s++;
-[e ++ . _g_data 5 -> -> 1 `i `uc ]
+[; ;update_time.c: 26:         pdata->g_time_s++;
+[e ++ . *U _pdata 5 -> -> 1 `i `uc ]
 "28
-[; ;update_time.c: 28:         if(g_data.g_time_s == 60)
-[e $ ! == -> . _g_data 5 `i -> 60 `i 629  ]
+[; ;update_time.c: 28:         if(pdata->g_time_s == 60)
+[e $ ! == -> . *U _pdata 5 `i -> 60 `i 626  ]
 "29
 [; ;update_time.c: 29:         {
 {
 "30
-[; ;update_time.c: 30:             g_data.g_time_m++;
-[e ++ . _g_data 4 -> -> 1 `i `uc ]
+[; ;update_time.c: 30:             pdata->g_time_m++;
+[e ++ . *U _pdata 4 -> -> 1 `i `uc ]
 "31
-[; ;update_time.c: 31:             g_data.g_time_s = 0;
-[e = . _g_data 5 -> -> 0 `i `uc ]
+[; ;update_time.c: 31:             pdata->g_time_s = 0;
+[e = . *U _pdata 5 -> -> 0 `i `uc ]
 "32
-[; ;update_time.c: 32:             g_data.cnt_update++;
-[e ++ . _g_data 11 -> -> 1 `i `us ]
+[; ;update_time.c: 32:             pdata->cnt_update++;
+[e ++ . *U _pdata 11 -> -> 1 `i `us ]
 "33
-[; ;update_time.c: 33:             if(g_data.g_time_m == 60)
-[e $ ! == -> . _g_data 4 `i -> 60 `i 630  ]
+[; ;update_time.c: 33:             if(pdata->g_time_m == 60)
+[e $ ! == -> . *U _pdata 4 `i -> 60 `i 627  ]
 "34
 [; ;update_time.c: 34:             {
 {
 "35
-[; ;update_time.c: 35:                 g_data.g_time_h++;
-[e ++ . _g_data 3 -> -> 1 `i `uc ]
+[; ;update_time.c: 35:                 pdata->g_time_h++;
+[e ++ . *U _pdata 3 -> -> 1 `i `uc ]
 "36
-[; ;update_time.c: 36:                 g_data.g_time_m = 0;
-[e = . _g_data 4 -> -> 0 `i `uc ]
+[; ;update_time.c: 36:                 pdata->g_time_m = 0;
+[e = . *U _pdata 4 -> -> 0 `i `uc ]
 "38
-[; ;update_time.c: 38:                 if(g_data.g_time_h == 24)
-[e $ ! == -> . _g_data 3 `i -> 24 `i 631  ]
+[; ;update_time.c: 38:                 if(pdata->g_time_h == 24)
+[e $ ! == -> . *U _pdata 3 `i -> 24 `i 628  ]
 "39
 [; ;update_time.c: 39:                 {
 {
 "40
-[; ;update_time.c: 40:                     g_data.g_time_h = 0;
-[e = . _g_data 3 -> -> 0 `i `uc ]
+[; ;update_time.c: 40:                     pdata->g_time_h = 0;
+[e = . *U _pdata 3 -> -> 0 `i `uc ]
 "41
 [; ;update_time.c: 41:                 }
 }
-[e :U 631 ]
+[e :U 628 ]
 "42
 [; ;update_time.c: 42:             }
 }
-[e :U 630 ]
+[e :U 627 ]
 "44
 [; ;update_time.c: 44:             update_display();
 [e ( _update_display ..  ]
 "45
 [; ;update_time.c: 45:         }
 }
-[e :U 629 ]
+[e :U 626 ]
 "46
 [; ;update_time.c: 46:     }
 }
-[e :U 628 ]
+[e :U 625 ]
 "47
 [; ;update_time.c: 47:     return;
 [e $UE 624  ]

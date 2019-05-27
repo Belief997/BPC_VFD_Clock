@@ -8927,7 +8927,13 @@ typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
 # 8 "./function.h" 2
-# 57 "./function.h"
+# 1 "./data.h" 1
+
+
+
+
+
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
@@ -8968,7 +8974,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 116 "./function.h"
+# 66 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -8990,6 +8996,9 @@ typedef struct{
     u16 cnt_update;
 }G_DATA;
 
+G_DATA* data_getdata(void);
+# 9 "./function.h" 2
+
 
 
 
@@ -9007,6 +9016,9 @@ void update_time(void);
 
 void update_display(void);
 # 11 "receive_decode.c" 2
+# 1 "./hardware.h" 1
+# 12 "receive_decode.c" 2
+
 # 1 "./timer.h" 1
 # 13 "./timer.h"
 void timer_init(void);
@@ -9014,9 +9026,8 @@ void timer_reset(void);
 void timer_start(void);
 void timer_stop(void);
 BOOL timer_isrunning(void);
-# 12 "receive_decode.c" 2
+# 14 "receive_decode.c" 2
 
-extern G_DATA g_data;
 
 static u8 times2number(u16 high_level_times){
     if(high_level_times >= 10 - 5 && high_level_times < 10 + 5){
@@ -9078,41 +9089,44 @@ void test_get_number(u8 get_num){
 
 static int check_err(void)
 {
-    g_data.g_time_h = g_data.g_recv_buf[CODE_H_1] * 4 + g_data.g_recv_buf[CODE_H_2];
-    g_data.g_time_m = g_data.g_recv_buf[CODE_M_1] * 16 + g_data.g_recv_buf[CODE_M_2] * 4 + g_data.g_recv_buf[CODE_M_3];
-    g_data.g_time_s = 10 + g_data.g_recv_buf[CODE_P1] * 20;
+    G_DATA *pdata = data_getdata();
+    pdata->g_time_h = pdata->g_recv_buf[CODE_H_1] * 4 + pdata->g_recv_buf[CODE_H_2];
+    pdata->g_time_m = pdata->g_recv_buf[CODE_M_1] * 16 + pdata->g_recv_buf[CODE_M_2] * 4 + pdata->g_recv_buf[CODE_M_3];
+    pdata->g_time_s = 10 + (pdata->g_recv_buf[CODE_P1] == 1)? 20: (pdata->g_recv_buf[CODE_P1] == 2)? 40: 0;
+
     u8 check = 0;
     for(u8 i = CODE_P1; i < CODE_P3; i++)
     {
-        check ^= g_data.g_recv_buf[i];
+        check ^= pdata->g_recv_buf[i];
     }
-    if( (((0 == check) || (3 == check))) && (g_data.g_recv_buf[CODE_P3] % 2 == 0) )
+    if( (((0 == check) || (3 == check))) && (pdata->g_recv_buf[CODE_P3] % 2 == 0) )
     {
-        g_data.g_time_h += (2 ==g_data.g_recv_buf[CODE_P3])? 12 : 0;
-    }else if( (((1 == check) || (2 == check))) && ((g_data.g_recv_buf[CODE_P3] == 1) || (g_data.g_recv_buf[CODE_P3] == 3)) )
+        pdata->g_time_h += (2 ==pdata->g_recv_buf[CODE_P3])? 12 : 0;
+    }else if( (((1 == check) || (2 == check))) && ((pdata->g_recv_buf[CODE_P3] == 1) || (pdata->g_recv_buf[CODE_P3] == 3)) )
 
     {
-        g_data.g_time_h += (3 ==g_data.g_recv_buf[CODE_P3])? 12 : 0;
+        pdata->g_time_h += (3 ==pdata->g_recv_buf[CODE_P3])? 12 : 0;
     }
     else
     {
-        g_data.g_find_recv_start = FALSE;
-        g_data.g_isDecoding = 0;
-        g_data.g_recv_count = 0;
+        pdata->g_find_recv_start = FALSE;
+        pdata->g_isDecoding = 0;
+        pdata->g_recv_count = 0;
         return -1;
     }
     return 0;
 }
 
 void receive_decode(void) {
+    G_DATA *pdata = data_getdata();
 
     static u8 cnt_low = 0;
 
 
-    if(g_data.g_find_recv_start == FALSE && PORTCbits.RC1 == PIN_HIGH)
+    if(pdata->g_find_recv_start == FALSE && PORTCbits.RC1 == PIN_HIGH)
     {
-        g_data.g_high_level_times = 0;
-        g_data.g_all_level_times = 0;
+        pdata->g_high_level_times = 0;
+        pdata->g_all_level_times = 0;
         return;
     }
 
@@ -9120,7 +9134,7 @@ void receive_decode(void) {
 
     if(PORTCbits.RC1 == PIN_HIGH)
     {
-        g_data.g_high_level_times++;
+        pdata->g_high_level_times++;
 
         cnt_low = 0;
     }
@@ -9129,35 +9143,35 @@ void receive_decode(void) {
         cnt_low++;
     }
 
-    g_data.g_all_level_times++;
+    pdata->g_all_level_times++;
 
 
 
-    if((g_data.g_all_level_times < 100) && (FALSE == g_data.g_find_recv_start))
+    if((pdata->g_all_level_times < 100) && (FALSE == pdata->g_find_recv_start))
     {
         return;
     }
-    else if( (cnt_low < 5) && (TRUE == g_data.g_find_recv_start) )
+    else if( (cnt_low < 5) && (TRUE == pdata->g_find_recv_start) )
     {
         return ;
     }
 
-    u8 read_value = times2number(g_data.g_high_level_times);
+    u8 read_value = times2number(pdata->g_high_level_times);
 
     test_get_number(read_value);
 
     cnt_low = 0;
-    g_data.g_all_level_times = 0;
-    g_data.g_high_level_times = 0;
+    pdata->g_all_level_times = 0;
+    pdata->g_high_level_times = 0;
 
-    if(FALSE == g_data.g_find_recv_start)
+    if(FALSE == pdata->g_find_recv_start)
     {
 
         if(read_value == 5)
         {
 
-            g_data.g_find_recv_start = TRUE;
-            g_data.g_recv_buf[CODE_P0] = 0;
+            pdata->g_find_recv_start = TRUE;
+            pdata->g_recv_buf[CODE_P0] = 0;
 
 
             return;
@@ -9170,7 +9184,7 @@ void receive_decode(void) {
     }
 
 
-    if(g_data.g_find_recv_start == FALSE || (read_value == 4))
+    if(pdata->g_find_recv_start == FALSE || (read_value == 4))
     {
 
 
@@ -9178,37 +9192,37 @@ void receive_decode(void) {
     }
 
 
-    g_data.g_recv_buf[g_data.g_recv_count++] = read_value;
-    if(g_data.g_recv_count <= CODE_P3)
+    pdata->g_recv_buf[pdata->g_recv_count++] = read_value;
+    if(pdata->g_recv_count <= CODE_P3)
     {
         return;
     }
 
 
-    if(g_data.g_recv_buf[CODE_P1] > 2)
+    if(pdata->g_recv_buf[CODE_P1] > 2)
     {
-        g_data.g_find_recv_start = FALSE;
-        g_data.g_isDecoding = 0;
-        g_data.g_recv_count = 0;
+        pdata->g_find_recv_start = FALSE;
+        pdata->g_isDecoding = 0;
+        pdata->g_recv_count = 0;
         return;
     }
 
-    u16 last_time_h = g_data.g_time_h;
-    u16 last_time_m = g_data.g_time_m;
-    u16 last_time_s = g_data.g_time_s;
+    u16 last_time_h = pdata->g_time_h;
+    u16 last_time_m = pdata->g_time_m;
+    u16 last_time_s = pdata->g_time_s;
 
     do{
         if(check_err())
         {
 
-            g_data.g_time_h = last_time_h;
-            g_data.g_time_m = last_time_m;
-            g_data.g_time_s = last_time_s;
+            pdata->g_time_h = last_time_h;
+            pdata->g_time_m = last_time_m;
+            pdata->g_time_s = last_time_s;
             break;
         }
 
 
-        if(last_time_h != g_data.g_time_h || last_time_m != g_data.g_time_m)
+        if(last_time_h != pdata->g_time_h || last_time_m != pdata->g_time_m)
         {
             update_display();
         }
@@ -9216,13 +9230,13 @@ void receive_decode(void) {
 
 
 
-    g_data.g_find_recv_start = FALSE;
+    pdata->g_find_recv_start = FALSE;
 
-    g_data.g_isDecoding = FALSE;
-    g_data.g_recv_count = CODE_P0;
+    pdata->g_isDecoding = FALSE;
+    pdata->g_recv_count = CODE_P0;
     for(int i = 0;i < 20; i++)
     {
-        g_data.g_recv_buf[i] = 5;
+        pdata->g_recv_buf[i] = 5;
     }
     return;
 }

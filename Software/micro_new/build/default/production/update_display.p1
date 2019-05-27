@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"96 ./function.h
-[; ;./function.h: 96: }ENUM;
+"46 ./data.h
+[; ;./data.h: 46: }ENUM;
 [c E4906 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
 [n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
 "31 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic.h
@@ -858,8 +858,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"96 ./function.h
-[; ;./function.h: 96: }ENUM;
+"46 ./data.h
+[; ;./data.h: 46: }ENUM;
 [v _ENUM `E4906 ~T0 @X0 1 e ]
 "15 update_display.c
 [; ;update_display.c: 15: const u8 segmcode[]={

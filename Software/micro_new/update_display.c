@@ -8,8 +8,8 @@
 
 #include <xc.h>
 #include "function.h"
+#include "hardware.h"
 
-extern G_DATA g_data;
 
 // TODO: check here
 const u8 segmcode[]={
