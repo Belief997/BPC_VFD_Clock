@@ -111,22 +111,7 @@ void init_env(){
     // RTC chip set
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
-    
-    // uart
-    //EUSART cfg TXSTA RXSTA BAUDCON
-    TXSTAbits.TX9 = 0b0;//data len 8 bit
-    TXSTAbits.TXEN = 0b0;//send disable
-    TXSTAbits.SYNC = 0b0;//asyn mode
-    TXSTAbits.SENDB = 0b0;//space char disable
-    TXSTAbits.BRGH = 0b1;//baud high speed   
-    
-    RCSTAbits.SPEN = 0b1; //serial port enable
-    RCSTAbits.RX9 = 0b0;//data len 8 bit
-    RCSTAbits.CREN = 0b1;//rcv enable
-    
-    BAUDCONbits.SCKP = 0b0; //nomal phase data1
-    BAUDCONbits.BRG16 = 0b1;//16 bit baud
-    
+        
 
     /* init iic */
     IIC_Init();
@@ -140,17 +125,7 @@ void __interrupt () ISR(void)
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
     G_DATA *pdata = data_getdata();
-    
-//    /* isr of uart  */
-//    if(TXIF)
-//    {
-//        ISR_uart_TX();
-//    }
-//    if(RCIF)
-//    {
-//        ISR_uart_RX();
-//	}
-    
+        
     
     /* start decode flag set */
     // updata by key or 30 min
