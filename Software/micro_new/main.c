@@ -11,6 +11,9 @@
 #include "function.h"
 #include "myiic.h"
 #include "timer.h"
+#include "data.h"
+#include "debug.h"
+#include "hardware.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
