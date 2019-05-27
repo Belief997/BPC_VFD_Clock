@@ -1,10 +1,10 @@
 #include <string.h>
 #include <stdio.h>
-#include "log.h"
+//#include "log.h"
 #include "debug.h"
-#include "protocol.h"
+//#include "protocol.h"
 
-#include "led.h"
+//#include "led.h"
 #include "data.h"
 
 #define MAX_CMD_LENGTH (16)

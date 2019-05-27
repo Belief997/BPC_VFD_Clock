@@ -8847,8 +8847,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
-
+# 10 "main.c" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8985,8 +8984,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 10 "main.c" 2
-
+# 11 "main.c" 2
 # 1 "./function.h" 1
 
 
@@ -9065,8 +9063,14 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 7 "./function.h" 2
-# 57 "./function.h"
+# 8 "./function.h" 2
+# 1 "./data.h" 1
+
+
+
+
+
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
@@ -9107,7 +9111,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 116 "./function.h"
+# 66 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9128,6 +9132,7 @@ typedef struct{
     u8 g_recv_buf[20];
     u16 cnt_update;
 }G_DATA;
+# 9 "./function.h" 2
 
 
 
@@ -9145,8 +9150,7 @@ void update_time(void);
 
 
 void update_display(void);
-# 11 "main.c" 2
-
+# 12 "main.c" 2
 # 1 "./myiic.h" 1
 
 
@@ -9156,7 +9160,7 @@ void update_display(void);
 void delay_2us(void);
 void delay_3us(void);
 void delay_10us(void);
-# 4 "./myiic.h" 2
+# 5 "./myiic.h" 2
 # 18 "./myiic.h"
 void IIC_Init(void);
 void IIC_Start(void);
@@ -9168,8 +9172,7 @@ void IIC_Ack(void);
 void IIC_NAck(void);
 unsigned char RD_temp(void);
 void IIC_temp(void);
-# 12 "main.c" 2
-
+# 13 "main.c" 2
 # 1 "./timer.h" 1
 # 13 "./timer.h"
 void timer_init(void);
@@ -9177,8 +9180,17 @@ void timer_reset(void);
 void timer_start(void);
 void timer_stop(void);
 BOOL timer_isrunning(void);
-# 13 "main.c" 2
+# 14 "main.c" 2
 
+# 1 "./debug.h" 1
+
+
+
+typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
+int debug_proc(const unsigned char* cmdString, unsigned short length);
+# 16 "main.c" 2
+# 1 "./hardware.h" 1
+# 17 "main.c" 2
 
 
 #pragma config FOSC = HS

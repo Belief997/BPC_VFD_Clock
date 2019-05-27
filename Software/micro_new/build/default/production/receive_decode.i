@@ -8847,8 +8847,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "receive_decode.c" 2
-
+# 10 "receive_decode.c" 2
 # 1 "./function.h" 1
 
 
@@ -8927,7 +8926,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 7 "./function.h" 2
+# 8 "./function.h" 2
 # 57 "./function.h"
 typedef uint8_t u8;
 typedef int8_t s8;
@@ -9007,8 +9006,7 @@ void update_time(void);
 
 
 void update_display(void);
-# 10 "receive_decode.c" 2
-
+# 11 "receive_decode.c" 2
 # 1 "./timer.h" 1
 # 13 "./timer.h"
 void timer_init(void);
@@ -9016,8 +9014,7 @@ void timer_reset(void);
 void timer_start(void);
 void timer_stop(void);
 BOOL timer_isrunning(void);
-# 11 "receive_decode.c" 2
-
+# 12 "receive_decode.c" 2
 
 extern G_DATA g_data;
 

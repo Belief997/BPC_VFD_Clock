@@ -8845,8 +8845,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 10 "./delay.h" 2
-
+# 11 "./delay.h" 2
 
 
 
@@ -8855,7 +8854,7 @@ extern __bank0 __bit __timeout;
 void delay_2us(void);
 void delay_3us(void);
 void delay_10us(void);
-# 4 "./myiic.h" 2
+# 5 "./myiic.h" 2
 # 18 "./myiic.h"
 void IIC_Init(void);
 void IIC_Start(void);
@@ -8867,8 +8866,7 @@ void IIC_Ack(void);
 void IIC_NAck(void);
 unsigned char RD_temp(void);
 void IIC_temp(void);
-# 1 "myiic.c" 2
-
+# 2 "myiic.c" 2
 
 unsigned char temp_h;
 unsigned char temp_l;

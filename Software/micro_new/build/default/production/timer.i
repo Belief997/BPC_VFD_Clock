@@ -8839,8 +8839,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 1 "timer.c" 2
-
+# 2 "timer.c" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8977,8 +8976,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 2 "timer.c" 2
-
+# 3 "timer.c" 2
 # 1 "./function.h" 1
 
 
@@ -9057,7 +9055,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 7 "./function.h" 2
+# 8 "./function.h" 2
 # 57 "./function.h"
 typedef uint8_t u8;
 typedef int8_t s8;
@@ -9137,8 +9135,7 @@ void update_time(void);
 
 
 void update_display(void);
-# 3 "timer.c" 2
-
+# 4 "timer.c" 2
 
 
 void timer_init(void)

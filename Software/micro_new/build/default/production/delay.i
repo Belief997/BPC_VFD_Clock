@@ -8841,8 +8841,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 10 "./delay.h" 2
-
+# 11 "./delay.h" 2
 
 
 
@@ -8851,8 +8850,7 @@ extern __bank0 __bit __timeout;
 void delay_2us(void);
 void delay_3us(void);
 void delay_10us(void);
-# 1 "delay.c" 2
-
+# 2 "delay.c" 2
 
 void delay_2us(void)
 {
