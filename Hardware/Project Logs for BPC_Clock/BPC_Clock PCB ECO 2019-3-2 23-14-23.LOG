@@ -1,7 +1,0 @@
-Removed Pin From Net: NetName=VCC Pin=J1-1A
-Removed Pin From Net: NetName=VCC Pin=J1-1B
-Removed Pin From Net: NetName=GND Pin=J1-2A
-Removed Pin From Net: NetName=GND Pin=J1-2B
-Removed Pin From Net: NetName=GND Pin=J1-3A
-Removed Pin From Net: NetName=GND Pin=J1-3B
-Change Component Footprint: Designator=J1 Old Footprint=KLD-0202 New Footprint=DC
