@@ -9299,21 +9299,6 @@ void init_env(){
 
 
 
-    TXSTAbits.TX9 = 0b0;
-    TXSTAbits.TXEN = 0b0;
-    TXSTAbits.SYNC = 0b0;
-    TXSTAbits.SENDB = 0b0;
-    TXSTAbits.BRGH = 0b1;
-
-    RCSTAbits.SPEN = 0b1;
-    RCSTAbits.RX9 = 0b0;
-    RCSTAbits.CREN = 0b1;
-
-    BAUDCONbits.SCKP = 0b0;
-    BAUDCONbits.BRG16 = 0b1;
-
-
-
     IIC_Init();
 
 
@@ -9325,7 +9310,10 @@ void __attribute__((picinterrupt(""))) ISR(void)
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
     G_DATA *pdata = data_getdata();
-# 157 "main.c"
+
+
+
+
     if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
 
     {
@@ -9388,8 +9376,10 @@ void main(void)
 {
 
     init_env();
-    timer_start();
+
+    update_display();
 
     while(1);
+
     return;
 }

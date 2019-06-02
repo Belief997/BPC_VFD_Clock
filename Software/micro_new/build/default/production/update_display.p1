@@ -863,109 +863,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ENUM `E4906 ~T0 @X0 1 e ]
 "15 update_display.c
 [; ;update_display.c: 15: const u8 segmcode[]={
-[v _segmcode `Cuc ~T0 @X0 -> 16 `i e ]
+[v _segmcode `Cuc ~T0 @X0 -> 10 `i e ]
 [i _segmcode
 :U ..
--> -> 63 `i `uc
--> -> 6 `i `uc
--> -> 91 `i `uc
--> -> 79 `i `uc
--> -> 102 `i `uc
--> -> 109 `i `uc
--> -> 125 `i `uc
--> -> 7 `i `uc
--> -> 127 `i `uc
--> -> 111 `i `uc
--> -> 119 `i `uc
+-> -> 8 `i `uc
 -> -> 124 `i `uc
--> -> 57 `i `uc
--> -> 94 `i `uc
--> -> 121 `i `uc
--> -> 113 `i `uc
+-> -> 17 `i `uc
+-> -> 48 `i `uc
+-> -> 36 `i `uc
+-> -> 34 `i `uc
+-> -> 2 `i `uc
+-> -> 120 `i `uc
+-> -> 0 `i `uc
+-> -> 32 `i `uc
 ..
 ]
-"21
-[; ;update_display.c: 21: static void control595_delay(void){
+"24
+[; ;update_display.c: 24: static void control595_delay(void){
 [v _control595_delay `(v ~T0 @X0 1 sf ]
 {
 [e :U _control595_delay ]
 [f ]
-"22
-[; ;update_display.c: 22:    u8 times = 10;
+"25
+[; ;update_display.c: 25:    u8 times = 10;
 [v _times `uc ~T0 @X0 1 a ]
 [e = _times -> -> 10 `i `uc ]
-"23
-[; ;update_display.c: 23:    while(times > 0){
+"26
+[; ;update_display.c: 26:    while(times > 0){
 [e $U 625  ]
 [e :U 626 ]
 {
-"24
-[; ;update_display.c: 24:     __nop();
+"27
+[; ;update_display.c: 27:     __nop();
 [e ( ___nop ..  ]
-"25
-[; ;update_display.c: 25:        times--;
+"28
+[; ;update_display.c: 28:        times--;
 [e -- _times -> -> 1 `i `uc ]
-"26
-[; ;update_display.c: 26:    }
+"29
+[; ;update_display.c: 29:    }
 }
 [e :U 625 ]
-"23
-[; ;update_display.c: 23:    while(times > 0){
+"26
+[; ;update_display.c: 26:    while(times > 0){
 [e $ > -> _times `i -> 0 `i 626  ]
 [e :U 627 ]
-"27
-[; ;update_display.c: 27: }
+"30
+[; ;update_display.c: 30: }
 [e :UE 624 ]
 }
-"38
-[; ;update_display.c: 38: static void write_byte(u8 data){
+"41
+[; ;update_display.c: 41: static void write_byte(u8 data){
 [v _write_byte `(v ~T0 @X0 1 sf1`uc ]
 {
 [e :U _write_byte ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"39
-[; ;update_display.c: 39:     u8 i;
+"42
+[; ;update_display.c: 42:     u8 i;
 [v _i `uc ~T0 @X0 1 a ]
-"40
-[; ;update_display.c: 40:     for(i = 0; i < 8; i++){
+"43
+[; ;update_display.c: 43:     for(i = 0; i < 8; i++){
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 8 `i 629  ]
 [e $U 630  ]
 [e :U 629 ]
 {
-"41
-[; ;update_display.c: 41:   LATBbits.LATB5 = (data & 0x80) >> 7;
-[e = . . _LATBbits 0 5 -> >> & -> _data `i -> 128 `i -> 7 `i `uc ]
-"42
-[; ;update_display.c: 42:         LATBbits.LATB0 = PIN_LOW;
-[e = . . _LATBbits 0 0 -> . `E4906 2 `uc ]
-"43
-[; ;update_display.c: 43:   control595_delay();
-[e ( _control595_delay ..  ]
 "44
-[; ;update_display.c: 44:         LATBbits.LATB0 = PIN_HIGH;
-[e = . . _LATBbits 0 0 -> . `E4906 3 `uc ]
+[; ;update_display.c: 44:   LATBbits.LATB5 = (data & 0x80) >> 7;
+[e = . . _LATBbits 0 5 -> >> & -> _data `i -> 128 `i -> 7 `i `uc ]
 "45
-[; ;update_display.c: 45:   control595_delay();
-[e ( _control595_delay ..  ]
+[; ;update_display.c: 45:         LATBbits.LATB0 = PIN_LOW;
+[e = . . _LATBbits 0 0 -> . `E4906 2 `uc ]
 "46
-[; ;update_display.c: 46:         data <<= 1;
-[e =<< _data -> -> 1 `i `uc ]
+[; ;update_display.c: 46:   control595_delay();
+[e ( _control595_delay ..  ]
 "47
-[; ;update_display.c: 47:     }
+[; ;update_display.c: 47:         LATBbits.LATB0 = PIN_HIGH;
+[e = . . _LATBbits 0 0 -> . `E4906 3 `uc ]
+"48
+[; ;update_display.c: 48:   control595_delay();
+[e ( _control595_delay ..  ]
+"49
+[; ;update_display.c: 49:         data <<= 1;
+[e =<< _data -> -> 1 `i `uc ]
+"50
+[; ;update_display.c: 50:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 629  ]
 [e :U 630 ]
 }
-"48
-[; ;update_display.c: 48: }
+"51
+[; ;update_display.c: 51: }
 [e :UE 628 ]
 }
-"50
-[; ;update_display.c: 50: static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
+"53
+[; ;update_display.c: 53: static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
 [v _write_once `(v ~T0 @X0 1 sf4`uc`uc`uc`uc ]
 {
 [e :U _write_once ]
@@ -974,44 +968,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ML `uc ~T0 @X0 1 r3 ]
 [v _MR `uc ~T0 @X0 1 r4 ]
 [f ]
-"52
-[; ;update_display.c: 52:     write_byte(HL);
-[e ( _write_byte (1 _HL ]
-"53
-[; ;update_display.c: 53:     write_byte(HR);
-[e ( _write_byte (1 _HR ]
-"54
-[; ;update_display.c: 54:     write_byte(ML);
-[e ( _write_byte (1 _ML ]
 "55
-[; ;update_display.c: 55:     write_byte(MR);
-[e ( _write_byte (1 _MR ]
+[; ;update_display.c: 55:     write_byte(HL);
+[e ( _write_byte (1 _HL ]
+"56
+[; ;update_display.c: 56:     write_byte(HR);
+[e ( _write_byte (1 _HR ]
 "57
-[; ;update_display.c: 57:     LATBbits.LATB1 = PIN_HIGH;
-[e = . . _LATBbits 0 1 -> . `E4906 3 `uc ]
+[; ;update_display.c: 57:     write_byte(ML);
+[e ( _write_byte (1 _ML ]
 "58
-[; ;update_display.c: 58:  control595_delay();
+[; ;update_display.c: 58:     write_byte(MR);
+[e ( _write_byte (1 _MR ]
+"61
+[; ;update_display.c: 61:     LATBbits.LATB0 = PIN_LOW;
+[e = . . _LATBbits 0 0 -> . `E4906 2 `uc ]
+"62
+[; ;update_display.c: 62:     control595_delay();
 [e ( _control595_delay ..  ]
-"59
-[; ;update_display.c: 59:     LATBbits.LATB1 = PIN_LOW;
+"63
+[; ;update_display.c: 63:     LATBbits.LATB0 = PIN_HIGH;
+[e = . . _LATBbits 0 0 -> . `E4906 3 `uc ]
+"64
+[; ;update_display.c: 64:     control595_delay();
+[e ( _control595_delay ..  ]
+"66
+[; ;update_display.c: 66:     LATBbits.LATB1 = PIN_HIGH;
+[e = . . _LATBbits 0 1 -> . `E4906 3 `uc ]
+"67
+[; ;update_display.c: 67:  control595_delay();
+[e ( _control595_delay ..  ]
+"68
+[; ;update_display.c: 68:     LATBbits.LATB1 = PIN_LOW;
 [e = . . _LATBbits 0 1 -> . `E4906 2 `uc ]
-"60
-[; ;update_display.c: 60: }
+"69
+[; ;update_display.c: 69: }
 [e :UE 632 ]
 }
-"62
-[; ;update_display.c: 62: void update_display(void) {
+"71
+[; ;update_display.c: 71: void update_display(void) {
 [v _update_display `(v ~T0 @X0 1 ef ]
 {
 [e :U _update_display ]
 [f ]
-"73
-[; ;update_display.c: 73:     write_once(0xa5, 0x5a, 0xa5, 0x5a);
-[e ( _write_once (4 , , , -> -> 165 `i `uc -> -> 90 `i `uc -> -> 165 `i `uc -> -> 90 `i `uc ]
-"74
-[; ;update_display.c: 74:     return;
+"84
+[; ;update_display.c: 84:     write_once(segmcode[4], segmcode[3], segmcode[2], segmcode[1]);
+[e ( _write_once (4 , , , *U + &U _segmcode * -> -> -> 4 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> -> 3 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> -> 2 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> -> 1 `i `ui `ux -> -> # *U &U _segmcode `ui `ux ]
+"85
+[; ;update_display.c: 85:     return;
 [e $UE 633  ]
-"75
-[; ;update_display.c: 75: }
+"86
+[; ;update_display.c: 86: }
 [e :UE 633 ]
 }

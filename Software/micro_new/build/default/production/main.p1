@@ -182,39 +182,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "589
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 589: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS39 ~T0 @X0 0 e@14 ]
-"4420
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4420:     struct {
-[s S231 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S231 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
-"4419
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4419: typedef union {
-[u S230 `S231 1 ]
-[n S230 . . ]
-"4431
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4431: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x19E)));
-[v _TXSTAbits `VS230 ~T0 @X0 0 e@414 ]
-"4240
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4240:     struct {
-[s S225 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S225 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"4239
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4239: typedef union {
-[u S224 `S225 1 ]
-[n S224 . . ]
-"4251
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4251: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0x19D)));
-[v _RCSTAbits `VS224 ~T0 @X0 0 e@413 ]
-"4632
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4632:     struct {
-[s S239 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S239 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
-"4631
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4631: typedef union {
-[u S238 `S239 1 ]
-[n S238 . . ]
-"4643
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4643: extern volatile BAUDCONbits_t BAUDCONbits __attribute__((address(0x19F)));
-[v _BAUDCONbits `VS238 ~T0 @X0 0 e@415 ]
 "18 ./myiic.h
 [; ;./myiic.h: 18: void IIC_Init(void);
 [v _IIC_Init `(v ~T0 @X0 0 ef ]
@@ -263,6 +230,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./timer.h: 14: void timer_reset(void);
 [v _timer_reset `(v ~T0 @X0 0 ef ]
 [p mainexit ]
+"25 ./function.h
+[; ;./function.h: 25: void update_display(void);
+[v _update_display `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1201,49 +1171,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 76: 
 [e = _TRISB -> -> 0 `i `uc ]
 "77
-[; ;main.c: 77:     TXSTAbits.TX9 = 0b0;
+[; ;main.c: 77:     IIC_Init();
 [e = _LATB -> -> 0 `i `uc ]
 "78
-[; ;main.c: 78:     TXSTAbits.TXEN = 0b0;
+[; ;main.c: 78: 
 [e = _WPUB -> -> 0 `i `uc ]
 "79
-[; ;main.c: 79:     TXSTAbits.SYNC = 0b0;
+[; ;main.c: 79: 
 [e = _IOCBP -> -> 0 `i `uc ]
 "80
-[; ;main.c: 80:     TXSTAbits.SENDB = 0b0;
+[; ;main.c: 80:     PORTAbits.RA0 = 1;
 [e = _IOCBN -> -> 0 `i `uc ]
 "82
 [; ;main.c: 82: 
 [e = _TRISC -> -> 0 `i `uc ]
 "83
-[; ;main.c: 83:     RCSTAbits.SPEN = 0b1;
+[; ;main.c: 83: void __attribute__((picinterrupt(""))) ISR(void)
 [e = _LATC -> -> 0 `i `uc ]
 "84
-[; ;main.c: 84:     RCSTAbits.RX9 = 0b0;
+[; ;main.c: 84: {
 [e = _WPUC -> -> 1 `i `uc ]
 "85
-[; ;main.c: 85:     RCSTAbits.CREN = 0b1;
+[; ;main.c: 85:     static u8 history_key = 0;
 [e = _IOCCP -> -> 0 `i `uc ]
 "86
-[; ;main.c: 86: 
+[; ;main.c: 86:     static u16 key_time_cnt = 0;
 [e = _IOCCN -> -> 0 `i `uc ]
 "91
 [; ;main.c: 91: 
 [e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "92
-[; ;main.c: 92:     IIC_Init();
+[; ;main.c: 92:     if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
 [e = . . _WPUCbits 0 5 -> -> 1 `i `uc ]
 "94
-[; ;main.c: 94: 
+[; ;main.c: 94:     {
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
 "95
-[; ;main.c: 95:     PORTAbits.RA0 = 1;
+[; ;main.c: 95: 
 [e = . . _WPUCbits 0 1 -> -> 0 `i `uc ]
 "96
-[; ;main.c: 96: }
+[; ;main.c: 96:         pdata->g_find_recv_start = FALSE;
 [e = . . _IOCCPbits 0 1 -> -> 1 `i `uc ]
 "99
-[; ;main.c: 99: {
+[; ;main.c: 99:         pdata->cnt_update = 0;
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1252,246 +1222,210 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 627 ]
 {
 "100
-[; ;main.c: 100:     static u8 history_key = 0;
+[; ;main.c: 100:         pdata->g_recv_count = CODE_P0;
 [e = *U + &U . *U _pdata 10 * -> -> _i `ui `ux -> -> # *U &U . *U _pdata 10 `ui `ux -> -> 5 `i `uc ]
 "101
-[; ;main.c: 101:     static u16 key_time_cnt = 0;
+[; ;main.c: 101:         PORTCbits.RC2 = BPC_PWR_ON;
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 627  ]
 [e :U 628 ]
 }
 "106
+[; ;main.c: 106:     }
 [e = . . _LATBbits 0 2 -> . `E5224 2 `uc ]
 "109
+[; ;main.c: 109:         if(pdata->g_recv_count == CODE_P0)
 [e = . . _PORTCbits 0 2 -> . `E5224 0 `uc ]
 "112
+[; ;main.c: 112:         }
 [e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
 "113
+[; ;main.c: 113:         timer_start();
 [e = . . _WPUCbits 0 0 -> -> 1 `i `uc ]
 "117
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-"118
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-"119
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"120
-[e = . . _TXSTAbits 0 3 -> -> 0 `i `uc ]
-"121
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"123
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"124
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"125
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"127
-[e = . . _BAUDCONbits 0 4 -> -> 0 `i `uc ]
-"128
-[e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
-"132
+[; ;main.c: 117:         INTCONbits.IOCIF = FALSE;
 [e ( _IIC_Init ..  ]
-"135
+"120
+[; ;main.c: 120: 
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-"136
+"121
+[; ;main.c: 121: 
 [e :UE 626 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"138
+"123
+[; ;main.c: 123:     {
 [v _ISR `(v ~T1 @X0 1 ef ]
-"139
+"124
+[; ;main.c: 124: 
 {
 [e :U _ISR ]
 [f ]
-"140
+"125
+[; ;main.c: 125:         if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
 [v F5303 `uc ~T0 @X0 1 s history_key ]
 [i F5303
 -> -> 0 `i `uc
 ]
-"141
+"126
+[; ;main.c: 126: 
 [v F5304 `us ~T0 @X0 1 s key_time_cnt ]
 [i F5304
 -> -> 0 `i `us
 ]
-"142
+"127
+[; ;main.c: 127:         {
 [v _pdata `*S625 ~T0 @X0 1 a ]
 [e = _pdata ( _data_getdata ..  ]
-"157
-[; ;main.c: 157:     if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
+"132
+[; ;main.c: 132: 
 [e $ ! && == -> . *U _pdata 1 `ui -> . `E5220 0 `ui || == -> . *U _pdata 0 `ui -> . `E5220 1 `ui >= -> . *U _pdata 11 `ui -> -> 30 `i `ui 631  ]
-"159
-[; ;main.c: 159:     {
+"134
+[; ;main.c: 134:         {
 {
-"161
-[; ;main.c: 161:         pdata->g_find_recv_start = FALSE;
+"136
+[; ;main.c: 136:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
 [e = . *U _pdata 2 . `E5220 0 ]
-"162
-[; ;main.c: 162:         pdata->g_isDecoding = TRUE;
+"137
+[; ;main.c: 137: 
 [e = . *U _pdata 1 . `E5220 1 ]
-"163
-[; ;main.c: 163:         pdata->g_flg_switch = FALSE;
+"138
+[; ;main.c: 138:             if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
 [e = . *U _pdata 0 . `E5220 0 ]
-"164
-[; ;main.c: 164:         pdata->cnt_update = 0;
+"139
+[; ;main.c: 139:             {
 [e = . *U _pdata 11 -> -> 0 `i `us ]
-"165
-[; ;main.c: 165:         pdata->g_recv_count = CODE_P0;
+"140
+[; ;main.c: 140:                 pdata->g_flg_switch = TRUE;
 [e = . *U _pdata 9 -> . `E5224 4 `us ]
-"166
-[; ;main.c: 166:         PORTCbits.RC2 = BPC_PWR_ON;
+"141
+[; ;main.c: 141:             }
 [e = . . _PORTCbits 0 2 -> . `E5224 0 `uc ]
-"168
-[; ;main.c: 168:         INTCONbits.IOCIF = FALSE;
+"143
+[; ;main.c: 143: 
 [e = . . _INTCONbits 0 0 -> . `E5220 0 `uc ]
-"169
-[; ;main.c: 169:         IOCCFbits.IOCCF1 = FALSE;
+"144
+[; ;main.c: 144:         timer_reset();
 [e = . . _IOCCFbits 0 1 -> . `E5220 0 `uc ]
-"170
-[; ;main.c: 170:         return;
+"145
+[; ;main.c: 145:         return;
 [e $UE 630  ]
-"171
-[; ;main.c: 171:     }
+"146
+[; ;main.c: 146:     }
 }
 [e $U 632  ]
-"172
-[; ;main.c: 172:     else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
+"147
+[; ;main.c: 147:     return;
 [e :U 631 ]
 [e $ ! && && == -> . *U _pdata 1 `ui -> . `E5220 1 `ui == -> . . _IOCCFbits 0 1 `i -> . `E5220 1 `i == -> . `E5220 1 `ui -> . *U _pdata 2 `ui 633  ]
-"173
-[; ;main.c: 173:     {
+"148
+[; ;main.c: 148: }
 {
-"174
-[; ;main.c: 174:         if(pdata->g_recv_count == CODE_P0)
+"149
+[; ;main.c: 149: 
 [e $ ! == -> . *U _pdata 9 `ui -> . `E5224 4 `ui 634  ]
-"175
-[; ;main.c: 175:         {
+"150
+[; ;main.c: 150: void main(void)
 {
-"176
-[; ;main.c: 176:             pdata->g_recv_count = CODE_P1;
+"151
+[; ;main.c: 151: {
 [e = . *U _pdata 9 -> . `E5224 5 `us ]
-"177
-[; ;main.c: 177:         }
+"152
+[; ;main.c: 152: 
 }
 [e :U 634 ]
-"178
-[; ;main.c: 178:         timer_start();
+"153
+[; ;main.c: 153:     init_env();
 [e ( _timer_start ..  ]
-"179
-[; ;main.c: 179:     }
+"154
+[; ;main.c: 154: 
 }
 [e $U 635  ]
-"180
-[; ;main.c: 180:     else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1)
+"155
+[; ;main.c: 155:     update_display();
 [e :U 633 ]
 [e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 636  ]
-"181
-[; ;main.c: 181:     {
+"156
+[; ;main.c: 156: 
 {
-"182
-[; ;main.c: 182:         INTCONbits.IOCIF = FALSE;
+"157
+[; ;main.c: 157:     while(1);
 [e = . . _INTCONbits 0 0 -> . `E5220 0 `uc ]
-"183
-[; ;main.c: 183:         IOCCFbits.IOCCF1 = FALSE;
+"158
+[; ;main.c: 158: 
 [e = . . _IOCCFbits 0 1 -> . `E5220 0 `uc ]
-"184
-[; ;main.c: 184:     }
+"159
+[; ;main.c: 159:     return;
 }
 [e :U 636 ]
 [e :U 635 ]
 [e :U 632 ]
-"187
-[; ;main.c: 187:     if(INTCONbits.TMR0IF)
+"162
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 637  ]
-"188
-[; ;main.c: 188:     {
+"163
 {
-"190
-[; ;main.c: 190:         if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
+"165
 [e $ ! && == -> . *U _pdata 1 `ui -> . `E5220 1 `ui || == -> . *U _pdata 2 `ui -> . `E5220 0 `ui >= -> . *U _pdata 9 `ui -> . `E5224 5 `ui 638  ]
-"192
-[; ;main.c: 192:         {
+"167
 {
-"193
-[; ;main.c: 193:             receive_decode();
+"168
 [e ( _receive_decode ..  ]
-"194
-[; ;main.c: 194:         }
+"169
 }
 [e :U 638 ]
-"196
-[; ;main.c: 196:         update_time();
+"171
 [e ( _update_time ..  ]
-"198
-[; ;main.c: 198:         if(key_time_cnt++ % 10 == 0)
+"173
 [e $ ! == % -> ++ F5304 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 639  ]
-"199
-[; ;main.c: 199:         {
+"174
 {
-"200
-[; ;main.c: 200:             history_key <<= 1;
+"175
 [e =<< F5303 -> -> 1 `i `uc ]
-"201
-[; ;main.c: 201:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+"176
 [e =| F5303 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5224 3 `i : -> 1 `i -> 0 `i `uc ]
-"203
-[; ;main.c: 203:             if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
+"178
 [e $ ! && == -> 3 `i & -> F5303 `i -> 15 `i == -> . `E5220 0 `ui -> . *U _pdata 0 `ui 640  ]
-"204
-[; ;main.c: 204:             {
+"179
 {
-"205
-[; ;main.c: 205:                 pdata->g_flg_switch = TRUE;
+"180
 [e = . *U _pdata 0 . `E5220 1 ]
-"206
-[; ;main.c: 206:             }
+"181
 }
 [e :U 640 ]
-"207
-[; ;main.c: 207:         }
+"182
 }
 [e :U 639 ]
-"209
-[; ;main.c: 209:         timer_reset();
+"184
 [e ( _timer_reset ..  ]
-"210
-[; ;main.c: 210:         return;
+"185
 [e $UE 630  ]
-"211
-[; ;main.c: 211:     }
+"186
 }
 [e :U 637 ]
-"212
-[; ;main.c: 212:     return;
+"187
 [e $UE 630  ]
-"213
-[; ;main.c: 213: }
+"188
 [e :UE 630 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"215
-[; ;main.c: 215: void main(void)
+"190
 [v _main `(v ~T0 @X0 1 ef ]
-"216
-[; ;main.c: 216: {
+"191
 {
 [e :U _main ]
 [f ]
-"218
-[; ;main.c: 218:     init_env();
+"193
 [e ( _init_env ..  ]
-"219
-[; ;main.c: 219:     timer_start();
-[e ( _timer_start ..  ]
-"221
-[; ;main.c: 221:     while(1);
+"195
+[e ( _update_display ..  ]
+"197
 [e :U 643 ]
 [e :U 642 ]
 [e $U 643  ]
 [e :U 644 ]
-"222
-[; ;main.c: 222:     return;
+"199
 [e $UE 641  ]
-"223
-[; ;main.c: 223: }
+"200
 [e :UE 641 ]
 }

@@ -191,9 +191,11 @@ void main(void)
 {
     // init config
     init_env();
-    timer_start();
+//    timer_start();
+    update_display();
+
+//    while(1);    
     
-    while(1);    
     return;
 }
 

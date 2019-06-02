@@ -11,10 +11,13 @@
 #include "hardware.h"
 
 
-// TODO: check here
+ /* ULN2001 是反相输出 */
 const u8 segmcode[]={
-    0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,\
-    0x77,0x7C,0x39,0x5E,0x79,0x71
+//    0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,\
+//    0x77,0x7C,0x39,0x5E,0x79,0x71
+
+      0x08, 0x7c, 0x11, 0x30, 0x24, 0x22, 0x02, 0x78, 0x00, 0x20
+
 };//0-f
 
 // TODO: redefine times here 
@@ -53,6 +56,12 @@ static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
     write_byte(HR); //3
     write_byte(ML); //2  Min_Left
     write_byte(MR); //1
+
+    /* 多 shift 一次， 使 Q6 向 Q7 移位 */
+    PIC_SHCP = PIN_LOW; // SRCLK
+    control595_delay();
+    PIC_SHCP = PIN_HIGH; // SRCLK
+    control595_delay();
     
     PIC_STCP = PIN_HIGH; // RCLK
 	control595_delay();
@@ -70,6 +79,8 @@ void update_display(void) {
 //               segmcode[g_data.g_time_m / 10], \
 //               segmcode[g_data.g_time_m % 10]); 
     
-    write_once(0xa5, 0x5a, 0xa5, 0x5a); // 4 3 2 1
+//    write_once(0x03, 0x0c, 0x30, 0xc0); // 4 3 2 1
+    
+    write_once(segmcode[4], segmcode[3], segmcode[2], segmcode[1]); // 4 3 2 1
     return;
 }

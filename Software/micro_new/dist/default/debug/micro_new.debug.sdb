@@ -300,16 +300,16 @@ CODE_P4 19
 [v _timer_reset timer_reset `(v  1 e 1 0 ]
 "27
 [v _timer_start timer_start `(v  1 e 1 0 ]
-"24 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
+"21 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
 [v _control595_delay control595_delay `(v  1 s 1 control595_delay ]
 [v i1_control595_delay control595_delay `(v  1 s 1 i1_control595_delay ]
-"41
+"38
 [v _write_byte write_byte `(v  1 s 1 write_byte ]
 [v i1_write_byte write_byte `(v  1 s 1 i1_write_byte ]
-"53
+"50
 [v _write_once write_once `(v  1 s 1 write_once ]
 [v i1_write_once write_once `(v  1 s 1 i1_write_once ]
-"71
+"62
 [v _update_display update_display `(v  1 e 1 0 ]
 [v i1_update_display update_display `(v  1 e 1 0 ]
 "13 F:\Github\BPC_VFD_Clock\Software\micro_new\update_time.c
@@ -575,19 +575,17 @@ CODE_P4 19
 [v _TX_en TX_en `uc  1 e 1 0 ]
 "7
 [v _flg_rc flg_rc `uc  1 e 1 0 ]
-"15 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
-[v _segmcode segmcode `DC[10]uc  1 e 10 0 ]
 "190 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"200
+"199
 } 0
-"71 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
+"62 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
 [v _update_display update_display `(v  1 e 1 0 ]
 {
-"86
+"75
 } 0
-"53
+"50
 [v _write_once write_once `(v  1 s 1 write_once ]
 {
 [v write_once@HL HL `uc  1 a 1 wreg ]
@@ -595,28 +593,28 @@ CODE_P4 19
 [v write_once@HR HR `uc  1 p 1 32 ]
 [v write_once@ML ML `uc  1 p 1 33 ]
 [v write_once@MR MR `uc  1 p 1 34 ]
-"55
+"52
 [v write_once@HL HL `uc  1 a 1 35 ]
-"69
+"60
 } 0
-"41
+"38
 [v _write_byte write_byte `(v  1 s 1 write_byte ]
 {
 [v write_byte@data data `uc  1 a 1 wreg ]
-"42
+"39
 [v write_byte@i i `uc  1 a 1 31 ]
-"41
+"38
 [v write_byte@data data `uc  1 a 1 wreg ]
-"43
+"40
 [v write_byte@data data `uc  1 a 1 30 ]
-"51
+"48
 } 0
-"24
+"21
 [v _control595_delay control595_delay `(v  1 s 1 control595_delay ]
 {
-"25
+"22
 [v control595_delay@times times `uc  1 a 1 27 ]
-"30
+"27
 } 0
 "42 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
@@ -695,12 +693,12 @@ CODE_P4 19
 [v receive_decode@cnt_low cnt_low `uc  1 s 1 cnt_low ]
 "226
 } 0
-"71 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
+"62 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
 [v i1_update_display update_display `(v  1 e 1 0 ]
 {
-"86
+"75
 } 0
-"53
+"50
 [v i1_write_once write_once `(v  1 s 1 i1_write_once ]
 {
 [v i1write_once@HL HL `uc  1 a 1 wreg ]
@@ -708,25 +706,25 @@ CODE_P4 19
 [v i1write_once@HR HR `uc  1 p 1 6 ]
 [v i1write_once@ML ML `uc  1 p 1 7 ]
 [v i1write_once@MR MR `uc  1 p 1 8 ]
-"55
+"52
 [v i1write_once@HL HL `uc  1 a 1 9 ]
-"69
+"60
 } 0
-"41
+"38
 [v i1_write_byte write_byte `(v  1 s 1 i1_write_byte ]
 {
 [v i1write_byte@data data `uc  1 a 1 wreg ]
 [v i1write_byte@i write_byte `uc  1 a 1 5 ]
 [v i1write_byte@data data `uc  1 a 1 wreg ]
-"43
+"40
 [v i1write_byte@data data `uc  1 a 1 4 ]
-"51
+"48
 } 0
-"24
+"21
 [v i1_control595_delay control595_delay `(v  1 s 1 i1_control595_delay ]
 {
 [v i1control595_delay@times control595_delay `uc  1 a 1 1 ]
-"30
+"27
 } 0
 "16 F:\Github\BPC_VFD_Clock\Software\micro_new\receive_decode.c
 [v _times2number times2number `(uc  1 s 1 times2number ]
