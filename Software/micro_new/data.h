@@ -82,8 +82,13 @@ typedef struct{
     // read time buf in receive_code
     u8 g_recv_buf[RECV_BUF_MAX];
     u16 cnt_update;
+
+//    u16 last_TimeCnt;
+    
 }G_DATA;
 
 G_DATA* data_getdata(void);
+
+//u16 data_getTimeCnt(void);
 
 #endif

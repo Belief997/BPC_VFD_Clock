@@ -198,8 +198,9 @@ void main(void)
     while(1)
     {
         if(i++  == 65535)
-        {
+        {            
             update_display();
+            
         }
 
     }

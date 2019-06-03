@@ -9131,9 +9131,14 @@ typedef struct{
 
     u8 g_recv_buf[20];
     u16 cnt_update;
+
+    u16 last_TimeCnt;
+
 }G_DATA;
 
 G_DATA* data_getdata(void);
+
+u16 data_getTimeCnt(void);
 # 9 "./function.h" 2
 
 
@@ -9385,6 +9390,7 @@ void main(void)
         if(i++ == 65535)
         {
             update_display();
+
         }
 
     }

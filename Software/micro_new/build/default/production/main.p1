@@ -9,10 +9,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E5220 . FALSE TRUE  ]
 "66 ./data.h
 [; ;./data.h: 66: typedef struct{
-[s S625 `VE5220 1 `VE5220 1 `VE5220 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i `us 1 ]
-[n S625 . g_flg_switch g_isDecoding g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf cnt_update ]
-"87
-[; ;./data.h: 87: G_DATA* data_getdata(void);
+[s S625 `VE5220 1 `VE5220 1 `VE5220 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i `us 1 `us 1 ]
+[n S625 . g_flg_switch g_isDecoding g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf cnt_update last_TimeCnt ]
+"90
+[; ;./data.h: 90: G_DATA* data_getdata(void);
 [v _data_getdata `(*S625 ~T0 @X0 0 ef ]
 "357 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 357:     struct {
@@ -1264,14 +1264,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "125
 [; ;main.c: 125:         if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
-[v F5303 `uc ~T0 @X0 1 s history_key ]
-[i F5303
+[v F5305 `uc ~T0 @X0 1 s history_key ]
+[i F5305
 -> -> 0 `i `uc
 ]
 "126
 [; ;main.c: 126: 
-[v F5304 `us ~T0 @X0 1 s key_time_cnt ]
-[i F5304
+[v F5306 `us ~T0 @X0 1 s key_time_cnt ]
+[i F5306
 -> -> 0 `i `us
 ]
 "127
@@ -1365,33 +1365,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 162:             update_display();
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 637  ]
 "163
-[; ;main.c: 163:         }
+[; ;main.c: 163: 
 {
 "165
-[; ;main.c: 165:     }
+[; ;main.c: 165: 
 [e $ ! && == -> . *U _pdata 1 `ui -> . `E5220 1 `ui || == -> . *U _pdata 2 `ui -> . `E5220 0 `ui >= -> . *U _pdata 9 `ui -> . `E5224 5 `ui 638  ]
 "167
-[; ;main.c: 167: 
+[; ;main.c: 167:     ;
 {
 "168
-[; ;main.c: 168:     return;
+[; ;main.c: 168: 
 [e ( _receive_decode ..  ]
 "169
-[; ;main.c: 169: }
+[; ;main.c: 169:     return;
 }
 [e :U 638 ]
 "171
 [e ( _update_time ..  ]
 "173
-[e $ ! == % -> ++ F5304 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 639  ]
+[e $ ! == % -> ++ F5306 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 639  ]
 "174
 {
 "175
-[e =<< F5303 -> -> 1 `i `uc ]
+[e =<< F5305 -> -> 1 `i `uc ]
 "176
-[e =| F5303 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5224 3 `i : -> 1 `i -> 0 `i `uc ]
+[e =| F5305 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5224 3 `i : -> 1 `i -> 0 `i `uc ]
 "178
-[e $ ! && == -> 3 `i & -> F5303 `i -> 15 `i == -> . `E5220 0 `ui -> . *U _pdata 0 `ui 640  ]
+[e $ ! && == -> 3 `i & -> F5305 `i -> 15 `i == -> . `E5220 0 `ui -> . *U _pdata 0 `ui 640  ]
 "179
 {
 "180
@@ -1422,8 +1422,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "192
-[v F5307 `us ~T0 @X0 1 s i ]
-[i F5307
+[v F5309 `us ~T0 @X0 1 s i ]
+[i F5309
 -> -> 0 `i `us
 ]
 "194
@@ -1435,21 +1435,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "199
 {
 "200
-[e $ ! == -> ++ F5307 -> -> 1 `i `us `l -> 65535 `l 645  ]
+[e $ ! == -> ++ F5309 -> -> 1 `i `us `l -> 65535 `l 645  ]
 "201
 {
 "202
 [e ( _update_display ..  ]
-"203
+"204
 }
 [e :U 645 ]
-"205
+"206
 }
 [e :U 642 ]
 [e $U 643  ]
 [e :U 644 ]
-"208
-[e $UE 641  ]
 "209
+[e $UE 641  ]
+"210
 [e :UE 641 ]
 }
