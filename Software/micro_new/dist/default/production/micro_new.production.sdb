@@ -252,6 +252,9 @@ CODE_P4 19
 [v i1_data_getdata data_getdata `(*.4VES50  1 e 1 0 ]
 "3 F:\Github\BPC_VFD_Clock\Software\micro_new\delay.c
 [v _delay_2us delay_2us `(v  1 e 1 0 ]
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+[v i1___awmod __awmod `(i  1 e 2 0 ]
 "5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 "10 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\sprcadd.c
@@ -419,7 +422,7 @@ CODE_P4 19
 [v _OSCCONbits OSCCONbits `VES112  1 e 1 @153 ]
 "2293
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S528 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S529 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -429,10 +432,10 @@ CODE_P4 19
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2313
-[s S537 . 1 `uc 1 LATA 1 0 :8:0 
+[s S538 . 1 `uc 1 LATA 1 0 :8:0 
 ]
-[u S539 . 1 `S528 1 . 1 0 `S537 1 . 1 0 ]
-[v _LATAbits LATAbits `VES539  1 e 1 @268 ]
+[u S540 . 1 `S529 1 . 1 0 `S538 1 . 1 0 ]
+[v _LATAbits LATAbits `VES540  1 e 1 @268 ]
 "2363
 [v _LATB LATB `VEuc  1 e 1 @269 ]
 [s S258 . 1 `uc 1 LATB0 1 0 :1:0 
@@ -576,27 +579,31 @@ CODE_P4 19
 "7
 [v _flg_rc flg_rc `uc  1 e 1 0 ]
 "15 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
-[v _segmcode segmcode `DC[10]uc  1 e 10 0 ]
+[v _segmcode segmcode `DC[11]uc  1 e 11 0 ]
 "190 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"200
+"192
+[v main@i i `us  1 s 2 i ]
+"209
 } 0
 "71 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
 [v _update_display update_display `(v  1 e 1 0 ]
 {
-"86
+"83
+[v update_display@i i `uc  1 s 1 i ]
+"91
 } 0
 "53
 [v _write_once write_once `(v  1 s 1 write_once ]
 {
 [v write_once@HL HL `uc  1 a 1 wreg ]
 [v write_once@HL HL `uc  1 a 1 wreg ]
-[v write_once@HR HR `uc  1 p 1 32 ]
-[v write_once@ML ML `uc  1 p 1 33 ]
-[v write_once@MR MR `uc  1 p 1 34 ]
+[v write_once@HR HR `uc  1 p 1 30 ]
+[v write_once@ML ML `uc  1 p 1 31 ]
+[v write_once@MR MR `uc  1 p 1 32 ]
 "55
-[v write_once@HL HL `uc  1 a 1 35 ]
+[v write_once@HL HL `uc  1 a 1 33 ]
 "69
 } 0
 "41
@@ -604,28 +611,39 @@ CODE_P4 19
 {
 [v write_byte@data data `uc  1 a 1 wreg ]
 "42
-[v write_byte@i i `uc  1 a 1 31 ]
+[v write_byte@i i `uc  1 a 1 28 ]
 "41
 [v write_byte@data data `uc  1 a 1 wreg ]
 "43
-[v write_byte@data data `uc  1 a 1 30 ]
+[v write_byte@data data `uc  1 a 1 27 ]
 "51
 } 0
 "24
 [v _control595_delay control595_delay `(v  1 s 1 control595_delay ]
 {
 "25
-[v control595_delay@times times `uc  1 a 1 27 ]
+[v control595_delay@times times `uc  1 a 1 24 ]
 "30
+} 0
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 29 ]
+[v ___awmod@counter counter `uc  1 a 1 28 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 23 ]
+[v ___awmod@dividend dividend `i  1 p 2 25 ]
+"34
 } 0
 "42 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
 {
 "99
-[v init_env@i i `i  1 a 2 29 ]
+[v init_env@i i `i  1 a 2 26 ]
 [s S50 . 35 `VEE5220 1 g_flg_switch 1 0 `VEE5220 1 g_isDecoding 1 1 `VEE5220 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_10ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 ]
 "43
-[v init_env@pdata pdata `*.4VES50  1 a 1 28 ]
+[v init_env@pdata pdata `*.4VES50  1 a 1 25 ]
 "121
 } 0
 "6 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
@@ -650,7 +668,7 @@ CODE_P4 19
 {
 [s S50 . 35 `VEE5220 1 g_flg_switch 1 0 `VEE5220 1 g_isDecoding 1 1 `VEE5220 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_10ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 ]
 "127
-[v ISR@pdata pdata `*.4VES50  1 a 1 25 ]
+[v ISR@pdata pdata `*.4VES50  1 a 1 13 ]
 "125
 [v ISR@history_key history_key `uc  1 s 1 history_key ]
 "126
@@ -662,7 +680,7 @@ CODE_P4 19
 {
 [s S50 . 35 `VEE5220 1 g_flg_switch 1 0 `VEE5220 1 g_isDecoding 1 1 `VEE5220 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_10ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 ]
 "14
-[v update_time@pdata pdata `*.4VES50  1 a 1 0 ]
+[v update_time@pdata pdata `*.4VES50  1 a 1 12 ]
 "48
 } 0
 "27 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
@@ -679,18 +697,18 @@ CODE_P4 19
 [v _receive_decode receive_decode `(v  1 e 1 0 ]
 {
 "221
-[v receive_decode@i i `i  1 a 2 19 ]
+[v receive_decode@i i `i  1 a 2 17 ]
 "195
-[v receive_decode@last_time_m last_time_m `us  1 a 2 17 ]
+[v receive_decode@last_time_m last_time_m `us  1 a 2 15 ]
 "194
-[v receive_decode@last_time_h last_time_h `us  1 a 2 15 ]
+[v receive_decode@last_time_h last_time_h `us  1 a 2 13 ]
 "196
-[v receive_decode@last_time_s last_time_s `us  1 a 2 13 ]
+[v receive_decode@last_time_s last_time_s `us  1 a 2 11 ]
 [s S50 . 35 `VEE5220 1 g_flg_switch 1 0 `VEE5220 1 g_isDecoding 1 1 `VEE5220 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_10ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 ]
 "105
-[v receive_decode@pdata pdata `*.4VES50  1 a 1 22 ]
+[v receive_decode@pdata pdata `*.4VES50  1 a 1 20 ]
 "143
-[v receive_decode@read_value read_value `uc  1 a 1 21 ]
+[v receive_decode@read_value read_value `uc  1 a 1 19 ]
 "107
 [v receive_decode@cnt_low cnt_low `uc  1 s 1 cnt_low ]
 "226
@@ -698,18 +716,18 @@ CODE_P4 19
 "71 F:\Github\BPC_VFD_Clock\Software\micro_new\update_display.c
 [v i1_update_display update_display `(v  1 e 1 0 ]
 {
-"86
+"91
 } 0
 "53
 [v i1_write_once write_once `(v  1 s 1 i1_write_once ]
 {
 [v i1write_once@HL HL `uc  1 a 1 wreg ]
 [v i1write_once@HL HL `uc  1 a 1 wreg ]
-[v i1write_once@HR HR `uc  1 p 1 6 ]
-[v i1write_once@ML ML `uc  1 p 1 7 ]
-[v i1write_once@MR MR `uc  1 p 1 8 ]
+[v i1write_once@HR HR `uc  1 p 1 7 ]
+[v i1write_once@ML ML `uc  1 p 1 8 ]
+[v i1write_once@MR MR `uc  1 p 1 9 ]
 "55
-[v i1write_once@HL HL `uc  1 a 1 9 ]
+[v i1write_once@HL HL `uc  1 a 1 10 ]
 "69
 } 0
 "41
@@ -727,6 +745,15 @@ CODE_P4 19
 {
 [v i1control595_delay@times control595_delay `uc  1 a 1 1 ]
 "30
+} 0
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awmod.c
+[v i1___awmod __awmod `(i  1 e 2 0 ]
+{
+[v i1___awmod@sign __awmod `uc  1 a 1 6 ]
+[v i1___awmod@counter __awmod `uc  1 a 1 5 ]
+[v i1___awmod@divisor divisor `i  1 p 2 0 ]
+[v i1___awmod@dividend dividend `i  1 p 2 2 ]
+"34
 } 0
 "16 F:\Github\BPC_VFD_Clock\Software\micro_new\receive_decode.c
 [v _times2number times2number `(uc  1 s 1 times2number ]

@@ -1332,46 +1332,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 151: {
 [e = . *U _pdata 9 -> . `E5224 5 `us ]
 "152
-[; ;main.c: 152: 
+[; ;main.c: 152:     static u16 i = 0;
 }
 [e :U 634 ]
 "153
-[; ;main.c: 153:     init_env();
+[; ;main.c: 153: 
 [e ( _timer_start ..  ]
 "154
-[; ;main.c: 154: 
+[; ;main.c: 154:     init_env();
 }
 [e $U 635  ]
 "155
-[; ;main.c: 155:     update_display();
+[; ;main.c: 155: 
 [e :U 633 ]
 [e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 636  ]
 "156
-[; ;main.c: 156: 
+[; ;main.c: 156:     update_display();
 {
 "157
-[; ;main.c: 157:     while(1);
+[; ;main.c: 157: 
 [e = . . _INTCONbits 0 0 -> . `E5220 0 `uc ]
 "158
-[; ;main.c: 158: 
+[; ;main.c: 158:     while(1)
 [e = . . _IOCCFbits 0 1 -> . `E5220 0 `uc ]
 "159
-[; ;main.c: 159:     return;
+[; ;main.c: 159:     {
 }
 [e :U 636 ]
 [e :U 635 ]
 [e :U 632 ]
 "162
+[; ;main.c: 162:             update_display();
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 637  ]
 "163
+[; ;main.c: 163:         }
 {
 "165
+[; ;main.c: 165:     }
 [e $ ! && == -> . *U _pdata 1 `ui -> . `E5220 1 `ui || == -> . *U _pdata 2 `ui -> . `E5220 0 `ui >= -> . *U _pdata 9 `ui -> . `E5224 5 `ui 638  ]
 "167
+[; ;main.c: 167: 
 {
 "168
+[; ;main.c: 168:     return;
 [e ( _receive_decode ..  ]
 "169
+[; ;main.c: 169: }
 }
 [e :U 638 ]
 "171
@@ -1415,17 +1421,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"193
+"192
+[v F5307 `us ~T0 @X0 1 s i ]
+[i F5307
+-> -> 0 `i `us
+]
+"194
 [e ( _init_env ..  ]
-"195
+"196
 [e ( _update_display ..  ]
-"197
+"198
 [e :U 643 ]
+"199
+{
+"200
+[e $ ! == -> ++ F5307 -> -> 1 `i `us `l -> 65535 `l 645  ]
+"201
+{
+"202
+[e ( _update_display ..  ]
+"203
+}
+[e :U 645 ]
+"205
+}
 [e :U 642 ]
 [e $U 643  ]
 [e :U 644 ]
-"199
+"208
 [e $UE 641  ]
-"200
+"209
 [e :UE 641 ]
 }

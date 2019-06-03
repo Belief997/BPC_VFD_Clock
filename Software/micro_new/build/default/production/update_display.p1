@@ -863,19 +863,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ENUM `E4906 ~T0 @X0 1 e ]
 "15 update_display.c
 [; ;update_display.c: 15: const u8 segmcode[]={
-[v _segmcode `Cuc ~T0 @X0 -> 10 `i e ]
+[v _segmcode `Cuc ~T0 @X0 -> 11 `i e ]
 [i _segmcode
 :U ..
 -> -> 8 `i `uc
 -> -> 124 `i `uc
 -> -> 17 `i `uc
 -> -> 48 `i `uc
--> -> 36 `i `uc
+-> -> 100 `i `uc
 -> -> 34 `i `uc
 -> -> 2 `i `uc
 -> -> 120 `i `uc
 -> -> 0 `i `uc
 -> -> 32 `i `uc
+-> -> 255 `i `uc
 ..
 ]
 "24
@@ -1011,13 +1012,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _update_display ]
 [f ]
-"84
-[; ;update_display.c: 84:     write_once(segmcode[4], segmcode[3], segmcode[2], segmcode[1]);
-[e ( _write_once (4 , , , *U + &U _segmcode * -> -> -> 4 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> -> 3 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> -> 2 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> -> 1 `i `ui `ux -> -> # *U &U _segmcode `ui `ux ]
-"85
-[; ;update_display.c: 85:     return;
+"83
+[; ;update_display.c: 83:     static u8 i=0;
+[v F4962 `uc ~T0 @X0 1 s i ]
+[i F4962
+-> -> 0 `i `uc
+]
+"87
+[; ;update_display.c: 87:     write_once(segmcode[i%10], segmcode[i%10], segmcode[i%10], segmcode[i%10]);
+[e ( _write_once (4 , , , *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux ]
+"89
+[; ;update_display.c: 89:     i++;
+[e ++ F4962 -> -> 1 `i `uc ]
+"90
+[; ;update_display.c: 90:     return;
 [e $UE 633  ]
-"86
-[; ;update_display.c: 86: }
+"91
+[; ;update_display.c: 91: }
 [e :UE 633 ]
 }

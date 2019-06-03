@@ -9374,12 +9374,21 @@ void __attribute__((picinterrupt(""))) ISR(void)
 
 void main(void)
 {
+    static u16 i = 0;
 
     init_env();
 
     update_display();
 
-    while(1);
+    while(1)
+    {
+        if(i++ == 65535)
+        {
+            update_display();
+        }
+
+    }
+    ;
 
     return;
 }
