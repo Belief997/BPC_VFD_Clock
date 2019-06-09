@@ -8977,6 +8977,7 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 3 "timer.c" 2
+
 # 1 "./function.h" 1
 
 
@@ -9063,6 +9064,7 @@ typedef uint32_t uint_fast32_t;
 
 
 
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
@@ -9103,7 +9105,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 66 "./data.h"
+# 67 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9126,6 +9128,8 @@ typedef struct{
 }G_DATA;
 
 G_DATA* data_getdata(void);
+
+u16 data_getTimeCnt(void);
 # 9 "./function.h" 2
 
 
@@ -9144,7 +9148,48 @@ void update_time(void);
 
 
 void update_display(void);
-# 4 "timer.c" 2
+# 5 "timer.c" 2
+
+
+
+void timer_Timer1Init(void)
+{
+
+    INTCONbits.GIE = 0b1;
+
+    PIE1bits.TMR1IE = 0b1;
+
+    PIR1bits.TMR1IF = 0b0;
+
+    TMR1H = 0b0;
+    TMR1L = 0b0;
+
+
+    T1CONbits.TMR1CS = 0b00;
+
+    T1CONbits.T1CKPS = 0b11;
+
+
+}
+
+void timer_Timer1Start(void)
+{
+
+    T1CONbits.TMR1ON = 0b1;
+
+
+}
+
+BOOL timer_IsTimer1Itrpt(void)
+{
+    return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
+}
+
+void timer_Timer1Reset(void)
+{
+    PIR1bits.TMR1IF = 0b0;
+}
+
 
 
 void timer_init(void)

@@ -35,6 +35,9 @@
 #define PIC_SDA PORTCbits.RC4
 #define CLKOUT PORTAbits.RA7        // EXTERN CLK IN
 
+// define state led
+#define LED_STATE   LATBbits.LATB3
+
 #define TEST
 #ifdef TEST
 // define test port

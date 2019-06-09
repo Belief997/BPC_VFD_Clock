@@ -8,6 +8,11 @@
 #ifndef TIMER_H
 #define	TIMER_H
 
+void timer_Timer1Init(void);
+void timer_Timer1Start(void);
+BOOL timer_IsTimer1Itrpt(void);
+void timer_Timer1Reset(void);
+
 
 
 void timer_init(void);

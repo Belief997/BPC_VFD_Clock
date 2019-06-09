@@ -183,7 +183,7 @@
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="voltagevalue" value="4.875"/>
+        <property key="voltagevalue" value="4.75"/>
         <property key="冻结外设" value="true"/>
         <property key="安全段。分部编程" value="FullChipProgramming"/>
       </PICkit3PlatformTool>

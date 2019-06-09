@@ -1,3 +1,6 @@
+#include <xc.h>
+#include "stdio.h"
+
 #include "data.h"
 
 // global data struct

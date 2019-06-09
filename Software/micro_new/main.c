@@ -53,9 +53,10 @@ void init_env(){
     /**
      * choose clk inside
      */
-// TODO: adjust clk config here
     OSCCONbits.SCS = 0b10;      // set to use inside clock
-    OSCCONbits.IRCF = 0b1010;   // set freq for inside clock : 500kHz
+    /* set freq for inside clock : 500kHz , 2 us */
+    OSCCONbits.IRCF = 0b1010;   
+    
        
     timer_init();
     
@@ -117,10 +118,11 @@ void init_env(){
     IIC_Init();
     
     // light on when have power
-    Light_on = 1;
+    Light_on = TRUE;
 }
     
-void __interrupt () ISR(void)
+//void __interrupt () ISR(void)
+void tmp_change(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
@@ -187,12 +189,40 @@ void __interrupt () ISR(void)
     return;
 }
 
+void __interrupt () ISR(void)
+{
+    static u8 cnt = 0;
+
+    if(timer_IsTimer1Itrpt())
+    {
+        LED_STATE = (cnt++ % 2 == 0);
+
+
+        timer_Timer1Reset();
+
+    }
+
+
+}
+
+
+
 void main(void) 
 {
     static u16 i = 0;
+    static u8 cnt = 0;
     // init config
-    init_env();
+    init_env();    
+    LED_STATE = 0;
+
 //    timer_start();
+
+    /* timer1 的初始化及其启动 */
+    timer_Timer1Init();
+    timer_Timer1Start();
+
+
+    /* 初始显示状态 */
     update_display();
 
     while(1)
@@ -203,8 +233,9 @@ void main(void)
             
         }
 
+
     }
-    ;    
+       
     
     return;
 }

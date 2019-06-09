@@ -9071,6 +9071,7 @@ typedef uint32_t uint_fast32_t;
 
 
 
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
@@ -9111,7 +9112,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 66 "./data.h"
+# 67 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9131,9 +9132,6 @@ typedef struct{
 
     u8 g_recv_buf[20];
     u16 cnt_update;
-
-    u16 last_TimeCnt;
-
 }G_DATA;
 
 G_DATA* data_getdata(void);
@@ -9181,7 +9179,14 @@ unsigned char RD_temp(void);
 void IIC_temp(void);
 # 13 "main.c" 2
 # 1 "./timer.h" 1
-# 13 "./timer.h"
+# 11 "./timer.h"
+void timer_Timer1Init(void);
+void timer_Timer1Start(void);
+BOOL timer_IsTimer1Itrpt(void);
+void timer_Timer1Reset(void);
+
+
+
 void timer_init(void);
 void timer_reset(void);
 void timer_start(void);
@@ -9243,9 +9248,10 @@ void init_env(){
 
 
 
-
     OSCCONbits.SCS = 0b10;
+
     OSCCONbits.IRCF = 0b1010;
+
 
     timer_init();
 
@@ -9307,10 +9313,11 @@ void init_env(){
     IIC_Init();
 
 
-    PORTAbits.RA0 = 1;
+    PORTAbits.RA0 = TRUE;
 }
 
-void __attribute__((picinterrupt(""))) ISR(void)
+
+void tmp_change(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
@@ -9377,13 +9384,62 @@ void __attribute__((picinterrupt(""))) ISR(void)
     return;
 }
 
+void __attribute__((picinterrupt(""))) ISR(void)
+{
+    static u8 cnt = 0;
+
+    cnt++;
+
+    if(timer_IsTimer1Itrpt())
+    {
+        LATBbits.LATB3 = (cnt++ % 2 == 0);
+
+
+    }
+
+
+}
+
+
+
 void main(void)
 {
     static u16 i = 0;
+    static u8 cnt = 0;
 
     init_env();
+    LATBbits.LATB3 = 0;
+
 
     update_display();
+
+
+
+
+{
+
+    INTCONbits.GIE = 0b1;
+
+    PIE1bits.TMR1IE = 0b1;
+
+    PIR1bits.TMR1IF = 0b0;
+
+    TMR1H = 0b0;
+    TMR1L = 0b0;
+
+
+    T1CONbits.TMR1CS = 0b00;
+
+    T1CONbits.T1CKPS = 0b01;
+
+
+
+    T1CONbits.TMR1ON = 0b1;
+
+
+}
+
+
 
     while(1)
     {
@@ -9392,9 +9448,15 @@ void main(void)
             update_display();
 
         }
+        if(timer_IsTimer1Itrpt())
+        {
+            LATBbits.LATB3 = (cnt++ % 2 == 0);
+            PIR1bits.TMR1IF = 0b0;
+
+        }
 
     }
-    ;
+
 
     return;
 }

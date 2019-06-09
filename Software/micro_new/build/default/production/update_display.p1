@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"46 ./data.h
-[; ;./data.h: 46: }ENUM;
-[c E4906 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
-[n E4906 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
+"47 ./data.h
+[; ;./data.h: 47: }ENUM;
+[c E5224 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
+[n E5224 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
 "31 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -858,9 +858,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"46 ./data.h
-[; ;./data.h: 46: }ENUM;
-[v _ENUM `E4906 ~T0 @X0 1 e ]
+"47 ./data.h
+[; ;./data.h: 47: }ENUM;
+[v _ENUM `E5224 ~T0 @X0 1 e ]
 "15 update_display.c
 [; ;update_display.c: 15: const u8 segmcode[]={
 [v _segmcode `Cuc ~T0 @X0 -> 11 `i e ]
@@ -891,8 +891,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _times -> -> 10 `i `uc ]
 "26
 [; ;update_display.c: 26:    while(times > 0){
-[e $U 625  ]
-[e :U 626 ]
+[e $U 627  ]
+[e :U 628 ]
 {
 "27
 [; ;update_display.c: 27:     __nop();
@@ -903,14 +903,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29
 [; ;update_display.c: 29:    }
 }
-[e :U 625 ]
+[e :U 627 ]
 "26
 [; ;update_display.c: 26:    while(times > 0){
-[e $ > -> _times `i -> 0 `i 626  ]
-[e :U 627 ]
+[e $ > -> _times `i -> 0 `i 628  ]
+[e :U 629 ]
 "30
 [; ;update_display.c: 30: }
-[e :UE 624 ]
+[e :UE 626 ]
 }
 "41
 [; ;update_display.c: 41: static void write_byte(u8 data){
@@ -926,22 +926,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;update_display.c: 43:     for(i = 0; i < 8; i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 629  ]
-[e $U 630  ]
-[e :U 629 ]
+[e $ < -> _i `i -> 8 `i 631  ]
+[e $U 632  ]
+[e :U 631 ]
 {
 "44
 [; ;update_display.c: 44:   LATBbits.LATB5 = (data & 0x80) >> 7;
 [e = . . _LATBbits 0 5 -> >> & -> _data `i -> 128 `i -> 7 `i `uc ]
 "45
 [; ;update_display.c: 45:         LATBbits.LATB0 = PIN_LOW;
-[e = . . _LATBbits 0 0 -> . `E4906 2 `uc ]
+[e = . . _LATBbits 0 0 -> . `E5224 2 `uc ]
 "46
 [; ;update_display.c: 46:   control595_delay();
 [e ( _control595_delay ..  ]
 "47
 [; ;update_display.c: 47:         LATBbits.LATB0 = PIN_HIGH;
-[e = . . _LATBbits 0 0 -> . `E4906 3 `uc ]
+[e = . . _LATBbits 0 0 -> . `E5224 3 `uc ]
 "48
 [; ;update_display.c: 48:   control595_delay();
 [e ( _control595_delay ..  ]
@@ -952,12 +952,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;update_display.c: 50:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 629  ]
-[e :U 630 ]
+[e $ < -> _i `i -> 8 `i 631  ]
+[e :U 632 ]
 }
 "51
 [; ;update_display.c: 51: }
-[e :UE 628 ]
+[e :UE 630 ]
 }
 "53
 [; ;update_display.c: 53: static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
@@ -983,28 +983,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _write_byte (1 _MR ]
 "61
 [; ;update_display.c: 61:     LATBbits.LATB0 = PIN_LOW;
-[e = . . _LATBbits 0 0 -> . `E4906 2 `uc ]
+[e = . . _LATBbits 0 0 -> . `E5224 2 `uc ]
 "62
 [; ;update_display.c: 62:     control595_delay();
 [e ( _control595_delay ..  ]
 "63
 [; ;update_display.c: 63:     LATBbits.LATB0 = PIN_HIGH;
-[e = . . _LATBbits 0 0 -> . `E4906 3 `uc ]
+[e = . . _LATBbits 0 0 -> . `E5224 3 `uc ]
 "64
 [; ;update_display.c: 64:     control595_delay();
 [e ( _control595_delay ..  ]
 "66
 [; ;update_display.c: 66:     LATBbits.LATB1 = PIN_HIGH;
-[e = . . _LATBbits 0 1 -> . `E4906 3 `uc ]
+[e = . . _LATBbits 0 1 -> . `E5224 3 `uc ]
 "67
 [; ;update_display.c: 67:  control595_delay();
 [e ( _control595_delay ..  ]
 "68
 [; ;update_display.c: 68:     LATBbits.LATB1 = PIN_LOW;
-[e = . . _LATBbits 0 1 -> . `E4906 2 `uc ]
+[e = . . _LATBbits 0 1 -> . `E5224 2 `uc ]
 "69
 [; ;update_display.c: 69: }
-[e :UE 632 ]
+[e :UE 634 ]
 }
 "71
 [; ;update_display.c: 71: void update_display(void) {
@@ -1014,20 +1014,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "83
 [; ;update_display.c: 83:     static u8 i=0;
-[v F4962 `uc ~T0 @X0 1 s i ]
-[i F4962
+[v F5281 `uc ~T0 @X0 1 s i ]
+[i F5281
 -> -> 0 `i `uc
 ]
 "87
 [; ;update_display.c: 87:     write_once(segmcode[i%10], segmcode[i%10], segmcode[i%10], segmcode[i%10]);
-[e ( _write_once (4 , , , *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F4962 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux ]
+[e ( _write_once (4 , , , *U + &U _segmcode * -> -> % -> F5281 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F5281 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F5281 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux *U + &U _segmcode * -> -> % -> F5281 `i -> 10 `i `ui `ux -> -> # *U &U _segmcode `ui `ux ]
 "89
 [; ;update_display.c: 89:     i++;
-[e ++ F4962 -> -> 1 `i `uc ]
+[e ++ F5281 -> -> 1 `i `uc ]
 "90
 [; ;update_display.c: 90:     return;
-[e $UE 633  ]
+[e $UE 635  ]
 "91
 [; ;update_display.c: 91: }
-[e :UE 633 ]
+[e :UE 635 ]
 }
