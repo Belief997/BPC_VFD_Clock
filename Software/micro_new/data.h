@@ -70,6 +70,7 @@ enum{
 #define TIME_0_4 40    // 400ms
 #define BIAS 5         // 50ms
 
+// new define of timer
 #define COUNT_1S 15625
 #define COUNT_100MS 1562
 #define COUNT_200MS 3125
@@ -107,7 +108,6 @@ typedef struct{
     u8 g_recv_buf[RECV_BUF_MAX];
     u8 g_recv_buf_index;
     BOOL find_data_start;
-    BOOL check_data_start;
     
     u16 cnt_update;
 

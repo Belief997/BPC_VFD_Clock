@@ -74,6 +74,7 @@ int bpc_proc(void)
     G_DATA *pdata = data_getdata();
     u8 number = bpc_Cnt2Qua();
     
+    // find start
     if(pdata->find_data_start || CME_START == number){
         if(!pdata->find_data_start){
             pdata->find_data_start = TRUE;
@@ -81,36 +82,23 @@ int bpc_proc(void)
         }
     }else{
         pdata->g_recv_buf_index = 0;
-        pdata->check_data_start = FALSE;
     }
-    
-    if(!pdata->check_data_start && NUMBER_1 == number){
-        pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
-        
-        // received front three bits and start check
-        if(pdata->g_recv_buf_index == 3){
-            if(pdata->g_recv_buf[CODE_P1] == NUMBER_1 && pdata->g_recv_buf[CODE_P2] == NUMBER_1){
-                pdata->check_data_start = TRUE;
-            }else{
-                // check start err
-                pdata->g_recv_buf_index = 0;
-                pdata->find_data_start = FALSE;
-            }
-        }
-    }
-    
-    // receive all 20 bits
+
+    // receive bits before CODE_P3
     pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
-    if(pdata->g_recv_buf_index < 20){
-        return;
+    if(pdata->g_recv_buf_index <= CODE_P3){
+        return 0;
     }
+    
     u8 new_time_h = pdata->g_recv_buf[CODE_H_1] << 2 + \
                     pdata->g_recv_buf[CODE_H_2];
     u8 new_time_m = pdata->g_recv_buf[CODE_M_1] << 4 + \
                     pdata->g_recv_buf[CODE_M_2] << 2 + \
                     pdata->g_recv_buf[CODE_M_3];
+    u8 new_time_s = pdata->g_recv_buf[CODE_P1] * 20 + CODE_P3 + 1;
     
     if(check_err() == 0){
+        pdata->g_time_s = new_time_s;
         if(new_time_h != pdata->g_time_h || new_time_m != pdata->g_time_m){
             pdata->g_time_h = new_time_h;
             pdata->g_time_m = new_time_m;
