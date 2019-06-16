@@ -21,6 +21,7 @@ void timer_Timer0Start(void);
 BOOL timer_IsTimer0Itrpt(void);
 
 
+int timer_Timer0Handdle(void);
 
 
 

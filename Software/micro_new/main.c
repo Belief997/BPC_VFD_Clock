@@ -190,34 +190,6 @@ void tmp_change(void)
 }
 
 
-int timer_Timer0Handdle(void)
-{
-    static u8 history_key = 0;
-    static u16 key_time_cnt = 0;
-    /* handle key event here */
-    if(key_time_cnt++ % 10 == 0) // look up key every 100ms
-    {
-        history_key <<= 1;
-        history_key |= (SWITCH_PORT == PIN_HIGH)? 0x01 : 0x00;
-        /* judge press by 4 states , press has been consumed */
-        if((KEY_PRESS == (history_key & KEY_CHECK_BITS)))
-        {
-              led_Blink();// SET KEY PRESS FLG
-        }
-        
-//            /* judge press by 4 states , press has been consumed */
-//            if((KEY_PRESS == (history_key & KEY_CHECK_BITS)) && (FALSE == pdata->g_flg_switch))
-//            {
-//                pdata->g_flg_switch = TRUE;  // SET KEY PRESS FLG
-//            }
-
-
-    }
-    return 0;
-}
-
-
-
 void __interrupt () ISR(void)
 {
     static u8 cnt = 0;
@@ -264,14 +236,11 @@ void main(void)
     timer_Timer0Init();
     timer_Timer0Start();
 
-
-    
-
     /* timer1 的初始化及其启动 */
     timer_Timer1Init();
     timer_Timer1Start();
 
-    /* 捕捉初始化 */
+    /* 捕获初始化 */
     capture_init();
 
     /* 初始显示状态 */
@@ -284,10 +253,7 @@ void main(void)
         {          
             display_set(FALSE);
 //            update_display();
-            
         }
-
-
     }
     return;
 }

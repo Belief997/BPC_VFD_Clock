@@ -8839,7 +8839,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 2 "timer.c" 2
+# 1 "timer.c" 2
+
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8976,7 +8977,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 3 "timer.c" 2
+# 2 "timer.c" 2
+
 
 # 1 "./data.h" 1
 
@@ -9135,6 +9137,22 @@ typedef struct{
 G_DATA* data_getdata(void);
 
 u16 data_getTimeCnt(void);
+# 4 "timer.c" 2
+
+# 1 "./hardware.h" 1
+# 61 "./hardware.h"
+u8 capture_init(void);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
+
+
+
+u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
+
+
+void key_isPressed(void);
 # 5 "timer.c" 2
 
 
@@ -9208,4 +9226,13 @@ void timer_Timer0Start(void)
 BOOL timer_IsTimer0Itrpt(void)
 {
     return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
+}
+
+
+
+int timer_Timer0Handdle(void)
+{
+    key_isPressed();
+
+    return 0;
 }

@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #include "data.h"
-
+#include "hardware.h"
 
 /*  timer1  */
 /* 16位递增计数器 */
@@ -85,4 +85,10 @@ BOOL timer_IsTimer0Itrpt(void)
 
 
 
+int timer_Timer0Handdle(void)
+{
+    key_isPressed();
+
+    return 0;
+}
 
