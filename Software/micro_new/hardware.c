@@ -23,13 +23,26 @@ static int capture_setEdge(u8 edge)
 }
 
 u8 capture_init(void)
-{
+{    
+    // globe interrup enable
+//    INTCONbits.GIE = 0b1;
     /* CPP2  */
     capture_setEdge(CAPTURE_NEGEDGE);
     CME_DATA_TRI = 1;
     // 外设中断标志位
     PIR2bits.CCP2IF = 0;
     
+    return 0;
+}
+
+u8 capture_Set(u8 isON)
+{
+    /* CPP2  */
+    // 外设中断标志位
+    PIR2bits.CCP2IF = 0;
+
+    /* 外设中断使能 */
+    PIE2bits.CCP2IE = (isON)? 1 : 0;
     return 0;
 }
 
