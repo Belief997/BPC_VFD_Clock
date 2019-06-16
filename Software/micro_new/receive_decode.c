@@ -11,6 +11,7 @@
 #include "hardware.h"
 #include "data.h"
 #include "timer.h"
+#include "display.h"
 
 
 static u8 times2number(u16 high_level_times){
@@ -208,7 +209,7 @@ void receive_decode(void) {
         // we get no err then update display
         if(last_time_h != pdata->g_time_h || last_time_m != pdata->g_time_m)
         {
-            update_display();
+            display_update();
         }
     }while(0);
     

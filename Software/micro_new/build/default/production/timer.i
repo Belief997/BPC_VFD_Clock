@@ -9069,6 +9069,8 @@ typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -9081,6 +9083,10 @@ enum{
 
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
 
 
     CODE_P0 = 0,
@@ -9105,7 +9111,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 67 "./data.h"
+# 73 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9142,12 +9148,6 @@ void receive_decode(void);
 
 
 void update_time(void);
-
-
-
-
-
-void update_display(void);
 # 5 "timer.c" 2
 
 
@@ -9157,6 +9157,7 @@ void timer_Timer1Init(void)
 
     INTCONbits.GIE = 0b1;
 
+    INTCONbits.PEIE = 0b1;
     PIE1bits.TMR1IE = 0b1;
 
     PIR1bits.TMR1IF = 0b0;
@@ -9166,6 +9167,7 @@ void timer_Timer1Init(void)
 
 
     T1CONbits.TMR1CS = 0b00;
+
 
     T1CONbits.T1CKPS = 0b11;
 

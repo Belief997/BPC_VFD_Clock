@@ -15,6 +15,7 @@
 #include "debug.h"
 #include "hardware.h"
 #include "uart.h"
+#include "display.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
@@ -118,7 +119,7 @@ void init_env(){
     IIC_Init();
     
     // light on when have power
-    Light_on = TRUE;
+    display_set(TRUE);
 }
     
 //void __interrupt () ISR(void)
@@ -189,17 +190,61 @@ void tmp_change(void)
     return;
 }
 
+
+
 void __interrupt () ISR(void)
 {
     static u8 cnt = 0;
 
     if(timer_IsTimer1Itrpt())
     {
-        LED_STATE = (cnt++ % 2 == 0);
+//        LED_STATE = (cnt++ % 2 == 0);
 
 
         timer_Timer1Reset();
 
+    }
+
+    if(PIR2bits.CCP2IF)
+    {
+        static u16 last_cnt = 0;
+        static u16 cnt_low = 0, cnt_high = 0;
+        u16 cnt_tmp = 0;
+        u16 cnt_int = 0;
+        cnt_tmp = CCPR2H;
+        cnt_tmp = (cnt_tmp << 8) + CCPR2L;
+
+        if(cnt_tmp > last_cnt)
+        {
+            cnt_int = cnt_tmp - last_cnt;
+        }
+        else
+        {
+            cnt_int = 0xffff - last_cnt;
+            cnt_int += cnt_tmp;
+        }
+
+        // 下降沿
+        if(CCP2CONbits.CCP2M == 0b0100)
+        {
+            cnt_high = cnt_int;
+//            cnt_low = 0;
+            LED_STATE = LED_STATE_OFF;
+
+        }
+        else
+        {
+            cnt_low = cnt_int;
+//            cnt_high = 0;
+            LED_STATE = LED_STATE_ON;
+
+        }
+   
+        last_cnt = cnt_tmp;
+
+        /* 翻转触发沿 */
+        CCP2CONbits.CCP2M = (CCP2CONbits.CCP2M == 0b0100)? 0b0101 : 0b0100;
+        PIR2bits.CCP2IF = 0;
     }
 
 
@@ -221,15 +266,25 @@ void main(void)
     timer_Timer1Init();
     timer_Timer1Start();
 
+    /* CPP2  */
+//    CCP2CONbits.CCP2M = 0b0101; // 捕捉上升沿
+    CCP2CONbits.CCP2M = 0b0100; // 捕捉下降沿
+    CME_DATA_TRI = 1;
+    // 外设中断标志位
+    PIR2bits.CCP2IF = 0;
+
+
+
 
     /* 初始显示状态 */
-    update_display();
+    display_update();
 
     while(1)
     {
-        if(i++  == 65535)
-        {            
-            update_display();
+        if(i++  == 1000)
+        {          
+            display_set(FALSE);
+//            update_display();
             
         }
 

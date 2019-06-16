@@ -9,6 +9,8 @@ typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -21,6 +23,10 @@ enum{
     
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+    // 状态灯是反相控制
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
     
     // TIME CODE FORMAT, TOTAL = 20
     CODE_P0 = 0,

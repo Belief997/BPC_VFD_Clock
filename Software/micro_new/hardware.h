@@ -6,11 +6,14 @@
 
 /***************  define pin table from here  ******************/
 // cme6005 data port define  BPC_DATA
+// CPP2
 #define CME_DATA_PORT PORTCbits.RC1
 #define CME_DATA_TRI TRISCbits.TRISC1
 #define CME_DATA_IOC IOCCPbits.IOCCP1
 #define CME_DATA_WPU WPUCbits.WPUC1
 #define CME_DATA_IOC_INT IOCCFbits.IOCCF1
+
+
 
 // switch port define Syn
 #define SWITCH_PORT PORTCbits.RC5

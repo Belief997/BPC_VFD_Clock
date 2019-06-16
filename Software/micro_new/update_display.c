@@ -9,6 +9,12 @@
 #include <xc.h>
 #include "function.h"
 #include "hardware.h"
+#include "display.h"
+
+void display_set(BOOL ison)
+{
+    Light_on = ison;
+}
 
 
  /* ULN2001 是反相输出 */
@@ -68,7 +74,8 @@ static void write_once(u8 HL, u8 HR, u8 ML, u8 MR){
     PIC_STCP = PIN_LOW;  // RCLK
 }
 
-void update_display(void) {
+void display_update(void) 
+{
     
     /**
      * 4----3----2----1----<<<input signal

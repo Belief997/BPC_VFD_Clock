@@ -9076,6 +9076,8 @@ typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -9088,6 +9090,10 @@ enum{
 
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
 
 
     CODE_P0 = 0,
@@ -9112,7 +9118,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 67 "./data.h"
+# 73 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9149,12 +9155,6 @@ void receive_decode(void);
 
 
 void update_time(void);
-
-
-
-
-
-void update_display(void);
 # 12 "main.c" 2
 # 1 "./myiic.h" 1
 
@@ -9210,6 +9210,16 @@ void Send_byte(void);
 void ISR_uart_TX(void);
 void ISR_uart_RX(void);
 # 18 "main.c" 2
+# 1 "./display.h" 1
+# 13 "./display.h"
+void display_set(BOOL ison);
+
+
+
+
+
+void display_update(void);
+# 19 "main.c" 2
 
 
 #pragma config FOSC = HS
@@ -9313,7 +9323,7 @@ void init_env(){
     IIC_Init();
 
 
-    PORTAbits.RA0 = TRUE;
+    display_set(TRUE);
 }
 
 
@@ -9384,17 +9394,61 @@ void tmp_change(void)
     return;
 }
 
+
+
 void __attribute__((picinterrupt(""))) ISR(void)
 {
     static u8 cnt = 0;
 
-    cnt++;
-
     if(timer_IsTimer1Itrpt())
     {
-        LATBbits.LATB3 = (cnt++ % 2 == 0);
 
 
+
+        timer_Timer1Reset();
+
+    }
+
+    if(PIR2bits.CCP2IF)
+    {
+        static u16 last_cnt = 0;
+        static u16 cnt_low = 0, cnt_high = 0;
+        u16 cnt_tmp = 0;
+        u16 cnt_int = 0;
+        cnt_tmp = CCPR2H;
+        cnt_tmp = (cnt_tmp << 8) + CCPR2L;
+
+        if(cnt_tmp > last_cnt)
+        {
+            cnt_int = cnt_tmp - last_cnt;
+        }
+        else
+        {
+            cnt_int = 0xffff - last_cnt;
+            cnt_int += cnt_tmp;
+        }
+
+
+        if(CCP2CONbits.CCP2M == 0b0100)
+        {
+            cnt_high = cnt_int;
+
+            LATBbits.LATB3 = LED_STATE_OFF;
+
+        }
+        else
+        {
+            cnt_low = cnt_int;
+
+            LATBbits.LATB3 = LED_STATE_ON;
+
+        }
+
+        last_cnt = cnt_tmp;
+
+
+        CCP2CONbits.CCP2M = (CCP2CONbits.CCP2M == 0b0100)? 0b0101 : 0b0100;
+        PIR2bits.CCP2IF = 0;
     }
 
 
@@ -9411,49 +9465,33 @@ void main(void)
     LATBbits.LATB3 = 0;
 
 
-    update_display();
+
+
+    timer_Timer1Init();
+    timer_Timer1Start();
+
+
+
+    CCP2CONbits.CCP2M = 0b0100;
+    TRISCbits.TRISC1 = 1;
+
+    PIR2bits.CCP2IF = 0;
 
 
 
 
-{
 
-    INTCONbits.GIE = 0b1;
-
-    PIE1bits.TMR1IE = 0b1;
-
-    PIR1bits.TMR1IF = 0b0;
-
-    TMR1H = 0b0;
-    TMR1L = 0b0;
-
-
-    T1CONbits.TMR1CS = 0b00;
-
-    T1CONbits.T1CKPS = 0b01;
-
-
-
-    T1CONbits.TMR1ON = 0b1;
-
-
-}
-
-
+    display_update();
 
     while(1)
     {
-        if(i++ == 65535)
+        if(i++ == 1000)
         {
-            update_display();
+            display_set(FALSE);
+
 
         }
-        if(timer_IsTimer1Itrpt())
-        {
-            LATBbits.LATB3 = (cnt++ % 2 == 0);
-            PIR1bits.TMR1IF = 0b0;
 
-        }
 
     }
 

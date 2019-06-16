@@ -9076,6 +9076,8 @@ typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -9088,6 +9090,10 @@ enum{
 
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
 
 
     CODE_P0 = 0,
@@ -9112,7 +9118,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 67 "./data.h"
+# 73 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9149,12 +9155,6 @@ void receive_decode(void);
 
 
 void update_time(void);
-
-
-
-
-
-void update_display(void);
 # 11 "receive_decode.c" 2
 # 1 "./hardware.h" 1
 # 12 "receive_decode.c" 2
@@ -9174,6 +9174,16 @@ void timer_start(void);
 void timer_stop(void);
 BOOL timer_isrunning(void);
 # 14 "receive_decode.c" 2
+# 1 "./display.h" 1
+# 13 "./display.h"
+void display_set(BOOL ison);
+
+
+
+
+
+void display_update(void);
+# 15 "receive_decode.c" 2
 
 
 static u8 times2number(u16 high_level_times){
@@ -9371,7 +9381,7 @@ void receive_decode(void) {
 
         if(last_time_h != pdata->g_time_h || last_time_m != pdata->g_time_m)
         {
-            update_display();
+            display_update();
         }
     }while(0);
 

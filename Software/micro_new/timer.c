@@ -21,7 +21,7 @@ void timer_Timer1Init(void)
     /* 指令时钟 */
     T1CONbits.TMR1CS = 0b00;  // 500k / 4 = 8 us
     /*  预分频 */
-//    T1CONbits.T1CKPS = 0b01;  // 11: 1:2 = 16 us   16BIT 1 s
+//    T1CONbits.T1CKPS = 0b01;  // 01: 1:2 = 16 us   16BIT 1 s
     T1CONbits.T1CKPS = 0b11;  // 11: 1:8 = 64 us   16BIT 4 s
     
 

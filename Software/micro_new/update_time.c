@@ -8,6 +8,7 @@
 
 #include <xc.h>
 #include "function.h"
+#include "display.h"
 
 
 void update_time(void) {
@@ -41,7 +42,7 @@ void update_time(void) {
                 }
             }
             /* update once display every minute */
-            update_display();
+            display_update();
         }      
     }
     return;
