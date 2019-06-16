@@ -13,7 +13,7 @@
 #include "timer.h"
 #include "display.h"
 #include "bpc.h"
-
+#include <math.h>
 
 /* 计数转四进制 Quaternary */
 static u8 bpc_Cnt2Qua(void)
@@ -26,13 +26,13 @@ static u8 bpc_Cnt2Qua(void)
         }
     }else{
         // g=high level
-        if(pdata->cnt_high > COUNT_100MS - COUNT_BIAS && pdata->cnt_high < COUNT_100MS + COUNT_BIAS){
+        if(abs(pdata->cnt_high - COUNT_100MS) < COUNT_BIAS){
             return NUMBER_1;
-        }else if(pdata->cnt_high > COUNT_200MS - COUNT_BIAS && pdata->cnt_high < COUNT_200MS + COUNT_BIAS){
+        }else if(abs(pdata->cnt_high - COUNT_200MS) < COUNT_BIAS){
             return NUMBER_2;
-        }else if(pdata->cnt_high > COUNT_300MS - COUNT_BIAS && pdata->cnt_high < COUNT_300MS + COUNT_BIAS){
+        }else if(abs(pdata->cnt_high - COUNT_300MS) < COUNT_BIAS){
             return NUMBER_3;
-        }else if(pdata->cnt_high > COUNT_400MS - COUNT_BIAS && pdata->cnt_high < COUNT_400MS + COUNT_BIAS){
+        }else if(abs(pdata->cnt_high - COUNT_400MS) < COUNT_BIAS){
             return NUMBER_4;
         }
     }
