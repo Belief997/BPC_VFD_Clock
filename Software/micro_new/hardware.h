@@ -59,6 +59,7 @@
 
 /* capture */
 u8 capture_init(void);
+u8 capture_Set(u8 isON);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);

@@ -199,7 +199,6 @@ void __interrupt () ISR(void)
 //        LED_STATE = (cnt++ % 2 == 0);
 
         timer_Timer1ClrIntrpt();
-
     }
 
     if(timer_IsTimer0Itrpt())
@@ -242,6 +241,7 @@ void main(void)
 
     /* 捕获初始化 */
     capture_init();
+    capture_Set(TRUE);
 
     /* 初始显示状态 */
     display_update();

@@ -9142,6 +9142,7 @@ u16 data_getTimeCnt(void);
 # 1 "./hardware.h" 1
 # 61 "./hardware.h"
 u8 capture_init(void);
+u8 capture_Start(void);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);

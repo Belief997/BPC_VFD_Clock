@@ -83,8 +83,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "856
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 856: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
 [v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"72 ./hardware.h
-[; ;./hardware.h: 72: void key_isPressed(void);
+"73 ./hardware.h
+[; ;./hardware.h: 73: void key_isPressed(void);
 [v _key_isPressed `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");

@@ -8847,8 +8847,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
-
+# 10 "main.c" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8985,8 +8984,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 10 "main.c" 2
-
+# 11 "main.c" 2
 # 1 "./function.h" 1
 
 
@@ -9163,8 +9161,7 @@ void receive_decode(void);
 
 
 void update_time(void);
-# 11 "main.c" 2
-
+# 12 "main.c" 2
 # 1 "./myiic.h" 1
 
 
@@ -9186,8 +9183,7 @@ void IIC_Ack(void);
 void IIC_NAck(void);
 unsigned char RD_temp(void);
 void IIC_temp(void);
-# 12 "main.c" 2
-
+# 13 "main.c" 2
 # 1 "./timer.h" 1
 # 11 "./timer.h"
 void timer_Timer1Init(void);
@@ -9204,8 +9200,7 @@ BOOL timer_IsTimer0Itrpt(void);
 
 
 int timer_Timer0Handdle(void);
-# 13 "main.c" 2
-
+# 14 "main.c" 2
 
 # 1 "./debug.h" 1
 
@@ -9213,11 +9208,11 @@ int timer_Timer0Handdle(void);
 
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 15 "main.c" 2
-
+# 16 "main.c" 2
 # 1 "./hardware.h" 1
 # 61 "./hardware.h"
 u8 capture_init(void);
+u8 capture_Start(void);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);
@@ -9229,16 +9224,14 @@ u8 led_Blink(void);
 
 
 void key_isPressed(void);
-# 16 "main.c" 2
-
+# 17 "main.c" 2
 # 1 "./uart.h" 1
 # 17 "./uart.h"
 void init_uart(void);
 void Send_byte(void);
 void ISR_uart_TX(void);
 void ISR_uart_RX(void);
-# 17 "main.c" 2
-
+# 18 "main.c" 2
 # 1 "./display.h" 1
 # 13 "./display.h"
 void display_set(BOOL ison);
@@ -9248,13 +9241,11 @@ void display_set(BOOL ison);
 
 
 void display_update(void);
-# 18 "main.c" 2
-
+# 19 "main.c" 2
 # 1 "./bpc.h" 1
 # 14 "./bpc.h"
 int bpc_proc(void);
-# 19 "main.c" 2
-
+# 20 "main.c" 2
 
 
 #pragma config FOSC = HS
@@ -9430,7 +9421,7 @@ void __attribute__((picinterrupt(""))) ISR(void)
 
 
         timer_Timer1ClrIntrpt();
-
+        return ;
     }
 
     if(timer_IsTimer0Itrpt())
@@ -9438,6 +9429,7 @@ void __attribute__((picinterrupt(""))) ISR(void)
         timer_Timer0Handdle();
 
         timer_Timer0Reset();
+        return ;
     }
 
     if(capture_IsIntrpt())
@@ -9465,14 +9457,15 @@ void main(void)
 
 
     timer_Timer0Init();
-    timer_Timer0Start();
+
 
 
     timer_Timer1Init();
-    timer_Timer1Start();
+
 
 
     capture_init();
+    capture_Start();
 
 
     display_update();
