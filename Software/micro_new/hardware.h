@@ -6,11 +6,14 @@
 
 /***************  define pin table from here  ******************/
 // cme6005 data port define  BPC_DATA
+// CPP2
 #define CME_DATA_PORT PORTCbits.RC1
 #define CME_DATA_TRI TRISCbits.TRISC1
 #define CME_DATA_IOC IOCCPbits.IOCCP1
 #define CME_DATA_WPU WPUCbits.WPUC1
 #define CME_DATA_IOC_INT IOCCFbits.IOCCF1
+
+
 
 // switch port define Syn
 #define SWITCH_PORT PORTCbits.RC5
@@ -35,6 +38,9 @@
 #define PIC_SDA PORTCbits.RC4
 #define CLKOUT PORTAbits.RA7        // EXTERN CLK IN
 
+// define state led
+#define LED_STATE   LATBbits.LATB3
+
 #define TEST
 #ifdef TEST
 // define test port
@@ -50,6 +56,21 @@
 
 /***************  define pin table  end  ******************/
 
+
+/* capture */
+u8 capture_init(void);
+u8 capture_Set(u8 isON);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
+
+
+/* led */
+u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
+
+/* key */
+void key_isPressed(void);
 
 
 #endif

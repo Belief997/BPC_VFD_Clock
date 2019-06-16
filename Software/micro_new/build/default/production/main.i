@@ -9071,10 +9071,13 @@ typedef uint32_t uint_fast32_t;
 
 
 
+
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -9087,6 +9090,10 @@ enum{
 
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
 
 
     CODE_P0 = 0,
@@ -9111,7 +9118,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 66 "./data.h"
+# 73 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9131,9 +9138,17 @@ typedef struct{
 
     u8 g_recv_buf[20];
     u16 cnt_update;
+
+
+
+    u16 cnt_high;
+    u16 cnt_low;
+
 }G_DATA;
 
 G_DATA* data_getdata(void);
+
+u16 data_getTimeCnt(void);
 # 9 "./function.h" 2
 
 
@@ -9146,12 +9161,6 @@ void receive_decode(void);
 
 
 void update_time(void);
-
-
-
-
-
-void update_display(void);
 # 12 "main.c" 2
 # 1 "./myiic.h" 1
 
@@ -9176,12 +9185,21 @@ unsigned char RD_temp(void);
 void IIC_temp(void);
 # 13 "main.c" 2
 # 1 "./timer.h" 1
-# 13 "./timer.h"
-void timer_init(void);
-void timer_reset(void);
-void timer_start(void);
-void timer_stop(void);
-BOOL timer_isrunning(void);
+# 11 "./timer.h"
+void timer_Timer1Init(void);
+void timer_Timer1Start(void);
+BOOL timer_IsTimer1Itrpt(void);
+void timer_Timer1ClrIntrpt(void);
+
+
+
+void timer_Timer0Init(void);
+void timer_Timer0Reset(void);
+void timer_Timer0Start(void);
+BOOL timer_IsTimer0Itrpt(void);
+
+
+int timer_Timer0Handdle(void);
 # 14 "main.c" 2
 
 # 1 "./debug.h" 1
@@ -9192,6 +9210,20 @@ typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length)
 int debug_proc(const unsigned char* cmdString, unsigned short length);
 # 16 "main.c" 2
 # 1 "./hardware.h" 1
+# 61 "./hardware.h"
+u8 capture_init(void);
+u8 capture_Start(void);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
+
+
+
+u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
+
+
+void key_isPressed(void);
 # 17 "main.c" 2
 # 1 "./uart.h" 1
 # 17 "./uart.h"
@@ -9200,6 +9232,20 @@ void Send_byte(void);
 void ISR_uart_TX(void);
 void ISR_uart_RX(void);
 # 18 "main.c" 2
+# 1 "./display.h" 1
+# 13 "./display.h"
+void display_set(BOOL ison);
+
+
+
+
+
+void display_update(void);
+# 19 "main.c" 2
+# 1 "./bpc.h" 1
+# 14 "./bpc.h"
+int bpc_proc(void);
+# 20 "main.c" 2
 
 
 #pragma config FOSC = HS
@@ -9233,23 +9279,15 @@ void init_env(){
 
     INTCONbits.GIE = 0b1;
 
-    INTCONbits.IOCIE = 0b1;
 
 
 
 
 
     OSCCONbits.SCS = 0b10;
+
     OSCCONbits.IRCF = 0b1010;
-
-    timer_init();
-
-
-
-
-
-
-
+# 69 "main.c"
     OPTION_REGbits.nWPUEN = 0;
 
     TRISA = 0;
@@ -9299,33 +9337,22 @@ void init_env(){
 
 
 
-    TXSTAbits.TX9 = 0b0;
-    TXSTAbits.TXEN = 0b0;
-    TXSTAbits.SYNC = 0b0;
-    TXSTAbits.SENDB = 0b0;
-    TXSTAbits.BRGH = 0b1;
-
-    RCSTAbits.SPEN = 0b1;
-    RCSTAbits.RX9 = 0b0;
-    RCSTAbits.CREN = 0b1;
-
-    BAUDCONbits.SCKP = 0b0;
-    BAUDCONbits.BRG16 = 0b1;
 
 
 
-    IIC_Init();
-
-
-    PORTAbits.RA0 = 1;
+    display_set(TRUE);
 }
 
-void __attribute__((picinterrupt(""))) ISR(void)
+
+void tmp_change(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
     G_DATA *pdata = data_getdata();
-# 157 "main.c"
+
+
+
+
     if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
 
     {
@@ -9347,7 +9374,7 @@ void __attribute__((picinterrupt(""))) ISR(void)
         {
             pdata->g_recv_count = CODE_P1;
         }
-        timer_start();
+        timer_Timer0Start();
     }
     else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1)
     {
@@ -9378,18 +9405,79 @@ void __attribute__((picinterrupt(""))) ISR(void)
             }
         }
 
-        timer_reset();
+        timer_Timer0Reset();
         return;
     }
     return;
 }
 
+
+void __attribute__((picinterrupt(""))) ISR(void)
+{
+    static u8 cnt = 0;
+
+    if(timer_IsTimer1Itrpt())
+    {
+
+
+        timer_Timer1ClrIntrpt();
+        return ;
+    }
+
+    if(timer_IsTimer0Itrpt())
+    {
+        timer_Timer0Handdle();
+
+        timer_Timer0Reset();
+        return ;
+    }
+
+    if(capture_IsIntrpt())
+    {
+        capture_handdle();
+
+        bpc_proc();
+
+        capture_clrIntrpt();
+    }
+
+
+}
+
+
+
 void main(void)
 {
+    static u16 i = 0;
+    static u8 cnt = 0;
+
+
 
     init_env();
-    timer_start();
 
-    while(1);
+
+    timer_Timer0Init();
+
+
+
+    timer_Timer1Init();
+
+
+
+    capture_init();
+    capture_Start();
+
+
+    display_update();
+    led_SetState(FALSE);
+
+    while(1)
+    {
+        if(i++ == 1000)
+        {
+            display_set(FALSE);
+
+        }
+    }
     return;
 }

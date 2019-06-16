@@ -15,6 +15,8 @@
 #include "debug.h"
 #include "hardware.h"
 #include "uart.h"
+#include "display.h"
+#include "bpc.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
@@ -48,16 +50,15 @@ void init_env(){
     // globe interrup enable
     INTCONbits.GIE = 0b1;
     // ioc interrupt when read data from CME6005
-    INTCONbits.IOCIE = 0b1;
+//    INTCONbits.IOCIE = 0b1;
     
     /**
      * choose clk inside
      */
-// TODO: adjust clk config here
     OSCCONbits.SCS = 0b10;      // set to use inside clock
-    OSCCONbits.IRCF = 0b1010;   // set freq for inside clock : 500kHz
-       
-    timer_init();
+    /* set freq for inside clock : 500kHz , 2 us */
+    OSCCONbits.IRCF = 0b1010;   
+    
     
     /**
      *  port use
@@ -111,46 +112,22 @@ void init_env(){
     // RTC chip set
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
-    
-    // uart
-    //EUSART cfg TXSTA RXSTA BAUDCON
-    TXSTAbits.TX9 = 0b0;//data len 8 bit
-    TXSTAbits.TXEN = 0b0;//send disable
-    TXSTAbits.SYNC = 0b0;//asyn mode
-    TXSTAbits.SENDB = 0b0;//space char disable
-    TXSTAbits.BRGH = 0b1;//baud high speed   
-    
-    RCSTAbits.SPEN = 0b1; //serial port enable
-    RCSTAbits.RX9 = 0b0;//data len 8 bit
-    RCSTAbits.CREN = 0b1;//rcv enable
-    
-    BAUDCONbits.SCKP = 0b0; //nomal phase data1
-    BAUDCONbits.BRG16 = 0b1;//16 bit baud
-    
+        
 
     /* init iic */
-    IIC_Init();
+//    IIC_Init();
     
     // light on when have power
-    Light_on = 1;
+    display_set(TRUE);
 }
     
-void __interrupt () ISR(void)
+//void __interrupt () ISR(void)
+void tmp_change(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
     G_DATA *pdata = data_getdata();
-    
-//    /* isr of uart  */
-//    if(TXIF)
-//    {
-//        ISR_uart_TX();
-//    }
-//    if(RCIF)
-//    {
-//        ISR_uart_RX();
-//	}
-    
+        
     
     /* start decode flag set */
     // updata by key or 30 min
@@ -175,7 +152,7 @@ void __interrupt () ISR(void)
         {
             pdata->g_recv_count = CODE_P1;
         }
-        timer_start();
+        timer_Timer0Start();
     }
     else if(INTCONbits.IOCIF || CME_DATA_IOC_INT)
     {
@@ -206,19 +183,78 @@ void __interrupt () ISR(void)
             }
         }
         /* reset timer_0 */
-        timer_reset();
+        timer_Timer0Reset();
         return;
     }
     return;
 }
 
+
+void __interrupt () ISR(void)
+{
+    static u8 cnt = 0;
+
+    if(timer_IsTimer1Itrpt())
+    {
+//        LED_STATE = (cnt++ % 2 == 0);
+
+        timer_Timer1ClrIntrpt();
+    }
+
+    if(timer_IsTimer0Itrpt())
+    {
+        timer_Timer0Handdle();
+
+        timer_Timer0Reset();
+    }
+
+    if(capture_IsIntrpt())
+    {
+        capture_handdle();
+
+        bpc_proc();
+
+        capture_clrIntrpt();    
+    }
+
+
+}
+
+
+
 void main(void) 
 {
-    // init config
-    init_env();
-    timer_start();
+    static u16 i = 0;
+    static u8 cnt = 0;
+
     
-    while(1);    
+    // init config
+    init_env();    
+    
+    /* timer0 的初始化及其启动 */
+    timer_Timer0Init();
+    timer_Timer0Start();
+
+    /* timer1 的初始化及其启动 */
+    timer_Timer1Init();
+    timer_Timer1Start();
+
+    /* 捕获初始化 */
+    capture_init();
+    capture_Set(TRUE);
+
+    /* 初始显示状态 */
+    display_update();
+    led_SetState(FALSE);
+
+    while(1)
+    {
+        if(i++  == 1000)
+        {          
+            display_set(FALSE);
+//            update_display();
+        }
+    }
     return;
 }
 

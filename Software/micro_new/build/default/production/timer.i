@@ -8839,7 +8839,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 2 "timer.c" 2
+# 1 "timer.c" 2
+
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8976,10 +8977,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 3 "timer.c" 2
-# 1 "./function.h" 1
+# 2 "timer.c" 2
 
 
+# 1 "./data.h" 1
 
 
 
@@ -9055,11 +9056,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 8 "./function.h" 2
-# 1 "./data.h" 1
-
-
-
+# 5 "./data.h" 2
 
 
 
@@ -9067,6 +9064,8 @@ typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -9079,6 +9078,10 @@ enum{
 
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
 
 
     CODE_P0 = 0,
@@ -9103,7 +9106,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 66 "./data.h"
+# 73 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9123,31 +9126,78 @@ typedef struct{
 
     u8 g_recv_buf[20];
     u16 cnt_update;
+
+
+
+    u16 cnt_high;
+    u16 cnt_low;
+
 }G_DATA;
 
 G_DATA* data_getdata(void);
-# 9 "./function.h" 2
 
-
-
-
-
-void receive_decode(void);
-
-
-
-
-void update_time(void);
-
-
-
-
-
-void update_display(void);
+u16 data_getTimeCnt(void);
 # 4 "timer.c" 2
 
+# 1 "./hardware.h" 1
+# 61 "./hardware.h"
+u8 capture_init(void);
+u8 capture_Start(void);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
 
-void timer_init(void)
+
+
+u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
+
+
+void key_isPressed(void);
+# 5 "timer.c" 2
+
+
+
+
+void timer_Timer1Init(void)
+{
+
+    INTCONbits.GIE = 0b1;
+
+    INTCONbits.PEIE = 0b1;
+    PIE1bits.TMR1IE = 0b1;
+
+    PIR1bits.TMR1IF = 0b0;
+
+    TMR1H = 0b0;
+    TMR1L = 0b0;
+
+
+    T1CONbits.TMR1CS = 0b00;
+
+
+    T1CONbits.T1CKPS = 0b11;
+
+
+}
+
+void timer_Timer1Start(void)
+{
+
+    T1CONbits.TMR1ON = 0b1;
+}
+
+BOOL timer_IsTimer1Itrpt(void)
+{
+    return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
+}
+
+void timer_Timer1ClrIntrpt(void)
+{
+    PIR1bits.TMR1IF = 0b0;
+}
+# 54 "timer.c"
+void timer_Timer0Init(void)
 {
 
     INTCONbits.GIE = 0b1;
@@ -9163,22 +9213,27 @@ void timer_init(void)
     OPTION_REGbits.PS = 4;
     TMR0 = (217 + 14);
 }
-void timer_reset(void)
+void timer_Timer0Reset(void)
 {
     INTCONbits.TMR0IF = 0;
     TMR0 = (217 + 14);
 }
-void timer_start(void)
+void timer_Timer0Start(void)
 {
-    timer_reset();
-    INTCONbits.TMR0IE = 0b0;
+    timer_Timer0Reset();
+    INTCONbits.TMR0IE = 0b1;
 }
-void timer_stop(void)
+
+BOOL timer_IsTimer0Itrpt(void)
 {
-    INTCONbits.TMR0IE = 0b0;
-    timer_reset();
+    return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
 }
-BOOL timer_isrunning(void)
+
+
+
+int timer_Timer0Handdle(void)
 {
-    return (BOOL)(INTCONbits.TMR0IE == 0b1);
+    key_isPressed();
+
+    return 0;
 }

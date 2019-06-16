@@ -11,6 +11,32 @@
 #include "hardware.h"
 #include "data.h"
 #include "timer.h"
+#include "display.h"
+#include "bpc.h"
+
+
+/* 计数转四进制 Quaternary */
+static u8 bpc_Cnt2Qua(void)
+{
+
+
+
+    return 0;
+}
+
+
+
+int bpc_proc(void)
+{
+    bpc_Cnt2Qua();
+
+    return 0;
+}
+
+
+
+
+
 
 
 static u8 times2number(u16 high_level_times){
@@ -76,8 +102,8 @@ static int check_err(void)
     G_DATA *pdata = data_getdata();
     pdata->g_time_h = pdata->g_recv_buf[CODE_H_1] * 4 + pdata->g_recv_buf[CODE_H_2];
     pdata->g_time_m = pdata->g_recv_buf[CODE_M_1] * 16 + pdata->g_recv_buf[CODE_M_2] * 4 + pdata->g_recv_buf[CODE_M_3];
-    pdata->g_time_s = 10 + (pdata->g_recv_buf[CODE_P1] == 1)? 20:  \
-                            (pdata->g_recv_buf[CODE_P1] == 2)? 40: 0;
+    pdata->g_time_s = 10 + ((pdata->g_recv_buf[CODE_P1] == 1)? 20:  \
+                            (pdata->g_recv_buf[CODE_P1] == 2)? 40: 0);
     u8 check = 0;
     for(u8 i = CODE_P1; i < CODE_P3; i++)
     {
@@ -208,7 +234,7 @@ void receive_decode(void) {
         // we get no err then update display
         if(last_time_h != pdata->g_time_h || last_time_m != pdata->g_time_m)
         {
-            update_display();
+            display_update();
         }
     }while(0);
     

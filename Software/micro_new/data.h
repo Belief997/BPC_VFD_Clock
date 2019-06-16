@@ -3,11 +3,14 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "stdint.h"
+#include "stdio.h"
 
 typedef uint8_t u8;
 typedef int8_t s8;
 typedef uint16_t u16;
 typedef int16_t s16;
+typedef uint32_t u32;
+typedef int32_t s32;
 
 typedef enum{
     FALSE = 0,
@@ -20,6 +23,10 @@ enum{
     
     PIN_LOW = 0,
     PIN_HIGH = 1,
+
+    // 状态灯是反相控制
+    LED_STATE_ON = 0,
+    LED_STATE_OFF = 1,
     
     // TIME CODE FORMAT, TOTAL = 20
     CODE_P0 = 0,
@@ -82,8 +89,17 @@ typedef struct{
     // read time buf in receive_code
     u8 g_recv_buf[RECV_BUF_MAX];
     u16 cnt_update;
+
+
+    /* capture: 捕获到的计数 */
+    u16 cnt_high;
+    u16 cnt_low;
+    
 }G_DATA;
 
 G_DATA* data_getdata(void);
+
+u16 data_getTimeCnt(void);
+
 
 #endif

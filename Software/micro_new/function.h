@@ -19,11 +19,6 @@ void receive_decode(void);
 void update_time(void);
 
 
-/**
- * @func:update dispaly and call by update_time
- */
-void update_display(void);
-
 
 
 #endif	/* XC_HEADER_TEMPLATE_H */
