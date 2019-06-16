@@ -13,8 +13,10 @@
 #include "timer.h"
 #include "display.h"
 #include "bpc.h"
-#include <math.h>
 
+u16 cnt_abs(u16 a, u16 b){
+    return a>b? (a-b):(b-a);
+}
 /* 计数转四进制 Quaternary */
 static u8 bpc_Cnt2Qua(void)
 {
@@ -26,13 +28,13 @@ static u8 bpc_Cnt2Qua(void)
         }
     }else{
         // g=high level
-        if(abs(pdata->cnt_high - COUNT_100MS) < COUNT_BIAS){
+        if(cnt_abs(pdata->cnt_high, COUNT_100MS) < COUNT_BIAS){
             return NUMBER_1;
-        }else if(abs(pdata->cnt_high - COUNT_200MS) < COUNT_BIAS){
+        }else if(cnt_abs(pdata->cnt_high, COUNT_200MS) < COUNT_BIAS){
             return NUMBER_2;
-        }else if(abs(pdata->cnt_high - COUNT_300MS) < COUNT_BIAS){
+        }else if(cnt_abs(pdata->cnt_high, COUNT_300MS) < COUNT_BIAS){
             return NUMBER_3;
-        }else if(abs(pdata->cnt_high - COUNT_400MS) < COUNT_BIAS){
+        }else if(cnt_abs(pdata->cnt_high, COUNT_400MS) < COUNT_BIAS){
             return NUMBER_4;
         }
     }
@@ -90,20 +92,44 @@ int bpc_proc(void)
         return 0;
     }
     
-    u8 new_time_h = pdata->g_recv_buf[CODE_H_1] << 2 + \
-                    pdata->g_recv_buf[CODE_H_2];
-    u8 new_time_m = pdata->g_recv_buf[CODE_M_1] << 4 + \
-                    pdata->g_recv_buf[CODE_M_2] << 2 + \
-                    pdata->g_recv_buf[CODE_M_3];
-    u8 new_time_s = pdata->g_recv_buf[CODE_P1] * 20 + CODE_P3 + 1;
+    // check P1, P1: 0->1, 1->21, 2->41
+    if(pdata->g_recv_buf[CODE_P1] > 2)
+    {
+        pdata->g_find_recv_start = FALSE;
+        pdata->g_isDecoding = 0;
+        pdata->g_recv_count = 0;
+        return;
+    }
     
-    if(check_err() == 0){
-        pdata->g_time_s = new_time_s;
-        if(new_time_h != pdata->g_time_h || new_time_m != pdata->g_time_m){
-            pdata->g_time_h = new_time_h;
-            pdata->g_time_m = new_time_m;
+    u16 last_time_h = pdata->g_time_h;
+    u16 last_time_m = pdata->g_time_m;
+    u16 last_time_s = pdata->g_time_s;
+    
+    do{
+        if(check_err())
+        {
+            // wrong data recived
+            pdata->g_time_h = last_time_h;
+            pdata->g_time_m = last_time_m;
+            pdata->g_time_s = last_time_s;
+            break;
+        }
+
+        // we get no err then update display
+        if(last_time_h != pdata->g_time_h || last_time_m != pdata->g_time_m)
+        {
             display_update();
         }
+    }while(0);
+    
+    // recv over ,then set flag to false
+    pdata->g_find_recv_start = FALSE;
+//    BPC_ON = BPC_PWR_OFF;
+    pdata->g_isDecoding = FALSE;
+    pdata->g_recv_count = CODE_P0;
+    for(int i = 0;i < RECV_BUF_MAX; i++)
+    {
+        pdata->g_recv_buf[i] = 5;
     }
     return 0;
 }
