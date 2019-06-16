@@ -89,6 +89,12 @@ typedef struct{
     // read time buf in receive_code
     u8 g_recv_buf[RECV_BUF_MAX];
     u16 cnt_update;
+
+
+    /* capture: 捕获到的计数 */
+    u16 cnt_high;
+    u16 cnt_low;
+    
 }G_DATA;
 
 G_DATA* data_getdata(void);

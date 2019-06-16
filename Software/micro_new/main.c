@@ -16,6 +16,7 @@
 #include "hardware.h"
 #include "uart.h"
 #include "display.h"
+#include "bpc.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
@@ -200,51 +201,17 @@ void __interrupt () ISR(void)
     {
 //        LED_STATE = (cnt++ % 2 == 0);
 
-
         timer_Timer1Reset();
 
     }
 
-    if(PIR2bits.CCP2IF)
+    if(capture_IsIntrpt())
     {
-        static u16 last_cnt = 0;
-        static u16 cnt_low = 0, cnt_high = 0;
-        u16 cnt_tmp = 0;
-        u16 cnt_int = 0;
-        cnt_tmp = CCPR2H;
-        cnt_tmp = (cnt_tmp << 8) + CCPR2L;
+        capture_handdle();
 
-        if(cnt_tmp > last_cnt)
-        {
-            cnt_int = cnt_tmp - last_cnt;
-        }
-        else
-        {
-            cnt_int = 0xffff - last_cnt;
-            cnt_int += cnt_tmp;
-        }
+        bpc_proc();
 
-        // 下降沿
-        if(CCP2CONbits.CCP2M == 0b0100)
-        {
-            cnt_high = cnt_int;
-//            cnt_low = 0;
-            LED_STATE = LED_STATE_OFF;
-
-        }
-        else
-        {
-            cnt_low = cnt_int;
-//            cnt_high = 0;
-            LED_STATE = LED_STATE_ON;
-
-        }
-   
-        last_cnt = cnt_tmp;
-
-        /* 翻转触发沿 */
-        CCP2CONbits.CCP2M = (CCP2CONbits.CCP2M == 0b0100)? 0b0101 : 0b0100;
-        PIR2bits.CCP2IF = 0;
+        capture_clrIntrpt();    
     }
 
 
@@ -258,7 +225,7 @@ void main(void)
     static u8 cnt = 0;
     // init config
     init_env();    
-    LED_STATE = 0;
+    led_SetState(FALSE);
 
 //    timer_start();
 
@@ -266,15 +233,7 @@ void main(void)
     timer_Timer1Init();
     timer_Timer1Start();
 
-    /* CPP2  */
-//    CCP2CONbits.CCP2M = 0b0101; // 捕捉上升沿
-    CCP2CONbits.CCP2M = 0b0100; // 捕捉下降沿
-    CME_DATA_TRI = 1;
-    // 外设中断标志位
-    PIR2bits.CCP2IF = 0;
-
-
-
+    capture_init();
 
     /* 初始显示状态 */
     display_update();
@@ -290,8 +249,6 @@ void main(void)
 
 
     }
-       
-    
     return;
 }
 

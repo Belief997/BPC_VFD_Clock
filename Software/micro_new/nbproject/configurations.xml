@@ -13,9 +13,6 @@
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
       <itemPath>main.c</itemPath>
-      <itemPath>receive_decode.c</itemPath>
-      <itemPath>update_time.c</itemPath>
-      <itemPath>update_display.c</itemPath>
       <itemPath>delay.c</itemPath>
       <itemPath>myiic.c</itemPath>
       <itemPath>timer.c</itemPath>
@@ -23,6 +20,10 @@
       <itemPath>data.c</itemPath>
       <itemPath>uart.c</itemPath>
       <itemPath>display.h</itemPath>
+      <itemPath>display.c</itemPath>
+      <itemPath>hardware.c</itemPath>
+      <itemPath>bpc.c</itemPath>
+      <itemPath>bpc.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>

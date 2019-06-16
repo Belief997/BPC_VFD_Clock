@@ -12,6 +12,31 @@
 #include "data.h"
 #include "timer.h"
 #include "display.h"
+#include "bpc.h"
+
+
+/* 计数转四进制 Quaternary */
+static u8 bpc_Cnt2Qua(void)
+{
+
+
+
+    return 0;
+}
+
+
+
+int bpc_proc(void)
+{
+    bpc_Cnt2Qua();
+
+    return 0;
+}
+
+
+
+
+
 
 
 static u8 times2number(u16 high_level_times){

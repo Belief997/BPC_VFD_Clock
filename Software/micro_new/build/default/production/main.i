@@ -9138,6 +9138,12 @@ typedef struct{
 
     u8 g_recv_buf[20];
     u16 cnt_update;
+
+
+
+    u16 cnt_high;
+    u16 cnt_low;
+
 }G_DATA;
 
 G_DATA* data_getdata(void);
@@ -9202,6 +9208,15 @@ typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length)
 int debug_proc(const unsigned char* cmdString, unsigned short length);
 # 16 "main.c" 2
 # 1 "./hardware.h" 1
+# 61 "./hardware.h"
+u8 capture_init(void);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
+
+
+
+u8 led_SetState(u8 isOn);
 # 17 "main.c" 2
 # 1 "./uart.h" 1
 # 17 "./uart.h"
@@ -9220,6 +9235,10 @@ void display_set(BOOL ison);
 
 void display_update(void);
 # 19 "main.c" 2
+# 1 "./bpc.h" 1
+# 14 "./bpc.h"
+int bpc_proc(void);
+# 20 "main.c" 2
 
 
 #pragma config FOSC = HS
@@ -9404,51 +9423,17 @@ void __attribute__((picinterrupt(""))) ISR(void)
     {
 
 
-
         timer_Timer1Reset();
 
     }
 
-    if(PIR2bits.CCP2IF)
+    if(capture_IsIntrpt())
     {
-        static u16 last_cnt = 0;
-        static u16 cnt_low = 0, cnt_high = 0;
-        u16 cnt_tmp = 0;
-        u16 cnt_int = 0;
-        cnt_tmp = CCPR2H;
-        cnt_tmp = (cnt_tmp << 8) + CCPR2L;
+        capture_handdle();
 
-        if(cnt_tmp > last_cnt)
-        {
-            cnt_int = cnt_tmp - last_cnt;
-        }
-        else
-        {
-            cnt_int = 0xffff - last_cnt;
-            cnt_int += cnt_tmp;
-        }
+        bpc_proc();
 
-
-        if(CCP2CONbits.CCP2M == 0b0100)
-        {
-            cnt_high = cnt_int;
-
-            LATBbits.LATB3 = LED_STATE_OFF;
-
-        }
-        else
-        {
-            cnt_low = cnt_int;
-
-            LATBbits.LATB3 = LED_STATE_ON;
-
-        }
-
-        last_cnt = cnt_tmp;
-
-
-        CCP2CONbits.CCP2M = (CCP2CONbits.CCP2M == 0b0100)? 0b0101 : 0b0100;
-        PIR2bits.CCP2IF = 0;
+        capture_clrIntrpt();
     }
 
 
@@ -9462,7 +9447,7 @@ void main(void)
     static u8 cnt = 0;
 
     init_env();
-    LATBbits.LATB3 = 0;
+    led_SetState(FALSE);
 
 
 
@@ -9470,15 +9455,7 @@ void main(void)
     timer_Timer1Init();
     timer_Timer1Start();
 
-
-
-    CCP2CONbits.CCP2M = 0b0100;
-    TRISCbits.TRISC1 = 1;
-
-    PIR2bits.CCP2IF = 0;
-
-
-
+    capture_init();
 
 
     display_update();
@@ -9494,7 +9471,5 @@ void main(void)
 
 
     }
-
-
     return;
 }

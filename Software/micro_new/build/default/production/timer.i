@@ -9131,6 +9131,12 @@ typedef struct{
 
     u8 g_recv_buf[20];
     u16 cnt_update;
+
+
+
+    u16 cnt_high;
+    u16 cnt_low;
+
 }G_DATA;
 
 G_DATA* data_getdata(void);

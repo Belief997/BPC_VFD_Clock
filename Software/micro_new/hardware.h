@@ -57,5 +57,17 @@
 /***************  define pin table  end  ******************/
 
 
+/* capture */
+u8 capture_init(void);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
+
+
+/* led */
+u8 led_SetState(u8 isOn);
+
+
+
 
 #endif
