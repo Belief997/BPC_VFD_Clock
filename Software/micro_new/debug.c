@@ -1,4 +1,3 @@
-#include <string.h>
 #include <stdio.h>
 //#include "log.h"
 #include "debug.h"
@@ -6,6 +5,12 @@
 
 //#include "led.h"
 #include "data.h"
+#include "uart.h"
+#include "string.h"
+#include <stdarg.h>
+
+
+
 #if 0
 #define MAX_CMD_LENGTH (16)
 #define MAX_CMD_NUMBER  (32)
@@ -91,3 +96,36 @@ int debug_proc(const unsigned char* cmdString, unsigned short length)
 }
 
 #endif
+
+
+
+
+//uart_Send_byte
+
+
+//void debug_log(char *format, ...)
+//{
+//    char buf[DISBUF_LEN] = {0};
+//    va_list p;
+//
+//    va_start(p, format);
+//    vsprintf(buf, format, p);
+//    va_end(p);
+//
+//    SEND_STR(buf);
+//}
+
+//void debug_log(char *fmt, ...)
+//{
+//    char buf[DISBUF_LEN] = {0};
+
+////    strcpy(buf, str);
+//    
+//    sprintf(buf, "[%d %s] "fmt "\n", __LINE__, __FUNCTION__, ##__VA_ARGS__);
+
+//    SEND_STR(buf);
+//}
+
+
+
+

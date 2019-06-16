@@ -217,18 +217,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./timer.h: 24: int timer_Timer0Handdle(void);
 [v _timer_Timer0Handdle `(i ~T0 @X0 0 ef ]
-"19 ./uart.h
-[; ;./uart.h: 19: void uart_Send_byte(u8 byte);
-[v _uart_Send_byte `(v ~T0 @X0 0 ef1`uc ]
 "78 ./hardware.h
 [; ;./hardware.h: 78: u8 led_Blink(void);
 [v _led_Blink `(uc ~T0 @X0 0 ef ]
-"17133 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17133: extern volatile __bit TXIF __attribute__((address(0x8C)));
-[v _TXIF `Vb ~T0 @X0 0 e@140 ]
-"20 ./uart.h
-[; ;./uart.h: 20: void ISR_uart_TX(void);
-[v _ISR_uart_TX `(v ~T0 @X0 0 ef ]
+"115 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"33 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\c99\string.h
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\c99\string.h: 33: char *strcpy (char *restrict, const char *restrict);
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"17127 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17127: extern volatile __bit TXEN __attribute__((address(0xCF5)));
+[v _TXEN `Vb ~T0 @X0 0 e@3317 ]
+"16896
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 16896: extern volatile __bit SYNC __attribute__((address(0xCF4)));
+[v _SYNC `Vb ~T0 @X0 0 e@3316 ]
+"16782
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 16782: extern volatile __bit SPEN __attribute__((address(0xCEF)));
+[v _SPEN `Vb ~T0 @X0 0 e@3311 ]
+"17130
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17130: extern volatile __bit TXIE __attribute__((address(0x48C)));
+[v _TXIE `Vb ~T0 @X0 0 e@1164 ]
+"4420
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4420:     struct {
+[s S231 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S231 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"4419
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4419: typedef union {
+[u S230 `S231 1 ]
+[n S230 . . ]
+"4431
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 4431: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x19E)));
+[v _TXSTAbits `VS230 ~T0 @X0 0 e@414 ]
+"3940
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3940: extern volatile unsigned char TXREG __attribute__((address(0x19A)));
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
+"54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\c99\string.h
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 [p mainexit ]
 "18 ./timer.h
 [; ;./timer.h: 18: void timer_Timer0Init(void);
@@ -1220,9 +1245,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 20 `i 627  ]
-[e $U 628  ]
-[e :U 627 ]
+[e $ < _i -> 20 `i 628  ]
+[e $U 629  ]
+[e :U 628 ]
 {
 "102
 [; ;main.c: 102:         PORTCbits.RC2 = BPC_PWR_ON;
@@ -1231,8 +1256,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 103: 
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 20 `i 627  ]
-[e :U 628 ]
+[e $ < _i -> 20 `i 628  ]
+[e :U 629 ]
 }
 "108
 [; ;main.c: 108:     else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
@@ -1251,7 +1276,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _display_set (1 . `E5222 1 ]
 "123
 [; ;main.c: 123:     if(INTCONbits.TMR0IF)
-[e :UE 626 ]
+[e :UE 627 ]
 }
 "126
 [; ;main.c: 126:         if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
@@ -1263,14 +1288,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "128
 [; ;main.c: 128:         {
-[v F5328 `uc ~T0 @X0 1 s history_key ]
-[i F5328
+[v F5498 `uc ~T0 @X0 1 s history_key ]
+[i F5498
 -> -> 0 `i `uc
 ]
 "129
 [; ;main.c: 129:             receive_decode();
-[v F5329 `us ~T0 @X0 1 s key_time_cnt ]
-[i F5329
+[v F5499 `us ~T0 @X0 1 s key_time_cnt ]
+[i F5499
 -> -> 0 `i `us
 ]
 "130
@@ -1279,7 +1304,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _pdata ( _data_getdata ..  ]
 "135
 [; ;main.c: 135:         {
-[e $ ! && == -> . *U _pdata 1 `ui -> . `E5222 0 `ui || == -> . *U _pdata 0 `ui -> . `E5222 1 `ui >= -> . *U _pdata 11 `ui -> -> 30 `i `ui 631  ]
+[e $ ! && == -> . *U _pdata 1 `ui -> . `E5222 0 `ui || == -> . *U _pdata 0 `ui -> . `E5222 1 `ui >= -> . *U _pdata 11 `ui -> -> 30 `i `ui 632  ]
 "137
 [; ;main.c: 137:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
 {
@@ -1309,21 +1334,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _IOCCFbits 0 1 -> . `E5222 0 `uc ]
 "148
 [; ;main.c: 148:     return;
-[e $UE 630  ]
+[e $UE 631  ]
 "149
 [; ;main.c: 149: }
 }
-[e $U 632  ]
+[e $U 633  ]
 "150
 [; ;main.c: 150: 
-[e :U 631 ]
-[e $ ! && && == -> . *U _pdata 1 `ui -> . `E5222 1 `ui == -> . . _IOCCFbits 0 1 `i -> . `E5222 1 `i == -> . `E5222 1 `ui -> . *U _pdata 2 `ui 633  ]
+[e :U 632 ]
+[e $ ! && && == -> . *U _pdata 1 `ui -> . `E5222 1 `ui == -> . . _IOCCFbits 0 1 `i -> . `E5222 1 `i == -> . `E5222 1 `ui -> . *U _pdata 2 `ui 634  ]
 "151
 [; ;main.c: 151: void __attribute__((picinterrupt(""))) ISR(void)
 {
 "152
 [; ;main.c: 152: {
-[e $ ! == -> . *U _pdata 9 `ui -> . `E5226 6 `ui 634  ]
+[e $ ! == -> . *U _pdata 9 `ui -> . `E5226 6 `ui 635  ]
 "153
 [; ;main.c: 153:     static u16 cnt = 0;
 {
@@ -1331,15 +1356,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U _pdata 9 -> . `E5226 7 `us ]
 "155
 }
-[e :U 634 ]
+[e :U 635 ]
 "156
 [e ( _timer_Timer0Start ..  ]
 "157
 }
-[e $U 635  ]
+[e $U 636  ]
 "158
-[e :U 633 ]
-[e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 636  ]
+[e :U 634 ]
+[e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 637  ]
 "159
 {
 "160
@@ -1348,55 +1373,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _IOCCFbits 0 1 -> . `E5222 0 `uc ]
 "162
 }
+[e :U 637 ]
 [e :U 636 ]
-[e :U 635 ]
-[e :U 632 ]
+[e :U 633 ]
 "165
-[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 637  ]
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 638  ]
 "166
 {
 "168
-[e $ ! && == -> . *U _pdata 1 `ui -> . `E5222 1 `ui || == -> . *U _pdata 2 `ui -> . `E5222 0 `ui >= -> . *U _pdata 9 `ui -> . `E5226 7 `ui 638  ]
+[e $ ! && == -> . *U _pdata 1 `ui -> . `E5222 1 `ui || == -> . *U _pdata 2 `ui -> . `E5222 0 `ui >= -> . *U _pdata 9 `ui -> . `E5226 7 `ui 639  ]
 "170
 {
 "171
 [e ( _receive_decode ..  ]
 "172
 }
-[e :U 638 ]
+[e :U 639 ]
 "174
 [e ( _update_time ..  ]
 "176
-[e $ ! == % -> ++ F5329 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 639  ]
+[e $ ! == % -> ++ F5499 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 640  ]
 "177
 {
 "178
-[e =<< F5328 -> -> 1 `i `uc ]
+[e =<< F5498 -> -> 1 `i `uc ]
 "179
-[e =| F5328 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5226 3 `i : -> 1 `i -> 0 `i `uc ]
+[e =| F5498 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5226 3 `i : -> 1 `i -> 0 `i `uc ]
 "181
-[e $ ! && == -> 3 `i & -> F5328 `i -> 15 `i == -> . `E5222 0 `ui -> . *U _pdata 0 `ui 640  ]
+[e $ ! && == -> 3 `i & -> F5498 `i -> 15 `i == -> . `E5222 0 `ui -> . *U _pdata 0 `ui 641  ]
 "182
 {
 "183
 [e = . *U _pdata 0 . `E5222 1 ]
 "184
 }
-[e :U 640 ]
+[e :U 641 ]
 "185
 }
-[e :U 639 ]
+[e :U 640 ]
 "187
 [e ( _timer_Timer0Reset ..  ]
 "188
-[e $UE 630  ]
+[e $UE 631  ]
 "189
 }
-[e :U 637 ]
+[e :U 638 ]
 "190
-[e $UE 630  ]
+[e $UE 631  ]
 "191
-[e :UE 630 ]
+[e :UE 631 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 "193
@@ -1406,13 +1431,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ISR ]
 [f ]
 "195
-[v F5332 `us ~T0 @X0 1 s cnt ]
-[i F5332
+[v F5502 `us ~T0 @X0 1 s cnt ]
+[i F5502
 -> -> 0 `i `us
 ]
 "207
 [; ;main.c: 207:     if(timer_IsTimer0Itrpt())
-[e $ ! != -> ( _timer_IsTimer0Itrpt ..  `ui -> -> 0 `i `ui 642  ]
+[e $ ! != -> ( _timer_IsTimer0Itrpt ..  `ui -> -> 0 `i `ui 643  ]
 "208
 [; ;main.c: 208:     {
 {
@@ -1421,112 +1446,153 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _timer_Timer0Handdle ..  ]
 "211
 [; ;main.c: 211:         if(cnt++ % 100 == 0)
-[e $ ! == % -> ++ F5332 -> -> 1 `i `us `ui -> -> 100 `i `ui -> -> 0 `i `ui 643  ]
+[e $ ! == % -> ++ F5502 -> -> 1 `i `us `ui -> -> 100 `i `ui -> -> 0 `i `ui 644  ]
 "212
 [; ;main.c: 212:         {
 {
-"213
-[; ;main.c: 213:             uart_Send_byte(0XA5);
-[e ( _uart_Send_byte (1 -> -> 165 `i `uc ]
 "214
-[; ;main.c: 214:             led_Blink();
-[e ( _led_Blink ..  ]
+[; ;main.c: 214:             static u8 tx = 0;
+[v F5503 `uc ~T0 @X0 1 s tx ]
+[i F5503
+-> -> 0 `i `uc
+]
 "215
-[; ;main.c: 215:         }
-}
-[e :U 643 ]
+[; ;main.c: 215:             led_Blink();
+[e ( _led_Blink ..  ]
 "217
-[; ;main.c: 217:         timer_Timer0Reset();
-[e ( _timer_Timer0Reset ..  ]
-"218
-[; ;main.c: 218:     }
-}
-[e :U 642 ]
-"231
-[; ;main.c: 231:     if(TXIF)
-[e $ ! _TXIF 644  ]
-"232
-[; ;main.c: 232:     {
+[; ;main.c: 217:             { char buf[(64)] = {0}; sprintf(buf, "[%d %s] ""test123456123456789ASD...\n" "\n", 217, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } };};
 {
-"233
-[; ;main.c: 233:         ISR_uart_TX();
-[e ( _ISR_uart_TX ..  ]
-"234
-[; ;main.c: 234:     }
+[v F5504 `uc ~T0 @X0 -> 64 `i s ]
+[i F5504
+:U ..
+-> -> 0 `i `uc
+..
+]
+[v _buf `uc ~T0 @X0 -> 64 `i a ]
+[e = _buf F5504 ]
+[e ( _sprintf (1 , , (. , &U _buf :s 1C -> 217 `i :s 2C ]
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v F5507 `uc ~T0 @X0 -> 64 `i s ]
+[i F5507
+:U ..
+-> 0 `c
+-> 0 `c
+..
+]
+[v _send `uc ~T0 @X0 -> 64 `i a ]
+[e = _send F5507 ]
+[e ( _strcpy (2 , &U _send -> &U _buf `*Cuc ]
+[e $U 645  ]
+[e :U 646 ]
+{
+[e = _TXEN -> -> 1 `i `b ]
+[e = _SYNC -> -> 0 `i `b ]
+[e = _SPEN -> -> 1 `i `b ]
+[e = _TXIE -> -> 1 `i `b ]
+[e $U 648  ]
+[e :U 649 ]
+[e :U 648 ]
+[e $ == -> 0 `i -> . . _TXSTAbits 0 1 `i 649  ]
+[e :U 650 ]
+[e = _TXREG -> *U + &U _send * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _send `ui `ux `uc ]
+[e = _TXIE -> -> 0 `i `b ]
+}
+[e :U 645 ]
+[e $ != -> _i `ui + ( _strlen (1 -> &U _send `*Cuc -> -> 1 `i `ui 646  ]
+[e :U 647 ]
+}
+}
+"219
+[; ;main.c: 219:             tx++;
+[e ++ F5503 -> -> 1 `i `uc ]
+"220
+[; ;main.c: 220:         }
 }
 [e :U 644 ]
-"240
-[; ;main.c: 240: }
-[e :UE 641 ]
+"222
+[; ;main.c: 222:         timer_Timer0Reset();
+[e ( _timer_Timer0Reset ..  ]
+"223
+[; ;main.c: 223:     }
+}
+[e :U 643 ]
+"245
+[; ;main.c: 245: }
+[e :UE 642 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"244
-[; ;main.c: 244: void main(void)
+"249
+[; ;main.c: 249: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"245
-[; ;main.c: 245: {
+"250
+[; ;main.c: 250: {
 {
 [e :U _main ]
 [f ]
-"246
-[; ;main.c: 246:     static u16 i = 0;
-[v F5334 `us ~T0 @X0 1 s i ]
-[i F5334
+"251
+[; ;main.c: 251:     static u16 i = 0;
+[v F5510 `us ~T0 @X0 1 s i ]
+[i F5510
 -> -> 0 `i `us
 ]
-"247
-[; ;main.c: 247:     static u8 cnt = 0;
-[v F5335 `uc ~T0 @X0 1 s cnt ]
-[i F5335
+"252
+[; ;main.c: 252:     static u8 cnt = 0;
+[v F5511 `uc ~T0 @X0 1 s cnt ]
+[i F5511
 -> -> 0 `i `uc
 ]
-"251
-[; ;main.c: 251:     init_env();
+"256
+[; ;main.c: 256:     init_env();
 [e ( _init_env ..  ]
-"254
-[; ;main.c: 254:     timer_Timer0Init();
+"259
+[; ;main.c: 259:     timer_Timer0Init();
 [e ( _timer_Timer0Init ..  ]
-"255
-[; ;main.c: 255:     timer_Timer0Start();
+"260
+[; ;main.c: 260:     timer_Timer0Start();
 [e ( _timer_Timer0Start ..  ]
-"266
-[; ;main.c: 266:     uart_init();
+"271
+[; ;main.c: 271:     uart_init();
 [e ( _uart_init ..  ]
-"269
-[; ;main.c: 269:     display_update();
-[e ( _display_update ..  ]
-"270
-[; ;main.c: 270:     led_SetState(FALSE);
-[e ( _led_SetState (1 -> . `E5222 0 `uc ]
-"272
-[; ;main.c: 272:     while(1)
-[e :U 647 ]
-"273
-[; ;main.c: 273:     {
-{
 "274
-[; ;main.c: 274:         if(i++ == 65535)
-[e $ ! == -> ++ F5334 -> -> 1 `i `us `l -> 65535 `l 649  ]
+[; ;main.c: 274:     display_update();
+[e ( _display_update ..  ]
 "275
-[; ;main.c: 275:         {
-{
+[; ;main.c: 275:     led_SetState(FALSE);
+[e ( _led_SetState (1 -> . `E5222 0 `uc ]
 "277
-[; ;main.c: 277:             display_set(FALSE);
-[e ( _display_set (1 . `E5222 0 ]
+[; ;main.c: 277:     while(1)
+[e :U 653 ]
+"278
+[; ;main.c: 278:     {
+{
 "279
-[; ;main.c: 279:         }
-}
-[e :U 649 ]
+[; ;main.c: 279:         if(i++ == 65535)
+[e $ ! == -> ++ F5510 -> -> 1 `i `us `l -> 65535 `l 655  ]
 "280
-[; ;main.c: 280:     }
-}
-[e :U 646 ]
-[e $U 647  ]
-[e :U 648 ]
-"281
-[; ;main.c: 281:     return;
-[e $UE 645  ]
+[; ;main.c: 280:         {
+{
 "282
-[; ;main.c: 282: }
-[e :UE 645 ]
+[; ;main.c: 282:             display_set(FALSE);
+[e ( _display_set (1 . `E5222 0 ]
+"284
+[; ;main.c: 284:         }
 }
+[e :U 655 ]
+"285
+[; ;main.c: 285:     }
+}
+[e :U 652 ]
+[e $U 653  ]
+[e :U 654 ]
+"286
+[; ;main.c: 286:     return;
+[e $UE 651  ]
+"287
+[; ;main.c: 287: }
+[e :UE 651 ]
+}
+[p f _sprintf 8650880 ]
+[a 2C 73 83 82 0 ]
+[a 1C 91 37 100 32 37 115 93 32 116 101 115 116 49 50 51 52 53 54 49 50 51 52 53 54 55 56 57 65 83 68 46 46 46 10 10 0 ]

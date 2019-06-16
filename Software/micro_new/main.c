@@ -195,12 +195,12 @@ void __interrupt () ISR(void)
     static u16 cnt = 0;
 
 
-//    if(timer_IsTimer1Itrpt())
-//    {
-////        LED_STATE = (cnt++ % 2 == 0);
-
-//        timer_Timer1ClrIntrpt();
-//    }
+    if(timer_IsTimer1Itrpt())
+    {
+//        LED_STATE = (cnt++ % 2 == 0);
+        LOG("HERE TIMER 1");
+        timer_Timer1ClrIntrpt();
+    }
     
 
 
@@ -210,8 +210,13 @@ void __interrupt () ISR(void)
         
         if(cnt++ % 100 == 0)// period = 1s
         {
-            uart_Send_byte(0xa5);
+//            uart_Send_byte(0xa5);
+            static u8 tx = 0;
             led_Blink();
+
+            LOG("test123456123456789ASD...  %d", tx);
+
+            tx++;
         }
         
         timer_Timer0Reset();
@@ -228,15 +233,8 @@ void __interrupt () ISR(void)
     }
 #endif
 
-    if(TXIF)
-    {
-        ISR_uart_TX();
-    }
 
-
-
-
-
+    
 }
 
 
@@ -254,9 +252,9 @@ void main(void)
     timer_Timer0Init();
     timer_Timer0Start();
 
-//    /* timer1 的初始化及其启动 */
-//    timer_Timer1Init();
-//    timer_Timer1Start();
+    /* timer1 的初始化及其启动 */
+    timer_Timer1Init();
+    timer_Timer1Start();
 
 //    /* 捕获初始化 */
 //    capture_init();
