@@ -9140,9 +9140,9 @@ u16 data_getTimeCnt(void);
 # 4 "timer.c" 2
 
 # 1 "./hardware.h" 1
-# 61 "./hardware.h"
+# 69 "./hardware.h"
 u8 capture_init(void);
-u8 capture_Start(void);
+u8 capture_Set(u8 isON);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);
@@ -9171,12 +9171,13 @@ void timer_Timer1Init(void)
 
     TMR1H = 0b0;
     TMR1L = 0b0;
-
-
+# 30 "timer.c"
     T1CONbits.TMR1CS = 0b00;
 
 
     T1CONbits.T1CKPS = 0b11;
+
+
 
 
 }
@@ -9196,7 +9197,7 @@ void timer_Timer1ClrIntrpt(void)
 {
     PIR1bits.TMR1IF = 0b0;
 }
-# 54 "timer.c"
+# 63 "timer.c"
 void timer_Timer0Init(void)
 {
 
@@ -9208,10 +9209,12 @@ void timer_Timer0Init(void)
 
 
 
+
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.TMR0CS = 0;
     OPTION_REGbits.PS = 4;
     TMR0 = (217 + 14);
+# 90 "timer.c"
 }
 void timer_Timer0Reset(void)
 {

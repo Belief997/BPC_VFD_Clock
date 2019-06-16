@@ -8847,7 +8847,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 10 "main.c" 2
+# 9 "main.c" 2
+
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8984,7 +8985,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "main.c" 2
+# 10 "main.c" 2
+
 # 1 "./function.h" 1
 
 
@@ -9063,7 +9065,8 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 8 "./function.h" 2
+# 7 "./function.h" 2
+
 # 1 "./data.h" 1
 
 
@@ -9149,7 +9152,8 @@ typedef struct{
 G_DATA* data_getdata(void);
 
 u16 data_getTimeCnt(void);
-# 9 "./function.h" 2
+# 8 "./function.h" 2
+
 
 
 
@@ -9161,7 +9165,8 @@ void receive_decode(void);
 
 
 void update_time(void);
-# 12 "main.c" 2
+# 11 "main.c" 2
+
 # 1 "./myiic.h" 1
 
 
@@ -9183,7 +9188,8 @@ void IIC_Ack(void);
 void IIC_NAck(void);
 unsigned char RD_temp(void);
 void IIC_temp(void);
-# 13 "main.c" 2
+# 12 "main.c" 2
+
 # 1 "./timer.h" 1
 # 11 "./timer.h"
 void timer_Timer1Init(void);
@@ -9200,7 +9206,8 @@ BOOL timer_IsTimer0Itrpt(void);
 
 
 int timer_Timer0Handdle(void);
-# 14 "main.c" 2
+# 13 "main.c" 2
+
 
 # 1 "./debug.h" 1
 
@@ -9208,11 +9215,12 @@ int timer_Timer0Handdle(void);
 
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 16 "main.c" 2
+# 15 "main.c" 2
+
 # 1 "./hardware.h" 1
-# 61 "./hardware.h"
+# 69 "./hardware.h"
 u8 capture_init(void);
-u8 capture_Start(void);
+u8 capture_Set(u8 isON);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);
@@ -9224,14 +9232,16 @@ u8 led_Blink(void);
 
 
 void key_isPressed(void);
-# 17 "main.c" 2
+# 16 "main.c" 2
+
 # 1 "./uart.h" 1
-# 17 "./uart.h"
-void init_uart(void);
-void Send_byte(void);
+# 18 "./uart.h"
+void uart_init(void);
+void uart_Send_byte(u8 byte);
 void ISR_uart_TX(void);
 void ISR_uart_RX(void);
-# 18 "main.c" 2
+# 17 "main.c" 2
+
 # 1 "./display.h" 1
 # 13 "./display.h"
 void display_set(BOOL ison);
@@ -9241,11 +9251,13 @@ void display_set(BOOL ison);
 
 
 void display_update(void);
-# 19 "main.c" 2
+# 18 "main.c" 2
+
 # 1 "./bpc.h" 1
 # 14 "./bpc.h"
 int bpc_proc(void);
-# 20 "main.c" 2
+# 19 "main.c" 2
+
 
 
 #pragma config FOSC = HS
@@ -9286,8 +9298,16 @@ void init_env(){
 
     OSCCONbits.SCS = 0b10;
 
-    OSCCONbits.IRCF = 0b1010;
-# 69 "main.c"
+
+
+    OSCCONbits.IRCF = 0b1011;
+
+
+
+
+
+
+
     OPTION_REGbits.nWPUEN = 0;
 
     TRISA = 0;
@@ -9411,35 +9431,30 @@ void tmp_change(void)
     return;
 }
 
-
 void __attribute__((picinterrupt(""))) ISR(void)
 {
-    static u8 cnt = 0;
-
-    if(timer_IsTimer1Itrpt())
-    {
-
-
-        timer_Timer1ClrIntrpt();
-        return ;
-    }
-
+    static u16 cnt = 0;
+# 207 "main.c"
     if(timer_IsTimer0Itrpt())
     {
         timer_Timer0Handdle();
 
+        if(cnt++ % 100 == 0)
+        {
+            uart_Send_byte(0XA5);
+            led_Blink();
+        }
+
         timer_Timer0Reset();
-        return ;
     }
-
-    if(capture_IsIntrpt())
+# 231 "main.c"
+    if(TXIF)
     {
-        capture_handdle();
-
-        bpc_proc();
-
-        capture_clrIntrpt();
+        ISR_uart_TX();
     }
+
+
+
 
 
 }
@@ -9457,15 +9472,9 @@ void main(void)
 
 
     timer_Timer0Init();
-
-
-
-    timer_Timer1Init();
-
-
-
-    capture_init();
-    capture_Start();
+    timer_Timer0Start();
+# 266 "main.c"
+    uart_init();
 
 
     display_update();
@@ -9473,8 +9482,9 @@ void main(void)
 
     while(1)
     {
-        if(i++ == 1000)
+        if(i++ == 65535)
         {
+
             display_set(FALSE);
 
         }
