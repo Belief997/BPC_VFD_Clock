@@ -11,15 +11,17 @@
 void timer_Timer1Init(void);
 void timer_Timer1Start(void);
 BOOL timer_IsTimer1Itrpt(void);
-void timer_Timer1Reset(void);
+void timer_Timer1ClrIntrpt(void);
 
 
 
-void timer_init(void);
-void timer_reset(void);
-void timer_start(void);
-void timer_stop(void);
-BOOL timer_isrunning(void);
+void timer_Timer0Init(void);
+void timer_Timer0Reset(void);
+void timer_Timer0Start(void);
+BOOL timer_IsTimer0Itrpt(void);
+
+
+int timer_Timer0Handdle(void);
 
 
 

@@ -68,8 +68,10 @@ BOOL capture_IsNegEdge(void);
 
 /* led */
 u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
 
-
+/* key */
+void key_isPressed(void);
 
 
 #endif

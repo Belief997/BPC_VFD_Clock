@@ -1,1 +1,1 @@
-build/default/production\timer.p1: timer.c function.h data.h
+build/default/production\timer.p1: timer.c data.h hardware.h
