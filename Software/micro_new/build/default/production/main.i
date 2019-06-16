@@ -9189,15 +9189,14 @@ void IIC_temp(void);
 void timer_Timer1Init(void);
 void timer_Timer1Start(void);
 BOOL timer_IsTimer1Itrpt(void);
-void timer_Timer1Reset(void);
+void timer_Timer1ClrIntrpt(void);
 
 
 
-void timer_init(void);
-void timer_reset(void);
-void timer_start(void);
-void timer_stop(void);
-BOOL timer_isrunning(void);
+void timer_Timer0Init(void);
+void timer_Timer0Reset(void);
+void timer_Timer0Start(void);
+BOOL timer_IsTimer0Itrpt(void);
 # 14 "main.c" 2
 
 # 1 "./debug.h" 1
@@ -9217,6 +9216,7 @@ int capture_handdle(void);
 
 
 u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
 # 17 "main.c" 2
 # 1 "./uart.h" 1
 # 17 "./uart.h"
@@ -9272,7 +9272,7 @@ void init_env(){
 
     INTCONbits.GIE = 0b1;
 
-    INTCONbits.IOCIE = 0b1;
+
 
 
 
@@ -9280,16 +9280,7 @@ void init_env(){
     OSCCONbits.SCS = 0b10;
 
     OSCCONbits.IRCF = 0b1010;
-
-
-    timer_init();
-
-
-
-
-
-
-
+# 69 "main.c"
     OPTION_REGbits.nWPUEN = 0;
 
     TRISA = 0;
@@ -9339,7 +9330,7 @@ void init_env(){
 
 
 
-    IIC_Init();
+
 
 
     display_set(TRUE);
@@ -9376,7 +9367,7 @@ void tmp_change(void)
         {
             pdata->g_recv_count = CODE_P1;
         }
-        timer_start();
+        timer_Timer0Start();
     }
     else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1)
     {
@@ -9407,10 +9398,30 @@ void tmp_change(void)
             }
         }
 
-        timer_reset();
+        timer_Timer0Reset();
         return;
     }
     return;
+}
+
+
+int timer_Timer0Handdle(void)
+{
+    static u8 history_key = 0;
+    static u16 key_time_cnt = 0;
+
+    if(key_time_cnt++ % 10 == 0)
+    {
+        history_key <<= 1;
+        history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+
+        if(((0x03) == (history_key & (0x0f))))
+        {
+              led_Blink();
+        }
+# 215 "main.c"
+    }
+
 }
 
 
@@ -9423,8 +9434,15 @@ void __attribute__((picinterrupt(""))) ISR(void)
     {
 
 
-        timer_Timer1Reset();
+        timer_Timer1ClrIntrpt();
 
+    }
+
+    if(timer_IsTimer0Itrpt())
+    {
+        timer_Timer0Handdle();
+
+        timer_Timer0Reset();
     }
 
     if(capture_IsIntrpt())
@@ -9446,8 +9464,14 @@ void main(void)
     static u16 i = 0;
     static u8 cnt = 0;
 
+
+
     init_env();
-    led_SetState(FALSE);
+
+
+    timer_Timer0Init();
+    timer_Timer0Start();
+
 
 
 
@@ -9455,10 +9479,12 @@ void main(void)
     timer_Timer1Init();
     timer_Timer1Start();
 
+
     capture_init();
 
 
     display_update();
+    led_SetState(FALSE);
 
     while(1)
     {

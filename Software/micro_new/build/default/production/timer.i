@@ -8978,9 +8978,7 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 3 "timer.c" 2
 
-# 1 "./function.h" 1
-
-
+# 1 "./data.h" 1
 
 
 
@@ -9056,12 +9054,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 8 "./function.h" 2
-# 1 "./data.h" 1
-
-
-
-
+# 5 "./data.h" 2
 
 
 
@@ -9142,19 +9135,8 @@ typedef struct{
 G_DATA* data_getdata(void);
 
 u16 data_getTimeCnt(void);
-# 9 "./function.h" 2
-
-
-
-
-
-void receive_decode(void);
-
-
-
-
-void update_time(void);
 # 5 "timer.c" 2
+
 
 
 
@@ -9184,8 +9166,6 @@ void timer_Timer1Start(void)
 {
 
     T1CONbits.TMR1ON = 0b1;
-
-
 }
 
 BOOL timer_IsTimer1Itrpt(void)
@@ -9193,14 +9173,12 @@ BOOL timer_IsTimer1Itrpt(void)
     return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
 }
 
-void timer_Timer1Reset(void)
+void timer_Timer1ClrIntrpt(void)
 {
     PIR1bits.TMR1IF = 0b0;
 }
-
-
-
-void timer_init(void)
+# 54 "timer.c"
+void timer_Timer0Init(void)
 {
 
     INTCONbits.GIE = 0b1;
@@ -9216,22 +9194,18 @@ void timer_init(void)
     OPTION_REGbits.PS = 4;
     TMR0 = (217 + 14);
 }
-void timer_reset(void)
+void timer_Timer0Reset(void)
 {
     INTCONbits.TMR0IF = 0;
     TMR0 = (217 + 14);
 }
-void timer_start(void)
+void timer_Timer0Start(void)
 {
-    timer_reset();
-    INTCONbits.TMR0IE = 0b0;
+    timer_Timer0Reset();
+    INTCONbits.TMR0IE = 0b1;
 }
-void timer_stop(void)
+
+BOOL timer_IsTimer0Itrpt(void)
 {
-    INTCONbits.TMR0IE = 0b0;
-    timer_reset();
-}
-BOOL timer_isrunning(void)
-{
-    return (BOOL)(INTCONbits.TMR0IE == 0b1);
+    return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
 }

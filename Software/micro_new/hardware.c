@@ -97,5 +97,11 @@ u8 led_SetState(u8 isOn)
     return 0;
 }
 
+u8 led_Blink(void)
+{
+    static u8 State = 0;
+    led_SetState(State++ & 0x01);
+    return 0;
+}
 
 

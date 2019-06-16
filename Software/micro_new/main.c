@@ -50,7 +50,7 @@ void init_env(){
     // globe interrup enable
     INTCONbits.GIE = 0b1;
     // ioc interrupt when read data from CME6005
-    INTCONbits.IOCIE = 0b1;
+//    INTCONbits.IOCIE = 0b1;
     
     /**
      * choose clk inside
@@ -59,8 +59,6 @@ void init_env(){
     /* set freq for inside clock : 500kHz , 2 us */
     OSCCONbits.IRCF = 0b1010;   
     
-       
-    timer_init();
     
     /**
      *  port use
@@ -117,7 +115,7 @@ void init_env(){
         
 
     /* init iic */
-    IIC_Init();
+//    IIC_Init();
     
     // light on when have power
     display_set(TRUE);
@@ -154,7 +152,7 @@ void tmp_change(void)
         {
             pdata->g_recv_count = CODE_P1;
         }
-        timer_start();
+        timer_Timer0Start();
     }
     else if(INTCONbits.IOCIF || CME_DATA_IOC_INT)
     {
@@ -185,10 +183,37 @@ void tmp_change(void)
             }
         }
         /* reset timer_0 */
-        timer_reset();
+        timer_Timer0Reset();
         return;
     }
     return;
+}
+
+
+int timer_Timer0Handdle(void)
+{
+    static u8 history_key = 0;
+    static u16 key_time_cnt = 0;
+    /* handle key event here */
+    if(key_time_cnt++ % 10 == 0) // look up key every 100ms
+    {
+        history_key <<= 1;
+        history_key |= (SWITCH_PORT == PIN_HIGH)? 0x01 : 0x00;
+        /* judge press by 4 states , press has been consumed */
+        if((KEY_PRESS == (history_key & KEY_CHECK_BITS)))
+        {
+              led_Blink();// SET KEY PRESS FLG
+        }
+        
+//            /* judge press by 4 states , press has been consumed */
+//            if((KEY_PRESS == (history_key & KEY_CHECK_BITS)) && (FALSE == pdata->g_flg_switch))
+//            {
+//                pdata->g_flg_switch = TRUE;  // SET KEY PRESS FLG
+//            }
+
+
+    }
+    return 0;
 }
 
 
@@ -201,8 +226,15 @@ void __interrupt () ISR(void)
     {
 //        LED_STATE = (cnt++ % 2 == 0);
 
-        timer_Timer1Reset();
+        timer_Timer1ClrIntrpt();
 
+    }
+
+    if(timer_IsTimer0Itrpt())
+    {
+        timer_Timer0Handdle();
+
+        timer_Timer0Reset();
     }
 
     if(capture_IsIntrpt())
@@ -223,20 +255,28 @@ void main(void)
 {
     static u16 i = 0;
     static u8 cnt = 0;
+
+    
     // init config
     init_env();    
-    led_SetState(FALSE);
+    
+    /* timer0 的初始化及其启动 */
+    timer_Timer0Init();
+    timer_Timer0Start();
 
-//    timer_start();
+
+    
 
     /* timer1 的初始化及其启动 */
     timer_Timer1Init();
     timer_Timer1Start();
 
+    /* 捕捉初始化 */
     capture_init();
 
     /* 初始显示状态 */
     display_update();
+    led_SetState(FALSE);
 
     while(1)
     {
