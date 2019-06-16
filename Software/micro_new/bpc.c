@@ -18,84 +18,26 @@
 /* 计数转四进制 Quaternary */
 static u8 bpc_Cnt2Qua(void)
 {
-
-
-
-    return 0;
-}
-
-
-
-int bpc_proc(void)
-{
-    bpc_Cnt2Qua();
-
-    return 0;
-}
-
-
-
-
-
-
-
-static u8 times2number(u16 high_level_times){
-    if(high_level_times >=  TIME_0_1 - BIAS  && high_level_times < TIME_0_1 + BIAS){          
-        //0.1s
-        return 0;
-    }else if(high_level_times >= TIME_0_2 - BIAS && high_level_times < TIME_0_2 + BIAS){   
-        //0.2s
-        return 1;
-    }else if(high_level_times >= TIME_0_3 - BIAS && high_level_times < TIME_0_3 + BIAS){   
-        //0.3s
-        return 2;
-    }else if(high_level_times >= TIME_0_4 - BIAS && high_level_times < TIME_0_4 + BIAS){   
-        //0.4s
-        return 3;
-    }else if(high_level_times >= TIME_0_4 + BIAS){               
-        // long high level
-        return 4;
+    G_DATA *pdata = data_getdata();
+    if(capture_IsNegEdge()){
+        // low level
+        if(pdata->cnt_low > COUNT_1S - COUNT_BIAS){
+            return CME_START;
+        }
     }else{
-        // long low level       
-        return 5;                                               
+        // g=high level
+        if(pdata->cnt_high > COUNT_100MS - COUNT_BIAS && pdata->cnt_high < COUNT_100MS + COUNT_BIAS){
+            return NUMBER_1;
+        }else if(pdata->cnt_high > COUNT_200MS - COUNT_BIAS && pdata->cnt_high < COUNT_200MS + COUNT_BIAS){
+            return NUMBER_2;
+        }else if(pdata->cnt_high > COUNT_300MS - COUNT_BIAS && pdata->cnt_high < COUNT_300MS + COUNT_BIAS){
+            return NUMBER_3;
+        }else if(pdata->cnt_high > COUNT_400MS - COUNT_BIAS && pdata->cnt_high < COUNT_400MS + COUNT_BIAS){
+            return NUMBER_4;
+        }
     }
+    return NUMBER_ERROR;
 }
-
-#ifdef TEST
-void test_get_number(u8 get_num){
-    if(get_num == 0){
-        GET_NUMBER_0 = 1;
-        GET_NUMBER_1 = 0;
-        GET_NUMBER_2 = 0;
-        GET_NUMBER_3 = 0;
-    }else if(get_num == 1){
-        GET_NUMBER_0 = 0;
-        GET_NUMBER_1 = 1;
-        GET_NUMBER_2 = 0;
-        GET_NUMBER_3 = 0;
-    }else if(get_num == 2){
-        GET_NUMBER_0 = 0;
-        GET_NUMBER_1 = 0;
-        GET_NUMBER_2 = 1;
-        GET_NUMBER_3 = 0;
-    }else if(get_num == 3){
-        GET_NUMBER_0 = 0;
-        GET_NUMBER_1 = 0;
-        GET_NUMBER_2 = 0;
-        GET_NUMBER_3 = 1;
-    }else if(get_num == 4){
-        GET_NUMBER_0 = 1;
-        GET_NUMBER_1 = 1;
-        GET_NUMBER_2 = 1;
-        GET_NUMBER_3 = 1;
-    }else if(get_num == 5){
-        GET_NUMBER_0 = 0;
-        GET_NUMBER_1 = 0;
-        GET_NUMBER_2 = 0;
-        GET_NUMBER_3 = 0;
-    }
-}
-#endif
 
 static int check_err(void)
 {
@@ -127,126 +69,53 @@ static int check_err(void)
     return 0;
 }
 
-void receive_decode(void) {
+int bpc_proc(void)
+{
     G_DATA *pdata = data_getdata();
-    // To advoid low level shake during high level time, and judge puls end
-    static u8 cnt_low = 0;
+    u8 number = bpc_Cnt2Qua();
     
-    // haven't find start P0, do not cnt 
-    if(pdata->g_find_recv_start == FALSE && CME_DATA_PORT == PIN_HIGH)
-    {
-        pdata->g_high_level_times = 0;
-        pdata->g_all_level_times = 0;
-        return;
+    if(pdata->find_data_start || CME_START == number){
+        if(!pdata->find_data_start){
+            pdata->find_data_start = TRUE;
+            pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
+        }
+    }else{
+        pdata->g_recv_buf_index = 0;
+        pdata->check_data_start = FALSE;
     }
     
-    
-    // read port get high level times, high puls count
-    if(CME_DATA_PORT == PIN_HIGH)
-    {
-        pdata->g_high_level_times++;
-//        pdata->g_high_level_times += cnt_low;
-        cnt_low = 0;
-    }
-    else
-    {
-        cnt_low++;
-    }
-    // get times of read
-    pdata->g_all_level_times++;
-    
-    // find time start
-    
-    if((pdata->g_all_level_times < MAX_HIGH_LEVEL_TIMES) && (FALSE == pdata->g_find_recv_start))
-    {
-        return;
-    }
-    else if( (cnt_low < 5) && (TRUE == pdata->g_find_recv_start) )
-    {
-        return ;
-    }
-    // init for read another high level
-    u8 read_value = times2number(pdata->g_high_level_times);
-#ifdef TEST
-    test_get_number(read_value);
-#endif
-    cnt_low = 0;
-    pdata->g_all_level_times = 0;
-    pdata->g_high_level_times = 0;
-    
-    if(FALSE == pdata->g_find_recv_start)
-    {
-        /* when we recive a long low level voltage, we get P0 */
-        if(read_value == 5)
-        {
-            // start to read data to buff
-            pdata->g_find_recv_start = TRUE;
-            pdata->g_recv_buf[CODE_P0] = 0;
-//            pdata->g_recv_count = CODE_P0;  
-//            timer_stop();
-            return;
-        } 
-        else
-        {
-            // wait P0
-            return;
+    if(!pdata->check_data_start && NUMBER_1 == number){
+        pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
+        
+        // received front three bits and start check
+        if(pdata->g_recv_buf_index == 3){
+            if(pdata->g_recv_buf[CODE_P1] == NUMBER_1 && pdata->g_recv_buf[CODE_P2] == NUMBER_1){
+                pdata->check_data_start = TRUE;
+            }else{
+                // check start err
+                pdata->g_recv_buf_index = 0;
+                pdata->find_data_start = FALSE;
+            }
         }
     }
-
     
-    if(pdata->g_find_recv_start == FALSE || (read_value == 4))
-    {
-        // FALSE: NOT get P0 yet
-        // 4: long high level -> err
+    // receive all 20 bits
+    pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
+    if(pdata->g_recv_buf_index < 20){
         return;
     }
+    u8 new_time_h = pdata->g_recv_buf[CODE_H_1] << 2 + \
+                    pdata->g_recv_buf[CODE_H_2];
+    u8 new_time_m = pdata->g_recv_buf[CODE_M_1] << 4 + \
+                    pdata->g_recv_buf[CODE_M_2] << 2 + \
+                    pdata->g_recv_buf[CODE_M_3];
     
-    /* Recive P3 and before */
-    pdata->g_recv_buf[pdata->g_recv_count++] = read_value;
-    if(pdata->g_recv_count <= CODE_P3)
-    {
-        return;
-    }
-
-    // check P1, P1: 0->1, 1->21, 2->41
-    if(pdata->g_recv_buf[CODE_P1] > 2)
-    {
-        pdata->g_find_recv_start = FALSE;
-        pdata->g_isDecoding = 0;
-        pdata->g_recv_count = 0;
-        return;
-    }
-    
-    u16 last_time_h = pdata->g_time_h;
-    u16 last_time_m = pdata->g_time_m;
-    u16 last_time_s = pdata->g_time_s;
-    
-    do{
-        if(check_err())
-        {
-            // wrong data recived
-            pdata->g_time_h = last_time_h;
-            pdata->g_time_m = last_time_m;
-            pdata->g_time_s = last_time_s;
-            break;
-        }
-
-        // we get no err then update display
-        if(last_time_h != pdata->g_time_h || last_time_m != pdata->g_time_m)
-        {
+    if(check_err() == 0){
+        if(new_time_h != pdata->g_time_h || new_time_m != pdata->g_time_m){
+            pdata->g_time_h = new_time_h;
+            pdata->g_time_m = new_time_m;
             display_update();
         }
-    }while(0);
-    
-    
-    // recv over ,then set flag to false
-    pdata->g_find_recv_start = FALSE;
-//    BPC_ON = BPC_PWR_OFF;
-    pdata->g_isDecoding = FALSE;
-    pdata->g_recv_count = CODE_P0;
-    for(int i = 0;i < RECV_BUF_MAX; i++)
-    {
-        pdata->g_recv_buf[i] = 5;
     }
-    return;
+    return 0;
 }

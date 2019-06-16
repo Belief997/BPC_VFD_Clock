@@ -70,6 +70,23 @@ enum{
 #define TIME_0_4 40    // 400ms
 #define BIAS 5         // 50ms
 
+#define COUNT_1S 15625
+#define COUNT_100MS 1562
+#define COUNT_200MS 3125
+#define COUNT_300MS 4687
+#define COUNT_400MS 6250
+#define COUNT_500MS 7812
+#define COUNT_BIAS 300
+
+
+#define NUMBER_1 0
+#define NUMBER_2 1
+#define NUMBER_3 2
+#define NUMBER_4 3
+#define NUMBER_ERROR 4
+#define CME_START 5
+
+
 typedef struct{
    // bool value used in receive_decode
     volatile BOOL g_flg_switch;        // switch
@@ -88,6 +105,10 @@ typedef struct{
     u16 g_recv_count;
     // read time buf in receive_code
     u8 g_recv_buf[RECV_BUF_MAX];
+    u8 g_recv_buf_index;
+    BOOL find_data_start;
+    BOOL check_data_start;
+    
     u16 cnt_update;
 
 
