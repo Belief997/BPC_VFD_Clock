@@ -204,7 +204,12 @@ void __interrupt () ISR(void)
     if(timer_IsTimer0Itrpt())
     {
         timer_Timer0Handdle();
-
+		
+		if(key_isPressed())
+		{
+			capture_Set(TRUE)
+		}
+		
         timer_Timer0Reset();
     }
 

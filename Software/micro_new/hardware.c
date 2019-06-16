@@ -120,7 +120,7 @@ u8 led_Blink(void)
 
 
 /* key api */
-void key_isPressed(void)
+void key_checkPressed(void)
 {
     static u8 history_key = 0;
     static u16 key_time_cnt = 0;
@@ -141,4 +141,10 @@ void key_isPressed(void)
     }
 
 }
+
+BOOL key_isPressed(void)
+{
+	return pdata->g_flg_switch == TRUE;
+}
+	
 

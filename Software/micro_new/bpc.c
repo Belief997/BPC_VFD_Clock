@@ -126,6 +126,9 @@ int bpc_proc(void)
     pdata->g_find_recv_start = FALSE;
 //    BPC_ON = BPC_PWR_OFF;
     pdata->g_isDecoding = FALSE;
+
+	// set ccp
+	capture_Set(FALSE)
     pdata->g_recv_count = CODE_P0;
     for(int i = 0;i < RECV_BUF_MAX; i++)
     {

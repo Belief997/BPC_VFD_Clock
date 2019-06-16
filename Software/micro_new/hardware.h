@@ -72,7 +72,7 @@ u8 led_SetState(u8 isOn);
 u8 led_Blink(void);
 
 /* key */
-void key_isPressed(void);
-
+BOOL key_isPressed(void);
+void key_checkPressed(void);
 
 #endif

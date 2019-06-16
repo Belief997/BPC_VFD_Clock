@@ -87,7 +87,7 @@ BOOL timer_IsTimer0Itrpt(void)
 
 int timer_Timer0Handdle(void)
 {
-    key_isPressed();
+    key_checkPressed();
 
     return 0;
 }
