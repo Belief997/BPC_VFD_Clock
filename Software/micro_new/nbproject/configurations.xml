@@ -14,9 +14,6 @@
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
       <itemPath>main.c</itemPath>
-      <itemPath>receive_decode.c</itemPath>
-      <itemPath>update_time.c</itemPath>
-      <itemPath>update_display.c</itemPath>
       <itemPath>delay.c</itemPath>
       <itemPath>myiic.c</itemPath>
       <itemPath>timer.c</itemPath>
