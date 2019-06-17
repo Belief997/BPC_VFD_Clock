@@ -30,6 +30,16 @@
 // define light controll
 #define Light_on PORTAbits.RA0
 
+
+// define state led
+#define LED_STATE   LATBbits.LATB3
+
+//// define uart_debug port
+//#define DEBUG_TX
+//#define DEBUG_RX 
+
+
+
 // define RTC chip port
 #define PIC_INT PORTCbits.RC0
 #define PIC_INT_TRI TRISCbits.TRISC0
@@ -38,8 +48,6 @@
 #define PIC_SDA PORTCbits.RC4
 #define CLKOUT PORTAbits.RA7        // EXTERN CLK IN
 
-// define state led
-#define LED_STATE   LATBbits.LATB3
 
 #define TEST
 #ifdef TEST

@@ -56,9 +56,10 @@ void init_env(){
      * choose clk inside
      */
     OSCCONbits.SCS = 0b10;      // set to use inside clock
-    /* set freq for inside clock : 500kHz , 2 us */
-    OSCCONbits.IRCF = 0b1010;   
-    
+//    /* set freq for inside clock : 500kHz , 2 us */
+//    OSCCONbits.IRCF = 0b1010;   
+    /* set freq for inside clock : 1 MHz , 1 us */
+    OSCCONbits.IRCF = 0b1011;      
     
     /**
      *  port use
@@ -189,29 +190,47 @@ void tmp_change(void)
     return;
 }
 
-
 void __interrupt () ISR(void)
 {
-    static u8 cnt = 0;
+    static u16 cnt = 0;
+
 
     if(timer_IsTimer1Itrpt())
     {
 //        LED_STATE = (cnt++ % 2 == 0);
-
+        LOG("HERE TIMER 1");
         timer_Timer1ClrIntrpt();
     }
+    
+
 
     if(timer_IsTimer0Itrpt())
     {
         timer_Timer0Handdle();
+<<<<<<< HEAD
 		
 		if(key_isPressed())
 		{
 			capture_Set(TRUE);
 		}
 		
+=======
+        
+        if(cnt++ % 100 == 0)// period = 1s
+        {
+//            uart_Send_byte(0xa5);
+            static u8 tx = 0;
+            led_Blink();
+
+            LOG("test123456123456789ASD...  %d", tx);
+
+            tx++;
+        }
+        
+>>>>>>> uart
         timer_Timer0Reset();
     }
+#if 0
 
     if(capture_IsIntrpt())
     {
@@ -221,8 +240,10 @@ void __interrupt () ISR(void)
 
         capture_clrIntrpt();    
     }
+#endif
 
 
+    
 }
 
 
@@ -244,9 +265,12 @@ void main(void)
     timer_Timer1Init();
     timer_Timer1Start();
 
-    /* 捕获初始化 */
-    capture_init();
-    capture_Set(TRUE);
+//    /* 捕获初始化 */
+//    capture_init();
+//    capture_Set(TRUE);
+
+    // 
+    uart_init();
 
     /* 初始显示状态 */
     display_update();
@@ -254,8 +278,9 @@ void main(void)
 
     while(1)
     {
-        if(i++  == 1000)
+        if(i++  == 65535)
         {          
+//            led_Blink();
             display_set(FALSE);
 //            update_display();
         }

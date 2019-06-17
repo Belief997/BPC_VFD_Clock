@@ -5,12 +5,12 @@
         <group>
             <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/data.h</file>
             <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/hardware.c</file>
-            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/display.h</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/debug.c</file>
             <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/timer.c</file>
+            <file>file:/F:/other_software/MPLAB_X_IDE/xc8/v2.00/pic/include/pic16f1786.h</file>
+            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/data.c</file>
             <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/hardware.h</file>
             <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/uart.c</file>
-            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/display.c</file>
-            <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/receive_decode.c</file>
             <file>file:/F:/Github/BPC_VFD_Clock/Software/micro_new/main.c</file>
         </group>
     </open-files>
