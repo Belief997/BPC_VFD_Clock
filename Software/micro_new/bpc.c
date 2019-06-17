@@ -77,18 +77,18 @@ int bpc_proc(void)
     u8 number = bpc_Cnt2Qua();
     
     // find start
-    if(pdata->find_data_start || CME_START == number){
-        if(!pdata->find_data_start){
-            pdata->find_data_start = TRUE;
-            pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
+    if(pdata->g_find_recv_start || CME_START == number){
+        if(!pdata->g_find_recv_start){
+            pdata->g_find_recv_start = TRUE;
+            pdata->g_recv_buf[pdata->g_recv_count++] = number;
         }
     }else{
-        pdata->g_recv_buf_index = 0;
+        pdata->g_recv_count = 0;
     }
 
     // receive bits before CODE_P3
-    pdata->g_recv_buf[pdata->g_recv_buf_index++] = number;
-    if(pdata->g_recv_buf_index <= CODE_P3){
+    pdata->g_recv_buf[pdata->g_recv_count++] = number;
+    if(pdata->g_recv_count <= CODE_P3){
         return 0;
     }
     

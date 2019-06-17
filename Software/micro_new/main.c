@@ -207,7 +207,7 @@ void __interrupt () ISR(void)
 		
 		if(key_isPressed())
 		{
-			capture_Set(TRUE)
+			capture_Set(TRUE);
 		}
 		
         timer_Timer0Reset();
