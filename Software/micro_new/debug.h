@@ -2,7 +2,6 @@
 #define _DEBUG_H_
 
 #include "data.h"
-#include "data.h"
 #include "uart.h"
 #include "string.h"
 #include <stdarg.h>
