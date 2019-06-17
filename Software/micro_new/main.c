@@ -198,7 +198,7 @@ void __interrupt () ISR(void)
     if(timer_IsTimer1Itrpt())
     {
 //        LED_STATE = (cnt++ % 2 == 0);
-        LOG("HERE TIMER 1");
+        //LOG("HERE TIMER 1");
         timer_Timer1ClrIntrpt();
     }
     
@@ -207,14 +207,12 @@ void __interrupt () ISR(void)
     if(timer_IsTimer0Itrpt())
     {
         timer_Timer0Handdle();
-<<<<<<< HEAD
 		
 		if(key_isPressed())
 		{
+            capture_init();
 			capture_Set(TRUE);
 		}
-		
-=======
         
         if(cnt++ % 100 == 0)// period = 1s
         {
@@ -222,15 +220,12 @@ void __interrupt () ISR(void)
             static u8 tx = 0;
             led_Blink();
 
-            LOG("test123456123456789ASD...  %d", tx);
+            //LOG("test123456123456789ASD...  %d", tx);
 
             tx++;
         }
-        
->>>>>>> uart
         timer_Timer0Reset();
     }
-#if 0
 
     if(capture_IsIntrpt())
     {
@@ -240,10 +235,6 @@ void __interrupt () ISR(void)
 
         capture_clrIntrpt();    
     }
-#endif
-
-
-    
 }
 
 

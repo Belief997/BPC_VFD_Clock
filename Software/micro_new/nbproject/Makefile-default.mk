@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c delay.c myiic.c timer.c debug.c data.c uart.c bpc.c hardware.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c delay.c myiic.c timer.c debug.c data.c uart.c bpc.c hardware.c display.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/myiic.p1 ${OBJECTDIR}/timer.p1 ${OBJECTDIR}/debug.p1 ${OBJECTDIR}/data.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/bpc.p1 ${OBJECTDIR}/hardware.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/delay.p1.d ${OBJECTDIR}/myiic.p1.d ${OBJECTDIR}/timer.p1.d ${OBJECTDIR}/debug.p1.d ${OBJECTDIR}/data.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/bpc.p1.d ${OBJECTDIR}/hardware.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/myiic.p1 ${OBJECTDIR}/timer.p1 ${OBJECTDIR}/debug.p1 ${OBJECTDIR}/data.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/bpc.p1 ${OBJECTDIR}/hardware.p1 ${OBJECTDIR}/display.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/delay.p1.d ${OBJECTDIR}/myiic.p1.d ${OBJECTDIR}/timer.p1.d ${OBJECTDIR}/debug.p1.d ${OBJECTDIR}/data.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/bpc.p1.d ${OBJECTDIR}/hardware.p1.d ${OBJECTDIR}/display.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/myiic.p1 ${OBJECTDIR}/timer.p1 ${OBJECTDIR}/debug.p1 ${OBJECTDIR}/data.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/bpc.p1 ${OBJECTDIR}/hardware.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/myiic.p1 ${OBJECTDIR}/timer.p1 ${OBJECTDIR}/debug.p1 ${OBJECTDIR}/data.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/bpc.p1 ${OBJECTDIR}/hardware.p1 ${OBJECTDIR}/display.p1
 
 # Source Files
-SOURCEFILES=main.c delay.c myiic.c timer.c debug.c data.c uart.c bpc.c hardware.c
+SOURCEFILES=main.c delay.c myiic.c timer.c debug.c data.c uart.c bpc.c hardware.c display.c
 
 
 CFLAGS=
@@ -165,6 +165,14 @@ ${OBJECTDIR}/hardware.p1: hardware.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/hardware.d ${OBJECTDIR}/hardware.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/hardware.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/display.p1: display.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/display.p1.d 
+	@${RM} ${OBJECTDIR}/display.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/display.p1 display.c 
+	@-${MV} ${OBJECTDIR}/display.d ${OBJECTDIR}/display.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -237,6 +245,14 @@ ${OBJECTDIR}/hardware.p1: hardware.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/hardware.p1 hardware.c 
 	@-${MV} ${OBJECTDIR}/hardware.d ${OBJECTDIR}/hardware.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/hardware.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/display.p1: display.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/display.p1.d 
+	@${RM} ${OBJECTDIR}/display.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/display.p1 display.c 
+	@-${MV} ${OBJECTDIR}/display.d ${OBJECTDIR}/display.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -82,13 +82,13 @@ void display_update(void)
 //               segmcode[g_data.g_time_m % 10]); 
     
 //    write_once(0x03, 0x0c, 0x30, 0xc0); // 4 3 2 1
-    static u8 i=0;
-    
-
-    
-    display_write_once(segmcode[i%10], segmcode[i%10], segmcode[i%10], segmcode[i%10]); // 4 3 2 1
-
-    i++;
+    //static u8 i=0;
+    G_DATA *pdata = data_getdata();
+    display_write_once(segmcode[(pdata->g_time_h/10 == 0? 10:pdata->g_time_h/10)], \
+                          segmcode[pdata->g_time_h%10], \
+                          segmcode[pdata->g_time_m/10], \
+                          segmcode[pdata->g_time_m%10]); // 4 3 2 1
+    //i++;
     return;
 }
 

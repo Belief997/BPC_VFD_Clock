@@ -71,13 +71,13 @@ enum{
 #define BIAS 5         // 50ms
 
 // new define of timer
-#define COUNT_1S 15625
-#define COUNT_100MS 1562
-#define COUNT_200MS 3125
-#define COUNT_300MS 4687
-#define COUNT_400MS 6250
-#define COUNT_500MS 7812
-#define COUNT_BIAS 300
+#define COUNT_1S 31030
+#define COUNT_100MS 3103
+#define COUNT_200MS 6208
+#define COUNT_300MS 9311
+#define COUNT_400MS 12417
+#define COUNT_500MS 15578
+#define COUNT_BIAS 1550
 
 
 #define NUMBER_1 0
@@ -86,6 +86,7 @@ enum{
 #define NUMBER_4 3
 #define NUMBER_ERROR 4
 #define CME_START 5
+#define NO_NEED 6
 
 
 typedef struct{

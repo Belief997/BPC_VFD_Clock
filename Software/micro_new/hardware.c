@@ -139,12 +139,17 @@ void key_checkPressed(void)
             led_Blink();// SET KEY PRESS FLG
         }
     }
-
 }
 
 BOOL key_isPressed(void)
 {
-	return pdata->g_flg_switch == TRUE;
+    G_DATA *pdata = data_getdata();
+    if(pdata->g_flg_switch == TRUE){
+        pdata->g_flg_switch = FALSE;
+        return TRUE;
+    }else{
+        return FALSE;
+    }
 }
 	
 
