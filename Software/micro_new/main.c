@@ -171,7 +171,7 @@ void tmp_change(void)
             receive_decode();
         }
         
-        update_time();
+        //update_time();
         /* handle key event here */
         if(key_time_cnt++ % 10 == 0) // look up key every 100ms
         {
@@ -192,9 +192,7 @@ void tmp_change(void)
 
 void __interrupt () ISR(void)
 {
-    static u16 cnt = 0;
-
-
+    //static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
 //        LED_STATE = (cnt++ % 2 == 0);
@@ -202,32 +200,30 @@ void __interrupt () ISR(void)
         timer_Timer1ClrIntrpt();
     }
     
-
-
     if(timer_IsTimer0Itrpt())
-    {
+    { // 100ms
         timer_Timer0Handdle();
 		
 		if(key_isPressed())
 		{
-            capture_init();
 			capture_Set(TRUE);
 		}
-        
+/*
         if(cnt++ % 100 == 0)// period = 1s
         {
-//            uart_Send_byte(0xa5);
+//          uart_Send_byte(0xa5);
             static u8 tx = 0;
-            led_Blink();
+            //led_Blink();
 
             //LOG("test123456123456789ASD...  %d", tx);
 
             tx++;
         }
+ */    
         timer_Timer0Reset();
     }
 
-    if(capture_IsIntrpt())
+    if(capture_IsEnable() && capture_IsIntrpt())
     {
         capture_handdle();
 
@@ -257,8 +253,8 @@ void main(void)
     timer_Timer1Start();
 
 //    /* 捕获初始化 */
-//    capture_init();
-//    capture_Set(TRUE);
+    capture_init();
+    capture_Set(FALSE);
 
     // 
     uart_init();
@@ -269,12 +265,14 @@ void main(void)
 
     while(1)
     {
+        /*
         if(i++  == 65535)
         {          
 //            led_Blink();
-            display_set(FALSE);
+            //display_set(FALSE);
 //            update_display();
         }
+        */
     }
     return;
 }

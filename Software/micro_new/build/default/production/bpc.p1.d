@@ -5,4 +5,6 @@ data.h  \
 hardware.h  \
 timer.h  \
 display.h  \
-bpc.h 
+bpc.h  \
+debug.h  \
+uart.h 

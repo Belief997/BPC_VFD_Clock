@@ -144,7 +144,6 @@ int bpc_proc(void)
 
 	// set ccp
 	capture_Set(FALSE);
-    CME_DATA_TRI = 1;
     pdata->g_recv_count = CODE_P0;
     for(int i = 0;i < RECV_BUF_MAX; i++)
     {

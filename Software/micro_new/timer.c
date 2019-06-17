@@ -3,7 +3,7 @@
 
 #include "data.h"
 #include "hardware.h"
-
+#include "display.h"
 /*  timer1  */
 /* 16位递增计数器 */
 void timer_Timer1Init(void)
@@ -69,12 +69,13 @@ void timer_Timer0Init(void)
     INTCONbits.TMR0IE = 0b0;
 
     /* 50 ms */
-    // use divide freq, set to 100Hz
-    // 100Hz * (256 - start_value) * divider = Focs / 4
-    // Focs = 500kHz; divider = 32; len = 39.0625 start = 217
+    // use divide freq, set to 10Hz
+    // 10Hz * (256 - start_value) * divider = Focs / 4
+    // Focs = 1MHz; divider = 256; len = 39.0625 start = 159
+    // set 100ms
     OPTION_REGbits.PSA = 0; 
-    OPTION_REGbits.TMR0CS = 0; // Focs / 4
-    OPTION_REGbits.PS = 4;     // divide <2:0> :32:0b100 = 4
+    OPTION_REGbits.TMR0CS = 0;
+    OPTION_REGbits.PS = 7;  
     TMR0 = TIMER_0_RST;
 
 //    // use divide freq, set to 100Hz
@@ -108,6 +109,8 @@ BOOL timer_IsTimer0Itrpt(void)
 
 int timer_Timer0Handdle(void)
 {
+    update_time();
+    
     key_checkPressed();
 
     return 0;

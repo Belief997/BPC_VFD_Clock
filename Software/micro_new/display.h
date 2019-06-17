@@ -15,9 +15,10 @@ void display_set(BOOL ison);
 /**
  * @func:update dispaly and call by update_time
  */
+void update_time(void);
 
-void display_update(void); 
 
+void display_update(void);
 
 
 #endif	/* DISPLAY_H */

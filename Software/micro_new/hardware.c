@@ -45,7 +45,10 @@ u8 capture_Set(u8 isON)
     PIE2bits.CCP2IE = (isON)? 1 : 0;
     return 0;
 }
-
+BOOL capture_IsEnable(void)
+{
+    return (PIE2bits.CCP2IE == 0b1)? TRUE : FALSE;
+}
 BOOL capture_IsIntrpt(void)
 {
     return (PIR2bits.CCP2IF == 0b1)? TRUE : FALSE;

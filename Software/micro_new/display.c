@@ -96,14 +96,7 @@ void update_time(void)
 {
     G_DATA *pdata = data_getdata();
     pdata->g_time_10ms++;
-#ifdef TEST
-    if( 50 == pdata->g_time_10ms ){
-        SECOND_LIGHT = 1;
-    }else if( 100 == pdata->g_time_10ms ){
-        SECOND_LIGHT = 0;
-    }
-#endif
-    if(pdata->g_time_10ms == 100)
+    if(pdata->g_time_10ms == 10)
     { // 1s
         pdata->g_time_10ms = 0;
         pdata->g_time_s++;
@@ -113,6 +106,9 @@ void update_time(void)
             pdata->g_time_m++;
             pdata->g_time_s = 0;
             pdata->cnt_update++;
+            if(pdata->g_time_m % 30 == 0){
+                capture_Set(TRUE);
+            }
             if(pdata->g_time_m == 60)
             { // 1hr
                 pdata->g_time_h++;

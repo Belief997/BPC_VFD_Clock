@@ -60,15 +60,18 @@ enum{
 /// some value define
 #define RECV_BUF_MAX 20
 
-// calculate + bias
-#define TIMER_0_RST (217 + 14)
 // decode time : code pulse time
+/*
 #define MAX_HIGH_LEVEL_TIMES 100  // 1s
 #define TIME_0_1 10    // 100ms
 #define TIME_0_2 20    // 200ms
 #define TIME_0_3 30    // 300ms
 #define TIME_0_4 40    // 400ms
 #define BIAS 5         // 50ms
+*/
+
+// calculate + bias
+#define TIMER_0_RST (159 + 0)
 
 // new define of timer
 #define COUNT_1S 31030
@@ -78,7 +81,6 @@ enum{
 #define COUNT_400MS 12417
 #define COUNT_500MS 15578
 #define COUNT_BIAS 1550
-
 
 #define NUMBER_1 0
 #define NUMBER_2 1
