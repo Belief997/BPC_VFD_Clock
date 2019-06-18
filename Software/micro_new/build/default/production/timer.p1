@@ -83,12 +83,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "856
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 856: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
 [v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"18 ./display.h
-[; ;./display.h: 18: void update_time(void);
-[v _update_time `(v ~T0 @X0 0 ef ]
 "85 ./hardware.h
 [; ;./hardware.h: 85: void key_checkPressed(void);
 [v _key_checkPressed `(v ~T0 @X0 0 ef ]
+"18 ./display.h
+[; ;./display.h: 18: void update_time(void);
+[v _update_time `(v ~T0 @X0 0 ef ]
 "54 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1102,11 +1102,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _timer_Timer0Handdle ]
 [f ]
 "112
-[; ;timer.c: 112:     update_time();
-[e ( _update_time ..  ]
-"114
-[; ;timer.c: 114:     key_checkPressed();
+[; ;timer.c: 112:     key_checkPressed();
 [e ( _key_checkPressed ..  ]
+"114
+[; ;timer.c: 114:     update_time();
+[e ( _update_time ..  ]
 "116
 [; ;timer.c: 116:     return 0;
 [e ) -> 0 `i ]

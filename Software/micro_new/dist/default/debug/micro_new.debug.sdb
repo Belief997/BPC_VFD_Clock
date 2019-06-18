@@ -274,11 +274,11 @@ TRUE 1
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-[v _data_getdata data_getdata `(*.4VES52  1 e 1 0 ]
+[v _data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-[v i1_data_getdata data_getdata `(*.4VES52  1 e 1 0 ]
+[v i1_data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
 "3 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\delay.c
 [v _delay_2us delay_2us `(v  1 e 1 0 ]
 "14 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
@@ -297,16 +297,44 @@ TRUE 1
 [v i1_display_update display_update `(v  1 e 1 0 ]
 "95
 [v _update_time update_time `(v  1 e 1 0 ]
+"1 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
 "5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 [v i1___awdiv __awdiv `(i  1 e 2 0 ]
 "5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 [v i1___awmod __awmod `(i  1 e 2 0 ]
+"72 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+"546
+[v _stoa stoa `(i  1 s 2 stoa ]
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.5uc  1 e 1 0 ]
+"12 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
 "4 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
@@ -405,7 +433,7 @@ TRUE 1
 ]
 [u S85 . 1 `S71 1 . 1 0 `S80 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES85  1 e 1 @11 ]
-[s S1365 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1425 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -415,10 +443,10 @@ TRUE 1
 `uc 1 RA7 1 0 :1:7 
 ]
 "449
-[s S1374 . 1 `uc 1 PORTA 1 0 :8:0 
+[s S1434 . 1 `uc 1 PORTA 1 0 :8:0 
 ]
-[u S1376 . 1 `S1365 1 . 1 0 `S1374 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1376  1 e 1 @12 ]
+[u S1436 . 1 `S1425 1 . 1 0 `S1434 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1436  1 e 1 @12 ]
 [s S288 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
@@ -433,7 +461,7 @@ TRUE 1
 ]
 [u S299 . 1 `S288 1 . 1 0 `S297 1 . 1 0 ]
 [v _PORTCbits PORTCbits `VES299  1 e 1 @14 ]
-[s S656 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S716 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -443,9 +471,9 @@ TRUE 1
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "677
-[u S665 . 1 `S656 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES665  1 e 1 @17 ]
-[s S1155 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S725 . 1 `S716 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES725  1 e 1 @17 ]
+[s S1215 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 C3IF 1 0 :1:1 
 `uc 1 C4IF 1 0 :1:2 
 `uc 1 BCL1IF 1 0 :1:3 
@@ -455,15 +483,15 @@ TRUE 1
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "739
-[u S1164 . 1 `S1155 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES1164  1 e 1 @18 ]
+[u S1224 . 1 `S1215 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES1224  1 e 1 @18 ]
 "856
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "883
 [v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
 "903
 [v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
-[s S679 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S739 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -473,12 +501,12 @@ TRUE 1
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "945
-[s S688 . 1 `uc 1 . 1 0 :4:0 
+[s S748 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S692 . 1 `S679 1 . 1 0 `S688 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES692  1 e 1 @24 ]
+[u S752 . 1 `S739 1 . 1 0 `S748 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES752  1 e 1 @24 ]
 "1176
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1246
@@ -499,7 +527,7 @@ TRUE 1
 ]
 [u S191 . 1 `S180 1 . 1 0 `S189 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES191  1 e 1 @142 ]
-[s S635 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S695 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -509,9 +537,9 @@ TRUE 1
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1424
-[u S644 . 1 `S635 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES644  1 e 1 @145 ]
-[s S1176 . 1 `uc 1 CCP2IE 1 0 :1:0 
+[u S704 . 1 `S695 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES704  1 e 1 @145 ]
+[s S1236 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 C3IE 1 0 :1:1 
 `uc 1 C4IE 1 0 :1:2 
 `uc 1 BCL1IE 1 0 :1:3 
@@ -521,8 +549,8 @@ TRUE 1
 `uc 1 OSFIE 1 0 :1:7 
 ]
 "1486
-[u S1185 . 1 `S1176 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES1185  1 e 1 @146 ]
+[u S1245 . 1 `S1236 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES1245  1 e 1 @146 ]
 [s S133 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
@@ -584,6 +612,18 @@ TRUE 1
 [v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
 "4067
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+[s S393 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4431
+[u S402 . 1 `S393 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES402  1 e 1 @414 ]
 "4722
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
 "4792
@@ -608,19 +648,19 @@ TRUE 1
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @664 ]
 "6699
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @665 ]
-[s S1116 . 1 `uc 1 CCP2M 1 0 :4:0 
+[s S1176 . 1 `uc 1 CCP2M 1 0 :4:0 
 `uc 1 DC2B 1 0 :2:4 
 ]
 "6738
-[s S1119 . 1 `uc 1 CCP2M0 1 0 :1:0 
+[s S1179 . 1 `uc 1 CCP2M0 1 0 :1:0 
 `uc 1 CCP2M1 1 0 :1:1 
 `uc 1 CCP2M2 1 0 :1:2 
 `uc 1 CCP2M3 1 0 :1:3 
 `uc 1 DC2B0 1 0 :1:4 
 `uc 1 DC2B1 1 0 :1:5 
 ]
-[u S1126 . 1 `S1116 1 . 1 0 `S1119 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES1126  1 e 1 @666 ]
+[u S1186 . 1 `S1176 1 . 1 0 `S1179 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES1186  1 e 1 @666 ]
 "7335
 [v _IOCAP IOCAP `VEuc  1 e 1 @913 ]
 "7405
@@ -703,6 +743,14 @@ TRUE 1
 [v _WPUC3 WPUC3 `VEb  1 e 0 @4211 ]
 "17223
 [v _WPUC4 WPUC4 `VEb  1 e 0 @4212 ]
+"55 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
 "3 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\myiic.c
 [v _temp_h temp_h `uc  1 e 1 0 ]
 "4
@@ -758,17 +806,17 @@ TRUE 1
 [v led_SetState@isOn isOn `uc  1 a 1 wreg ]
 [v led_SetState@isOn isOn `uc  1 a 1 wreg ]
 "112
-[v led_SetState@isOn isOn `uc  1 a 1 24 ]
+[v led_SetState@isOn isOn `uc  1 a 1 0 ]
 "114
 } 0
 "44 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
 {
 "101
-[v init_env@i i `i  1 a 2 14 ]
+[v init_env@i i `i  1 a 2 27 ]
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "45
-[v init_env@pdata pdata `*.4VES52  1 a 1 16 ]
+[v init_env@pdata pdata `*.6VES52  1 a 1 29 ]
 "127
 } 0
 "72 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
@@ -776,7 +824,7 @@ TRUE 1
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "86
-[v display_update@pdata pdata `*.4VES52  1 a 1 11 ]
+[v display_update@pdata pdata `*.6VES52  1 a 1 24 ]
 "93
 } 0
 "54
@@ -784,11 +832,11 @@ TRUE 1
 {
 [v display_write_once@HL HL `uc  1 a 1 wreg ]
 [v display_write_once@HL HL `uc  1 a 1 wreg ]
-[v display_write_once@HR HR `uc  1 p 1 33 ]
-[v display_write_once@ML ML `uc  1 p 1 34 ]
-[v display_write_once@MR MR `uc  1 p 1 35 ]
+[v display_write_once@HR HR `uc  1 p 1 9 ]
+[v display_write_once@ML ML `uc  1 p 1 10 ]
+[v display_write_once@MR MR `uc  1 p 1 11 ]
 "56
-[v display_write_once@HL HL `uc  1 a 1 36 ]
+[v display_write_once@HL HL `uc  1 a 1 12 ]
 "70
 } 0
 "42
@@ -796,24 +844,24 @@ TRUE 1
 {
 [v display_write_byte@data data `uc  1 a 1 wreg ]
 "43
-[v display_write_byte@i i `uc  1 a 1 29 ]
+[v display_write_byte@i i `uc  1 a 1 5 ]
 "42
 [v display_write_byte@data data `uc  1 a 1 wreg ]
 "44
-[v display_write_byte@data data `uc  1 a 1 28 ]
+[v display_write_byte@data data `uc  1 a 1 4 ]
 "52
 } 0
 "26
 [v _display_control595_delay display_control595_delay `(v  1 s 1 display_control595_delay ]
 {
 "27
-[v display_control595_delay@times times `uc  1 a 1 25 ]
+[v display_control595_delay@times times `uc  1 a 1 1 ]
 "32
 } 0
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-[v _data_getdata data_getdata `(*.4VES52  1 e 1 0 ]
+[v _data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
 {
 "12
 } 0
@@ -821,24 +869,24 @@ TRUE 1
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___awmod@sign sign `uc  1 a 1 30 ]
-[v ___awmod@counter counter `uc  1 a 1 29 ]
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
 "5
-[v ___awmod@divisor divisor `i  1 p 2 24 ]
-[v ___awmod@dividend dividend `i  1 p 2 26 ]
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
 "34
 } 0
 "5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 31 ]
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 30 ]
-[v ___awdiv@counter counter `uc  1 a 1 29 ]
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
 "5
-[v ___awdiv@divisor divisor `i  1 p 2 24 ]
-[v ___awdiv@dividend dividend `i  1 p 2 26 ]
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
 "14 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
@@ -847,7 +895,7 @@ TRUE 1
 [v display_set@ison ison `E5232  1 a 1 wreg ]
 [v display_set@ison ison `E5232  1 a 1 wreg ]
 "16
-[v display_set@ison ison `E5232  1 a 1 24 ]
+[v display_set@ison ison `E5232  1 a 1 0 ]
 "17
 } 0
 "25 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
@@ -861,7 +909,7 @@ TRUE 1
 [v capture_setEdge@edge edge `uc  1 a 1 wreg ]
 [v capture_setEdge@edge edge `uc  1 a 1 wreg ]
 "14
-[v capture_setEdge@edge edge `uc  1 a 1 24 ]
+[v capture_setEdge@edge edge `uc  1 a 1 0 ]
 "23
 } 0
 "38
@@ -870,12 +918,21 @@ TRUE 1
 [v capture_Set@isON isON `uc  1 a 1 wreg ]
 [v capture_Set@isON isON `uc  1 a 1 wreg ]
 "42
-[v capture_Set@isON isON `uc  1 a 1 24 ]
+[v capture_Set@isON isON `uc  1 a 1 0 ]
 "47
 } 0
 "197 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
+"213
+[v ISR@send send `[64]uc  1 a 64 0 ]
+[v ISR@i i `uc  1 a 1 76 ]
+[v ISR@buf buf `[64]uc  1 a 64 11 ]
+"210
+[v ISR@b b `E5232  1 a 1 75 ]
+"213
+[v ISR@F5517 F5517 `[64]uc  1 s 64 F5517 ]
+[v ISR@F5520 F5520 `[64]uc  1 s 64 F5520 ]
 "239
 } 0
 "92 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
@@ -898,7 +955,7 @@ TRUE 1
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "97
-[v update_time@pdata pdata `*.4VES52  1 a 1 13 ]
+[v update_time@pdata pdata `*.6VES52  1 a 1 13 ]
 "127
 } 0
 "126 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
@@ -906,7 +963,7 @@ TRUE 1
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "146
-[v key_checkPressed@pdata pdata `*.4VES52  1 a 1 3 ]
+[v key_checkPressed@pdata pdata `*.6VES52  1 a 1 3 ]
 "156
 } 0
 "116
@@ -926,12 +983,206 @@ TRUE 1
 {
 "106
 } 0
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.5uc  1 e 1 0 ]
+{
+[v strcpy@dest dest `*.5uc  1 a 1 wreg ]
+"14
+[v strcpy@d d `*.5uc  1 a 1 3 ]
+"13
+[v strcpy@s s `*.4DCuc  1 a 1 2 ]
+"7
+[v strcpy@dest dest `*.5uc  1 a 1 wreg ]
+[v strcpy@src src `*.4DCuc  1 p 1 0 ]
+"13
+[v strcpy@dest dest `*.5uc  1 a 1 4 ]
+"18
+} 0
+"9 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@s s `*.4uc  1 a 1 wreg ]
+[s S2060 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+"13
+[v sprintf@f f `S2060  1 a 5 4 ]
+"12
+[v sprintf@ap ap `[1]*.4v  1 a 1 2 ]
+"9
+[v sprintf@s s `*.4uc  1 a 1 wreg ]
+[v sprintf@fmt fmt `*.25DCuc  1 p 2 72 ]
+"15
+[v sprintf@s s `*.4uc  1 a 1 3 ]
+"23
+} 0
+"1368 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[s S1706 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1706  1 a 1 wreg ]
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 70 ]
+"1368
+[v vfprintf@fp fp `*.4S1706  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 64 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 66 ]
+"1373
+"1368
+[v vfprintf@fp fp `*.4S1706  1 a 1 69 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S1706 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1706  1 a 1 wreg ]
+"674
+[v vfpfcnvrt@ll ll `o  1 a 8 53 ]
+"672
+[v vfpfcnvrt@cp cp `*.26uc  1 a 2 61 ]
+"670
+[v vfpfcnvrt@fp fp `*.4S1706  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
+"680
+"670
+[v vfpfcnvrt@fp fp `*.4S1706  1 a 1 63 ]
+"1365
+} 0
+"546
+[v _stoa stoa `(i  1 s 2 stoa ]
+{
+[s S1706 _IO_FILE 0 ]
+[v stoa@fp fp `*.4S1706  1 a 1 wreg ]
+"548
+[v stoa@nuls nuls `[7]uc  1 a 7 0 ]
+"549
+[v stoa@l l `i  1 a 2 16 ]
+[v stoa@p p `i  1 a 2 14 ]
+"548
+[v stoa@cp cp `*.26uc  1 a 2 12 ]
+"549
+[v stoa@w w `i  1 a 2 9 ]
+[v stoa@i i `i  1 a 2 7 ]
+"546
+[v stoa@fp fp `*.4S1706  1 a 1 wreg ]
+[v stoa@s s `*.26uc  1 p 2 8 ]
+"548
+[v stoa@F1139 F1139 `[7]uc  1 s 7 F1139 ]
+"546
+[v stoa@fp fp `*.4S1706  1 a 1 11 ]
+"589
+} 0
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+[s S1706 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1706  1 a 1 wreg ]
+"277
+[v dtoa@n n `o  1 a 8 36 ]
+"276
+[v dtoa@i i `i  1 a 2 44 ]
+[v dtoa@s s `i  1 a 2 34 ]
+[v dtoa@w w `i  1 a 2 32 ]
+[v dtoa@p p `i  1 a 2 30 ]
+"274
+[v dtoa@fp fp `*.4S1706  1 a 1 wreg ]
+[v dtoa@d d `o  1 p 8 16 ]
+"280
+"274
+[v dtoa@fp fp `*.4S1706  1 a 1 29 ]
+"315
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+[s S1706 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1706  1 a 1 wreg ]
+"74
+[v pad@w w `i  1 a 2 9 ]
+[v pad@i i `i  1 a 2 7 ]
+"72
+[v pad@fp fp `*.4S1706  1 a 1 wreg ]
+[v pad@buf buf `*.5uc  1 p 1 4 ]
+[v pad@p p `i  1 p 2 5 ]
+"77
+"72
+[v pad@fp fp `*.4S1706  1 a 1 11 ]
+"95
+} 0
+"12 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"14
+[v strlen@a a `*.26DCuc  1 a 2 3 ]
+"12
+[v strlen@s s `*.26DCuc  1 p 2 0 ]
+"26
+} 0
+"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+"11
+[v fputs@i i `i  1 a 2 1 ]
+"10
+[v fputs@c c `uc  1 a 1 0 ]
+"8
+[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+[s S2060 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S2060  1 p 1 8 ]
+"13
+[v fputs@s s `*.5DCuc  1 a 1 3 ]
+"19
+} 0
+"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[s S2060 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S2060  1 p 1 2 ]
+"21
+} 0
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 3 ]
+"4
+} 0
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+{
+"12
+[v ___aomod@sign sign `uc  1 a 1 2 ]
+[v ___aomod@counter counter `uc  1 a 1 1 ]
+"7
+[v ___aomod@divisor divisor `o  1 p 8 0 ]
+[v ___aomod@dividend dividend `o  1 p 8 8 ]
+"36
+} 0
+"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 3 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 2 ]
+[v ___aodiv@counter counter `uc  1 a 1 1 ]
+"7
+[v ___aodiv@divisor divisor `o  1 p 8 0 ]
+[v ___aodiv@dividend dividend `o  1 p 8 8 ]
+"43
+} 0
 "158 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 [v _key_isPressed key_isPressed `(E5232  1 e 1 0 ]
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "160
-[v key_isPressed@pdata pdata `*.4VES52  1 a 1 1 ]
+[v key_isPressed@pdata pdata `*.6VES52  1 a 1 1 ]
 "167
 } 0
 "65
@@ -943,7 +1194,7 @@ TRUE 1
 [v capture_handdle@cnt_int cnt_int `us  1 a 2 10 ]
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "67
-[v capture_handdle@pdata pdata `*.4VES52  1 a 1 9 ]
+[v capture_handdle@pdata pdata `*.6VES52  1 a 1 9 ]
 "68
 [v capture_handdle@last_cnt last_cnt `us  1 s 2 last_cnt ]
 "104
@@ -994,7 +1245,7 @@ TRUE 1
 [v bpc_proc@last_time_s last_time_s `us  1 a 2 14 ]
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "82
-[v bpc_proc@pdata pdata `*.4VES52  1 a 1 23 ]
+[v bpc_proc@pdata pdata `*.6VES52  1 a 1 23 ]
 "83
 [v bpc_proc@number number `uc  1 a 1 22 ]
 "153
@@ -1003,7 +1254,7 @@ TRUE 1
 [v i1_display_update display_update `(v  1 e 1 0 ]
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-[v i1display_update@pdata display_update `*.4VES52  1 a 1 11 ]
+[v i1display_update@pdata display_update `*.6VES52  1 a 1 11 ]
 "93
 } 0
 "54
@@ -1066,16 +1317,16 @@ TRUE 1
 [v _check_err check_err `(i  1 s 2 check_err ]
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-[v check_err@pdata pdata `*.4VES52  1 a 1 wreg ]
+[v check_err@pdata pdata `*.6VES52  1 a 1 wreg ]
 "58
 [v check_err@i i `uc  1 a 1 8 ]
 "57
 [v check_err@check check `uc  1 a 1 9 ]
 "50
-[v check_err@pdata pdata `*.4VES52  1 a 1 wreg ]
+[v check_err@pdata pdata `*.6VES52  1 a 1 wreg ]
 "53
 "50
-[v check_err@pdata pdata `*.4VES52  1 a 1 10 ]
+[v check_err@pdata pdata `*.6VES52  1 a 1 10 ]
 "78
 } 0
 "22
@@ -1083,13 +1334,13 @@ TRUE 1
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "24
-[v bpc_Cnt2Qua@pdata pdata `*.4VES52  1 a 1 6 ]
+[v bpc_Cnt2Qua@pdata pdata `*.6VES52  1 a 1 6 ]
 "48
 } 0
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-[v i1_data_getdata data_getdata `(*.4VES52  1 e 1 0 ]
+[v i1_data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
 {
 "12
 } 0

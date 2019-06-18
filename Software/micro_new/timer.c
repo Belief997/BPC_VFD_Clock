@@ -109,9 +109,9 @@ BOOL timer_IsTimer0Itrpt(void)
 
 int timer_Timer0Handdle(void)
 {
-    update_time();
-    
     key_checkPressed();
+    
+    update_time();
 
     return 0;
 }

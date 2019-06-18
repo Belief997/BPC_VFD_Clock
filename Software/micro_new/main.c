@@ -101,7 +101,11 @@ void init_env(){
     for(int i = 0;i < RECV_BUF_MAX; i++){
         pdata->g_recv_buf[i] = 5;
     }
+    pdata->g_time_h = 23;
+    pdata->g_time_m = 55;
+    pdata->g_time_s = 0;
     
+    display_update();
     /**
      * set trans to display
      */
@@ -201,11 +205,12 @@ void __interrupt () ISR(void)
     }
     
     if(timer_IsTimer0Itrpt())
-    { // 100ms
+    {
         timer_Timer0Handdle();
-		
+ 
 		if(key_isPressed())
 		{
+            //LOG("PKEY\r\n");
 			capture_Set(TRUE);
 		}
 /*
@@ -254,7 +259,7 @@ void main(void)
 
 //    /* 捕获初始化 */
     capture_init();
-    capture_Set(FALSE);
+    capture_Set(TRUE);
 
     // 
     uart_init();

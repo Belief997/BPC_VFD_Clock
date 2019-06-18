@@ -95,10 +95,10 @@ void display_update(void)
 void update_time(void) 
 {
     G_DATA *pdata = data_getdata();
-    pdata->g_time_10ms++;
-    if(pdata->g_time_10ms == 10)
+    pdata->g_time_100ms++;
+    if(pdata->g_time_100ms == 10)
     { // 1s
-        pdata->g_time_10ms = 0;
+        pdata->g_time_100ms = 0;
         pdata->g_time_s++;
 //        display_update();
         if(pdata->g_time_s == 60)

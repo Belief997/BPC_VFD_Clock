@@ -101,7 +101,7 @@ typedef struct{
     u8 g_time_h;
     u8 g_time_m;
     u8 g_time_s;
-    u8 g_time_10ms;
+    u8 g_time_100ms;
 
     // times value in receive_decode
     u16 g_high_level_times;

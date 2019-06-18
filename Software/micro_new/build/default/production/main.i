@@ -9148,7 +9148,7 @@ typedef struct{
     u8 g_time_h;
     u8 g_time_m;
     u8 g_time_s;
-    u8 g_time_10ms;
+    u8 g_time_100ms;
 
 
     u16 g_high_level_times;
@@ -9231,14 +9231,13 @@ int timer_Timer0Handdle(void);
 
 
 
-
 # 1 "./uart.h" 1
 # 18 "./uart.h"
 void uart_init(void);
 void uart_Send_byte(u8 byte);
 void ISR_uart_TX(void);
 void ISR_uart_RX(void);
-# 6 "./debug.h" 2
+# 5 "./debug.h" 2
 
 # 1 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 1 3
 # 25 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 3
@@ -9295,7 +9294,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 7 "./debug.h" 2
+# 6 "./debug.h" 2
 
 # 1 "E:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdarg.h" 1 3
 
@@ -9314,8 +9313,8 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 extern void * __va_start(void);
 extern void * __va_arg(void *, ...);
-# 8 "./debug.h" 2
-# 48 "./debug.h"
+# 7 "./debug.h" 2
+# 47 "./debug.h"
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 int debug_proc(const unsigned char* cmdString, unsigned short length);
 # 15 "main.c" 2
@@ -9444,7 +9443,11 @@ void init_env(){
     for(int i = 0;i < 20; i++){
         pdata->g_recv_buf[i] = 5;
     }
+    pdata->g_time_h = 23;
+    pdata->g_time_m = 55;
+    pdata->g_time_s = 0;
 
+    display_update();
 
 
 
@@ -9549,9 +9552,10 @@ void __attribute__((picinterrupt(("")))) ISR(void)
 
   if(key_isPressed())
   {
+
    capture_Set(TRUE);
   }
-# 223 "main.c"
+# 228 "main.c"
         timer_Timer0Reset();
     }
 
@@ -9586,7 +9590,7 @@ void main(void)
 
 
     capture_init();
-    capture_Set(FALSE);
+    capture_Set(TRUE);
 
 
     uart_init();
@@ -9597,7 +9601,7 @@ void main(void)
 
     while(1)
     {
-# 276 "main.c"
+# 281 "main.c"
     }
     return;
 }

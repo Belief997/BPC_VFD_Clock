@@ -10,7 +10,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "94 ./data.h
 [; ;./data.h: 94: typedef struct{
 [s S625 `VE5232 1 `VE5232 1 `VE5232 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc -> 20 `i `us 1 `us 1 `us 1 ]
-[n S625 . g_flg_switch g_isDecoding g_find_recv_start g_time_h g_time_m g_time_s g_time_10ms g_high_level_times g_all_level_times g_recv_count g_recv_buf cnt_update cnt_high cnt_low ]
+[n S625 . g_flg_switch g_isDecoding g_find_recv_start g_time_h g_time_m g_time_s g_time_100ms g_high_level_times g_all_level_times g_recv_count g_recv_buf cnt_update cnt_high cnt_low ]
 "122
 [; ;./data.h: 122: G_DATA* data_getdata(void);
 [v _data_getdata `(*S625 ~T0 @X0 0 ef ]
@@ -149,7 +149,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7775
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 7775: extern volatile IOCCPbits_t IOCCPbits __attribute__((address(0x397)));
 [v _IOCCPbits `VS375 ~T0 @X0 0 e@919 ]
-"2369
+"21 ./display.h
+[; ;./display.h: 21: void display_update(void);
+[v _display_update `(v ~T0 @X0 0 ef ]
+"2369 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 2369:     struct {
 [s S126 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S126 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
@@ -257,9 +260,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 ./uart.h
 [; ;./uart.h: 18: void uart_init(void);
 [v _uart_init `(v ~T0 @X0 0 ef ]
-"21 ./display.h
-[; ;./display.h: 21: void display_update(void);
-[v _display_update `(v ~T0 @X0 0 ef ]
 "80 ./hardware.h
 [; ;./hardware.h: 80: u8 led_SetState(u8 isOn);
 [v _led_SetState `(uc ~T0 @X0 0 ef1`uc ]
@@ -1171,16 +1171,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 58: 
 [e = . . _OSCCONbits 1 0 -> -> 2 `i `uc ]
 "62
-[; ;main.c: 62: 
+[; ;main.c: 62:     pdata->g_time_h = 23;
 [e = . . _OSCCONbits 1 2 -> -> 11 `i `uc ]
 "70
-[; ;main.c: 70: 
+[; ;main.c: 70:     LATBbits.LATB2 = PIN_LOW;
 [e = . . _OPTION_REGbits 0 7 -> -> 0 `i `uc ]
 "72
-[; ;main.c: 72:     TRISCbits.TRISC0 = 1;
+[; ;main.c: 72: 
 [e = _TRISA -> -> 0 `i `uc ]
 "73
-[; ;main.c: 73:     WPUCbits.WPUC0 = 1;
+[; ;main.c: 73:     PORTCbits.RC2 = BPC_PWR_ON;
 [e = _LATA -> -> 0 `i `uc ]
 "74
 [; ;main.c: 74: 
@@ -1189,7 +1189,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 75: 
 [e = _IOCAP -> -> 0 `i `uc ]
 "76
-[; ;main.c: 76: 
+[; ;main.c: 76:     TRISCbits.TRISC0 = 1;
 [e = _IOCAN -> -> 0 `i `uc ]
 "78
 [; ;main.c: 78: 
@@ -1198,31 +1198,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 79: 
 [e = _LATB -> -> 0 `i `uc ]
 "80
-[; ;main.c: 80:     display_set(TRUE);
+[; ;main.c: 80: 
 [e = _WPUB -> -> 0 `i `uc ]
 "81
-[; ;main.c: 81: }
+[; ;main.c: 81: 
 [e = _IOCBP -> -> 0 `i `uc ]
 "82
 [; ;main.c: 82: 
 [e = _IOCBN -> -> 0 `i `uc ]
 "84
-[; ;main.c: 84: void tmp_change(void)
+[; ;main.c: 84:     display_set(TRUE);
 [e = _TRISC -> -> 0 `i `uc ]
 "85
-[; ;main.c: 85: {
+[; ;main.c: 85: }
 [e = _LATC -> -> 0 `i `uc ]
 "86
-[; ;main.c: 86:     static u8 history_key = 0;
+[; ;main.c: 86: 
 [e = _WPUC -> -> 1 `i `uc ]
 "87
-[; ;main.c: 87:     static u16 key_time_cnt = 0;
+[; ;main.c: 87: 
 [e = _IOCCP -> -> 0 `i `uc ]
 "88
-[; ;main.c: 88:     G_DATA *pdata = data_getdata();
+[; ;main.c: 88: void tmp_change(void)
 [e = _IOCCN -> -> 0 `i `uc ]
 "93
-[; ;main.c: 93:     if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
+[; ;main.c: 93: 
 [e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "94
 [; ;main.c: 94: 
@@ -1231,13 +1231,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 96: 
 [e = . . _TRISCbits 0 1 -> -> 1 `i `uc ]
 "97
-[; ;main.c: 97:         pdata->g_find_recv_start = FALSE;
+[; ;main.c: 97:     if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
 [e = . . _WPUCbits 0 1 -> -> 0 `i `uc ]
 "98
-[; ;main.c: 98:         pdata->g_isDecoding = TRUE;
+[; ;main.c: 98: 
 [e = . . _IOCCPbits 0 1 -> -> 1 `i `uc ]
 "101
-[; ;main.c: 101:         pdata->g_recv_count = CODE_P0;
+[; ;main.c: 101:         pdata->g_find_recv_start = FALSE;
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1246,317 +1246,329 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 628 ]
 {
 "102
-[; ;main.c: 102:         PORTCbits.RC2 = BPC_PWR_ON;
+[; ;main.c: 102:         pdata->g_isDecoding = TRUE;
 [e = *U + &U . *U _pdata 10 * -> -> _i `ui `ux -> -> # *U &U . *U _pdata 10 `ui `ux -> -> 5 `i `uc ]
 "103
-[; ;main.c: 103: 
+[; ;main.c: 103:         pdata->g_flg_switch = FALSE;
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 20 `i 628  ]
 [e :U 629 ]
 }
+"104
+[; ;main.c: 104:         pdata->cnt_update = 0;
+[e = . *U _pdata 3 -> -> 23 `i `uc ]
+"105
+[; ;main.c: 105:         pdata->g_recv_count = CODE_P0;
+[e = . *U _pdata 4 -> -> 55 `i `uc ]
+"106
+[; ;main.c: 106:         PORTCbits.RC2 = BPC_PWR_ON;
+[e = . *U _pdata 5 -> -> 0 `i `uc ]
 "108
-[; ;main.c: 108:     else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
+[; ;main.c: 108:         INTCONbits.IOCIF = FALSE;
+[e ( _display_update ..  ]
+"112
+[; ;main.c: 112:     else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
 [e = . . _LATBbits 0 2 -> . `E5236 2 `uc ]
-"111
-[; ;main.c: 111:         {
-[e = . . _PORTCbits 0 2 -> . `E5236 0 `uc ]
-"114
-[; ;main.c: 114:         timer_Timer0Start();
-[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
 "115
-[; ;main.c: 115:     }
+[; ;main.c: 115:         {
+[e = . . _PORTCbits 0 2 -> . `E5236 0 `uc ]
+"118
+[; ;main.c: 118:         timer_Timer0Start();
+[e = . . _TRISCbits 0 0 -> -> 1 `i `uc ]
+"119
+[; ;main.c: 119:     }
 [e = . . _WPUCbits 0 0 -> -> 1 `i `uc ]
-"122
-[; ;main.c: 122: 
+"126
+[; ;main.c: 126: 
 [e ( _display_set (1 . `E5232 1 ]
-"123
-[; ;main.c: 123:     if(INTCONbits.TMR0IF)
+"127
+[; ;main.c: 127:     if(INTCONbits.TMR0IF)
 [e :UE 627 ]
 }
-"126
-[; ;main.c: 126:         if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
+"130
+[; ;main.c: 130:         if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
 [v _tmp_change `(v ~T0 @X0 1 ef ]
-"127
-[; ;main.c: 127: 
+"131
+[; ;main.c: 131: 
 {
 [e :U _tmp_change ]
 [f ]
-"128
-[; ;main.c: 128:         {
+"132
+[; ;main.c: 132:         {
 [v F5512 `uc ~T0 @X0 1 s history_key ]
 [i F5512
 -> -> 0 `i `uc
 ]
-"129
-[; ;main.c: 129:             receive_decode();
+"133
+[; ;main.c: 133:             receive_decode();
 [v F5513 `us ~T0 @X0 1 s key_time_cnt ]
 [i F5513
 -> -> 0 `i `us
 ]
-"130
-[; ;main.c: 130:         }
+"134
+[; ;main.c: 134:         }
 [v _pdata `*S625 ~T0 @X0 1 a ]
 [e = _pdata ( _data_getdata ..  ]
-"135
-[; ;main.c: 135:         {
-[e $ ! && == -> . *U _pdata 1 `ui -> . `E5232 0 `ui || == -> . *U _pdata 0 `ui -> . `E5232 1 `ui >= -> . *U _pdata 11 `ui -> -> 30 `i `ui 632  ]
-"137
-[; ;main.c: 137:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
-{
 "139
-[; ;main.c: 139:             if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
-[e = . *U _pdata 2 . `E5232 0 ]
-"140
-[; ;main.c: 140:             {
-[e = . *U _pdata 1 . `E5232 1 ]
+[; ;main.c: 139:         {
+[e $ ! && == -> . *U _pdata 1 `ui -> . `E5232 0 `ui || == -> . *U _pdata 0 `ui -> . `E5232 1 `ui >= -> . *U _pdata 11 `ui -> -> 30 `i `ui 632  ]
 "141
-[; ;main.c: 141:                 pdata->g_flg_switch = TRUE;
-[e = . *U _pdata 0 . `E5232 0 ]
-"142
-[; ;main.c: 142:             }
-[e = . *U _pdata 11 -> -> 0 `i `us ]
+[; ;main.c: 141:             history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+{
 "143
-[; ;main.c: 143:         }
-[e = . *U _pdata 9 -> . `E5236 6 `us ]
+[; ;main.c: 143:             if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
+[e = . *U _pdata 2 . `E5232 0 ]
 "144
-[; ;main.c: 144: 
-[e = . . _PORTCbits 0 2 -> . `E5236 0 `uc ]
+[; ;main.c: 144:             {
+[e = . *U _pdata 1 . `E5232 1 ]
+"145
+[; ;main.c: 145:                 pdata->g_flg_switch = TRUE;
+[e = . *U _pdata 0 . `E5232 0 ]
 "146
-[; ;main.c: 146:         return;
-[e = . . _INTCONbits 0 0 -> . `E5232 0 `uc ]
+[; ;main.c: 146:             }
+[e = . *U _pdata 11 -> -> 0 `i `us ]
 "147
-[; ;main.c: 147:     }
-[e = . . _IOCCFbits 0 1 -> . `E5232 0 `uc ]
+[; ;main.c: 147:         }
+[e = . *U _pdata 9 -> . `E5236 6 `us ]
 "148
-[; ;main.c: 148:     return;
+[; ;main.c: 148: 
+[e = . . _PORTCbits 0 2 -> . `E5236 0 `uc ]
+"150
+[; ;main.c: 150:         return;
+[e = . . _INTCONbits 0 0 -> . `E5232 0 `uc ]
+"151
+[; ;main.c: 151:     }
+[e = . . _IOCCFbits 0 1 -> . `E5232 0 `uc ]
+"152
+[; ;main.c: 152:     return;
 [e $UE 631  ]
-"149
-[; ;main.c: 149: }
+"153
+[; ;main.c: 153: }
 }
 [e $U 633  ]
-"150
-[; ;main.c: 150: 
+"154
+[; ;main.c: 154: 
 [e :U 632 ]
 [e $ ! && && == -> . *U _pdata 1 `ui -> . `E5232 1 `ui == -> . . _IOCCFbits 0 1 `i -> . `E5232 1 `i == -> . `E5232 1 `ui -> . *U _pdata 2 `ui 634  ]
-"151
-[; ;main.c: 151: void __attribute__((picinterrupt(("")))) ISR(void)
-{
-"152
-[; ;main.c: 152: {
-[e $ ! == -> . *U _pdata 9 `ui -> . `E5236 6 `ui 635  ]
-"153
-[; ;main.c: 153: 
-{
-"154
-[; ;main.c: 154:     if(timer_IsTimer1Itrpt())
-[e = . *U _pdata 9 -> . `E5236 7 `us ]
 "155
-[; ;main.c: 155:     {
-}
-[e :U 635 ]
+[; ;main.c: 155: void __attribute__((picinterrupt(("")))) ISR(void)
+{
 "156
-[; ;main.c: 156: 
-[e ( _timer_Timer0Start ..  ]
+[; ;main.c: 156: {
+[e $ ! == -> . *U _pdata 9 `ui -> . `E5236 6 `ui 635  ]
 "157
 [; ;main.c: 157: 
-}
-[e $U 636  ]
-"158
-[; ;main.c: 158:         timer_Timer1ClrIntrpt();
-[e :U 634 ]
-[e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 637  ]
-"159
-[; ;main.c: 159:     }
 {
+"158
+[; ;main.c: 158:     if(timer_IsTimer1Itrpt())
+[e = . *U _pdata 9 -> . `E5236 7 `us ]
+"159
+[; ;main.c: 159:     {
+}
+[e :U 635 ]
 "160
 [; ;main.c: 160: 
-[e = . . _INTCONbits 0 0 -> . `E5232 0 `uc ]
+[e ( _timer_Timer0Start ..  ]
 "161
-[; ;main.c: 161:     if(timer_IsTimer0Itrpt())
-[e = . . _IOCCFbits 0 1 -> . `E5232 0 `uc ]
+[; ;main.c: 161: 
+}
+[e $U 636  ]
 "162
-[; ;main.c: 162:     {
+[; ;main.c: 162:         timer_Timer1ClrIntrpt();
+[e :U 634 ]
+[e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 637  ]
+"163
+[; ;main.c: 163:     }
+{
+"164
+[; ;main.c: 164: 
+[e = . . _INTCONbits 0 0 -> . `E5232 0 `uc ]
+"165
+[; ;main.c: 165:     if(timer_IsTimer0Itrpt())
+[e = . . _IOCCFbits 0 1 -> . `E5232 0 `uc ]
+"166
+[; ;main.c: 166:     {
 }
 [e :U 637 ]
 [e :U 636 ]
 [e :U 633 ]
-"165
-[; ;main.c: 165:   if(key_isPressed())
+"169
+[; ;main.c: 169:   if(key_isPressed())
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 638  ]
-"166
-[; ;main.c: 166:   {
-{
-"168
-[; ;main.c: 168:   }
-[e $ ! && == -> . *U _pdata 1 `ui -> . `E5232 1 `ui || == -> . *U _pdata 2 `ui -> . `E5232 0 `ui >= -> . *U _pdata 9 `ui -> . `E5236 7 `ui 639  ]
 "170
+[; ;main.c: 170:   {
 {
-"171
-[e ( _receive_decode ..  ]
 "172
+[; ;main.c: 172:    capture_Set(TRUE);
+[e $ ! && == -> . *U _pdata 1 `ui -> . `E5232 1 `ui || == -> . *U _pdata 2 `ui -> . `E5232 0 `ui >= -> . *U _pdata 9 `ui -> . `E5236 7 `ui 639  ]
+"174
+{
+"175
+[e ( _receive_decode ..  ]
+"176
 }
 [e :U 639 ]
-"176
+"180
 [e $ ! == % -> ++ F5513 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 640  ]
-"177
-{
-"178
-[e =<< F5512 -> -> 1 `i `uc ]
-"179
-[e =| F5512 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5236 3 `i : -> 1 `i -> 0 `i `uc ]
 "181
-[e $ ! && == -> 3 `i & -> F5512 `i -> 15 `i == -> . `E5232 0 `ui -> . *U _pdata 0 `ui 641  ]
-"182
 {
+"182
+[e =<< F5512 -> -> 1 `i `uc ]
 "183
+[e =| F5512 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5236 3 `i : -> 1 `i -> 0 `i `uc ]
+"185
+[e $ ! && == -> 3 `i & -> F5512 `i -> 15 `i == -> . `E5232 0 `ui -> . *U _pdata 0 `ui 641  ]
+"186
+{
+"187
 [e = . *U _pdata 0 . `E5232 1 ]
-"184
+"188
 }
 [e :U 641 ]
-"185
-}
-[e :U 640 ]
-"187
-[e ( _timer_Timer0Reset ..  ]
-"188
-[e $UE 631  ]
 "189
 }
-[e :U 638 ]
-"190
-[e $UE 631  ]
+[e :U 640 ]
 "191
+[e ( _timer_Timer0Reset ..  ]
+"192
+[e $UE 631  ]
+"193
+}
+[e :U 638 ]
+"194
+[e $UE 631  ]
+"195
 [e :UE 631 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"193
+"197
 [v _ISR `(v ~T1 @X0 1 ef ]
-"194
+"198
 {
 [e :U _ISR ]
 [f ]
-"196
-[e $ ! != -> ( _timer_IsTimer1Itrpt ..  `ui -> -> 0 `i `ui 643  ]
-"197
-{
 "200
-[e ( _timer_Timer1ClrIntrpt ..  ]
+[e $ ! != -> ( _timer_IsTimer1Itrpt ..  `ui -> -> 0 `i `ui 643  ]
 "201
+{
+"204
+[e ( _timer_Timer1ClrIntrpt ..  ]
+"205
 }
 [e :U 643 ]
-"203
-[e $ ! != -> ( _timer_IsTimer0Itrpt ..  `ui -> -> 0 `i `ui 644  ]
-"204
-{
-"205
-[e ( _timer_Timer0Handdle ..  ]
 "207
-[e $ ! != -> ( _key_isPressed ..  `ui -> -> 0 `i `ui 645  ]
+[e $ ! != -> ( _timer_IsTimer0Itrpt ..  `ui -> -> 0 `i `ui 644  ]
 "208
 {
 "209
+[e ( _timer_Timer0Handdle ..  ]
+"211
+[e $ ! != -> ( _key_isPressed ..  `ui -> -> 0 `i `ui 645  ]
+"212
+{
+"214
 [e ( _capture_Set (1 -> . `E5232 1 `uc ]
-"210
+"215
 }
 [e :U 645 ]
-"223
-[; ;main.c: 223:         timer_Timer0Reset();
+"228
+[; ;main.c: 228:         timer_Timer0Reset();
 [e ( _timer_Timer0Reset ..  ]
-"224
-[; ;main.c: 224:     }
+"229
+[; ;main.c: 229:     }
 }
 [e :U 644 ]
-"226
-[; ;main.c: 226:     if(capture_IsEnable() && capture_IsIntrpt())
+"231
+[; ;main.c: 231:     if(capture_IsEnable() && capture_IsIntrpt())
 [e $ ! && != -> ( _capture_IsEnable ..  `ui -> -> 0 `i `ui != -> ( _capture_IsIntrpt ..  `ui -> -> 0 `i `ui 646  ]
-"227
-[; ;main.c: 227:     {
-{
-"228
-[; ;main.c: 228:         capture_handdle();
-[e ( _capture_handdle ..  ]
-"230
-[; ;main.c: 230:         bpc_proc();
-[e ( _bpc_proc ..  ]
 "232
-[; ;main.c: 232:         capture_clrIntrpt();
-[e ( _capture_clrIntrpt ..  ]
+[; ;main.c: 232:     {
+{
 "233
-[; ;main.c: 233:     }
+[; ;main.c: 233:         capture_handdle();
+[e ( _capture_handdle ..  ]
+"235
+[; ;main.c: 235:         bpc_proc();
+[e ( _bpc_proc ..  ]
+"237
+[; ;main.c: 237:         capture_clrIntrpt();
+[e ( _capture_clrIntrpt ..  ]
+"238
+[; ;main.c: 238:     }
 }
 [e :U 646 ]
-"234
-[; ;main.c: 234: }
+"239
+[; ;main.c: 239: }
 [e :UE 642 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"238
-[; ;main.c: 238: void main(void)
+"243
+[; ;main.c: 243: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"239
-[; ;main.c: 239: {
+"244
+[; ;main.c: 244: {
 {
 [e :U _main ]
 [f ]
-"240
-[; ;main.c: 240:     static u16 i = 0;
+"245
+[; ;main.c: 245:     static u16 i = 0;
 [v F5517 `us ~T0 @X0 1 s i ]
 [i F5517
 -> -> 0 `i `us
 ]
-"241
-[; ;main.c: 241:     static u8 cnt = 0;
+"246
+[; ;main.c: 246:     static u8 cnt = 0;
 [v F5518 `uc ~T0 @X0 1 s cnt ]
 [i F5518
 -> -> 0 `i `uc
 ]
-"245
-[; ;main.c: 245:     init_env();
+"250
+[; ;main.c: 250:     init_env();
 [e ( _init_env ..  ]
-"248
-[; ;main.c: 248:     timer_Timer0Init();
-[e ( _timer_Timer0Init ..  ]
-"249
-[; ;main.c: 249:     timer_Timer0Start();
-[e ( _timer_Timer0Start ..  ]
-"252
-[; ;main.c: 252:     timer_Timer1Init();
-[e ( _timer_Timer1Init ..  ]
 "253
-[; ;main.c: 253:     timer_Timer1Start();
-[e ( _timer_Timer1Start ..  ]
-"256
-[; ;main.c: 256:     capture_init();
-[e ( _capture_init ..  ]
+[; ;main.c: 253:     timer_Timer0Init();
+[e ( _timer_Timer0Init ..  ]
+"254
+[; ;main.c: 254:     timer_Timer0Start();
+[e ( _timer_Timer0Start ..  ]
 "257
-[; ;main.c: 257:     capture_Set(FALSE);
-[e ( _capture_Set (1 -> . `E5232 0 `uc ]
-"260
-[; ;main.c: 260:     uart_init();
+[; ;main.c: 257:     timer_Timer1Init();
+[e ( _timer_Timer1Init ..  ]
+"258
+[; ;main.c: 258:     timer_Timer1Start();
+[e ( _timer_Timer1Start ..  ]
+"261
+[; ;main.c: 261:     capture_init();
+[e ( _capture_init ..  ]
+"262
+[; ;main.c: 262:     capture_Set(TRUE);
+[e ( _capture_Set (1 -> . `E5232 1 `uc ]
+"265
+[; ;main.c: 265:     uart_init();
 [e ( _uart_init ..  ]
-"263
-[; ;main.c: 263:     display_update();
+"268
+[; ;main.c: 268:     display_update();
 [e ( _display_update ..  ]
-"264
-[; ;main.c: 264:     led_SetState(FALSE);
+"269
+[; ;main.c: 269:     led_SetState(FALSE);
 [e ( _led_SetState (1 -> . `E5232 0 `uc ]
-"266
-[; ;main.c: 266:     while(1)
+"271
+[; ;main.c: 271:     while(1)
 [e :U 649 ]
-"267
-[; ;main.c: 267:     {
+"272
+[; ;main.c: 272:     {
 {
-"276
-[; ;main.c: 276:     }
+"281
+[; ;main.c: 281:     }
 }
 [e :U 648 ]
 [e $U 649  ]
 [e :U 650 ]
-"277
-[; ;main.c: 277:     return;
+"282
+[; ;main.c: 282:     return;
 [e $UE 647  ]
-"278
-[; ;main.c: 278: }
+"283
+[; ;main.c: 283: }
 [e :UE 647 ]
 }

@@ -125,16 +125,16 @@ u8 led_Blink(void)
 /* key api */
 void key_checkPressed(void)
 {
-    static u8 history_key = 0;
-    static u16 key_time_cnt = 0;
-    G_DATA *pdata = data_getdata();
-    
-    if(key_time_cnt++ % 10 == 0) // look up key every 100ms
+    //static u8 history_key = 0;
+    //static u16 key_time_cnt = 0;
+    //G_DATA *pdata = data_getdata();
+/*    
+    if(key_time_cnt++ % 2 == 0) // look up key every 100ms
     {
         history_key <<= 1;
         history_key |= (SWITCH_PORT == PIN_HIGH)? 0x01 : 0x00;
         
-        /* judge press by 4 states , press has been consumed */
+        // judge press by 4 states , press has been consumed 
         if((KEY_PRESS == (history_key & KEY_CHECK_BITS)) && (FALSE == pdata->g_flg_switch))
         {      
             pdata->g_flg_switch = TRUE;  // SET KEY PRESS FLG
@@ -142,6 +142,17 @@ void key_checkPressed(void)
             led_Blink();// SET KEY PRESS FLG
         }
     }
+ */
+    G_DATA *pdata = data_getdata();
+    // look up key every 100ms
+    if(SWITCH_PORT == PIN_HIGH &&  FALSE == pdata->g_flg_switch)
+    {      
+        // SET KEY PRESS FLG
+        pdata->g_flg_switch = TRUE;
+
+        led_Blink();// SET KEY PRESS FLG
+    }
+    
 }
 
 BOOL key_isPressed(void)

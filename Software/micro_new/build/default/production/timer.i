@@ -9133,7 +9133,7 @@ typedef struct{
     u8 g_time_h;
     u8 g_time_m;
     u8 g_time_s;
-    u8 g_time_10ms;
+    u8 g_time_100ms;
 
 
     u16 g_high_level_times;
@@ -9270,9 +9270,9 @@ BOOL timer_IsTimer0Itrpt(void)
 
 int timer_Timer0Handdle(void)
 {
-    update_time();
-
     key_checkPressed();
+
+    update_time();
 
     return 0;
 }
