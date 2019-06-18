@@ -80,7 +80,7 @@ enum{
 #define COUNT_300MS 9311
 #define COUNT_400MS 12417
 #define COUNT_500MS 15578
-#define COUNT_BIAS 750
+#define COUNT_BIAS 1500
 
 #define NUMBER_1 0
 #define NUMBER_2 1

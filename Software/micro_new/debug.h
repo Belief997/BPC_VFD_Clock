@@ -30,12 +30,17 @@
 
 
 
+#ifdef DEBUG
 #define debug_log(fmt, ...)                                             \
 {                                                                       \
     char buf[DISBUF_LEN] = {0};                                         \
     sprintf(buf, "[%s:%d %s] "fmt CR, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__);\
     SEND_STR(buf);                                                      \
 }                                                                       \
+
+#else
+    #define debug_log(fmt,...) {}
+#endif
 
 #define LOG debug_log
 

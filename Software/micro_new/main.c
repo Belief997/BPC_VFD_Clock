@@ -109,6 +109,7 @@ void init_env(){
     pdata->g_time_m = 55;
     pdata->g_time_s = 0;
     
+    
     display_update();
     /**
      * set trans to display
@@ -270,16 +271,22 @@ void main(void)
     capture_init();
 //    capture_Set(TRUE);
 
-    /* 调试串口初始化 */ 
-    uart_init();
-
-    /* iic 初始化 */
+    
+    
+        /* iic 初始化 */
     IIC_Init();
     
+#ifdef  DEBUG
+    /* 调试串口初始化 */ 
+    uart_init();
+#endif
+
+    
+    
     if(-1 == bpc_read_time()){
+        //LOG("ERR r\r\n");
         capture_Set(TRUE);
     }
-
     /* 初始显示状态 */
     display_update();
     led_SetState(FALSE);

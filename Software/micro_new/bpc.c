@@ -54,7 +54,9 @@ s8 bpc_read_time(void)
    G_DATA *pdata = data_getdata();
    u8 dataBCD = 0, dataBin = 0;
     do{
-        if( -1 == IIC_RdRTCReg(RTC_HR, &dataBCD)) break;
+        if( -1 == IIC_RdRTCReg(RTC_HR, &dataBCD)){
+            break;
+        }
         else
         {
             dataBin = BCD2bit(dataBCD & MASK_BCD_HR);
@@ -206,7 +208,9 @@ int bpc_proc(void) {
     capture_Set(FALSE);
     
     // write time
-    bpc_write_time();
+    if(-1 == bpc_write_time()){
+        //LOG("ERR w\r\n");
+    }
     
     pdata->g_recv_count = CODE_P0;
     for (int i = 0; i < RECV_BUF_MAX; i++) {

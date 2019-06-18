@@ -9286,7 +9286,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 extern void * __va_start(void);
 extern void * __va_arg(void *, ...);
 # 7 "./debug.h" 2
-# 47 "./debug.h"
+# 52 "./debug.h"
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 int debug_proc(const unsigned char* cmdString, unsigned short length);
 # 8 "./myiic.h" 2
@@ -9459,6 +9459,7 @@ void init_env(){
     pdata->g_time_m = 55;
     pdata->g_time_s = 0;
 
+
     display_update();
 
 
@@ -9564,7 +9565,7 @@ void __attribute__((picinterrupt(("")))) ISR(void)
 
    capture_Set(TRUE);
   }
-# 239 "main.c"
+# 240 "main.c"
         timer_Timer0Reset();
     }
 
@@ -9600,22 +9601,21 @@ void main(void)
 
 
 
-    uart_init();
 
 
     IIC_Init();
-
+# 286 "main.c"
     if(-1 == bpc_read_time()){
+
         capture_Set(TRUE);
     }
-
 
     display_update();
     led_SetState(FALSE);
 
     while(1)
     {
-# 297 "main.c"
+# 304 "main.c"
     }
     return;
 }
