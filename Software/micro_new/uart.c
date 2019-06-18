@@ -26,8 +26,6 @@ void uart_init(void)
     SYNC = 0;
     BRGH = 1;
     BRG16 = 1;
-//    SPBRGL = 23;
-//    SPBRGH = 0;
     
     SPBRGH = 0x00;    
     SPBRGL = 23;      

@@ -122,9 +122,6 @@ void init_env(){
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
         
-
-    /* init iic */
-//    IIC_Init();
     
     // light on when have power
     display_set(TRUE);
@@ -200,7 +197,7 @@ void tmp_change(void)
 
 void __interrupt () ISR(void)
 {
-    //static u16 cnt = 0;
+    static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
 //        LED_STATE = (cnt++ % 2 == 0);
@@ -217,18 +214,27 @@ void __interrupt () ISR(void)
             //LOG("PKEY\r\n");
 			capture_Set(TRUE);
 		}
-/*
-        if(cnt++ % 100 == 0)// period = 1s
+
+        if(cnt++ % 10 == 0)// period = 1s
         {
 //          uart_Send_byte(0xa5);
-            static u8 tx = 0;
+            u8 value = 0;
+            u8 data = 0;
             //led_Blink();
 
             //LOG("test123456123456789ASD...  %d", tx);
 
-            tx++;
+            if(IIC_WtRTCReg(0x03, 0x55))
+            {
+                led_Blink();
+            }
+            if(IIC_RdRTCReg(0x03, &data))
+            {
+                led_Blink();
+            }
+//            LOG("DA: %d", data);
         }
- */    
+     
         timer_Timer0Reset();
     }
 
@@ -261,10 +267,15 @@ void main(void)
 
 //    /* 捕获初始化 */
     capture_init();
-    //capture_Set(TRUE);
+//    capture_Set(TRUE);
 
-    // 
+    /* 调试串口初始化 */ 
     uart_init();
+
+    /* iic 初始化 */
+    IIC_Init();
+    
+    
 
     /* 初始显示状态 */
     display_update();

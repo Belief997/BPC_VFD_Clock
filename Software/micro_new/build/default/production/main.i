@@ -1,4 +1,4 @@
-# 1 "myiic.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "myiic.c" 2
-# 1 "./myiic.h" 1
+# 1 "main.c" 2
 
 
 
-# 1 "./delay.h" 1
-# 10 "./delay.h"
+
+
+
+
+
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8845,97 +8847,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 11 "./delay.h" 2
-# 22 "./delay.h"
-void delay_4us(void);
-void delay_12us(void);
-void delay_40us(void);
-# 4 "./myiic.h" 2
-
-
-
-
-# 1 "./debug.h" 1
-
-
-
-# 1 "./data.h" 1
-
-
-
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef long int32_t;
-# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int32_t intmax_t;
-
-
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef unsigned long uint32_t;
-# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef uint32_t uintmax_t;
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-typedef int32_t int_least32_t;
-
-
-
-
-typedef uint8_t uint_fast8_t;
-
-
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-typedef uint32_t uint_least32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "./data.h" 2
+# 9 "main.c" 2
 
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
@@ -9073,7 +8985,94 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 6 "./data.h" 2
+# 10 "main.c" 2
+
+# 1 "./function.h" 1
+
+
+
+
+
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef long int32_t;
+# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int32_t intmax_t;
+
+
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef unsigned long uint32_t;
+# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef uint32_t uintmax_t;
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+typedef int32_t int_least32_t;
+
+
+
+
+typedef uint8_t uint_fast8_t;
+
+
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+typedef uint32_t uint_least32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+# 7 "./function.h" 2
+
+# 1 "./data.h" 1
+
+
+
+
+
 
 
 typedef uint8_t u8;
@@ -9154,7 +9153,39 @@ typedef struct{
 G_DATA* data_getdata(void);
 
 u16 data_getTimeCnt(void);
-# 4 "./debug.h" 2
+# 8 "./function.h" 2
+
+
+
+
+
+
+void receive_decode(void);
+
+
+
+
+void update_time(void);
+# 11 "main.c" 2
+
+# 1 "./myiic.h" 1
+
+
+
+# 1 "./delay.h" 1
+# 22 "./delay.h"
+void delay_4us(void);
+void delay_12us(void);
+void delay_40us(void);
+# 4 "./myiic.h" 2
+
+
+
+
+# 1 "./debug.h" 1
+
+
+
 
 # 1 "./uart.h" 1
 # 18 "./uart.h"
@@ -9255,7 +9286,111 @@ void IIC_NAck(void);
 unsigned char RD_temp(void);
 s8 IIC_RdRTCReg(u8 regAddr, u8* value);
 s8 IIC_WtRTCReg(u8 regAddr, u8 value);
-# 1 "myiic.c" 2
+# 12 "main.c" 2
+
+# 1 "./timer.h" 1
+# 11 "./timer.h"
+void timer_Timer1Init(void);
+void timer_Timer1Start(void);
+BOOL timer_IsTimer1Itrpt(void);
+void timer_Timer1ClrIntrpt(void);
+
+
+
+void timer_Timer0Init(void);
+void timer_Timer0Reset(void);
+void timer_Timer0Start(void);
+BOOL timer_IsTimer0Itrpt(void);
+
+
+int timer_Timer0Handdle(void);
+# 13 "main.c" 2
+
+
+
+# 1 "./hardware.h" 1
+# 69 "./hardware.h"
+u8 capture_init(void);
+u8 capture_Set(u8 isON);
+BOOL capture_IsEnable(void);
+BOOL capture_IsIntrpt(void);
+void capture_clrIntrpt(void);
+int capture_handdle(void);
+
+BOOL capture_IsNegEdge(void);
+
+
+
+u8 led_SetState(u8 isOn);
+u8 led_Blink(void);
+
+
+BOOL key_isPressed(void);
+void key_checkPressed(void);
+# 16 "main.c" 2
+
+
+# 1 "./display.h" 1
+# 13 "./display.h"
+void display_set(BOOL ison);
+
+
+
+
+void update_time(void);
+
+
+void display_update(void);
+# 18 "main.c" 2
+
+# 1 "./bpc.h" 1
+# 14 "./bpc.h"
+int bpc_proc(void);
+# 19 "main.c" 2
+
+
+
+#pragma config FOSC = HS
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = ON
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config CLKOUTEN = OFF
+#pragma config IESO = ON
+#pragma config FCMEN = ON
+
+
+#pragma config WRT = OFF
+#pragma config VCAPEN = OFF
+#pragma config PLLEN = ON
+#pragma config STVREN = ON
+#pragma config BORV = LO
+#pragma config LPBOR = OFF
+#pragma config LVP = ON
+
+
+
+void init_env(){
+    G_DATA *pdata = data_getdata();
+
+
+
+
+
+    INTCONbits.GIE = 0b1;
+
+
+
+
+
+
+    OSCCONbits.SCS = 0b10;
+
+
+
+    OSCCONbits.IRCF = 0b1011;
 
 
 
@@ -9263,171 +9398,219 @@ s8 IIC_WtRTCReg(u8 regAddr, u8 value);
 
 
 
+    OPTION_REGbits.nWPUEN = 0;
 
-void IIC_Init(void)
-{
-    LATC3=1;
- LATC4=1;
+    TRISA = 0;
+    LATA = 0;
+    WPUA = 0;
+    IOCAP = 0;
+    IOCAN = 0;
 
-    ODCONC3 = 1;
-    ODCONC4 = 1;
+    TRISB = 0;
+    LATB = 0;
+    WPUB = 0;
+    IOCBP = 0;
+    IOCBN = 0;
 
-    TRISC4 = 0;
-    TRISC3 = 0;
+    TRISC = 0;
+    LATC = 0;
+    WPUC = 1;
+    IOCCP = 0;
+    IOCCN = 0;
 
- WPUC4 = 1;
-    WPUC3 = 1;
 
+
+
+    TRISCbits.TRISC5 = 1;
+    WPUCbits.WPUC5 = 1;
+
+    TRISCbits.TRISC1 = 1;
+    WPUCbits.WPUC1 = 0;
+    IOCCPbits.IOCCP1 = 1;
+
+
+    for(int i = 0;i < 20; i++){
+        pdata->g_recv_buf[i] = 5;
+    }
+    pdata->g_time_h = 23;
+    pdata->g_time_m = 55;
+    pdata->g_time_s = 0;
+
+    display_update();
+
+
+
+    LATBbits.LATB2 = PIN_LOW;
+
+
+    PORTCbits.RC2 = BPC_PWR_ON;
+
+
+    TRISCbits.TRISC0 = 1;
+    WPUCbits.WPUC0 = 1;
+
+
+
+    display_set(TRUE);
 }
 
-void IIC_Start(void)
+
+void tmp_change(void)
 {
- {TRISC4 = 0;};
- LATC4=1;
- LATC3=1;
- delay_4us();
-  LATC4=0;
+    static u8 history_key = 0;
+    static u16 key_time_cnt = 0;
+    G_DATA *pdata = data_getdata();
 
- LATC3=0;
 
+
+
+    if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
+
+    {
+
+        pdata->g_find_recv_start = FALSE;
+        pdata->g_isDecoding = TRUE;
+        pdata->g_flg_switch = FALSE;
+        pdata->cnt_update = 0;
+        pdata->g_recv_count = CODE_P0;
+        PORTCbits.RC2 = BPC_PWR_ON;
+
+        INTCONbits.IOCIF = FALSE;
+        IOCCFbits.IOCCF1 = FALSE;
+        return;
+    }
+    else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
+    {
+        if(pdata->g_recv_count == CODE_P0)
+        {
+            pdata->g_recv_count = CODE_P1;
+        }
+        timer_Timer0Start();
+    }
+    else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1)
+    {
+        INTCONbits.IOCIF = FALSE;
+        IOCCFbits.IOCCF1 = FALSE;
+    }
+
+
+    if(INTCONbits.TMR0IF)
+    {
+
+        if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
+
+        {
+            receive_decode();
+        }
+
+
+
+        if(key_time_cnt++ % 10 == 0)
+        {
+            history_key <<= 1;
+            history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
+
+            if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
+            {
+                pdata->g_flg_switch = TRUE;
+            }
+        }
+
+        timer_Timer0Reset();
+        return;
+    }
+    return;
 }
 
-void IIC_Stop(void)
+void __attribute__((picinterrupt(""))) ISR(void)
 {
- {TRISC4 = 0;};
- LATC3=0;
- LATC4=0;
-  delay_4us();
- LATC3=1;
- LATC4=1;
- delay_4us();
-
-}
+    static u16 cnt = 0;
+    if(timer_IsTimer1Itrpt())
+    {
 
 
+        timer_Timer1ClrIntrpt();
+    }
 
-unsigned char IIC_Wait_Ack(void)
-{
- unsigned char ucErrTime=0;
- {TRISC4 = 1;};
- LATC4=1;delay_4us();
- LATC3=1;delay_4us();
- while(RC4)
- {
-  ucErrTime++;
-  if(ucErrTime>250)
+    if(timer_IsTimer0Itrpt())
+    {
+        timer_Timer0Handdle();
+
+  if(key_isPressed())
   {
-   IIC_Stop();
-   return 1;
+
+   capture_Set(TRUE);
   }
- }
- LATC3=0;
- return 0;
-}
 
-void IIC_Ack(void)
-{
- LATC3=0;
- {TRISC4 = 0;};
- LATC4=0;
- delay_4us();
- LATC3=1;
- delay_4us();
- LATC3=0;
-}
-
-void IIC_NAck(void)
-{
- LATC3=0;
- {TRISC4 = 0;};
- LATC4=1;
- delay_4us();
- LATC3=1;
- delay_4us();
- LATC3=0;
-}
-
-
-
-
-void IIC_Send_Byte(unsigned char txd)
-{
-    unsigned char t;
- {TRISC4 = 0;};
-    LATC3=0;
-    for(t=0;t<8;t++)
-    {
-        LATC4=(txd&0x80)>>7;
-        txd<<=1;
-  delay_4us();
-  LATC3=1;
-  delay_4us();
-  LATC3=0;
-  delay_4us();
-    }
-}
-
-unsigned char IIC_Read_Byte(unsigned char ack)
-{
- unsigned char i,receive=0;
- {TRISC4 = 1;};
-    for(i=0;i<8;i++ )
- {
-        LATC3=0;
-        delay_4us();
-  LATC3=1;
-        receive<<=1;
-        if(RC4)receive++;
-  delay_4us();
-    }
-    if (!ack)
-        IIC_NAck();
-    else
-        IIC_Ack();
-    return receive;
-}
-# 151 "myiic.c"
-s8 IIC_RdRTCReg(u8 regAddr, u8* value)
-{
-    IIC_Start();
-    IIC_Send_Byte((0b10100010));
-    if(!IIC_Wait_Ack())
-    {
-        IIC_Send_Byte(regAddr);
-        if(!IIC_Wait_Ack())
+        if(cnt++ % 10 == 0)
         {
-            IIC_Start();
-            IIC_Send_Byte((0b10100011));
-            if(!IIC_Wait_Ack())
+
+            u8 value = 0;
+            u8 data = 0;
+
+
+
+
+            if(IIC_WtRTCReg(0x03, 0x55))
             {
-                *value = IIC_Read_Byte(0);
-                IIC_Stop();
-                return 0;
+                led_Blink();
             }
-            return -1;
+            if(IIC_RdRTCReg(0x03, &data))
+            {
+                led_Blink();
+            }
+            { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""DA: %d" "\n\r", "main.c", 231, __FUNCTION__, data); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
         }
-        return -1;
+
+        timer_Timer0Reset();
     }
-    return -1;
+
+    if(capture_IsEnable() && capture_IsIntrpt())
+    {
+        capture_handdle();
+
+        bpc_proc();
+
+        capture_clrIntrpt();
+    }
 }
 
-s8 IIC_WtRTCReg(u8 regAddr, u8 value)
+void main(void)
 {
-    IIC_Start();
-    IIC_Send_Byte((0b10100010));
-    if(!IIC_Wait_Ack())
+
+
+
+
+
+    init_env();
+
+
+    timer_Timer0Init();
+    timer_Timer0Start();
+
+
+    timer_Timer1Init();
+    timer_Timer1Start();
+
+
+    capture_init();
+
+
+
+    uart_init();
+
+
+    IIC_Init();
+
+
+
+
+    display_update();
+    led_SetState(FALSE);
+
+    while(1)
     {
-        IIC_Send_Byte(regAddr);
-        if(!IIC_Wait_Ack())
-        {
-            IIC_Send_Byte(value);
-            if(!IIC_Wait_Ack())
-            {
-                IIC_Stop();
-                return 0;
-            }
-        }
-        return -1;
+# 290 "main.c"
     }
-    return -1;
+    return;
 }

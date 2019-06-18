@@ -1,4 +1,4 @@
-# 1 "myiic.c"
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\sources\\c99\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "myiic.c" 2
-# 1 "./myiic.h" 1
-
-
-
-# 1 "./delay.h" 1
-# 10 "./delay.h"
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8845,589 +8839,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 11 "./delay.h" 2
-# 22 "./delay.h"
-void delay_4us(void);
-void delay_12us(void);
-void delay_40us(void);
-# 4 "./myiic.h" 2
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\sources\\c99\\pic\\__eeprom.c" 2
 
 
 
 
-# 1 "./debug.h" 1
-
-
-
-# 1 "./data.h" 1
-
-
-
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef long int32_t;
-# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int32_t intmax_t;
-
-
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef unsigned long uint32_t;
-# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef uint32_t uintmax_t;
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-typedef int32_t int_least32_t;
-
-
-
-
-typedef uint8_t uint_fast8_t;
-
-
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-typedef uint32_t uint_least32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "./data.h" 2
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 145 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 244 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 397 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 6 "./data.h" 2
-
-
-typedef uint8_t u8;
-typedef int8_t s8;
-typedef uint16_t u16;
-typedef int16_t s16;
-typedef uint32_t u32;
-typedef int32_t s32;
-
-typedef enum{
-    FALSE = 0,
-    TRUE = 1,
-}BOOL;
-
-enum{
-    BPC_PWR_ON = 0,
-    BPC_PWR_OFF = 1,
-
-    PIN_LOW = 0,
-    PIN_HIGH = 1,
-
-
-    LED_STATE_ON = 0,
-    LED_STATE_OFF = 1,
-
-
-    CODE_P0 = 0,
-    CODE_P1,
-    CODE_P2,
-    CODE_H_1,
-    CODE_H_2,
-    CODE_M_1,
-    CODE_M_2,
-    CODE_M_3,
-    CODE_W_1,
-    CODE_W_2,
-    CODE_P3,
-    CODE_D_1,
-    CODE_D_2,
-    CODE_D_3,
-    CODE_MN_1,
-    CODE_MN_2,
-    CODE_Y_1,
-    CODE_Y_2,
-    CODE_Y_3,
-    CODE_P4,
-
-}ENUM;
-# 94 "./data.h"
-typedef struct{
-
-    volatile BOOL g_flg_switch;
-    volatile BOOL g_isDecoding;
-    volatile BOOL g_find_recv_start;
-
-
-    u8 g_time_h;
-    u8 g_time_m;
-    u8 g_time_s;
-    u8 g_time_100ms;
-
-
-    u16 g_high_level_times;
-    u16 g_all_level_times;
-    u16 g_recv_count;
-
-    u8 g_recv_buf[20];
-
-    u16 cnt_update;
-
-
-
-    u16 cnt_high;
-    u16 cnt_low;
-
-}G_DATA;
-
-G_DATA* data_getdata(void);
-
-u16 data_getTimeCnt(void);
-# 4 "./debug.h" 2
-
-# 1 "./uart.h" 1
-# 18 "./uart.h"
-void uart_init(void);
-void uart_Send_byte(u8 byte);
-void ISR_uart_TX(void);
-void ISR_uart_RX(void);
-# 5 "./debug.h" 2
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 1 3
-# 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 409 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 6 "./debug.h" 2
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 1 3
-
-
-
-
-
-
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 8 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 2 3
-
-
-#pragma intrinsic(__va_start)
-#pragma intrinsic(__va_arg)
-
-extern void * __va_start(void);
-extern void * __va_arg(void *, ...);
-# 7 "./debug.h" 2
-# 47 "./debug.h"
-typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
-int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 8 "./myiic.h" 2
-# 19 "./myiic.h"
-void IIC_Init(void);
-void IIC_Start(void);
-void IIC_Stop(void);
-void IIC_Send_Byte(unsigned char txd);
-unsigned char IIC_Read_Byte(unsigned char ack);
-unsigned char IIC_Wait_Ack(void);
-void IIC_Ack(void);
-void IIC_NAck(void);
-unsigned char RD_temp(void);
-s8 IIC_RdRTCReg(u8 regAddr, u8* value);
-s8 IIC_WtRTCReg(u8 regAddr, u8 value);
-# 1 "myiic.c" 2
-
-
-
-
-
-
-
-
-void IIC_Init(void)
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
-    LATC3=1;
- LATC4=1;
+ volatile unsigned char *cp = to;
 
-    ODCONC3 = 1;
-    ODCONC4 = 1;
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
 
-    TRISC4 = 0;
-    TRISC3 = 0;
+  EECON1 &= 0x7F;
 
- WPUC4 = 1;
-    WPUC3 = 1;
-
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\sources\\c99\\pic\\__eeprom.c"
 }
 
-void IIC_Start(void)
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
 {
- {TRISC4 = 0;};
- LATC4=1;
- LATC3=1;
- delay_4us();
-  LATC4=0;
+ const unsigned char *ptr =from;
 
- LATC3=0;
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
 
-}
+ EECON1 &= 0x7F;
 
-void IIC_Stop(void)
-{
- {TRISC4 = 0;};
- LATC3=0;
- LATC4=0;
-  delay_4us();
- LATC3=1;
- LATC4=1;
- delay_4us();
-
-}
-
-
-
-unsigned char IIC_Wait_Ack(void)
-{
- unsigned char ucErrTime=0;
- {TRISC4 = 1;};
- LATC4=1;delay_4us();
- LATC3=1;delay_4us();
- while(RC4)
- {
-  ucErrTime++;
-  if(ucErrTime>250)
-  {
-   IIC_Stop();
-   return 1;
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
   }
  }
- LATC3=0;
- return 0;
+# 101 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\sources\\c99\\pic\\__eeprom.c"
 }
 
-void IIC_Ack(void)
+unsigned char
+__eetoc(__eeprom void *addr)
 {
- LATC3=0;
- {TRISC4 = 0;};
- LATC4=0;
- delay_4us();
- LATC3=1;
- delay_4us();
- LATC3=0;
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
 
-void IIC_NAck(void)
+unsigned int
+__eetoi(__eeprom void *addr)
 {
- LATC3=0;
- {TRISC4 = 0;};
- LATC4=1;
- delay_4us();
- LATC3=1;
- delay_4us();
- LATC3=0;
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
 
-
-
-
-void IIC_Send_Byte(unsigned char txd)
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
 {
-    unsigned char t;
- {TRISC4 = 0;};
-    LATC3=0;
-    for(t=0;t<8;t++)
-    {
-        LATC4=(txd&0x80)>>7;
-        txd<<=1;
-  delay_4us();
-  LATC3=1;
-  delay_4us();
-  LATC3=0;
-  delay_4us();
-    }
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-unsigned char IIC_Read_Byte(unsigned char ack)
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
 {
- unsigned char i,receive=0;
- {TRISC4 = 1;};
-    for(i=0;i<8;i++ )
- {
-        LATC3=0;
-        delay_4us();
-  LATC3=1;
-        receive<<=1;
-        if(RC4)receive++;
-  delay_4us();
-    }
-    if (!ack)
-        IIC_NAck();
-    else
-        IIC_Ack();
-    return receive;
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
 }
-# 151 "myiic.c"
-s8 IIC_RdRTCReg(u8 regAddr, u8* value)
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
 {
-    IIC_Start();
-    IIC_Send_Byte((0b10100010));
-    if(!IIC_Wait_Ack())
-    {
-        IIC_Send_Byte(regAddr);
-        if(!IIC_Wait_Ack())
-        {
-            IIC_Start();
-            IIC_Send_Byte((0b10100011));
-            if(!IIC_Wait_Ack())
-            {
-                *value = IIC_Read_Byte(0);
-                IIC_Stop();
-                return 0;
-            }
-            return -1;
-        }
-        return -1;
-    }
-    return -1;
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
 }
 
-s8 IIC_WtRTCReg(u8 regAddr, u8 value)
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
 {
-    IIC_Start();
-    IIC_Send_Byte((0b10100010));
-    if(!IIC_Wait_Ack())
-    {
-        IIC_Send_Byte(regAddr);
-        if(!IIC_Wait_Ack())
-        {
-            IIC_Send_Byte(value);
-            if(!IIC_Wait_Ack())
-            {
-                IIC_Stop();
-                return 0;
-            }
-        }
-        return -1;
-    }
-    return -1;
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
+}
+
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
+}
+#pragma warning pop
+
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
+}
+
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }

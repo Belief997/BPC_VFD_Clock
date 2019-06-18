@@ -1,38 +1,57 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"53 ./data.h
-[; ;./data.h: 53: }ENUM;
-[c E5229 0 1 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
-[n E5229 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH LED_STATE_ON LED_STATE_OFF CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
-"14601 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 14601: extern volatile __bit LATC3 __attribute__((address(0x873)));
-[v _LATC3 `Vb ~T0 @X0 0 e@2163 ]
-"14604
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 14604: extern volatile __bit LATC4 __attribute__((address(0x874)));
-[v _LATC4 `Vb ~T0 @X0 0 e@2164 ]
-"14718
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 14718: extern volatile __bit ODCONC3 __attribute__((address(0x1473)));
-[v _ODCONC3 `Vb ~T0 @X0 0 e@5235 ]
-"14721
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 14721: extern volatile __bit ODCONC4 __attribute__((address(0x1474)));
-[v _ODCONC4 `Vb ~T0 @X0 0 e@5236 ]
-"17079
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17079: extern volatile __bit TRISC4 __attribute__((address(0x474)));
-[v _TRISC4 `Vb ~T0 @X0 0 e@1140 ]
-"17076
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17076: extern volatile __bit TRISC3 __attribute__((address(0x473)));
-[v _TRISC3 `Vb ~T0 @X0 0 e@1139 ]
-"17223
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17223: extern volatile __bit WPUC4 __attribute__((address(0x1074)));
-[v _WPUC4 `Vb ~T0 @X0 0 e@4212 ]
-"17220
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17220: extern volatile __bit WPUC3 __attribute__((address(0x1073)));
-[v _WPUC3 `Vb ~T0 @X0 0 e@4211 ]
-"22 ./delay.h
-[; ;./delay.h: 22: void delay_4us(void);
-[v _delay_4us `(v ~T0 @X0 0 ef ]
-"16626 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 16626: extern volatile __bit RC4 __attribute__((address(0x74)));
-[v _RC4 `Vb ~T0 @X0 0 e@116 ]
+"3780 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3780:     struct {
+[s S189 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S189 . RD WR WREN WRERR FREE LWLO CFGS EEPGD ]
+"3779
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3779: typedef union {
+[u S188 `S189 1 ]
+[n S188 . . ]
+"3791
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3791: extern volatile EECON1bits_t EECON1bits __attribute__((address(0x195)));
+[v _EECON1bits `VS188 ~T0 @X0 0 e@405 ]
+"3662
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3662: extern volatile unsigned short EEADR __attribute__((address(0x191)));
+[v _EEADR `Vus ~T0 @X0 0 e@401 ]
+"3774
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3774: extern volatile unsigned char EECON1 __attribute__((address(0x195)));
+[v _EECON1 `Vuc ~T0 @X0 0 e@405 ]
+"3721
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3721: extern volatile unsigned char EEDATA __attribute__((address(0x193)));
+[v _EEDATA `Vuc ~T0 @X0 0 e@403 ]
+"118
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 118:     struct {
+[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S13 . C DC Z nPD nTO ]
+"125
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 125:     struct {
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . CARRY . ZERO ]
+"117
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 117: typedef union {
+[u S12 `S13 1 `S14 1 ]
+[n S12 . . . ]
+"131
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 131: extern volatile STATUSbits_t STATUSbits __attribute__((address(0x003)));
+[v _STATUSbits `VS12 ~T0 @X0 0 e@3 ]
+"357
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 357:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"367
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 367:     struct {
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"356
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 356: typedef union {
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"374
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"3836
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 3836: extern volatile unsigned char EECON2 __attribute__((address(0x196)));
+[v _EECON2 `Vuc ~T0 @X0 0 e@406 ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -870,558 +889,515 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"53 ./data.h
-[; ;./data.h: 53: }ENUM;
-[v _ENUM `E5229 ~T0 @X0 1 e ]
-"9 myiic.c
-[; ;myiic.c: 9: void IIC_Init(void)
-[v _IIC_Init `(v ~T0 @X0 1 ef ]
+"6 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: __eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: }
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: }
+[v ___eecpymem `(v ~T0 @X0 1 ef3`*Vuc`*Euc`uc ]
+"7
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: {
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: unsigned int
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: 
+{
+[e :U ___eecpymem ]
+"6
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: __eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: }
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 6: }
+[v _to `*Vuc ~T0 @X0 1 r1 ]
+[v _from `*Euc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"7
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: {
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: unsigned int
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 7: 
+[f ]
+"8
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 8:  volatile unsigned char *cp = to;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 8: __itoee(__eeprom void *addr, unsigned int data)
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 8: double
+[v _cp `*Vuc ~T0 @X0 1 a ]
+[e = _cp _to ]
 "10
-[; ;myiic.c: 10: {
-{
-[e :U _IIC_Init ]
-[f ]
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 10:  while (EECON1bits.WR) continue;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 10:  __memcpyee(addr,(unsigned char *) &data,2);
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 10: {
+[e $U 624  ]
+[e :U 625 ]
+[e $U 624  ]
+[e :U 624 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 625  ]
+[e :U 626 ]
 "11
-[; ;myiic.c: 11:     LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 11:  EEADR = (unsigned char)from;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 11:  return data;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 11:  double data;
+[e = _EEADR -> -> _from `uc `us ]
 "12
-[; ;myiic.c: 12:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
-"14
-[; ;myiic.c: 14:     ODCONC3 = 1;
-[e = _ODCONC3 -> -> 1 `i `b ]
-"15
-[; ;myiic.c: 15:     ODCONC4 = 1;
-[e = _ODCONC4 -> -> 1 `i `b ]
-"17
-[; ;myiic.c: 17:     TRISC4 = 0;
-[e = _TRISC4 -> -> 0 `i `b ]
-"18
-[; ;myiic.c: 18:     TRISC3 = 0;
-[e = _TRISC3 -> -> 0 `i `b ]
-"20
-[; ;myiic.c: 20:  WPUC4 = 1;
-[e = _WPUC4 -> -> 1 `i `b ]
-"21
-[; ;myiic.c: 21:     WPUC3 = 1;
-[e = _WPUC3 -> -> 1 `i `b ]
-"23
-[; ;myiic.c: 23: }
-[e :UE 627 ]
-}
-"25
-[; ;myiic.c: 25: void IIC_Start(void)
-[v _IIC_Start `(v ~T0 @X0 1 ef ]
-"26
-[; ;myiic.c: 26: {
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 12:  while(size--) {
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 12: }
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 12:  __eecpymem((unsigned char *) &data,addr,4);
+[e $U 627  ]
+[e :U 628 ]
 {
-[e :U _IIC_Start ]
-[f ]
-"27
-[; ;myiic.c: 27:  {TRISC4 = 0;};
-{
-[e = _TRISC4 -> -> 0 `i `b ]
-}
-"28
-[; ;myiic.c: 28:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
-"29
-[; ;myiic.c: 29:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
-"30
-[; ;myiic.c: 30:  delay_4us();
-[e ( _delay_4us ..  ]
-"31
-[; ;myiic.c: 31:   LATC4=0;
-[e = _LATC4 -> -> 0 `i `b ]
-"33
-[; ;myiic.c: 33:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"35
-[; ;myiic.c: 35: }
-[e :UE 628 ]
-}
-"37
-[; ;myiic.c: 37: void IIC_Stop(void)
-[v _IIC_Stop `(v ~T0 @X0 1 ef ]
-"38
-[; ;myiic.c: 38: {
-{
-[e :U _IIC_Stop ]
-[f ]
-"39
-[; ;myiic.c: 39:  {TRISC4 = 0;};
-{
-[e = _TRISC4 -> -> 0 `i `b ]
-}
-"40
-[; ;myiic.c: 40:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"41
-[; ;myiic.c: 41:  LATC4=0;
-[e = _LATC4 -> -> 0 `i `b ]
-"42
-[; ;myiic.c: 42:   delay_4us();
-[e ( _delay_4us ..  ]
-"43
-[; ;myiic.c: 43:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
-"44
-[; ;myiic.c: 44:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
-"45
-[; ;myiic.c: 45:  delay_4us();
-[e ( _delay_4us ..  ]
-"47
-[; ;myiic.c: 47: }
-[e :UE 629 ]
-}
-"51
-[; ;myiic.c: 51: unsigned char IIC_Wait_Ack(void)
-[v _IIC_Wait_Ack `(uc ~T0 @X0 1 ef ]
-"52
-[; ;myiic.c: 52: {
-{
-[e :U _IIC_Wait_Ack ]
-[f ]
-"53
-[; ;myiic.c: 53:  unsigned char ucErrTime=0;
-[v _ucErrTime `uc ~T0 @X0 1 a ]
-[e = _ucErrTime -> -> 0 `i `uc ]
-"54
-[; ;myiic.c: 54:  {TRISC4 = 1;};
-{
-[e = _TRISC4 -> -> 1 `i `b ]
-}
-"55
-[; ;myiic.c: 55:  LATC4=1;delay_4us();
-[e = _LATC4 -> -> 1 `i `b ]
-[e ( _delay_4us ..  ]
-"56
-[; ;myiic.c: 56:  LATC3=1;delay_4us();
-[e = _LATC3 -> -> 1 `i `b ]
-[e ( _delay_4us ..  ]
-"57
-[; ;myiic.c: 57:  while(RC4)
-[e $U 631  ]
-[e :U 632 ]
-"58
-[; ;myiic.c: 58:  {
-{
-"59
-[; ;myiic.c: 59:   ucErrTime++;
-[e ++ _ucErrTime -> -> 1 `i `uc ]
-"60
-[; ;myiic.c: 60:   if(ucErrTime>250)
-[e $ ! > -> _ucErrTime `i -> 250 `i 634  ]
-"61
-[; ;myiic.c: 61:   {
-{
-"62
-[; ;myiic.c: 62:    IIC_Stop();
-[e ( _IIC_Stop ..  ]
-"63
-[; ;myiic.c: 63:    return 1;
-[e ) -> -> 1 `i `uc ]
-[e $UE 630  ]
-"64
-[; ;myiic.c: 64:   }
-}
-[e :U 634 ]
-"65
-[; ;myiic.c: 65:  }
-}
+"13
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 13:   while (EECON1bits.WR) continue;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 13: 
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 13:  return data;
+[e $U 630  ]
 [e :U 631 ]
-"57
-[; ;myiic.c: 57:  while(RC4)
-[e $ _RC4 632  ]
-[e :U 633 ]
-"66
-[; ;myiic.c: 66:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"67
-[; ;myiic.c: 67:  return 0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 630  ]
-"68
-[; ;myiic.c: 68: }
-[e :UE 630 ]
+[e $U 630  ]
+[e :U 630 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 631  ]
+[e :U 632 ]
+"15
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 15:   EECON1 &= 0x7F;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 15: 
+[e =& _EECON1 -> -> 127 `i `Vuc ]
+"17
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 17:   EECON1bits.RD = 1;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 17: __fttoee(__eeprom void *addr, float data)
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+"18
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 18:   *cp++ = EEDATA;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 18: {
+[e = *U ++ _cp * -> -> 1 `i `x -> -> # *U _cp `i `x _EEDATA ]
+"19
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 19:   ++EEADR;
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 19:  __memcpyee(addr,(unsigned char *) &data,3);
+[e =+ _EEADR -> -> 1 `i `Vus ]
+"20
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 20:  }
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 20:  return data;
 }
-"70
-[; ;myiic.c: 70: void IIC_Ack(void)
-[v _IIC_Ack `(v ~T0 @X0 1 ef ]
-"71
-[; ;myiic.c: 71: {
+[e :U 627 ]
+"12
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 12:  while(size--) {
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 12: }
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 12:  __eecpymem((unsigned char *) &data,addr,4);
+[e $ != -> -- _size -> -> 1 `i `uc `i -> 0 `i 628  ]
+[e :U 629 ]
+"36
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 36: }
+[e :UE 623 ]
+}
+"39
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 39: __memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+[v ___memcpyee `(v ~T0 @X0 1 ef3`*Euc`*Cuc`uc ]
+"40
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 40: {
 {
-[e :U _IIC_Ack ]
+[e :U ___memcpyee ]
+"39
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 39: __memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+[v _to `*Euc ~T0 @X0 1 r1 ]
+[v _from `*Cuc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"40
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 40: {
 [f ]
-"72
-[; ;myiic.c: 72:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"73
-[; ;myiic.c: 73:  {TRISC4 = 0;};
-{
-[e = _TRISC4 -> -> 0 `i `b ]
-}
-"74
-[; ;myiic.c: 74:  LATC4=0;
-[e = _LATC4 -> -> 0 `i `b ]
-"75
-[; ;myiic.c: 75:  delay_4us();
-[e ( _delay_4us ..  ]
-"76
-[; ;myiic.c: 76:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
-"77
-[; ;myiic.c: 77:  delay_4us();
-[e ( _delay_4us ..  ]
-"78
-[; ;myiic.c: 78:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"79
-[; ;myiic.c: 79: }
-[e :UE 635 ]
-}
-"81
-[; ;myiic.c: 81: void IIC_NAck(void)
-[v _IIC_NAck `(v ~T0 @X0 1 ef ]
-"82
-[; ;myiic.c: 82: {
-{
-[e :U _IIC_NAck ]
-[f ]
-"83
-[; ;myiic.c: 83:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"84
-[; ;myiic.c: 84:  {TRISC4 = 0;};
-{
-[e = _TRISC4 -> -> 0 `i `b ]
-}
-"85
-[; ;myiic.c: 85:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
-"86
-[; ;myiic.c: 86:  delay_4us();
-[e ( _delay_4us ..  ]
-"87
-[; ;myiic.c: 87:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
-"88
-[; ;myiic.c: 88:  delay_4us();
-[e ( _delay_4us ..  ]
-"89
-[; ;myiic.c: 89:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"90
-[; ;myiic.c: 90: }
-[e :UE 636 ]
-}
-"95
-[; ;myiic.c: 95: void IIC_Send_Byte(unsigned char txd)
-[v _IIC_Send_Byte `(v ~T0 @X0 1 ef1`uc ]
-"96
-[; ;myiic.c: 96: {
-{
-[e :U _IIC_Send_Byte ]
-"95
-[; ;myiic.c: 95: void IIC_Send_Byte(unsigned char txd)
-[v _txd `uc ~T0 @X0 1 r1 ]
-"96
-[; ;myiic.c: 96: {
-[f ]
-"97
-[; ;myiic.c: 97:     unsigned char t;
-[v _t `uc ~T0 @X0 1 a ]
-"98
-[; ;myiic.c: 98:  {TRISC4 = 0;};
-{
-[e = _TRISC4 -> -> 0 `i `b ]
-}
-"99
-[; ;myiic.c: 99:     LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"100
-[; ;myiic.c: 100:     for(t=0;t<8;t++)
-{
-[e = _t -> -> 0 `i `uc ]
-[e $ < -> _t `i -> 8 `i 638  ]
-[e $U 639  ]
+"41
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 41:  const unsigned char *ptr =from;
+[v _ptr `*Cuc ~T0 @X0 1 a ]
+[e = _ptr _from ]
+"43
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 43:  while (EECON1bits.WR) continue;
+[e $U 634  ]
+[e :U 635 ]
+[e $U 634  ]
+[e :U 634 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 635  ]
+[e :U 636 ]
+"44
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 44:  EEADR = (unsigned char)to - 1U;
+[e = _EEADR -> - -> -> _to `uc `ui -> 1 `ui `us ]
+"46
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 46:  EECON1 &= 0x7F;
+[e =& _EECON1 -> -> 127 `i `Vuc ]
+"48
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 48:  while(size--) {
+[e $U 637  ]
 [e :U 638 ]
-"101
-[; ;myiic.c: 101:     {
 {
-"102
-[; ;myiic.c: 102:         LATC4=(txd&0x80)>>7;
-[e = _LATC4 -> >> & -> _txd `i -> 128 `i -> 7 `i `b ]
-"103
-[; ;myiic.c: 103:         txd<<=1;
-[e =<< _txd -> -> 1 `i `uc ]
-"104
-[; ;myiic.c: 104:   delay_4us();
-[e ( _delay_4us ..  ]
-"105
-[; ;myiic.c: 105:   LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
-"106
-[; ;myiic.c: 106:   delay_4us();
-[e ( _delay_4us ..  ]
-"107
-[; ;myiic.c: 107:   LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"108
-[; ;myiic.c: 108:   delay_4us();
-[e ( _delay_4us ..  ]
-"109
-[; ;myiic.c: 109:     }
+"49
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 49:   while (EECON1bits.WR) {
+[e $U 640  ]
+[e :U 641 ]
+{
+"50
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 50:    continue;
+[e $U 640  ]
+"51
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 51:   }
 }
-[e ++ _t -> -> 1 `i `uc ]
-[e $ < -> _t `i -> 8 `i 638  ]
+[e :U 640 ]
+"49
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 49:   while (EECON1bits.WR) {
+[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 641  ]
+[e :U 642 ]
+"52
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 52:   EEDATA = *ptr++;
+[e = _EEDATA *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+"53
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 53:   ++EEADR;
+[e =+ _EEADR -> -> 1 `i `Vus ]
+"54
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 54:   STATUSbits.CARRY = 0;
+[e = . . _STATUSbits 1 0 -> -> 0 `i `uc ]
+"55
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 55:   if (INTCONbits.GIE) {
+[e $ ! != -> . . _INTCONbits 0 7 `i -> 0 `i 643  ]
+{
+"56
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 56:    STATUSbits.CARRY = 1;
+[e = . . _STATUSbits 1 0 -> -> 1 `i `uc ]
+"57
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 57:   }
+}
+[e :U 643 ]
+"58
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 58:   INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"59
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 59:   EECON1bits.WREN = 1;
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+"60
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 60:   EECON2 = 0x55;
+[e = _EECON2 -> -> 85 `i `uc ]
+"61
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 61:   EECON2 = 0xAA;
+[e = _EECON2 -> -> 170 `i `uc ]
+"62
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 62:   EECON1bits.WR = 1;
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+"63
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 63:   EECON1bits.WREN = 0;
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+"64
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 64:   if (STATUSbits.CARRY) {
+[e $ ! != -> . . _STATUSbits 1 0 `i -> 0 `i 644  ]
+{
+"65
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 65:    INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"66
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 66:   }
+}
+[e :U 644 ]
+"67
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 67:  }
+}
+[e :U 637 ]
+"48
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 48:  while(size--) {
+[e $ != -> -- _size -> -> 1 `i `uc `i -> 0 `i 638  ]
 [e :U 639 ]
+"101
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 101: }
+[e :UE 633 ]
 }
-"110
-[; ;myiic.c: 110: }
-[e :UE 637 ]
-}
-"112
-[; ;myiic.c: 112: unsigned char IIC_Read_Byte(unsigned char ack)
-[v _IIC_Read_Byte `(uc ~T0 @X0 1 ef1`uc ]
-"113
-[; ;myiic.c: 113: {
+"104
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 104: __eetoc(__eeprom void *addr)
+[v ___eetoc `(uc ~T0 @X0 1 ef1`*Ev ]
+"105
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 105: {
 {
-[e :U _IIC_Read_Byte ]
+[e :U ___eetoc ]
+"104
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 104: __eetoc(__eeprom void *addr)
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"105
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 105: {
+[f ]
+"106
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 106:  unsigned char data;
+[v _data `uc ~T0 @X0 1 a ]
+"107
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 107:  __eecpymem((unsigned char *) &data,addr,1);
+[e ( ___eecpymem (3 , , -> &U _data `*Vuc -> _addr `*Euc -> -> 1 `i `uc ]
+"108
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 108:  return data;
+[e ) _data ]
+[e $UE 645  ]
+"109
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 109: }
+[e :UE 645 ]
+}
 "112
-[; ;myiic.c: 112: unsigned char IIC_Read_Byte(unsigned char ack)
-[v _ack `uc ~T0 @X0 1 r1 ]
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 112: __eetoi(__eeprom void *addr)
+[v ___eetoi `(ui ~T0 @X0 1 ef1`*Ev ]
 "113
-[; ;myiic.c: 113: {
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 113: {
+{
+[e :U ___eetoi ]
+"112
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 112: __eetoi(__eeprom void *addr)
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"113
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 113: {
 [f ]
 "114
-[; ;myiic.c: 114:  unsigned char i,receive=0;
-[v _i `uc ~T0 @X0 1 a ]
-[v _receive `uc ~T0 @X0 1 a ]
-[e = _receive -> -> 0 `i `uc ]
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 114:  unsigned int data;
+[v _data `ui ~T0 @X0 1 a ]
 "115
-[; ;myiic.c: 115:  {TRISC4 = 1;};
-{
-[e = _TRISC4 -> -> 1 `i `b ]
-}
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 115:  __eecpymem((unsigned char *) &data,addr,2);
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 2 `i `uc ]
 "116
-[; ;myiic.c: 116:     for(i=0;i<8;i++ )
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 642  ]
-[e $U 643  ]
-[e :U 642 ]
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 116:  return data;
+[e ) _data ]
+[e $UE 646  ]
 "117
-[; ;myiic.c: 117:  {
-{
-"118
-[; ;myiic.c: 118:         LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
+[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c: 117: }
+[e :UE 646 ]
+}
 "119
-[; ;myiic.c: 119:         delay_4us();
-[e ( _delay_4us ..  ]
+[p k ]
 "120
-[; ;myiic.c: 120:   LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
-"121
-[; ;myiic.c: 121:         receive<<=1;
-[e =<< _receive -> -> 1 `i `uc ]
+[p n 2040 ]
 "122
-[; ;myiic.c: 122:         if(RC4)receive++;
-[e $ ! _RC4 645  ]
-[e ++ _receive -> -> 1 `i `uc ]
-[e :U 645 ]
+[v ___eetom `(um ~T0 @X0 1 ef1`*Ev ]
 "123
-[; ;myiic.c: 123:   delay_4us();
-[e ( _delay_4us ..  ]
-"124
-[; ;myiic.c: 124:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 642  ]
-[e :U 643 ]
-}
-"125
-[; ;myiic.c: 125:     if (!ack)
-[e $ ! ! != -> _ack `i -> 0 `i 646  ]
-"126
-[; ;myiic.c: 126:         IIC_NAck();
-[e ( _IIC_NAck ..  ]
-[e $U 647  ]
-"127
-[; ;myiic.c: 127:     else
-[e :U 646 ]
-"128
-[; ;myiic.c: 128:         IIC_Ack();
-[e ( _IIC_Ack ..  ]
-[e :U 647 ]
-"129
-[; ;myiic.c: 129:     return receive;
-[e ) _receive ]
-[e $UE 641  ]
-"130
-[; ;myiic.c: 130: }
-[e :UE 641 ]
-}
-"151
-[; ;myiic.c: 151: s8 IIC_RdRTCReg(u8 regAddr, u8* value)
-[v _IIC_RdRTCReg `(c ~T0 @X0 1 ef2`uc`*uc ]
-"152
-[; ;myiic.c: 152: {
 {
-[e :U _IIC_RdRTCReg ]
-"151
-[; ;myiic.c: 151: s8 IIC_RdRTCReg(u8 regAddr, u8* value)
-[v _regAddr `uc ~T0 @X0 1 r1 ]
-[v _value `*uc ~T0 @X0 1 r2 ]
-"152
-[; ;myiic.c: 152: {
+[e :U ___eetom ]
+"122
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"123
 [f ]
-"153
-[; ;myiic.c: 153:     IIC_Start();
-[e ( _IIC_Start ..  ]
-"154
-[; ;myiic.c: 154:     IIC_Send_Byte((0b10100010));
-[e ( _IIC_Send_Byte (1 -> -> 162 `i `uc ]
-"155
-[; ;myiic.c: 155:     if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 649  ]
-"156
-[; ;myiic.c: 156:     {
-{
-"157
-[; ;myiic.c: 157:         IIC_Send_Byte(regAddr);
-[e ( _IIC_Send_Byte (1 _regAddr ]
-"158
-[; ;myiic.c: 158:         if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 650  ]
-"159
-[; ;myiic.c: 159:         {
-{
-"160
-[; ;myiic.c: 160:             IIC_Start();
-[e ( _IIC_Start ..  ]
-"161
-[; ;myiic.c: 161:             IIC_Send_Byte((0b10100011));
-[e ( _IIC_Send_Byte (1 -> -> 163 `i `uc ]
-"162
-[; ;myiic.c: 162:             if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 651  ]
-"163
-[; ;myiic.c: 163:             {
-{
-"164
-[; ;myiic.c: 164:                 *value = IIC_Read_Byte(0);
-[e = *U _value ( _IIC_Read_Byte (1 -> -> 0 `i `uc ]
-"165
-[; ;myiic.c: 165:                 IIC_Stop();
-[e ( _IIC_Stop ..  ]
-"166
-[; ;myiic.c: 166:                 return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 648  ]
-"167
-[; ;myiic.c: 167:             }
+"124
+[v _data `um ~T0 @X0 1 a ]
+"125
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+"126
+[e ) _data ]
+[e $UE 647  ]
+"127
+[e :UE 647 ]
 }
-[e :U 651 ]
-"168
-[; ;myiic.c: 168:             return -1;
-[e ) -> -U -> 1 `i `c ]
+"128
+[p o ]
+"131
+[v ___eetol `(ul ~T0 @X0 1 ef1`*Ev ]
+"132
+{
+[e :U ___eetol ]
+"131
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"132
+[f ]
+"133
+[v _data `ul ~T0 @X0 1 a ]
+"134
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+"135
+[e ) _data ]
 [e $UE 648  ]
-"169
-[; ;myiic.c: 169:         }
-}
-[e :U 650 ]
-"170
-[; ;myiic.c: 170:         return -1;
-[e ) -> -U -> 1 `i `c ]
-[e $UE 648  ]
-"171
-[; ;myiic.c: 171:     }
-}
-[e :U 649 ]
-"172
-[; ;myiic.c: 172:     return -1;
-[e ) -> -U -> 1 `i `c ]
-[e $UE 648  ]
-"173
-[; ;myiic.c: 173: }
+"136
 [e :UE 648 ]
 }
-"175
-[; ;myiic.c: 175: s8 IIC_WtRTCReg(u8 regAddr, u8 value)
-[v _IIC_WtRTCReg `(c ~T0 @X0 1 ef2`uc`uc ]
-"176
-[; ;myiic.c: 176: {
+"138
+[p k ]
+"139
+[p n 1516 ]
+"141
+[v ___eetoo `(uo ~T0 @X0 1 ef1`*Ev ]
+"142
 {
-[e :U _IIC_WtRTCReg ]
-"175
-[; ;myiic.c: 175: s8 IIC_WtRTCReg(u8 regAddr, u8 value)
-[v _regAddr `uc ~T0 @X0 1 r1 ]
-[v _value `uc ~T0 @X0 1 r2 ]
-"176
-[; ;myiic.c: 176: {
+[e :U ___eetoo ]
+"141
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"142
 [f ]
-"177
-[; ;myiic.c: 177:     IIC_Start();
-[e ( _IIC_Start ..  ]
-"178
-[; ;myiic.c: 178:     IIC_Send_Byte((0b10100010));
-[e ( _IIC_Send_Byte (1 -> -> 162 `i `uc ]
-"179
-[; ;myiic.c: 179:     if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 653  ]
-"180
-[; ;myiic.c: 180:     {
-{
-"181
-[; ;myiic.c: 181:         IIC_Send_Byte(regAddr);
-[e ( _IIC_Send_Byte (1 _regAddr ]
-"182
-[; ;myiic.c: 182:         if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 654  ]
-"183
-[; ;myiic.c: 183:         {
-{
-"184
-[; ;myiic.c: 184:             IIC_Send_Byte(value);
-[e ( _IIC_Send_Byte (1 _value ]
-"185
-[; ;myiic.c: 185:             if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 655  ]
-"186
-[; ;myiic.c: 186:             {
-{
-"187
-[; ;myiic.c: 187:                 IIC_Stop();
-[e ( _IIC_Stop ..  ]
-"188
-[; ;myiic.c: 188:                 return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 652  ]
-"189
-[; ;myiic.c: 189:             }
+"143
+[v _data `uo ~T0 @X0 1 a ]
+"144
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 8 `i `uc ]
+"145
+[e ) _data ]
+[e $UE 649  ]
+"146
+[e :UE 649 ]
 }
-[e :U 655 ]
-"190
-[; ;myiic.c: 190:         }
+"147
+[p o ]
+"150
+[v ___ctoee `(uc ~T0 @X0 1 ef2`*Ev`uc ]
+"151
+{
+[e :U ___ctoee ]
+"150
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"151
+[f ]
+"152
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> &U _data `*Cuc -> -> 1 `i `uc ]
+"153
+[e ) _data ]
+[e $UE 650  ]
+"154
+[e :UE 650 ]
 }
-[e :U 654 ]
-"191
-[; ;myiic.c: 191:         return -1;
-[e ) -> -U -> 1 `i `c ]
-[e $UE 652  ]
-"192
-[; ;myiic.c: 192:     }
+"157
+[v ___itoee `(ui ~T0 @X0 1 ef2`*Ev`ui ]
+"158
+{
+[e :U ___itoee ]
+"157
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ui ~T0 @X0 1 r2 ]
+"158
+[f ]
+"159
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 2 `i `uc ]
+"160
+[e ) _data ]
+[e $UE 651  ]
+"161
+[e :UE 651 ]
 }
-[e :U 653 ]
-"193
-[; ;myiic.c: 193:     return -1;
-[e ) -> -U -> 1 `i `c ]
+"163
+[p k ]
+"164
+[p n 2040 ]
+"166
+[v ___mtoee `(um ~T0 @X0 1 ef2`*Ev`um ]
+"167
+{
+[e :U ___mtoee ]
+"166
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `um ~T0 @X0 1 r2 ]
+"167
+[f ]
+"168
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+"169
+[e ) _data ]
 [e $UE 652  ]
-"194
-[; ;myiic.c: 194: }
+"170
 [e :UE 652 ]
+}
+"171
+[p o ]
+"174
+[v ___ltoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"175
+{
+[e :U ___ltoee ]
+"174
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"175
+[f ]
+"176
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+"177
+[e ) _data ]
+[e $UE 653  ]
+"178
+[e :UE 653 ]
+}
+"180
+[p k ]
+"181
+[p n 1516 ]
+"183
+[v ___otoee `(uo ~T0 @X0 1 ef2`*Ev`uo ]
+"184
+{
+[e :U ___otoee ]
+"183
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `uo ~T0 @X0 1 r2 ]
+"184
+[f ]
+"185
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 8 `i `uc ]
+"186
+[e ) _data ]
+[e $UE 654  ]
+"187
+[e :UE 654 ]
+}
+"188
+[p o ]
+"191
+[v ___eetoft `(f ~T0 @X0 1 ef1`*Ev ]
+"192
+{
+[e :U ___eetoft ]
+"191
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"192
+[f ]
+"193
+[v _data `f ~T0 @X0 1 a ]
+"194
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+"195
+[e ) _data ]
+[e $UE 655  ]
+"196
+[e :UE 655 ]
+}
+"199
+[v ___eetofl `(d ~T0 @X0 1 ef1`*Ev ]
+"200
+{
+[e :U ___eetofl ]
+"199
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"200
+[f ]
+"201
+[v _data `d ~T0 @X0 1 a ]
+"202
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+"203
+[e ) _data ]
+[e $UE 656  ]
+"204
+[e :UE 656 ]
+}
+"207
+[v ___fttoee `(f ~T0 @X0 1 ef2`*Ev`f ]
+"208
+{
+[e :U ___fttoee ]
+"207
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `f ~T0 @X0 1 r2 ]
+"208
+[f ]
+"209
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+"210
+[e ) _data ]
+[e $UE 657  ]
+"211
+[e :UE 657 ]
+}
+"214
+[v ___fltoee `(d ~T0 @X0 1 ef2`*Ev`d ]
+"215
+{
+[e :U ___fltoee ]
+"214
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `d ~T0 @X0 1 r2 ]
+"215
+[f ]
+"216
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+"217
+[e ) _data ]
+[e $UE 658  ]
+"218
+[e :UE 658 ]
 }
