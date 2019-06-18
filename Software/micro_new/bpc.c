@@ -14,6 +14,7 @@
 #include "display.h"
 #include "bpc.h"
 #include "debug.h"
+#include "myiic.h"
 
 u16 cnt_abs(u16 a, u16 b) {
     return a > b ? (a - b) : (b - a);

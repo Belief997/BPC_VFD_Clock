@@ -61,8 +61,8 @@
 #define GET_NUMBER_3 LATAbits.LATA5
 #endif
 
-#define RA_LATA6 TRISAbits.TRISA6
-#define RA_LATA7 TRISAbits.TRISA7
+#define RA_TRISA6 TRISAbits.TRISA6
+#define RA_TRISA7 TRISAbits.TRISA7
 
 /***************  define pin table  end  ******************/
 

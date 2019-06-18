@@ -98,8 +98,8 @@ void init_env(){
     CME_DATA_IOC = 1; //detect when ioc up
     
     // ra6 ra7
-    //RA_TRISA6 = 1;
-    //RA_TRISA7 = 1;
+    RA_TRISA6 = 1;
+    RA_TRISA7 = 1;
     
     // times cnt in receive_decode
     for(int i = 0;i < RECV_BUF_MAX; i++){
@@ -197,7 +197,7 @@ void tmp_change(void)
 
 void __interrupt () ISR(void)
 {
-    static u16 cnt = 0;
+   // static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
 //        LED_STATE = (cnt++ % 2 == 0);
