@@ -301,11 +301,11 @@ TRUE 1
 [v _bpc_write_time bpc_write_time `(c  1 e 1 0 ]
 "52
 [v _bpc_read_time bpc_read_time `(c  1 e 1 0 ]
-"95
+"98
 [v _bpc_Cnt2Qua bpc_Cnt2Qua `(uc  1 s 1 bpc_Cnt2Qua ]
-"122
+"125
 [v _check_err check_err `(i  1 s 2 check_err ]
-"146
+"149
 [v _bpc_proc bpc_proc `(i  1 e 2 0 ]
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
@@ -923,7 +923,7 @@ TRUE 1
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "54
 [v bpc_read_time@pdata pdata `*.4VES52  1 a 1 33 ]
-"91
+"94
 } 0
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
@@ -1133,23 +1133,23 @@ TRUE 1
 {
 "51
 } 0
-"146 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"149 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 [v _bpc_proc bpc_proc `(i  1 e 2 0 ]
 {
-"216
+"219
 [v bpc_proc@i i `i  1 a 2 20 ]
-"186
+"189
 [v bpc_proc@last_time_m last_time_m `us  1 a 2 18 ]
-"185
+"188
 [v bpc_proc@last_time_h last_time_h `us  1 a 2 16 ]
-"187
+"190
 [v bpc_proc@last_time_s last_time_s `us  1 a 2 14 ]
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"147
+"150
 [v bpc_proc@pdata pdata `*.4VES52  1 a 1 23 ]
-"148
+"151
 [v bpc_proc@number number `uc  1 a 1 22 ]
-"220
+"223
 } 0
 "74 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
 [v i1_display_update display_update `(v  1 e 1 0 ]
@@ -1195,21 +1195,21 @@ TRUE 1
 [v i1capture_Set@isON isON `uc  1 a 1 0 ]
 "47
 } 0
-"122 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"125 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 [v _check_err check_err `(i  1 s 2 check_err ]
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 [v check_err@pdata pdata `*.4VES52  1 a 1 wreg ]
-"129
+"132
 [v check_err@i i `uc  1 a 1 8 ]
-"128
+"131
 [v check_err@check check `uc  1 a 1 9 ]
-"122
+"125
 [v check_err@pdata pdata `*.4VES52  1 a 1 wreg ]
-"124
-"122
+"127
+"125
 [v check_err@pdata pdata `*.4VES52  1 a 1 10 ]
-"144
+"147
 } 0
 "41
 [v _bpc_write_time bpc_write_time `(c  1 e 1 0 ]
@@ -1287,13 +1287,13 @@ TRUE 1
 {
 "7
 } 0
-"95 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"98 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 [v _bpc_Cnt2Qua bpc_Cnt2Qua `(uc  1 s 1 bpc_Cnt2Qua ]
 {
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"96
+"99
 [v bpc_Cnt2Qua@pdata pdata `*.4VES52  1 a 1 6 ]
-"120
+"123
 } 0
 "94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
 [s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]

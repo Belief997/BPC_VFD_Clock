@@ -83,6 +83,9 @@ s8 bpc_read_time(void)
             }
             pdata->g_time_s = dataBin;
         }
+        if(pdata->g_time_h == 0 && pdata->g_time_m == 0){
+            break;
+        }
         return 0;   
     }while(0);
     return -1;
