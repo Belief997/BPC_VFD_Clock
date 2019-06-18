@@ -1,10 +1,10 @@
-[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 16F1786 ]
 [d frameptr 6 ]
-"53 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[e E5236 . `uc
+"53 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -32,13 +32,13 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-"45 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-[e E5232 . `uc
+"45 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
+[e E5222 . `uc
 FALSE 0
 TRUE 1
 ]
-"53 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[e E5239 . `uc
+"53 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[e E5229 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -66,7 +66,7 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-[e E5236 . `uc
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -94,13 +94,13 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-"46 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-[e E5232 . `uc
+"46 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
+[e E5222 . `uc
 FALSE 0
 TRUE 1
 ]
-"53 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[e E5236 . `uc
+"53 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -128,7 +128,7 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-[e E5236 . `uc
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -156,13 +156,13 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-"7 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-[e E5232 . `uc
+"7 F:\Github\BPC_VFD_Clock\Software\micro_new\data.c
+[e E5222 . `uc
 FALSE 0
 TRUE 1
 ]
-"53 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[e E5236 . `uc
+"53 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -190,7 +190,7 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-[e E5236 . `uc
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -218,13 +218,13 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-"24 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-[e E5232 . `uc
+"24 F:\Github\BPC_VFD_Clock\Software\micro_new\bpc.c
+[e E5222 . `uc
 FALSE 0
 TRUE 1
 ]
-"53 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[e E5236 . `uc
+"53 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -252,13 +252,13 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-"48 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-[e E5232 . `uc
+"48 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
+[e E5222 . `uc
 FALSE 0
 TRUE 1
 ]
-"53 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[e E5236 . `uc
+"53 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[e E5226 . `uc
 BPC_PWR_ON 0
 BPC_PWR_OFF 1
 PIN_LOW 0
@@ -286,12 +286,12 @@ CODE_Y_2 17
 CODE_Y_3 18
 CODE_P4 19
 ]
-"16 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-[e E5232 . `uc
+"16 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
+[e E5222 . `uc
 FALSE 0
 TRUE 1
 ]
-"18 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"18 F:\Github\BPC_VFD_Clock\Software\micro_new\bpc.c
 [v _cnt_abs cnt_abs `(us  1 e 2 0 ]
 "22
 [v _bpc_Cnt2Qua bpc_Cnt2Qua `(uc  1 s 1 bpc_Cnt2Qua ]
@@ -299,17 +299,17 @@ TRUE 1
 [v _check_err check_err `(i  1 s 2 check_err ]
 "80
 [v _bpc_proc bpc_proc `(i  1 e 2 0 ]
-"94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+"94 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\data.c
 [v _data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
-"94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+"94 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\data.c
 [v i1_data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
-"3 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\delay.c
-[v _delay_2us delay_2us `(v  1 e 1 0 ]
-"16 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+"3 F:\Github\BPC_VFD_Clock\Software\micro_new\delay.c
+[v _delay_4us delay_4us `(v  1 e 1 0 ]
+"16 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
 [v _display_set display_set `(v  1 e 1 0 ]
 "28
 [v _display_control595_delay display_control595_delay `(v  1 s 1 display_control595_delay ]
@@ -325,19 +325,19 @@ TRUE 1
 [v i1_display_update display_update `(v  1 e 1 0 ]
 "97
 [v _update_time update_time `(v  1 e 1 0 ]
-"1 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
+"1 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aomod.c
-[v ___aomod __aomod `(o  1 e 8 0 ]
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 [v i1___awdiv __awdiv `(i  1 e 2 0 ]
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 [v i1___awmod __awmod `(i  1 e 2 0 ]
-"72 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+"72 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 "274
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
@@ -347,44 +347,43 @@ TRUE 1
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 "1368
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\lwmod.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+"8 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
-"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+"8 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
-"9 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+"9 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\putch.c
+"7 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\putch.c
 [v _putch putch `(v  1 e 1 0 ]
-"10 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\sprcadd.c
+"10 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
+"7 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\strcpy.c
 [v _strcpy strcpy `(*.5uc  1 e 1 0 ]
-"12 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+"12 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
-"4 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul8_16.c
+"4 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\pic\__eeprom.c
+"6 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"12 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+"12 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
 [v _capture_setEdge capture_setEdge `(i  1 s 2 capture_setEdge ]
 [v i1_capture_setEdge capture_setEdge `(i  1 s 2 i1_capture_setEdge ]
 "25
 [v _capture_init capture_init `(uc  1 e 1 0 ]
 "38
 [v _capture_Set capture_Set `(uc  1 e 1 0 ]
-[v i1_capture_Set capture_Set `(uc  1 e 1 0 ]
 "48
-[v _capture_IsEnable capture_IsEnable `(E5232  1 e 1 0 ]
+[v _capture_IsEnable capture_IsEnable `(E5222  1 e 1 0 ]
 "52
-[v _capture_IsIntrpt capture_IsIntrpt `(E5232  1 e 1 0 ]
+[v _capture_IsIntrpt capture_IsIntrpt `(E5222  1 e 1 0 ]
 "56
 [v _capture_clrIntrpt capture_clrIntrpt `(v  1 e 1 0 ]
 "60
-[v _capture_IsNegEdge capture_IsNegEdge `(E5232  1 e 1 0 ]
+[v _capture_IsNegEdge capture_IsNegEdge `(E5222  1 e 1 0 ]
 "65
 [v _capture_handdle capture_handdle `(i  1 e 2 0 ]
 "110
@@ -395,35 +394,39 @@ TRUE 1
 "126
 [v _key_checkPressed key_checkPressed `(v  1 e 1 0 ]
 "158
-[v _key_isPressed key_isPressed `(E5232  1 e 1 0 ]
-"44 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+[v _key_isPressed key_isPressed `(E5222  1 e 1 0 ]
+"44 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
-"197
+"194
 [v _ISR ISR `II(v  1 e 1 0 ]
-"241
+"247
 [v _main main `(v  1 e 1 0 ]
-"24 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\myiic.c
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\myiic.c
+[v _IIC_Init IIC_Init `(v  1 e 1 0 ]
+"25
 [v _IIC_Start IIC_Start `(v  1 e 1 0 ]
-"35
+"37
 [v _IIC_Stop IIC_Stop `(v  1 e 1 0 ]
-"48
+"51
 [v _IIC_Wait_Ack IIC_Wait_Ack `(uc  1 e 1 0 ]
-"67
+"70
 [v _IIC_Ack IIC_Ack `(v  1 e 1 0 ]
-"78
+"81
 [v _IIC_NAck IIC_NAck `(v  1 e 1 0 ]
-"92
+"95
 [v _IIC_Send_Byte IIC_Send_Byte `(v  1 e 1 0 ]
-"109
+"112
 [v _IIC_Read_Byte IIC_Read_Byte `(uc  1 e 1 0 ]
-"129
-[v _RD_temp RD_temp `(uc  1 e 1 0 ]
-"9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+"151
+[v _IIC_RdRTCReg IIC_RdRTCReg `(c  1 e 1 0 ]
+"175
+[v _IIC_WtRTCReg IIC_WtRTCReg `(c  1 e 1 0 ]
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
 [v _timer_Timer1Init timer_Timer1Init `(v  1 e 1 0 ]
 "40
 [v _timer_Timer1Start timer_Timer1Start `(v  1 e 1 0 ]
 "46
-[v _timer_IsTimer1Itrpt timer_IsTimer1Itrpt `(E5232  1 e 1 0 ]
+[v _timer_IsTimer1Itrpt timer_IsTimer1Itrpt `(E5222  1 e 1 0 ]
 "51
 [v _timer_Timer1ClrIntrpt timer_Timer1ClrIntrpt `(v  1 e 1 0 ]
 "63
@@ -434,15 +437,15 @@ TRUE 1
 "97
 [v _timer_Timer0Start timer_Timer0Start `(v  1 e 1 0 ]
 "103
-[v _timer_IsTimer0Itrpt timer_IsTimer0Itrpt `(E5232  1 e 1 0 ]
+[v _timer_IsTimer0Itrpt timer_IsTimer0Itrpt `(E5222  1 e 1 0 ]
 "110
 [v _timer_Timer0Handdle timer_Timer0Handdle `(i  1 e 2 0 ]
-"14 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+"14 F:\Github\BPC_VFD_Clock\Software\micro_new\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"7 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+"7 F:\Github\BPC_VFD_Clock\Software\micro_new\data.c
 [v _g_data g_data `VES52  1 s 39 g_data ]
-"23 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+"23 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
 [v _segmcode segmcode `DC[11]uc  1 e 11 0 ]
 [s S71 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -453,7 +456,7 @@ TRUE 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-"374 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h
+"374 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [s S80 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -461,7 +464,7 @@ TRUE 1
 ]
 [u S85 . 1 `S71 1 . 1 0 `S80 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES85  1 e 1 @11 ]
-[s S1450 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1470 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -471,10 +474,10 @@ TRUE 1
 `uc 1 RA7 1 0 :1:7 
 ]
 "449
-[s S1459 . 1 `uc 1 PORTA 1 0 :8:0 
+[s S1479 . 1 `uc 1 PORTA 1 0 :8:0 
 ]
-[u S1461 . 1 `S1450 1 . 1 0 `S1459 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1461  1 e 1 @12 ]
+[u S1481 . 1 `S1470 1 . 1 0 `S1479 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1481  1 e 1 @12 ]
 [s S288 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
@@ -489,7 +492,7 @@ TRUE 1
 ]
 [u S299 . 1 `S288 1 . 1 0 `S297 1 . 1 0 ]
 [v _PORTCbits PORTCbits `VES299  1 e 1 @14 ]
-[s S741 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S762 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -499,9 +502,9 @@ TRUE 1
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "677
-[u S750 . 1 `S741 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES750  1 e 1 @17 ]
-[s S1240 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S771 . 1 `S762 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES771  1 e 1 @17 ]
+[s S1261 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 C3IF 1 0 :1:1 
 `uc 1 C4IF 1 0 :1:2 
 `uc 1 BCL1IF 1 0 :1:3 
@@ -511,15 +514,15 @@ TRUE 1
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "739
-[u S1249 . 1 `S1240 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES1249  1 e 1 @18 ]
+[u S1270 . 1 `S1261 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES1270  1 e 1 @18 ]
 "856
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "883
 [v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
 "903
 [v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
-[s S764 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S785 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -529,12 +532,12 @@ TRUE 1
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "945
-[s S773 . 1 `uc 1 . 1 0 :4:0 
+[s S794 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S777 . 1 `S764 1 . 1 0 `S773 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES777  1 e 1 @24 ]
+[u S798 . 1 `S785 1 . 1 0 `S794 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES798  1 e 1 @24 ]
 "1176
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1246
@@ -555,7 +558,7 @@ TRUE 1
 ]
 [u S191 . 1 `S180 1 . 1 0 `S189 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES191  1 e 1 @142 ]
-[s S720 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S741 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -565,9 +568,9 @@ TRUE 1
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1424
-[u S729 . 1 `S720 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES729  1 e 1 @145 ]
-[s S1261 . 1 `uc 1 CCP2IE 1 0 :1:0 
+[u S750 . 1 `S741 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES750  1 e 1 @145 ]
+[s S1282 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 C3IE 1 0 :1:1 
 `uc 1 C4IE 1 0 :1:2 
 `uc 1 BCL1IE 1 0 :1:3 
@@ -577,8 +580,8 @@ TRUE 1
 `uc 1 OSFIE 1 0 :1:7 
 ]
 "1486
-[u S1270 . 1 `S1261 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES1270  1 e 1 @146 ]
+[u S1291 . 1 `S1282 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES1291  1 e 1 @146 ]
 [s S133 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
@@ -640,7 +643,7 @@ TRUE 1
 [v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
 "4067
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
-[s S393 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S414 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -650,8 +653,8 @@ TRUE 1
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4431
-[u S402 . 1 `S393 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES402  1 e 1 @414 ]
+[u S423 . 1 `S414 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES423  1 e 1 @414 ]
 "4722
 [v _WPUA WPUA `VEuc  1 e 1 @524 ]
 "4792
@@ -676,19 +679,19 @@ TRUE 1
 [v _CCPR2L CCPR2L `VEuc  1 e 1 @664 ]
 "6699
 [v _CCPR2H CCPR2H `VEuc  1 e 1 @665 ]
-[s S1201 . 1 `uc 1 CCP2M 1 0 :4:0 
+[s S1222 . 1 `uc 1 CCP2M 1 0 :4:0 
 `uc 1 DC2B 1 0 :2:4 
 ]
 "6738
-[s S1204 . 1 `uc 1 CCP2M0 1 0 :1:0 
+[s S1225 . 1 `uc 1 CCP2M0 1 0 :1:0 
 `uc 1 CCP2M1 1 0 :1:1 
 `uc 1 CCP2M2 1 0 :1:2 
 `uc 1 CCP2M3 1 0 :1:3 
 `uc 1 DC2B0 1 0 :1:4 
 `uc 1 DC2B1 1 0 :1:5 
 ]
-[u S1211 . 1 `S1201 1 . 1 0 `S1204 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES1211  1 e 1 @666 ]
+[u S1232 . 1 `S1222 1 . 1 0 `S1225 1 . 1 0 ]
+[v _CCP2CONbits CCP2CONbits `VES1232  1 e 1 @666 ]
 "7335
 [v _IOCAP IOCAP `VEuc  1 e 1 @913 ]
 "7405
@@ -771,7 +774,7 @@ TRUE 1
 [v _WPUC3 WPUC3 `VEb  1 e 0 @4211 ]
 "17223
 [v _WPUC4 WPUC4 `VEb  1 e 0 @4212 ]
-"55 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+"55 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
@@ -779,13 +782,7 @@ TRUE 1
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"3 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\myiic.c
-[v _temp_h temp_h `uc  1 e 1 0 ]
-"4
-[v _temp_l temp_l `uc  1 e 1 0 ]
-"5
-[v _Temp Temp `ui  1 e 2 0 ]
-"9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\uart.c
 [v _TX_data TX_data `uc  1 e 1 0 ]
 "10
 [v _RX_data RX_data `uc  1 e 1 0 ]
@@ -793,17 +790,17 @@ TRUE 1
 [v _TX_en TX_en `uc  1 e 1 0 ]
 "12
 [v _flg_rc flg_rc `uc  1 e 1 0 ]
-"241 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+"247 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"281
+"292
 } 0
-"14 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+"14 F:\Github\BPC_VFD_Clock\Software\micro_new\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
-"50
+"48
 } 0
-"40 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+"40 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
 [v _timer_Timer1Start timer_Timer1Start `(v  1 e 1 0 ]
 {
 "44
@@ -828,7 +825,7 @@ TRUE 1
 {
 "91
 } 0
-"110 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+"110 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
 [v _led_SetState led_SetState `(uc  1 e 1 0 ]
 {
 [v led_SetState@isOn isOn `uc  1 a 1 wreg ]
@@ -837,20 +834,20 @@ TRUE 1
 [v led_SetState@isOn isOn `uc  1 a 1 0 ]
 "114
 } 0
-"44 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+"44 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _init_env init_env `(v  1 e 1 0 ]
 {
 "101
 [v init_env@i i `i  1 a 2 27 ]
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "45
 [v init_env@pdata pdata `*.6VES52  1 a 1 29 ]
-"127
+"124
 } 0
-"74 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+"74 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
 [v _display_update display_update `(v  1 e 1 0 ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "88
 [v display_update@pdata pdata `*.6VES52  1 a 1 24 ]
 "95
@@ -886,14 +883,14 @@ TRUE 1
 [v display_control595_delay@times times `uc  1 a 1 1 ]
 "34
 } 0
-"94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+"94 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\data.c
 [v _data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
 {
 "12
 } 0
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
@@ -904,7 +901,7 @@ TRUE 1
 [v ___awmod@dividend dividend `i  1 p 2 2 ]
 "34
 } 0
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
@@ -917,16 +914,16 @@ TRUE 1
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"16 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+"16 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
 [v _display_set display_set `(v  1 e 1 0 ]
 {
-[v display_set@ison ison `E5232  1 a 1 wreg ]
-[v display_set@ison ison `E5232  1 a 1 wreg ]
+[v display_set@ison ison `E5222  1 a 1 wreg ]
+[v display_set@ison ison `E5222  1 a 1 wreg ]
 "18
-[v display_set@ison ison `E5232  1 a 1 0 ]
+[v display_set@ison ison `E5222  1 a 1 0 ]
 "19
 } 0
-"25 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+"25 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
 [v _capture_init capture_init `(uc  1 e 1 0 ]
 {
 "36
@@ -940,27 +937,30 @@ TRUE 1
 [v capture_setEdge@edge edge `uc  1 a 1 0 ]
 "23
 } 0
-"38
-[v _capture_Set capture_Set `(uc  1 e 1 0 ]
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\myiic.c
+[v _IIC_Init IIC_Init `(v  1 e 1 0 ]
 {
-[v capture_Set@isON isON `uc  1 a 1 wreg ]
-[v capture_Set@isON isON `uc  1 a 1 wreg ]
-"42
-[v capture_Set@isON isON `uc  1 a 1 0 ]
-"47
+"23
 } 0
-"197 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+"194 F:\Github\BPC_VFD_Clock\Software\micro_new\main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"213
+"231
 [v ISR@send send `[64]uc  1 a 64 0 ]
-[v ISR@i i `uc  1 a 1 75 ]
-[v ISR@buf buf `[64]uc  1 a 64 11 ]
-[v ISR@F5516 F5516 `[64]uc  1 s 64 F5516 ]
-[v ISR@F5519 F5519 `[64]uc  1 s 64 F5519 ]
-"239
+[v ISR@i i `uc  1 a 1 77 ]
+[v ISR@buf buf `[64]uc  1 a 64 0 ]
+"218
+[v ISR@data data `uc  1 a 1 78 ]
+"217
+[v ISR@value value `uc  1 a 1 76 ]
+"196
+[v ISR@cnt cnt `us  1 s 2 cnt ]
+"231
+[v ISR@F5514 F5514 `[64]uc  1 s 64 F5514 ]
+[v ISR@F5517 F5517 `[64]uc  1 s 64 F5517 ]
+"245
 } 0
-"92 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+"92 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
 [v i1_timer_Timer0Reset timer_Timer0Reset `(v  1 e 1 0 ]
 {
 "96
@@ -975,18 +975,18 @@ TRUE 1
 {
 "117
 } 0
-"97 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+"97 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
 [v _update_time update_time `(v  1 e 1 0 ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "99
 [v update_time@pdata pdata `*.6VES52  1 a 1 13 ]
-"133
+"129
 } 0
-"126 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+"126 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
 [v _key_checkPressed key_checkPressed `(v  1 e 1 0 ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "146
 [v key_checkPressed@pdata pdata `*.6VES52  1 a 1 3 ]
 "156
@@ -998,17 +998,17 @@ TRUE 1
 [v led_Blink@State State `uc  1 s 1 State ]
 "121
 } 0
-"46 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-[v _timer_IsTimer1Itrpt timer_IsTimer1Itrpt `(E5232  1 e 1 0 ]
+"46 F:\Github\BPC_VFD_Clock\Software\micro_new\timer.c
+[v _timer_IsTimer1Itrpt timer_IsTimer1Itrpt `(E5222  1 e 1 0 ]
 {
 "49
 } 0
 "103
-[v _timer_IsTimer0Itrpt timer_IsTimer0Itrpt `(E5232  1 e 1 0 ]
+[v _timer_IsTimer0Itrpt timer_IsTimer0Itrpt `(E5222  1 e 1 0 ]
 {
 "106
 } 0
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strcpy.c
+"7 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\strcpy.c
 [v _strcpy strcpy `(*.5uc  1 e 1 0 ]
 {
 [v strcpy@dest dest `*.5uc  1 a 1 wreg ]
@@ -1023,61 +1023,63 @@ TRUE 1
 [v strcpy@dest dest `*.5uc  1 a 1 4 ]
 "18
 } 0
-"9 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_sprintf.c
+"9 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.4uc  1 a 1 wreg ]
-[s S2085 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S2068 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S2085  1 a 5 4 ]
+[v sprintf@f f `S2068  1 a 5 69 ]
+"11
+[v sprintf@ret ret `i  1 a 2 65 ]
 "12
-[v sprintf@ap ap `[1]*.4v  1 a 1 2 ]
+[v sprintf@ap ap `[1]*.4v  1 a 1 67 ]
 "9
 [v sprintf@s s `*.4uc  1 a 1 wreg ]
-[v sprintf@fmt fmt `*.25DCuc  1 p 2 72 ]
+[v sprintf@fmt fmt `*.25DCuc  1 p 2 55 ]
 "15
-[v sprintf@s s `*.4uc  1 a 1 3 ]
+[v sprintf@s s `*.4uc  1 a 1 68 ]
 "23
 } 0
-"1368 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\doprnt.c
+"1368 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1731 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1731  1 a 1 wreg ]
+[s S1719 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1719  1 a 1 wreg ]
 "1371
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 70 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 53 ]
 "1368
-[v vfprintf@fp fp `*.4S1731  1 a 1 wreg ]
-[v vfprintf@fmt fmt `*.25DCuc  1 p 2 64 ]
-[v vfprintf@ap ap `*.4*.4v  1 p 1 66 ]
+[v vfprintf@fp fp `*.4S1719  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 47 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 49 ]
 "1373
 "1368
-[v vfprintf@fp fp `*.4S1731  1 a 1 69 ]
+[v vfprintf@fp fp `*.4S1719  1 a 1 52 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1731 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1731  1 a 1 wreg ]
+[s S1719 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1719  1 a 1 wreg ]
 "674
-[v vfpfcnvrt@ll ll `o  1 a 8 53 ]
+[v vfpfcnvrt@ll ll `l  1 a 4 40 ]
 "672
-[v vfpfcnvrt@cp cp `*.26uc  1 a 2 61 ]
+[v vfpfcnvrt@cp cp `*.26uc  1 a 2 44 ]
 "670
-[v vfpfcnvrt@fp fp `*.4S1731  1 a 1 wreg ]
-[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
-[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
+[v vfpfcnvrt@fp fp `*.4S1719  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 33 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 34 ]
 "680
 "670
-[v vfpfcnvrt@fp fp `*.4S1731  1 a 1 63 ]
+[v vfpfcnvrt@fp fp `*.4S1719  1 a 1 46 ]
 "1365
 } 0
 "546
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
-[s S1731 _IO_FILE 0 ]
-[v stoa@fp fp `*.4S1731  1 a 1 wreg ]
+[s S1719 _IO_FILE 0 ]
+[v stoa@fp fp `*.4S1719  1 a 1 wreg ]
 "548
 [v stoa@nuls nuls `[7]uc  1 a 7 0 ]
 "549
@@ -1089,61 +1091,61 @@ TRUE 1
 [v stoa@w w `i  1 a 2 9 ]
 [v stoa@i i `i  1 a 2 7 ]
 "546
-[v stoa@fp fp `*.4S1731  1 a 1 wreg ]
+[v stoa@fp fp `*.4S1719  1 a 1 wreg ]
 [v stoa@s s `*.26uc  1 p 2 8 ]
 "548
-[v stoa@F1139 F1139 `[7]uc  1 s 7 F1139 ]
+[v stoa@F1129 F1129 `[7]uc  1 s 7 F1129 ]
 "546
-[v stoa@fp fp `*.4S1731  1 a 1 11 ]
+[v stoa@fp fp `*.4S1719  1 a 1 11 ]
 "589
 } 0
 "274
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S1731 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1731  1 a 1 wreg ]
+[s S1719 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1719  1 a 1 wreg ]
 "277
-[v dtoa@n n `o  1 a 8 36 ]
+[v dtoa@n n `l  1 a 4 27 ]
 "276
-[v dtoa@i i `i  1 a 2 44 ]
-[v dtoa@s s `i  1 a 2 34 ]
-[v dtoa@w w `i  1 a 2 32 ]
-[v dtoa@p p `i  1 a 2 30 ]
+[v dtoa@i i `i  1 a 2 31 ]
+[v dtoa@s s `i  1 a 2 25 ]
+[v dtoa@w w `i  1 a 2 23 ]
+[v dtoa@p p `i  1 a 2 21 ]
 "274
-[v dtoa@fp fp `*.4S1731  1 a 1 wreg ]
-[v dtoa@d d `o  1 p 8 16 ]
+[v dtoa@fp fp `*.4S1719  1 a 1 wreg ]
+[v dtoa@d d `l  1 p 4 12 ]
 "280
 "274
-[v dtoa@fp fp `*.4S1731  1 a 1 29 ]
+[v dtoa@fp fp `*.4S1719  1 a 1 20 ]
 "315
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1731 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1731  1 a 1 wreg ]
+[s S1719 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1719  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 9 ]
 [v pad@i i `i  1 a 2 7 ]
 "72
-[v pad@fp fp `*.4S1731  1 a 1 wreg ]
+[v pad@fp fp `*.4S1719  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 4 ]
 [v pad@p p `i  1 p 2 5 ]
 "77
 "72
-[v pad@fp fp `*.4S1731  1 a 1 11 ]
+[v pad@fp fp `*.4S1719  1 a 1 11 ]
 "95
 } 0
-"12 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\strlen.c
+"12 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "14
-[v strlen@a a `*.26DCuc  1 a 2 3 ]
+[v strlen@a a `*.26DCuc  1 a 2 4 ]
 "12
 [v strlen@s s `*.26DCuc  1 p 2 0 ]
 "26
 } 0
-"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputs.c
+"8 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
@@ -1153,59 +1155,59 @@ TRUE 1
 [v fputs@c c `uc  1 a 1 0 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S2085 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S2085  1 p 1 8 ]
+[s S2068 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S2068  1 p 1 8 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 3 ]
 "19
 } 0
-"8 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\nf_fputc.c
+"8 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S2085 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S2085  1 p 1 2 ]
+[s S2068 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S2068  1 p 1 2 ]
 "21
 } 0
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\putch.c
+"7 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\putch.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 "9
 } 0
-"1 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\abs.c
+"1 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
 {
-[v abs@a a `i  1 p 2 3 ]
+[v abs@a a `i  1 p 2 11 ]
 "4
 } 0
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aomod.c
-[v ___aomod __aomod `(o  1 e 8 0 ]
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
 {
-"12
-[v ___aomod@sign sign `uc  1 a 1 2 ]
-[v ___aomod@counter counter `uc  1 a 1 1 ]
-"7
-[v ___aomod@divisor divisor `o  1 p 8 0 ]
-[v ___aomod@dividend dividend `o  1 p 8 8 ]
-"36
+"10
+[v ___almod@sign sign `uc  1 a 1 10 ]
+[v ___almod@counter counter `uc  1 a 1 9 ]
+"5
+[v ___almod@divisor divisor `l  1 p 4 0 ]
+[v ___almod@dividend dividend `l  1 p 4 4 ]
+"34
 } 0
-"7 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
-"12
-[v ___aodiv@quotient quotient `o  1 a 8 3 ]
-"13
-[v ___aodiv@sign sign `uc  1 a 1 2 ]
-[v ___aodiv@counter counter `uc  1 a 1 1 ]
-"7
-[v ___aodiv@divisor divisor `o  1 p 8 0 ]
-[v ___aodiv@dividend dividend `o  1 p 8 8 ]
-"43
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 2 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 1 ]
+[v ___aldiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
 } 0
-"158 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-[v _key_isPressed key_isPressed `(E5232  1 e 1 0 ]
+"158 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
+[v _key_isPressed key_isPressed `(E5222  1 e 1 0 ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "160
 [v key_isPressed@pdata pdata `*.6VES52  1 a 1 1 ]
 "167
@@ -1217,7 +1219,7 @@ TRUE 1
 [v capture_handdle@cnt_tmp cnt_tmp `us  1 a 2 12 ]
 "70
 [v capture_handdle@cnt_int cnt_int `us  1 a 2 10 ]
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "67
 [v capture_handdle@pdata pdata `*.6VES52  1 a 1 9 ]
 "68
@@ -1248,16 +1250,16 @@ TRUE 1
 "59
 } 0
 "52
-[v _capture_IsIntrpt capture_IsIntrpt `(E5232  1 e 1 0 ]
+[v _capture_IsIntrpt capture_IsIntrpt `(E5222  1 e 1 0 ]
 {
 "55
 } 0
 "48
-[v _capture_IsEnable capture_IsEnable `(E5232  1 e 1 0 ]
+[v _capture_IsEnable capture_IsEnable `(E5222  1 e 1 0 ]
 {
 "51
 } 0
-"80 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"80 F:\Github\BPC_VFD_Clock\Software\micro_new\bpc.c
 [v _bpc_proc bpc_proc `(i  1 e 2 0 ]
 {
 "148
@@ -1268,17 +1270,17 @@ TRUE 1
 [v bpc_proc@last_time_h last_time_h `us  1 a 2 16 ]
 "123
 [v bpc_proc@last_time_s last_time_s `us  1 a 2 14 ]
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "82
 [v bpc_proc@pdata pdata `*.6VES52  1 a 1 23 ]
 "83
 [v bpc_proc@number number `uc  1 a 1 22 ]
 "153
 } 0
-"74 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+"74 F:\Github\BPC_VFD_Clock\Software\micro_new\display.c
 [v i1_display_update display_update `(v  1 e 1 0 ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 [v i1display_update@pdata display_update `*.6VES52  1 a 1 11 ]
 "95
 } 0
@@ -1310,7 +1312,7 @@ TRUE 1
 [v i1display_control595_delay@times display_control595_delay `uc  1 a 1 1 ]
 "34
 } 0
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v i1___awmod __awmod `(i  1 e 2 0 ]
 {
 [v i1___awmod@sign __awmod `uc  1 a 1 6 ]
@@ -1319,7 +1321,7 @@ TRUE 1
 [v i1___awmod@dividend dividend `i  1 p 2 2 ]
 "34
 } 0
-"5 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\awdiv.c
 [v i1___awdiv __awdiv `(i  1 e 2 0 ]
 {
 [v i1___awdiv@quotient __awdiv `i  1 a 2 7 ]
@@ -1329,19 +1331,10 @@ TRUE 1
 [v i1___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"38 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-[v i1_capture_Set capture_Set `(uc  1 e 1 0 ]
-{
-[v i1capture_Set@isON isON `uc  1 a 1 wreg ]
-[v i1capture_Set@isON isON `uc  1 a 1 wreg ]
-"42
-[v i1capture_Set@isON isON `uc  1 a 1 0 ]
-"47
-} 0
-"50 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"50 F:\Github\BPC_VFD_Clock\Software\micro_new\bpc.c
 [v _check_err check_err `(i  1 s 2 check_err ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 [v check_err@pdata pdata `*.6VES52  1 a 1 wreg ]
 "58
 [v check_err@i i `uc  1 a 1 8 ]
@@ -1354,30 +1347,126 @@ TRUE 1
 [v check_err@pdata pdata `*.6VES52  1 a 1 10 ]
 "78
 } 0
-"22
+"38 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
+[v _capture_Set capture_Set `(uc  1 e 1 0 ]
+{
+[v capture_Set@isON isON `uc  1 a 1 wreg ]
+[v capture_Set@isON isON `uc  1 a 1 wreg ]
+"42
+[v capture_Set@isON isON `uc  1 a 1 0 ]
+"47
+} 0
+"22 F:\Github\BPC_VFD_Clock\Software\micro_new\bpc.c
 [v _bpc_Cnt2Qua bpc_Cnt2Qua `(uc  1 s 1 bpc_Cnt2Qua ]
 {
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
 "24
-[v bpc_Cnt2Qua@pdata pdata `*.6VES52  1 a 1 6 ]
+[v bpc_Cnt2Qua@pdata pdata `*.6VES52  1 a 1 8 ]
 "48
 } 0
-"94 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new/data.h
-[s S52 . 39 `VEE5232 1 g_flg_switch 1 0 `VEE5232 1 g_isDecoding 1 1 `VEE5232 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
-"9 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+"94 F:\Github\BPC_VFD_Clock\Software\micro_new/data.h
+[s S52 . 39 `VEE5222 1 g_flg_switch 1 0 `VEE5222 1 g_isDecoding 1 1 `VEE5222 1 g_find_recv_start 1 2 `uc 1 g_time_h 1 3 `uc 1 g_time_m 1 4 `uc 1 g_time_s 1 5 `uc 1 g_time_100ms 1 6 `us 1 g_high_level_times 2 7 `us 1 g_all_level_times 2 9 `us 1 g_recv_count 2 11 `[20]uc 1 g_recv_buf 20 13 `us 1 cnt_update 2 33 `us 1 cnt_high 2 35 `us 1 cnt_low 2 37 ]
+"9 F:\Github\BPC_VFD_Clock\Software\micro_new\data.c
 [v i1_data_getdata data_getdata `(*.6VES52  1 e 1 0 ]
 {
 "12
 } 0
-"18 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+"18 F:\Github\BPC_VFD_Clock\Software\micro_new\bpc.c
 [v _cnt_abs cnt_abs `(us  1 e 2 0 ]
 {
 [v cnt_abs@a a `us  1 p 2 0 ]
 [v cnt_abs@b b `us  1 p 2 2 ]
 "20
 } 0
-"60 D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-[v _capture_IsNegEdge capture_IsNegEdge `(E5232  1 e 1 0 ]
+"60 F:\Github\BPC_VFD_Clock\Software\micro_new\hardware.c
+[v _capture_IsNegEdge capture_IsNegEdge `(E5222  1 e 1 0 ]
 {
 "63
+} 0
+"5 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 0 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 2 ]
+"25
+} 0
+"175 F:\Github\BPC_VFD_Clock\Software\micro_new\myiic.c
+[v _IIC_WtRTCReg IIC_WtRTCReg `(c  1 e 1 0 ]
+{
+[v IIC_WtRTCReg@regAddr regAddr `uc  1 a 1 wreg ]
+[v IIC_WtRTCReg@regAddr regAddr `uc  1 a 1 wreg ]
+[v IIC_WtRTCReg@value value `uc  1 p 1 3 ]
+"177
+[v IIC_WtRTCReg@regAddr regAddr `uc  1 a 1 4 ]
+"194
+} 0
+"151
+[v _IIC_RdRTCReg IIC_RdRTCReg `(c  1 e 1 0 ]
+{
+[v IIC_RdRTCReg@regAddr regAddr `uc  1 a 1 wreg ]
+[v IIC_RdRTCReg@regAddr regAddr `uc  1 a 1 wreg ]
+[v IIC_RdRTCReg@value value `*.4uc  1 p 1 4 ]
+"153
+[v IIC_RdRTCReg@regAddr regAddr `uc  1 a 1 6 ]
+"173
+} 0
+"51
+[v _IIC_Wait_Ack IIC_Wait_Ack `(uc  1 e 1 0 ]
+{
+"53
+[v IIC_Wait_Ack@ucErrTime ucErrTime `uc  1 a 1 1 ]
+"68
+} 0
+"37
+[v _IIC_Stop IIC_Stop `(v  1 e 1 0 ]
+{
+"47
+} 0
+"25
+[v _IIC_Start IIC_Start `(v  1 e 1 0 ]
+{
+"35
+} 0
+"95
+[v _IIC_Send_Byte IIC_Send_Byte `(v  1 e 1 0 ]
+{
+[v IIC_Send_Byte@txd txd `uc  1 a 1 wreg ]
+"97
+[v IIC_Send_Byte@t t `uc  1 a 1 2 ]
+"95
+[v IIC_Send_Byte@txd txd `uc  1 a 1 wreg ]
+"98
+[v IIC_Send_Byte@txd txd `uc  1 a 1 1 ]
+"110
+} 0
+"112
+[v _IIC_Read_Byte IIC_Read_Byte `(uc  1 e 1 0 ]
+{
+[v IIC_Read_Byte@ack ack `uc  1 a 1 wreg ]
+"114
+[v IIC_Read_Byte@i i `uc  1 a 1 3 ]
+[v IIC_Read_Byte@receive receive `uc  1 a 1 2 ]
+"112
+[v IIC_Read_Byte@ack ack `uc  1 a 1 wreg ]
+"114
+[v IIC_Read_Byte@ack ack `uc  1 a 1 1 ]
+"130
+} 0
+"81
+[v _IIC_NAck IIC_NAck `(v  1 e 1 0 ]
+{
+"90
+} 0
+"70
+[v _IIC_Ack IIC_Ack `(v  1 e 1 0 ]
+{
+"79
+} 0
+"3 F:\Github\BPC_VFD_Clock\Software\micro_new\delay.c
+[v _delay_4us delay_4us `(v  1 e 1 0 ]
+{
+"7
 } 0
