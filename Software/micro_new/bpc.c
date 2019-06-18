@@ -19,6 +19,75 @@ u16 cnt_abs(u16 a, u16 b) {
     return a > b ? (a - b) : (b - a);
 }
 
+static u8 bit2BCD(u8 inVal){
+    if(inVal < 60){
+        return (((inVal / 10) << 4) + inVal % 10);
+    }else{
+        return 255;
+    }
+}
+static u8 BCD2bit(u8 inVal){
+    return (inVal >> 4) * 10 + (inVal & 0xf);
+}
+
+#define RTC_HR (0x4)
+#define RTC_MN (0x3)
+#define RTC_SEC (0x2)
+#define MASK_BCD_HR (0x3F)
+#define MASK_BCD_MN (0x7F)
+#define MASK_BCD_SEC (0x7F)
+
+s8 bpc_write_time(void){
+    G_DATA *pdata = data_getdata();
+    do{
+        if(-1 == IIC_WtRTCReg(RTC_SEC, bit2BCD(pdata->g_time_s))) break;
+        if( -1 == IIC_WtRTCReg(RTC_MN, bit2BCD(pdata->g_time_m))) break;
+        if( -1 == IIC_WtRTCReg(RTC_HR, bit2BCD(pdata->g_time_h))) break;
+        return 0;
+    }while(0);
+    return -1;
+}
+
+s8 bpc_read_time(void)
+{
+   G_DATA *pdata = data_getdata();
+   u8 dataBCD = 0, dataBin = 0;
+    do{
+        if( -1 == IIC_RdRTCReg(RTC_HR, &dataBCD)) break;
+        else
+        {
+            dataBin = BCD2bit(dataBCD & MASK_BCD_HR);
+            if(dataBin > 23){
+                break;
+            }
+            pdata->g_time_h = dataBin;
+        }
+        if( -1 == IIC_RdRTCReg(RTC_MN, &dataBCD)) break;
+        else
+        {
+            dataBin = BCD2bit(dataBCD & MASK_BCD_MN);
+            if(dataBin > 59){
+                break;
+            }
+            pdata->g_time_m = dataBin;
+        }
+        if(-1 == IIC_RdRTCReg(RTC_SEC, &dataBCD)) break;
+        else
+        {
+            dataBin = BCD2bit(dataBCD & MASK_BCD_SEC);
+            if(dataBin > 59){
+                break;
+            }
+            pdata->g_time_s = dataBin;
+        }
+        return 0;   
+    }while(0);
+    return -1;
+    
+    
+}
+
+
 /* 计数转四进制 Quaternary */
 static u8 bpc_Cnt2Qua(void) {
     G_DATA *pdata = data_getdata();
@@ -134,6 +203,10 @@ int bpc_proc(void) {
 
     // set ccp
     capture_Set(FALSE);
+    
+    // write time
+    bpc_write_time();
+    
     pdata->g_recv_count = CODE_P0;
     for (int i = 0; i < RECV_BUF_MAX; i++) {
         pdata->g_recv_buf[i] = 5;

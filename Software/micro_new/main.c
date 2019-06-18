@@ -98,8 +98,8 @@ void init_env(){
     CME_DATA_IOC = 1; //detect when ioc up
     
     // ra6 ra7
-    RA_TRISA6 = 1;
-    RA_TRISA7 = 1;
+    //RA_TRISA6 = 1;
+    //RA_TRISA7 = 1;
     
     // times cnt in receive_decode
     for(int i = 0;i < RECV_BUF_MAX; i++){
@@ -214,7 +214,7 @@ void __interrupt () ISR(void)
             //LOG("PKEY\r\n");
 			capture_Set(TRUE);
 		}
-
+/*
         if(cnt++ % 10 == 0)// period = 1s
         {
 //          uart_Send_byte(0xa5);
@@ -232,9 +232,10 @@ void __interrupt () ISR(void)
             {
                 led_Blink();
             }
+ 
 //            LOG("DA: %d", data);
         }
-     
+     */
         timer_Timer0Reset();
     }
 
@@ -275,7 +276,9 @@ void main(void)
     /* iic 初始化 */
     IIC_Init();
     
-    
+    if(-1 == bpc_read_time()){
+        capture_Set(TRUE);
+    }
 
     /* 初始显示状态 */
     display_update();

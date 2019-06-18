@@ -98,6 +98,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
@@ -105,6 +106,7 @@ ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/delay.p1.d 
 	@${RM} ${OBJECTDIR}/delay.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/delay.p1 delay.c 
+	@-${MV} ${OBJECTDIR}/delay.d ${OBJECTDIR}/delay.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
@@ -112,6 +114,7 @@ ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/myiic.p1.d 
 	@${RM} ${OBJECTDIR}/myiic.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/myiic.p1 myiic.c 
+	@-${MV} ${OBJECTDIR}/myiic.d ${OBJECTDIR}/myiic.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/myiic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/timer.p1: timer.c  nbproject/Makefile-${CND_CONF}.mk
@@ -119,6 +122,7 @@ ${OBJECTDIR}/timer.p1: timer.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/timer.p1.d 
 	@${RM} ${OBJECTDIR}/timer.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/timer.p1 timer.c 
+	@-${MV} ${OBJECTDIR}/timer.d ${OBJECTDIR}/timer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/timer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/debug.p1: debug.c  nbproject/Makefile-${CND_CONF}.mk
@@ -126,6 +130,7 @@ ${OBJECTDIR}/debug.p1: debug.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/debug.p1.d 
 	@${RM} ${OBJECTDIR}/debug.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/debug.p1 debug.c 
+	@-${MV} ${OBJECTDIR}/debug.d ${OBJECTDIR}/debug.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/debug.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/data.p1: data.c  nbproject/Makefile-${CND_CONF}.mk
@@ -133,6 +138,7 @@ ${OBJECTDIR}/data.p1: data.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/data.p1.d 
 	@${RM} ${OBJECTDIR}/data.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/data.p1 data.c 
+	@-${MV} ${OBJECTDIR}/data.d ${OBJECTDIR}/data.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/data.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/uart.p1: uart.c  nbproject/Makefile-${CND_CONF}.mk
@@ -140,6 +146,7 @@ ${OBJECTDIR}/uart.p1: uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/uart.p1.d 
 	@${RM} ${OBJECTDIR}/uart.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/uart.p1 uart.c 
+	@-${MV} ${OBJECTDIR}/uart.d ${OBJECTDIR}/uart.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/bpc.p1: bpc.c  nbproject/Makefile-${CND_CONF}.mk
@@ -147,6 +154,7 @@ ${OBJECTDIR}/bpc.p1: bpc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/bpc.p1.d 
 	@${RM} ${OBJECTDIR}/bpc.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/bpc.p1 bpc.c 
+	@-${MV} ${OBJECTDIR}/bpc.d ${OBJECTDIR}/bpc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/bpc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/hardware.p1: hardware.c  nbproject/Makefile-${CND_CONF}.mk
@@ -154,6 +162,7 @@ ${OBJECTDIR}/hardware.p1: hardware.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/hardware.p1.d 
 	@${RM} ${OBJECTDIR}/hardware.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/hardware.p1 hardware.c 
+	@-${MV} ${OBJECTDIR}/hardware.d ${OBJECTDIR}/hardware.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/hardware.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/display.p1: display.c  nbproject/Makefile-${CND_CONF}.mk
@@ -161,6 +170,7 @@ ${OBJECTDIR}/display.p1: display.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/display.p1.d 
 	@${RM} ${OBJECTDIR}/display.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/display.p1 display.c 
+	@-${MV} ${OBJECTDIR}/display.d ${OBJECTDIR}/display.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
@@ -169,6 +179,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
@@ -176,6 +187,7 @@ ${OBJECTDIR}/delay.p1: delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/delay.p1.d 
 	@${RM} ${OBJECTDIR}/delay.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/delay.p1 delay.c 
+	@-${MV} ${OBJECTDIR}/delay.d ${OBJECTDIR}/delay.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/delay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
@@ -183,6 +195,7 @@ ${OBJECTDIR}/myiic.p1: myiic.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/myiic.p1.d 
 	@${RM} ${OBJECTDIR}/myiic.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/myiic.p1 myiic.c 
+	@-${MV} ${OBJECTDIR}/myiic.d ${OBJECTDIR}/myiic.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/myiic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/timer.p1: timer.c  nbproject/Makefile-${CND_CONF}.mk
@@ -190,6 +203,7 @@ ${OBJECTDIR}/timer.p1: timer.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/timer.p1.d 
 	@${RM} ${OBJECTDIR}/timer.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/timer.p1 timer.c 
+	@-${MV} ${OBJECTDIR}/timer.d ${OBJECTDIR}/timer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/timer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/debug.p1: debug.c  nbproject/Makefile-${CND_CONF}.mk
@@ -197,6 +211,7 @@ ${OBJECTDIR}/debug.p1: debug.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/debug.p1.d 
 	@${RM} ${OBJECTDIR}/debug.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/debug.p1 debug.c 
+	@-${MV} ${OBJECTDIR}/debug.d ${OBJECTDIR}/debug.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/debug.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/data.p1: data.c  nbproject/Makefile-${CND_CONF}.mk
@@ -204,6 +219,7 @@ ${OBJECTDIR}/data.p1: data.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/data.p1.d 
 	@${RM} ${OBJECTDIR}/data.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/data.p1 data.c 
+	@-${MV} ${OBJECTDIR}/data.d ${OBJECTDIR}/data.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/data.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/uart.p1: uart.c  nbproject/Makefile-${CND_CONF}.mk
@@ -211,6 +227,7 @@ ${OBJECTDIR}/uart.p1: uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/uart.p1.d 
 	@${RM} ${OBJECTDIR}/uart.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/uart.p1 uart.c 
+	@-${MV} ${OBJECTDIR}/uart.d ${OBJECTDIR}/uart.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/uart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/bpc.p1: bpc.c  nbproject/Makefile-${CND_CONF}.mk
@@ -218,6 +235,7 @@ ${OBJECTDIR}/bpc.p1: bpc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/bpc.p1.d 
 	@${RM} ${OBJECTDIR}/bpc.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/bpc.p1 bpc.c 
+	@-${MV} ${OBJECTDIR}/bpc.d ${OBJECTDIR}/bpc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/bpc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/hardware.p1: hardware.c  nbproject/Makefile-${CND_CONF}.mk
@@ -225,6 +243,7 @@ ${OBJECTDIR}/hardware.p1: hardware.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/hardware.p1.d 
 	@${RM} ${OBJECTDIR}/hardware.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/hardware.p1 hardware.c 
+	@-${MV} ${OBJECTDIR}/hardware.d ${OBJECTDIR}/hardware.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/hardware.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/display.p1: display.c  nbproject/Makefile-${CND_CONF}.mk
@@ -232,6 +251,7 @@ ${OBJECTDIR}/display.p1: display.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/display.p1.d 
 	@${RM} ${OBJECTDIR}/display.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/display.p1 display.c 
+	@-${MV} ${OBJECTDIR}/display.d ${OBJECTDIR}/display.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/display.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
