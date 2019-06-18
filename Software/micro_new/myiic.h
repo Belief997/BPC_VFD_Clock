@@ -5,6 +5,7 @@
 #include <xc.h>
 #include "stdlib.h"
 #include "pic.h"
+#include "debug.h"
 
 //IO????
 #define SDA_IN()  {TRISC4 = 1;}

@@ -129,7 +129,8 @@ unsigned char IIC_Read_Byte(unsigned char ack)
 unsigned char RD_temp(void)
 {
     IIC_Start();
-    IIC_Send_Byte(0b1001111);
+    //IIC_Send_Byte(0b1001111);
+    IIC_Send_Byte(0b1010001);
     if(!IIC_Wait_Ack())         //0 successed
     {
         temp_h = IIC_Read_Byte(1);
@@ -150,6 +151,7 @@ void IIC_temp(void)
     Temp = temp_h;
     Temp <<= 3;
     Temp |= x;
+    //LOG("IIC:%d\r\n", Temp);
     GIE = 1;
 }
 

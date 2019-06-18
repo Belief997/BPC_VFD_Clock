@@ -9194,36 +9194,8 @@ void delay_2us(void);
 void delay_3us(void);
 void delay_10us(void);
 # 4 "./myiic.h" 2
-# 18 "./myiic.h"
-void IIC_Init(void);
-void IIC_Start(void);
-void IIC_Stop(void);
-void IIC_Send_Byte(unsigned char txd);
-unsigned char IIC_Read_Byte(unsigned char ack);
-unsigned char IIC_Wait_Ack(void);
-void IIC_Ack(void);
-void IIC_NAck(void);
-unsigned char RD_temp(void);
-void IIC_temp(void);
-# 12 "main.c" 2
-
-# 1 "./timer.h" 1
-# 11 "./timer.h"
-void timer_Timer1Init(void);
-void timer_Timer1Start(void);
-BOOL timer_IsTimer1Itrpt(void);
-void timer_Timer1ClrIntrpt(void);
 
 
-
-void timer_Timer0Init(void);
-void timer_Timer0Reset(void);
-void timer_Timer0Start(void);
-BOOL timer_IsTimer0Itrpt(void);
-
-
-int timer_Timer0Handdle(void);
-# 13 "main.c" 2
 
 
 # 1 "./debug.h" 1
@@ -9317,7 +9289,39 @@ extern void * __va_arg(void *, ...);
 # 47 "./debug.h"
 typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
 int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 15 "main.c" 2
+# 8 "./myiic.h" 2
+# 19 "./myiic.h"
+void IIC_Init(void);
+void IIC_Start(void);
+void IIC_Stop(void);
+void IIC_Send_Byte(unsigned char txd);
+unsigned char IIC_Read_Byte(unsigned char ack);
+unsigned char IIC_Wait_Ack(void);
+void IIC_Ack(void);
+void IIC_NAck(void);
+unsigned char RD_temp(void);
+void IIC_temp(void);
+# 12 "main.c" 2
+
+# 1 "./timer.h" 1
+# 11 "./timer.h"
+void timer_Timer1Init(void);
+void timer_Timer1Start(void);
+BOOL timer_IsTimer1Itrpt(void);
+void timer_Timer1ClrIntrpt(void);
+
+
+
+void timer_Timer0Init(void);
+void timer_Timer0Reset(void);
+void timer_Timer0Start(void);
+BOOL timer_IsTimer0Itrpt(void);
+
+
+int timer_Timer0Handdle(void);
+# 13 "main.c" 2
+
+
 
 # 1 "./hardware.h" 1
 # 69 "./hardware.h"
@@ -9569,12 +9573,10 @@ void __attribute__((picinterrupt(("")))) ISR(void)
     }
 }
 
-
-
 void main(void)
 {
-    static u16 i = 0;
-    static u8 cnt = 0;
+
+
 
 
 
@@ -9601,7 +9603,7 @@ void main(void)
 
     while(1)
     {
-# 281 "main.c"
+# 279 "main.c"
     }
     return;
 }

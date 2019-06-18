@@ -3,4 +3,8 @@ display.c  \
 function.h  \
 data.h  \
 hardware.h  \
-display.h 
+display.h  \
+myiic.h  \
+delay.h  \
+debug.h  \
+uart.h 

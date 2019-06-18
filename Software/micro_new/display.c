@@ -11,6 +11,8 @@
 #include "hardware.h"
 #include "display.h"
 
+#include "myiic.h"
+
 void display_set(BOOL ison)
 {
     Light_on = ison;

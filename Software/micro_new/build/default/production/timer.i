@@ -9247,13 +9247,13 @@ void timer_Timer0Init(void)
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.TMR0CS = 0;
     OPTION_REGbits.PS = 7;
-    TMR0 = (159 + 0);
+    TMR0 = (158 + 0);
 # 91 "timer.c"
 }
 void timer_Timer0Reset(void)
 {
     INTCONbits.TMR0IF = 0;
-    TMR0 = (159 + 0);
+    TMR0 = (158 + 0);
 }
 void timer_Timer0Start(void)
 {

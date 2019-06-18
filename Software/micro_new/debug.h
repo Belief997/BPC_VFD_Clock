@@ -23,7 +23,7 @@
         SPEN = 1;                                                       \
         TXIE = 1;                                                       \
         while(0 == TXSTAbits.TRMT);                                     \
-        TXREG = send[i++];                                              \
+        TXREG = send[i++];                                            \
         TXIE = 0;                                                       \
 	}						            								\
 }                                                                       \

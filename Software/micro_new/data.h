@@ -71,7 +71,7 @@ enum{
 */
 
 // calculate + bias
-#define TIMER_0_RST (159 + 0)
+#define TIMER_0_RST (158 + 0)
 
 // new define of timer
 #define COUNT_1S 31030

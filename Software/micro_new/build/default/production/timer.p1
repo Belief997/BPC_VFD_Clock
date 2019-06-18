@@ -1035,8 +1035,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer.c: 78:     OPTION_REGbits.PS = 7;
 [e = . . _OPTION_REGbits 1 0 -> -> 7 `i `uc ]
 "79
-[; ;timer.c: 79:     TMR0 = (159 + 0);
-[e = _TMR0 -> + -> 159 `i -> 0 `i `uc ]
+[; ;timer.c: 79:     TMR0 = (158 + 0);
+[e = _TMR0 -> + -> 158 `i -> 0 `i `uc ]
 "91
 [; ;timer.c: 91: }
 [e :UE 630 ]
@@ -1053,8 +1053,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer.c: 94:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "95
-[; ;timer.c: 95:     TMR0 = (159 + 0);
-[e = _TMR0 -> + -> 159 `i -> 0 `i `uc ]
+[; ;timer.c: 95:     TMR0 = (158 + 0);
+[e = _TMR0 -> + -> 158 `i -> 0 `i `uc ]
 "96
 [; ;timer.c: 96: }
 [e :UE 631 ]

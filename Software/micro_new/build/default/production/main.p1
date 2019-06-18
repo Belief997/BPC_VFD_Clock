@@ -1503,72 +1503,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 642 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"243
-[; ;main.c: 243: void main(void)
+"241
+[; ;main.c: 241: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"244
-[; ;main.c: 244: {
+"242
+[; ;main.c: 242: {
 {
 [e :U _main ]
 [f ]
-"245
-[; ;main.c: 245:     static u16 i = 0;
-[v F5517 `us ~T0 @X0 1 s i ]
-[i F5517
--> -> 0 `i `us
-]
-"246
-[; ;main.c: 246:     static u8 cnt = 0;
-[v F5518 `uc ~T0 @X0 1 s cnt ]
-[i F5518
--> -> 0 `i `uc
-]
-"250
-[; ;main.c: 250:     init_env();
+"248
+[; ;main.c: 248:     init_env();
 [e ( _init_env ..  ]
-"253
-[; ;main.c: 253:     timer_Timer0Init();
+"251
+[; ;main.c: 251:     timer_Timer0Init();
 [e ( _timer_Timer0Init ..  ]
-"254
-[; ;main.c: 254:     timer_Timer0Start();
+"252
+[; ;main.c: 252:     timer_Timer0Start();
 [e ( _timer_Timer0Start ..  ]
-"257
-[; ;main.c: 257:     timer_Timer1Init();
+"255
+[; ;main.c: 255:     timer_Timer1Init();
 [e ( _timer_Timer1Init ..  ]
-"258
-[; ;main.c: 258:     timer_Timer1Start();
+"256
+[; ;main.c: 256:     timer_Timer1Start();
 [e ( _timer_Timer1Start ..  ]
-"261
-[; ;main.c: 261:     capture_init();
+"259
+[; ;main.c: 259:     capture_init();
 [e ( _capture_init ..  ]
-"262
-[; ;main.c: 262:     capture_Set(TRUE);
+"260
+[; ;main.c: 260:     capture_Set(TRUE);
 [e ( _capture_Set (1 -> . `E5232 1 `uc ]
-"265
-[; ;main.c: 265:     uart_init();
+"263
+[; ;main.c: 263:     uart_init();
 [e ( _uart_init ..  ]
-"268
-[; ;main.c: 268:     display_update();
+"266
+[; ;main.c: 266:     display_update();
 [e ( _display_update ..  ]
-"269
-[; ;main.c: 269:     led_SetState(FALSE);
+"267
+[; ;main.c: 267:     led_SetState(FALSE);
 [e ( _led_SetState (1 -> . `E5232 0 `uc ]
-"271
-[; ;main.c: 271:     while(1)
+"269
+[; ;main.c: 269:     while(1)
 [e :U 649 ]
-"272
-[; ;main.c: 272:     {
+"270
+[; ;main.c: 270:     {
 {
-"281
-[; ;main.c: 281:     }
+"279
+[; ;main.c: 279:     }
 }
 [e :U 648 ]
 [e $U 649  ]
 [e :U 650 ]
-"282
-[; ;main.c: 282:     return;
+"280
+[; ;main.c: 280:     return;
 [e $UE 647  ]
-"283
-[; ;main.c: 283: }
+"281
+[; ;main.c: 281: }
 [e :UE 647 ]
 }

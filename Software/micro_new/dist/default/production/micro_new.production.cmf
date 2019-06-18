@@ -13,63 +13,63 @@
 %PSECTS
 $dist/default/production\micro_new.production.o
 cinit CODE 0 3D 3D 13 2
-text1 CODE 0 79A 79A 1C 2
-text2 CODE 0 F34 F34 3 2
-text3 CODE 0 FD0 FD0 D 2
-text4 CODE 0 F47 F47 4 2
-text5 CODE 0 F50 F50 5 2
-text6 CODE 0 FA0 FA0 B 2
-text7 CODE 0 F95 F95 B 2
-text8 CODE 0 4D1 4D1 79 2
-text9 CODE 0 266 266 C4 2
-text10 CODE 0 731 731 26 2
-text11 CODE 0 6DF 6DF 2B 2
-text12 CODE 0 FC3 FC3 D 2
+text1 CODE 0 794 794 1C 2
+text2 CODE 0 F3B F3B 3 2
+text3 CODE 0 7F3 7F3 D 2
+text4 CODE 0 F4E F4E 4 2
+text5 CODE 0 F57 F57 5 2
+text6 CODE 0 FAD FAD B 2
+text7 CODE 0 FA2 FA2 B 2
+text8 CODE 0 4CB 4CB 79 2
+text9 CODE 0 266 266 BE 2
+text10 CODE 0 72B 72B 26 2
+text11 CODE 0 6D9 6D9 2B 2
+text12 CODE 0 FD0 FD0 D 2
 text13 CODE 0 2 2 2 2
-text14 CODE 0 654 654 46 2
-text15 CODE 0 5B1 5B1 52 2
-text16 CODE 0 F63 F63 8 2
-text17 CODE 0 F5B F5B 8 2
+text14 CODE 0 64E 64E 46 2
+text15 CODE 0 5AB 5AB 52 2
+text16 CODE 0 F70 F70 8 2
+text17 CODE 0 F68 F68 8 2
 text18 CODE 0 FED FED 13 2
-text19 CODE 0 FB7 FB7 C 2
-text21 CODE 0 F4B F4B 5 2
-text22 CODE 0 F31 F31 3 2
-text23 CODE 0 F55 F55 6 2
-text24 CODE 0 3CE 3CE 82 2
-text25 CODE 0 7B6 7B6 19 2
-text26 CODE 0 F8A F8A B 2
-text27 CODE 0 F43 F43 4 2
-text28 CODE 0 F3F F3F 4 2
-text29 CODE 0 7E5 7E5 14 2
-text30 CODE 0 54A 54A 67 2
-text31 CODE 0 F75 F75 A 2
+text19 CODE 0 FC4 FC4 C 2
+text21 CODE 0 F52 F52 5 2
+text22 CODE 0 F38 F38 3 2
+text23 CODE 0 F5C F5C 6 2
+text24 CODE 0 3C8 3C8 82 2
+text25 CODE 0 7B0 7B0 19 2
+text26 CODE 0 F97 F97 B 2
+text27 CODE 0 F4A F4A 4 2
+text28 CODE 0 F46 F46 4 2
+text29 CODE 0 7DF 7DF 14 2
+text30 CODE 0 544 544 67 2
+text31 CODE 0 F82 F82 A 2
 text32 CODE 0 FDD FDD 10 2
-text33 CODE 0 F2E F2E 3 2
-text34 CODE 0 F3B F3B 4 2
-text35 CODE 0 F37 F37 4 2
+text33 CODE 0 F35 F35 3 2
+text34 CODE 0 F42 F42 4 2
+text35 CODE 0 F3E F3E 4 2
 text36 CODE 0 50 50 137 2
-text37 CODE 0 32A 32A A4 2
-text38 CODE 0 757 757 22 2
-text39 CODE 0 70A 70A 27 2
-text40 CODE 0 F7F F7F B 2
-text41 CODE 0 69A 69A 45 2
-text42 CODE 0 603 603 51 2
-text43 CODE 0 FAB FAB C 2
+text37 CODE 0 324 324 A4 2
+text38 CODE 0 751 751 22 2
+text39 CODE 0 704 704 27 2
+text40 CODE 0 F8C F8C B 2
+text41 CODE 0 694 694 45 2
+text42 CODE 0 5FD 5FD 51 2
+text43 CODE 0 FB8 FB8 C 2
 text44 CODE 0 187 187 DF 2
-text45 CODE 0 450 450 81 2
-text46 CODE 0 F2C F2C 2 2
-text47 CODE 0 7CF 7CF 16 2
-text48 CODE 0 F6B F6B A 2
-maintext CODE 0 779 779 21 2
+text45 CODE 0 44A 44A 81 2
+text46 CODE 0 F33 F33 2 2
+text47 CODE 0 7C9 7C9 16 2
+text48 CODE 0 F78 F78 A 2
+maintext CODE 0 773 773 21 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 25 1
-cstackBANK1 BANK1 1 C7 C7 11 1
+cstackBANK0 BANK0 1 20 20 28 1
+cstackBANK1 BANK1 1 C7 C7 E 1
 stringtext1 STRCODE 0 1000 1000 B 2
 intentry CODE 0 4 4 37 2
-bssBANK0 BANK0 1 45 45 12 1
+bssBANK0 BANK0 1 48 48 F 1
 bssBANK1 BANK1 1 A0 A0 27 1
-clrtext CODE 0 7F9 7F9 6 2
-$C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
+clrtext CODE 0 F62 F62 6 2
+$C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 3B 3B 2 2
 config CONFIG 0 8007 8007 2 2
@@ -80,7 +80,7 @@ config CONFIG 0 8007 8007 2 2
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
 RAM 57-6F 1
-RAM D8-EF 1
+RAM D5-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
@@ -93,7 +93,7 @@ RAM 520-56F 1
 RAM 5A0-5EF 1
 RAM 620-64F 1
 BANK0 57-6F 1
-BANK1 D8-EF 1
+BANK1 D5-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
@@ -102,9 +102,9 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 7FF-F2B 2
+CONST 800-F32 2
 CONST 100B-1FFF 2
-ENTRY 7FF-F2B 2
+ENTRY 800-F32 2
 ENTRY 100B-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -129,8 +129,8 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2088-23EF 1
-CODE 7FF-F2B 2
+STACK 2085-23EF 1
+CODE 800-F32 2
 CODE 100B-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -147,9 +147,9 @@ BANK11 5A0-5EF 1
 BANK12 620-64F 1
 BIGRAM 2000-23EF 1
 EEDATA F000-F0FF 2
-STRCODE 7FF-F2B 2
+STRCODE 800-F32 2
 STRCODE 100B-1FFF 2
-STRING 7FF-F2B 2
+STRING 800-F32 2
 STRING 100B-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -165,24 +165,24 @@ STRING 100B-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\micro_new.production.o
-3D cinit CODE >6493:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-3D cinit CODE >6496:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-3D cinit CODE >6565:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-3E cinit CODE >6566:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-3F cinit CODE >6567:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-40 cinit CODE >6568:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-41 cinit CODE >6569:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-42 cinit CODE >6570:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-45 cinit CODE >6574:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-46 cinit CODE >6575:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-47 cinit CODE >6576:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-48 cinit CODE >6577:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-49 cinit CODE >6578:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-4A cinit CODE >6579:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-4C cinit CODE >6585:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-4C cinit CODE >6587:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-4D cinit CODE >6588:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-4E cinit CODE >6589:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
+3D cinit CODE >6493:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+3D cinit CODE >6496:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+3D cinit CODE >6559:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+3E cinit CODE >6560:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+3F cinit CODE >6561:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+40 cinit CODE >6562:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+41 cinit CODE >6563:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+42 cinit CODE >6564:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+45 cinit CODE >6568:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+46 cinit CODE >6569:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+47 cinit CODE >6570:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+48 cinit CODE >6571:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+49 cinit CODE >6572:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+4A cinit CODE >6573:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+4C cinit CODE >6579:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+4C cinit CODE >6581:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+4D cinit CODE >6582:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+4E cinit CODE >6583:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
 4 intentry CODE >197:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
 6 intentry CODE >200:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
 C intentry CODE >204:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
@@ -198,31 +198,31 @@ F intentry CODE >207:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micr
 34 intentry CODE >235:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
 37 intentry CODE >237:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
 39 intentry CODE >239:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-F6B text48 CODE >60:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F6B text48 CODE >62:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F74 text48 CODE >63:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7CF text47 CODE >18:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-7CF text47 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-7E4 text47 CODE >20:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-F2C text46 CODE >9:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-F2C text46 CODE >11:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-F2D text46 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-450 text45 CODE >22:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-450 text45 CODE >24:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-456 text45 CODE >25:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-45C text45 CODE >27:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-46B text45 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-46D text45 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-46F text45 CODE >35:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-485 text45 CODE >36:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-487 text45 CODE >37:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-49D text45 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-49F text45 CODE >39:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-4B5 text45 CODE >40:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-4B7 text45 CODE >41:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-4CD text45 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-4CF text45 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-4D0 text45 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+F78 text48 CODE >60:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F78 text48 CODE >62:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F81 text48 CODE >63:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7C9 text47 CODE >18:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+7C9 text47 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+7DE text47 CODE >20:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+F33 text46 CODE >9:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+F33 text46 CODE >11:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+F34 text46 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
+44A text45 CODE >22:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+44A text45 CODE >24:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+450 text45 CODE >25:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+456 text45 CODE >27:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+465 text45 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+467 text45 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+469 text45 CODE >35:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+47F text45 CODE >36:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+481 text45 CODE >37:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+497 text45 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+499 text45 CODE >39:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+4AF text45 CODE >40:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+4B1 text45 CODE >41:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+4C7 text45 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+4C9 text45 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
+4CA text45 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 187 text44 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 189 text44 CODE >53:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 1A1 text44 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
@@ -242,89 +242,89 @@ F2D text46 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro
 25E text44 CODE >75:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 263 text44 CODE >77:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 265 text44 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-FAB text43 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FAC text43 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FAE text43 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FB6 text43 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-603 text42 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-603 text42 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-604 text42 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-606 text42 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-60B text42 CODE >16:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-60D text42 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-60F text42 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-614 text42 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-618 text42 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-61A text42 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-61E text42 CODE >24:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-620 text42 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-622 text42 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-627 text42 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-62B text42 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-62C text42 CODE >30:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-631 text42 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-639 text42 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-63D text42 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-63E text42 CODE >35:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-643 text42 CODE >36:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-647 text42 CODE >38:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-64A text42 CODE >39:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-64F text42 CODE >40:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-653 text42 CODE >41:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-69A text41 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-69A text41 CODE >12:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-69B text41 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-69D text41 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6A2 text41 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6A4 text41 CODE >17:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6A6 text41 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6AB text41 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6AF text41 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6B1 text41 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6B3 text41 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6B8 text41 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6BC text41 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6BD text41 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6C5 text41 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6C9 text41 CODE >28:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6CE text41 CODE >29:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6D2 text41 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6D5 text41 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6DA text41 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-6DE text41 CODE >34:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-F7F text40 CODE >26:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F7F text40 CODE >27:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F83 text40 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F83 text40 CODE >31:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F86 text40 CODE >29:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F87 text40 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F89 text40 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-70A text39 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-70B text39 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-70C text39 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-71D text39 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-71E text39 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-721 text39 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-723 text39 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-726 text39 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-728 text39 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-757 text38 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-758 text38 CODE >56:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-75C text38 CODE >57:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-760 text38 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-764 text38 CODE >59:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-768 text38 CODE >62:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-76A text38 CODE >63:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-76D text38 CODE >64:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-76F text38 CODE >65:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-772 text38 CODE >67:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-774 text38 CODE >68:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-776 text38 CODE >69:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-778 text38 CODE >70:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-32A text37 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-32A text37 CODE >86:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-331 text37 CODE >87:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3CD text37 CODE >93:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FB8 text43 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FB9 text43 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FBB text43 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FC3 text43 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+5FD text42 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5FD text42 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5FE text42 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+600 text42 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+605 text42 CODE >16:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+607 text42 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+609 text42 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+60E text42 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+612 text42 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+614 text42 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+618 text42 CODE >24:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+61A text42 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+61C text42 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+621 text42 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+625 text42 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+626 text42 CODE >30:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+62B text42 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+633 text42 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+637 text42 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+638 text42 CODE >35:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+63D text42 CODE >36:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+641 text42 CODE >38:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+644 text42 CODE >39:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+649 text42 CODE >40:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+64D text42 CODE >41:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+694 text41 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+694 text41 CODE >12:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+695 text41 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+697 text41 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+69C text41 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+69E text41 CODE >17:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6A0 text41 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6A5 text41 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6A9 text41 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6AB text41 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6AD text41 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6B2 text41 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6B6 text41 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6B7 text41 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6BF text41 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6C3 text41 CODE >28:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6C8 text41 CODE >29:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6CC text41 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6CF text41 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6D4 text41 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+6D8 text41 CODE >34:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+F8C text40 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F8C text40 CODE >29:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F90 text40 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F90 text40 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F93 text40 CODE >31:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F94 text40 CODE >32:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F96 text40 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+704 text39 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+705 text39 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+706 text39 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+717 text39 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+718 text39 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+71B text39 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+71D text39 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+720 text39 CODE >52:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+722 text39 CODE >53:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+751 text38 CODE >56:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+752 text38 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+756 text38 CODE >59:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+75A text38 CODE >60:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+75E text38 CODE >61:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+762 text38 CODE >64:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+764 text38 CODE >65:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+767 text38 CODE >66:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+769 text38 CODE >67:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+76C text38 CODE >69:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+76E text38 CODE >70:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+770 text38 CODE >71:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+772 text38 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+324 text37 CODE >74:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+324 text37 CODE >88:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+32B text37 CODE >89:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3C7 text37 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
 50 text36 CODE >80:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 50 text36 CODE >82:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 57 text36 CODE >83:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
@@ -359,302 +359,302 @@ F9 text36 CODE >122:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro
 169 text36 CODE >148:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 16B text36 CODE >150:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
 177 text36 CODE >151:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\bpc.c
-F37 text35 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F37 text35 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F3A text35 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F3B text34 CODE >52:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F3B text34 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F3E text34 CODE >55:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F2E text33 CODE >56:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F2E text33 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F30 text33 CODE >59:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F3E text35 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F3E text35 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F41 text35 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F42 text34 CODE >52:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F42 text34 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F45 text34 CODE >55:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F35 text33 CODE >56:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F35 text33 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F37 text33 CODE >59:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FDD text32 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FDE text32 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FE6 text32 CODE >16:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FEC text32 CODE >23:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F75 text31 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F76 text31 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F7E text31 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-54A text30 CODE >65:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-54A text30 CODE >67:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-550 text30 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-558 text30 CODE >73:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-568 text30 CODE >75:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-571 text30 CODE >77:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-577 text30 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-578 text30 CODE >81:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-57C text30 CODE >82:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-580 text30 CODE >87:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-586 text30 CODE >89:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-58E text30 CODE >90:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-590 text30 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-598 text30 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-59C text30 CODE >98:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-5A1 text30 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-5B0 text30 CODE >104:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7E5 text29 CODE >158:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7E5 text29 CODE >160:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7EB text29 CODE >161:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7F1 text29 CODE >162:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7F5 text29 CODE >163:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7F7 text29 CODE >165:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7F8 text29 CODE >167:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F3F text28 CODE >103:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F3F text28 CODE >105:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F42 text28 CODE >106:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F43 text27 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F43 text27 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F46 text27 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F8A text26 CODE >116:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F8A text26 CODE >119:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F94 text26 CODE >121:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7B6 text25 CODE >126:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7B6 text25 CODE >146:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7BC text25 CODE >148:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7C5 text25 CODE >151:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7CC text25 CODE >153:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-7CE text25 CODE >156:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-3CE text24 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3CE text24 CODE >97:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3D5 text24 CODE >98:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3DD text24 CODE >99:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3E5 text24 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3EA text24 CODE >102:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3F2 text24 CODE >104:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-3FA text24 CODE >106:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-402 text24 CODE >107:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-407 text24 CODE >108:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-410 text24 CODE >109:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-426 text24 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-42A text24 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-432 text24 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-43B text24 CODE >115:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-440 text24 CODE >117:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-448 text24 CODE >119:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-44D text24 CODE >123:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-44F text24 CODE >127:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F55 text23 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F55 text23 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F58 text23 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F5A text23 CODE >117:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F31 text22 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F31 text22 CODE >53:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F33 text22 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F4B text21 CODE >92:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F4B text21 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F4C text21 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F4F text21 CODE >96:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FB7 text19 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FB9 text19 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FBA text19 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FC2 text19 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F82 text31 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F83 text31 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F8B text31 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+544 text30 CODE >65:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+544 text30 CODE >67:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+54A text30 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+552 text30 CODE >73:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+562 text30 CODE >75:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+56B text30 CODE >77:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+571 text30 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+572 text30 CODE >81:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+576 text30 CODE >82:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+57A text30 CODE >87:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+580 text30 CODE >89:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+588 text30 CODE >90:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+58A text30 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+592 text30 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+596 text30 CODE >98:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+59B text30 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+5AA text30 CODE >104:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7DF text29 CODE >158:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7DF text29 CODE >160:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7E5 text29 CODE >161:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7EB text29 CODE >162:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7EF text29 CODE >163:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7F1 text29 CODE >165:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7F2 text29 CODE >167:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F46 text28 CODE >103:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F46 text28 CODE >105:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F49 text28 CODE >106:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F4A text27 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F4A text27 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F4D text27 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F97 text26 CODE >116:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F97 text26 CODE >119:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FA1 text26 CODE >121:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7B0 text25 CODE >126:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7B0 text25 CODE >146:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7B6 text25 CODE >148:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7BF text25 CODE >151:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7C6 text25 CODE >153:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+7C8 text25 CODE >156:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+3C8 text24 CODE >97:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3C8 text24 CODE >99:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3CF text24 CODE >100:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3D7 text24 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3DF text24 CODE >103:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3E4 text24 CODE >104:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3EC text24 CODE >106:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3F4 text24 CODE >108:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+3FC text24 CODE >109:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+401 text24 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+40A text24 CODE >111:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+420 text24 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+424 text24 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+42C text24 CODE >116:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+435 text24 CODE >117:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+43A text24 CODE >119:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+442 text24 CODE >121:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+447 text24 CODE >125:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+449 text24 CODE >129:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F5C text23 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F5C text23 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F5F text23 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F61 text23 CODE >117:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F38 text22 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F38 text22 CODE >53:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F3A text22 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F52 text21 CODE >92:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F52 text21 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F53 text21 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F56 text21 CODE >96:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FC4 text19 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FC6 text19 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FC7 text19 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FCF text19 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FED text18 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FEF text18 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FF7 text18 CODE >16:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
 FFF text18 CODE >23:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F5B text17 CODE >25:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F5B text17 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F5E text17 CODE >31:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F60 text17 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F62 text17 CODE >36:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F63 text16 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F65 text16 CODE >16:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-F6A text16 CODE >17:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-5B1 text15 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5B1 text15 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5B3 text15 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5B5 text15 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5BA text15 CODE >16:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5BC text15 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5BE text15 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5C3 text15 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5C7 text15 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5C9 text15 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5CD text15 CODE >24:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5CF text15 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5D1 text15 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5D6 text15 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5DA text15 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5DB text15 CODE >30:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5E0 text15 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5E8 text15 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5EC text15 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5ED text15 CODE >35:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5F2 text15 CODE >36:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5F6 text15 CODE >38:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5F9 text15 CODE >39:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-5FE text15 CODE >40:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-602 text15 CODE >41:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
-654 text14 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-654 text14 CODE >12:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-656 text14 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-658 text14 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-65D text14 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-65F text14 CODE >17:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-661 text14 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-666 text14 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-66A text14 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-66C text14 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-66E text14 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-673 text14 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-677 text14 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-678 text14 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-680 text14 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-684 text14 CODE >28:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-689 text14 CODE >29:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-68D text14 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-690 text14 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-695 text14 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
-699 text14 CODE >34:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+F68 text17 CODE >25:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F68 text17 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F6B text17 CODE >31:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F6D text17 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F6F text17 CODE >36:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+F70 text16 CODE >16:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F72 text16 CODE >18:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+F77 text16 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+5AB text15 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5AB text15 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5AD text15 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5AF text15 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5B4 text15 CODE >16:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5B6 text15 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5B8 text15 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5BD text15 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5C1 text15 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5C3 text15 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5C7 text15 CODE >24:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5C9 text15 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5CB text15 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5D0 text15 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5D4 text15 CODE >25:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5D5 text15 CODE >30:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5DA text15 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5E2 text15 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5E6 text15 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5E7 text15 CODE >35:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5EC text15 CODE >36:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5F0 text15 CODE >38:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5F3 text15 CODE >39:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5F8 text15 CODE >40:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+5FC text15 CODE >41:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awdiv.c
+64E text14 CODE >5:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+64E text14 CODE >12:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+650 text14 CODE >13:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+652 text14 CODE >14:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+657 text14 CODE >15:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+659 text14 CODE >17:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+65B text14 CODE >18:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+660 text14 CODE >19:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+664 text14 CODE >20:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+666 text14 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+668 text14 CODE >22:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+66D text14 CODE >23:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+671 text14 CODE >21:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+672 text14 CODE >26:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+67A text14 CODE >27:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+67E text14 CODE >28:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+683 text14 CODE >29:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+687 text14 CODE >31:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+68A text14 CODE >32:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+68F text14 CODE >33:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
+693 text14 CODE >34:E:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\awmod.c
 2 text13 CODE >9:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
 2 text13 CODE >11:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
 3 text13 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\data.c
-FC3 text12 CODE >26:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-FC3 text12 CODE >27:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-FC8 text12 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-FC8 text12 CODE >31:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-FCB text12 CODE >29:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-FCC text12 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-FCF text12 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6DF text11 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6E1 text11 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6E2 text11 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6F5 text11 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6F6 text11 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6F9 text11 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6FB text11 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-6FE text11 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-701 text11 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-731 text10 CODE >54:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-733 text10 CODE >56:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-737 text10 CODE >57:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-73C text10 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-741 text10 CODE >59:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-746 text10 CODE >62:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-748 text10 CODE >63:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-74B text10 CODE >64:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-74D text10 CODE >65:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-750 text10 CODE >67:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-752 text10 CODE >68:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-754 text10 CODE >69:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-756 text10 CODE >70:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-266 text9 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-266 text9 CODE >86:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-26D text9 CODE >87:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-329 text9 CODE >93:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
-4D1 text8 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4D1 text8 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4D8 text8 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4D9 text8 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4DD text8 CODE >62:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4E1 text8 CODE >70:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4E2 text8 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4E3 text8 CODE >73:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4E5 text8 CODE >74:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4E7 text8 CODE >75:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4E9 text8 CODE >76:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4EA text8 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4EC text8 CODE >79:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4EE text8 CODE >80:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4F0 text8 CODE >81:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4F2 text8 CODE >82:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4F3 text8 CODE >84:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4F5 text8 CODE >85:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4F7 text8 CODE >86:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4FA text8 CODE >87:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4FC text8 CODE >88:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4FD text8 CODE >93:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-4FF text8 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-501 text8 CODE >96:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-503 text8 CODE >97:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-505 text8 CODE >98:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-507 text8 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-50A text8 CODE >102:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-516 text8 CODE >103:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-525 text8 CODE >104:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-52E text8 CODE >105:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-536 text8 CODE >106:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-53B text8 CODE >108:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-53E text8 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-540 text8 CODE >115:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-542 text8 CODE >118:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-544 text8 CODE >119:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-546 text8 CODE >126:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-549 text8 CODE >127:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-F95 text7 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F97 text7 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-F9F text7 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
-FA0 text6 CODE >63:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FA0 text6 CODE >66:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FA1 text6 CODE >69:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FA2 text6 CODE >76:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FA4 text6 CODE >77:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FA5 text6 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FA7 text6 CODE >79:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FAA text6 CODE >91:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F50 text5 CODE >92:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F50 text5 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F51 text5 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F54 text5 CODE >96:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F47 text4 CODE >97:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F47 text4 CODE >99:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F49 text4 CODE >100:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F4A text4 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD0 text3 CODE >9:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD0 text3 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD1 text3 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD2 text3 CODE >15:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD4 text3 CODE >17:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD6 text3 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD7 text3 CODE >20:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FD8 text3 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FDA text3 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-FDC text3 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F34 text2 CODE >40:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F34 text2 CODE >43:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-F36 text2 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
-79A text1 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-79A text1 CODE >17:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-79C text1 CODE >18:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-79D text1 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-79F text1 CODE >20:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A0 text1 CODE >21:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A2 text1 CODE >22:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A3 text1 CODE >26:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A5 text1 CODE >27:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A6 text1 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A7 text1 CODE >32:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7A8 text1 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7AA text1 CODE >36:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7AB text1 CODE >37:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7AC text1 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7AD text1 CODE >41:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7AF text1 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7B0 text1 CODE >43:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7B1 text1 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7B3 text1 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-7B5 text1 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
-779 maintext CODE >243:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-779 maintext CODE >250:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-77C maintext CODE >253:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-77F maintext CODE >254:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-782 maintext CODE >257:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-785 maintext CODE >258:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-788 maintext CODE >261:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-78B maintext CODE >262:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-78F maintext CODE >265:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-792 maintext CODE >268:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-795 maintext CODE >269:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-799 maintext CODE >271:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-799 maintext CODE >281:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
-7F9 clrtext CODE >6554:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7F9 clrtext CODE >6555:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7FA clrtext CODE >6556:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7FA clrtext CODE >6557:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7FB clrtext CODE >6558:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7FC clrtext CODE >6559:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7FD clrtext CODE >6560:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
-7FE clrtext CODE >6561:C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.
+FD0 text12 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FD0 text12 CODE >29:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FD5 text12 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FD5 text12 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FD8 text12 CODE >31:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FD9 text12 CODE >32:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+FDC text12 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6D9 text11 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6DB text11 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6DC text11 CODE >47:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6EF text11 CODE >48:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6F0 text11 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6F3 text11 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6F5 text11 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6F8 text11 CODE >52:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+6FB text11 CODE >53:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+72B text10 CODE >56:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+72D text10 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+731 text10 CODE >59:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+736 text10 CODE >60:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+73B text10 CODE >61:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+740 text10 CODE >64:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+742 text10 CODE >65:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+745 text10 CODE >66:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+747 text10 CODE >67:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+74A text10 CODE >69:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+74C text10 CODE >70:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+74E text10 CODE >71:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+750 text10 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+266 text9 CODE >74:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+266 text9 CODE >88:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+26E text9 CODE >89:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+323 text9 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\display.c
+4CB text8 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4CB text8 CODE >45:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4D2 text8 CODE >51:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4D3 text8 CODE >58:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4D7 text8 CODE >62:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4DB text8 CODE >70:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4DC text8 CODE >72:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4DD text8 CODE >73:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4DF text8 CODE >74:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4E1 text8 CODE >75:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4E3 text8 CODE >76:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4E4 text8 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4E6 text8 CODE >79:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4E8 text8 CODE >80:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4EA text8 CODE >81:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4EC text8 CODE >82:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4ED text8 CODE >84:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4EF text8 CODE >85:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4F1 text8 CODE >86:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4F4 text8 CODE >87:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4F6 text8 CODE >88:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4F7 text8 CODE >93:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4F9 text8 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4FB text8 CODE >96:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4FD text8 CODE >97:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+4FF text8 CODE >98:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+501 text8 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+504 text8 CODE >102:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+510 text8 CODE >103:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+51F text8 CODE >104:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+528 text8 CODE >105:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+530 text8 CODE >106:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+535 text8 CODE >108:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+538 text8 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+53A text8 CODE >115:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+53C text8 CODE >118:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+53E text8 CODE >119:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+540 text8 CODE >126:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+543 text8 CODE >127:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+FA2 text7 CODE >110:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FA4 text7 CODE >112:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FAC text7 CODE >114:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\hardware.c
+FAD text6 CODE >63:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FAD text6 CODE >66:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FAE text6 CODE >69:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FAF text6 CODE >76:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FB1 text6 CODE >77:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FB2 text6 CODE >78:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FB4 text6 CODE >79:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+FB7 text6 CODE >91:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F57 text5 CODE >92:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F57 text5 CODE >94:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F58 text5 CODE >95:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F5B text5 CODE >96:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F4E text4 CODE >97:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F4E text4 CODE >99:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F50 text4 CODE >100:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F51 text4 CODE >101:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7F3 text3 CODE >9:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7F3 text3 CODE >12:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7F4 text3 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7F5 text3 CODE >15:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7F7 text3 CODE >17:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7F9 text3 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7FA text3 CODE >20:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7FB text3 CODE >30:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7FD text3 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+7FF text3 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F3B text2 CODE >40:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F3B text2 CODE >43:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+F3D text2 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\timer.c
+794 text1 CODE >14:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+794 text1 CODE >17:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+796 text1 CODE >18:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+797 text1 CODE >19:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+799 text1 CODE >20:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+79A text1 CODE >21:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+79C text1 CODE >22:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+79D text1 CODE >26:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+79F text1 CODE >27:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A0 text1 CODE >28:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A1 text1 CODE >32:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A2 text1 CODE >33:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A4 text1 CODE >36:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A5 text1 CODE >37:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A6 text1 CODE >38:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A7 text1 CODE >41:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7A9 text1 CODE >42:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7AA text1 CODE >43:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7AB text1 CODE >46:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7AD text1 CODE >49:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+7AF text1 CODE >50:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\uart.c
+773 maintext CODE >241:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+773 maintext CODE >248:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+776 maintext CODE >251:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+779 maintext CODE >252:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+77C maintext CODE >255:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+77F maintext CODE >256:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+782 maintext CODE >259:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+785 maintext CODE >260:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+789 maintext CODE >263:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+78C maintext CODE >266:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+78F maintext CODE >267:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+793 maintext CODE >269:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+793 maintext CODE >279:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_new\main.c
+F62 clrtext CODE >6548:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F62 clrtext CODE >6549:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F63 clrtext CODE >6550:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F63 clrtext CODE >6551:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F64 clrtext CODE >6552:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F65 clrtext CODE >6553:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F66 clrtext CODE >6554:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
+F67 clrtext CODE >6555:C:\Users\GENIUS~1\AppData\Local\Temp\sif0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -669,21 +669,21 @@ F36 text2 CODE >44:D:\16-seedClass\micro_lab\BPC_VFD_Clock_liubo\Software\micro_
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\micro_new.production.o
 ___awdiv@counter 3D 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_led_SetState 1F2A 0 CODE 0 text7 dist/default/production\micro_new.production.o
-__end_ofi1_display_update 79C 0 CODE 0 text37 dist/default/production\micro_new.production.o
+_led_SetState 1F44 0 CODE 0 text7 dist/default/production\micro_new.production.o
+__end_ofi1_display_update 790 0 CODE 0 text37 dist/default/production\micro_new.production.o
 __Hspace_0 8009 0 ABS 0 - -
-__Hspace_1 D8 0 ABS 0 - -
+__Hspace_1 D5 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __size_of_display_set 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_led_Blink 1F14 0 CODE 0 text26 dist/default/production\micro_new.production.o
+_led_Blink 1F2E 0 CODE 0 text26 dist/default/production\micro_new.production.o
 __size_ofi1_display_control595_delay 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_display_update$1465 D0 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
+_display_update$1491 45 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __size_of_init_env 0 0 ABS 0 - dist/default/production\micro_new.production.o
 i1display_control595_delay@times 71 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-__end_of_timer_IsTimer0Itrpt 1E86 0 CODE 0 text28 dist/default/production\micro_new.production.o
-__end_of_timer_IsTimer1Itrpt 1E8E 0 CODE 0 text27 dist/default/production\micro_new.production.o
-init_env@pdata D7 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
+__end_of_timer_IsTimer0Itrpt 1E94 0 CODE 0 text28 dist/default/production\micro_new.production.o
+__end_of_timer_IsTimer1Itrpt 1E9C 0 CODE 0 text27 dist/default/production\micro_new.production.o
+init_env@pdata D4 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
 __size_ofi1_display_update 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __size_ofi1_led_SetState 0 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -705,27 +705,27 @@ _SYNC CF4 0 ABS 0 - dist/default/production\micro_new.production.o
 _TMR0 15 0 ABS 0 - dist/default/production\micro_new.production.o
 _TXEN CF5 0 ABS 0 - dist/default/production\micro_new.production.o
 _TXIE 48C 0 ABS 0 - dist/default/production\micro_new.production.o
-_Temp 47 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+_Temp 4A 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\micro_new.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\micro_new.production.o
 _WPUC 20E 0 ABS 0 - dist/default/production\micro_new.production.o
-___sp 0 0 STACK 2 stack C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-_main EF2 0 CODE 0 maintext dist/default/production\micro_new.production.o
+___sp 0 0 STACK 2 stack C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+_main EE6 0 CODE 0 maintext dist/default/production\micro_new.production.o
 btemp 7E 0 ABS 0 - dist/default/production\micro_new.production.o
-start 76 0 CODE 0 init C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
+start 76 0 CODE 0 init C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\micro_new.production.o
 i1_capture_setEdge 1FBA 0 CODE 0 text32 dist/default/production\micro_new.production.o
-__end_of_display_write_byte E14 0 CODE 0 text11 dist/default/production\micro_new.production.o
-__end_of_display_write_once EAE 0 CODE 0 text10 dist/default/production\micro_new.production.o
-i1_capture_Set 1F56 0 CODE 0 text43 dist/default/production\micro_new.production.o
-_update_time 79C 0 CODE 0 text24 dist/default/production\micro_new.production.o
-display_update@pdata D2 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
+__end_of_display_write_byte E08 0 CODE 0 text11 dist/default/production\micro_new.production.o
+__end_of_display_write_once EA2 0 CODE 0 text10 dist/default/production\micro_new.production.o
+i1_capture_Set 1F70 0 CODE 0 text43 dist/default/production\micro_new.production.o
+_update_time 790 0 CODE 0 text24 dist/default/production\micro_new.production.o
+display_update@pdata 47 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\micro_new.production.o
-_key_isPressed FCA 0 CODE 0 text29 dist/default/production\micro_new.production.o
+_key_isPressed FBE 0 CODE 0 text29 dist/default/production\micro_new.production.o
 ?_cnt_abs 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-_capture_init 1EB6 0 CODE 0 text17 dist/default/production\micro_new.production.o
+_capture_init 1ED0 0 CODE 0 text17 dist/default/production\micro_new.production.o
 __size_of_led_SetState 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_bpc_proc 0 0 ABS 0 - dist/default/production\micro_new.production.o
 _data_getdata 4 0 CODE 0 text13 dist/default/production\micro_new.production.o
@@ -733,96 +733,96 @@ i1display_write_byte@i 75 0 COMMON 1 cstackCOMMON dist/default/production\micro_
 __Hpowerup 0 0 CODE 0 powerup -
 update_time@pdata 7D 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 ___awmod@sign 3E 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-__end_of_capture_clrIntrpt 1E62 0 CODE 0 text33 dist/default/production\micro_new.production.o
+__end_of_capture_clrIntrpt 1E70 0 CODE 0 text33 dist/default/production\micro_new.production.o
 capture_handdle@pdata 79 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-i1_display_control595_delay 1EFE 0 CODE 0 text40 dist/default/production\micro_new.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
+i1_display_control595_delay 1F18 0 CODE 0 text40 dist/default/production\micro_new.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
 __size_ofi1_data_getdata 0 0 ABS 0 - dist/default/production\micro_new.production.o
 display_write_byte@data 3C 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_init_env 9A2 0 CODE 0 text8 dist/default/production\micro_new.production.o
+_init_env 996 0 CODE 0 text8 dist/default/production\micro_new.production.o
 _OSCCONbits 99 0 ABS 0 - dist/default/production\micro_new.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\micro_new.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__end_of_led_SetState 1F40 0 CODE 0 text7 dist/default/production\micro_new.production.o
-_display_write_byte DBE 0 CODE 0 text11 dist/default/production\micro_new.production.o
-_display_write_once E62 0 CODE 0 text10 dist/default/production\micro_new.production.o
+__end_of_led_SetState 1F5A 0 CODE 0 text7 dist/default/production\micro_new.production.o
+_display_write_byte DB2 0 CODE 0 text11 dist/default/production\micro_new.production.o
+_display_write_once E56 0 CODE 0 text10 dist/default/production\micro_new.production.o
 ___awdiv@sign 3E 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_init_env A94 0 CODE 0 text8 dist/default/production\micro_new.production.o
+__end_of_init_env A88 0 CODE 0 text8 dist/default/production\micro_new.production.o
 __size_of_timer_Timer1ClrIntrpt 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_capture_IsNegEdge 1EEA 0 CODE 0 text48 dist/default/production\micro_new.production.o
+__end_of_capture_IsNegEdge 1F04 0 CODE 0 text48 dist/default/production\micro_new.production.o
 __size_ofi1_display_write_byte 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_ofi1_display_write_once 0 0 ABS 0 - dist/default/production\micro_new.production.o
 bpc_proc@number 36 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-led_Blink@State 4D 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+led_Blink@State 4E 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 __size_of_capture_init 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_data_getdata 0 0 ABS 0 - dist/default/production\micro_new.production.o
 ___awdiv@dividend 3A 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 _CCPR2H 299 0 ABS 0 - dist/default/production\micro_new.production.o
 _CCPR2L 298 0 ABS 0 - dist/default/production\micro_new.production.o
 _bpc_proc A0 0 CODE 0 text36 dist/default/production\micro_new.production.o
-__end_of_capture_handdle B62 0 CODE 0 text30 dist/default/production\micro_new.production.o
-i1_display_update$1465 29 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-__end_ofi1_display_write_byte E62 0 CODE 0 text39 dist/default/production\micro_new.production.o
-__end_ofi1_display_write_once EF2 0 CODE 0 text38 dist/default/production\micro_new.production.o
+__end_of_capture_handdle B56 0 CODE 0 text30 dist/default/production\micro_new.production.o
+i1_display_update$1491 29 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
+__end_ofi1_display_write_byte E56 0 CODE 0 text39 dist/default/production\micro_new.production.o
+__end_ofi1_display_write_once EE6 0 CODE 0 text38 dist/default/production\micro_new.production.o
 i1___awmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __size_of_timer_Timer0Reset 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_timer_Timer0Start 0 0 ABS 0 - dist/default/production\micro_new.production.o
 i1capture_Set@isON 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-_bpc_Cnt2Qua 8A0 0 CODE 0 text45 dist/default/production\micro_new.production.o
-__end_ofi1___awdiv CA8 0 CODE 0 text42 dist/default/production\micro_new.production.o
-__end_ofi1___awmod DBE 0 CODE 0 text41 dist/default/production\micro_new.production.o
+_bpc_Cnt2Qua 894 0 CODE 0 text45 dist/default/production\micro_new.production.o
+__end_ofi1___awdiv C9C 0 CODE 0 text42 dist/default/production\micro_new.production.o
+__end_ofi1___awmod DB2 0 CODE 0 text41 dist/default/production\micro_new.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_timer_Timer1Start 0 0 ABS 0 - dist/default/production\micro_new.production.o
 bpc_proc@last_time_h 30 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 bpc_proc@last_time_m 32 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 bpc_proc@last_time_s 2E 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_TX_data 51 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+_TX_data 52 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 ___awdiv@divisor 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __size_ofi1___awdiv 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_ofi1___awmod 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __end_of_bpc_proc 30E 0 CODE 0 text36 dist/default/production\micro_new.production.o
-__end_of___awdiv C06 0 CODE 0 text15 dist/default/production\micro_new.production.o
-__end_of___awmod D34 0 CODE 0 text14 dist/default/production\micro_new.production.o
-__end_of_capture_init 1EC6 0 CODE 0 text17 dist/default/production\micro_new.production.o
+__end_of___awdiv BFA 0 CODE 0 text15 dist/default/production\micro_new.production.o
+__end_of___awmod D28 0 CODE 0 text14 dist/default/production\micro_new.production.o
+__end_of_capture_init 1EE0 0 CODE 0 text17 dist/default/production\micro_new.production.o
 __end_of_data_getdata 8 0 CODE 0 text13 dist/default/production\micro_new.production.o
 i1display_write_once@HL 7C 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 i1display_write_once@HR 79 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 i1display_write_once@ML 7A 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 i1display_write_once@MR 7B 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-___stacklo 2088 0 ABS 0 - C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
+___stackhi 23EF 0 ABS 0 - C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+___stacklo 2085 0 ABS 0 - C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
 __size_ofi1_capture_Set 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_capture_Set 1F86 0 CODE 0 text19 dist/default/production\micro_new.production.o
+__end_of_capture_Set 1FA0 0 CODE 0 text19 dist/default/production\micro_new.production.o
 cnt_abs@a 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 cnt_abs@b 72 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __size_of_key_isPressed 0 0 ABS 0 - dist/default/production\micro_new.production.o
 i1display_update@pdata 2B 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-i1___awdiv C06 0 CODE 0 text42 dist/default/production\micro_new.production.o
-i1___awmod D34 0 CODE 0 text41 dist/default/production\micro_new.production.o
+i1___awdiv BFA 0 CODE 0 text42 dist/default/production\micro_new.production.o
+i1___awmod D28 0 CODE 0 text41 dist/default/production\micro_new.production.o
 tmp_change@history_key 55 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
-_capture_clrIntrpt 1E5C 0 CODE 0 text33 dist/default/production\micro_new.production.o
+_capture_clrIntrpt 1E6A 0 CODE 0 text33 dist/default/production\micro_new.production.o
 _WPUCbits 20E 0 ABS 0 - dist/default/production\micro_new.production.o
 start_initialization 7A 0 CODE 0 cinit dist/default/production\micro_new.production.o
 _TRISCbits 8E 0 ABS 0 - dist/default/production\micro_new.production.o
-_capture_handdle A94 0 CODE 0 text30 dist/default/production\micro_new.production.o
+_capture_handdle A88 0 CODE 0 text30 dist/default/production\micro_new.production.o
 bpc_proc@pdata 37 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_display_set 1EC6 0 CODE 0 text16 dist/default/production\micro_new.production.o
+_display_set 1EE0 0 CODE 0 text16 dist/default/production\micro_new.production.o
 check_err@check 29 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-__end_ofi1_capture_Set 1F6E 0 CODE 0 text43 dist/default/production\micro_new.production.o
+__end_ofi1_capture_Set 1F88 0 CODE 0 text43 dist/default/production\micro_new.production.o
 check_err@pdata 2A 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-clear_ram0 FF2 0 CODE 0 clrtext dist/default/production\micro_new.production.o
+clear_ram0 1EC4 0 CODE 0 clrtext dist/default/production\micro_new.production.o
 _SPBRGH 19C 0 ABS 0 - dist/default/production\micro_new.production.o
 _SPBRGL 19B 0 ABS 0 - dist/default/production\micro_new.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __pcstackBANK1 C7 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
-_capture_IsNegEdge 1ED6 0 CODE 0 text48 dist/default/production\micro_new.production.o
-__end_of_key_isPressed FF2 0 CODE 0 text29 dist/default/production\micro_new.production.o
+_capture_IsNegEdge 1EF0 0 CODE 0 text48 dist/default/production\micro_new.production.o
+__end_of_key_isPressed FE6 0 CODE 0 text29 dist/default/production\micro_new.production.o
 __size_of_timer_Timer0Handdle 0 0 ABS 0 - dist/default/production\micro_new.production.o
 _TRISC3 473 0 ABS 0 - dist/default/production\micro_new.production.o
 _TRISC4 474 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -832,7 +832,7 @@ display_write_once@ML 42 0 BANK0 1 cstackBANK0 dist/default/production\micro_new
 display_write_once@MR 43 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 i1___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 _display_update 4CC 0 CODE 0 text9 dist/default/production\micro_new.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
+___int_sp 0 0 STACK 2 stack C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
 __size_ofi1_timer_Timer0Reset 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -870,8 +870,8 @@ __Hsfr30 0 0 ABS 0 sfr30 -
 __Hsfr31 0 0 ABS 0 sfr31 -
 __size_of_cnt_abs 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __Hstack 0 0 STACK 2 stack -
-_timer_Timer0Init 1F40 0 CODE 0 text6 dist/default/production\micro_new.production.o
-_timer_Timer1Init 1FA0 0 CODE 0 text3 dist/default/production\micro_new.production.o
+_timer_Timer0Init 1F5A 0 CODE 0 text6 dist/default/production\micro_new.production.o
+_timer_Timer1Init FE6 0 CODE 0 text3 dist/default/production\micro_new.production.o
 __Hbank10 0 0 ABS 0 bank10 -
 __Hbank11 0 0 ABS 0 bank11 -
 __Hbank12 0 0 ABS 0 bank12 -
@@ -933,9 +933,9 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-__end_of_timer_Timer0Reset 1EAA 0 CODE 0 text5 dist/default/production\micro_new.production.o
+__end_of_timer_Timer0Reset 1EB8 0 CODE 0 text5 dist/default/production\micro_new.production.o
 _PORTAbits C 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_timer_Timer0Start 1E96 0 CODE 0 text4 dist/default/production\micro_new.production.o
+__end_of_timer_Timer0Start 1EA4 0 CODE 0 text4 dist/default/production\micro_new.production.o
 _PORTCbits E 0 ABS 0 - dist/default/production\micro_new.production.o
 capture_setEdge@edge 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -968,31 +968,31 @@ __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
 __pstringtext1 2000 0 STRCODE 0 stringtext1 dist/default/production\micro_new.production.o
-__end_of_timer_Timer1Start 1E6E 0 CODE 0 text2 dist/default/production\micro_new.production.o
-_timer_Timer0Handdle 1EAA 0 CODE 0 text23 dist/default/production\micro_new.production.o
+__end_of_timer_Timer1Start 1E7C 0 CODE 0 text2 dist/default/production\micro_new.production.o
+_timer_Timer0Handdle 1EB8 0 CODE 0 text23 dist/default/production\micro_new.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 int$flags 7E 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_update_time 8A0 0 CODE 0 text24 dist/default/production\micro_new.production.o
+__end_of_update_time 894 0 CODE 0 text24 dist/default/production\micro_new.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 display_control595_delay@times 39 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-i1_led_SetState 1EEA 0 CODE 0 text31 dist/default/production\micro_new.production.o
+i1_led_SetState 1F04 0 CODE 0 text31 dist/default/production\micro_new.production.o
 _GIE 5F 0 ABS 0 - dist/default/production\micro_new.production.o
 _ISR 8 0 CODE 0 intentry dist/default/production\micro_new.production.o
 _RC4 74 0 ABS 0 - dist/default/production\micro_new.production.o
 __S0 8009 0 ABS 0 - -
-__S1 D8 0 ABS 0 - -
+__S1 D5 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-i1_timer_Timer0Reset 1E96 0 CODE 0 text21 dist/default/production\micro_new.production.o
+i1_timer_Timer0Reset 1EA4 0 CODE 0 text21 dist/default/production\micro_new.production.o
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_display_update 654 0 CODE 0 text9 dist/default/production\micro_new.production.o
+__end_of_display_update 648 0 CODE 0 text9 dist/default/production\micro_new.production.o
 __size_of_display_write_byte 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_display_write_once 0 0 ABS 0 - dist/default/production\micro_new.production.o
 check_err@i 28 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __size_of_capture_handdle 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_display_control595_delay 1F86 0 CODE 0 text12 dist/default/production\micro_new.production.o
-_flg_rc 4E 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+_display_control595_delay 1FA0 0 CODE 0 text12 dist/default/production\micro_new.production.o
+_flg_rc 4F 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 __end_of_ISR 76 0 CODE 0 intentry dist/default/production\micro_new.production.o
 _g_data A0 0 BANK1 1 bssBANK1 dist/default/production\micro_new.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -1000,71 +1000,71 @@ _ODCONC3 1473 0 ABS 0 - dist/default/production\micro_new.production.o
 _ODCONC4 1474 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_capture_Set 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\GENIUS~1\AppData\Local\Temp\sbv4.o
-_key_checkPressed F6C 0 CODE 0 text25 dist/default/production\micro_new.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\GENIUS~1\AppData\Local\Temp\sif0.o
+_key_checkPressed F60 0 CODE 0 text25 dist/default/production\micro_new.production.o
 ?_check_err 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __end_of_capture_setEdge 2000 0 CODE 0 text18 dist/default/production\micro_new.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-i1_data_getdata 1E58 0 CODE 0 text46 dist/default/production\micro_new.production.o
+i1_data_getdata 1E66 0 CODE 0 text46 dist/default/production\micro_new.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __Lstringtext1 0 0 ABS 0 stringtext1 -
-_capture_handdle$1297 77 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
+_capture_handdle$1323 77 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 i1___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-__end_of_timer_Timer0Init 1F56 0 CODE 0 text6 dist/default/production\micro_new.production.o
-__end_of_timer_Timer1Init 1FBA 0 CODE 0 text3 dist/default/production\micro_new.production.o
+__end_of_timer_Timer0Init 1F70 0 CODE 0 text6 dist/default/production\micro_new.production.o
+__end_of_timer_Timer1Init 1000 0 CODE 0 text3 dist/default/production\micro_new.production.o
 ___awmod@counter 3D 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 _PIE1bits 91 0 ABS 0 - dist/default/production\micro_new.production.o
-init_env@i D5 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
+init_env@i D2 0 BANK1 1 cstackBANK1 dist/default/production\micro_new.production.o
 _PIE2bits 92 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_cnt_abs FCA 0 CODE 0 text47 dist/default/production\micro_new.production.o
+__end_of_cnt_abs FBE 0 CODE 0 text47 dist/default/production\micro_new.production.o
 i1___awmod@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-__end_ofi1_led_SetState 1EFE 0 CODE 0 text31 dist/default/production\micro_new.production.o
+__end_ofi1_led_SetState 1F18 0 CODE 0 text31 dist/default/production\micro_new.production.o
 i1___awmod@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-__ptext10 E62 0 CODE 0 text10 dist/default/production\micro_new.production.o
-__ptext11 DBE 0 CODE 0 text11 dist/default/production\micro_new.production.o
-__ptext12 1F86 0 CODE 0 text12 dist/default/production\micro_new.production.o
+__ptext10 E56 0 CODE 0 text10 dist/default/production\micro_new.production.o
+__ptext11 DB2 0 CODE 0 text11 dist/default/production\micro_new.production.o
+__ptext12 1FA0 0 CODE 0 text12 dist/default/production\micro_new.production.o
 __ptext13 4 0 CODE 0 text13 dist/default/production\micro_new.production.o
-__ptext14 CA8 0 CODE 0 text14 dist/default/production\micro_new.production.o
-__ptext15 B62 0 CODE 0 text15 dist/default/production\micro_new.production.o
-__ptext16 1EC6 0 CODE 0 text16 dist/default/production\micro_new.production.o
-__ptext17 1EB6 0 CODE 0 text17 dist/default/production\micro_new.production.o
+__ptext14 C9C 0 CODE 0 text14 dist/default/production\micro_new.production.o
+__ptext15 B56 0 CODE 0 text15 dist/default/production\micro_new.production.o
+__ptext16 1EE0 0 CODE 0 text16 dist/default/production\micro_new.production.o
+__ptext17 1ED0 0 CODE 0 text17 dist/default/production\micro_new.production.o
 __ptext18 1FDA 0 CODE 0 text18 dist/default/production\micro_new.production.o
-__ptext19 1F6E 0 CODE 0 text19 dist/default/production\micro_new.production.o
-__ptext21 1E96 0 CODE 0 text21 dist/default/production\micro_new.production.o
-__ptext22 1E62 0 CODE 0 text22 dist/default/production\micro_new.production.o
-__ptext23 1EAA 0 CODE 0 text23 dist/default/production\micro_new.production.o
-__ptext24 79C 0 CODE 0 text24 dist/default/production\micro_new.production.o
-__ptext25 F6C 0 CODE 0 text25 dist/default/production\micro_new.production.o
-__ptext26 1F14 0 CODE 0 text26 dist/default/production\micro_new.production.o
-__ptext27 1E86 0 CODE 0 text27 dist/default/production\micro_new.production.o
-__ptext28 1E7E 0 CODE 0 text28 dist/default/production\micro_new.production.o
-__ptext29 FCA 0 CODE 0 text29 dist/default/production\micro_new.production.o
-__ptext30 A94 0 CODE 0 text30 dist/default/production\micro_new.production.o
-__ptext31 1EEA 0 CODE 0 text31 dist/default/production\micro_new.production.o
+__ptext19 1F88 0 CODE 0 text19 dist/default/production\micro_new.production.o
+__ptext21 1EA4 0 CODE 0 text21 dist/default/production\micro_new.production.o
+__ptext22 1E70 0 CODE 0 text22 dist/default/production\micro_new.production.o
+__ptext23 1EB8 0 CODE 0 text23 dist/default/production\micro_new.production.o
+__ptext24 790 0 CODE 0 text24 dist/default/production\micro_new.production.o
+__ptext25 F60 0 CODE 0 text25 dist/default/production\micro_new.production.o
+__ptext26 1F2E 0 CODE 0 text26 dist/default/production\micro_new.production.o
+__ptext27 1E94 0 CODE 0 text27 dist/default/production\micro_new.production.o
+__ptext28 1E8C 0 CODE 0 text28 dist/default/production\micro_new.production.o
+__ptext29 FBE 0 CODE 0 text29 dist/default/production\micro_new.production.o
+__ptext30 A88 0 CODE 0 text30 dist/default/production\micro_new.production.o
+__ptext31 1F04 0 CODE 0 text31 dist/default/production\micro_new.production.o
 __ptext32 1FBA 0 CODE 0 text32 dist/default/production\micro_new.production.o
-__ptext33 1E5C 0 CODE 0 text33 dist/default/production\micro_new.production.o
-__ptext34 1E76 0 CODE 0 text34 dist/default/production\micro_new.production.o
-__ptext35 1E6E 0 CODE 0 text35 dist/default/production\micro_new.production.o
+__ptext33 1E6A 0 CODE 0 text33 dist/default/production\micro_new.production.o
+__ptext34 1E84 0 CODE 0 text34 dist/default/production\micro_new.production.o
+__ptext35 1E7C 0 CODE 0 text35 dist/default/production\micro_new.production.o
 __ptext36 A0 0 CODE 0 text36 dist/default/production\micro_new.production.o
-__ptext37 654 0 CODE 0 text37 dist/default/production\micro_new.production.o
-__ptext38 EAE 0 CODE 0 text38 dist/default/production\micro_new.production.o
-__ptext39 E14 0 CODE 0 text39 dist/default/production\micro_new.production.o
-__ptext40 1EFE 0 CODE 0 text40 dist/default/production\micro_new.production.o
-__ptext41 D34 0 CODE 0 text41 dist/default/production\micro_new.production.o
-__ptext42 C06 0 CODE 0 text42 dist/default/production\micro_new.production.o
-__ptext43 1F56 0 CODE 0 text43 dist/default/production\micro_new.production.o
+__ptext37 648 0 CODE 0 text37 dist/default/production\micro_new.production.o
+__ptext38 EA2 0 CODE 0 text38 dist/default/production\micro_new.production.o
+__ptext39 E08 0 CODE 0 text39 dist/default/production\micro_new.production.o
+__ptext40 1F18 0 CODE 0 text40 dist/default/production\micro_new.production.o
+__ptext41 D28 0 CODE 0 text41 dist/default/production\micro_new.production.o
+__ptext42 BFA 0 CODE 0 text42 dist/default/production\micro_new.production.o
+__ptext43 1F70 0 CODE 0 text43 dist/default/production\micro_new.production.o
 __ptext44 30E 0 CODE 0 text44 dist/default/production\micro_new.production.o
-__ptext45 8A0 0 CODE 0 text45 dist/default/production\micro_new.production.o
-__ptext46 1E58 0 CODE 0 text46 dist/default/production\micro_new.production.o
-__ptext47 F9E 0 CODE 0 text47 dist/default/production\micro_new.production.o
-__ptext48 1ED6 0 CODE 0 text48 dist/default/production\micro_new.production.o
+__ptext45 894 0 CODE 0 text45 dist/default/production\micro_new.production.o
+__ptext46 1E66 0 CODE 0 text46 dist/default/production\micro_new.production.o
+__ptext47 F92 0 CODE 0 text47 dist/default/production\micro_new.production.o
+__ptext48 1EF0 0 CODE 0 text48 dist/default/production\micro_new.production.o
 _IOCCFbits 399 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_timer_Timer0Init 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_timer_Timer1Init 0 0 ABS 0 - dist/default/production\micro_new.production.o
 _IOCCPbits 397 0 ABS 0 - dist/default/production\micro_new.production.o
-___awdiv B62 0 CODE 0 text15 dist/default/production\micro_new.production.o
-___awmod CA8 0 CODE 0 text14 dist/default/production\micro_new.production.o
+___awdiv B56 0 CODE 0 text15 dist/default/production\micro_new.production.o
+___awmod C9C 0 CODE 0 text14 dist/default/production\micro_new.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -1087,47 +1087,47 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext EF2 0 CODE 0 maintext dist/default/production\micro_new.production.o
+__pmaintext EE6 0 CODE 0 maintext dist/default/production\micro_new.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_capture_IsEnable 1E6E 0 CODE 0 text35 dist/default/production\micro_new.production.o
+_capture_IsEnable 1E7C 0 CODE 0 text35 dist/default/production\micro_new.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
-__end_of_bpc_Cnt2Qua 9A2 0 CODE 0 text45 dist/default/production\micro_new.production.o
+__end_of_bpc_Cnt2Qua 996 0 CODE 0 text45 dist/default/production\micro_new.production.o
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\micro_new.production.o
 i1___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
 _LATBbits 10D 0 ABS 0 - dist/default/production\micro_new.production.o
-_RX_data 50 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+_RX_data 51 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 _segmcode 2000 0 STRCODE 0 stringtext1 dist/default/production\micro_new.production.o
-_timer_Timer0Reset 1EA0 0 CODE 0 text5 dist/default/production\micro_new.production.o
-_timer_Timer0Start 1E8E 0 CODE 0 text4 dist/default/production\micro_new.production.o
+_timer_Timer0Reset 1EAE 0 CODE 0 text5 dist/default/production\micro_new.production.o
+_timer_Timer0Start 1E9C 0 CODE 0 text4 dist/default/production\micro_new.production.o
 i1___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
-i1_display_write_byte E14 0 CODE 0 text39 dist/default/production\micro_new.production.o
-i1_display_write_once EAE 0 CODE 0 text38 dist/default/production\micro_new.production.o
-_timer_Timer1Start 1E68 0 CODE 0 text2 dist/default/production\micro_new.production.o
+i1_display_write_byte E08 0 CODE 0 text39 dist/default/production\micro_new.production.o
+i1_display_write_once EA2 0 CODE 0 text38 dist/default/production\micro_new.production.o
+_timer_Timer1Start 1E76 0 CODE 0 text2 dist/default/production\micro_new.production.o
 __size_ofi1_capture_setEdge 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_capture_IsIntrpt 1E76 0 CODE 0 text34 dist/default/production\micro_new.production.o
-_temp_h 53 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
-_temp_l 52 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
-__end_of_timer_Timer0Handdle 1EB6 0 CODE 0 text23 dist/default/production\micro_new.production.o
+_capture_IsIntrpt 1E84 0 CODE 0 text34 dist/default/production\micro_new.production.o
+_temp_h 54 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+_temp_l 53 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+__end_of_timer_Timer0Handdle 1EC4 0 CODE 0 text23 dist/default/production\micro_new.production.o
 __end_of_segmcode 2016 0 STRCODE 0 stringtext1 dist/default/production\micro_new.production.o
 i1capture_setEdge@edge 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __CFG_VCAPEN$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
 _capture_setEdge 1FDA 0 CODE 0 text18 dist/default/production\micro_new.production.o
-_check_err$1060 20 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_check_err$1061 22 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_check_err$1064 24 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-_check_err$1065 26 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-__end_ofi1_data_getdata 1E5C 0 CODE 0 text46 dist/default/production\micro_new.production.o
+_check_err$1086 20 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
+_check_err$1087 22 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
+_check_err$1090 24 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
+_check_err$1091 26 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
+__end_ofi1_data_getdata 1E6A 0 CODE 0 text46 dist/default/production\micro_new.production.o
 bpc_proc@i 34 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-__end_ofi1_timer_Timer0Reset 1EA0 0 CODE 0 text21 dist/default/production\micro_new.production.o
-__end_of_timer_Timer1ClrIntrpt 1E68 0 CODE 0 text22 dist/default/production\micro_new.production.o
+__end_ofi1_timer_Timer0Reset 1EAE 0 CODE 0 text21 dist/default/production\micro_new.production.o
+__end_of_timer_Timer1ClrIntrpt 1E76 0 CODE 0 text22 dist/default/production\micro_new.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 _PIR1bits 11 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -1140,61 +1140,61 @@ __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_timer_IsTimer1Itrpt 0 0 ABS 0 - dist/default/production\micro_new.production.o
 end_of_initialization 98 0 CODE 0 cinit dist/default/production\micro_new.production.o
 __Hintentry 76 0 CODE 0 intentry -
-tmp_change@key_time_cnt 4B 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+tmp_change@key_time_cnt 4C 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_key_checkPressed F9E 0 CODE 0 text25 dist/default/production\micro_new.production.o
+__end_of_key_checkPressed F92 0 CODE 0 text25 dist/default/production\micro_new.production.o
 __Lstrings 0 0 ABS 0 strings -
 ___awdiv@quotient 3F 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 ?___awdiv 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 ?___awmod 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
-__end_of_display_set 1ED6 0 CODE 0 text16 dist/default/production\micro_new.production.o
-__end_ofi1_display_control595_delay 1F14 0 CODE 0 text40 dist/default/production\micro_new.production.o
+__end_of_display_set 1EF0 0 CODE 0 text16 dist/default/production\micro_new.production.o
+__end_ofi1_display_control595_delay 1F2E 0 CODE 0 text40 dist/default/production\micro_new.production.o
 __size_of_update_time 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 i1led_SetState@isOn 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-_timer_Timer1ClrIntrpt 1E62 0 CODE 0 text22 dist/default/production\micro_new.production.o
+_timer_Timer1ClrIntrpt 1E70 0 CODE 0 text22 dist/default/production\micro_new.production.o
 ___awmod@dividend 3A 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __size_of_key_checkPressed 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_display_control595_delay 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_uart_init F6C 0 CODE 0 text1 dist/default/production\micro_new.production.o
-__ptext1 F34 0 CODE 0 text1 dist/default/production\micro_new.production.o
-__ptext2 1E68 0 CODE 0 text2 dist/default/production\micro_new.production.o
-__ptext3 1FA0 0 CODE 0 text3 dist/default/production\micro_new.production.o
-__ptext4 1E8E 0 CODE 0 text4 dist/default/production\micro_new.production.o
-__ptext5 1EA0 0 CODE 0 text5 dist/default/production\micro_new.production.o
-__ptext6 1F40 0 CODE 0 text6 dist/default/production\micro_new.production.o
-__ptext7 1F2A 0 CODE 0 text7 dist/default/production\micro_new.production.o
-__ptext8 9A2 0 CODE 0 text8 dist/default/production\micro_new.production.o
+__end_of_uart_init F60 0 CODE 0 text1 dist/default/production\micro_new.production.o
+__ptext1 F28 0 CODE 0 text1 dist/default/production\micro_new.production.o
+__ptext2 1E76 0 CODE 0 text2 dist/default/production\micro_new.production.o
+__ptext3 FE6 0 CODE 0 text3 dist/default/production\micro_new.production.o
+__ptext4 1E9C 0 CODE 0 text4 dist/default/production\micro_new.production.o
+__ptext5 1EAE 0 CODE 0 text5 dist/default/production\micro_new.production.o
+__ptext6 1F5A 0 CODE 0 text6 dist/default/production\micro_new.production.o
+__ptext7 1F44 0 CODE 0 text7 dist/default/production\micro_new.production.o
+__ptext8 996 0 CODE 0 text8 dist/default/production\micro_new.production.o
 __ptext9 4CC 0 CODE 0 text9 dist/default/production\micro_new.production.o
 __size_of_uart_init 0 0 ABS 0 - dist/default/production\micro_new.production.o
 bpc_Cnt2Qua@pdata 76 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_capture_IsEnable 1E76 0 CODE 0 text35 dist/default/production\micro_new.production.o
+__end_of_capture_IsEnable 1E84 0 CODE 0 text35 dist/default/production\micro_new.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
-_timer_IsTimer0Itrpt 1E7E 0 CODE 0 text28 dist/default/production\micro_new.production.o
+_timer_IsTimer0Itrpt 1E8C 0 CODE 0 text28 dist/default/production\micro_new.production.o
 __CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\micro_new.production.o
 ?i1___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 ?i1___awmod 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __size_of_capture_IsEnable 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_uart_init F34 0 CODE 0 text1 dist/default/production\micro_new.production.o
-_timer_IsTimer1Itrpt 1E86 0 CODE 0 text27 dist/default/production\micro_new.production.o
+_uart_init F28 0 CODE 0 text1 dist/default/production\micro_new.production.o
+_timer_IsTimer1Itrpt 1E94 0 CODE 0 text27 dist/default/production\micro_new.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
-i1_display_update 654 0 CODE 0 text37 dist/default/production\micro_new.production.o
+i1_display_update 648 0 CODE 0 text37 dist/default/production\micro_new.production.o
 key_isPressed@pdata 71 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __end_of__initialization 98 0 CODE 0 cinit dist/default/production\micro_new.production.o
-__end_of_capture_IsIntrpt 1E7E 0 CODE 0 text34 dist/default/production\micro_new.production.o
+__end_of_capture_IsIntrpt 1E8C 0 CODE 0 text34 dist/default/production\micro_new.production.o
 ___awmod@divisor 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 capture_Set@isON 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __size_of_capture_IsIntrpt 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_capture_setEdge 0 0 ABS 0 - dist/default/production\micro_new.production.o
-_capture_Set 1F6E 0 CODE 0 text19 dist/default/production\micro_new.production.o
+_capture_Set 1F88 0 CODE 0 text19 dist/default/production\micro_new.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __end_ofi1_capture_setEdge 1FDA 0 CODE 0 text32 dist/default/production\micro_new.production.o
 __size_of_capture_clrIntrpt 0 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -1202,7 +1202,7 @@ display_write_byte@i 3D 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.
 __Hend_init 7A 0 CODE 0 end_init -
 i1display_write_byte@data 74 0 COMMON 1 cstackCOMMON dist/default/production\micro_new.production.o
 __size_of_bpc_Cnt2Qua 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_main F34 0 CODE 0 maintext dist/default/production\micro_new.production.o
+__end_of_main F28 0 CODE 0 maintext dist/default/production\micro_new.production.o
 _CCP2CONbits 29A 0 ABS 0 - dist/default/production\micro_new.production.o
 led_SetState@isOn 38 0 BANK0 1 cstackBANK0 dist/default/production\micro_new.production.o
 _BRG16 CFB 0 ABS 0 - dist/default/production\micro_new.production.o
@@ -1223,24 +1223,24 @@ _TRISB 8D 0 ABS 0 - dist/default/production\micro_new.production.o
 _TRISC 8E 0 ABS 0 - dist/default/production\micro_new.production.o
 _TXREG 19A 0 ABS 0 - dist/default/production\micro_new.production.o
 _TXSEL 8EA 0 ABS 0 - dist/default/production\micro_new.production.o
-_TX_en 4F 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+_TX_en 50 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 _WPUC3 1073 0 ABS 0 - dist/default/production\micro_new.production.o
 _WPUC4 1074 0 ABS 0 - dist/default/production\micro_new.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-capture_handdle@last_cnt 45 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+capture_handdle@last_cnt 48 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\micro_new.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_display_control595_delay 1FA0 0 CODE 0 text12 dist/default/production\micro_new.production.o
+__end_of_display_control595_delay 1FBA 0 CODE 0 text12 dist/default/production\micro_new.production.o
 __size_of_capture_IsNegEdge 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_display_update 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __initialization 7A 0 CODE 0 cinit dist/default/production\micro_new.production.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
-__end_of_led_Blink 1F2A 0 CODE 0 text26 dist/default/production\micro_new.production.o
-__pbssBANK0 45 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
+__end_of_led_Blink 1F44 0 CODE 0 text26 dist/default/production\micro_new.production.o
+__pbssBANK0 48 0 BANK0 1 bssBANK0 dist/default/production\micro_new.production.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\micro_new.production.o
-_cnt_abs F9E 0 CODE 0 text47 dist/default/production\micro_new.production.o
+_cnt_abs F92 0 CODE 0 text47 dist/default/production\micro_new.production.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __size_of_led_Blink 0 0 ABS 0 - dist/default/production\micro_new.production.o
 __end_of_check_err 4CC 0 CODE 0 text44 dist/default/production\micro_new.production.o
@@ -1273,36 +1273,36 @@ __size_of_check_err 0 0 ABS 0 - dist/default/production\micro_new.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text2 0 F34 1E68 3 2
-text3 0 FD0 1FA0 D 2
-text4 0 F47 1E8E 4 2
-text5 0 F50 1EA0 5 2
-text6 0 FA0 1F40 B 2
-text7 0 F95 1F2A B 2
-text12 0 FC3 1F86 D 2
-text16 0 F63 1EC6 8 2
-text17 0 F5B 1EB6 8 2
+text2 0 F3B 1E76 3 2
+text4 0 F4E 1E9C 4 2
+text5 0 F57 1EAE 5 2
+text6 0 FAD 1F5A B 2
+text7 0 FA2 1F44 B 2
+text12 0 FD0 1FA0 D 2
+text16 0 F70 1EE0 8 2
+text17 0 F68 1ED0 8 2
 text18 0 FED 1FDA 13 2
-text19 0 FB7 1F6E C 2
-text21 0 F4B 1E96 5 2
-text22 0 F31 1E62 3 2
-text23 0 F55 1EAA 6 2
-text26 0 F8A 1F14 B 2
-text27 0 F43 1E86 4 2
-text28 0 F3F 1E7E 4 2
-text31 0 F75 1EEA A 2
+text19 0 FC4 1F88 C 2
+text21 0 F52 1EA4 5 2
+text22 0 F38 1E70 3 2
+text23 0 F5C 1EB8 6 2
+text26 0 F97 1F2E B 2
+text27 0 F4A 1E94 4 2
+text28 0 F46 1E8C 4 2
+text31 0 F82 1F04 A 2
 text32 0 FDD 1FBA 10 2
-text33 0 F2E 1E5C 3 2
-text34 0 F3B 1E76 4 2
-text35 0 F37 1E6E 4 2
-text40 0 F7F 1EFE B 2
-text43 0 FAB 1F56 C 2
-text46 0 F2C 1E58 2 2
-text48 0 F6B 1ED6 A 2
+text33 0 F35 1E6A 3 2
+text34 0 F42 1E84 4 2
+text35 0 F3E 1E7C 4 2
+text40 0 F8C 1F18 B 2
+text43 0 FB8 1F70 C 2
+text46 0 F33 1E66 2 2
+text48 0 F78 1EF0 A 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 37 1
 stringtext1 0 1000 2000 B 2
-intentry 0 4 8 7FB 2
+intentry 0 4 8 7FC 2
 reset_vec 0 0 0 4 2
-bssBANK1 1 A0 A0 38 1
+bssBANK1 1 A0 A0 35 1
+clrtext 0 F62 1EC4 6 2
 config 0 8007 1000E 2 2

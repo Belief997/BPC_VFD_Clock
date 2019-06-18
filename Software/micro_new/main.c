@@ -238,12 +238,10 @@ void __interrupt () ISR(void)
     }
 }
 
-
-
 void main(void) 
 {
-    static u16 i = 0;
-    static u8 cnt = 0;
+    //static u16 i = 0;
+    //static u8 cnt = 0;
 
     
     // init config

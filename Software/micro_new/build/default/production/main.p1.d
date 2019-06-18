@@ -4,9 +4,9 @@ function.h  \
 data.h  \
 myiic.h  \
 delay.h  \
-timer.h  \
 debug.h  \
 uart.h  \
+timer.h  \
 hardware.h  \
 display.h  \
 bpc.h 
