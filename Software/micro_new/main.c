@@ -198,9 +198,20 @@ void tmp_change(void)
 
 void __interrupt () ISR(void)
 {
-   // static u16 cnt = 0;
+    static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
+        if(capture_IsEnable()){
+            cnt++;
+        }else{
+            cnt = 0;
+        }
+        if(cnt > 30){
+            capture_Set(FALSE);
+            led_SetState(FALSE);
+            bpc_read_time();
+            cnt = 0;
+        }
 //        LED_STATE = (cnt++ % 2 == 0);
         //LOG("HERE TIMER 1");
         timer_Timer1ClrIntrpt();

@@ -229,7 +229,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;./timer.h: 13: BOOL timer_IsTimer1Itrpt(void);
 [v _timer_IsTimer1Itrpt `(E5232 ~T0 @X0 0 ef ]
-"14
+"73 ./hardware.h
+[; ;./hardware.h: 73: BOOL capture_IsEnable(void);
+[v _capture_IsEnable `(E5232 ~T0 @X0 0 ef ]
+"72
+[; ;./hardware.h: 72: u8 capture_Set(u8 isON);
+[v _capture_Set `(uc ~T0 @X0 0 ef1`uc ]
+"82
+[; ;./hardware.h: 82: u8 led_SetState(u8 isOn);
+[v _led_SetState `(uc ~T0 @X0 0 ef1`uc ]
+"12 ./bpc.h
+[; ;./bpc.h: 12: s8 bpc_read_time(void);
+[v _bpc_read_time `(c ~T0 @X0 0 ef ]
+"14 ./timer.h
 [; ;./timer.h: 14: void timer_Timer1ClrIntrpt(void);
 [v _timer_Timer1ClrIntrpt `(v ~T0 @X0 0 ef ]
 "21
@@ -241,12 +253,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86 ./hardware.h
 [; ;./hardware.h: 86: BOOL key_isPressed(void);
 [v _key_isPressed `(E5232 ~T0 @X0 0 ef ]
-"72
-[; ;./hardware.h: 72: u8 capture_Set(u8 isON);
-[v _capture_Set `(uc ~T0 @X0 0 ef1`uc ]
-"73
-[; ;./hardware.h: 73: BOOL capture_IsEnable(void);
-[v _capture_IsEnable `(E5232 ~T0 @X0 0 ef ]
 "74
 [; ;./hardware.h: 74: BOOL capture_IsIntrpt(void);
 [v _capture_IsIntrpt `(E5232 ~T0 @X0 0 ef ]
@@ -275,12 +281,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./myiic.h
 [; ;./myiic.h: 19: void IIC_Init(void);
 [v _IIC_Init `(v ~T0 @X0 0 ef ]
-"12 ./bpc.h
-[; ;./bpc.h: 12: s8 bpc_read_time(void);
-[v _bpc_read_time `(c ~T0 @X0 0 ef ]
-"82 ./hardware.h
-[; ;./hardware.h: 82: u8 led_SetState(u8 isOn);
-[v _led_SetState `(uc ~T0 @X0 0 ef1`uc ]
 "54 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1382,7 +1382,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 158: {
 [e $ ! == -> . *U _pdata 9 `ui -> . `E5236 6 `ui 635  ]
 "159
-[; ;main.c: 159: 
+[; ;main.c: 159:     static u16 cnt = 0;
 {
 "160
 [; ;main.c: 160:     if(timer_IsTimer1Itrpt())
@@ -1392,54 +1392,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 635 ]
 "162
-[; ;main.c: 162: 
+[; ;main.c: 162:         if(capture_IsEnable()){
 [e ( _timer_Timer0Start ..  ]
 "163
-[; ;main.c: 163: 
+[; ;main.c: 163:             cnt++;
 }
 [e $U 636  ]
 "164
-[; ;main.c: 164:         timer_Timer1ClrIntrpt();
+[; ;main.c: 164:         }else{
 [e :U 634 ]
 [e $ ! || != -> . . _INTCONbits 0 0 `i -> 0 `i != -> . . _IOCCFbits 0 1 `i -> 0 `i 637  ]
 "165
-[; ;main.c: 165:     }
+[; ;main.c: 165:             cnt = 0;
 {
 "166
-[; ;main.c: 166: 
+[; ;main.c: 166:         }
 [e = . . _INTCONbits 0 0 -> . `E5232 0 `uc ]
 "167
-[; ;main.c: 167:     if(timer_IsTimer0Itrpt())
+[; ;main.c: 167:         if(cnt > 30){
 [e = . . _IOCCFbits 0 1 -> . `E5232 0 `uc ]
 "168
-[; ;main.c: 168:     {
+[; ;main.c: 168:             capture_Set(FALSE);
 }
 [e :U 637 ]
 [e :U 636 ]
 [e :U 633 ]
 "171
-[; ;main.c: 171:   if(key_isPressed())
+[; ;main.c: 171:             cnt = 0;
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 638  ]
 "172
-[; ;main.c: 172:   {
+[; ;main.c: 172:         }
 {
 "174
-[; ;main.c: 174:    capture_Set(TRUE);
+[; ;main.c: 174: 
 [e $ ! && == -> . *U _pdata 1 `ui -> . `E5232 1 `ui || == -> . *U _pdata 2 `ui -> . `E5232 0 `ui >= -> . *U _pdata 9 `ui -> . `E5236 7 `ui 639  ]
 "176
+[; ;main.c: 176:     }
 {
 "177
+[; ;main.c: 177: 
 [e ( _receive_decode ..  ]
 "178
+[; ;main.c: 178:     if(timer_IsTimer0Itrpt())
 }
 [e :U 639 ]
 "182
+[; ;main.c: 182:   if(key_isPressed())
 [e $ ! == % -> ++ F5520 -> -> 1 `i `us `ui -> -> 10 `i `ui -> -> 0 `i `ui 640  ]
 "183
+[; ;main.c: 183:   {
 {
 "184
+[; ;main.c: 184: 
 [e =<< F5519 -> -> 1 `i `uc ]
 "185
+[; ;main.c: 185:    capture_Set(TRUE);
 [e =| F5519 -> ? == -> . . _PORTCbits 0 5 `i -> . `E5236 3 `i : -> 1 `i -> 0 `i `uc ]
 "187
 [e $ ! && == -> 3 `i & -> F5519 `i -> 15 `i == -> . `E5232 0 `ui -> . *U _pdata 0 `ui 641  ]
@@ -1472,123 +1479,157 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ISR ]
 [f ]
+"201
+[v F5523 `us ~T0 @X0 1 s cnt ]
+[i F5523
+-> -> 0 `i `us
+]
 "202
 [e $ ! != -> ( _timer_IsTimer1Itrpt ..  `ui -> -> 0 `i `ui 643  ]
 "203
 {
+"204
+[e $ ! != -> ( _capture_IsEnable ..  `ui -> -> 0 `i `ui 644  ]
+{
+"205
+[e ++ F5523 -> -> 1 `i `us ]
 "206
-[e ( _timer_Timer1ClrIntrpt ..  ]
-"207
 }
-[e :U 643 ]
-"209
-[e $ ! != -> ( _timer_IsTimer0Itrpt ..  `ui -> -> 0 `i `ui 644  ]
-"210
+[e $U 645  ]
+[e :U 644 ]
 {
-"211
-[e ( _timer_Timer0Handdle ..  ]
-"213
-[e $ ! != -> ( _key_isPressed ..  `ui -> -> 0 `i `ui 645  ]
-"214
-{
-"216
-[e ( _capture_Set (1 -> . `E5232 1 `uc ]
-"217
+"207
+[e = F5523 -> -> 0 `i `us ]
+"208
 }
 [e :U 645 ]
-"240
-[; ;main.c: 240:         timer_Timer0Reset();
-[e ( _timer_Timer0Reset ..  ]
-"241
-[; ;main.c: 241:     }
-}
-[e :U 644 ]
-"243
-[; ;main.c: 243:     if(capture_IsEnable() && capture_IsIntrpt())
-[e $ ! && != -> ( _capture_IsEnable ..  `ui -> -> 0 `i `ui != -> ( _capture_IsIntrpt ..  `ui -> -> 0 `i `ui 646  ]
-"244
-[; ;main.c: 244:     {
+"209
+[e $ ! > -> F5523 `ui -> -> 30 `i `ui 646  ]
 {
-"245
-[; ;main.c: 245:         capture_handdle();
-[e ( _capture_handdle ..  ]
-"247
-[; ;main.c: 247:         bpc_proc();
-[e ( _bpc_proc ..  ]
-"249
-[; ;main.c: 249:         capture_clrIntrpt();
-[e ( _capture_clrIntrpt ..  ]
-"250
-[; ;main.c: 250:     }
+"210
+[e ( _capture_Set (1 -> . `E5232 0 `uc ]
+"211
+[e ( _led_SetState (1 -> . `E5232 0 `uc ]
+"212
+[e ( _bpc_read_time ..  ]
+"213
+[e = F5523 -> -> 0 `i `us ]
+"214
 }
 [e :U 646 ]
+"217
+[e ( _timer_Timer1ClrIntrpt ..  ]
+"218
+}
+[e :U 643 ]
+"220
+[e $ ! != -> ( _timer_IsTimer0Itrpt ..  `ui -> -> 0 `i `ui 647  ]
+"221
+{
+"222
+[e ( _timer_Timer0Handdle ..  ]
+"224
+[e $ ! != -> ( _key_isPressed ..  `ui -> -> 0 `i `ui 648  ]
+"225
+{
+"227
+[e ( _capture_Set (1 -> . `E5232 1 `uc ]
+"228
+}
+[e :U 648 ]
 "251
-[; ;main.c: 251: }
+[; ;main.c: 251:         timer_Timer0Reset();
+[e ( _timer_Timer0Reset ..  ]
+"252
+[; ;main.c: 252:     }
+}
+[e :U 647 ]
+"254
+[; ;main.c: 254:     if(capture_IsEnable() && capture_IsIntrpt())
+[e $ ! && != -> ( _capture_IsEnable ..  `ui -> -> 0 `i `ui != -> ( _capture_IsIntrpt ..  `ui -> -> 0 `i `ui 649  ]
+"255
+[; ;main.c: 255:     {
+{
+"256
+[; ;main.c: 256:         capture_handdle();
+[e ( _capture_handdle ..  ]
+"258
+[; ;main.c: 258:         bpc_proc();
+[e ( _bpc_proc ..  ]
+"260
+[; ;main.c: 260:         capture_clrIntrpt();
+[e ( _capture_clrIntrpt ..  ]
+"261
+[; ;main.c: 261:     }
+}
+[e :U 649 ]
+"262
+[; ;main.c: 262: }
 [e :UE 642 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"253
-[; ;main.c: 253: void main(void)
+"264
+[; ;main.c: 264: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"254
-[; ;main.c: 254: {
+"265
+[; ;main.c: 265: {
 {
 [e :U _main ]
 [f ]
-"260
-[; ;main.c: 260:     init_env();
-[e ( _init_env ..  ]
-"263
-[; ;main.c: 263:     timer_Timer0Init();
-[e ( _timer_Timer0Init ..  ]
-"264
-[; ;main.c: 264:     timer_Timer0Start();
-[e ( _timer_Timer0Start ..  ]
-"267
-[; ;main.c: 267:     timer_Timer1Init();
-[e ( _timer_Timer1Init ..  ]
-"268
-[; ;main.c: 268:     timer_Timer1Start();
-[e ( _timer_Timer1Start ..  ]
 "271
-[; ;main.c: 271:     capture_init();
+[; ;main.c: 271:     init_env();
+[e ( _init_env ..  ]
+"274
+[; ;main.c: 274:     timer_Timer0Init();
+[e ( _timer_Timer0Init ..  ]
+"275
+[; ;main.c: 275:     timer_Timer0Start();
+[e ( _timer_Timer0Start ..  ]
+"278
+[; ;main.c: 278:     timer_Timer1Init();
+[e ( _timer_Timer1Init ..  ]
+"279
+[; ;main.c: 279:     timer_Timer1Start();
+[e ( _timer_Timer1Start ..  ]
+"282
+[; ;main.c: 282:     capture_init();
 [e ( _capture_init ..  ]
-"277
-[; ;main.c: 277:     IIC_Init();
-[e ( _IIC_Init ..  ]
-"286
-[; ;main.c: 286:     if(-1 == bpc_read_time()){
-[e $ ! == -U -> 1 `i -> ( _bpc_read_time ..  `i 648  ]
-{
 "288
-[; ;main.c: 288:         capture_Set(TRUE);
-[e ( _capture_Set (1 -> . `E5232 1 `uc ]
-"289
-[; ;main.c: 289:     }
-}
-[e :U 648 ]
-"291
-[; ;main.c: 291:     display_update();
-[e ( _display_update ..  ]
-"292
-[; ;main.c: 292:     led_SetState(FALSE);
-[e ( _led_SetState (1 -> . `E5232 0 `uc ]
-"294
-[; ;main.c: 294:     while(1)
-[e :U 650 ]
-"295
-[; ;main.c: 295:     {
+[; ;main.c: 288:     IIC_Init();
+[e ( _IIC_Init ..  ]
+"297
+[; ;main.c: 297:     if(-1 == bpc_read_time()){
+[e $ ! == -U -> 1 `i -> ( _bpc_read_time ..  `i 651  ]
 {
-"304
-[; ;main.c: 304:     }
+"299
+[; ;main.c: 299:         capture_Set(TRUE);
+[e ( _capture_Set (1 -> . `E5232 1 `uc ]
+"300
+[; ;main.c: 300:     }
 }
-[e :U 649 ]
-[e $U 650  ]
 [e :U 651 ]
+"302
+[; ;main.c: 302:     display_update();
+[e ( _display_update ..  ]
+"303
+[; ;main.c: 303:     led_SetState(FALSE);
+[e ( _led_SetState (1 -> . `E5232 0 `uc ]
 "305
-[; ;main.c: 305:     return;
-[e $UE 647  ]
+[; ;main.c: 305:     while(1)
+[e :U 653 ]
 "306
-[; ;main.c: 306: }
-[e :UE 647 ]
+[; ;main.c: 306:     {
+{
+"315
+[; ;main.c: 315:     }
+}
+[e :U 652 ]
+[e $U 653  ]
+[e :U 654 ]
+"316
+[; ;main.c: 316:     return;
+[e $UE 650  ]
+"317
+[; ;main.c: 317: }
+[e :UE 650 ]
 }

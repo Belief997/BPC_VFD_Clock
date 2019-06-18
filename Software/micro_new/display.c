@@ -98,6 +98,9 @@ void update_time(void)
 {
     G_DATA *pdata = data_getdata();
     pdata->g_time_100ms++;
+    if(pdata->g_time_100ms % 5 == 0 && (!capture_IsEnable())){
+        led_Blink();
+    }
     if(pdata->g_time_100ms == 10)
     { // 1s
         pdata->g_time_100ms = 0;

@@ -9548,9 +9548,20 @@ void tmp_change(void)
 
 void __attribute__((picinterrupt(("")))) ISR(void)
 {
-
+    static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
+        if(capture_IsEnable()){
+            cnt++;
+        }else{
+            cnt = 0;
+        }
+        if(cnt > 30){
+            capture_Set(FALSE);
+            led_SetState(FALSE);
+            bpc_read_time();
+            cnt = 0;
+        }
 
 
         timer_Timer1ClrIntrpt();
@@ -9565,7 +9576,7 @@ void __attribute__((picinterrupt(("")))) ISR(void)
 
    capture_Set(TRUE);
   }
-# 240 "main.c"
+# 251 "main.c"
         timer_Timer0Reset();
     }
 
@@ -9604,7 +9615,7 @@ void main(void)
 
 
     IIC_Init();
-# 286 "main.c"
+# 297 "main.c"
     if(-1 == bpc_read_time()){
 
         capture_Set(TRUE);
@@ -9615,7 +9626,7 @@ void main(void)
 
     while(1)
     {
-# 304 "main.c"
+# 315 "main.c"
     }
     return;
 }
