@@ -5,12 +5,13 @@
         <group>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/myiic.h</file>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/main.c</file>
+            <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/data.h</file>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/timer.c</file>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/debug.c</file>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/delay.c</file>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/display.c</file>
-            <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/myiic.c</file>
             <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/debug.h</file>
+            <file>file:/D:/16-seedClass/micro_lab/BPC_VFD_Clock_liubo/Software/micro_new/bpc.c</file>
         </group>
     </open-files>
 </project-private>

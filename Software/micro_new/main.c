@@ -97,6 +97,10 @@ void init_env(){
     CME_DATA_WPU = 0;
     CME_DATA_IOC = 1; //detect when ioc up
     
+    // ra6 ra7
+    RA_LATA6 = 1;
+    RA_LATA7 = 1;
+    
     // times cnt in receive_decode
     for(int i = 0;i < RECV_BUF_MAX; i++){
         pdata->g_recv_buf[i] = 5;
@@ -257,7 +261,7 @@ void main(void)
 
 //    /* 捕获初始化 */
     capture_init();
-    capture_Set(TRUE);
+    //capture_Set(TRUE);
 
     // 
     uart_init();
