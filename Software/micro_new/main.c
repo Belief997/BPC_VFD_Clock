@@ -98,8 +98,8 @@ void init_env(){
     CME_DATA_IOC = 1; //detect when ioc up
     
     // ra6 ra7
-    RA_LATA6 = 1;
-    RA_LATA7 = 1;
+    RA_TRISA6 = 1;
+    RA_TRISA7 = 1;
     
     // times cnt in receive_decode
     for(int i = 0;i < RECV_BUF_MAX; i++){
