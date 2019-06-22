@@ -269,8 +269,6 @@ void main(void)
     /* 调试串口初始化 */ 
     uart_init();
 #endif
-
-    
     
     if(-1 == bpc_read_time()){
         //LOG("ERR r\r\n");
