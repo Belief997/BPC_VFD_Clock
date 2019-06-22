@@ -9615,9 +9615,18 @@ void main(void)
 
 
     IIC_Init();
-# 297 "main.c"
-    if(-1 == bpc_read_time()){
 
+
+
+    uart_init();
+
+
+
+
+    if(-1 == bpc_read_time()){
+        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 298, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 299, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 300, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
         capture_Set(TRUE);
     }
 
@@ -9626,7 +9635,7 @@ void main(void)
 
     while(1)
     {
-# 315 "main.c"
+# 317 "main.c"
     }
     return;
 }

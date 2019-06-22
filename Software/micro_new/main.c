@@ -226,28 +226,6 @@ void __interrupt () ISR(void)
             //LOG("PKEY\r\n");
 			capture_Set(TRUE);
 		}
-/*
-        if(cnt++ % 10 == 0)// period = 1s
-        {
-//          uart_Send_byte(0xa5);
-            u8 value = 0;
-            u8 data = 0;
-            //led_Blink();
-
-            //LOG("test123456123456789ASD...  %d", tx);
-
-            if(IIC_WtRTCReg(0x03, 0x55))
-            {
-                led_Blink();
-            }
-            if(IIC_RdRTCReg(0x03, &data))
-            {
-                led_Blink();
-            }
- 
-//            LOG("DA: %d", data);
-        }
-     */
         timer_Timer0Reset();
     }
 

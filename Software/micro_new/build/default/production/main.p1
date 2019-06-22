@@ -281,6 +281,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./myiic.h
 [; ;./myiic.h: 19: void IIC_Init(void);
 [v _IIC_Init `(v ~T0 @X0 0 ef ]
+"18 ./uart.h
+[; ;./uart.h: 18: void uart_init(void);
+[v _uart_init `(v ~T0 @X0 0 ef ]
+"115 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"33 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 33: char *strcpy (char *restrict, const char *restrict);
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"17127 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 17127: extern volatile __bit TXEN __attribute__((address(0xCF5)));
+[v _TXEN `Vb ~T0 @X0 0 e@3317 ]
+"16896
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 16896: extern volatile __bit SYNC __attribute__((address(0xCF4)));
+[v _SYNC `Vb ~T0 @X0 0 e@3316 ]
+"16782
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 16782: extern volatile __bit SPEN __attribute__((address(0xCEF)));
+[v _SPEN `Vb ~T0 @X0 0 e@3311 ]
+"17130
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 17130: extern volatile __bit TXIE __attribute__((address(0x48C)));
+[v _TXIE `Vb ~T0 @X0 0 e@1164 ]
+"4420
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 4420:     struct {
+[s S231 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S231 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"4419
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 4419: typedef union {
+[u S230 `S231 1 ]
+[n S230 . . ]
+"4431
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 4431: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0x19E)));
+[v _TXSTAbits `VS230 ~T0 @X0 0 e@414 ]
+"3940
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 3940: extern volatile unsigned char TXREG __attribute__((address(0x19A)));
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
+"54 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
+[; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "54 E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h
 [; ;E:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1597,39 +1634,187 @@ Version 4.0 HI-TECH Software Intermediate Code
 "288
 [; ;main.c: 288:     IIC_Init();
 [e ( _IIC_Init ..  ]
+"292
+[; ;main.c: 292:     uart_init();
+[e ( _uart_init ..  ]
 "297
 [; ;main.c: 297:     if(-1 == bpc_read_time()){
 [e $ ! == -U -> 1 `i -> ( _bpc_read_time ..  `i 651  ]
 {
-"299
-[; ;main.c: 299:         capture_Set(TRUE);
-[e ( _capture_Set (1 -> . `E5232 1 `uc ]
-"300
-[; ;main.c: 300:     }
-}
-[e :U 651 ]
-"302
-[; ;main.c: 302:     display_update();
-[e ( _display_update ..  ]
-"303
-[; ;main.c: 303:     led_SetState(FALSE);
-[e ( _led_SetState (1 -> . `E5232 0 `uc ]
-"305
-[; ;main.c: 305:     while(1)
-[e :U 653 ]
-"306
-[; ;main.c: 306:     {
+"298
+[; ;main.c: 298:         { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 298, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
 {
-"315
-[; ;main.c: 315:     }
+[v F5525 `uc ~T0 @X0 -> 64 `i s ]
+[i F5525
+:U ..
+-> -> 0 `i `uc
+..
+]
+[v _buf `uc ~T0 @X0 -> 64 `i a ]
+[e = _buf F5525 ]
+[e ( _sprintf (1 , , , (. , &U _buf :s 1C :s 2C -> 298 `i :s 3C ]
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v F5528 `uc ~T0 @X0 -> 64 `i s ]
+[i F5528
+:U ..
+-> 0 `c
+-> 0 `c
+..
+]
+[v _send `uc ~T0 @X0 -> 64 `i a ]
+[e = _send F5528 ]
+[e ( _strcpy (2 , &U _send -> &U _buf `*Cuc ]
+[e $U 652  ]
+[e :U 653 ]
+{
+[e = _TXEN -> -> 1 `i `b ]
+[e = _SYNC -> -> 0 `i `b ]
+[e = _SPEN -> -> 1 `i `b ]
+[e = _TXIE -> -> 1 `i `b ]
+[e $U 655  ]
+[e :U 656 ]
+[e :U 655 ]
+[e $ == -> 0 `i -> . . _TXSTAbits 0 1 `i 656  ]
+[e :U 657 ]
+[e = _TXREG -> *U + &U _send * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _send `ui `ux `uc ]
+[e = _TXIE -> -> 0 `i `b ]
 }
 [e :U 652 ]
-[e $U 653  ]
+[e $ != -> _i `ui + ( _strlen (1 -> &U _send `*Cuc -> -> 1 `i `ui 653  ]
 [e :U 654 ]
-"316
-[; ;main.c: 316:     return;
-[e $UE 650  ]
+}
+}
+"299
+[; ;main.c: 299:         { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 299, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+{
+[v F5530 `uc ~T0 @X0 -> 64 `i s ]
+[i F5530
+:U ..
+-> -> 0 `i `uc
+..
+]
+[v _buf `uc ~T0 @X0 -> 64 `i a ]
+[e = _buf F5530 ]
+[e ( _sprintf (1 , , , (. , &U _buf :s 4C :s 5C -> 299 `i :s 6C ]
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v F5533 `uc ~T0 @X0 -> 64 `i s ]
+[i F5533
+:U ..
+-> 0 `c
+-> 0 `c
+..
+]
+[v _send `uc ~T0 @X0 -> 64 `i a ]
+[e = _send F5533 ]
+[e ( _strcpy (2 , &U _send -> &U _buf `*Cuc ]
+[e $U 658  ]
+[e :U 659 ]
+{
+[e = _TXEN -> -> 1 `i `b ]
+[e = _SYNC -> -> 0 `i `b ]
+[e = _SPEN -> -> 1 `i `b ]
+[e = _TXIE -> -> 1 `i `b ]
+[e $U 661  ]
+[e :U 662 ]
+[e :U 661 ]
+[e $ == -> 0 `i -> . . _TXSTAbits 0 1 `i 662  ]
+[e :U 663 ]
+[e = _TXREG -> *U + &U _send * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _send `ui `ux `uc ]
+[e = _TXIE -> -> 0 `i `b ]
+}
+[e :U 658 ]
+[e $ != -> _i `ui + ( _strlen (1 -> &U _send `*Cuc -> -> 1 `i `ui 659  ]
+[e :U 660 ]
+}
+}
+"300
+[; ;main.c: 300:         { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 300, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+{
+[v F5535 `uc ~T0 @X0 -> 64 `i s ]
+[i F5535
+:U ..
+-> -> 0 `i `uc
+..
+]
+[v _buf `uc ~T0 @X0 -> 64 `i a ]
+[e = _buf F5535 ]
+[e ( _sprintf (1 , , , (. , &U _buf :s 7C :s 8C -> 300 `i :s 9C ]
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v F5538 `uc ~T0 @X0 -> 64 `i s ]
+[i F5538
+:U ..
+-> 0 `c
+-> 0 `c
+..
+]
+[v _send `uc ~T0 @X0 -> 64 `i a ]
+[e = _send F5538 ]
+[e ( _strcpy (2 , &U _send -> &U _buf `*Cuc ]
+[e $U 664  ]
+[e :U 665 ]
+{
+[e = _TXEN -> -> 1 `i `b ]
+[e = _SYNC -> -> 0 `i `b ]
+[e = _SPEN -> -> 1 `i `b ]
+[e = _TXIE -> -> 1 `i `b ]
+[e $U 667  ]
+[e :U 668 ]
+[e :U 667 ]
+[e $ == -> 0 `i -> . . _TXSTAbits 0 1 `i 668  ]
+[e :U 669 ]
+[e = _TXREG -> *U + &U _send * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _send `ui `ux `uc ]
+[e = _TXIE -> -> 0 `i `b ]
+}
+[e :U 664 ]
+[e $ != -> _i `ui + ( _strlen (1 -> &U _send `*Cuc -> -> 1 `i `ui 665  ]
+[e :U 666 ]
+}
+}
+"301
+[; ;main.c: 301:         capture_Set(TRUE);
+[e ( _capture_Set (1 -> . `E5232 1 `uc ]
+"302
+[; ;main.c: 302:     }
+}
+[e :U 651 ]
+"304
+[; ;main.c: 304:     display_update();
+[e ( _display_update ..  ]
+"305
+[; ;main.c: 305:     led_SetState(FALSE);
+[e ( _led_SetState (1 -> . `E5232 0 `uc ]
+"307
+[; ;main.c: 307:     while(1)
+[e :U 671 ]
+"308
+[; ;main.c: 308:     {
+{
 "317
-[; ;main.c: 317: }
+[; ;main.c: 317:     }
+}
+[e :U 670 ]
+[e $U 671  ]
+[e :U 672 ]
+"318
+[; ;main.c: 318:     return;
+[e $UE 650  ]
+"319
+[; ;main.c: 319: }
 [e :UE 650 ]
 }
+[p f _sprintf 8650880 ]
+[a 3C 109 97 105 110 0 ]
+[a 6C 109 97 105 110 0 ]
+[a 9C 109 97 105 110 0 ]
+[a 2C 109 97 105 110 46 99 0 ]
+[a 5C 109 97 105 110 46 99 0 ]
+[a 8C 109 97 105 110 46 99 0 ]
+[a 1C 91 37 115 58 37 100 32 37 115 93 32 69 82 82 32 114 13 10 10 13 0 ]
+[a 4C 91 37 115 58 37 100 32 37 115 93 32 69 82 82 32 114 13 10 10 13 0 ]
+[a 7C 91 37 115 58 37 100 32 37 115 93 32 69 82 82 32 114 13 10 10 13 0 ]

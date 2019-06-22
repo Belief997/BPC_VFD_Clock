@@ -7,7 +7,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-
+#define DEBUG
 
 #define DISBUF_LEN (64)
 #define CR         "\n\r"
