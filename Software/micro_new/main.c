@@ -8,15 +8,15 @@
 
 #include <xc.h>
 #include <stdio.h>
-#include "function.h"
+
+#include "bpc.h"
+#include "data.h"
+#include "uart.h"
 #include "myiic.h"
 #include "timer.h"
-#include "data.h"
 #include "debug.h"
-#include "hardware.h"
-#include "uart.h"
 #include "display.h"
-#include "bpc.h"
+#include "hardware.h"
 
 // CONFIG1
 #pragma config FOSC = HS        // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
@@ -49,15 +49,11 @@ void init_env(){
      */
     // globe interrup enable
     INTCONbits.GIE = 0b1;
-    // ioc interrupt when read data from CME6005
-//    INTCONbits.IOCIE = 0b1;
     
     /**
      * choose clk inside
      */
     OSCCONbits.SCS = 0b10;      // set to use inside clock
-//    /* set freq for inside clock : 500kHz , 2 us */
-//    OSCCONbits.IRCF = 0b1010;   
     /* set freq for inside clock : 1 MHz , 1 us */
     OSCCONbits.IRCF = 0b1011;      
     
@@ -109,8 +105,6 @@ void init_env(){
     pdata->g_time_m = 55;
     pdata->g_time_s = 0;
     
-    
-    display_update();
     /**
      * set trans to display
      */
@@ -122,79 +116,11 @@ void init_env(){
     // RTC chip set
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
-        
     
     // light on when have power
     display_set(TRUE);
 }
     
-//void __interrupt () ISR(void)
-void tmp_change(void)
-{
-    static u8 history_key = 0;
-    static u16 key_time_cnt = 0;
-    G_DATA *pdata = data_getdata();
-        
-    
-    /* start decode flag set */
-    // updata by key or 30 min
-    if( pdata->g_isDecoding == FALSE && \
-       ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
-    {
-        // accept key press & set time check flg
-        pdata->g_find_recv_start = FALSE;
-        pdata->g_isDecoding = TRUE;
-        pdata->g_flg_switch = FALSE;    
-        pdata->cnt_update = 0;
-        pdata->g_recv_count = CODE_P0;
-        BPC_ON = BPC_PWR_ON;
-        
-        INTCONbits.IOCIF = FALSE;
-        CME_DATA_IOC_INT = FALSE;
-        return;
-    }
-    else if(pdata->g_isDecoding == TRUE && CME_DATA_IOC_INT == TRUE && TRUE == pdata->g_find_recv_start)
-    {
-        if(pdata->g_recv_count == CODE_P0)
-        {
-            pdata->g_recv_count = CODE_P1;
-        }
-        timer_Timer0Start();
-    }
-    else if(INTCONbits.IOCIF || CME_DATA_IOC_INT)
-    {
-        INTCONbits.IOCIF = FALSE;
-        CME_DATA_IOC_INT = FALSE;
-    }
-    
-    /* update time cnt(display)&detect key press, time unit: 10 MS */
-    if(INTCONbits.TMR0IF)
-    {
-        // start receive & decode, decoding
-        if(pdata->g_isDecoding == TRUE && \
-           ( pdata->g_find_recv_start == FALSE||  pdata->g_recv_count >=  CODE_P1  ) )
-        {
-            receive_decode();
-        }
-        
-        //update_time();
-        /* handle key event here */
-        if(key_time_cnt++ % 10 == 0) // look up key every 100ms
-        {
-            history_key <<= 1;
-            history_key |= (SWITCH_PORT == PIN_HIGH)? 0x01 : 0x00;
-            /* judge press by 4 states , press has been consumed */
-            if((KEY_PRESS == (history_key & KEY_CHECK_BITS)) && (FALSE == pdata->g_flg_switch))
-            {
-                pdata->g_flg_switch = TRUE;  // SET KEY PRESS FLG
-            }
-        }
-        /* reset timer_0 */
-        timer_Timer0Reset();
-        return;
-    }
-    return;
-}
 
 void __interrupt () ISR(void)
 {
@@ -212,8 +138,6 @@ void __interrupt () ISR(void)
             bpc_read_time();
             cnt = 0;
         }
-//        LED_STATE = (cnt++ % 2 == 0);
-        //LOG("HERE TIMER 1");
         timer_Timer1ClrIntrpt();
     }
     
@@ -223,7 +147,6 @@ void __interrupt () ISR(void)
  
 		if(key_isPressed())
 		{
-            //LOG("PKEY\r\n");
 			capture_Set(TRUE);
 		}
         timer_Timer0Reset();
@@ -241,10 +164,6 @@ void __interrupt () ISR(void)
 
 void main(void) 
 {
-    //static u16 i = 0;
-    //static u8 cnt = 0;
-
-    
     // init config
     init_env();    
     
@@ -260,9 +179,7 @@ void main(void)
     capture_init();
 //    capture_Set(TRUE);
 
-    
-    
-        /* iic 初始化 */
+    /* iic 初始化 */
     IIC_Init();
     
 #ifdef  DEBUG
@@ -274,21 +191,12 @@ void main(void)
         //LOG("ERR r\r\n");
         capture_Set(TRUE);
     }
+    
     /* 初始显示状态 */
     display_update();
     led_SetState(FALSE);
 
-    while(1)
-    {
-        /*
-        if(i++  == 65535)
-        {          
-//            led_Blink();
-            //display_set(FALSE);
-//            update_display();
-        }
-        */
-    }
+    while(1);
     return;
 }
 

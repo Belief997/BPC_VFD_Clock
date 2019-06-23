@@ -1,6 +1,6 @@
 /* 
  * File:   uart.h
- * Author: 29446
+ * Author: belief
  *
  * Created on 2018?8?28?, ??10:27
  */
@@ -9,11 +9,11 @@
 #define	UART_H
 
 #include <xc.h>
-#include "stdlib.h"
 #include "pic.h"
 #include "data.h"
+#include "stdlib.h"
 
-//Fosc is 4 MHz
+//Fosc is 1 MHz
 //Paud rate is 10417
 void uart_init(void);
 void uart_Send_byte(u8 byte);

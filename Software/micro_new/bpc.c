@@ -1,5 +1,5 @@
 /*
- * File:   receive_decode.c
+ * File:   bpc.c
  * Author: GeniusRabbit, Belief
  *
  * Created on 2019/2/27, 5:26
@@ -7,14 +7,15 @@
 
 
 #include <xc.h>
-#include "function.h"
-#include "hardware.h"
-#include "data.h"
-#include "timer.h"
-#include "display.h"
+
 #include "bpc.h"
+#include "data.h"
 #include "debug.h"
 #include "myiic.h"
+#include "timer.h"
+#include "display.h"
+#include "hardware.h"
+
 
 u16 cnt_abs(u16 a, u16 b) {
     return a > b ? (a - b) : (b - a);
@@ -106,7 +107,6 @@ static u8 bpc_Cnt2Qua(void) {
         }
     } else {
         // g=high level
-        //LOG("high:%u\r\n", pdata->cnt_high);
         if (cnt_abs(pdata->cnt_high, COUNT_100MS) < COUNT_BIAS) {
             return NUMBER_1;
         } else if (cnt_abs(pdata->cnt_high, COUNT_200MS) < COUNT_BIAS) {
@@ -123,7 +123,6 @@ static u8 bpc_Cnt2Qua(void) {
 }
 
 static int check_err(G_DATA *pdata) {
-    //G_DATA *pdata = data_getdata();
     pdata->g_time_h = pdata->g_recv_buf[CODE_H_1] * 4 + pdata->g_recv_buf[CODE_H_2];
     pdata->g_time_m = pdata->g_recv_buf[CODE_M_1] * 16 + pdata->g_recv_buf[CODE_M_2] * 4 + pdata->g_recv_buf[CODE_M_3];
     pdata->g_time_s = 10 + ((pdata->g_recv_buf[CODE_P1] == 1) ? 20 :  \

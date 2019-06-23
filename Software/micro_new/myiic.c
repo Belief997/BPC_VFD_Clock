@@ -1,9 +1,5 @@
-#include "myiic.h"
 #include "data.h"
-
-//unsigned char temp_h;
-//unsigned char temp_l;
-//unsigned int Temp;
+#include "myiic.h"
 
 //???IIC
 void IIC_Init(void)
@@ -29,10 +25,9 @@ void IIC_Start(void)
 	IIC_SCL=1;
 	delay_4us();
  	IIC_SDA=0;      //START:when CLK is high,DATA change form high to low 
-//	delay_4us();
 	IIC_SCL=0;      //??I2C???????????? 
-//	delay_4us();
 }	  
+
 //??IIC????
 void IIC_Stop(void)
 {
@@ -43,8 +38,8 @@ void IIC_Stop(void)
 	IIC_SCL=1; 
 	IIC_SDA=1;      //??I2C??????
 	delay_4us();	 
-//	delay_4us();
 }
+
 //????????
 //????1???????
 //        0???????
@@ -66,6 +61,7 @@ unsigned char IIC_Wait_Ack(void)
 	IIC_SCL=0;//????0 	   
 	return 0;  
 } 
+
 //??ACK??
 void IIC_Ack(void)
 {
@@ -128,21 +124,6 @@ unsigned char IIC_Read_Byte(unsigned char ack)
         IIC_Ack(); //??ACK   
     return receive;
 }
-
-//unsigned char RD_temp(void)
-//{
-//    IIC_Start();
-//    //IIC_Send_Byte(0b1001111);
-//    IIC_Send_Byte(0b1010001);
-//    if(!IIC_Wait_Ack())         //0 successed
-//    {
-//        temp_h = IIC_Read_Byte(1);
-//        temp_l = IIC_Read_Byte(0);
-//        IIC_Stop();
-//        return 0;
-//    }
-//    return 1;
-//}
 
 
 #define ADDR_SLAVE_R (0b10100011)

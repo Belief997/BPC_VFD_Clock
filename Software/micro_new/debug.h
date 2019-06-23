@@ -1,13 +1,20 @@
+/* 
+ * File:   debug.h
+ * Author: belief
+ *
+ * Created on 2019?6?16?, ??4:37
+ */
+
 #ifndef _DEBUG_H_
 #define _DEBUG_H_
+#include <stdio.h>
+#include <stdarg.h>
 
 #include "data.h"
 #include "uart.h"
 #include "string.h"
-#include <stdarg.h>
-#include <stdio.h>
 
-#define DEBUG
+//#define DEBUG
 
 #define DISBUF_LEN (64)
 #define CR         "\n\r"
@@ -23,7 +30,7 @@
         SPEN = 1;                                                       \
         TXIE = 1;                                                       \
         while(0 == TXSTAbits.TRMT);                                     \
-        TXREG = send[i++];                                            \
+        TXREG = send[i++];                                              \
         TXIE = 0;                                                       \
 	}						            								\
 }                                                                       \
@@ -43,20 +50,6 @@
 #endif
 
 #define LOG debug_log
-
-
-
-
-
-
-typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
-int debug_proc(const unsigned char* cmdString, unsigned short length);
-
-
-
-//void debug_log(char *format, ...);
-//void debug_log(char *str);
-//void debug_log(char *fmt, ...);
 
 
 #endif /* USER_INC_DEBUG_H_ */

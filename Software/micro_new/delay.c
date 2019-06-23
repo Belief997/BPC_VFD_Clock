@@ -3,7 +3,6 @@
 void delay_4us(void)
 {
     NOP(); 
-//    NOP();
 }
 
 void delay_12us(void)

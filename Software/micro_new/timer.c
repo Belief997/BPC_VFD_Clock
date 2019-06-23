@@ -4,6 +4,7 @@
 #include "data.h"
 #include "hardware.h"
 #include "display.h"
+
 /*  timer1  */
 /* 16位递增计数器 */
 void timer_Timer1Init(void)
@@ -19,22 +20,11 @@ void timer_Timer1Init(void)
     TMR1H = 0b0;
     TMR1L = 0b0;
 
-//    /* 指令时钟 */
-//    T1CONbits.TMR1CS = 0b00;  // 500k / 4 = 8 us
-//    /*  预分频 */
-////    T1CONbits.T1CKPS = 0b01;  // 01: 1:2 = 16 us   16BIT 1 s
-//    T1CONbits.T1CKPS = 0b11;  // 11: 1:8 = 64 us   16BIT 4 s
-//    
-
     /* 指令时钟 */
     T1CONbits.TMR1CS = 0b00;  // 1M / 4 = 4 us
     /*  预分频 */
 //    T1CONbits.T1CKPS = 0b01;  // 01: 1:2 = 16 us   16BIT 1 s
     T1CONbits.T1CKPS = 0b11;  // 11: 1:8 = 32 us   16BIT 2 s
-   
-
-
-
 }
 
 void timer_Timer1Start(void)
@@ -57,8 +47,6 @@ void timer_Timer1ClrIntrpt(void)
 
 
 /* timer0 */
-
-
 
 void timer_Timer0Init(void)
 {

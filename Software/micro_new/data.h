@@ -1,9 +1,16 @@
+/* 
+ * File:   data.h
+ * Author: belief
+ *
+ * Created on 2019?6?16?, ??4:37
+ */
+
 #ifndef __DATA_H__
 #define	__DATA_H__
 
 #include <xc.h> // include processor files - each processor file is guarded.  
-#include "stdint.h"
 #include "stdio.h"
+#include "stdint.h"
 
 typedef uint8_t u8;
 typedef int8_t s8;
@@ -52,28 +59,18 @@ enum{
     
 }ENUM;
 
-/* KEY HANDLE */
+/* KEY MASK */
 #define KEY_CHECK_BITS (0x0f) 
 #define KEY_PRESS      (0x03)
 
 
-/// some value define
+// some value define
 #define RECV_BUF_MAX 20
-
-// decode time : code pulse time
-/*
-#define MAX_HIGH_LEVEL_TIMES 100  // 1s
-#define TIME_0_1 10    // 100ms
-#define TIME_0_2 20    // 200ms
-#define TIME_0_3 30    // 300ms
-#define TIME_0_4 40    // 400ms
-#define BIAS 5         // 50ms
-*/
 
 // calculate + bias
 #define TIMER_0_RST (158 + 0)
 
-// new define of timer
+// decode time : code pulse time
 #define COUNT_1S 31030
 #define COUNT_100MS 3103
 #define COUNT_200MS 6208
@@ -92,7 +89,7 @@ enum{
 
 
 typedef struct{
-   // bool value used in receive_decode
+    // bool value used in receive_decode
     volatile BOOL g_flg_switch;        // switch
     volatile BOOL g_isDecoding;   // start read data
     volatile BOOL g_find_recv_start; 
@@ -120,8 +117,6 @@ typedef struct{
 }G_DATA;
 
 G_DATA* data_getdata(void);
-
-u16 data_getTimeCnt(void);
 
 
 #endif

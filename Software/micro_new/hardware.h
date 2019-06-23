@@ -34,11 +34,6 @@
 // define state led
 #define LED_STATE   LATBbits.LATB3
 
-//// define uart_debug port
-//#define DEBUG_TX
-//#define DEBUG_RX 
-
-
 
 // define RTC chip port
 #define PIC_INT PORTCbits.RC0

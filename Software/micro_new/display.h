@@ -1,13 +1,12 @@
 /* 
  * File:   display.h
- * Author: 29446
+ * Author: belief
  *
  * Created on 2019?6?16?, ??12:44
  */
 
 #ifndef DISPLAY_H
 #define	DISPLAY_H
-
 
 
 void display_set(BOOL ison);

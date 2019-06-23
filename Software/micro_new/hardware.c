@@ -1,10 +1,9 @@
 #include <xc.h>
 #include <stdio.h>
-#include "function.h"
-#include "hardware.h"
 
-#include "display.h"
 #include "data.h"
+#include "display.h"
+#include "hardware.h"
 
 #define CAPTURE_POSEDGE (0b0101) // 捕捉上升沿
 #define CAPTURE_NEGEDGE (0b0100) // 捕捉下降沿

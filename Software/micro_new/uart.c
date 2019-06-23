@@ -66,7 +66,6 @@ void ISR_uart_TX(void)
     }
     else
     {
-//        TXEN = 0;
         TXIE = 0;
     }
     
@@ -75,7 +74,6 @@ void ISR_uart_TX(void)
 
 void ISR_uart_RX(void)
 { 
-    
     RX_data = RCREG;
     flg_rc = 1;
 }
