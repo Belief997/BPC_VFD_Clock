@@ -30,6 +30,16 @@
 // define light controll
 #define Light_on PORTAbits.RA0
 
+
+// define state led
+#define LED_STATE   LATBbits.LATB3
+
+//// define uart_debug port
+//#define DEBUG_TX
+//#define DEBUG_RX 
+
+
+
 // define RTC chip port
 #define PIC_INT PORTCbits.RC0
 #define PIC_INT_TRI TRISCbits.TRISC0
@@ -38,8 +48,6 @@
 #define PIC_SDA PORTCbits.RC4
 #define CLKOUT PORTAbits.RA7        // EXTERN CLK IN
 
-// define state led
-#define LED_STATE   LATBbits.LATB3
 
 #define TEST
 #ifdef TEST
@@ -53,6 +61,8 @@
 #define GET_NUMBER_3 LATAbits.LATA5
 #endif
 
+#define RA_TRISA6 TRISAbits.TRISA6
+#define RA_TRISA7 TRISAbits.TRISA7
 
 /***************  define pin table  end  ******************/
 
@@ -60,9 +70,12 @@
 /* capture */
 u8 capture_init(void);
 u8 capture_Set(u8 isON);
+BOOL capture_IsEnable(void);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);
+
+BOOL capture_IsNegEdge(void);
 
 
 /* led */
@@ -70,7 +83,7 @@ u8 led_SetState(u8 isOn);
 u8 led_Blink(void);
 
 /* key */
-void key_isPressed(void);
-
+BOOL key_isPressed(void);
+void key_checkPressed(void);
 
 #endif

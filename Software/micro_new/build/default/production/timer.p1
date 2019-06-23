@@ -61,8 +61,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "945
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 945: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x018)));
 [v _T1CONbits `VS58 ~T0 @X0 0 e@24 ]
-"37 timer.c
-[; ;timer.c: 37: BOOL timer_IsTimer1Itrpt(void)
+"46 timer.c
+[; ;timer.c: 46: BOOL timer_IsTimer1Itrpt(void)
 [c E5222 0 1 .. ]
 [n E5222 . FALSE TRUE  ]
 "1618 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
@@ -83,9 +83,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "856
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 856: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
 [v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"73 ./hardware.h
-[; ;./hardware.h: 73: void key_isPressed(void);
-[v _key_isPressed `(v ~T0 @X0 0 ef ]
+"87 ./hardware.h
+[; ;./hardware.h: 87: void key_checkPressed(void);
+[v _key_checkPressed `(v ~T0 @X0 0 ef ]
+"18 ./display.h
+[; ;./display.h: 18: void update_time(void);
+[v _update_time `(v ~T0 @X0 0 ef ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -952,160 +955,163 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;timer.c: 20:     TMR1L = 0b0;
 [e = _TMR1L -> -> 0 `i `uc ]
-"23
-[; ;timer.c: 23:     T1CONbits.TMR1CS = 0b00;
+"30
+[; ;timer.c: 30:     T1CONbits.TMR1CS = 0b00;
 [e = . . _T1CONbits 1 2 -> -> 0 `i `uc ]
-"26
-[; ;timer.c: 26:     T1CONbits.T1CKPS = 0b11;
+"33
+[; ;timer.c: 33:     T1CONbits.T1CKPS = 0b11;
 [e = . . _T1CONbits 1 1 -> -> 3 `i `uc ]
-"29
-[; ;timer.c: 29: }
+"38
+[; ;timer.c: 38: }
 [e :UE 626 ]
 }
-"31
-[; ;timer.c: 31: void timer_Timer1Start(void)
+"40
+[; ;timer.c: 40: void timer_Timer1Start(void)
 [v _timer_Timer1Start `(v ~T0 @X0 1 ef ]
-"32
-[; ;timer.c: 32: {
+"41
+[; ;timer.c: 41: {
 {
 [e :U _timer_Timer1Start ]
 [f ]
-"34
-[; ;timer.c: 34:     T1CONbits.TMR1ON = 0b1;
+"43
+[; ;timer.c: 43:     T1CONbits.TMR1ON = 0b1;
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"35
-[; ;timer.c: 35: }
+"44
+[; ;timer.c: 44: }
 [e :UE 627 ]
 }
-"37
-[; ;timer.c: 37: BOOL timer_IsTimer1Itrpt(void)
+"46
+[; ;timer.c: 46: BOOL timer_IsTimer1Itrpt(void)
 [v _timer_IsTimer1Itrpt `(E5222 ~T0 @X0 1 ef ]
-"38
-[; ;timer.c: 38: {
+"47
+[; ;timer.c: 47: {
 {
 [e :U _timer_IsTimer1Itrpt ]
 [f ]
-"39
-[; ;timer.c: 39:     return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
+"48
+[; ;timer.c: 48:     return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
 [e ) -> ? == -> . . _PIR1bits 0 0 `i -> 1 `i : . `E5222 1 . `E5222 0 `E5222 ]
 [e $UE 628  ]
-"40
-[; ;timer.c: 40: }
+"49
+[; ;timer.c: 49: }
 [e :UE 628 ]
 }
-"42
-[; ;timer.c: 42: void timer_Timer1ClrIntrpt(void)
+"51
+[; ;timer.c: 51: void timer_Timer1ClrIntrpt(void)
 [v _timer_Timer1ClrIntrpt `(v ~T0 @X0 1 ef ]
-"43
-[; ;timer.c: 43: {
+"52
+[; ;timer.c: 52: {
 {
 [e :U _timer_Timer1ClrIntrpt ]
 [f ]
-"44
-[; ;timer.c: 44:     PIR1bits.TMR1IF = 0b0;
+"53
+[; ;timer.c: 53:     PIR1bits.TMR1IF = 0b0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"45
-[; ;timer.c: 45: }
+"54
+[; ;timer.c: 54: }
 [e :UE 629 ]
 }
-"54
-[; ;timer.c: 54: void timer_Timer0Init(void)
+"63
+[; ;timer.c: 63: void timer_Timer0Init(void)
 [v _timer_Timer0Init `(v ~T0 @X0 1 ef ]
-"55
-[; ;timer.c: 55: {
+"64
+[; ;timer.c: 64: {
 {
 [e :U _timer_Timer0Init ]
 [f ]
-"57
-[; ;timer.c: 57:     INTCONbits.GIE = 0b1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"60
-[; ;timer.c: 60:     INTCONbits.TMR0IE = 0b0;
-[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-"65
-[; ;timer.c: 65:     OPTION_REGbits.PSA = 0;
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
 "66
-[; ;timer.c: 66:     OPTION_REGbits.TMR0CS = 0;
-[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"67
-[; ;timer.c: 67:     OPTION_REGbits.PS = 4;
-[e = . . _OPTION_REGbits 1 0 -> -> 4 `i `uc ]
-"68
-[; ;timer.c: 68:     TMR0 = (217 + 14);
-[e = _TMR0 -> + -> 217 `i -> 14 `i `uc ]
+[; ;timer.c: 66:     INTCONbits.GIE = 0b1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "69
-[; ;timer.c: 69: }
+[; ;timer.c: 69:     INTCONbits.TMR0IE = 0b0;
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
+"76
+[; ;timer.c: 76:     OPTION_REGbits.PSA = 0;
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;timer.c: 77:     OPTION_REGbits.TMR0CS = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"78
+[; ;timer.c: 78:     OPTION_REGbits.PS = 7;
+[e = . . _OPTION_REGbits 1 0 -> -> 7 `i `uc ]
+"79
+[; ;timer.c: 79:     TMR0 = (158 + 0);
+[e = _TMR0 -> + -> 158 `i -> 0 `i `uc ]
+"91
+[; ;timer.c: 91: }
 [e :UE 630 ]
 }
-"70
-[; ;timer.c: 70: void timer_Timer0Reset(void)
+"92
+[; ;timer.c: 92: void timer_Timer0Reset(void)
 [v _timer_Timer0Reset `(v ~T0 @X0 1 ef ]
-"71
-[; ;timer.c: 71: {
+"93
+[; ;timer.c: 93: {
 {
 [e :U _timer_Timer0Reset ]
 [f ]
-"72
-[; ;timer.c: 72:     INTCONbits.TMR0IF = 0;
+"94
+[; ;timer.c: 94:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"73
-[; ;timer.c: 73:     TMR0 = (217 + 14);
-[e = _TMR0 -> + -> 217 `i -> 14 `i `uc ]
-"74
-[; ;timer.c: 74: }
+"95
+[; ;timer.c: 95:     TMR0 = (158 + 0);
+[e = _TMR0 -> + -> 158 `i -> 0 `i `uc ]
+"96
+[; ;timer.c: 96: }
 [e :UE 631 ]
 }
-"75
-[; ;timer.c: 75: void timer_Timer0Start(void)
+"97
+[; ;timer.c: 97: void timer_Timer0Start(void)
 [v _timer_Timer0Start `(v ~T0 @X0 1 ef ]
-"76
-[; ;timer.c: 76: {
+"98
+[; ;timer.c: 98: {
 {
 [e :U _timer_Timer0Start ]
 [f ]
-"77
-[; ;timer.c: 77:     timer_Timer0Reset();
+"99
+[; ;timer.c: 99:     timer_Timer0Reset();
 [e ( _timer_Timer0Reset ..  ]
-"78
-[; ;timer.c: 78:     INTCONbits.TMR0IE = 0b1;
+"100
+[; ;timer.c: 100:     INTCONbits.TMR0IE = 0b1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"79
-[; ;timer.c: 79: }
+"101
+[; ;timer.c: 101: }
 [e :UE 632 ]
 }
-"81
-[; ;timer.c: 81: BOOL timer_IsTimer0Itrpt(void)
+"103
+[; ;timer.c: 103: BOOL timer_IsTimer0Itrpt(void)
 [v _timer_IsTimer0Itrpt `(E5222 ~T0 @X0 1 ef ]
-"82
-[; ;timer.c: 82: {
+"104
+[; ;timer.c: 104: {
 {
 [e :U _timer_IsTimer0Itrpt ]
 [f ]
-"83
-[; ;timer.c: 83:     return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
+"105
+[; ;timer.c: 105:     return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
 [e ) -> ? == -> . . _INTCONbits 0 2 `i -> 1 `i : . `E5222 1 . `E5222 0 `E5222 ]
 [e $UE 633  ]
-"84
-[; ;timer.c: 84: }
+"106
+[; ;timer.c: 106: }
 [e :UE 633 ]
 }
-"88
-[; ;timer.c: 88: int timer_Timer0Handdle(void)
+"110
+[; ;timer.c: 110: int timer_Timer0Handdle(void)
 [v _timer_Timer0Handdle `(i ~T0 @X0 1 ef ]
-"89
-[; ;timer.c: 89: {
+"111
+[; ;timer.c: 111: {
 {
 [e :U _timer_Timer0Handdle ]
 [f ]
-"90
-[; ;timer.c: 90:     key_isPressed();
-[e ( _key_isPressed ..  ]
-"92
-[; ;timer.c: 92:     return 0;
+"112
+[; ;timer.c: 112:     key_checkPressed();
+[e ( _key_checkPressed ..  ]
+"114
+[; ;timer.c: 114:     update_time();
+[e ( _update_time ..  ]
+"116
+[; ;timer.c: 116:     return 0;
 [e ) -> 0 `i ]
 [e $UE 634  ]
-"93
-[; ;timer.c: 93: }
+"117
+[; ;timer.c: 117: }
 [e :UE 634 ]
 }

@@ -1,12 +1,17 @@
+#include <xc.h>
+#include <stdio.h>
+
 #include "uart.h"
 #include "data.h"
+#include "hardware.h"
+
 
 unsigned char TX_data;
 unsigned char RX_data;
 unsigned char TX_en;
 unsigned char flg_rc;
 
-void init_uart(void)
+void uart_init(void)
 {
     //init io
     TXSEL = 0;
@@ -17,13 +22,14 @@ void init_uart(void)
     WPUCbits.WPUC6 = 0;
      
     //init uart
-    //init paud rate
+    //init paud rate  10417
     SYNC = 0;
     BRGH = 1;
     BRG16 = 1;
     
-    SPBRGH = 0x1A;    //6666(d)
-    SPBRGL = 0x0A;      
+    SPBRGH = 0x00;    
+    SPBRGL = 23;      
+    
     //en TX
     TXEN = 1;
     SYNC = 0;
@@ -41,13 +47,14 @@ void init_uart(void)
     RCIE = 1;
 }
 
-void Send_byte(void)
+void uart_Send_byte(u8 byte)
 {
     TX_en = 1;
     TXEN = 1;
     SYNC = 0;
     SPEN = 1;
-    TXIE = 1;  
+    TXIE = 1;
+    TX_data = byte;
 }
 
 void ISR_uart_TX(void)

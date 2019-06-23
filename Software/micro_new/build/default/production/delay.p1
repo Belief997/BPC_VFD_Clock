@@ -840,30 +840,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "3 delay.c
-[; ;delay.c: 3: void delay_2us(void)
-[v _delay_2us `(v ~T0 @X0 1 ef ]
+[; ;delay.c: 3: void delay_4us(void)
+[v _delay_4us `(v ~T0 @X0 1 ef ]
 "4
 [; ;delay.c: 4: {
 {
-[e :U _delay_2us ]
+[e :U _delay_4us ]
 [f ]
 "5
 [; ;delay.c: 5:     __nop();
-[e ( ___nop ..  ]
-"6
-[; ;delay.c: 6:     __nop();
 [e ( ___nop ..  ]
 "7
 [; ;delay.c: 7: }
 [e :UE 623 ]
 }
 "9
-[; ;delay.c: 9: void delay_3us(void)
-[v _delay_3us `(v ~T0 @X0 1 ef ]
+[; ;delay.c: 9: void delay_12us(void)
+[v _delay_12us `(v ~T0 @X0 1 ef ]
 "10
 [; ;delay.c: 10: {
 {
-[e :U _delay_3us ]
+[e :U _delay_12us ]
 [f ]
 "11
 [; ;delay.c: 11:     __nop();
@@ -879,12 +876,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 624 ]
 }
 "16
-[; ;delay.c: 16: void delay_10us(void)
-[v _delay_10us `(v ~T0 @X0 1 ef ]
+[; ;delay.c: 16: void delay_40us(void)
+[v _delay_40us `(v ~T0 @X0 1 ef ]
 "17
 [; ;delay.c: 17: {
 {
-[e :U _delay_10us ]
+[e :U _delay_40us ]
 [f ]
 "18
 [; ;delay.c: 18:     __nop();

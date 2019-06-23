@@ -60,15 +60,36 @@ enum{
 /// some value define
 #define RECV_BUF_MAX 20
 
-// calculate + bias
-#define TIMER_0_RST (217 + 14)
 // decode time : code pulse time
+/*
 #define MAX_HIGH_LEVEL_TIMES 100  // 1s
 #define TIME_0_1 10    // 100ms
 #define TIME_0_2 20    // 200ms
 #define TIME_0_3 30    // 300ms
 #define TIME_0_4 40    // 400ms
 #define BIAS 5         // 50ms
+*/
+
+// calculate + bias
+#define TIMER_0_RST (158 + 0)
+
+// new define of timer
+#define COUNT_1S 31030
+#define COUNT_100MS 3103
+#define COUNT_200MS 6208
+#define COUNT_300MS 9311
+#define COUNT_400MS 12417
+#define COUNT_500MS 15578
+#define COUNT_BIAS 1500
+
+#define NUMBER_1 0
+#define NUMBER_2 1
+#define NUMBER_3 2
+#define NUMBER_4 3
+#define NUMBER_ERROR 4
+#define CME_START 5
+#define NO_NEED 6
+
 
 typedef struct{
    // bool value used in receive_decode
@@ -80,7 +101,7 @@ typedef struct{
     u8 g_time_h;
     u8 g_time_m;
     u8 g_time_s;
-    u8 g_time_10ms;
+    u8 g_time_100ms;
 
     // times value in receive_decode
     u16 g_high_level_times;
@@ -88,6 +109,7 @@ typedef struct{
     u16 g_recv_count;
     // read time buf in receive_code
     u8 g_recv_buf[RECV_BUF_MAX];
+    
     u16 cnt_update;
 
 

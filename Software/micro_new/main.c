@@ -56,9 +56,10 @@ void init_env(){
      * choose clk inside
      */
     OSCCONbits.SCS = 0b10;      // set to use inside clock
-    /* set freq for inside clock : 500kHz , 2 us */
-    OSCCONbits.IRCF = 0b1010;   
-    
+//    /* set freq for inside clock : 500kHz , 2 us */
+//    OSCCONbits.IRCF = 0b1010;   
+    /* set freq for inside clock : 1 MHz , 1 us */
+    OSCCONbits.IRCF = 0b1011;      
     
     /**
      *  port use
@@ -96,11 +97,20 @@ void init_env(){
     CME_DATA_WPU = 0;
     CME_DATA_IOC = 1; //detect when ioc up
     
+    // ra6 ra7
+    RA_TRISA6 = 1;
+    RA_TRISA7 = 1;
+    
     // times cnt in receive_decode
     for(int i = 0;i < RECV_BUF_MAX; i++){
         pdata->g_recv_buf[i] = 5;
     }
+    pdata->g_time_h = 23;
+    pdata->g_time_m = 55;
+    pdata->g_time_s = 0;
     
+    
+    display_update();
     /**
      * set trans to display
      */
@@ -113,9 +123,6 @@ void init_env(){
     PIC_INT_TRI = 1;
     PIC_INT_WPU = 1;
         
-
-    /* init iic */
-//    IIC_Init();
     
     // light on when have power
     display_set(TRUE);
@@ -170,7 +177,7 @@ void tmp_change(void)
             receive_decode();
         }
         
-        update_time();
+        //update_time();
         /* handle key event here */
         if(key_time_cnt++ % 10 == 0) // look up key every 100ms
         {
@@ -189,26 +196,40 @@ void tmp_change(void)
     return;
 }
 
-
 void __interrupt () ISR(void)
 {
-    static u8 cnt = 0;
-
+    static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
+        if(capture_IsEnable()){
+            cnt++;
+        }else{
+            cnt = 0;
+        }
+        if(cnt > 30){
+            capture_Set(FALSE);
+            led_SetState(FALSE);
+            bpc_read_time();
+            cnt = 0;
+        }
 //        LED_STATE = (cnt++ % 2 == 0);
-
+        //LOG("HERE TIMER 1");
         timer_Timer1ClrIntrpt();
     }
-
+    
     if(timer_IsTimer0Itrpt())
     {
         timer_Timer0Handdle();
-
+ 
+		if(key_isPressed())
+		{
+            //LOG("PKEY\r\n");
+			capture_Set(TRUE);
+		}
         timer_Timer0Reset();
     }
 
-    if(capture_IsIntrpt())
+    if(capture_IsEnable() && capture_IsIntrpt())
     {
         capture_handdle();
 
@@ -216,16 +237,12 @@ void __interrupt () ISR(void)
 
         capture_clrIntrpt();    
     }
-
-
 }
-
-
 
 void main(void) 
 {
-    static u16 i = 0;
-    static u8 cnt = 0;
+    //static u16 i = 0;
+    //static u8 cnt = 0;
 
     
     // init config
@@ -239,21 +256,38 @@ void main(void)
     timer_Timer1Init();
     timer_Timer1Start();
 
-    /* 捕获初始化 */
+//    /* 捕获初始化 */
     capture_init();
-    capture_Set(TRUE);
+//    capture_Set(TRUE);
 
+    
+    
+        /* iic 初始化 */
+    IIC_Init();
+    
+#ifdef  DEBUG
+    /* 调试串口初始化 */ 
+    uart_init();
+#endif
+    
+    if(-1 == bpc_read_time()){
+        //LOG("ERR r\r\n");
+        capture_Set(TRUE);
+    }
     /* 初始显示状态 */
     display_update();
     led_SetState(FALSE);
 
     while(1)
     {
-        if(i++  == 1000)
+        /*
+        if(i++  == 65535)
         {          
-            display_set(FALSE);
+//            led_Blink();
+            //display_set(FALSE);
 //            update_display();
         }
+        */
     }
     return;
 }

@@ -2,7 +2,6 @@
 <configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
-      <itemPath>function.h</itemPath>
       <itemPath>delay.h</itemPath>
       <itemPath>myiic.h</itemPath>
       <itemPath>timer.h</itemPath>
@@ -10,20 +9,19 @@
       <itemPath>debug.h</itemPath>
       <itemPath>hardware.h</itemPath>
       <itemPath>uart.h</itemPath>
+      <itemPath>bpc.h</itemPath>
+      <itemPath>display.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
       <itemPath>main.c</itemPath>
       <itemPath>delay.c</itemPath>
       <itemPath>myiic.c</itemPath>
       <itemPath>timer.c</itemPath>
-      <itemPath>debug.c</itemPath>
       <itemPath>data.c</itemPath>
       <itemPath>uart.c</itemPath>
-      <itemPath>display.h</itemPath>
-      <itemPath>display.c</itemPath>
-      <itemPath>hardware.c</itemPath>
       <itemPath>bpc.c</itemPath>
-      <itemPath>bpc.h</itemPath>
+      <itemPath>hardware.c</itemPath>
+      <itemPath>display.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript" displayName="链接器文件" projectFiles="true">
     </logicalFolder>
@@ -77,11 +75,16 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <HI-TECH-COMP>
+        <property key="additional-warnings" value="true"/>
         <property key="asmlist" value="true"/>
+        <property key="default-bitfield-type" value="true"/>
+        <property key="default-char-type" value="true"/>
         <property key="define-macros" value=""/>
         <property key="disable-optimizations" value="false"/>
         <property key="extra-include-directories" value=""/>
         <property key="favor-optimization-for" value="-speed,+space"/>
+        <property key="garbage-collect-data" value="true"/>
+        <property key="garbage-collect-functions" value="true"/>
         <property key="identifier-length" value="255"/>
         <property key="local-generation" value="false"/>
         <property key="operation-mode" value="free"/>
@@ -94,7 +97,9 @@
         <property key="optimization-level" value="9"/>
         <property key="optimization-speed" value="false"/>
         <property key="optimization-stable-enable" value="false"/>
+        <property key="pack-struct" value="true"/>
         <property key="preprocess-assembler" value="true"/>
+        <property key="short-enums" value="true"/>
         <property key="undefine-macros" value=""/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
@@ -146,6 +151,7 @@
         <property key="opt-xc8-linker-link_startup" value="false"/>
         <property key="opt-xc8-linker-serial" value=""/>
         <property key="program-the-device-with-default-config-words" value="true"/>
+        <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
       <PICkit3PlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -153,7 +159,6 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -186,7 +191,7 @@
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="programoptions.usehighvoltageonmclr" value="false"/>
         <property key="programoptions.uselvpprogramming" value="false"/>
-        <property key="voltagevalue" value="4.75"/>
+        <property key="voltagevalue" value="4.625"/>
         <property key="冻结外设" value="true"/>
         <property key="安全段。分部编程" value="FullChipProgramming"/>
       </PICkit3PlatformTool>

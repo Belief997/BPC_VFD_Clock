@@ -11,6 +11,8 @@
 #include "hardware.h"
 #include "display.h"
 
+#include "myiic.h"
+
 void display_set(BOOL ison)
 {
     Light_on = ison;
@@ -82,30 +84,26 @@ void display_update(void)
 //               segmcode[g_data.g_time_m % 10]); 
     
 //    write_once(0x03, 0x0c, 0x30, 0xc0); // 4 3 2 1
-    static u8 i=0;
-    
-
-    
-    display_write_once(segmcode[i%10], segmcode[i%10], segmcode[i%10], segmcode[i%10]); // 4 3 2 1
-
-    i++;
+    //static u8 i=0;
+    G_DATA *pdata = data_getdata();
+    display_write_once(segmcode[(pdata->g_time_h/10 == 0? 10:pdata->g_time_h/10)], \
+                          segmcode[pdata->g_time_h%10], \
+                          segmcode[pdata->g_time_m/10], \
+                          segmcode[pdata->g_time_m%10]); // 4 3 2 1
+    //i++;
     return;
 }
 
 void update_time(void) 
 {
     G_DATA *pdata = data_getdata();
-    pdata->g_time_10ms++;
-#ifdef TEST
-    if( 50 == pdata->g_time_10ms ){
-        SECOND_LIGHT = 1;
-    }else if( 100 == pdata->g_time_10ms ){
-        SECOND_LIGHT = 0;
+    pdata->g_time_100ms++;
+    if(pdata->g_time_100ms % 5 == 0 && (!capture_IsEnable())){
+        led_Blink();
     }
-#endif
-    if(pdata->g_time_10ms == 100)
+    if(pdata->g_time_100ms == 10)
     { // 1s
-        pdata->g_time_10ms = 0;
+        pdata->g_time_100ms = 0;
         pdata->g_time_s++;
 //        display_update();
         if(pdata->g_time_s == 60)
@@ -113,6 +111,9 @@ void update_time(void)
             pdata->g_time_m++;
             pdata->g_time_s = 0;
             pdata->cnt_update++;
+            if(pdata->g_time_m % 30 == 0){
+                capture_Set(TRUE);
+            }
             if(pdata->g_time_m == 60)
             { // 1hr
                 pdata->g_time_h++;

@@ -8847,7 +8847,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 10 "main.c" 2
+# 9 "main.c" 2
+
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -8984,7 +8985,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "main.c" 2
+# 10 "main.c" 2
+
 # 1 "./function.h" 1
 
 
@@ -9063,7 +9065,8 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 8 "./function.h" 2
+# 7 "./function.h" 2
+
 # 1 "./data.h" 1
 
 
@@ -9118,7 +9121,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 73 "./data.h"
+# 94 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9129,7 +9132,7 @@ typedef struct{
     u8 g_time_h;
     u8 g_time_m;
     u8 g_time_s;
-    u8 g_time_10ms;
+    u8 g_time_100ms;
 
 
     u16 g_high_level_times;
@@ -9137,6 +9140,7 @@ typedef struct{
     u16 g_recv_count;
 
     u8 g_recv_buf[20];
+
     u16 cnt_update;
 
 
@@ -9149,7 +9153,8 @@ typedef struct{
 G_DATA* data_getdata(void);
 
 u16 data_getTimeCnt(void);
-# 9 "./function.h" 2
+# 8 "./function.h" 2
+
 
 
 
@@ -9161,18 +9166,115 @@ void receive_decode(void);
 
 
 void update_time(void);
-# 12 "main.c" 2
+# 11 "main.c" 2
+
 # 1 "./myiic.h" 1
 
 
 
 # 1 "./delay.h" 1
-# 16 "./delay.h"
-void delay_2us(void);
-void delay_3us(void);
-void delay_10us(void);
-# 5 "./myiic.h" 2
-# 18 "./myiic.h"
+# 22 "./delay.h"
+void delay_4us(void);
+void delay_12us(void);
+void delay_40us(void);
+# 4 "./myiic.h" 2
+
+
+
+
+# 1 "./debug.h" 1
+
+
+
+
+# 1 "./uart.h" 1
+# 18 "./uart.h"
+void uart_init(void);
+void uart_Send_byte(u8 byte);
+void ISR_uart_TX(void);
+void ISR_uart_RX(void);
+# 5 "./debug.h" 2
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 1 3
+# 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 409 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 6 "./debug.h" 2
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 1 3
+
+
+
+
+
+
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 8 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 2 3
+
+
+#pragma intrinsic(__va_start)
+#pragma intrinsic(__va_arg)
+
+extern void * __va_start(void);
+extern void * __va_arg(void *, ...);
+# 7 "./debug.h" 2
+# 52 "./debug.h"
+typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
+int debug_proc(const unsigned char* cmdString, unsigned short length);
+# 8 "./myiic.h" 2
+# 19 "./myiic.h"
 void IIC_Init(void);
 void IIC_Start(void);
 void IIC_Stop(void);
@@ -9182,8 +9284,10 @@ unsigned char IIC_Wait_Ack(void);
 void IIC_Ack(void);
 void IIC_NAck(void);
 unsigned char RD_temp(void);
-void IIC_temp(void);
-# 13 "main.c" 2
+s8 IIC_RdRTCReg(u8 regAddr, u8* value);
+s8 IIC_WtRTCReg(u8 regAddr, u8 value);
+# 12 "main.c" 2
+
 # 1 "./timer.h" 1
 # 11 "./timer.h"
 void timer_Timer1Init(void);
@@ -9200,22 +9304,20 @@ BOOL timer_IsTimer0Itrpt(void);
 
 
 int timer_Timer0Handdle(void);
-# 14 "main.c" 2
-
-# 1 "./debug.h" 1
+# 13 "main.c" 2
 
 
 
-typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
-int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 16 "main.c" 2
 # 1 "./hardware.h" 1
-# 61 "./hardware.h"
+# 71 "./hardware.h"
 u8 capture_init(void);
-u8 capture_Start(void);
+u8 capture_Set(u8 isON);
+BOOL capture_IsEnable(void);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);
+
+BOOL capture_IsNegEdge(void);
 
 
 
@@ -9223,15 +9325,11 @@ u8 led_SetState(u8 isOn);
 u8 led_Blink(void);
 
 
-void key_isPressed(void);
-# 17 "main.c" 2
-# 1 "./uart.h" 1
-# 17 "./uart.h"
-void init_uart(void);
-void Send_byte(void);
-void ISR_uart_TX(void);
-void ISR_uart_RX(void);
-# 18 "main.c" 2
+BOOL key_isPressed(void);
+void key_checkPressed(void);
+# 16 "main.c" 2
+
+
 # 1 "./display.h" 1
 # 13 "./display.h"
 void display_set(BOOL ison);
@@ -9239,13 +9337,20 @@ void display_set(BOOL ison);
 
 
 
+void update_time(void);
+
 
 void display_update(void);
-# 19 "main.c" 2
+# 18 "main.c" 2
+
 # 1 "./bpc.h" 1
-# 14 "./bpc.h"
+# 12 "./bpc.h"
+s8 bpc_read_time(void);
+s8 bpc_write_time(void);
+
 int bpc_proc(void);
-# 20 "main.c" 2
+# 19 "main.c" 2
+
 
 
 #pragma config FOSC = HS
@@ -9286,8 +9391,16 @@ void init_env(){
 
     OSCCONbits.SCS = 0b10;
 
-    OSCCONbits.IRCF = 0b1010;
-# 69 "main.c"
+
+
+    OSCCONbits.IRCF = 0b1011;
+
+
+
+
+
+
+
     OPTION_REGbits.nWPUEN = 0;
 
     TRISA = 0;
@@ -9319,10 +9432,19 @@ void init_env(){
     IOCCPbits.IOCCP1 = 1;
 
 
+    TRISAbits.TRISA6 = 1;
+    TRISAbits.TRISA7 = 1;
+
+
     for(int i = 0;i < 20; i++){
         pdata->g_recv_buf[i] = 5;
     }
+    pdata->g_time_h = 23;
+    pdata->g_time_m = 55;
+    pdata->g_time_s = 0;
 
+
+    display_update();
 
 
 
@@ -9334,9 +9456,6 @@ void init_env(){
 
     TRISCbits.TRISC0 = 1;
     WPUCbits.WPUC0 = 1;
-
-
-
 
 
 
@@ -9392,7 +9511,7 @@ void tmp_change(void)
             receive_decode();
         }
 
-        update_time();
+
 
         if(key_time_cnt++ % 10 == 0)
         {
@@ -9411,28 +9530,41 @@ void tmp_change(void)
     return;
 }
 
-
 void __attribute__((picinterrupt(""))) ISR(void)
 {
-    static u8 cnt = 0;
-
+    static u16 cnt = 0;
     if(timer_IsTimer1Itrpt())
     {
+        if(capture_IsEnable()){
+            cnt++;
+        }else{
+            cnt = 0;
+        }
+        if(cnt > 30){
+            capture_Set(FALSE);
+            led_SetState(FALSE);
+            bpc_read_time();
+            cnt = 0;
+        }
 
 
         timer_Timer1ClrIntrpt();
-        return ;
     }
 
     if(timer_IsTimer0Itrpt())
     {
         timer_Timer0Handdle();
 
+  if(key_isPressed())
+  {
+
+   capture_Set(TRUE);
+  }
+# 251 "main.c"
         timer_Timer0Reset();
-        return ;
     }
 
-    if(capture_IsIntrpt())
+    if(capture_IsEnable() && capture_IsIntrpt())
     {
         capture_handdle();
 
@@ -9440,16 +9572,12 @@ void __attribute__((picinterrupt(""))) ISR(void)
 
         capture_clrIntrpt();
     }
-
-
 }
-
-
 
 void main(void)
 {
-    static u16 i = 0;
-    static u8 cnt = 0;
+
+
 
 
 
@@ -9457,27 +9585,55 @@ void main(void)
 
 
     timer_Timer0Init();
-
+    timer_Timer0Start();
 
 
     timer_Timer1Init();
-
+    timer_Timer1Start();
 
 
     capture_init();
-    capture_Start();
 
+
+
+
+
+    IIC_Init();
+<<<<<<< HEAD
+=======
+
+
+
+    uart_init();
+
+
+    {};
+    {};
+
+
+    if(-1 == bpc_read_time()){
+>>>>>>> liubo
+
+
+
+    uart_init();
+
+
+
+
+    if(-1 == bpc_read_time()){
+        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 298, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 299, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 300, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+        capture_Set(TRUE);
+    }
 
     display_update();
     led_SetState(FALSE);
 
     while(1)
     {
-        if(i++ == 1000)
-        {
-            display_set(FALSE);
-
-        }
+# 317 "main.c"
     }
     return;
 }

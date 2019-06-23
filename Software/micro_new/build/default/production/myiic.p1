@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"53 ./data.h
+[; ;./data.h: 53: }ENUM;
+[c E5229 0 1 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
+[n E5229 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH LED_STATE_ON LED_STATE_OFF CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
 "14601 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 14601: extern volatile __bit LATC3 __attribute__((address(0x873)));
 [v _LATC3 `Vb ~T0 @X0 0 e@2163 ]
@@ -23,15 +27,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17220
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 17220: extern volatile __bit WPUC3 __attribute__((address(0x1073)));
 [v _WPUC3 `Vb ~T0 @X0 0 e@4211 ]
-"16 ./delay.h
-[; ;./delay.h: 16: void delay_2us(void);
-[v _delay_2us `(v ~T0 @X0 0 ef ]
+"22 ./delay.h
+[; ;./delay.h: 22: void delay_4us(void);
+[v _delay_4us `(v ~T0 @X0 0 ef ]
 "16626 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 16626: extern volatile __bit RC4 __attribute__((address(0x74)));
 [v _RC4 `Vb ~T0 @X0 0 e@116 ]
-"14199
-[; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 14199: extern volatile __bit GIE __attribute__((address(0x5F)));
-[v _GIE `Vb ~T0 @X0 0 e@95 ]
 "54 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -869,492 +870,558 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"3 myiic.c
-[; ;myiic.c: 3: unsigned char temp_h;
-[v _temp_h `uc ~T0 @X0 1 e ]
-"4
-[; ;myiic.c: 4: unsigned char temp_l;
-[v _temp_l `uc ~T0 @X0 1 e ]
-"5
-[; ;myiic.c: 5: unsigned int Temp;
-[v _Temp `ui ~T0 @X0 1 e ]
-"8
-[; ;myiic.c: 8: void IIC_Init(void)
+"53 ./data.h
+[; ;./data.h: 53: }ENUM;
+[v _ENUM `E5229 ~T0 @X0 1 e ]
+"9 myiic.c
+[; ;myiic.c: 9: void IIC_Init(void)
 [v _IIC_Init `(v ~T0 @X0 1 ef ]
-"9
-[; ;myiic.c: 9: {
+"10
+[; ;myiic.c: 10: {
 {
 [e :U _IIC_Init ]
 [f ]
-"10
-[; ;myiic.c: 10:     LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
 "11
-[; ;myiic.c: 11:  LATC4=1;
+[; ;myiic.c: 11:     LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
+"12
+[; ;myiic.c: 12:  LATC4=1;
 [e = _LATC4 -> -> 1 `i `b ]
-"13
-[; ;myiic.c: 13:     ODCONC3 = 1;
-[e = _ODCONC3 -> -> 1 `i `b ]
 "14
-[; ;myiic.c: 14:     ODCONC4 = 1;
+[; ;myiic.c: 14:     ODCONC3 = 1;
+[e = _ODCONC3 -> -> 1 `i `b ]
+"15
+[; ;myiic.c: 15:     ODCONC4 = 1;
 [e = _ODCONC4 -> -> 1 `i `b ]
-"16
-[; ;myiic.c: 16:     TRISC4 = 0;
-[e = _TRISC4 -> -> 0 `i `b ]
 "17
-[; ;myiic.c: 17:     TRISC3 = 0;
+[; ;myiic.c: 17:     TRISC4 = 0;
+[e = _TRISC4 -> -> 0 `i `b ]
+"18
+[; ;myiic.c: 18:     TRISC3 = 0;
 [e = _TRISC3 -> -> 0 `i `b ]
-"19
-[; ;myiic.c: 19:  WPUC4 = 1;
-[e = _WPUC4 -> -> 1 `i `b ]
 "20
-[; ;myiic.c: 20:     WPUC3 = 1;
+[; ;myiic.c: 20:  WPUC4 = 1;
+[e = _WPUC4 -> -> 1 `i `b ]
+"21
+[; ;myiic.c: 21:     WPUC3 = 1;
 [e = _WPUC3 -> -> 1 `i `b ]
-"22
-[; ;myiic.c: 22: }
-[e :UE 623 ]
+"23
+[; ;myiic.c: 23: }
+[e :UE 627 ]
 }
-"24
-[; ;myiic.c: 24: void IIC_Start(void)
-[v _IIC_Start `(v ~T0 @X0 1 ef ]
 "25
-[; ;myiic.c: 25: {
+[; ;myiic.c: 25: void IIC_Start(void)
+[v _IIC_Start `(v ~T0 @X0 1 ef ]
+"26
+[; ;myiic.c: 26: {
 {
 [e :U _IIC_Start ]
 [f ]
-"26
-[; ;myiic.c: 26:  {TRISC4 = 0;};
+"27
+[; ;myiic.c: 27:  {TRISC4 = 0;};
 {
 [e = _TRISC4 -> -> 0 `i `b ]
 }
-"27
-[; ;myiic.c: 27:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
 "28
-[; ;myiic.c: 28:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
+[; ;myiic.c: 28:  LATC4=1;
+[e = _LATC4 -> -> 1 `i `b ]
 "29
-[; ;myiic.c: 29:  delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 29:  LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
 "30
-[; ;myiic.c: 30:   LATC4=0;
-[e = _LATC4 -> -> 0 `i `b ]
+[; ;myiic.c: 30:  delay_4us();
+[e ( _delay_4us ..  ]
 "31
-[; ;myiic.c: 31:  delay_2us();
-[e ( _delay_2us ..  ]
-"32
-[; ;myiic.c: 32:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
+[; ;myiic.c: 31:   LATC4=0;
+[e = _LATC4 -> -> 0 `i `b ]
 "33
-[; ;myiic.c: 33: }
-[e :UE 624 ]
-}
+[; ;myiic.c: 33:  LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
 "35
-[; ;myiic.c: 35: void IIC_Stop(void)
+[; ;myiic.c: 35: }
+[e :UE 628 ]
+}
+"37
+[; ;myiic.c: 37: void IIC_Stop(void)
 [v _IIC_Stop `(v ~T0 @X0 1 ef ]
-"36
-[; ;myiic.c: 36: {
+"38
+[; ;myiic.c: 38: {
 {
 [e :U _IIC_Stop ]
 [f ]
-"37
-[; ;myiic.c: 37:  {TRISC4 = 0;};
+"39
+[; ;myiic.c: 39:  {TRISC4 = 0;};
 {
 [e = _TRISC4 -> -> 0 `i `b ]
 }
-"38
-[; ;myiic.c: 38:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"39
-[; ;myiic.c: 39:  LATC4=0;
-[e = _LATC4 -> -> 0 `i `b ]
 "40
-[; ;myiic.c: 40:   delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 40:  LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
 "41
-[; ;myiic.c: 41:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
+[; ;myiic.c: 41:  LATC4=0;
+[e = _LATC4 -> -> 0 `i `b ]
 "42
-[; ;myiic.c: 42:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
+[; ;myiic.c: 42:   delay_4us();
+[e ( _delay_4us ..  ]
 "43
-[; ;myiic.c: 43:  delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 43:  LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
 "44
-[; ;myiic.c: 44: }
-[e :UE 625 ]
+[; ;myiic.c: 44:  LATC4=1;
+[e = _LATC4 -> -> 1 `i `b ]
+"45
+[; ;myiic.c: 45:  delay_4us();
+[e ( _delay_4us ..  ]
+"47
+[; ;myiic.c: 47: }
+[e :UE 629 ]
 }
-"48
-[; ;myiic.c: 48: unsigned char IIC_Wait_Ack(void)
+"51
+[; ;myiic.c: 51: unsigned char IIC_Wait_Ack(void)
 [v _IIC_Wait_Ack `(uc ~T0 @X0 1 ef ]
-"49
-[; ;myiic.c: 49: {
+"52
+[; ;myiic.c: 52: {
 {
 [e :U _IIC_Wait_Ack ]
 [f ]
-"50
-[; ;myiic.c: 50:  unsigned char ucErrTime=0;
+"53
+[; ;myiic.c: 53:  unsigned char ucErrTime=0;
 [v _ucErrTime `uc ~T0 @X0 1 a ]
 [e = _ucErrTime -> -> 0 `i `uc ]
-"51
-[; ;myiic.c: 51:  {TRISC4 = 1;};
+"54
+[; ;myiic.c: 54:  {TRISC4 = 1;};
 {
 [e = _TRISC4 -> -> 1 `i `b ]
 }
-"52
-[; ;myiic.c: 52:  LATC4=1;delay_2us();
-[e = _LATC4 -> -> 1 `i `b ]
-[e ( _delay_2us ..  ]
-"53
-[; ;myiic.c: 53:  LATC3=1;delay_2us();
-[e = _LATC3 -> -> 1 `i `b ]
-[e ( _delay_2us ..  ]
-"54
-[; ;myiic.c: 54:  while(RC4)
-[e $U 627  ]
-[e :U 628 ]
 "55
-[; ;myiic.c: 55:  {
-{
+[; ;myiic.c: 55:  LATC4=1;delay_4us();
+[e = _LATC4 -> -> 1 `i `b ]
+[e ( _delay_4us ..  ]
 "56
-[; ;myiic.c: 56:   ucErrTime++;
-[e ++ _ucErrTime -> -> 1 `i `uc ]
+[; ;myiic.c: 56:  LATC3=1;delay_4us();
+[e = _LATC3 -> -> 1 `i `b ]
+[e ( _delay_4us ..  ]
 "57
-[; ;myiic.c: 57:   if(ucErrTime>250)
-[e $ ! > -> _ucErrTime `i -> 250 `i 630  ]
+[; ;myiic.c: 57:  while(RC4)
+[e $U 631  ]
+[e :U 632 ]
 "58
-[; ;myiic.c: 58:   {
+[; ;myiic.c: 58:  {
 {
 "59
-[; ;myiic.c: 59:    IIC_Stop();
-[e ( _IIC_Stop ..  ]
+[; ;myiic.c: 59:   ucErrTime++;
+[e ++ _ucErrTime -> -> 1 `i `uc ]
 "60
-[; ;myiic.c: 60:    return 1;
-[e ) -> -> 1 `i `uc ]
-[e $UE 626  ]
+[; ;myiic.c: 60:   if(ucErrTime>250)
+[e $ ! > -> _ucErrTime `i -> 250 `i 634  ]
 "61
-[; ;myiic.c: 61:   }
-}
-[e :U 630 ]
+[; ;myiic.c: 61:   {
+{
 "62
-[; ;myiic.c: 62:  }
-}
-[e :U 627 ]
-"54
-[; ;myiic.c: 54:  while(RC4)
-[e $ _RC4 628  ]
-[e :U 629 ]
+[; ;myiic.c: 62:    IIC_Stop();
+[e ( _IIC_Stop ..  ]
 "63
-[; ;myiic.c: 63:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
+[; ;myiic.c: 63:    return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 630  ]
 "64
-[; ;myiic.c: 64:  return 0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 626  ]
-"65
-[; ;myiic.c: 65: }
-[e :UE 626 ]
+[; ;myiic.c: 64:   }
 }
+[e :U 634 ]
+"65
+[; ;myiic.c: 65:  }
+}
+[e :U 631 ]
+"57
+[; ;myiic.c: 57:  while(RC4)
+[e $ _RC4 632  ]
+[e :U 633 ]
+"66
+[; ;myiic.c: 66:  LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
 "67
-[; ;myiic.c: 67: void IIC_Ack(void)
-[v _IIC_Ack `(v ~T0 @X0 1 ef ]
+[; ;myiic.c: 67:  return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 630  ]
 "68
-[; ;myiic.c: 68: {
+[; ;myiic.c: 68: }
+[e :UE 630 ]
+}
+"70
+[; ;myiic.c: 70: void IIC_Ack(void)
+[v _IIC_Ack `(v ~T0 @X0 1 ef ]
+"71
+[; ;myiic.c: 71: {
 {
 [e :U _IIC_Ack ]
 [f ]
-"69
-[; ;myiic.c: 69:  LATC3=0;
+"72
+[; ;myiic.c: 72:  LATC3=0;
 [e = _LATC3 -> -> 0 `i `b ]
-"70
-[; ;myiic.c: 70:  {TRISC4 = 0;};
+"73
+[; ;myiic.c: 73:  {TRISC4 = 0;};
 {
 [e = _TRISC4 -> -> 0 `i `b ]
 }
-"71
-[; ;myiic.c: 71:  LATC4=0;
-[e = _LATC4 -> -> 0 `i `b ]
-"72
-[; ;myiic.c: 72:  delay_2us();
-[e ( _delay_2us ..  ]
-"73
-[; ;myiic.c: 73:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
 "74
-[; ;myiic.c: 74:  delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 74:  LATC4=0;
+[e = _LATC4 -> -> 0 `i `b ]
 "75
-[; ;myiic.c: 75:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
+[; ;myiic.c: 75:  delay_4us();
+[e ( _delay_4us ..  ]
 "76
-[; ;myiic.c: 76: }
-[e :UE 631 ]
-}
+[; ;myiic.c: 76:  LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
+"77
+[; ;myiic.c: 77:  delay_4us();
+[e ( _delay_4us ..  ]
 "78
-[; ;myiic.c: 78: void IIC_NAck(void)
-[v _IIC_NAck `(v ~T0 @X0 1 ef ]
+[; ;myiic.c: 78:  LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
 "79
-[; ;myiic.c: 79: {
+[; ;myiic.c: 79: }
+[e :UE 635 ]
+}
+"81
+[; ;myiic.c: 81: void IIC_NAck(void)
+[v _IIC_NAck `(v ~T0 @X0 1 ef ]
+"82
+[; ;myiic.c: 82: {
 {
 [e :U _IIC_NAck ]
 [f ]
-"80
-[; ;myiic.c: 80:  LATC3=0;
+"83
+[; ;myiic.c: 83:  LATC3=0;
 [e = _LATC3 -> -> 0 `i `b ]
-"81
-[; ;myiic.c: 81:  {TRISC4 = 0;};
+"84
+[; ;myiic.c: 84:  {TRISC4 = 0;};
 {
 [e = _TRISC4 -> -> 0 `i `b ]
 }
-"82
-[; ;myiic.c: 82:  LATC4=1;
-[e = _LATC4 -> -> 1 `i `b ]
-"83
-[; ;myiic.c: 83:  delay_2us();
-[e ( _delay_2us ..  ]
-"84
-[; ;myiic.c: 84:  LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
 "85
-[; ;myiic.c: 85:  delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 85:  LATC4=1;
+[e = _LATC4 -> -> 1 `i `b ]
 "86
-[; ;myiic.c: 86:  LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
+[; ;myiic.c: 86:  delay_4us();
+[e ( _delay_4us ..  ]
 "87
-[; ;myiic.c: 87: }
-[e :UE 632 ]
+[; ;myiic.c: 87:  LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
+"88
+[; ;myiic.c: 88:  delay_4us();
+[e ( _delay_4us ..  ]
+"89
+[; ;myiic.c: 89:  LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
+"90
+[; ;myiic.c: 90: }
+[e :UE 636 ]
 }
-"92
-[; ;myiic.c: 92: void IIC_Send_Byte(unsigned char txd)
+"95
+[; ;myiic.c: 95: void IIC_Send_Byte(unsigned char txd)
 [v _IIC_Send_Byte `(v ~T0 @X0 1 ef1`uc ]
-"93
-[; ;myiic.c: 93: {
+"96
+[; ;myiic.c: 96: {
 {
 [e :U _IIC_Send_Byte ]
-"92
-[; ;myiic.c: 92: void IIC_Send_Byte(unsigned char txd)
-[v _txd `uc ~T0 @X0 1 r1 ]
-"93
-[; ;myiic.c: 93: {
-[f ]
-"94
-[; ;myiic.c: 94:     unsigned char t;
-[v _t `uc ~T0 @X0 1 a ]
 "95
-[; ;myiic.c: 95:  {TRISC4 = 0;};
+[; ;myiic.c: 95: void IIC_Send_Byte(unsigned char txd)
+[v _txd `uc ~T0 @X0 1 r1 ]
+"96
+[; ;myiic.c: 96: {
+[f ]
+"97
+[; ;myiic.c: 97:     unsigned char t;
+[v _t `uc ~T0 @X0 1 a ]
+"98
+[; ;myiic.c: 98:  {TRISC4 = 0;};
 {
 [e = _TRISC4 -> -> 0 `i `b ]
 }
-"96
-[; ;myiic.c: 96:     LATC3=0;
+"99
+[; ;myiic.c: 99:     LATC3=0;
 [e = _LATC3 -> -> 0 `i `b ]
-"97
-[; ;myiic.c: 97:     for(t=0;t<8;t++)
+"100
+[; ;myiic.c: 100:     for(t=0;t<8;t++)
 {
 [e = _t -> -> 0 `i `uc ]
-[e $ < -> _t `i -> 8 `i 634  ]
-[e $U 635  ]
-[e :U 634 ]
-"98
-[; ;myiic.c: 98:     {
-{
-"99
-[; ;myiic.c: 99:         LATC4=(txd&0x80)>>7;
-[e = _LATC4 -> >> & -> _txd `i -> 128 `i -> 7 `i `b ]
-"100
-[; ;myiic.c: 100:         txd<<=1;
-[e =<< _txd -> -> 1 `i `uc ]
+[e $ < -> _t `i -> 8 `i 638  ]
+[e $U 639  ]
+[e :U 638 ]
 "101
-[; ;myiic.c: 101:   delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 101:     {
+{
 "102
-[; ;myiic.c: 102:   LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
+[; ;myiic.c: 102:         LATC4=(txd&0x80)>>7;
+[e = _LATC4 -> >> & -> _txd `i -> 128 `i -> 7 `i `b ]
 "103
-[; ;myiic.c: 103:   delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 103:         txd<<=1;
+[e =<< _txd -> -> 1 `i `uc ]
 "104
-[; ;myiic.c: 104:   LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
+[; ;myiic.c: 104:   delay_4us();
+[e ( _delay_4us ..  ]
 "105
-[; ;myiic.c: 105:   delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 105:   LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
 "106
-[; ;myiic.c: 106:     }
+[; ;myiic.c: 106:   delay_4us();
+[e ( _delay_4us ..  ]
+"107
+[; ;myiic.c: 107:   LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
+"108
+[; ;myiic.c: 108:   delay_4us();
+[e ( _delay_4us ..  ]
+"109
+[; ;myiic.c: 109:     }
 }
 [e ++ _t -> -> 1 `i `uc ]
-[e $ < -> _t `i -> 8 `i 634  ]
-[e :U 635 ]
+[e $ < -> _t `i -> 8 `i 638  ]
+[e :U 639 ]
 }
-"107
-[; ;myiic.c: 107: }
-[e :UE 633 ]
-}
-"109
-[; ;myiic.c: 109: unsigned char IIC_Read_Byte(unsigned char ack)
-[v _IIC_Read_Byte `(uc ~T0 @X0 1 ef1`uc ]
 "110
-[; ;myiic.c: 110: {
+[; ;myiic.c: 110: }
+[e :UE 637 ]
+}
+"112
+[; ;myiic.c: 112: unsigned char IIC_Read_Byte(unsigned char ack)
+[v _IIC_Read_Byte `(uc ~T0 @X0 1 ef1`uc ]
+"113
+[; ;myiic.c: 113: {
 {
 [e :U _IIC_Read_Byte ]
-"109
-[; ;myiic.c: 109: unsigned char IIC_Read_Byte(unsigned char ack)
+"112
+[; ;myiic.c: 112: unsigned char IIC_Read_Byte(unsigned char ack)
 [v _ack `uc ~T0 @X0 1 r1 ]
-"110
-[; ;myiic.c: 110: {
+"113
+[; ;myiic.c: 113: {
 [f ]
-"111
-[; ;myiic.c: 111:  unsigned char i,receive=0;
+"114
+[; ;myiic.c: 114:  unsigned char i,receive=0;
 [v _i `uc ~T0 @X0 1 a ]
 [v _receive `uc ~T0 @X0 1 a ]
 [e = _receive -> -> 0 `i `uc ]
-"112
-[; ;myiic.c: 112:  {TRISC4 = 1;};
+"115
+[; ;myiic.c: 115:  {TRISC4 = 1;};
 {
 [e = _TRISC4 -> -> 1 `i `b ]
 }
-"113
-[; ;myiic.c: 113:     for(i=0;i<8;i++ )
+"116
+[; ;myiic.c: 116:     for(i=0;i<8;i++ )
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 638  ]
-[e $U 639  ]
-[e :U 638 ]
-"114
-[; ;myiic.c: 114:  {
-{
-"115
-[; ;myiic.c: 115:         LATC3=0;
-[e = _LATC3 -> -> 0 `i `b ]
-"116
-[; ;myiic.c: 116:         delay_2us();
-[e ( _delay_2us ..  ]
+[e $ < -> _i `i -> 8 `i 642  ]
+[e $U 643  ]
+[e :U 642 ]
 "117
-[; ;myiic.c: 117:   LATC3=1;
-[e = _LATC3 -> -> 1 `i `b ]
+[; ;myiic.c: 117:  {
+{
 "118
-[; ;myiic.c: 118:         receive<<=1;
-[e =<< _receive -> -> 1 `i `uc ]
+[; ;myiic.c: 118:         LATC3=0;
+[e = _LATC3 -> -> 0 `i `b ]
 "119
-[; ;myiic.c: 119:         if(RC4)receive++;
-[e $ ! _RC4 641  ]
-[e ++ _receive -> -> 1 `i `uc ]
-[e :U 641 ]
+[; ;myiic.c: 119:         delay_4us();
+[e ( _delay_4us ..  ]
 "120
-[; ;myiic.c: 120:   delay_2us();
-[e ( _delay_2us ..  ]
+[; ;myiic.c: 120:   LATC3=1;
+[e = _LATC3 -> -> 1 `i `b ]
 "121
-[; ;myiic.c: 121:     }
+[; ;myiic.c: 121:         receive<<=1;
+[e =<< _receive -> -> 1 `i `uc ]
+"122
+[; ;myiic.c: 122:         if(RC4)receive++;
+[e $ ! _RC4 645  ]
+[e ++ _receive -> -> 1 `i `uc ]
+[e :U 645 ]
+"123
+[; ;myiic.c: 123:   delay_4us();
+[e ( _delay_4us ..  ]
+"124
+[; ;myiic.c: 124:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 638  ]
-[e :U 639 ]
-}
-"122
-[; ;myiic.c: 122:     if (!ack)
-[e $ ! ! != -> _ack `i -> 0 `i 642  ]
-"123
-[; ;myiic.c: 123:         IIC_NAck();
-[e ( _IIC_NAck ..  ]
-[e $U 643  ]
-"124
-[; ;myiic.c: 124:     else
-[e :U 642 ]
-"125
-[; ;myiic.c: 125:         IIC_Ack();
-[e ( _IIC_Ack ..  ]
+[e $ < -> _i `i -> 8 `i 642  ]
 [e :U 643 ]
+}
+"125
+[; ;myiic.c: 125:     if (!ack)
+[e $ ! ! != -> _ack `i -> 0 `i 646  ]
 "126
-[; ;myiic.c: 126:     return receive;
-[e ) _receive ]
-[e $UE 637  ]
+[; ;myiic.c: 126:         IIC_NAck();
+[e ( _IIC_NAck ..  ]
+[e $U 647  ]
 "127
-[; ;myiic.c: 127: }
-[e :UE 637 ]
-}
+[; ;myiic.c: 127:     else
+[e :U 646 ]
+"128
+[; ;myiic.c: 128:         IIC_Ack();
+[e ( _IIC_Ack ..  ]
+[e :U 647 ]
 "129
-[; ;myiic.c: 129: unsigned char RD_temp(void)
-[v _RD_temp `(uc ~T0 @X0 1 ef ]
+[; ;myiic.c: 129:     return receive;
+[e ) _receive ]
+[e $UE 641  ]
 "130
-[; ;myiic.c: 130: {
-{
-[e :U _RD_temp ]
-[f ]
-"131
-[; ;myiic.c: 131:     IIC_Start();
-[e ( _IIC_Start ..  ]
-"132
-[; ;myiic.c: 132:     IIC_Send_Byte(0b1001111);
-[e ( _IIC_Send_Byte (1 -> -> 79 `i `uc ]
-"133
-[; ;myiic.c: 133:     if(!IIC_Wait_Ack())
-[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 645  ]
-"134
-[; ;myiic.c: 134:     {
-{
-"135
-[; ;myiic.c: 135:         temp_h = IIC_Read_Byte(1);
-[e = _temp_h ( _IIC_Read_Byte (1 -> -> 1 `i `uc ]
-"136
-[; ;myiic.c: 136:         temp_l = IIC_Read_Byte(0);
-[e = _temp_l ( _IIC_Read_Byte (1 -> -> 0 `i `uc ]
-"137
-[; ;myiic.c: 137:         IIC_Stop();
-[e ( _IIC_Stop ..  ]
-"138
-[; ;myiic.c: 138:         return 0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 644  ]
-"139
-[; ;myiic.c: 139:     }
+[; ;myiic.c: 130: }
+[e :UE 641 ]
 }
-[e :U 645 ]
-"140
-[; ;myiic.c: 140:     return 1;
-[e ) -> -> 1 `i `uc ]
-[e $UE 644  ]
-"141
-[; ;myiic.c: 141: }
-[e :UE 644 ]
-}
-"143
-[; ;myiic.c: 143: void IIC_temp(void)
-[v _IIC_temp `(v ~T0 @X0 1 ef ]
-"144
-[; ;myiic.c: 144: {
-{
-[e :U _IIC_temp ]
-[f ]
-"145
-[; ;myiic.c: 145:     unsigned char x = 0;
-[v _x `uc ~T0 @X0 1 a ]
-[e = _x -> -> 0 `i `uc ]
-"146
-[; ;myiic.c: 146:     GIE = 0;
-[e = _GIE -> -> 0 `i `b ]
-"147
-[; ;myiic.c: 147:     RD_temp();
-[e ( _RD_temp ..  ]
-"148
-[; ;myiic.c: 148:     x = temp_l;
-[e = _x _temp_l ]
-"149
-[; ;myiic.c: 149:     x >>= 5;
-[e =>> _x -> -> 5 `i `uc ]
-"150
-[; ;myiic.c: 150:     Temp = temp_h;
-[e = _Temp -> _temp_h `ui ]
 "151
-[; ;myiic.c: 151:     Temp <<= 3;
-[e =<< _Temp -> -> 3 `i `ui ]
+[; ;myiic.c: 151: s8 IIC_RdRTCReg(u8 regAddr, u8* value)
+[v _IIC_RdRTCReg `(c ~T0 @X0 1 ef2`uc`*uc ]
 "152
-[; ;myiic.c: 152:     Temp |= x;
-[e =| _Temp -> _x `ui ]
+[; ;myiic.c: 152: {
+{
+[e :U _IIC_RdRTCReg ]
+"151
+[; ;myiic.c: 151: s8 IIC_RdRTCReg(u8 regAddr, u8* value)
+[v _regAddr `uc ~T0 @X0 1 r1 ]
+[v _value `*uc ~T0 @X0 1 r2 ]
+"152
+[; ;myiic.c: 152: {
+[f ]
 "153
-[; ;myiic.c: 153:     GIE = 1;
-[e = _GIE -> -> 1 `i `b ]
+[; ;myiic.c: 153:     IIC_Start();
+[e ( _IIC_Start ..  ]
 "154
-[; ;myiic.c: 154: }
-[e :UE 646 ]
+[; ;myiic.c: 154:     IIC_Send_Byte((0b10100010));
+[e ( _IIC_Send_Byte (1 -> -> 162 `i `uc ]
+"155
+[; ;myiic.c: 155:     if(!IIC_Wait_Ack())
+[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 649  ]
+"156
+[; ;myiic.c: 156:     {
+{
+"157
+[; ;myiic.c: 157:         IIC_Send_Byte(regAddr);
+[e ( _IIC_Send_Byte (1 _regAddr ]
+"158
+[; ;myiic.c: 158:         if(!IIC_Wait_Ack())
+[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 650  ]
+"159
+[; ;myiic.c: 159:         {
+{
+"160
+[; ;myiic.c: 160:             IIC_Start();
+[e ( _IIC_Start ..  ]
+"161
+[; ;myiic.c: 161:             IIC_Send_Byte((0b10100011));
+[e ( _IIC_Send_Byte (1 -> -> 163 `i `uc ]
+"162
+[; ;myiic.c: 162:             if(!IIC_Wait_Ack())
+[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 651  ]
+"163
+[; ;myiic.c: 163:             {
+{
+"164
+[; ;myiic.c: 164:                 *value = IIC_Read_Byte(0);
+[e = *U _value ( _IIC_Read_Byte (1 -> -> 0 `i `uc ]
+"165
+[; ;myiic.c: 165:                 IIC_Stop();
+[e ( _IIC_Stop ..  ]
+"166
+[; ;myiic.c: 166:                 return 0;
+[e ) -> -> 0 `i `c ]
+[e $UE 648  ]
+"167
+[; ;myiic.c: 167:             }
+}
+[e :U 651 ]
+"168
+[; ;myiic.c: 168:             return -1;
+[e ) -> -U -> 1 `i `c ]
+[e $UE 648  ]
+"169
+[; ;myiic.c: 169:         }
+}
+[e :U 650 ]
+"170
+[; ;myiic.c: 170:         return -1;
+[e ) -> -U -> 1 `i `c ]
+[e $UE 648  ]
+"171
+[; ;myiic.c: 171:     }
+}
+[e :U 649 ]
+"172
+[; ;myiic.c: 172:     return -1;
+[e ) -> -U -> 1 `i `c ]
+[e $UE 648  ]
+"173
+[; ;myiic.c: 173: }
+[e :UE 648 ]
+}
+"175
+[; ;myiic.c: 175: s8 IIC_WtRTCReg(u8 regAddr, u8 value)
+[v _IIC_WtRTCReg `(c ~T0 @X0 1 ef2`uc`uc ]
+"176
+[; ;myiic.c: 176: {
+{
+[e :U _IIC_WtRTCReg ]
+"175
+[; ;myiic.c: 175: s8 IIC_WtRTCReg(u8 regAddr, u8 value)
+[v _regAddr `uc ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
+"176
+[; ;myiic.c: 176: {
+[f ]
+"177
+[; ;myiic.c: 177:     IIC_Start();
+[e ( _IIC_Start ..  ]
+"178
+[; ;myiic.c: 178:     IIC_Send_Byte((0b10100010));
+[e ( _IIC_Send_Byte (1 -> -> 162 `i `uc ]
+"179
+[; ;myiic.c: 179:     if(!IIC_Wait_Ack())
+[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 653  ]
+"180
+[; ;myiic.c: 180:     {
+{
+"181
+[; ;myiic.c: 181:         IIC_Send_Byte(regAddr);
+[e ( _IIC_Send_Byte (1 _regAddr ]
+"182
+[; ;myiic.c: 182:         if(!IIC_Wait_Ack())
+[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 654  ]
+"183
+[; ;myiic.c: 183:         {
+{
+"184
+[; ;myiic.c: 184:             IIC_Send_Byte(value);
+[e ( _IIC_Send_Byte (1 _value ]
+"185
+[; ;myiic.c: 185:             if(!IIC_Wait_Ack())
+[e $ ! ! != -> ( _IIC_Wait_Ack ..  `i -> 0 `i 655  ]
+"186
+[; ;myiic.c: 186:             {
+{
+"187
+[; ;myiic.c: 187:                 IIC_Stop();
+[e ( _IIC_Stop ..  ]
+"188
+[; ;myiic.c: 188:                 return 0;
+[e ) -> -> 0 `i `c ]
+[e $UE 652  ]
+"189
+[; ;myiic.c: 189:             }
+}
+[e :U 655 ]
+"190
+[; ;myiic.c: 190:         }
+}
+[e :U 654 ]
+"191
+[; ;myiic.c: 191:         return -1;
+[e ) -> -U -> 1 `i `c ]
+[e $UE 652  ]
+"192
+[; ;myiic.c: 192:     }
+}
+[e :U 653 ]
+"193
+[; ;myiic.c: 193:     return -1;
+[e ) -> -U -> 1 `i `c ]
+[e $UE 652  ]
+"194
+[; ;myiic.c: 194: }
+[e :UE 652 ]
 }

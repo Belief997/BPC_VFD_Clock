@@ -9106,7 +9106,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 73 "./data.h"
+# 94 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9117,7 +9117,7 @@ typedef struct{
     u8 g_time_h;
     u8 g_time_m;
     u8 g_time_s;
-    u8 g_time_10ms;
+    u8 g_time_100ms;
 
 
     u16 g_high_level_times;
@@ -9125,6 +9125,7 @@ typedef struct{
     u16 g_recv_count;
 
     u8 g_recv_buf[20];
+
     u16 cnt_update;
 
 
@@ -9140,12 +9141,15 @@ u16 data_getTimeCnt(void);
 # 4 "timer.c" 2
 
 # 1 "./hardware.h" 1
-# 61 "./hardware.h"
+# 71 "./hardware.h"
 u8 capture_init(void);
-u8 capture_Start(void);
+u8 capture_Set(u8 isON);
+BOOL capture_IsEnable(void);
 BOOL capture_IsIntrpt(void);
 void capture_clrIntrpt(void);
 int capture_handdle(void);
+
+BOOL capture_IsNegEdge(void);
 
 
 
@@ -9153,9 +9157,22 @@ u8 led_SetState(u8 isOn);
 u8 led_Blink(void);
 
 
-void key_isPressed(void);
+BOOL key_isPressed(void);
+void key_checkPressed(void);
 # 5 "timer.c" 2
 
+# 1 "./display.h" 1
+# 13 "./display.h"
+void display_set(BOOL ison);
+
+
+
+
+void update_time(void);
+
+
+void display_update(void);
+# 6 "timer.c" 2
 
 
 
@@ -9171,12 +9188,13 @@ void timer_Timer1Init(void)
 
     TMR1H = 0b0;
     TMR1L = 0b0;
-
-
+# 30 "timer.c"
     T1CONbits.TMR1CS = 0b00;
 
 
     T1CONbits.T1CKPS = 0b11;
+
+
 
 
 }
@@ -9196,7 +9214,7 @@ void timer_Timer1ClrIntrpt(void)
 {
     PIR1bits.TMR1IF = 0b0;
 }
-# 54 "timer.c"
+# 63 "timer.c"
 void timer_Timer0Init(void)
 {
 
@@ -9208,15 +9226,18 @@ void timer_Timer0Init(void)
 
 
 
+
+
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.TMR0CS = 0;
-    OPTION_REGbits.PS = 4;
-    TMR0 = (217 + 14);
+    OPTION_REGbits.PS = 7;
+    TMR0 = (158 + 0);
+# 91 "timer.c"
 }
 void timer_Timer0Reset(void)
 {
     INTCONbits.TMR0IF = 0;
-    TMR0 = (217 + 14);
+    TMR0 = (158 + 0);
 }
 void timer_Timer0Start(void)
 {
@@ -9233,7 +9254,9 @@ BOOL timer_IsTimer0Itrpt(void)
 
 int timer_Timer0Handdle(void)
 {
-    key_isPressed();
+    key_checkPressed();
+
+    update_time();
 
     return 0;
 }

@@ -5,6 +5,7 @@
 #include <xc.h>
 #include "stdlib.h"
 #include "pic.h"
+#include "debug.h"
 
 //IO????
 #define SDA_IN()  {TRISC4 = 1;}
@@ -24,7 +25,11 @@ unsigned char IIC_Wait_Ack(void);               //IIC??ACK??
 void IIC_Ack(void);                              //IIC??ACK??
 void IIC_NAck(void);                            //IIC???ACK?? 
 unsigned char RD_temp(void);
-void IIC_temp(void);
+s8 IIC_RdRTCReg(u8 regAddr, u8* value);
+s8 IIC_WtRTCReg(u8 regAddr, u8 value);
+
+
+
 #endif
 
 
