@@ -8987,13 +8987,11 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 10 "main.c" 2
 
-# 1 "./function.h" 1
 
-
-
-
-
-
+# 1 "./bpc.h" 1
+# 11 "./bpc.h"
+# 1 "./data.h" 1
+# 13 "./data.h"
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9065,14 +9063,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 7 "./function.h" 2
-
-# 1 "./data.h" 1
-
-
-
-
-
+# 13 "./data.h" 2
 
 
 typedef uint8_t u8;
@@ -9121,7 +9112,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 94 "./data.h"
+# 91 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9151,40 +9142,14 @@ typedef struct{
 }G_DATA;
 
 G_DATA* data_getdata(void);
-
-u16 data_getTimeCnt(void);
-# 8 "./function.h" 2
+# 11 "./bpc.h" 2
 
 
+s8 bpc_read_time(void);
+s8 bpc_write_time(void);
 
-
-
-
-void receive_decode(void);
-
-
-
-
-void update_time(void);
-# 11 "main.c" 2
-
-# 1 "./myiic.h" 1
-
-
-
-# 1 "./delay.h" 1
-# 22 "./delay.h"
-void delay_4us(void);
-void delay_12us(void);
-void delay_40us(void);
-# 4 "./myiic.h" 2
-
-
-
-
-# 1 "./debug.h" 1
-
-
+int bpc_proc(void);
+# 12 "main.c" 2
 
 
 # 1 "./uart.h" 1
@@ -9193,7 +9158,76 @@ void uart_init(void);
 void uart_Send_byte(u8 byte);
 void ISR_uart_TX(void);
 void ISR_uart_RX(void);
-# 5 "./debug.h" 2
+# 14 "main.c" 2
+
+# 1 "./myiic.h" 1
+
+
+
+
+
+
+# 1 "./delay.h" 1
+# 22 "./delay.h"
+void delay_4us(void);
+void delay_12us(void);
+void delay_40us(void);
+# 7 "./myiic.h" 2
+# 19 "./myiic.h"
+void IIC_Init(void);
+void IIC_Start(void);
+void IIC_Stop(void);
+void IIC_Send_Byte(unsigned char txd);
+unsigned char IIC_Read_Byte(unsigned char ack);
+unsigned char IIC_Wait_Ack(void);
+void IIC_Ack(void);
+void IIC_NAck(void);
+unsigned char RD_temp(void);
+s8 IIC_RdRTCReg(u8 regAddr, u8* value);
+s8 IIC_WtRTCReg(u8 regAddr, u8 value);
+# 15 "main.c" 2
+
+# 1 "./timer.h" 1
+# 11 "./timer.h"
+void timer_Timer1Init(void);
+void timer_Timer1Start(void);
+BOOL timer_IsTimer1Itrpt(void);
+void timer_Timer1ClrIntrpt(void);
+
+
+
+void timer_Timer0Init(void);
+void timer_Timer0Reset(void);
+void timer_Timer0Start(void);
+BOOL timer_IsTimer0Itrpt(void);
+
+
+int timer_Timer0Handdle(void);
+# 16 "main.c" 2
+
+# 1 "./debug.h" 1
+# 11 "./debug.h"
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 1 3
+
+
+
+
+
+
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 8 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 2 3
+
+
+#pragma intrinsic(__va_start)
+#pragma intrinsic(__va_arg)
+
+extern void * __va_start(void);
+extern void * __va_arg(void *, ...);
+# 11 "./debug.h" 2
+
+
+
 
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 1 3
 # 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
@@ -9250,66 +9284,24 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 6 "./debug.h" 2
+# 15 "./debug.h" 2
+# 17 "main.c" 2
 
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 1 3
-
-
-
-
-
-
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 8 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 2 3
-
-
-#pragma intrinsic(__va_start)
-#pragma intrinsic(__va_arg)
-
-extern void * __va_start(void);
-extern void * __va_arg(void *, ...);
-# 7 "./debug.h" 2
-# 52 "./debug.h"
-typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
-int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 8 "./myiic.h" 2
-# 19 "./myiic.h"
-void IIC_Init(void);
-void IIC_Start(void);
-void IIC_Stop(void);
-void IIC_Send_Byte(unsigned char txd);
-unsigned char IIC_Read_Byte(unsigned char ack);
-unsigned char IIC_Wait_Ack(void);
-void IIC_Ack(void);
-void IIC_NAck(void);
-unsigned char RD_temp(void);
-s8 IIC_RdRTCReg(u8 regAddr, u8* value);
-s8 IIC_WtRTCReg(u8 regAddr, u8 value);
-# 12 "main.c" 2
-
-# 1 "./timer.h" 1
-# 11 "./timer.h"
-void timer_Timer1Init(void);
-void timer_Timer1Start(void);
-BOOL timer_IsTimer1Itrpt(void);
-void timer_Timer1ClrIntrpt(void);
+# 1 "./display.h" 1
+# 13 "./display.h"
+void display_set(BOOL ison);
 
 
 
-void timer_Timer0Init(void);
-void timer_Timer0Reset(void);
-void timer_Timer0Start(void);
-BOOL timer_IsTimer0Itrpt(void);
+
+void update_time(void);
 
 
-int timer_Timer0Handdle(void);
-# 13 "main.c" 2
-
-
+void display_update(void);
+# 18 "main.c" 2
 
 # 1 "./hardware.h" 1
-# 71 "./hardware.h"
+# 67 "./hardware.h"
 u8 capture_init(void);
 u8 capture_Set(u8 isON);
 BOOL capture_IsEnable(void);
@@ -9327,28 +9319,6 @@ u8 led_Blink(void);
 
 BOOL key_isPressed(void);
 void key_checkPressed(void);
-# 16 "main.c" 2
-
-
-# 1 "./display.h" 1
-# 13 "./display.h"
-void display_set(BOOL ison);
-
-
-
-
-void update_time(void);
-
-
-void display_update(void);
-# 18 "main.c" 2
-
-# 1 "./bpc.h" 1
-# 12 "./bpc.h"
-s8 bpc_read_time(void);
-s8 bpc_write_time(void);
-
-int bpc_proc(void);
 # 19 "main.c" 2
 
 
@@ -9387,11 +9357,7 @@ void init_env(){
 
 
 
-
-
     OSCCONbits.SCS = 0b10;
-
-
 
     OSCCONbits.IRCF = 0b1011;
 
@@ -9444,8 +9410,6 @@ void init_env(){
     pdata->g_time_s = 0;
 
 
-    display_update();
-
 
 
     LATBbits.LATB2 = PIN_LOW;
@@ -9458,77 +9422,9 @@ void init_env(){
     WPUCbits.WPUC0 = 1;
 
 
-
     display_set(TRUE);
 }
 
-
-void tmp_change(void)
-{
-    static u8 history_key = 0;
-    static u16 key_time_cnt = 0;
-    G_DATA *pdata = data_getdata();
-
-
-
-
-    if( pdata->g_isDecoding == FALSE && ((pdata->g_flg_switch == TRUE)||(pdata->cnt_update >= 30)) )
-
-    {
-
-        pdata->g_find_recv_start = FALSE;
-        pdata->g_isDecoding = TRUE;
-        pdata->g_flg_switch = FALSE;
-        pdata->cnt_update = 0;
-        pdata->g_recv_count = CODE_P0;
-        PORTCbits.RC2 = BPC_PWR_ON;
-
-        INTCONbits.IOCIF = FALSE;
-        IOCCFbits.IOCCF1 = FALSE;
-        return;
-    }
-    else if(pdata->g_isDecoding == TRUE && IOCCFbits.IOCCF1 == TRUE && TRUE == pdata->g_find_recv_start)
-    {
-        if(pdata->g_recv_count == CODE_P0)
-        {
-            pdata->g_recv_count = CODE_P1;
-        }
-        timer_Timer0Start();
-    }
-    else if(INTCONbits.IOCIF || IOCCFbits.IOCCF1)
-    {
-        INTCONbits.IOCIF = FALSE;
-        IOCCFbits.IOCCF1 = FALSE;
-    }
-
-
-    if(INTCONbits.TMR0IF)
-    {
-
-        if(pdata->g_isDecoding == TRUE && ( pdata->g_find_recv_start == FALSE|| pdata->g_recv_count >= CODE_P1 ) )
-
-        {
-            receive_decode();
-        }
-
-
-
-        if(key_time_cnt++ % 10 == 0)
-        {
-            history_key <<= 1;
-            history_key |= (PORTCbits.RC5 == PIN_HIGH)? 0x01 : 0x00;
-
-            if(((0x03) == (history_key & (0x0f))) && (FALSE == pdata->g_flg_switch))
-            {
-                pdata->g_flg_switch = TRUE;
-            }
-        }
-
-        timer_Timer0Reset();
-        return;
-    }
-    return;
-}
 
 void __attribute__((picinterrupt(""))) ISR(void)
 {
@@ -9546,8 +9442,6 @@ void __attribute__((picinterrupt(""))) ISR(void)
             bpc_read_time();
             cnt = 0;
         }
-
-
         timer_Timer1ClrIntrpt();
     }
 
@@ -9557,10 +9451,8 @@ void __attribute__((picinterrupt(""))) ISR(void)
 
   if(key_isPressed())
   {
-
    capture_Set(TRUE);
   }
-# 251 "main.c"
         timer_Timer0Reset();
     }
 
@@ -9577,10 +9469,6 @@ void __attribute__((picinterrupt(""))) ISR(void)
 void main(void)
 {
 
-
-
-
-
     init_env();
 
 
@@ -9596,44 +9484,22 @@ void main(void)
 
 
 
-
-
     IIC_Init();
-<<<<<<< HEAD
-=======
 
 
-
-    uart_init();
-
-
-    {};
-    {};
-
-
-    if(-1 == bpc_read_time()){
->>>>>>> liubo
-
-
-
-    uart_init();
 
 
 
 
     if(-1 == bpc_read_time()){
-        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 298, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
-        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 299, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
-        { char buf[(64)] = {0}; sprintf(buf, "[%s:%d %s] ""ERR r\r\n" "\n\r", "main.c", 300, __FUNCTION__); { char i = 0; char send[(64)] = "\0"; strcpy(send, buf); while(i != (strlen(send)+1)){ TXEN = 1; SYNC = 0; SPEN = 1; TXIE = 1; while(0 == TXSTAbits.TRMT); TXREG = send[i++]; TXIE = 0; } }; };
+
         capture_Set(TRUE);
     }
+
 
     display_update();
     led_SetState(FALSE);
 
-    while(1)
-    {
-# 317 "main.c"
-    }
+    while(1);
     return;
 }

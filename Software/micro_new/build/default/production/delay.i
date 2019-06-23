@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "delay.c" 2
 # 1 "./delay.h" 1
-# 10 "./delay.h"
+# 11 "./delay.h"
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8841,7 +8841,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 10 "./delay.h" 2
+# 11 "./delay.h" 2
 # 22 "./delay.h"
 void delay_4us(void);
 void delay_12us(void);
@@ -8852,7 +8852,6 @@ void delay_40us(void);
 void delay_4us(void)
 {
     __nop();
-
 }
 
 void delay_12us(void)

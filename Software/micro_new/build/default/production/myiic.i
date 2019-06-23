@@ -7,12 +7,8 @@
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "myiic.c" 2
-# 1 "./myiic.h" 1
-
-
-
-# 1 "./delay.h" 1
-# 10 "./delay.h"
+# 1 "./data.h" 1
+# 11 "./data.h"
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -8845,97 +8841,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 10 "./delay.h" 2
-# 22 "./delay.h"
-void delay_4us(void);
-void delay_12us(void);
-void delay_40us(void);
-# 4 "./myiic.h" 2
-
-
-
-
-# 1 "./debug.h" 1
-
-
-
-# 1 "./data.h" 1
-
-
-
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef long int32_t;
-# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int32_t intmax_t;
-
-
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef unsigned long uint32_t;
-# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef uint32_t uintmax_t;
-# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-typedef int32_t int_least32_t;
-
-
-
-
-typedef uint8_t uint_fast8_t;
-
-
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-typedef uint32_t uint_least32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "./data.h" 2
+# 11 "./data.h" 2
 
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdio.h" 3
@@ -9073,7 +8979,80 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 6 "./data.h" 2
+# 12 "./data.h" 2
+
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef long int32_t;
+# 189 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int32_t intmax_t;
+
+
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef unsigned long uint32_t;
+# 225 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef uint32_t uintmax_t;
+# 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+typedef int32_t int_least32_t;
+
+
+
+
+typedef uint8_t uint_fast8_t;
+
+
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+typedef uint32_t uint_least32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
+# 13 "./data.h" 2
 
 
 typedef uint8_t u8;
@@ -9122,7 +9101,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 94 "./data.h"
+# 91 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9152,97 +9131,21 @@ typedef struct{
 }G_DATA;
 
 G_DATA* data_getdata(void);
+# 1 "myiic.c" 2
 
-u16 data_getTimeCnt(void);
-# 4 "./debug.h" 2
-
-# 1 "./uart.h" 1
-# 18 "./uart.h"
-void uart_init(void);
-void uart_Send_byte(u8 byte);
-void ISR_uart_TX(void);
-void ISR_uart_RX(void);
-# 5 "./debug.h" 2
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 1 3
-# 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 409 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 6 "./debug.h" 2
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 1 3
+# 1 "./myiic.h" 1
 
 
 
 
 
 
-
-# 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 8 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdarg.h" 2 3
-
-
-#pragma intrinsic(__va_start)
-#pragma intrinsic(__va_arg)
-
-extern void * __va_start(void);
-extern void * __va_arg(void *, ...);
-# 7 "./debug.h" 2
-# 52 "./debug.h"
-typedef int (*CMD_ACTION)(const unsigned char* cmdString, unsigned short length);
-int debug_proc(const unsigned char* cmdString, unsigned short length);
-# 8 "./myiic.h" 2
+# 1 "./delay.h" 1
+# 22 "./delay.h"
+void delay_4us(void);
+void delay_12us(void);
+void delay_40us(void);
+# 7 "./myiic.h" 2
 # 19 "./myiic.h"
 void IIC_Init(void);
 void IIC_Start(void);
@@ -9255,12 +9158,7 @@ void IIC_NAck(void);
 unsigned char RD_temp(void);
 s8 IIC_RdRTCReg(u8 regAddr, u8* value);
 s8 IIC_WtRTCReg(u8 regAddr, u8 value);
-# 1 "myiic.c" 2
-
-
-
-
-
+# 2 "myiic.c" 2
 
 
 
@@ -9287,10 +9185,9 @@ void IIC_Start(void)
  LATC3=1;
  delay_4us();
   LATC4=0;
-
  LATC3=0;
-
 }
+
 
 void IIC_Stop(void)
 {
@@ -9301,8 +9198,8 @@ void IIC_Stop(void)
  LATC3=1;
  LATC4=1;
  delay_4us();
-
 }
+
 
 
 
@@ -9324,6 +9221,7 @@ unsigned char IIC_Wait_Ack(void)
  LATC3=0;
  return 0;
 }
+
 
 void IIC_Ack(void)
 {
@@ -9386,7 +9284,11 @@ unsigned char IIC_Read_Byte(unsigned char ack)
         IIC_Ack();
     return receive;
 }
-# 151 "myiic.c"
+
+
+
+
+
 s8 IIC_RdRTCReg(u8 regAddr, u8* value)
 {
     IIC_Start();

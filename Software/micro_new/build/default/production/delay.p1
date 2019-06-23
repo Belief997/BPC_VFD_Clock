@@ -850,18 +850,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5
 [; ;delay.c: 5:     __nop();
 [e ( ___nop ..  ]
-"7
-[; ;delay.c: 7: }
+"6
+[; ;delay.c: 6: }
 [e :UE 623 ]
 }
-"9
-[; ;delay.c: 9: void delay_12us(void)
+"8
+[; ;delay.c: 8: void delay_12us(void)
 [v _delay_12us `(v ~T0 @X0 1 ef ]
-"10
-[; ;delay.c: 10: {
+"9
+[; ;delay.c: 9: {
 {
 [e :U _delay_12us ]
 [f ]
+"10
+[; ;delay.c: 10:     __nop();
+[e ( ___nop ..  ]
 "11
 [; ;delay.c: 11:     __nop();
 [e ( ___nop ..  ]
@@ -869,20 +872,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;delay.c: 12:     __nop();
 [e ( ___nop ..  ]
 "13
-[; ;delay.c: 13:     __nop();
-[e ( ___nop ..  ]
-"14
-[; ;delay.c: 14: }
+[; ;delay.c: 13: }
 [e :UE 624 ]
 }
-"16
-[; ;delay.c: 16: void delay_40us(void)
+"15
+[; ;delay.c: 15: void delay_40us(void)
 [v _delay_40us `(v ~T0 @X0 1 ef ]
-"17
-[; ;delay.c: 17: {
+"16
+[; ;delay.c: 16: {
 {
 [e :U _delay_40us ]
 [f ]
+"17
+[; ;delay.c: 17:     __nop();
+[e ( ___nop ..  ]
 "18
 [; ;delay.c: 18:     __nop();
 [e ( ___nop ..  ]
@@ -911,9 +914,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;delay.c: 26:     __nop();
 [e ( ___nop ..  ]
 "27
-[; ;delay.c: 27:     __nop();
-[e ( ___nop ..  ]
-"28
-[; ;delay.c: 28: }
+[; ;delay.c: 27: }
 [e :UE 625 ]
 }

@@ -8,6 +8,7 @@
 #ifndef BPC_H
 #define	BPC_H
 
+#include "data.h"
 
 s8 bpc_read_time(void);
 s8 bpc_write_time(void);

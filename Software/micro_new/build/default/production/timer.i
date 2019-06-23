@@ -8981,10 +8981,7 @@ char *tempnam(const char *, const char *);
 
 
 # 1 "./data.h" 1
-
-
-
-
+# 13 "./data.h"
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
 # 1 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9056,8 +9053,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "F:\\other_software\\MPLAB_X_IDE\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "./data.h" 2
-
+# 13 "./data.h" 2
 
 
 typedef uint8_t u8;
@@ -9106,7 +9102,7 @@ enum{
     CODE_P4,
 
 }ENUM;
-# 94 "./data.h"
+# 91 "./data.h"
 typedef struct{
 
     volatile BOOL g_flg_switch;
@@ -9136,12 +9132,10 @@ typedef struct{
 }G_DATA;
 
 G_DATA* data_getdata(void);
-
-u16 data_getTimeCnt(void);
 # 4 "timer.c" 2
 
 # 1 "./hardware.h" 1
-# 71 "./hardware.h"
+# 67 "./hardware.h"
 u8 capture_init(void);
 u8 capture_Set(u8 isON);
 BOOL capture_IsEnable(void);
@@ -9176,6 +9170,7 @@ void display_update(void);
 
 
 
+
 void timer_Timer1Init(void)
 {
 
@@ -9188,15 +9183,12 @@ void timer_Timer1Init(void)
 
     TMR1H = 0b0;
     TMR1L = 0b0;
-# 30 "timer.c"
+
+
     T1CONbits.TMR1CS = 0b00;
 
 
     T1CONbits.T1CKPS = 0b11;
-
-
-
-
 }
 
 void timer_Timer1Start(void)
@@ -9214,7 +9206,12 @@ void timer_Timer1ClrIntrpt(void)
 {
     PIR1bits.TMR1IF = 0b0;
 }
-# 63 "timer.c"
+
+
+
+
+
+
 void timer_Timer0Init(void)
 {
 
@@ -9232,7 +9229,7 @@ void timer_Timer0Init(void)
     OPTION_REGbits.TMR0CS = 0;
     OPTION_REGbits.PS = 7;
     TMR0 = (158 + 0);
-# 91 "timer.c"
+# 79 "timer.c"
 }
 void timer_Timer0Reset(void)
 {

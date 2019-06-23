@@ -6,10 +6,10 @@
 #include "hardware.h"
 
 
-unsigned char TX_data;
-unsigned char RX_data;
-unsigned char TX_en;
-unsigned char flg_rc;
+static unsigned char TX_data;
+static unsigned char RX_data;
+static unsigned char TX_en;
+static unsigned char flg_rc;
 
 void uart_init(void)
 {

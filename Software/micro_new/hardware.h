@@ -2,6 +2,7 @@
 #define	__HARDWARE_H__
 
 #include <xc.h> // include processor files - each processor file is guarded.  
+#include "data.h"
 #include "stdint.h"
 
 /***************  define pin table from here  ******************/

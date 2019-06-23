@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"53 ./data.h
-[; ;./data.h: 53: }ENUM;
+"60 ./data.h
+[; ;./data.h: 60: }ENUM;
 [c E5226 0 1 0 1 0 1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 .. ]
 [n E5226 . BPC_PWR_ON BPC_PWR_OFF PIN_LOW PIN_HIGH LED_STATE_ON LED_STATE_OFF CODE_P0 CODE_P1 CODE_P2 CODE_H_1 CODE_H_2 CODE_M_1 CODE_M_2 CODE_M_3 CODE_W_1 CODE_W_2 CODE_P3 CODE_D_1 CODE_D_2 CODE_D_3 CODE_MN_1 CODE_MN_2 CODE_Y_1 CODE_Y_2 CODE_Y_3 CODE_P4  ]
 "357 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
@@ -61,8 +61,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "945
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 945: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x018)));
 [v _T1CONbits `VS58 ~T0 @X0 0 e@24 ]
-"46 timer.c
-[; ;timer.c: 46: BOOL timer_IsTimer1Itrpt(void)
+"36 timer.c
+[; ;timer.c: 36: BOOL timer_IsTimer1Itrpt(void)
 [c E5222 0 1 .. ]
 [n E5222 . FALSE TRUE  ]
 "1618 F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h
@@ -83,8 +83,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "856
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 856: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
 [v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"87 ./hardware.h
-[; ;./hardware.h: 87: void key_checkPressed(void);
+"83 ./hardware.h
+[; ;./hardware.h: 83: void key_checkPressed(void);
 [v _key_checkPressed `(v ~T0 @X0 0 ef ]
 "18 ./display.h
 [; ;./display.h: 18: void update_time(void);
@@ -926,192 +926,192 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13521
 [; ;F:\other_software\MPLAB_X_IDE\xc8\v2.00\pic\include\pic16f1786.h: 13521: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"53 ./data.h
-[; ;./data.h: 53: }ENUM;
+"60 ./data.h
+[; ;./data.h: 60: }ENUM;
 [v _ENUM `E5226 ~T0 @X0 1 e ]
-"9 timer.c
-[; ;timer.c: 9: void timer_Timer1Init(void)
+"10 timer.c
+[; ;timer.c: 10: void timer_Timer1Init(void)
 [v _timer_Timer1Init `(v ~T0 @X0 1 ef ]
-"10
-[; ;timer.c: 10: {
+"11
+[; ;timer.c: 11: {
 {
 [e :U _timer_Timer1Init ]
 [f ]
-"12
-[; ;timer.c: 12:     INTCONbits.GIE = 0b1;
+"13
+[; ;timer.c: 13:     INTCONbits.GIE = 0b1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"14
-[; ;timer.c: 14:     INTCONbits.PEIE = 0b1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "15
-[; ;timer.c: 15:     PIE1bits.TMR1IE = 0b1;
+[; ;timer.c: 15:     INTCONbits.PEIE = 0b1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"16
+[; ;timer.c: 16:     PIE1bits.TMR1IE = 0b1;
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"17
-[; ;timer.c: 17:     PIR1bits.TMR1IF = 0b0;
+"18
+[; ;timer.c: 18:     PIR1bits.TMR1IF = 0b0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"19
-[; ;timer.c: 19:     TMR1H = 0b0;
-[e = _TMR1H -> -> 0 `i `uc ]
 "20
-[; ;timer.c: 20:     TMR1L = 0b0;
+[; ;timer.c: 20:     TMR1H = 0b0;
+[e = _TMR1H -> -> 0 `i `uc ]
+"21
+[; ;timer.c: 21:     TMR1L = 0b0;
 [e = _TMR1L -> -> 0 `i `uc ]
-"30
-[; ;timer.c: 30:     T1CONbits.TMR1CS = 0b00;
+"24
+[; ;timer.c: 24:     T1CONbits.TMR1CS = 0b00;
 [e = . . _T1CONbits 1 2 -> -> 0 `i `uc ]
-"33
-[; ;timer.c: 33:     T1CONbits.T1CKPS = 0b11;
+"27
+[; ;timer.c: 27:     T1CONbits.T1CKPS = 0b11;
 [e = . . _T1CONbits 1 1 -> -> 3 `i `uc ]
-"38
-[; ;timer.c: 38: }
+"28
+[; ;timer.c: 28: }
 [e :UE 626 ]
 }
-"40
-[; ;timer.c: 40: void timer_Timer1Start(void)
+"30
+[; ;timer.c: 30: void timer_Timer1Start(void)
 [v _timer_Timer1Start `(v ~T0 @X0 1 ef ]
-"41
-[; ;timer.c: 41: {
+"31
+[; ;timer.c: 31: {
 {
 [e :U _timer_Timer1Start ]
 [f ]
-"43
-[; ;timer.c: 43:     T1CONbits.TMR1ON = 0b1;
+"33
+[; ;timer.c: 33:     T1CONbits.TMR1ON = 0b1;
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"44
-[; ;timer.c: 44: }
+"34
+[; ;timer.c: 34: }
 [e :UE 627 ]
 }
-"46
-[; ;timer.c: 46: BOOL timer_IsTimer1Itrpt(void)
+"36
+[; ;timer.c: 36: BOOL timer_IsTimer1Itrpt(void)
 [v _timer_IsTimer1Itrpt `(E5222 ~T0 @X0 1 ef ]
-"47
-[; ;timer.c: 47: {
+"37
+[; ;timer.c: 37: {
 {
 [e :U _timer_IsTimer1Itrpt ]
 [f ]
-"48
-[; ;timer.c: 48:     return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
+"38
+[; ;timer.c: 38:     return (PIR1bits.TMR1IF == 0b1)? TRUE : FALSE;
 [e ) -> ? == -> . . _PIR1bits 0 0 `i -> 1 `i : . `E5222 1 . `E5222 0 `E5222 ]
 [e $UE 628  ]
-"49
-[; ;timer.c: 49: }
+"39
+[; ;timer.c: 39: }
 [e :UE 628 ]
 }
-"51
-[; ;timer.c: 51: void timer_Timer1ClrIntrpt(void)
+"41
+[; ;timer.c: 41: void timer_Timer1ClrIntrpt(void)
 [v _timer_Timer1ClrIntrpt `(v ~T0 @X0 1 ef ]
-"52
-[; ;timer.c: 52: {
+"42
+[; ;timer.c: 42: {
 {
 [e :U _timer_Timer1ClrIntrpt ]
 [f ]
-"53
-[; ;timer.c: 53:     PIR1bits.TMR1IF = 0b0;
+"43
+[; ;timer.c: 43:     PIR1bits.TMR1IF = 0b0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"54
-[; ;timer.c: 54: }
+"44
+[; ;timer.c: 44: }
 [e :UE 629 ]
 }
-"63
-[; ;timer.c: 63: void timer_Timer0Init(void)
+"51
+[; ;timer.c: 51: void timer_Timer0Init(void)
 [v _timer_Timer0Init `(v ~T0 @X0 1 ef ]
-"64
-[; ;timer.c: 64: {
+"52
+[; ;timer.c: 52: {
 {
 [e :U _timer_Timer0Init ]
 [f ]
-"66
-[; ;timer.c: 66:     INTCONbits.GIE = 0b1;
+"54
+[; ;timer.c: 54:     INTCONbits.GIE = 0b1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"69
-[; ;timer.c: 69:     INTCONbits.TMR0IE = 0b0;
+"57
+[; ;timer.c: 57:     INTCONbits.TMR0IE = 0b0;
 [e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-"76
-[; ;timer.c: 76:     OPTION_REGbits.PSA = 0;
+"64
+[; ;timer.c: 64:     OPTION_REGbits.PSA = 0;
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"77
-[; ;timer.c: 77:     OPTION_REGbits.TMR0CS = 0;
+"65
+[; ;timer.c: 65:     OPTION_REGbits.TMR0CS = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"78
-[; ;timer.c: 78:     OPTION_REGbits.PS = 7;
+"66
+[; ;timer.c: 66:     OPTION_REGbits.PS = 7;
 [e = . . _OPTION_REGbits 1 0 -> -> 7 `i `uc ]
-"79
-[; ;timer.c: 79:     TMR0 = (158 + 0);
+"67
+[; ;timer.c: 67:     TMR0 = (158 + 0);
 [e = _TMR0 -> + -> 158 `i -> 0 `i `uc ]
-"91
-[; ;timer.c: 91: }
+"79
+[; ;timer.c: 79: }
 [e :UE 630 ]
 }
-"92
-[; ;timer.c: 92: void timer_Timer0Reset(void)
+"80
+[; ;timer.c: 80: void timer_Timer0Reset(void)
 [v _timer_Timer0Reset `(v ~T0 @X0 1 ef ]
-"93
-[; ;timer.c: 93: {
+"81
+[; ;timer.c: 81: {
 {
 [e :U _timer_Timer0Reset ]
 [f ]
-"94
-[; ;timer.c: 94:     INTCONbits.TMR0IF = 0;
+"82
+[; ;timer.c: 82:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"95
-[; ;timer.c: 95:     TMR0 = (158 + 0);
+"83
+[; ;timer.c: 83:     TMR0 = (158 + 0);
 [e = _TMR0 -> + -> 158 `i -> 0 `i `uc ]
-"96
-[; ;timer.c: 96: }
+"84
+[; ;timer.c: 84: }
 [e :UE 631 ]
 }
-"97
-[; ;timer.c: 97: void timer_Timer0Start(void)
+"85
+[; ;timer.c: 85: void timer_Timer0Start(void)
 [v _timer_Timer0Start `(v ~T0 @X0 1 ef ]
-"98
-[; ;timer.c: 98: {
+"86
+[; ;timer.c: 86: {
 {
 [e :U _timer_Timer0Start ]
 [f ]
-"99
-[; ;timer.c: 99:     timer_Timer0Reset();
+"87
+[; ;timer.c: 87:     timer_Timer0Reset();
 [e ( _timer_Timer0Reset ..  ]
-"100
-[; ;timer.c: 100:     INTCONbits.TMR0IE = 0b1;
+"88
+[; ;timer.c: 88:     INTCONbits.TMR0IE = 0b1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"101
-[; ;timer.c: 101: }
+"89
+[; ;timer.c: 89: }
 [e :UE 632 ]
 }
-"103
-[; ;timer.c: 103: BOOL timer_IsTimer0Itrpt(void)
+"91
+[; ;timer.c: 91: BOOL timer_IsTimer0Itrpt(void)
 [v _timer_IsTimer0Itrpt `(E5222 ~T0 @X0 1 ef ]
-"104
-[; ;timer.c: 104: {
+"92
+[; ;timer.c: 92: {
 {
 [e :U _timer_IsTimer0Itrpt ]
 [f ]
-"105
-[; ;timer.c: 105:     return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
+"93
+[; ;timer.c: 93:     return (INTCONbits.TMR0IF == 0b1)? TRUE : FALSE;
 [e ) -> ? == -> . . _INTCONbits 0 2 `i -> 1 `i : . `E5222 1 . `E5222 0 `E5222 ]
 [e $UE 633  ]
-"106
-[; ;timer.c: 106: }
+"94
+[; ;timer.c: 94: }
 [e :UE 633 ]
 }
-"110
-[; ;timer.c: 110: int timer_Timer0Handdle(void)
+"98
+[; ;timer.c: 98: int timer_Timer0Handdle(void)
 [v _timer_Timer0Handdle `(i ~T0 @X0 1 ef ]
-"111
-[; ;timer.c: 111: {
+"99
+[; ;timer.c: 99: {
 {
 [e :U _timer_Timer0Handdle ]
 [f ]
-"112
-[; ;timer.c: 112:     key_checkPressed();
+"100
+[; ;timer.c: 100:     key_checkPressed();
 [e ( _key_checkPressed ..  ]
-"114
-[; ;timer.c: 114:     update_time();
+"102
+[; ;timer.c: 102:     update_time();
 [e ( _update_time ..  ]
-"116
-[; ;timer.c: 116:     return 0;
+"104
+[; ;timer.c: 104:     return 0;
 [e ) -> 0 `i ]
 [e $UE 634  ]
-"117
-[; ;timer.c: 117: }
+"105
+[; ;timer.c: 105: }
 [e :UE 634 ]
 }
